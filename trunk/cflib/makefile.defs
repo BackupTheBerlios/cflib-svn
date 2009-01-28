@@ -1,0 +1,39 @@
+############################################
+#                                          #
+#  CFLIB - Flexible Configuration Library  #
+#  (c) 1995-2008 Stefan Habermehl          #
+#                                          #
+#  makefile.defs for Builds                #
+#                                          #
+#  Settings included at beginning of all   #
+#  Eclipse Build Configurations            #
+#                                          #
+#  GNU Make Build Environment              #
+#  based on Eclipse IDE Toolchains         #
+#                                          #
+#  @copyright (c) 2008 Stefan Habermehl    #
+#  @license GNU GPL v3+ (see LICENSE.txt)  #
+#                                          #
+############################################
+#
+# @version SVN: $Id: makefile.defs 81 2008-08-03 23:58:31Z stefan $
+#
+############################################
+
+# Included in automatic makefiles after dependencies
+# General definitions are in makefile.init
+#
+# Not included by root makefile!
+
+ifdef WIN32
+
+# We have MSYS and basic unix shell commands
+# but maybe RM is defined as del, so:
+
+RM := rm -rf
+
+endif
+
+CFLIB_ROOT_REL := ..
+
+########################## end makefile.defs

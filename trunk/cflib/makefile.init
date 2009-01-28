@@ -1,0 +1,149 @@
+############################################
+#                                          #
+#  CFLIB - Flexible Configuration Library  #
+#  (c) 1995-2008 Stefan Habermehl          #
+#                                          #
+#  makefile.init for Builds                #
+#                                          #
+#  Settings included at beginning of all   #
+#  Eclipse Build Configurations            #
+#                                          #
+#  GNU Make Build Environment              #
+#  based on Eclipse IDE Toolchains         #
+#                                          #
+#  @copyright (c) 2008 Stefan Habermehl    #
+#  @license GNU GPL v3+ (see LICENSE.txt)  #
+#                                          #
+############################################
+#
+# @version SVN: $Id: makefile.init 116 2009-01-28 10:52:59Z stefan $
+#
+############################################
+
+
+#### 0. General / Compatibility Stuff
+
+# Set suffix list explicitly using only the suffixes we need
+.SUFFIXES:
+.SUFFIXES: .c .o .d
+
+
+#### 1. Target Systems Detection
+
+ifeq ($(OSTYPE),linux)
+LINUX := ON
+endif
+
+ifeq ($(OS),Windows_NT)
+WIN32 := ON 
+endif
+
+
+#### 2. System Settings and Customization
+
+ifdef WIN32
+###################################### WIN32
+
+CFLIB_ROOT       := I:/eclipse/c_workspace/cflib_berlios
+										# CFLIB (Eclipse) Workspace Path
+CFLIB_PROJECT    := libmgw
+										# Library Project (makeable Directory)
+CFLIB_ADD_BUILDS := debug shared
+										# Additional Library Builds
+CFLIB_PREF       := lib
+										# Library Prefix to omit for Linker
+CFLIB_EXT        := .a
+										# Library Extension
+CFLIB_SHARED_EXT := .dll
+										# Shared Library Extension
+CFLIB_DEFINES    := -D_PATHSEP_SEMICOLON
+CFLIB_UNDEFINES  := -U_HAS_PWD -U_HAS_ISATTY
+										# System specific defs and undefs
+EXE              := .exe
+										# Executable Extension
+DIRSEP           := /
+										# Directory Separator [$(subst /,\,/)]
+RM               := rm -rf
+										# MSYS and basic unix shell commands
+SHELL             = /bin/sh
+
+else
+ifdef LINUX
+###################################### LINUX
+
+CFLIB_ROOT       := /projects/cflib_berlios
+CFLIB_PROJECT    := liblin
+CFLIB_ADD_BUILDS := 
+CFLIB_PREF       := lib
+CFLIB_EXT        := .a
+CFLIB_SHARED_EXT := .so
+CFLIB_DEFINES    := -D_HAS_PWD -D_HAS_ISATTY
+CFLIB_UNDEFINES  :=
+EXE              :=
+DIRSEP           := /
+RM               := rm -rf
+SHELL             = /bin/sh
+
+MAKE_NOMULTITARGET := ON
+
+else
+###################################### OTHER
+
+CFLIB_ROOT       := $(PWD)
+CFLIB_PROJECT    := lib
+CFLIB_PREF       := lib
+CFLIB_EXT        := .a
+CFLIB_SHARED_EXT := .so
+CFLIB_DEFINES    := 
+CFLIB_UNDEFINES  := -U_HAS_PWD -U_HAS_ISATTY
+EXE              :=
+DIRSEP           := /
+RM               := rm -rf
+SHELL             = /bin/sh
+
+endif
+endif
+############### End of Customization Section
+
+
+#### 3. CFLIB Library
+
+CFLIB                     := cf
+CFLIB_DEBUG               := cf_debug
+
+#### 4. CFLIB Examples
+
+CFLIB_EXAMPLES_DIR        := examples
+CFLIB_EXAMPLES            := cf_test fill fifi utilities/mktabinf
+							 # utilities/cf_minimal
+
+CFLIB_EXAMPLES_LIBVERSION :=
+							# e.g. debug
+
+#### 5. Derived Definitions
+
+CFLIB_PATH                := $(CFLIB_ROOT)$(DIRSEP)$(CFLIB_PROJECT)
+CFLIB_PATH_DEBUG          := $(CFLIB_ROOT)$(DIRSEP)$(CFLIB_PROJECT)_debug
+CFLIB_EXAMPLES_PATH       := $(CFLIB_ROOT)$(DIRSEP)$(CFLIB_EXAMPLES_DIR)
+CFLIB_EXAMPLES_EXECS      := $(foreach example, $(CFLIB_EXAMPLES), $(example)$(EXE))
+CFLIB_EXAMPLES_EXEC_FILES := $(foreach exefile, $(CFLIB_EXAMPLES_EXECS), $(CFLIB_EXAMPLES_DIR)$(DIRSEP)$(exefile))
+#ifdef CFLIB_EXAMPLES_LIBVERSION
+CFLIB_EXAMPLES_LIB_PATH   := $(CFLIB_PATH)_$(CFLIB_EXAMPLES_LIBVERSION)
+CFLIB_EXAMPLES_LIB        := $(CFLIB)_$(CFLIB_EXAMPLES_LIBVERSION)
+#else
+CFLIB_EXAMPLES_LIB_PATH   := $(CFLIB_PATH)
+CFLIB_EXAMPLES_LIB        := $(CFLIB)
+#endif
+#ifdef MAKE_NOMULTITARGET
+CFLIB_EXAMPLES_TARGET     := cf_test$(EXE)
+#else
+CFLIB_EXAMPLES_TARGET     := $(CFLIB_EXAMPLES_EXECS)
+#endif
+CFLIB_EXAMPLES_LIB_FILE   := $(CFLIB_EXAMPLES_LIB_PATH)$(DIRSEP)$(CFLIB_PREF)$(CFLIB_EXAMPLES_LIB)$(CFLIB_EXT)
+
+#### 5. (Eclipse) Build Configurations
+
+CFLIB_LIB_BUILDS := $(CFLIB_PROJECT) $(foreach build, $(CFLIB_ADD_BUILDS), $(CFLIB_PROJECT)_$(build))
+CFLIB_BUILDS     := $(CFLIB_LIB_BUILDS) $(CFLIB_EXAMPLES_DIR)
+
+########################## end makefile.init

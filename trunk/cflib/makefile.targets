@@ -1,0 +1,116 @@
+############################################
+#                                          #
+#  CFLIB - Flexible Configuration Library  #
+#  (c) 1995-2008 Stefan Habermehl          #
+#                                          #
+#  makefile.targets for Builds             #
+#                                          #
+#  Targets included at end of all          #
+#  Build Configurations                    #
+#                                          #
+#  GNU Make Build Environment              #
+#  based on Eclipse IDE Toolchains         #
+#                                          #
+#  @copyright (c) 2008 Stefan Habermehl    #
+#  @license GNU GPL v3+ (see LICENSE.txt)  #
+#                                          #
+############################################
+#
+# @version SVN: $Id: makefile.targets 81 2008-08-03 23:58:31Z stefan $
+#
+############################################
+
+#### Directories / Build Configurations
+
+%$(DIRSEP).update: 
+	@echo "Updating Build Configuration $(dir $@)"
+	@echo "coming from directory: $(CURDIR)"  
+	@cd "$(dir $@)" && make -C . all
+	@echo 'Finished updating directory: $(dir $@)'
+	@echo ' '
+
+#### Libraries
+
+$(CFLIB_BUILDS):: %: $(CFLIB_ROOT_REL)$(DIRSEP)%$(DIRSEP).update
+
+$(CFLIB_PREF)%$(CFLIB_EXT):
+	@echo "Building target $(notdir $@) in Directory $(dir $@)"
+	make $(dir $@).update  
+	@echo 'Finished building target: $@'
+	@echo ' '
+
+#### Misc. Targets
+
+rebuild: clean all
+
+help: info_system .targetcheck.all
+
+.update: all
+
+.targetcheck.%:
+	@echo "Target '$(patsubst .targetcheck.%,%,$@)' status  (0 = up to date, 1 = needs update, 2 = no rule):"
+	-@make -i -k -s -q $(patsubst .targetcheck.%,%,$@); echo Target status = $$?
+
+_info.mk:
+	@make -p -C ./ .targetcheck.all > $@
+
+info: info_system info_buildconf info_project info_commands
+
+info_system:
+	@echo
+	@echo '#### CFLIB Makefile Infos:'
+	@echo
+	@echo -n "## System: "
+	@uname -a
+	@echo
+	@echo OS = "$(OS)", OSTYPE = "$(OSTYPE)"
+	@echo SHELL = "$(SHELL)"
+	@echo PWD = "$(PWD)"
+	@echo CURDIR = $(CURDIR)
+	@echo PATH = $(PATH)
+	@echo RM = $(RM)
+	@echo
+	@echo '## Make:'
+	@echo
+	@echo MAKE_COMMAND = $(MAKE_COMMAND)
+	@echo MAKE_VERSION = $(MAKE_VERSION)
+	@echo MAKELEVEL = $(MAKELEVEL)
+	@echo MAKECMDGOALS = $(MAKECMDGOALS)
+	@echo MAKEFILES = $(MAKEFILES)
+	@echo ' '
+	
+info_buildconf:
+	@echo '## Eclipse Build System:'
+	@echo
+	@echo LIBS = $(LIBS)
+	@echo OBJS = $(OBJS)
+	@echo ARCHIVES = $(ARCHIVES)
+	@echo USER_OBJS = $(USER_OBJS)
+	@echo OBJ_SRCS = $(OBJ_SRCS)
+	@echo ASM_SRCS = $(ASM_SRCS)
+	@echo O_SRCS = $(O_SRCS)
+	@echo C_SRCS = $(C_SRCS)
+	@echo S_SRCS = $(S_SRCS)
+	@echo C_DEPS = $(C_DEPS)
+	@echo SUBDIRS = $(SUBDIRS)
+	@echo
+	
+info_project: _info.mk
+	@echo '## CFLIB variables:'
+	@echo
+	@grep "^CFLIB" $< | sort
+	@echo DIRSEP = $(DIRSEP)
+	@echo EXE = $(EXE)
+	@echo
+
+info_commands: _info.mk
+	@echo '## Command Overview:'
+	@echo
+	@grep "#.*commands to execute.*from" -A3 -B5 $< | grep -v "^# *[FINMP0-9]" | grep -v '^[- ]*$$'
+	@echo
+
+.PHONY: all rebuild clean distclean \
+		examples package dist archive \
+		help info info_system info_buildconf info_project info_commands
+
+####################### end makefile.targets
