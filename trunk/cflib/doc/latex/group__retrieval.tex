@@ -1,0 +1,311 @@
+\hypertarget{group__retrieval}{
+\subsection{Information Retrieval}
+\label{group__retrieval}\index{Information Retrieval@{Information Retrieval}}
+}
+These functions and macros read entries from an initialized CFLIB database.  
+
+
+\subsubsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{group__retrieval_g5e2da3f6cf3e36a910362660d167f790}{cfget}(a)~cfgetent(a,0)
+\begin{CompactList}\small\item\em Get value (content) of named entry. \item\end{CompactList}\item 
+\#define \hyperlink{group__retrieval_g8cf5f53c5b05ec5ca4f5145010f84eb4}{cfgetstr}(a)~((char $\ast$)cfgetent(a,CF\_\-STR))
+\begin{CompactList}\small\item\em Inquire CFLIB DB for String in content of named entry. \item\end{CompactList}\item 
+\#define \hyperlink{group__retrieval_g591b741a05205e1ddd599146b996d755}{cfgetnum}(a)~($\ast$(int $\ast$)cfgetent(a,CF\_\-INT))
+\begin{CompactList}\small\item\em Inquire CFLIB DB for Integer value in content of named entry. \item\end{CompactList}\item 
+\#define \hyperlink{group__retrieval_g5f5ec5179e69c2bdfb06ff38a5af16e4}{cfgetreal}(a)~($\ast$(float $\ast$)cfgetent(a,CF\_\-REAL))
+\begin{CompactList}\small\item\em Inquire CFLIB DB for Float (Real) value in content of named entry. \item\end{CompactList}\item 
+\#define \hyperlink{group__retrieval_gc0188464b59267e14b5c44efb1d4a0f2}{cfgetflag}(a)~($\ast$(int $\ast$)cfgetent(a,CF\_\-FLAG))
+\begin{CompactList}\small\item\em Inquire CFLIB DB for Flag value in content of named entry. \item\end{CompactList}\item 
+\#define \hyperlink{group__retrieval_g09929d4a48932749dd9d0d32d0f3f08c}{cfflaginq}(a, b)~($\ast$(int $\ast$)cfgetent(a,CF\_\-FLGINQ$|$(31\&b)))
+\begin{CompactList}\small\item\em Inquire CFLIB DB for Bit set in entry's Special Options Fag \hyperlink{struct_c_o_n_f_i_g_b04d08abdf758c0400caaded716f4089}{CONFIG::flag}. \item\end{CompactList}\item 
+\#define \hyperlink{group__retrieval_gdf84eed41bdaa0a6cd8cd474c79d50b1}{cfgetsrc}(a)~($\ast$(int $\ast$)cfgetent(a,CF\_\-SRC))
+\begin{CompactList}\small\item\em Inquire CFLIB DB for Source of named entry's content. \item\end{CompactList}\item 
+\#define \hyperlink{group__retrieval_g6ef6076e946383ab198ee26b9aa5603a}{cfgetres}()~((char $\ast$)cfgetent(\char`\"{}\char`\"{},CF\_\-RESID))
+\begin{CompactList}\small\item\em Get next Residual Command Line Argument from CFLIB DB. \item\end{CompactList}\item 
+\#define \hyperlink{group__retrieval_g9999522b2acf8760f420d2567e7f7c50}{cfgetcpr}()~\char`\"{}CFLIB (c) 1994-2009 Stefan Habermehl\char`\"{}
+\begin{CompactList}\small\item\em Get Copyright Notice. \item\end{CompactList}\end{CompactItemize}
+\subsubsection*{Functions}
+\begin{CompactItemize}
+\item 
+void $\ast$ \hyperlink{group__retrieval_g872f83b13a8f722176f5e299f2a42e0f}{cfgetent} (char $\ast$name, \hyperlink{group__special__options__mask_g4854f1596d5c6e0604a478fa9a2e23f0}{CFFLAGTYP} typ)
+\begin{CompactList}\small\item\em Library internal function, use appropriate Macro functions! \item\end{CompactList}\item 
+int \hyperlink{group__retrieval_gc4e376e3630e9b25655ee0e0b1a54a5b}{cfgetvers} (void)
+\begin{CompactList}\small\item\em Get Library Version/Patchlevel. \item\end{CompactList}\item 
+char $\ast$ \hyperlink{group__retrieval_gbd4ca2adbcac9eef4d1363424e440662}{cfgetsubvers} (void)
+\begin{CompactList}\small\item\em Get Library Subversion Details. \item\end{CompactList}\item 
+char $\ast$ \hyperlink{group__retrieval_ge272c1881db940e56c8cc364df730271}{cfgetusg} (void)
+\begin{CompactList}\small\item\em Get Usage Message for (Terminal) Output. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsubsection{Detailed Description}
+These functions and macros read entries from an initialized CFLIB database. 
+
+The exact name of the required parameter must be given as argument, where indicated. 
+
+\subsubsection{Define Documentation}
+\hypertarget{group__retrieval_g5e2da3f6cf3e36a910362660d167f790}{
+\index{retrieval@{retrieval}!cfget@{cfget}}
+\index{cfget@{cfget}!retrieval@{retrieval}}
+\paragraph[{cfget}]{\setlength{\rightskip}{0pt plus 5cm}\#define cfget(a)~cfgetent(a,0)}\hfill}
+\label{group__retrieval_g5e2da3f6cf3e36a910362660d167f790}
+
+
+Get value (content) of named entry. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em a}]Entry's name\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Depending on configured type, see \hyperlink{group__retrieval_g872f83b13a8f722176f5e299f2a42e0f}{cfgetent()} and Macro Definitions! \end{Desc}
+\hypertarget{group__retrieval_g8cf5f53c5b05ec5ca4f5145010f84eb4}{
+\index{retrieval@{retrieval}!cfgetstr@{cfgetstr}}
+\index{cfgetstr@{cfgetstr}!retrieval@{retrieval}}
+\paragraph[{cfgetstr}]{\setlength{\rightskip}{0pt plus 5cm}\#define cfgetstr(a)~((char $\ast$)cfgetent(a,CF\_\-STR))}\hfill}
+\label{group__retrieval_g8cf5f53c5b05ec5ca4f5145010f84eb4}
+
+
+Inquire CFLIB DB for String in content of named entry. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em a}]Entry's name\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item {\tt NULL} : An error occurred:\begin{itemize}
+\item No configuration database available\item No entry of this name available\item Content is really {\tt NULL}, Check that with \hyperlink{group__retrieval_gc0188464b59267e14b5c44efb1d4a0f2}{cfgetflag()} !!\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item Any other : Pointer to string in content of entry name \end{itemize}
+\end{Desc}
+\hypertarget{group__retrieval_g591b741a05205e1ddd599146b996d755}{
+\index{retrieval@{retrieval}!cfgetnum@{cfgetnum}}
+\index{cfgetnum@{cfgetnum}!retrieval@{retrieval}}
+\paragraph[{cfgetnum}]{\setlength{\rightskip}{0pt plus 5cm}\#define cfgetnum(a)~($\ast$(int $\ast$)cfgetent(a,CF\_\-INT))}\hfill}
+\label{group__retrieval_g591b741a05205e1ddd599146b996d755}
+
+
+Inquire CFLIB DB for Integer value in content of named entry. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em a}]Entry's name\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item \hyperlink{group__errors_gc6a0861a0e376a94e540d7ba95ebe9cf}{CFE\_\-INF} : Integer inquiry failed because of\begin{itemize}
+\item No configuration database available\item No entry of this name available\item Content doesn't begin with digit\item Content is a {\tt NULL} pointer\item Content is really \hyperlink{group__errors_gc6a0861a0e376a94e540d7ba95ebe9cf}{CFE\_\-INF}, Check that with \hyperlink{group__retrieval_g8cf5f53c5b05ec5ca4f5145010f84eb4}{cfgetstr()} !!\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item Any other : Integer value for named entry \end{itemize}
+\end{Desc}
+\hypertarget{group__retrieval_g5f5ec5179e69c2bdfb06ff38a5af16e4}{
+\index{retrieval@{retrieval}!cfgetreal@{cfgetreal}}
+\index{cfgetreal@{cfgetreal}!retrieval@{retrieval}}
+\paragraph[{cfgetreal}]{\setlength{\rightskip}{0pt plus 5cm}\#define cfgetreal(a)~($\ast$(float $\ast$)cfgetent(a,CF\_\-REAL))}\hfill}
+\label{group__retrieval_g5f5ec5179e69c2bdfb06ff38a5af16e4}
+
+
+Inquire CFLIB DB for Float (Real) value in content of named entry. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em a}]Entry's name\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item \hyperlink{group__errors_g0415e4b197dc2908a58c026c4e621578}{CFE\_\-RNF} : Real/float value inquiry failed because of\begin{itemize}
+\item No configuration database available\item No entry of this name available\item Content doesn't begin with digit or signum (+/-)\item Content is a {\tt NULL} pointer\item Content is really \hyperlink{group__errors_g0415e4b197dc2908a58c026c4e621578}{CFE\_\-RNF}, Check that with \hyperlink{group__retrieval_g8cf5f53c5b05ec5ca4f5145010f84eb4}{cfgetstr()} !!\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item Any other : Float value for named entry \end{itemize}
+\end{Desc}
+\hypertarget{group__retrieval_gc0188464b59267e14b5c44efb1d4a0f2}{
+\index{retrieval@{retrieval}!cfgetflag@{cfgetflag}}
+\index{cfgetflag@{cfgetflag}!retrieval@{retrieval}}
+\paragraph[{cfgetflag}]{\setlength{\rightskip}{0pt plus 5cm}\#define cfgetflag(a)~($\ast$(int $\ast$)cfgetent(a,CF\_\-FLAG))}\hfill}
+\label{group__retrieval_gc0188464b59267e14b5c44efb1d4a0f2}
+
+
+Inquire CFLIB DB for Flag value in content of named entry. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em a}]Entry's name\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item {\tt TRUE} (1) : Flag is set\item {\tt FALSE} (0) : Flag is not set\item {\tt $<$0} : An error occurred: \begin{itemize}
+\item \hyperlink{group__errors_gf8cd36471ddcc549668f49238855609d}{CFE\_\-NCA} : No configuration database available \item \hyperlink{group__errors_g7f7e54a5ccefa34556fe6da3b35b4f27}{CFE\_\-NEA} : No entry of this name available \item \hyperlink{group__errors_gaa38e8556d85b1bb41037b3bd022bc28}{CFE\_\-ECP} : Entry's content is a {\tt NULL} pointer \end{itemize}
+\end{itemize}
+\end{Desc}
+\hypertarget{group__retrieval_g09929d4a48932749dd9d0d32d0f3f08c}{
+\index{retrieval@{retrieval}!cfflaginq@{cfflaginq}}
+\index{cfflaginq@{cfflaginq}!retrieval@{retrieval}}
+\paragraph[{cfflaginq}]{\setlength{\rightskip}{0pt plus 5cm}\#define cfflaginq(a, \/  b)~($\ast$(int $\ast$)cfgetent(a,CF\_\-FLGINQ$|$(31\&b)))}\hfill}
+\label{group__retrieval_g09929d4a48932749dd9d0d32d0f3f08c}
+
+
+Inquire CFLIB DB for Bit set in entry's Special Options Fag \hyperlink{struct_c_o_n_f_i_g_b04d08abdf758c0400caaded716f4089}{CONFIG::flag}. 
+
+Debugging Function
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em a}]Entry's name \item[{\em b}]Bit Offset, {\tt 0$<$=b$<$=31} \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item {\tt TRUE} ({\tt 1}) : Flag is set\item {\tt FALSE} ({\tt 0}) : Flag is not set\item {\tt $<$0} : An error occurred: \begin{itemize}
+\item \hyperlink{group__errors_gf8cd36471ddcc549668f49238855609d}{CFE\_\-NCA} : No Configuration database Available.  \item \hyperlink{group__errors_g7f7e54a5ccefa34556fe6da3b35b4f27}{CFE\_\-NEA} : No Entry with that name Available.  \end{itemize}
+\end{itemize}
+\end{Desc}
+\hypertarget{group__retrieval_gdf84eed41bdaa0a6cd8cd474c79d50b1}{
+\index{retrieval@{retrieval}!cfgetsrc@{cfgetsrc}}
+\index{cfgetsrc@{cfgetsrc}!retrieval@{retrieval}}
+\paragraph[{cfgetsrc}]{\setlength{\rightskip}{0pt plus 5cm}\#define cfgetsrc(a)~($\ast$(int $\ast$)cfgetent(a,CF\_\-SRC))}\hfill}
+\label{group__retrieval_gdf84eed41bdaa0a6cd8cd474c79d50b1}
+
+
+Inquire CFLIB DB for Source of named entry's content. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em a}]Entry's name\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item {\tt 0-6} : Source of entry's content: \begin{itemize}
+\item {\tt 0} : \hyperlink{group__setting__saving_g9553f7a24b080660793a560c2bc8f210}{cfputstr()} call \item {\tt 1} : Command line / Arguments \item {\tt 2} : Environment \item {\tt 3} : Private Configuration File \item {\tt 4} : System Configuration File \item {\tt 5} : Default setting \item {\tt 6} : Interactive input (query)\end{itemize}
+\item {\tt $<$0} : An error occurred: \begin{itemize}
+\item \hyperlink{group__errors_gf8cd36471ddcc549668f49238855609d}{CFE\_\-NCA} : No configuration database available \item \hyperlink{group__errors_g7f7e54a5ccefa34556fe6da3b35b4f27}{CFE\_\-NEA} : No entry of this name available \item \hyperlink{group__errors_g5db4a12696dff1db26958db1be075be9}{CFE\_\-NSS} : No source set (should not happen!) \end{itemize}
+\end{itemize}
+\end{Desc}
+\hypertarget{group__retrieval_g6ef6076e946383ab198ee26b9aa5603a}{
+\index{retrieval@{retrieval}!cfgetres@{cfgetres}}
+\index{cfgetres@{cfgetres}!retrieval@{retrieval}}
+\paragraph[{cfgetres}]{\setlength{\rightskip}{0pt plus 5cm}\#define cfgetres()~((char $\ast$)cfgetent(\char`\"{}\char`\"{},CF\_\-RESID))}\hfill}
+\label{group__retrieval_g6ef6076e946383ab198ee26b9aa5603a}
+
+
+Get next Residual Command Line Argument from CFLIB DB. 
+
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item {\tt NULL} : An error occurred:\begin{itemize}
+\item No Configuration database Available. \item No more residual arguments available\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item Any other : Pointer to string content\end{itemize}
+\end{Desc}
+\begin{Desc}
+\item[See also:]\hyperlink{config_levels_residuals}{Residual Items} \end{Desc}
+\hypertarget{group__retrieval_g9999522b2acf8760f420d2567e7f7c50}{
+\index{retrieval@{retrieval}!cfgetcpr@{cfgetcpr}}
+\index{cfgetcpr@{cfgetcpr}!retrieval@{retrieval}}
+\paragraph[{cfgetcpr}]{\setlength{\rightskip}{0pt plus 5cm}\#define cfgetcpr()~\char`\"{}CFLIB (c) 1994-2009 Stefan Habermehl\char`\"{}}\hfill}
+\label{group__retrieval_g9999522b2acf8760f420d2567e7f7c50}
+
+
+Get Copyright Notice. 
+
+\begin{Desc}
+\item[Returns:]Pointer to Copyright Message String \end{Desc}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{group__retrieval_g872f83b13a8f722176f5e299f2a42e0f}{
+\index{retrieval@{retrieval}!cfgetent@{cfgetent}}
+\index{cfgetent@{cfgetent}!retrieval@{retrieval}}
+\paragraph[{cfgetent}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ cfgetent (char $\ast$ {\em name}, \/  {\bf CFFLAGTYP} {\em typ})}\hfill}
+\label{group__retrieval_g872f83b13a8f722176f5e299f2a42e0f}
+
+
+Library internal function, use appropriate Macro functions! 
+
+Inquire configuration database for content of entry name
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em name}]Entry's name \item[{\em typ}]Expected/required type of content: \begin{itemize}
+\item {\tt 0} : Get type from entry's flag \item \hyperlink{group__special__options__mask_gb33869d596619ad14675c053925a42e0}{CF\_\-INT} : Integer \item \hyperlink{group__special__options__mask_geefdbef320cbd7179f1fb0ebe0fcf5ce}{CF\_\-REAL} : Real \item \hyperlink{group__special__options__mask_g1d1f1d1b6eac6b5d9970102318ab2667}{CF\_\-FLAG} : Flag \item \hyperlink{group__special__options__mask_g64c30a2865061d0c1074bc6ec91e3dcf}{CF\_\-STR} : String \item \hyperlink{group__special__options__mask_gd9b1f659b11c529a0ed1035caf8b239b}{CF\_\-SRC} : Source \item \hyperlink{group__special__options__mask_g36792935eec7c6636b6aea8df82f7480}{CF\_\-FLGINQ} : Bit in entry flag (bit no. in lowest bytes) \item \hyperlink{group__special__options__mask_g5415b257c706aae33d91d3947a3429c0}{CF\_\-RESID} : Residual argument \item Anything else : String\end{itemize}
+\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item for \hyperlink{group__special__options__mask_g64c30a2865061d0c1074bc6ec91e3dcf}{CF\_\-STR}, \hyperlink{group__special__options__mask_g5415b257c706aae33d91d3947a3429c0}{CF\_\-RESID} or default:\end{itemize}
+\begin{itemize}
+\item {\tt NULL} : An error occurred or nothing available:\begin{itemize}
+\item No configuration database available\item No entry of this name available\item The entry's content is really {\tt NULL}, Check that with \hyperlink{group__retrieval_gc0188464b59267e14b5c44efb1d4a0f2}{cfgetflag()} !!\item No more residual argument (for \hyperlink{group__special__options__mask_g5415b257c706aae33d91d3947a3429c0}{CF\_\-RESID})\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item any other pointer to string in content of entry name\end{itemize}
+\begin{itemize}
+\item for others: Pointer to return values of the corresponding macro function \end{itemize}
+\end{Desc}
+\hypertarget{group__retrieval_gc4e376e3630e9b25655ee0e0b1a54a5b}{
+\index{retrieval@{retrieval}!cfgetvers@{cfgetvers}}
+\index{cfgetvers@{cfgetvers}!retrieval@{retrieval}}
+\paragraph[{cfgetvers}]{\setlength{\rightskip}{0pt plus 5cm}int cfgetvers (void)}\hfill}
+\label{group__retrieval_gc4e376e3630e9b25655ee0e0b1a54a5b}
+
+
+Get Library Version/Patchlevel. 
+
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item {\tt $>$0} : Libary Patchlevel \item {\tt $<$=0} : Error \end{itemize}
+\end{Desc}
+\hypertarget{group__retrieval_gbd4ca2adbcac9eef4d1363424e440662}{
+\index{retrieval@{retrieval}!cfgetsubvers@{cfgetsubvers}}
+\index{cfgetsubvers@{cfgetsubvers}!retrieval@{retrieval}}
+\paragraph[{cfgetsubvers}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ cfgetsubvers (void)}\hfill}
+\label{group__retrieval_gbd4ca2adbcac9eef4d1363424e440662}
+
+
+Get Library Subversion Details. 
+
+The Patchlevel returned by this function should match \hyperlink{group__cflib__core_g0beb5d41f2b506f1c969c56731bb9490}{Patchlevel} in the public include file \hyperlink{cf_8h}{cf.h}
+
+\begin{Desc}
+\item[Returns:]Libary Patchlevel and Subversion (Source Revision marked by library internal header file {\em cflib.h\/}.\end{Desc}
+The return value is \char`\"{}burned\char`\"{} into the library executable and looks like: 
+
+\footnotesize\begin{verbatim}CFLIB PL 20 $LastChangedRevision: 128 $ \end{verbatim}
+\normalsize
+ \hypertarget{group__retrieval_ge272c1881db940e56c8cc364df730271}{
+\index{retrieval@{retrieval}!cfgetusg@{cfgetusg}}
+\index{cfgetusg@{cfgetusg}!retrieval@{retrieval}}
+\paragraph[{cfgetusg}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ cfgetusg (void)}\hfill}
+\label{group__retrieval_ge272c1881db940e56c8cc364df730271}
+
+
+Get Usage Message for (Terminal) Output. 
+
+There are two flavours:
+
+1. Let CFLIB do the job: Usage message is generated based on settings for commandline parsing and \hyperlink{group__special__options__mask}{Special Options Mask} found in the database
+
+2. Deliver your own Usage Message: Just set the \hyperlink{group__special__options__mask_gc30981201d7455071cef38a0133b9228}{CF\_\-USAGE} Flag in the \hyperlink{group__special__options__mask}{Special Options Mask} of one parameter in the database to get a custom usage message (from hardcoded default, configuration file or environment). The delivered custom message string is taken as a format string for the printf() function: Use \char`\"{}\%s\char`\"{} in the message string to have the program name inserted that CFLIB got from the default parameter {\bf \char`\"{}CF\_\-PRGNAME\char`\"{}} which by default is set to the name of the running program from the commandline at startup.
+
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item Pointer to usage string\item {\tt NULL} : An error occurred: \begin{itemize}
+\item No Configuration database Available.  \item malloc() for usage string failed\end{itemize}
+\end{itemize}
+\end{Desc}
+\begin{Desc}
+\item[See also:]\hyperlink{group__cflib__core_gd36d92b5077988734cdfeb0f47c0488e}{CF\_\-MAXUSAGE} : Maximum string length for usage string.  
+
+\hyperlink{group__cflib__core_gc568df32f08baaff9c162521856c3ec7}{CF\_\-USG\_\-DEFCOLS} : Default terminal width for usage string.  \end{Desc}

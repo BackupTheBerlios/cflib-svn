@@ -1,0 +1,57 @@
+\hypertarget{group__report__generation}{
+\subsection{Report Generation}
+\label{group__report__generation}\index{Report Generation@{Report Generation}}
+}
+\subsubsection*{Defines}
+\begin{CompactItemize}
+\item 
+\hypertarget{group__report__generation_g5547641c939fd4d071e9aeaa7c956cac}{
+\#define \hyperlink{group__report__generation_g5547641c939fd4d071e9aeaa7c956cac}{CF\_\-DEF\_\-VARDELIM}~\char`\"{}\$()\char`\"{}}
+\label{group__report__generation_g5547641c939fd4d071e9aeaa7c956cac}
+
+\begin{CompactList}\small\item\em Default variable delimiter for \hyperlink{group__report__generation_g2f8350e7d032c87b2a0e1cb6149a85ec}{cfform()}. \item\end{CompactList}\item 
+\hypertarget{group__report__generation_g7b96ba1ca10909659d50eabb8b5af611}{
+\#define \hyperlink{group__report__generation_g7b96ba1ca10909659d50eabb8b5af611}{CF\_\-MAXINC}~8}
+\label{group__report__generation_g7b96ba1ca10909659d50eabb8b5af611}
+
+\begin{CompactList}\small\item\em Maximum number of nested includes for \hyperlink{group__report__generation_g2f8350e7d032c87b2a0e1cb6149a85ec}{cfform()}. \item\end{CompactList}\end{CompactItemize}
+\subsubsection*{Functions}
+\begin{CompactItemize}
+\item 
+int \hyperlink{group__report__generation_g2f8350e7d032c87b2a0e1cb6149a85ec}{cfform} (char $\ast$file, char $\ast$outfile, char $\ast$vd, int mode)
+\begin{CompactList}\small\item\em Process a Template from file or {\tt stdin} and write generated Report to File or {\tt stdout}. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{group__report__generation_g2f8350e7d032c87b2a0e1cb6149a85ec}{
+\index{report\_\-generation@{report\_\-generation}!cfform@{cfform}}
+\index{cfform@{cfform}!report_generation@{report\_\-generation}}
+\paragraph[{cfform}]{\setlength{\rightskip}{0pt plus 5cm}int cfform (char $\ast$ {\em file}, \/  char $\ast$ {\em outfile}, \/  char $\ast$ {\em vd}, \/  int {\em mode})}\hfill}
+\label{group__report__generation_g2f8350e7d032c87b2a0e1cb6149a85ec}
+
+
+Process a Template from file or {\tt stdin} and write generated Report to File or {\tt stdout}. 
+
+The Report Template contains {\bf Variables} like '\$({\em ident\/})' or whatever you set in {\em vd\/}. {\em ident\/} may refer to a:
+
+\begin{itemize}
+\item Parameter Name like '\$({\em name\/})' : Substitute variable by parameter's value (from DB)\item Include File Path like '\$(FILE:{\em /my/path/to/incfile\/})' : Substitute variable by content of include file\item File Path and Section Include like '\$(FILE:{\em incfile\#{\em sect\/})'\/} : Include section from include file between \mbox{[}{\em sect\/}\mbox{]} and next \mbox{[}{\em \/}...\mbox{]}\item Variable File Include like '\$(FILE::{\em varname\/})' : Include file from location given in parameter {\em varname\/} \end{itemize}
+
+
+\begin{Desc}
+\item[See also:]\hyperlink{advanced_example}{Advanced Usage Example}\end{Desc}
+\begin{Desc}
+\item[\hyperlink{todo__todo000003}{Todo}]Make \hyperlink{group__report__generation_g2f8350e7d032c87b2a0e1cb6149a85ec}{cfform()} work with buffers instead of files\end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em file}]Name of Template File, {\tt NULL} for {\tt stdin} \item[{\em outfile}]Name of Output File, {\tt NULL} for {\tt stdout} \item[{\em vd}]Variable Delimiters: string containing the three variable delimiters in the first three chars: to have variables like '\$({\em name\/})', let the string be '\$()'. This is also the default, if {\em vd\/} is {\tt NULL} or string length $<$ 3\item[{\em mode}]Mode Mask: \begin{itemize}
+\item {\tt 0} : Normal \item {\tt 1} : Query for unresolved variables, (try to) include them in database \item {\tt 2} : Unset \hyperlink{group__special__options__mask_gd76153c65f68cc0ee5c1a04c8c3e80bf}{CF\_\-NOSAVE} flag for parsed vars \item {\tt 4} : Outfile Write {\em append\/}, else {\em write\/} \end{itemize}
+\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item {\tt 0} : Configuration has been saved to file successfully \item {\tt !=0} : An error occurred:\begin{itemize}
+\item \hyperlink{group__errors_gf8cd36471ddcc549668f49238855609d}{CFE\_\-NCA} : No Configuration database Available. \item \hyperlink{group__errors_ga3d4c51112fd70d482a4a77c95dc3daf}{CFE\_\-FNF} : File Not Found, read access error. \item \hyperlink{group__errors_gd1375fe531ed1c13233e2fa7ae55534f}{CFE\_\-WAE} : Write Access Error.  \end{itemize}
+\end{itemize}
+\end{Desc}

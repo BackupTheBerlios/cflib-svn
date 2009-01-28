@@ -1,0 +1,43 @@
+.TH "properties" 3 "28 Jan 2009" "Version Patchlevel 20" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+properties \- General Notes 
+.SH "The names 'CFLIB', 'libcf', '*cf*'"
+.PP
+All 'names' in this library source and documentation are nothing but technical acronyms just as 'src', 'inc', 'C' and are \fBnot\fP registered names, trademarks or anything like that ;-) You may change the names of the library, the include file and on compilation the function names and defines to whatever you like :-)
+.SH "Input and Output"
+.PP
+CFLIB is designed to be usable as a \fBFilter\fP program that reads from \fCstdin\fP and writes to \fCstdout\fP wherever it was desirable.
+.PP
+None of the library functions will produce any terminal output (to \fCstdout\fP or \fCstderr\fP) unless:
+.PP
+.IP "\(bu" 2
+The \fBCF_QUERY\fP flag is set in the \fBSpecial Options Mask\fP of an entry and the parameter value is still unassigned after parsing all other possible sources in \fBcfinit()\fP.
+.PP
+.PP
+.IP "\(bu" 2
+You call a function that reads from or writes to files with arguments that trigger the use of \fCstdin\fP, \fCstdout\fP, \fCstderr\fP etc. according to the function's documentation.
+.PP
+.SH "General (future) tasks"
+.PP
+\fBTodo\fP
+.RS 4
+Make proper Man Pages with function references etc. 
+.PP
+Make Doxygen Developer Documentation 
+.PP
+More Modularization! Still very similar code in various functions 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBBug List\fP
+.RE
+.PP
+.SH "Other general issues"
+.PP
+.IP "\(bu" 2
+\fBLibrary Versions\fP 
+.PP
+

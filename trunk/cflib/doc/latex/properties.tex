@@ -1,0 +1,24 @@
+\hypertarget{properties_names}{}\subsection{The names \char`\"{}CFLIB\char`\"{}, \char`\"{}libcf\char`\"{}, \char`\"{}$\ast$cf$\ast$\char`\"{}}\label{properties_names}
+All \char`\"{}names\char`\"{} in this library source and documentation are nothing but technical acronyms just as \char`\"{}src\char`\"{}, \char`\"{}inc\char`\"{}, \char`\"{}C\char`\"{} and are {\bf not} registered names, trademarks or anything like that ;-) You may change the names of the library, the include file and on compilation the function names and defines to whatever you like :-)\hypertarget{properties_io}{}\subsection{Input and Output}\label{properties_io}
+CFLIB is designed to be usable as a {\bf Filter} program that reads from {\tt stdin} and writes to {\tt stdout} wherever it was desirable.
+
+None of the library functions will produce any terminal output (to {\tt stdout} or {\tt stderr}) unless:
+
+\begin{itemize}
+\item The \hyperlink{group__special__options__mask_ge39e0d9b4e9af8c6d4b3676783dd26e0}{CF\_\-QUERY} flag is set in the \hyperlink{group__special__options__mask}{Special Options Mask} of an entry and the parameter value is still unassigned after parsing all other possible sources in \hyperlink{group__cflib__core_ge593ff607f853bd5fc16a16bb6759314}{cfinit()}.\end{itemize}
+
+
+\begin{itemize}
+\item You call a function that reads from or writes to files with arguments that trigger the use of {\tt stdin}, {\tt stdout}, {\tt stderr} etc. according to the function's documentation.\end{itemize}
+\hypertarget{properties_general_tasks}{}\subsection{General (future) tasks}\label{properties_general_tasks}
+\begin{Desc}
+\item[\hyperlink{todo__todo000002}{Todo}]Make proper Man Pages with function references etc. 
+
+Make Doxygen Developer Documentation 
+
+More Modularization! Still very similar code in various functions \end{Desc}
+\begin{Desc}
+\item[See also:]\hyperlink{bug}{Bug List}\end{Desc}
+\hypertarget{properties_misc_general_issues}{}\subsection{Other general issues}\label{properties_misc_general_issues}
+\begin{itemize}
+\item \hyperlink{development_versions}{Library Versions} \end{itemize}

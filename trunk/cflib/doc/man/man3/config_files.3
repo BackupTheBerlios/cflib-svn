@@ -1,0 +1,77 @@
+.TH "config_files" 3 "28 Jan 2009" "Version Patchlevel 20" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+config_files \- Configuration Files 
+A major task of the library is handling import and export of configuration parameters from/to files.
+.PP
+CFLIB knows two types of configuration files:
+.PP
+.IP "\(bu" 2
+\fB'Private Configuration File'\fP - User and/or program specific file in simple format to be read on initialization and optionally be updated by \fBcfsave()\fP
+.PP
+.PP
+.IP "\(bu" 2
+\fB'System Configuration File'\fP - System and/or project specific file in extended format (supporting sections, see below) will only be used as a data source by \fBcfinit()\fP and will not be touched by \fBcfsave()\fP unless you explicitly specify the filename.
+.PP
+.SH "Configuration File Format"
+.PP
+In a configuration file lines beginning with \fC'#'\fP are treated as comments and are ignored. Blank lines are ignored, too. A valid line in the file is of the form:
+.PP
+<\fIname>\fP = <\fIentry>\fP 
+.PP
+Blank chars around the \fC'='\fP are ignored. The name must match one of the entry's names in the initializer. In fact, any line not containing a \fC'='\fP will be ignored, but it's better to indicate comments with \fC'#'!\fP 
+.PP
+The optional sections in the system configuration file begin with a line like:
+.PP
+[<\fIsectionname>\fP]
+.PP
+and end with another line like this or with the file's last line. Anything after the closing bracket is ignored.
+.PP
+A simple example of a valid configuration file could look like this: 
+.PP
+.nf
+ # This is my private configuration file for Project 1356 Branch C in spe
+
+ Search_Path  = /my/subproject/directory:/general/settings/directory
+ Section      = project_1356
+ Outfile      = my_subproject.cnf
+ ask_if_empty =
+ My_Flag =      ON
+ VERBOSITY = 1
+
+.fi
+.PP
+.PP
+The corresponding system configuration file could look like this: 
+.PP
+.nf
+ # This is a system wide configuration file
+ [some_other_program]
+ blah = blubber
+ ...
+ [project_1356]
+ # Settings for Project 1356 Branch B
+ VERBOSITY = 3
+ Outfile = project_1356b.cnf
+ X_EUR_USD=1.4562
+ [some_other_project]
+ ...
+
+.fi
+.PP
+.SH "Reading Configuration Files"
+.PP
+A search for configuration files and import of data from these sources is only performed by the function \fBcfinit()\fP on initialization and only when appropriate Special Option Flags are set as described under \fBParsing of Configuration Files\fP.
+.PP
+Configuration files are read once when the configuration database is initialized by a call to \fBcfinit()\fP or \fBcfstart()\fP using the internal function cfreadfile().
+.SH "Writing a (private) Configuration File"
+.PP
+Parameter export does not depend on any specific setting and can be performed whenever and as often as you like. For writing a configuration file call \fBcfsave()\fP with either the name of the file or \fCNULL\fP, in which case the current value of the 'Private Configuration File' parameter will be used, if it exists. If an entry has the \fBCF_NOSAVE\fP flag set, it is excluded from saving. The 'System Configuration File' may not be referred to directly.
+.PP
+\fBAttention:\fP
+.RS 4
+Writing \fBsection\fP marks is \fBnot\fP supported! 
+.RE
+.PP
+

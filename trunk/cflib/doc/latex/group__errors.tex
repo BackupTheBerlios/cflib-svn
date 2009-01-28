@@ -1,0 +1,290 @@
+\hypertarget{group__errors}{
+\subsection{Error Handling}
+\label{group__errors}\index{Error Handling@{Error Handling}}
+}
+Error Codes, Functions and Structures.  
+
+
+\subsubsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{struct_c_o_n_f_e_r_r}{CONFERR}
+\begin{CompactList}\small\item\em Library Internal: Error List Item. \item\end{CompactList}\end{CompactItemize}
+\subsubsection*{Defines}
+\begin{CompactItemize}
+\item 
+\hypertarget{group__errors_gac0ac4dd97f14a0da37622a1497ea004}{
+\#define \hyperlink{group__errors_gac0ac4dd97f14a0da37622a1497ea004}{CFE\_\-INIT}~0}
+\label{group__errors_gac0ac4dd97f14a0da37622a1497ea004}
+
+\begin{CompactList}\small\item\em INITialize error input. \item\end{CompactList}\item 
+\hypertarget{group__errors_gbea2555a62593e79e32879620c4fc8de}{
+\#define \hyperlink{group__errors_gbea2555a62593e79e32879620c4fc8de}{CFE\_\-OK}~0}
+\label{group__errors_gbea2555a62593e79e32879620c4fc8de}
+
+\begin{CompactList}\small\item\em No error / everything OKay. \item\end{CompactList}\item 
+\hypertarget{group__errors_gbb576e88369c2eac1ffd41915292968c}{
+\#define \hyperlink{group__errors_gbb576e88369c2eac1ffd41915292968c}{CFE\_\-NEP}~1}
+\label{group__errors_gbb576e88369c2eac1ffd41915292968c}
+
+\begin{CompactList}\small\item\em New Entry successfully Put into DB. \item\end{CompactList}\item 
+\hypertarget{group__errors_gc799901241871d298d9bd9f79e1ce645}{
+\#define \hyperlink{group__errors_gc799901241871d298d9bd9f79e1ce645}{CFE\_\-EXIT}~1}
+\label{group__errors_gc799901241871d298d9bd9f79e1ce645}
+
+\begin{CompactList}\small\item\em Finish error input. \item\end{CompactList}\item 
+\hypertarget{group__errors_ge5e8ef219f287dc0ff0ca70433f78f0e}{
+\#define \hyperlink{group__errors_ge5e8ef219f287dc0ff0ca70433f78f0e}{CFE\_\-ORA}~20}
+\label{group__errors_ge5e8ef219f287dc0ff0ca70433f78f0e}
+
+\begin{CompactList}\small\item\em Option Requires an Argument. \item\end{CompactList}\item 
+\hypertarget{group__errors_g77e1698381143e412a7a4796b2b8f564}{
+\#define \hyperlink{group__errors_g77e1698381143e412a7a4796b2b8f564}{CFE\_\-UKO}~25}
+\label{group__errors_g77e1698381143e412a7a4796b2b8f564}
+
+\begin{CompactList}\small\item\em UnKnown Option. \item\end{CompactList}\item 
+\hypertarget{group__errors_ga3d4c51112fd70d482a4a77c95dc3daf}{
+\#define \hyperlink{group__errors_ga3d4c51112fd70d482a4a77c95dc3daf}{CFE\_\-FNF}~30}
+\label{group__errors_ga3d4c51112fd70d482a4a77c95dc3daf}
+
+\begin{CompactList}\small\item\em File Not Found, read access error. \item\end{CompactList}\item 
+\hypertarget{group__errors_ge1f1ad273da29546c89e9e6761b8b3e2}{
+\#define \hyperlink{group__errors_ge1f1ad273da29546c89e9e6761b8b3e2}{CFE\_\-NSE}~40}
+\label{group__errors_ge1f1ad273da29546c89e9e6761b8b3e2}
+
+\begin{CompactList}\small\item\em No Section specifier End found, missing \char`\"{}\mbox{]}\char`\"{}. \item\end{CompactList}\item 
+\hypertarget{group__errors_ge67acd8919ba3a30ca6a6f2857dc3628}{
+\#define \hyperlink{group__errors_ge67acd8919ba3a30ca6a6f2857dc3628}{CFE\_\-NSC}~50}
+\label{group__errors_ge67acd8919ba3a30ca6a6f2857dc3628}
+
+\begin{CompactList}\small\item\em No private Setfile Configured. \item\end{CompactList}\item 
+\hypertarget{group__errors_gd1375fe531ed1c13233e2fa7ae55534f}{
+\#define \hyperlink{group__errors_gd1375fe531ed1c13233e2fa7ae55534f}{CFE\_\-WAE}~60}
+\label{group__errors_gd1375fe531ed1c13233e2fa7ae55534f}
+
+\begin{CompactList}\small\item\em Write Access Error. \item\end{CompactList}\item 
+\hypertarget{group__errors_g939964b690f63b5484ec40fe8a4a7c56}{
+\#define \hyperlink{group__errors_g939964b690f63b5484ec40fe8a4a7c56}{CFE\_\-IFP}~61}
+\label{group__errors_g939964b690f63b5484ec40fe8a4a7c56}
+
+\begin{CompactList}\small\item\em Invalid Filename entry for Private setfile. \item\end{CompactList}\item 
+\hypertarget{group__errors_gc2b94fe4fcdaa5cc608add42857fd178}{
+\#define \hyperlink{group__errors_gc2b94fe4fcdaa5cc608add42857fd178}{CFE\_\-EWN}~70}
+\label{group__errors_gc2b94fe4fcdaa5cc608add42857fd178}
+
+\begin{CompactList}\small\item\em Entry Without Name. \item\end{CompactList}\item 
+\hypertarget{group__errors_g8d3bbe7352edc6ec8ecf54150c80349f}{
+\#define \hyperlink{group__errors_g8d3bbe7352edc6ec8ecf54150c80349f}{CFE\_\-ICF}~80}
+\label{group__errors_g8d3bbe7352edc6ec8ecf54150c80349f}
+
+\begin{CompactList}\small\item\em Invalid Combination of Flags. \item\end{CompactList}\item 
+\hypertarget{group__errors_g5457a3ff93e8c6d02be9c1813038f795}{
+\#define \hyperlink{group__errors_g5457a3ff93e8c6d02be9c1813038f795}{CFE\_\-EWC}~90}
+\label{group__errors_g5457a3ff93e8c6d02be9c1813038f795}
+
+\begin{CompactList}\small\item\em Entry Without Content. \item\end{CompactList}\item 
+\hypertarget{group__errors_ge30643e906d0e1fdd31f11f9c1523a52}{
+\#define \hyperlink{group__errors_ge30643e906d0e1fdd31f11f9c1523a52}{CFE\_\-UOS}~100}
+\label{group__errors_ge30643e906d0e1fdd31f11f9c1523a52}
+
+\begin{CompactList}\small\item\em Unlikely Option Specifier. \item\end{CompactList}\item 
+\hypertarget{group__errors_g78354f23ff4d92bd3fd6dcb6bfd59f52}{
+\#define \hyperlink{group__errors_g78354f23ff4d92bd3fd6dcb6bfd59f52}{CFE\_\-IFC}~110}
+\label{group__errors_g78354f23ff4d92bd3fd6dcb6bfd59f52}
+
+\begin{CompactList}\small\item\em Invalid Flag Combination. \item\end{CompactList}\item 
+\hypertarget{group__errors_g92aa7a17d2248b62f428d9e655f7d35e}{
+\#define \hyperlink{group__errors_g92aa7a17d2248b62f428d9e655f7d35e}{CFE\_\-NLE}~120}
+\label{group__errors_g92aa7a17d2248b62f428d9e655f7d35e}
+
+\begin{CompactList}\small\item\em No Last Entry flag found. \item\end{CompactList}\item 
+\hypertarget{group__errors_g3e780bea24126b1d0750f3ee7a96b8a8}{
+\#define \hyperlink{group__errors_g3e780bea24126b1d0750f3ee7a96b8a8}{CFE\_\-TIN}~130}
+\label{group__errors_g3e780bea24126b1d0750f3ee7a96b8a8}
+
+\begin{CompactList}\small\item\em Error reTurn from stdIN query. \item\end{CompactList}\item 
+\hypertarget{group__errors_g9e2ead53d32b9cf9f0e280a452c8e2e6}{
+\#define \hyperlink{group__errors_g9e2ead53d32b9cf9f0e280a452c8e2e6}{CFE\_\-EFE}~140}
+\label{group__errors_g9e2ead53d32b9cf9f0e280a452c8e2e6}
+
+\begin{CompactList}\small\item\em Empty string in content for Filename Entry. \item\end{CompactList}\item 
+\hypertarget{group__errors_gee86803a95d7d53a01c86f98c231aa7c}{
+\#define \hyperlink{group__errors_gee86803a95d7d53a01c86f98c231aa7c}{CFE\_\-USG}~200}
+\label{group__errors_gee86803a95d7d53a01c86f98c231aa7c}
+
+\begin{CompactList}\small\item\em Entries missing: USaGge advice. \item\end{CompactList}\item 
+\hypertarget{group__errors_gd9ced7e6eab277e4e24f511af9daf3bf}{
+\#define \hyperlink{group__errors_gd9ced7e6eab277e4e24f511af9daf3bf}{CFE\_\-URI}~210}
+\label{group__errors_gd9ced7e6eab277e4e24f511af9daf3bf}
+
+\begin{CompactList}\small\item\em UnResolved Item (CF\_\-MUST was set!). \item\end{CompactList}\item 
+\hypertarget{group__errors_g22ceafacdf80ae7247728f05c9129b1e}{
+\#define \hyperlink{group__errors_g22ceafacdf80ae7247728f05c9129b1e}{CFE\_\-FBF}~-500}
+\label{group__errors_g22ceafacdf80ae7247728f05c9129b1e}
+
+\begin{CompactList}\small\item\em File Backup Failed. \item\end{CompactList}\item 
+\hypertarget{group__errors_g722db0752b9a2f977065b8001da18101}{
+\#define \hyperlink{group__errors_g722db0752b9a2f977065b8001da18101}{CFE\_\-BMF}~-510}
+\label{group__errors_g722db0752b9a2f977065b8001da18101}
+
+\begin{CompactList}\small\item\em Backup: Memory allocation Failed. \item\end{CompactList}\item 
+\hypertarget{group__errors_gda14f93a466c819b6286bcf7f85bbbe5}{
+\#define \hyperlink{group__errors_gda14f93a466c819b6286bcf7f85bbbe5}{CFE\_\-BOF}~520}
+\label{group__errors_gda14f93a466c819b6286bcf7f85bbbe5}
+
+\begin{CompactList}\small\item\em Backup: Open source file Failed. \item\end{CompactList}\item 
+\hypertarget{group__errors_g793b92e4f9ea3a7acde0cc0dcf80701f}{
+\#define \hyperlink{group__errors_g793b92e4f9ea3a7acde0cc0dcf80701f}{CFE\_\-BBF}~530}
+\label{group__errors_g793b92e4f9ea3a7acde0cc0dcf80701f}
+
+\begin{CompactList}\small\item\em Backup: open target Backup file Failed. \item\end{CompactList}\item 
+\hypertarget{group__errors_gee4caa017da2daf88aa192647f5ebaba}{
+\#define \hyperlink{group__errors_gee4caa017da2daf88aa192647f5ebaba}{CFE\_\-BRF}~540}
+\label{group__errors_gee4caa017da2daf88aa192647f5ebaba}
+
+\begin{CompactList}\small\item\em Backup: Rename Failed. \item\end{CompactList}\item 
+\hypertarget{group__errors_g58992d0fae72c0a93a8fb1ec9cc1cd9c}{
+\#define \hyperlink{group__errors_g58992d0fae72c0a93a8fb1ec9cc1cd9c}{CFE\_\-BWF}~550}
+\label{group__errors_g58992d0fae72c0a93a8fb1ec9cc1cd9c}
+
+\begin{CompactList}\small\item\em Backup: Write Failed. \item\end{CompactList}\item 
+\hypertarget{group__errors_gf8cd36471ddcc549668f49238855609d}{
+\#define \hyperlink{group__errors_gf8cd36471ddcc549668f49238855609d}{CFE\_\-NCA}~-10}
+\label{group__errors_gf8cd36471ddcc549668f49238855609d}
+
+\begin{CompactList}\small\item\em No Configuration database Available. \item\end{CompactList}\item 
+\hypertarget{group__errors_g7f7e54a5ccefa34556fe6da3b35b4f27}{
+\#define \hyperlink{group__errors_g7f7e54a5ccefa34556fe6da3b35b4f27}{CFE\_\-NEA}~-20}
+\label{group__errors_g7f7e54a5ccefa34556fe6da3b35b4f27}
+
+\begin{CompactList}\small\item\em No Entry with that name Available. \item\end{CompactList}\item 
+\hypertarget{group__errors_g5db4a12696dff1db26958db1be075be9}{
+\#define \hyperlink{group__errors_g5db4a12696dff1db26958db1be075be9}{CFE\_\-NSS}~-30}
+\label{group__errors_g5db4a12696dff1db26958db1be075be9}
+
+\begin{CompactList}\small\item\em No Source/origin is Set. \item\end{CompactList}\item 
+\hypertarget{group__errors_gaa38e8556d85b1bb41037b3bd022bc28}{
+\#define \hyperlink{group__errors_gaa38e8556d85b1bb41037b3bd022bc28}{CFE\_\-ECP}~-40}
+\label{group__errors_gaa38e8556d85b1bb41037b3bd022bc28}
+
+\begin{CompactList}\small\item\em Entry's Content is a NULL Pointer. \item\end{CompactList}\item 
+\hypertarget{group__errors_g46fb52baac2d4b91c5169a2918caff5d}{
+\#define \hyperlink{group__errors_g46fb52baac2d4b91c5169a2918caff5d}{CFE\_\-MEF}~-100}
+\label{group__errors_g46fb52baac2d4b91c5169a2918caff5d}
+
+\begin{CompactList}\small\item\em Memory allocation in Error routine Failed. \item\end{CompactList}\item 
+\hypertarget{group__errors_g127dc37aea6ba5ef8d9dfe5cb9c629eb}{
+\#define \hyperlink{group__errors_g127dc37aea6ba5ef8d9dfe5cb9c629eb}{CFE\_\-MCF}~-200}
+\label{group__errors_g127dc37aea6ba5ef8d9dfe5cb9c629eb}
+
+\begin{CompactList}\small\item\em Memory allocation for Configuration Failed. \item\end{CompactList}\item 
+\hypertarget{group__errors_gc6a0861a0e376a94e540d7ba95ebe9cf}{
+\#define \hyperlink{group__errors_gc6a0861a0e376a94e540d7ba95ebe9cf}{CFE\_\-INF}~-9999}
+\label{group__errors_gc6a0861a0e376a94e540d7ba95ebe9cf}
+
+\begin{CompactList}\small\item\em Integer iNquiry Failed (?!). \item\end{CompactList}\item 
+\hypertarget{group__errors_g0415e4b197dc2908a58c026c4e621578}{
+\#define \hyperlink{group__errors_g0415e4b197dc2908a58c026c4e621578}{CFE\_\-RNF}~-999.999}
+\label{group__errors_g0415e4b197dc2908a58c026c4e621578}
+
+\begin{CompactList}\small\item\em Real/float iNquiry Failed (?!). \item\end{CompactList}\end{CompactItemize}
+\subsubsection*{Functions}
+\begin{CompactItemize}
+\item 
+int \hyperlink{group__errors_gad2687826308f21b54657d2728e4cfcc}{cfputerr} (int ecode, char $\ast$string,...)
+\begin{CompactList}\small\item\em Init, exit or append to Error List. \item\end{CompactList}\item 
+int \hyperlink{group__errors_g2dc49b60b3ec7a82086e60f4b1c41e18}{cfgeterr} (char $\ast$string, size\_\-t len)
+\begin{CompactList}\small\item\em Error Code and Message Inquiry Function. \item\end{CompactList}\item 
+void \hyperlink{group__errors_gad0c79adfdf363a11532dc4039136ec6}{cfclearerr} (void)
+\begin{CompactList}\small\item\em Free all entries in error list. \item\end{CompactList}\item 
+int \hyperlink{group__errors_gbc3a143038fbcabc944d224e20ca50f8}{cfreverr} (void)
+\begin{CompactList}\small\item\em Revert order of entries in error list from last-$>$first to first-$>$last. \item\end{CompactList}\end{CompactItemize}
+\subsubsection*{Variables}
+\begin{CompactItemize}
+\item 
+\hypertarget{group__errors_gf90ef6c88b6c820ee65553b7621ac1d3}{
+\hyperlink{struct_c_o_n_f_e_r_r}{CONFERR} $\ast$ \hyperlink{group__errors_gf90ef6c88b6c820ee65553b7621ac1d3}{\_\-cferr} = NULL}
+\label{group__errors_gf90ef6c88b6c820ee65553b7621ac1d3}
+
+\begin{CompactList}\small\item\em Library Internal: Error List Pointer. \item\end{CompactList}\item 
+\hypertarget{group__errors_gbb3fc965f2aa8ec8a52f79975d9f918e}{
+int \hyperlink{group__errors_gbb3fc965f2aa8ec8a52f79975d9f918e}{\_\-errcnt} = 0}
+\label{group__errors_gbb3fc965f2aa8ec8a52f79975d9f918e}
+
+\begin{CompactList}\small\item\em Library Internal: Error List Counter. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsubsection{Detailed Description}
+Error Codes, Functions and Structures. 
+
+\begin{itemize}
+\item Error Codes and their mnemonic descriptions\end{itemize}
+
+
+\begin{Desc}
+\item[\hyperlink{bug__bug000001}{Bug}]There are still errors without entry in error stack\end{Desc}
+- Library Internal Error Variables
+
+\begin{itemize}
+\item Error Functions \end{itemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{group__errors_gad2687826308f21b54657d2728e4cfcc}{
+\index{errors@{errors}!cfputerr@{cfputerr}}
+\index{cfputerr@{cfputerr}!errors@{errors}}
+\paragraph[{cfputerr}]{\setlength{\rightskip}{0pt plus 5cm}int cfputerr (int {\em ecode}, \/  char $\ast$ {\em string}, \/   {\em ...})}\hfill}
+\label{group__errors_gad2687826308f21b54657d2728e4cfcc}
+
+
+Init, exit or append to Error List. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ecode}]Error Code of the error that occurred\item[{\em string}]Error message format string. Giving it a {\tt NULL} pointer results in an empty error message string\item[{\em ...}]Arguments list according to format string\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item {\tt $<$0} : A fatal error occurred (malloc failed) \item {\tt $>$0} : Number of errors in error list \end{itemize}
+\end{Desc}
+\hypertarget{group__errors_g2dc49b60b3ec7a82086e60f4b1c41e18}{
+\index{errors@{errors}!cfgeterr@{cfgeterr}}
+\index{cfgeterr@{cfgeterr}!errors@{errors}}
+\paragraph[{cfgeterr}]{\setlength{\rightskip}{0pt plus 5cm}int cfgeterr (char $\ast$ {\em string}, \/  size\_\-t {\em len})}\hfill}
+\label{group__errors_g2dc49b60b3ec7a82086e60f4b1c41e18}
+
+
+Error Code and Message Inquiry Function. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]Pointer to a string, to which the error message should be copied. Giving it a {\tt NULL} pointer will omit message return\item[{\em len}]Size of string, if {\tt 0} \hyperlink{group__cflib__core_gf78e4b950c9aa49b752e4460342ea3bf}{CF\_\-MAXERRSTR} will be used\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item {\tt 0} : if no error is available, everything is alright \item {\tt !=0} : error code of the next error in list \end{itemize}
+\end{Desc}
+\hypertarget{group__errors_gad0c79adfdf363a11532dc4039136ec6}{
+\index{errors@{errors}!cfclearerr@{cfclearerr}}
+\index{cfclearerr@{cfclearerr}!errors@{errors}}
+\paragraph[{cfclearerr}]{\setlength{\rightskip}{0pt plus 5cm}void cfclearerr (void)}\hfill}
+\label{group__errors_gad0c79adfdf363a11532dc4039136ec6}
+
+
+Free all entries in error list. 
+
+\hypertarget{group__errors_gbc3a143038fbcabc944d224e20ca50f8}{
+\index{errors@{errors}!cfreverr@{cfreverr}}
+\index{cfreverr@{cfreverr}!errors@{errors}}
+\paragraph[{cfreverr}]{\setlength{\rightskip}{0pt plus 5cm}int cfreverr (void)}\hfill}
+\label{group__errors_gbc3a143038fbcabc944d224e20ca50f8}
+
+
+Revert order of entries in error list from last-$>$first to first-$>$last. 
+
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item {\tt $>$=0} : Number of errors in error list \item {\tt $<$0} : Inconsistency with old error count, absolute value is new error counter \end{itemize}
+\end{Desc}

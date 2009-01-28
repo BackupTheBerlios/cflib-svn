@@ -1,0 +1,200 @@
+.TH "Setting and Saving the Configuration" 3 "28 Jan 2009" "Version Patchlevel 20" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Setting and Saving the Configuration \- Set/Update Parameter Values or Save a Configuration File.  
+
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBcfputstr\fP (char *name, char *content)"
+.br
+.RI "\fIUpdate or Add Parameter \fIname\fP with string \fIcontent\fP. \fP"
+.ti -1c
+.RI "int \fBcfputtime\fP (\fBCFFLAGTYP\fP td)"
+.br
+.RI "\fISet all Time and/or Date entries in CFLIB DB to \fInow\fP or \fItoday\fP. \fP"
+.ti -1c
+.RI "int \fBcfnosave\fP (char *name, const char *onoff)"
+.br
+.RI "\fIAlter or query the \fBCF_NOSAVE\fP Flag of Parameter \fIname\fP. \fP"
+.ti -1c
+.RI "int \fBcfsave\fP (char *file, const char *savemode)"
+.br
+.RI "\fIWrite configuration data to a Configuration File or \fCstdout\fP. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Set/Update Parameter Values or Save a Configuration File. 
+.SH "Function Documentation"
+.PP 
+.SS "int cfputstr (char * name, char * content)"
+.PP
+Update or Add Parameter \fIname\fP with string \fIcontent\fP. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP \fBParameter Name\fP 
+.br
+\fIcontent\fP New (String) Content
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.PD 0
+.IP "\(bu" 2
+\fBCFE_NEP\fP : New Entry successfully Put into DB.  
+.IP "\(bu" 2
+\fC0\fP : Entry updated successfully 
+.IP "\(bu" 2
+\fC<0\fP : An error occurred:
+.IP "  \(bu" 4
+\fBCFE_NCA\fP : No Configuration database Available. 
+.IP "  \(bu" 4
+\fBCFE_MCF\fP : Memory allocation for Configuration Failed.  
+.PP
+
+.PP
+.RE
+.PP
+
+.SS "int cfputtime (\fBCFFLAGTYP\fP td)"
+.PP
+Set all Time and/or Date entries in CFLIB DB to \fInow\fP or \fItoday\fP. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItd\fP Target Selection Mask: 
+.PD 0
+
+.IP "\(bu" 2
+\fBCF_TIME\fP : Set Time 
+.IP "\(bu" 2
+\fBCF_DATE\fP : Set Date 
+.IP "\(bu" 2
+\fBCF_TD\fP : Set Time and Date
+.PP
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.PD 0
+.IP "\(bu" 2
+\fC>0\fP : Number of entries updated successfully 
+.IP "\(bu" 2
+\fC<=0\fP : An error occurred:
+.IP "  \(bu" 4
+\fBCFE_NCA\fP : No Configuration database Available. 
+.IP "  \(bu" 4
+\fBCFE_MCF\fP : Memory allocation for Configuration Failed. 
+.IP "  \(bu" 4
+\fBCFE_NEA\fP : No Entry with that name Available.  
+.PP
+
+.PP
+.RE
+.PP
+
+.SS "int cfnosave (char * name, const char * onoff)"
+.PP
+Alter or query the \fBCF_NOSAVE\fP Flag of Parameter \fIname\fP. 
+.PP
+When the configuration database is saved to a configuration file, the function \fBcfsave()\fP will exclude all items with the \fBCF_NOSAVE\fP flag set from the output.
+.PP
+The \fBCF_NOSAVE\fP flag can be set in the Special Option Mask \fBCONFIG::flag\fP for every entry in the \fBConfiguration Initializer\fP given to \fBcfinit()\fP or \fBcfstart()\fP or later be set with this function for parameters in the current configuration database \fB_conf\fP
+.PP
+\fBResidual Items\fP will have the \fBCF_NOSAVE\fP flag set by default.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Entry's name
+.IP "\(bu" 2
+\fC''\fP : All entries
+.IP "\(bu" 2
+\fCNULL\fP : All hardcoded entries
+.PP
+.br
+\fIonoff\fP 
+.PD 0
+
+.IP "\(bu" 2
+\fBCF_FLAG_ON\fP : Set Flag 
+.IP "\(bu" 2
+\fBCF_FLAG_OFF\fP : Delete Flag 
+.IP "\(bu" 2
+\fC'i'\fP : Inquire Flag
+.PP
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.PD 0
+.IP "\(bu" 2
+\fC0\fP : Entry updated successfully / Flag is OFF (for \fC'i'\fP) 
+.IP "\(bu" 2
+\fC1\fP : Flag is ON (for \fC'i'\fP) 
+.IP "\(bu" 2
+\fC!=0\fP or \fC1\fP : An Error occurred:
+.IP "  \(bu" 4
+\fBCFE_NCA\fP : No Configuration database Available. 
+.IP "  \(bu" 4
+\fBCFE_NEA\fP : No Entry with that name Available.  
+.PP
+
+.PP
+.RE
+.PP
+
+.SS "int cfsave (char * file, const char * savemode)"
+.PP
+Write configuration data to a Configuration File or \fCstdout\fP. 
+.PP
+Entries with the \fBCF_NOSAVE\fP flag will be excluded from the output. Use \fBcfnosave()\fP to inquire or alter that flag for an entry.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP 
+.PD 0
+
+.IP "\(bu" 2
+<\fIstring>\fP : Name of regular file to be opened 
+.IP "\(bu" 2
+\fC''\fP : Write configuration to \fCstdout\fP 
+.IP "\(bu" 2
+\fCNULL\fP : Private configuration file will be overwritten or created, if an appropriate entry exists
+.PP
+.br
+\fIsavemode\fP File open mode: 
+.PD 0
+
+.IP "\(bu" 2
+\fC'w'\fP : Overwrite 
+.IP "\(bu" 2
+\fC'a'\fP : Append
+.PP
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.PD 0
+.IP "\(bu" 2
+\fC0\fP : Configuration has been saved to file successfully 
+.IP "\(bu" 2
+\fC!=0\fP : An error occurred:
+.IP "  \(bu" 4
+\fBCFE_NCA\fP : No Configuration database Available. 
+.IP "  \(bu" 4
+\fBCFE_IFP\fP : Invalid Filename entry for Private setfile. 
+.IP "  \(bu" 4
+\fBCFE_WAE\fP : Write Access Error.  
+.PP
+
+.PP
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CFLIB - Flexible Configuration Library from the source code.

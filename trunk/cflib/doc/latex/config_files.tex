@@ -1,0 +1,62 @@
+A major task of the library is handling import and export of configuration parameters from/to files.
+
+CFLIB knows two types of configuration files:
+
+\begin{itemize}
+\item {\bf \char`\"{}Private Configuration File\char`\"{}} - User and/or program specific file in simple format to be read on initialization and optionally be updated by \hyperlink{group__setting__saving_g046d8a68eae35b987eacca04a9a06cca}{cfsave()}\end{itemize}
+
+
+\begin{itemize}
+\item {\bf \char`\"{}System Configuration File\char`\"{}} - System and/or project specific file in extended format (supporting sections, see below) will only be used as a data source by \hyperlink{group__cflib__core_ge593ff607f853bd5fc16a16bb6759314}{cfinit()} and will not be touched by \hyperlink{group__setting__saving_g046d8a68eae35b987eacca04a9a06cca}{cfsave()} unless you explicitly specify the filename.\end{itemize}
+\hypertarget{config_files_config_format}{}\subsection{Configuration File Format}\label{config_files_config_format}
+In a configuration file lines beginning with {\tt '\#'} are treated as comments and are ignored. Blank lines are ignored, too. A valid line in the file is of the form:
+
+$<${\em name$>$\/} = $<${\em entry$>$\/} 
+
+Blank chars around the {\tt '='} are ignored. The name must match one of the entry's names in the initializer. In fact, any line not containing a {\tt '='} will be ignored, but it's better to indicate comments with {\tt '\#'!} 
+
+The optional sections in the system configuration file begin with a line like:
+
+\mbox{[}$<${\em sectionname$>$\/}\mbox{]}
+
+and end with another line like this or with the file's last line. Anything after the closing bracket is ignored.
+
+A simple example of a valid configuration file could look like this: 
+
+\begin{Code}\begin{verbatim} # This is my private configuration file for Project 1356 Branch C in spe
+
+ Search_Path  = /my/subproject/directory:/general/settings/directory
+ Section      = project_1356
+ Outfile      = my_subproject.cnf
+ ask_if_empty =
+ My_Flag =      ON
+ VERBOSITY = 1
+\end{verbatim}
+\end{Code}
+
+
+
+The corresponding system configuration file could look like this: 
+
+\begin{Code}\begin{verbatim} # This is a system wide configuration file
+ [some_other_program]
+ blah = blubber
+ ...
+ [project_1356]
+ # Settings for Project 1356 Branch B
+ VERBOSITY = 3
+ Outfile = project_1356b.cnf
+ X_EUR_USD=1.4562
+ [some_other_project]
+ ...
+\end{verbatim}
+\end{Code}
+
+\hypertarget{config_files_config_in}{}\subsection{Reading Configuration Files}\label{config_files_config_in}
+A search for configuration files and import of data from these sources is only performed by the function \hyperlink{group__cflib__core_ge593ff607f853bd5fc16a16bb6759314}{cfinit()} on initialization and only when appropriate Special Option Flags are set as described under \hyperlink{config_levels_config_file_parsing}{Parsing of Configuration Files}.
+
+Configuration files are read once when the configuration database is initialized by a call to \hyperlink{group__cflib__core_ge593ff607f853bd5fc16a16bb6759314}{cfinit()} or \hyperlink{group__cflib__core_gdcf24d678203bd09a0a3e05b8a986c65}{cfstart()} using the internal function cfreadfile().\hypertarget{config_files_config_out}{}\subsection{Writing a (private) Configuration File}\label{config_files_config_out}
+Parameter export does not depend on any specific setting and can be performed whenever and as often as you like. For writing a configuration file call \hyperlink{group__setting__saving_g046d8a68eae35b987eacca04a9a06cca}{cfsave()} with either the name of the file or {\tt NULL}, in which case the current value of the \char`\"{}Private Configuration File\char`\"{} parameter will be used, if it exists. If an entry has the \hyperlink{group__special__options__mask_gd76153c65f68cc0ee5c1a04c8c3e80bf}{CF\_\-NOSAVE} flag set, it is excluded from saving. The \char`\"{}System Configuration File\char`\"{} may not be referred to directly.
+
+\begin{Desc}
+\item[Attention:]Writing {\bf section} marks is {\bf not} supported! \end{Desc}

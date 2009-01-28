@@ -1,0 +1,83 @@
+CFLIB is designed to give you a maximum of possibilities for feeding parameters and parameter values into the configuration.\hypertarget{config_levels_origin_window}{}\subsection{Origin Window}\label{config_levels_origin_window}
+The library remembers the source/origin of all parameter values by setting one of the {\bf \char`\"{}Source Flags\char`\"{}} in the {\bf \char`\"{}Origin Window\char`\"{}} of the \hyperlink{group__special__options__mask}{Special Options Mask} ranging from Bit Offset 8 to 15 (see \hyperlink{config_levels_parsing_levels}{Parsing Levels}). On initialization the Origin Window Flags {\bf CF\_\-SET\_\-$\ast$} of an entry in the \hyperlink{config_initializer}{Configuration Initializer} are used to control \hyperlink{config_levels_parsing_level_priorities}{Parsing Level Priorities}.\hypertarget{config_levels_parsing_levels}{}\subsection{Parsing Levels}\label{config_levels_parsing_levels}
+{\bf \char`\"{}Parsing Levels\char`\"{}} are equal to the Relative Bit Offset of the corresponding {\bf CF\_\-SET\_\-$\ast$} Bit within the \char`\"{}Origin Window\char`\"{}:
+
+Parsing Level : Description (Source Flag)
+
+\begin{itemize}
+\item 0 = \hyperlink{group__cflib__core_g764a8ea81ffc3940bf413797dcaf9a3d}{CFP\_\-PUT} : Function Call or Automatic Initialization.  (\hyperlink{group__special__options__mask_g8d6cd1608fef5638efe964da63edf2dd}{CF\_\-SET\_\-PUT})\item 1 = \hyperlink{group__cflib__core_g0901da5871f3cffeec56e491f8c9fc7f}{CFP\_\-ARG} : Commandline.  (\hyperlink{group__special__options__mask_g1b3eb474a5160e5a32385f6de53d90d6}{CF\_\-SET\_\-ARG})\item 2 = \hyperlink{group__cflib__core_gc77d72299f32e91104090cdeb93f3619}{CFP\_\-ENV} : Environment.  (\hyperlink{group__special__options__mask_g29dbd098a75a23ddc42b3b53e430d694}{CF\_\-SET\_\-ENV})\item 3 = \hyperlink{group__cflib__core_g6cf8dcc9fa01deae5eb44698cb01f73e}{CFP\_\-PRIV} : Private Configuration File.  (\hyperlink{group__special__options__mask_gabf1d4d312964af93bd55f71eeec6988}{CF\_\-SET\_\-PRIV})\item 4 = \hyperlink{group__cflib__core_g0365a86453eeaa815a79c506343bd927}{CFP\_\-SYS} : System Configuration File.  (\hyperlink{group__special__options__mask_g8fe09807491ee119290329cf08e6f340}{CF\_\-SET\_\-SYS})\item 5 : \hyperlink{group__cflib__core_gfa9b2b859f08e9b319cc50555255a975}{CFP\_\-DEF} : Built-in Default.  (\hyperlink{group__special__options__mask_g17b4ef5b35afe21a4a80faa671030b65}{CF\_\-SET\_\-DEF})\item 6 : \hyperlink{group__cflib__core_g91ce348a0630961b0c472e7dec732aae}{CFP\_\-QRY} : Standard Input Channel.  (\hyperlink{group__special__options__mask_g09dcbb96c5ace43a7d5e7e4f52d387a8}{CF\_\-SET\_\-QRY})\item 7 : \hyperlink{group__cflib__core_g631bc61e35c14f1d3df36a71154a776a}{CFP\_\-RESERVED} : Reserved for CFLIB Subprojects\end{itemize}
+\hypertarget{config_levels_initialization_process}{}\subsection{Parsing Levels in the Initialization Process}\label{config_levels_initialization_process}
+On initialization the Parsing Levels 1 through 6 are processed by \hyperlink{group__cflib__core_ge593ff607f853bd5fc16a16bb6759314}{cfinit()} in that order and priority. If a Parameter is found that has been defined in the Configuration Initializer, its content is included as String Content of that parameter in the configuration database.
+
+Whether and how the {\bf Commandline} Arguments are used to get a parameter value depends on the \hyperlink{struct_c_o_n_f_i_g_60563bd93e85c1ddb8291a2d27a9c472}{CONFIG::option} setting for that parameter and the Special Option Flags:
+
+\begin{itemize}
+\item \hyperlink{group__special__options__mask_g9e526dae88bf6803772107ff283637b5}{CF\_\-CONCAT} : Argument is concatenated to option. \item \hyperlink{group__special__options__mask_g97d17b070dac10c14d3930c58bfba76f}{CF\_\-NO\_\-OPT\_\-ARG} : Commandline argument not followig an option. \end{itemize}
+
+
+See details under \hyperlink{config_initializer_parameter_option}{Commandline Option for Parameter}.
+
+The {\bf Environment} can be excluded as a possible source of a parameter value by setting the Special Option Flag
+
+\begin{itemize}
+\item \hyperlink{group__special__options__mask_g72b75851880f36aaa5a52fdfe7960cca}{CF\_\-IGN\_\-ENV} : Do not look for Environment Variable\end{itemize}
+
+
+{\bf Configuration} Files are only used when corresponding entries are defined in the Configuration Initializer, see \hyperlink{config_levels_config_file_parsing}{Parsing of Configuration Files} for details.
+
+{\bf Interactive} queries are not performed by default. If \hyperlink{group__cflib__core_ge593ff607f853bd5fc16a16bb6759314}{cfinit()} shall ask the user for interactive input of items that are still unresolved after parsing all lower levels, you must set Special Option Flag:
+
+\begin{itemize}
+\item \hyperlink{group__special__options__mask_ge39e0d9b4e9af8c6d4b3676783dd26e0}{CF\_\-QUERY} : Ask the user for unresolved item after configuration parsing. \end{itemize}
+
+
+If an entry may not be empty ({\tt NULL} or string \char`\"{}\char`\"{}) after initialization, you can have \hyperlink{group__cflib__core_ge593ff607f853bd5fc16a16bb6759314}{cfinit()} produce an appropriate error by setting the Special Option Flag:
+
+\begin{itemize}
+\item \hyperlink{group__special__options__mask_g3229f5b038eaa0c6428361d2aa510dfc}{CF\_\-MUST} : Entry may not be empty ({\tt NULL} or \char`\"{}\char`\"{}). \end{itemize}
+\hypertarget{config_levels_parsing_level_priorities}{}\subsubsection{Parsing Level Priorities}\label{config_levels_parsing_level_priorities}
+More precise control of parsing levels priorities and origin control for a parameter is available through setting one of the Flags in the \char`\"{}Origin Window\char`\"{} of the parameter's \hyperlink{group__special__options__mask}{Special Options Mask} in the \hyperlink{config_initializer}{Configuration Initializer} :
+
+\begin{itemize}
+\item \hyperlink{group__special__options__mask_g8d6cd1608fef5638efe964da63edf2dd}{CF\_\-SET\_\-PUT} : Must be set by a function call / automatic processing: Set this Flag on Time or Date \hyperlink{parameter_types}{Types of Parameters} for automatic initialization with {\em now\/} or {\em today\/} \end{itemize}
+
+
+\begin{itemize}
+\item \hyperlink{group__special__options__mask_g1b3eb474a5160e5a32385f6de53d90d6}{CF\_\-SET\_\-ARG} : Force initialization from commandline, ignore anything else\end{itemize}
+
+
+\begin{itemize}
+\item \hyperlink{group__special__options__mask_g29dbd098a75a23ddc42b3b53e430d694}{CF\_\-SET\_\-ENV} : Let environment variable override earlier setting\end{itemize}
+
+
+\begin{itemize}
+\item \hyperlink{group__special__options__mask_gabf1d4d312964af93bd55f71eeec6988}{CF\_\-SET\_\-PRIV} : Let variable from private configuration file override earlier setting\end{itemize}
+
+
+\begin{itemize}
+\item \hyperlink{group__special__options__mask_g8fe09807491ee119290329cf08e6f340}{CF\_\-SET\_\-SYS} : Let variable from system configuration file override earlier setting\end{itemize}
+
+
+\begin{itemize}
+\item \hyperlink{group__special__options__mask_g17b4ef5b35afe21a4a80faa671030b65}{CF\_\-SET\_\-DEF} : Let default from Configuration Initializer override earlier setting\end{itemize}
+
+
+\begin{itemize}
+\item \hyperlink{group__special__options__mask_g09dcbb96c5ace43a7d5e7e4f52d387a8}{CF\_\-SET\_\-QRY} : Force setting from interactive Query ({\tt stdin})\end{itemize}
+\hypertarget{config_levels_config_file_parsing}{}\subsection{Parsing of Configuration Files}\label{config_levels_config_file_parsing}
+To indicate that an entry in the initializer list given to \hyperlink{group__cflib__core_ge593ff607f853bd5fc16a16bb6759314}{cfinit()} represents the filename of one of the \hyperlink{config_files}{Configuration Files}, set one of the following Flags for that parameter:
+
+\begin{itemize}
+\item \hyperlink{group__special__options__mask_gfeeb63d4d8c498bec4a237ad8b94f02f}{CF\_\-SETFILE} : Entry is Private Configuration File. \item \hyperlink{group__special__options__mask_gbb03ea68e07e388da2c1337a1582c72e}{CF\_\-SYS\_\-SETFILE} : Entry is System Configuration File. \end{itemize}
+
+
+Within the system configuration file you can choose a section, from which information is read as from a single file. To specify an entry in the list referring to the name of that section give this entry the flag
+
+\begin{itemize}
+\item \hyperlink{group__special__options__mask_g603f0467f101b71f5f869381429ffef4}{CF\_\-SECTION} : Section in Configuration File. \end{itemize}
+
+
+As the filenames for the two configuration files are themselves entries in the database, these levels are revisited, if neccessary, in reverse order after parsing the built-in default.\hypertarget{config_levels_residuals}{}\subsection{Residual Items}\label{config_levels_residuals}
+Any commandline argument that did not match conditions for a parameter will be included in the configuration database as parameter without name marked with Flag \hyperlink{group__special__options__mask_g5415b257c706aae33d91d3947a3429c0}{CF\_\-RESID} in the \hyperlink{group__special__options__mask}{Special Options Mask}. These additional entries from the command line can be accessed by successive calls to \hyperlink{group__retrieval_g6ef6076e946383ab198ee26b9aa5603a}{cfgetres()}.
+
+Residual items from one of the configuration files will also be accumulated in the database and can be accessed through inquiry by name with one of the \hyperlink{index_retrieval_functions}{Retrieval Functions}. This is especially useful together with the report generation function \hyperlink{group__report__generation_g2f8350e7d032c87b2a0e1cb6149a85ec}{cfform()}. 

@@ -1,0 +1,474 @@
+.TH "Information Retrieval" 3 "28 Jan 2009" "Version Patchlevel 20" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Information Retrieval \- These functions and macros read entries from an initialized CFLIB database.  
+
+.PP
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBcfget\fP(a)   cfgetent(a,0)"
+.br
+.RI "\fIGet value (content) of named entry. \fP"
+.ti -1c
+.RI "#define \fBcfgetstr\fP(a)   ((char *)cfgetent(a,CF_STR))"
+.br
+.RI "\fIInquire CFLIB DB for String in content of named entry. \fP"
+.ti -1c
+.RI "#define \fBcfgetnum\fP(a)   (*(int *)cfgetent(a,CF_INT))"
+.br
+.RI "\fIInquire CFLIB DB for Integer value in content of named entry. \fP"
+.ti -1c
+.RI "#define \fBcfgetreal\fP(a)   (*(float *)cfgetent(a,CF_REAL))"
+.br
+.RI "\fIInquire CFLIB DB for Float (Real) value in content of named entry. \fP"
+.ti -1c
+.RI "#define \fBcfgetflag\fP(a)   (*(int *)cfgetent(a,CF_FLAG))"
+.br
+.RI "\fIInquire CFLIB DB for Flag value in content of named entry. \fP"
+.ti -1c
+.RI "#define \fBcfflaginq\fP(a, b)   (*(int *)cfgetent(a,CF_FLGINQ|(31&b)))"
+.br
+.RI "\fIInquire CFLIB DB for Bit set in entry's Special Options Fag \fBCONFIG::flag\fP. \fP"
+.ti -1c
+.RI "#define \fBcfgetsrc\fP(a)   (*(int *)cfgetent(a,CF_SRC))"
+.br
+.RI "\fIInquire CFLIB DB for Source of named entry's content. \fP"
+.ti -1c
+.RI "#define \fBcfgetres\fP()   ((char *)cfgetent('',CF_RESID))"
+.br
+.RI "\fIGet next Residual Command Line Argument from CFLIB DB. \fP"
+.ti -1c
+.RI "#define \fBcfgetcpr\fP()   'CFLIB (c) 1994-2009 Stefan Habermehl'"
+.br
+.RI "\fIGet Copyright Notice. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void * \fBcfgetent\fP (char *name, \fBCFFLAGTYP\fP typ)"
+.br
+.RI "\fILibrary internal function, use appropriate Macro functions! \fP"
+.ti -1c
+.RI "int \fBcfgetvers\fP (void)"
+.br
+.RI "\fIGet Library Version/Patchlevel. \fP"
+.ti -1c
+.RI "char * \fBcfgetsubvers\fP (void)"
+.br
+.RI "\fIGet Library Subversion Details. \fP"
+.ti -1c
+.RI "char * \fBcfgetusg\fP (void)"
+.br
+.RI "\fIGet Usage Message for (Terminal) Output. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+These functions and macros read entries from an initialized CFLIB database. 
+
+The exact name of the required parameter must be given as argument, where indicated. 
+.SH "Define Documentation"
+.PP 
+.SS "#define cfget(a)   cfgetent(a,0)"
+.PP
+Get value (content) of named entry. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP Entry's name
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Depending on configured type, see \fBcfgetent()\fP and Macro Definitions! 
+.RE
+.PP
+
+.SS "#define cfgetstr(a)   ((char *)cfgetent(a,CF_STR))"
+.PP
+Inquire CFLIB DB for String in content of named entry. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP Entry's name
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.PD 0
+.IP "\(bu" 2
+\fCNULL\fP : An error occurred:
+.IP "  \(bu" 4
+No configuration database available
+.IP "  \(bu" 4
+No entry of this name available
+.IP "  \(bu" 4
+Content is really \fCNULL\fP, Check that with \fBcfgetflag()\fP !!
+.PP
+
+.PP
+.PD 0
+.IP "\(bu" 2
+Any other : Pointer to string in content of entry name 
+.PP
+.RE
+.PP
+
+.SS "#define cfgetnum(a)   (*(int *)cfgetent(a,CF_INT))"
+.PP
+Inquire CFLIB DB for Integer value in content of named entry. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP Entry's name
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.PD 0
+.IP "\(bu" 2
+\fBCFE_INF\fP : Integer inquiry failed because of
+.IP "  \(bu" 4
+No configuration database available
+.IP "  \(bu" 4
+No entry of this name available
+.IP "  \(bu" 4
+Content doesn't begin with digit
+.IP "  \(bu" 4
+Content is a \fCNULL\fP pointer
+.IP "  \(bu" 4
+Content is really \fBCFE_INF\fP, Check that with \fBcfgetstr()\fP !!
+.PP
+
+.PP
+.PD 0
+.IP "\(bu" 2
+Any other : Integer value for named entry 
+.PP
+.RE
+.PP
+
+.SS "#define cfgetreal(a)   (*(float *)cfgetent(a,CF_REAL))"
+.PP
+Inquire CFLIB DB for Float (Real) value in content of named entry. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP Entry's name
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.PD 0
+.IP "\(bu" 2
+\fBCFE_RNF\fP : Real/float value inquiry failed because of
+.IP "  \(bu" 4
+No configuration database available
+.IP "  \(bu" 4
+No entry of this name available
+.IP "  \(bu" 4
+Content doesn't begin with digit or signum (+/-)
+.IP "  \(bu" 4
+Content is a \fCNULL\fP pointer
+.IP "  \(bu" 4
+Content is really \fBCFE_RNF\fP, Check that with \fBcfgetstr()\fP !!
+.PP
+
+.PP
+.PD 0
+.IP "\(bu" 2
+Any other : Float value for named entry 
+.PP
+.RE
+.PP
+
+.SS "#define cfgetflag(a)   (*(int *)cfgetent(a,CF_FLAG))"
+.PP
+Inquire CFLIB DB for Flag value in content of named entry. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP Entry's name
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.IP "\(bu" 2
+\fCTRUE\fP (1) : Flag is set
+.IP "\(bu" 2
+\fCFALSE\fP (0) : Flag is not set
+.IP "\(bu" 2
+\fC<0\fP : An error occurred: 
+.PD 0
+
+.IP "  \(bu" 4
+\fBCFE_NCA\fP : No configuration database available 
+.IP "  \(bu" 4
+\fBCFE_NEA\fP : No entry of this name available 
+.IP "  \(bu" 4
+\fBCFE_ECP\fP : Entry's content is a \fCNULL\fP pointer 
+.PP
+
+.PP
+.RE
+.PP
+
+.SS "#define cfflaginq(a, b)   (*(int *)cfgetent(a,CF_FLGINQ|(31&b)))"
+.PP
+Inquire CFLIB DB for Bit set in entry's Special Options Fag \fBCONFIG::flag\fP. 
+.PP
+Debugging Function
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP Entry's name 
+.br
+\fIb\fP Bit Offset, \fC0<=b<=31\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.IP "\(bu" 2
+\fCTRUE\fP (\fC1\fP) : Flag is set
+.IP "\(bu" 2
+\fCFALSE\fP (\fC0\fP) : Flag is not set
+.IP "\(bu" 2
+\fC<0\fP : An error occurred: 
+.PD 0
+
+.IP "  \(bu" 4
+\fBCFE_NCA\fP : No Configuration database Available.  
+.IP "  \(bu" 4
+\fBCFE_NEA\fP : No Entry with that name Available.  
+.PP
+
+.PP
+.RE
+.PP
+
+.SS "#define cfgetsrc(a)   (*(int *)cfgetent(a,CF_SRC))"
+.PP
+Inquire CFLIB DB for Source of named entry's content. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP Entry's name
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.IP "\(bu" 2
+\fC0-6\fP : Source of entry's content: 
+.PD 0
+
+.IP "  \(bu" 4
+\fC0\fP : \fBcfputstr()\fP call 
+.IP "  \(bu" 4
+\fC1\fP : Command line / Arguments 
+.IP "  \(bu" 4
+\fC2\fP : Environment 
+.IP "  \(bu" 4
+\fC3\fP : Private Configuration File 
+.IP "  \(bu" 4
+\fC4\fP : System Configuration File 
+.IP "  \(bu" 4
+\fC5\fP : Default setting 
+.IP "  \(bu" 4
+\fC6\fP : Interactive input (query)
+.PP
+
+.IP "\(bu" 2
+\fC<0\fP : An error occurred: 
+.PD 0
+
+.IP "  \(bu" 4
+\fBCFE_NCA\fP : No configuration database available 
+.IP "  \(bu" 4
+\fBCFE_NEA\fP : No entry of this name available 
+.IP "  \(bu" 4
+\fBCFE_NSS\fP : No source set (should not happen!) 
+.PP
+
+.PP
+.RE
+.PP
+
+.SS "#define cfgetres()   ((char *)cfgetent('',CF_RESID))"
+.PP
+Get next Residual Command Line Argument from CFLIB DB. 
+.PP
+\fBReturns:\fP
+.RS 4
+.PD 0
+.IP "\(bu" 2
+\fCNULL\fP : An error occurred:
+.IP "  \(bu" 4
+No Configuration database Available. 
+.IP "  \(bu" 4
+No more residual arguments available
+.PP
+
+.PP
+.PD 0
+.IP "\(bu" 2
+Any other : Pointer to string content
+.PP
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBResidual Items\fP 
+.RE
+.PP
+
+.SS "#define cfgetcpr()   'CFLIB (c) 1994-2009 Stefan Habermehl'"
+.PP
+Get Copyright Notice. 
+.PP
+\fBReturns:\fP
+.RS 4
+Pointer to Copyright Message String 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "void* cfgetent (char * name, \fBCFFLAGTYP\fP typ)"
+.PP
+Library internal function, use appropriate Macro functions! 
+.PP
+Inquire configuration database for content of entry name
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Entry's name 
+.br
+\fItyp\fP Expected/required type of content: 
+.PD 0
+
+.IP "\(bu" 2
+\fC0\fP : Get type from entry's flag 
+.IP "\(bu" 2
+\fBCF_INT\fP : Integer 
+.IP "\(bu" 2
+\fBCF_REAL\fP : Real 
+.IP "\(bu" 2
+\fBCF_FLAG\fP : Flag 
+.IP "\(bu" 2
+\fBCF_STR\fP : String 
+.IP "\(bu" 2
+\fBCF_SRC\fP : Source 
+.IP "\(bu" 2
+\fBCF_FLGINQ\fP : Bit in entry flag (bit no. in lowest bytes) 
+.IP "\(bu" 2
+\fBCF_RESID\fP : Residual argument 
+.IP "\(bu" 2
+Anything else : String
+.PP
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.PD 0
+.IP "\(bu" 2
+for \fBCF_STR\fP, \fBCF_RESID\fP or default:
+.PP
+.PD 0
+.IP "\(bu" 2
+\fCNULL\fP : An error occurred or nothing available:
+.IP "  \(bu" 4
+No configuration database available
+.IP "  \(bu" 4
+No entry of this name available
+.IP "  \(bu" 4
+The entry's content is really \fCNULL\fP, Check that with \fBcfgetflag()\fP !!
+.IP "  \(bu" 4
+No more residual argument (for \fBCF_RESID\fP)
+.PP
+
+.PP
+.PD 0
+.IP "\(bu" 2
+any other pointer to string in content of entry name
+.PP
+.PD 0
+.IP "\(bu" 2
+for others: Pointer to return values of the corresponding macro function 
+.PP
+.RE
+.PP
+
+.SS "int cfgetvers (void)"
+.PP
+Get Library Version/Patchlevel. 
+.PP
+\fBReturns:\fP
+.RS 4
+.PD 0
+.IP "\(bu" 2
+\fC>0\fP : Libary Patchlevel 
+.IP "\(bu" 2
+\fC<=0\fP : Error 
+.PP
+.RE
+.PP
+
+.SS "char* cfgetsubvers (void)"
+.PP
+Get Library Subversion Details. 
+.PP
+The Patchlevel returned by this function should match \fBPatchlevel\fP in the public include file \fBcf.h\fP
+.PP
+\fBReturns:\fP
+.RS 4
+Libary Patchlevel and Subversion (Source Revision marked by library internal header file \fIcflib.h\fP.
+.RE
+.PP
+The return value is 'burned' into the library executable and looks like: 
+.PP
+.nf
+CFLIB PL 20 $LastChangedRevision: 128 $ 
+.fi
+.PP
+ 
+.SS "char* cfgetusg (void)"
+.PP
+Get Usage Message for (Terminal) Output. 
+.PP
+There are two flavours:
+.PP
+1. Let CFLIB do the job: Usage message is generated based on settings for commandline parsing and \fBSpecial Options Mask\fP found in the database
+.PP
+2. Deliver your own Usage Message: Just set the \fBCF_USAGE\fP Flag in the \fBSpecial Options Mask\fP of one parameter in the database to get a custom usage message (from hardcoded default, configuration file or environment). The delivered custom message string is taken as a format string for the printf() function: Use '%s' in the message string to have the program name inserted that CFLIB got from the default parameter \fB'CF_PRGNAME'\fP which by default is set to the name of the running program from the commandline at startup.
+.PP
+\fBReturns:\fP
+.RS 4
+.IP "\(bu" 2
+Pointer to usage string
+.IP "\(bu" 2
+\fCNULL\fP : An error occurred: 
+.PD 0
+
+.IP "  \(bu" 4
+No Configuration database Available.  
+.IP "  \(bu" 4
+malloc() for usage string failed
+.PP
+
+.PP
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBCF_MAXUSAGE\fP : Maximum string length for usage string.  
+.PP
+\fBCF_USG_DEFCOLS\fP : Default terminal width for usage string.  
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CFLIB - Flexible Configuration Library from the source code.

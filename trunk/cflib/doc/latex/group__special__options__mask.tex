@@ -1,0 +1,197 @@
+\hypertarget{group__special__options__mask}{
+\subsection{Special Options Mask}
+\label{group__special__options__mask}\index{Special Options Mask@{Special Options Mask}}
+}
+The {\bf \char`\"{}Special Options Mask\char`\"{}} is a Bitmask of type \hyperlink{group__special__options__mask_g4854f1596d5c6e0604a478fa9a2e23f0}{CFFLAGTYP} in Configuration Entry Structure Member \hyperlink{struct_c_o_n_f_i_g_b04d08abdf758c0400caaded716f4089}{CONFIG::flag} containing Type, Instruction and Information Flags for a Parameter.  
+
+
+\subsubsection*{Defines}
+\begin{CompactItemize}
+\item 
+\hypertarget{group__special__options__mask_ga4d82cea91ede4aee78594417894e368}{
+\#define \hyperlink{group__special__options__mask_ga4d82cea91ede4aee78594417894e368}{CF\_\-LAST}~0x0001}
+\label{group__special__options__mask_ga4d82cea91ede4aee78594417894e368}
+
+\begin{CompactList}\small\item\em Last entry in settings array. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_gb383c1436888ea6b410141f7c0b1f306}{
+\#define \hyperlink{group__special__options__mask_gb383c1436888ea6b410141f7c0b1f306}{CF\_\-PATH}~0x0002}
+\label{group__special__options__mask_gb383c1436888ea6b410141f7c0b1f306}
+
+\begin{CompactList}\small\item\em Search Path (for FindFile feature). \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_gfeeb63d4d8c498bec4a237ad8b94f02f}{
+\#define \hyperlink{group__special__options__mask_gfeeb63d4d8c498bec4a237ad8b94f02f}{CF\_\-SETFILE}~0x0004}
+\label{group__special__options__mask_gfeeb63d4d8c498bec4a237ad8b94f02f}
+
+\begin{CompactList}\small\item\em Entry is Private Configuration File. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_gbb03ea68e07e388da2c1337a1582c72e}{
+\#define \hyperlink{group__special__options__mask_gbb03ea68e07e388da2c1337a1582c72e}{CF\_\-SYS\_\-SETFILE}~0x0008}
+\label{group__special__options__mask_gbb03ea68e07e388da2c1337a1582c72e}
+
+\begin{CompactList}\small\item\em Entry is System Configuration File. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_g603f0467f101b71f5f869381429ffef4}{
+\#define \hyperlink{group__special__options__mask_g603f0467f101b71f5f869381429ffef4}{CF\_\-SECTION}~0x0010}
+\label{group__special__options__mask_g603f0467f101b71f5f869381429ffef4}
+
+\begin{CompactList}\small\item\em Section in Configuration File. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_g071c29b5177f2df2400712ce8daae9b0}{
+\#define \hyperlink{group__special__options__mask_g071c29b5177f2df2400712ce8daae9b0}{CF\_\-PRGNAME}~0x0020}
+\label{group__special__options__mask_g071c29b5177f2df2400712ce8daae9b0}
+
+\begin{CompactList}\small\item\em Running Program's Name from commandline. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_g0fde537a92deb77f75b21c9e8d306509}{
+\#define \hyperlink{group__special__options__mask_g0fde537a92deb77f75b21c9e8d306509}{CF\_\-TIME}~0x0040}
+\label{group__special__options__mask_g0fde537a92deb77f75b21c9e8d306509}
+
+\begin{CompactList}\small\item\em Time string. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_g1c5b511a34d2c0db6631539ba81a4386}{
+\#define \hyperlink{group__special__options__mask_g1c5b511a34d2c0db6631539ba81a4386}{CF\_\-DATE}~0x0080}
+\label{group__special__options__mask_g1c5b511a34d2c0db6631539ba81a4386}
+
+\begin{CompactList}\small\item\em Date string. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_g8d6cd1608fef5638efe964da63edf2dd}{
+\#define \hyperlink{group__special__options__mask_g8d6cd1608fef5638efe964da63edf2dd}{CF\_\-SET\_\-PUT}~0x0100}
+\label{group__special__options__mask_g8d6cd1608fef5638efe964da63edf2dd}
+
+\begin{CompactList}\small\item\em Source: Function Call. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_g1b3eb474a5160e5a32385f6de53d90d6}{
+\#define \hyperlink{group__special__options__mask_g1b3eb474a5160e5a32385f6de53d90d6}{CF\_\-SET\_\-ARG}~0x0200}
+\label{group__special__options__mask_g1b3eb474a5160e5a32385f6de53d90d6}
+
+\begin{CompactList}\small\item\em Source: Commandline Argument. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_g29dbd098a75a23ddc42b3b53e430d694}{
+\#define \hyperlink{group__special__options__mask_g29dbd098a75a23ddc42b3b53e430d694}{CF\_\-SET\_\-ENV}~0x0400}
+\label{group__special__options__mask_g29dbd098a75a23ddc42b3b53e430d694}
+
+\begin{CompactList}\small\item\em Source: Environment Variable. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_gabf1d4d312964af93bd55f71eeec6988}{
+\#define \hyperlink{group__special__options__mask_gabf1d4d312964af93bd55f71eeec6988}{CF\_\-SET\_\-PRIV}~0x0800}
+\label{group__special__options__mask_gabf1d4d312964af93bd55f71eeec6988}
+
+\begin{CompactList}\small\item\em Source: Private Configuration File. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_g8fe09807491ee119290329cf08e6f340}{
+\#define \hyperlink{group__special__options__mask_g8fe09807491ee119290329cf08e6f340}{CF\_\-SET\_\-SYS}~0x1000}
+\label{group__special__options__mask_g8fe09807491ee119290329cf08e6f340}
+
+\begin{CompactList}\small\item\em Source: System Configuration File. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_g17b4ef5b35afe21a4a80faa671030b65}{
+\#define \hyperlink{group__special__options__mask_g17b4ef5b35afe21a4a80faa671030b65}{CF\_\-SET\_\-DEF}~0x2000}
+\label{group__special__options__mask_g17b4ef5b35afe21a4a80faa671030b65}
+
+\begin{CompactList}\small\item\em Source: Built-in Default. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_g09dcbb96c5ace43a7d5e7e4f52d387a8}{
+\#define \hyperlink{group__special__options__mask_g09dcbb96c5ace43a7d5e7e4f52d387a8}{CF\_\-SET\_\-QRY}~0x4000}
+\label{group__special__options__mask_g09dcbb96c5ace43a7d5e7e4f52d387a8}
+
+\begin{CompactList}\small\item\em Source: Interactive Terminal Input. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_g97d17b070dac10c14d3930c58bfba76f}{
+\#define \hyperlink{group__special__options__mask_g97d17b070dac10c14d3930c58bfba76f}{CF\_\-NO\_\-OPT\_\-ARG}~0x10000}
+\label{group__special__options__mask_g97d17b070dac10c14d3930c58bfba76f}
+
+\begin{CompactList}\small\item\em Commandline argument not followig an option. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_g9e526dae88bf6803772107ff283637b5}{
+\#define \hyperlink{group__special__options__mask_g9e526dae88bf6803772107ff283637b5}{CF\_\-CONCAT}~0x20000}
+\label{group__special__options__mask_g9e526dae88bf6803772107ff283637b5}
+
+\begin{CompactList}\small\item\em Argument is concatenated to option. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_g72b75851880f36aaa5a52fdfe7960cca}{
+\#define \hyperlink{group__special__options__mask_g72b75851880f36aaa5a52fdfe7960cca}{CF\_\-IGN\_\-ENV}~0x40000}
+\label{group__special__options__mask_g72b75851880f36aaa5a52fdfe7960cca}
+
+\begin{CompactList}\small\item\em Do not check environment for variable. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_ge39e0d9b4e9af8c6d4b3676783dd26e0}{
+\#define \hyperlink{group__special__options__mask_ge39e0d9b4e9af8c6d4b3676783dd26e0}{CF\_\-QUERY}~0x80000}
+\label{group__special__options__mask_ge39e0d9b4e9af8c6d4b3676783dd26e0}
+
+\begin{CompactList}\small\item\em Ask the user for unresolved item after configuration parsing. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_g64c30a2865061d0c1074bc6ec91e3dcf}{
+\#define \hyperlink{group__special__options__mask_g64c30a2865061d0c1074bc6ec91e3dcf}{CF\_\-STR}~0x100000}
+\label{group__special__options__mask_g64c30a2865061d0c1074bc6ec91e3dcf}
+
+\begin{CompactList}\small\item\em Entry is String. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_gb33869d596619ad14675c053925a42e0}{
+\#define \hyperlink{group__special__options__mask_gb33869d596619ad14675c053925a42e0}{CF\_\-INT}~0x200000}
+\label{group__special__options__mask_gb33869d596619ad14675c053925a42e0}
+
+\begin{CompactList}\small\item\em Entry is Integer. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_g1d1f1d1b6eac6b5d9970102318ab2667}{
+\#define \hyperlink{group__special__options__mask_g1d1f1d1b6eac6b5d9970102318ab2667}{CF\_\-FLAG}~0x400000}
+\label{group__special__options__mask_g1d1f1d1b6eac6b5d9970102318ab2667}
+
+\begin{CompactList}\small\item\em Entry is Flag. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_geefdbef320cbd7179f1fb0ebe0fcf5ce}{
+\#define \hyperlink{group__special__options__mask_geefdbef320cbd7179f1fb0ebe0fcf5ce}{CF\_\-REAL}~0x800000}
+\label{group__special__options__mask_geefdbef320cbd7179f1fb0ebe0fcf5ce}
+
+\begin{CompactList}\small\item\em Entry is Float. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_g675b6f8440beecc09fec54d17e9c3ee9}{
+\#define \hyperlink{group__special__options__mask_g675b6f8440beecc09fec54d17e9c3ee9}{CF\_\-FINDFILE}~0x1000000}
+\label{group__special__options__mask_g675b6f8440beecc09fec54d17e9c3ee9}
+
+\begin{CompactList}\small\item\em Entry is filename to be searched for in the path. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_g3229f5b038eaa0c6428361d2aa510dfc}{
+\#define \hyperlink{group__special__options__mask_g3229f5b038eaa0c6428361d2aa510dfc}{CF\_\-MUST}~0x2000000}
+\label{group__special__options__mask_g3229f5b038eaa0c6428361d2aa510dfc}
+
+\begin{CompactList}\small\item\em Entry may not be empty ({\tt NULL} or \char`\"{}\char`\"{}). \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_g5415b257c706aae33d91d3947a3429c0}{
+\#define \hyperlink{group__special__options__mask_g5415b257c706aae33d91d3947a3429c0}{CF\_\-RESID}~0x4000000}
+\label{group__special__options__mask_g5415b257c706aae33d91d3947a3429c0}
+
+\begin{CompactList}\small\item\em Residual/additional entry from commandline/setfile/cfput. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_gc30981201d7455071cef38a0133b9228}{
+\#define \hyperlink{group__special__options__mask_gc30981201d7455071cef38a0133b9228}{CF\_\-USAGE}~0x8000000}
+\label{group__special__options__mask_gc30981201d7455071cef38a0133b9228}
+
+\begin{CompactList}\small\item\em Usage Message format string. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_gff1b2e25aa9a89a55c1784018e24aa75}{
+\#define \hyperlink{group__special__options__mask_gff1b2e25aa9a89a55c1784018e24aa75}{CF\_\-EXPHOME}~0x10000000}
+\label{group__special__options__mask_gff1b2e25aa9a89a55c1784018e24aa75}
+
+\begin{CompactList}\small\item\em Expand Home Directory. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_g2b971231bd3cbad743ef2f4e0a613a47}{
+\#define \hyperlink{group__special__options__mask_g2b971231bd3cbad743ef2f4e0a613a47}{CF\_\-MALLOC}~0x20000000}
+\label{group__special__options__mask_g2b971231bd3cbad743ef2f4e0a613a47}
+
+\begin{CompactList}\small\item\em Space for entry's content was mallocated. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_g618e7187ee15bacfe668e72a858e71fc}{
+\#define \hyperlink{group__special__options__mask_g618e7187ee15bacfe668e72a858e71fc}{CF\_\-FORCED}~0x40000000}
+\label{group__special__options__mask_g618e7187ee15bacfe668e72a858e71fc}
+
+\begin{CompactList}\small\item\em Setting has been forced (already). \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_gd76153c65f68cc0ee5c1a04c8c3e80bf}{
+\#define \hyperlink{group__special__options__mask_gd76153c65f68cc0ee5c1a04c8c3e80bf}{CF\_\-NOSAVE}~0x80000000}
+\label{group__special__options__mask_gd76153c65f68cc0ee5c1a04c8c3e80bf}
+
+\begin{CompactList}\small\item\em Don't include in savefile / mark entry. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_gd9b1f659b11c529a0ed1035caf8b239b}{
+\#define \hyperlink{group__special__options__mask_gd9b1f659b11c529a0ed1035caf8b239b}{CF\_\-SRC}~(CF\_\-INT$|$CF\_\-FLAG)}
+\label{group__special__options__mask_gd9b1f659b11c529a0ed1035caf8b239b}
+
+\begin{CompactList}\small\item\em Type for source/origin inquiry. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_g36792935eec7c6636b6aea8df82f7480}{
+\#define \hyperlink{group__special__options__mask_g36792935eec7c6636b6aea8df82f7480}{CF\_\-FLGINQ}~(CF\_\-STR$|$CF\_\-FLAG)}
+\label{group__special__options__mask_g36792935eec7c6636b6aea8df82f7480}
+
+\begin{CompactList}\small\item\em Type for options mask inquiry. \item\end{CompactList}\item 
+\hypertarget{group__special__options__mask_g8a50d7326b057d262f53ef84a166f9c5}{
+\#define \hyperlink{group__special__options__mask_g8a50d7326b057d262f53ef84a166f9c5}{CF\_\-TD}~(CF\_\-DATE$|$CF\_\-TIME)}
+\label{group__special__options__mask_g8a50d7326b057d262f53ef84a166f9c5}
+
+\begin{CompactList}\small\item\em Date or Time entry. \item\end{CompactList}\end{CompactItemize}
+\subsubsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+\hypertarget{group__special__options__mask_g4854f1596d5c6e0604a478fa9a2e23f0}{
+typedef unsigned long \hyperlink{group__special__options__mask_g4854f1596d5c6e0604a478fa9a2e23f0}{CFFLAGTYP}}
+\label{group__special__options__mask_g4854f1596d5c6e0604a478fa9a2e23f0}
+
+\begin{CompactList}\small\item\em Special Options Mask Type. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsubsection{Detailed Description}
+The {\bf \char`\"{}Special Options Mask\char`\"{}} is a Bitmask of type \hyperlink{group__special__options__mask_g4854f1596d5c6e0604a478fa9a2e23f0}{CFFLAGTYP} in Configuration Entry Structure Member \hyperlink{struct_c_o_n_f_i_g_b04d08abdf758c0400caaded716f4089}{CONFIG::flag} containing Type, Instruction and Information Flags for a Parameter. 
+
+\begin{itemize}
+\item Special CFLIB properties: \hyperlink{parameter_types_cflib_parameters}{CFLIB Parameters}\item Source/Origin: \hyperlink{config_levels_parsing_levels}{Parsing Levels}\item Initialization options: \hyperlink{config_levels_initialization_process}{Parsing Levels in the Initialization Process}\item Type/Interpretation Flags: \hyperlink{parameter_types_parameter_datatypes}{Parameter Data Types}\item \hyperlink{parameter_types_processing_instructions}{Special Processing Instructions}\item \hyperlink{parameter_types_handling_instructions}{Special Handling Instructions}\item Information/Status markers: \begin{itemize}
+\item \hyperlink{group__special__options__mask_ga4d82cea91ede4aee78594417894e368}{CF\_\-LAST} must appear in the \hyperlink{config_initializer}{Configuration Initializer} \item \hyperlink{group__special__options__mask_g5415b257c706aae33d91d3947a3429c0}{CF\_\-RESID} marks one of the \hyperlink{config_levels_residuals}{Residual Items} \item \hyperlink{group__special__options__mask_g2b971231bd3cbad743ef2f4e0a613a47}{CF\_\-MALLOC} and \hyperlink{group__special__options__mask_g618e7187ee15bacfe668e72a858e71fc}{CF\_\-FORCED} are for library internal use \end{itemize}
+\end{itemize}

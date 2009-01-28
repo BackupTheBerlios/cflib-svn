@@ -1,0 +1,202 @@
+.TH "General Utilities" 3 "28 Jan 2009" "Version Patchlevel 20" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+General Utilities \- 
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCF_BACKBUFLEN\fP   102400"
+.br
+.RI "\fIFile copy buffer for \fBBackupFile()\fP. \fP"
+.ti -1c
+.RI "#define \fBDelFlag\fP(a, b)   a&=(~b)"
+.br
+.RI "\fIDelete bits of Mask \fCb\fP from Mask \fCa\fP. \fP"
+.ti -1c
+.RI "#define \fBSetFlag\fP(a, b)   a|=b"
+.br
+.RI "\fISet bits of Mask \fCb\fP in Mask \fCa\fP. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBRemoveCR\fP (char *ptr)"
+.br
+.RI "\fIString Utility Function. \fP"
+.ti -1c
+.RI "void \fBRemoveTrailSpace\fP (char *ptr)"
+.br
+.RI "\fIString Utility Function. \fP"
+.ti -1c
+.RI "char * \fBEatWhiteSpace\fP (char *ptr)"
+.br
+.RI "\fIString Utility Function. \fP"
+.ti -1c
+.RI "int \fBIsATerminal\fP (FILE *fp)"
+.br
+.RI "\fITest whether stream is a terminal. \fP"
+.ti -1c
+.RI "int \fBBackupFile\fP (const char *file, char *modus)"
+.br
+.RI "\fICopy or Rename File \fC'file'\fP to Backup File \fC'file~'\fP or \fC'file.bak'\fP. \fP"
+.ti -1c
+.RI "char * \fBFindFile\fP (const char *fname, const char *fpath, const char *const *fext)"
+.br
+.RI "\fIFind a File in Path trying Extensions. \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void RemoveCR (char * ptr)"
+.PP
+String Utility Function. 
+.PP
+Strip Carriage Return at end of string (after fgets) by introducing zero byte at CR position. Original source was 'STELM' by Kees and Lemmens.
+.PP
+\fBAuthor:\fP
+.RS 4
+Kees and Lemmens
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIptr\fP pointer to beginning of string 
+.RE
+.PP
+
+.SS "void RemoveTrailSpace (char * ptr)"
+.PP
+String Utility Function. 
+.PP
+Strip whitespaces at end of string by introducing zero byte after last non-whitespace character
+.PP
+\fBParameters:\fP
+.RS 4
+\fIptr\fP Pointer to beginning of string 
+.RE
+.PP
+
+.SS "char* EatWhiteSpace (char * ptr)"
+.PP
+String Utility Function. 
+.PP
+Set pointer to next non-whitespace-character in string. Original source was 'STELM' by Kees and Lemmens.
+.PP
+\fBAuthor:\fP
+.RS 4
+Kees and Lemmens
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIptr\fP Pointer to beginning of string 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Pointer to next non-whitespace-character in string 
+.RE
+.PP
+
+.SS "int IsATerminal (FILE * fp)"
+.PP
+Test whether stream is a terminal. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfp\fP File/Stream Pointer 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fCTRUE\fP or \fCFALSE\fP 
+.RE
+.PP
+\fBBug\fP
+.RS 4
+ANSI C doesn't have function isatty(), we always return TRUE
+.RE
+.PP
+
+.SS "int BackupFile (const char * file, char * modus)"
+.PP
+Copy or Rename File \fC'file'\fP to Backup File \fC'file~'\fP or \fC'file.bak'\fP. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP Name of regular file to be opened 
+.br
+\fImodus\fP Backup Mode: 
+.PD 0
+
+.IP "\(bu" 2
+\fC'r'\fP Rename 
+.IP "\(bu" 2
+\fC'd'\fP Duplicate, Copy 
+.IP "\(bu" 2
+\fC'@e ?'\fP Default \fC'd'\fP 
+.IP "\(bu" 2
+\fC'@e ?d'\fP docs-style (\fC\fP.bak) 
+.IP "\(bu" 2
+\fC'@e ?c'\fP, \fC'??'\fP Un*x Style (\fC~\fP)
+.PP
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.PD 0
+.IP "\(bu" 2
+\fC0\fP : Configuration has been saved to file successfully
+.PP
+.PD 0
+.IP "\(bu" 2
+\fC!=0\fP : An error occurred:
+.IP "  \(bu" 4
+\fBCFE_BOF\fP : Invalid filename / open error
+.IP "  \(bu" 4
+\fBCFE_BMF\fP : Backup: Memory allocation Failed. 
+.IP "  \(bu" 4
+\fBCFE_BRF\fP : Rename file failed
+.IP "  \(bu" 4
+\fBCFE_BBF\fP : Source file open error
+.IP "  \(bu" 4
+\fBCFE_BWF\fP : Target file write error 
+.PP
+
+.PP
+.RE
+.PP
+
+.SS "char* FindFile (const char * fname, const char * fpath, const char *const * fext)"
+.PP
+Find a File in Path trying Extensions. 
+.PP
+\fBAuthor:\fP
+.RS 4
+Eric R. Smith 
+.RE
+.PP
+\fBLicense:\fP.RS 4
+Public Domain
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfname\fP File Name 
+.br
+\fIfpath\fP Search Path: String of Directories separated by \fBPATHSEP1\fP (':' or ';') or \fBPATHSEP2\fP (nothing or ',') 
+.br
+\fIfext\fP Array of possible Extensions (optional, default is OS dependent)
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The name by which the file was found or \fCNULL\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CFLIB - Flexible Configuration Library from the source code.

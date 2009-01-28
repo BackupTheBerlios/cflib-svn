@@ -1,0 +1,107 @@
+.TH "config_initializer" 3 "28 Jan 2009" "Version Patchlevel 20" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+config_initializer \- Configuration Initializer 
+The \fB'Configuration Initializer'\fP is the major interface between the user program and CFLIB.
+.PP
+It is an Array of \fBCONFIG\fP items, just as the CFLIB Configuration Database itself.
+.PP
+Every parameter is characterized by:
+.PP
+.IP "\(bu" 2
+\fBParameter Name\fP (\fBCONFIG::name\fP)
+.PP
+.PP
+.IP "\(bu" 2
+\fBParameter Default Value\fP (\fBCONFIG::inhalt\fP)
+.PP
+.PP
+.IP "\(bu" 2
+\fBCommandline Option for Parameter\fP (\fBCONFIG::option\fP)
+.PP
+.PP
+.IP "\(bu" 2
+\fBSpecial Option Flags Mask for Parameter\fP (\fBCONFIG::flag\fP)
+.PP
+.PP
+An example initializer may look like this: 
+.PP
+.nf
+ const CONFIG initializer[] = {
+       // name        default        option  flag
+     { 'SPI_PROFILE', '~/.spi.cnf',  'c',    CF_SETFILE|CF_SET_ENV,     },
+     { 'SPI_SYSCONF', '/etc/spi.cnf',' ',    CF_SYS_SETFILE|CF_NOSAVE,  },
+     { 'SPI_DEFS',    'loop-0.A',    'f',    CF_SECTION,                },
+     { 'SPI_ID',      '',            ' ',    CF_SET_PRIV,               },
+     { 'verbosity',   '1',           'v',    CF_INT|CF_CONCAT|CF_NOSAVE,},
+     { 'label_items', CF_FLAG_ON,    'l',    CF_FLAG,                   },
+     { 'label_date',  NULL,          ' ',    CF_DATE|CF_SET_PUT,        },
+     { 'label_logo',  NULL,          'L',    0,                         },
+     { 'output_file', NULL,          'o',    CF_CONCAT|CF_QUERY,        },
+     { 'TERM',        '0.2',         'T',    CF_STR|CF_IGN_ENV,         },
+     { 'SCALE',       '1',           'S',    CF_REAL|CF_IGN_ENV,        },
+     { 'LOOPMOD',     'random',      '1',    CF_NO_OPT_ARG,             },
+     { 'CYCLES',      '2009',        '2',    CF_INT|CF_NO_OPT_ARG,      },
+     { 'CF_DUMPVERB', CFD_COLHEAD,   ' ',    CF_INT|CF_NOSAVE|CF_LAST,  },
+ };
+
+.fi
+.PP
+.PP
+The Configuration Initializer controls the behavior and actions of all \fBcf*\fP() functions, starting with the control of \fBParsing Levels in the Initialization Process\fP.
+.SH "Parameter Name"
+.PP
+Every entry in the initializer must have a name, that is a non-empty string, which is searched for in the environment and in the configuration files and which is used as an argument to the inquiry functions. Parameters that have a name beginning with \fB'CF_'\fP may have special meaning, see \fBCFLIB Parameters\fP.
+.SH "Parameter Default Value"
+.PP
+As the default content of an entry you can specify a \fCNULL\fP pointer or a string, which may be empty. If \fBCF_FLAG\fP is set for that entry you should use the \fBCF_FLAG_ON\fP or \fBCF_FLAG_OFF\fP macros.
+.SH "Commandline Option for Parameter"
+.PP
+You can control whether and how an entry's content can be set from the Commandline by setting one of the following \fB'Option Specifier'\fP Characters (and Special Option Flags where indicated):
+.PP
+.PD 0
+.IP "\(bu" 2
+'\fI \fP' (blank)
+.IP "  \(bu" 4
+No Commandline Option for this Parameter
+.PP
+
+.PP
+.PD 0
+.IP "\(bu" 2
+'\fIc\fP' (\fIc\fP = any 'normal' character)
+.IP "  \(bu" 4
+Looks for '-c <\fIstring>'\fP on the Commandline
+.IP "  \(bu" 4
+Looks for '-c<\fIstring>'\fP on the Commandline, if Flag \fBCF_CONCAT\fP is set in the Special Options Mask
+.IP "  \(bu" 4
+Looks for '-c<\fIchar>'\fP on the Commandline, if Flag \fBCF_FLAG\fP is set in the Special Options Mask
+.PP
+
+.PP
+.PD 0
+.IP "\(bu" 2
+'\fI#\fP' (\fI#\fP = a positive number = 1, 2, 3, ...)
+.IP "  \(bu" 4
+Looks for the 1st, 2nd, 3rd, ... '<\fIstring>'\fP that is not part of an option, if Flag \fBCF_NO_OPT_ARG\fP is set in the Special Options Mask
+.PP
+
+.PP
+.SH "Special Option Flags Mask for Parameter"
+.PP
+Most of the magic happens here! ;-) The \fB'Special Options Mask'\fP is a Bitmask of type \fBCFFLAGTYP\fP in Configuration Entry Structure Member \fBCONFIG::flag\fP containing Type, Instruction and Information Flags for a Parameter.  See \fBSpecial Options Mask\fP for details.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBTypes of Parameters\fP 
+.PP
+\fBConfiguration Parsing Levels and Source/Origin Options\fP
+.RE
+.PP
+\fBAttention:\fP
+.RS 4
+The last entry in the initializer list must have the \fBCF_LAST\fP Flag set! 
+.RE
+.PP
+

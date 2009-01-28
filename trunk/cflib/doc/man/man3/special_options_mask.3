@@ -1,0 +1,188 @@
+.TH "Special Options Mask" 3 "28 Jan 2009" "Version Patchlevel 20" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Special Options Mask \- The \fB'Special Options Mask'\fP is a Bitmask of type \fBCFFLAGTYP\fP in Configuration Entry Structure Member \fBCONFIG::flag\fP containing Type, Instruction and Information Flags for a Parameter.  
+
+.PP
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCF_LAST\fP   0x0001"
+.br
+.RI "\fILast entry in settings array. \fP"
+.ti -1c
+.RI "#define \fBCF_PATH\fP   0x0002"
+.br
+.RI "\fISearch Path (for FindFile feature). \fP"
+.ti -1c
+.RI "#define \fBCF_SETFILE\fP   0x0004"
+.br
+.RI "\fIEntry is Private Configuration File. \fP"
+.ti -1c
+.RI "#define \fBCF_SYS_SETFILE\fP   0x0008"
+.br
+.RI "\fIEntry is System Configuration File. \fP"
+.ti -1c
+.RI "#define \fBCF_SECTION\fP   0x0010"
+.br
+.RI "\fISection in Configuration File. \fP"
+.ti -1c
+.RI "#define \fBCF_PRGNAME\fP   0x0020"
+.br
+.RI "\fIRunning Program's Name from commandline. \fP"
+.ti -1c
+.RI "#define \fBCF_TIME\fP   0x0040"
+.br
+.RI "\fITime string. \fP"
+.ti -1c
+.RI "#define \fBCF_DATE\fP   0x0080"
+.br
+.RI "\fIDate string. \fP"
+.ti -1c
+.RI "#define \fBCF_SET_PUT\fP   0x0100"
+.br
+.RI "\fISource: Function Call. \fP"
+.ti -1c
+.RI "#define \fBCF_SET_ARG\fP   0x0200"
+.br
+.RI "\fISource: Commandline Argument. \fP"
+.ti -1c
+.RI "#define \fBCF_SET_ENV\fP   0x0400"
+.br
+.RI "\fISource: Environment Variable. \fP"
+.ti -1c
+.RI "#define \fBCF_SET_PRIV\fP   0x0800"
+.br
+.RI "\fISource: Private Configuration File. \fP"
+.ti -1c
+.RI "#define \fBCF_SET_SYS\fP   0x1000"
+.br
+.RI "\fISource: System Configuration File. \fP"
+.ti -1c
+.RI "#define \fBCF_SET_DEF\fP   0x2000"
+.br
+.RI "\fISource: Built-in Default. \fP"
+.ti -1c
+.RI "#define \fBCF_SET_QRY\fP   0x4000"
+.br
+.RI "\fISource: Interactive Terminal Input. \fP"
+.ti -1c
+.RI "#define \fBCF_NO_OPT_ARG\fP   0x10000"
+.br
+.RI "\fICommandline argument not followig an option. \fP"
+.ti -1c
+.RI "#define \fBCF_CONCAT\fP   0x20000"
+.br
+.RI "\fIArgument is concatenated to option. \fP"
+.ti -1c
+.RI "#define \fBCF_IGN_ENV\fP   0x40000"
+.br
+.RI "\fIDo not check environment for variable. \fP"
+.ti -1c
+.RI "#define \fBCF_QUERY\fP   0x80000"
+.br
+.RI "\fIAsk the user for unresolved item after configuration parsing. \fP"
+.ti -1c
+.RI "#define \fBCF_STR\fP   0x100000"
+.br
+.RI "\fIEntry is String. \fP"
+.ti -1c
+.RI "#define \fBCF_INT\fP   0x200000"
+.br
+.RI "\fIEntry is Integer. \fP"
+.ti -1c
+.RI "#define \fBCF_FLAG\fP   0x400000"
+.br
+.RI "\fIEntry is Flag. \fP"
+.ti -1c
+.RI "#define \fBCF_REAL\fP   0x800000"
+.br
+.RI "\fIEntry is Float. \fP"
+.ti -1c
+.RI "#define \fBCF_FINDFILE\fP   0x1000000"
+.br
+.RI "\fIEntry is filename to be searched for in the path. \fP"
+.ti -1c
+.RI "#define \fBCF_MUST\fP   0x2000000"
+.br
+.RI "\fIEntry may not be empty (\fCNULL\fP or ''). \fP"
+.ti -1c
+.RI "#define \fBCF_RESID\fP   0x4000000"
+.br
+.RI "\fIResidual/additional entry from commandline/setfile/cfput. \fP"
+.ti -1c
+.RI "#define \fBCF_USAGE\fP   0x8000000"
+.br
+.RI "\fIUsage Message format string. \fP"
+.ti -1c
+.RI "#define \fBCF_EXPHOME\fP   0x10000000"
+.br
+.RI "\fIExpand Home Directory. \fP"
+.ti -1c
+.RI "#define \fBCF_MALLOC\fP   0x20000000"
+.br
+.RI "\fISpace for entry's content was mallocated. \fP"
+.ti -1c
+.RI "#define \fBCF_FORCED\fP   0x40000000"
+.br
+.RI "\fISetting has been forced (already). \fP"
+.ti -1c
+.RI "#define \fBCF_NOSAVE\fP   0x80000000"
+.br
+.RI "\fIDon't include in savefile / mark entry. \fP"
+.ti -1c
+.RI "#define \fBCF_SRC\fP   (CF_INT|CF_FLAG)"
+.br
+.RI "\fIType for source/origin inquiry. \fP"
+.ti -1c
+.RI "#define \fBCF_FLGINQ\fP   (CF_STR|CF_FLAG)"
+.br
+.RI "\fIType for options mask inquiry. \fP"
+.ti -1c
+.RI "#define \fBCF_TD\fP   (CF_DATE|CF_TIME)"
+.br
+.RI "\fIDate or Time entry. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef unsigned long \fBCFFLAGTYP\fP"
+.br
+.RI "\fISpecial Options Mask Type. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fB'Special Options Mask'\fP is a Bitmask of type \fBCFFLAGTYP\fP in Configuration Entry Structure Member \fBCONFIG::flag\fP containing Type, Instruction and Information Flags for a Parameter. 
+
+.IP "\(bu" 2
+Special CFLIB properties: \fBCFLIB Parameters\fP
+.IP "\(bu" 2
+Source/Origin: \fBParsing Levels\fP
+.IP "\(bu" 2
+Initialization options: \fBParsing Levels in the Initialization Process\fP
+.IP "\(bu" 2
+Type/Interpretation Flags: \fBParameter Data Types\fP
+.IP "\(bu" 2
+\fBSpecial Processing Instructions\fP
+.IP "\(bu" 2
+\fBSpecial Handling Instructions\fP
+.IP "\(bu" 2
+Information/Status markers: 
+.PD 0
+
+.IP "  \(bu" 4
+\fBCF_LAST\fP must appear in the \fBConfiguration Initializer\fP 
+.IP "  \(bu" 4
+\fBCF_RESID\fP marks one of the \fBResidual Items\fP 
+.IP "  \(bu" 4
+\fBCF_MALLOC\fP and \fBCF_FORCED\fP are for library internal use 
+.PP
+
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CFLIB - Flexible Configuration Library from the source code.

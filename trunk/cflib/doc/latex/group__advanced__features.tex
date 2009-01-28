@@ -1,0 +1,132 @@
+\hypertarget{group__advanced__features}{
+\subsection{Advanced Features}
+\label{group__advanced__features}\index{Advanced Features@{Advanced Features}}
+}
+Debugging and Utility Functions.  
+
+
+\subsubsection*{Defines}
+\begin{CompactItemize}
+\item 
+\hypertarget{group__advanced__features_gb28b8410738c00c62003a5f5b2b19827}{
+\#define \hyperlink{group__advanced__features_gb28b8410738c00c62003a5f5b2b19827}{CFD\_\-CFDUMP}~0}
+\label{group__advanced__features_gb28b8410738c00c62003a5f5b2b19827}
+
+\begin{CompactList}\small\item\em Dump Mask Minimal. \item\end{CompactList}\item 
+\hypertarget{group__advanced__features_g6a97e565629fc3e7423e4feb804eb5d0}{
+\#define \hyperlink{group__advanced__features_g6a97e565629fc3e7423e4feb804eb5d0}{CFD\_\-LIBHEAD}~1}
+\label{group__advanced__features_g6a97e565629fc3e7423e4feb804eb5d0}
+
+\begin{CompactList}\small\item\em Dump option CFLIB header. \item\end{CompactList}\item 
+\hypertarget{group__advanced__features_g05403834c7c6377bcf762d640c0d0854}{
+\#define \hyperlink{group__advanced__features_g05403834c7c6377bcf762d640c0d0854}{CFD\_\-COLHEAD}~2}
+\label{group__advanced__features_g05403834c7c6377bcf762d640c0d0854}
+
+\begin{CompactList}\small\item\em Dump option Column headers. \item\end{CompactList}\item 
+\hypertarget{group__advanced__features_g9deeb100c2dc701f8f8193b8fb53fbff}{
+\#define \hyperlink{group__advanced__features_g9deeb100c2dc701f8f8193b8fb53fbff}{CFD\_\-SRCFLAGS}~4}
+\label{group__advanced__features_g9deeb100c2dc701f8f8193b8fb53fbff}
+
+\begin{CompactList}\small\item\em Dump option Source flag description. \item\end{CompactList}\item 
+\hypertarget{group__advanced__features_g61cced010b3d926e37aafdf615951875}{
+\#define \hyperlink{group__advanced__features_g61cced010b3d926e37aafdf615951875}{CFD\_\-DEFAULT}~CFD\_\-COLHEAD$|$CFD\_\-SRCFLAGS}
+\label{group__advanced__features_g61cced010b3d926e37aafdf615951875}
+
+\begin{CompactList}\small\item\em Dump Mask Default. \item\end{CompactList}\end{CompactItemize}
+\subsubsection*{Functions}
+\begin{CompactItemize}
+\item 
+int \hyperlink{group__advanced__features_gecfc8ee37366e1b36cb5aac0cc41ebdc}{cfdump} (FILE $\ast$fout)
+\begin{CompactList}\small\item\em Debugging Function. \item\end{CompactList}\item 
+int \hyperlink{group__advanced__features_g35e2c28f591ac71e3617c612233ecdd0}{cfdinichk} (\hyperlink{struct_c_o_n_f_i_g}{CONFIG} $\ast$set)
+\begin{CompactList}\small\item\em Debugging Function ({\bf experimental}). \item\end{CompactList}\item 
+char $\ast$ \hyperlink{group__advanced__features_gb6f874ac347d273dc45ad011808fe703}{cfhomexp} (char $\ast$name)
+\begin{CompactList}\small\item\em Expand {\tt $\sim$} or {\tt $\sim$user} in parameter content. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsubsection{Detailed Description}
+Debugging and Utility Functions. 
+
+\begin{itemize}
+\item Modes for \hyperlink{group__advanced__features_gecfc8ee37366e1b36cb5aac0cc41ebdc}{cfdump()} \end{itemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{group__advanced__features_gecfc8ee37366e1b36cb5aac0cc41ebdc}{
+\index{advanced\_\-features@{advanced\_\-features}!cfdump@{cfdump}}
+\index{cfdump@{cfdump}!advanced_features@{advanced\_\-features}}
+\paragraph[{cfdump}]{\setlength{\rightskip}{0pt plus 5cm}int cfdump (FILE $\ast$ {\em fout})}\hfill}
+\label{group__advanced__features_gecfc8ee37366e1b36cb5aac0cc41ebdc}
+
+
+Debugging Function. 
+
+Dump CFLIB DB content to {\tt fout} 
+
+Configuration options:
+
+Set integer bitmask CFLIB variable {\bf \char`\"{}CF\_\-DUMPVERB\char`\"{}} to
+
+\begin{itemize}
+\item = \hyperlink{group__advanced__features_gb28b8410738c00c62003a5f5b2b19827}{CFD\_\-CFDUMP} : Minimal \item \& \hyperlink{group__advanced__features_g6a97e565629fc3e7423e4feb804eb5d0}{CFD\_\-LIBHEAD} : CFLIB header \item \& \hyperlink{group__advanced__features_g05403834c7c6377bcf762d640c0d0854}{CFD\_\-COLHEAD} : Column headers \item \& \hyperlink{group__advanced__features_g9deeb100c2dc701f8f8193b8fb53fbff}{CFD\_\-SRCFLAGS} : Source flag description \item = \hyperlink{group__advanced__features_g61cced010b3d926e37aafdf615951875}{CFD\_\-DEFAULT} : Default dump verbosity\end{itemize}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em fout}]Pointer to File opened for writing or {\tt stdout/{\tt stderr/}.}..\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item {\tt $>$0} : Number of entries in CFLIB DB \item {\tt $<$0} : An error occurred:\begin{itemize}
+\item \hyperlink{group__errors_gf8cd36471ddcc549668f49238855609d}{CFE\_\-NCA} : No configuration database available \end{itemize}
+\end{itemize}
+\end{Desc}
+\hypertarget{group__advanced__features_g35e2c28f591ac71e3617c612233ecdd0}{
+\index{advanced\_\-features@{advanced\_\-features}!cfdinichk@{cfdinichk}}
+\index{cfdinichk@{cfdinichk}!advanced_features@{advanced\_\-features}}
+\paragraph[{cfdinichk}]{\setlength{\rightskip}{0pt plus 5cm}int cfdinichk ({\bf CONFIG} $\ast$ {\em set})}\hfill}
+\label{group__advanced__features_g35e2c28f591ac71e3617c612233ecdd0}
+
+
+Debugging Function ({\bf experimental}). 
+
+Initialize CFLIB DB using the default given by {\tt set}, checking validity and plausibility of entries
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em set}]Pointer to initializing CONFIG-Array\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item {\tt 0} : No error occurred \item {\tt !=0} : An error occurred\end{itemize}
+\end{Desc}
+\begin{Desc}
+\item[\hyperlink{todo__todo000001}{Todo}]Make \hyperlink{group__advanced__features_g35e2c28f591ac71e3617c612233ecdd0}{cfdinichk()} work as reliable, complete tool with much more testing and \hyperlink{group__special__options__mask}{Special Options Mask} validation!\end{Desc}
+\hypertarget{group__advanced__features_gb6f874ac347d273dc45ad011808fe703}{
+\index{advanced\_\-features@{advanced\_\-features}!cfhomexp@{cfhomexp}}
+\index{cfhomexp@{cfhomexp}!advanced_features@{advanced\_\-features}}
+\paragraph[{cfhomexp}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ cfhomexp (char $\ast$ {\em name})}\hfill}
+\label{group__advanced__features_gb6f874ac347d273dc45ad011808fe703}
+
+
+Expand {\tt $\sim$} or {\tt $\sim$user} in parameter content. 
+
+This function is used by default when reading \hyperlink{config_files}{Configuration Files} and on initialization of parameters with the Special Option Flag \hyperlink{group__special__options__mask_gff1b2e25aa9a89a55c1784018e24aa75}{CF\_\-EXPHOME} set.
+
+\begin{itemize}
+\item The environment is checked for the variables {\tt LOGNAME} or {\tt USER}, if no user name is given (\char`\"{}$\sim$/....\char`\"{})\item The {\tt passwd} file is searched for the users home directory, if possible\item Otherwise the environment variable {\tt HOME} is checked\item If all that fails, {\tt $\sim$} will be omitted, {\tt $\sim$user} will expand to \char`\"{}./user\char`\"{}\end{itemize}
+
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em name}]Entry's name\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item {\tt NULL} : an error occurred:\begin{itemize}
+\item No Configuration database Available. \item Entry's Content is a NULL Pointer. \item Memory allocation for Configuration Failed. \end{itemize}
+\end{itemize}
+\begin{itemize}
+\item {\tt !=NULL} : String pointer to original or expanded filename \end{itemize}
+\end{Desc}

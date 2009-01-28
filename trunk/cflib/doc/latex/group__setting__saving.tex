@@ -1,0 +1,122 @@
+\hypertarget{group__setting__saving}{
+\subsection{Setting and Saving the Configuration}
+\label{group__setting__saving}\index{Setting and Saving the Configuration@{Setting and Saving the Configuration}}
+}
+Set/Update Parameter Values or Save a Configuration File.  
+
+
+\subsubsection*{Functions}
+\begin{CompactItemize}
+\item 
+int \hyperlink{group__setting__saving_g9553f7a24b080660793a560c2bc8f210}{cfputstr} (char $\ast$name, char $\ast$content)
+\begin{CompactList}\small\item\em Update or Add Parameter {\em name\/} with string {\em content\/}. \item\end{CompactList}\item 
+int \hyperlink{group__setting__saving_g6f133f88dc253a6a80d13eed4d123063}{cfputtime} (\hyperlink{group__special__options__mask_g4854f1596d5c6e0604a478fa9a2e23f0}{CFFLAGTYP} td)
+\begin{CompactList}\small\item\em Set all Time and/or Date entries in CFLIB DB to {\em now\/} or {\em today\/}. \item\end{CompactList}\item 
+int \hyperlink{group__setting__saving_g0f6ed90e3ecfa0074af1635a0e4339ef}{cfnosave} (char $\ast$name, const char $\ast$onoff)
+\begin{CompactList}\small\item\em Alter or query the \hyperlink{group__special__options__mask_gd76153c65f68cc0ee5c1a04c8c3e80bf}{CF\_\-NOSAVE} Flag of Parameter {\em name\/}. \item\end{CompactList}\item 
+int \hyperlink{group__setting__saving_g046d8a68eae35b987eacca04a9a06cca}{cfsave} (char $\ast$file, const char $\ast$savemode)
+\begin{CompactList}\small\item\em Write configuration data to a Configuration File or {\tt stdout}. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsubsection{Detailed Description}
+Set/Update Parameter Values or Save a Configuration File. 
+
+\subsubsection{Function Documentation}
+\hypertarget{group__setting__saving_g9553f7a24b080660793a560c2bc8f210}{
+\index{setting\_\-saving@{setting\_\-saving}!cfputstr@{cfputstr}}
+\index{cfputstr@{cfputstr}!setting_saving@{setting\_\-saving}}
+\paragraph[{cfputstr}]{\setlength{\rightskip}{0pt plus 5cm}int cfputstr (char $\ast$ {\em name}, \/  char $\ast$ {\em content})}\hfill}
+\label{group__setting__saving_g9553f7a24b080660793a560c2bc8f210}
+
+
+Update or Add Parameter {\em name\/} with string {\em content\/}. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em name}]\hyperlink{config_initializer_parameter_name}{Parameter Name} \item[{\em content}]New (String) Content\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item \hyperlink{group__errors_gbb576e88369c2eac1ffd41915292968c}{CFE\_\-NEP} : New Entry successfully Put into DB.  \item {\tt 0} : Entry updated successfully \item {\tt $<$0} : An error occurred:\begin{itemize}
+\item \hyperlink{group__errors_gf8cd36471ddcc549668f49238855609d}{CFE\_\-NCA} : No Configuration database Available. \item \hyperlink{group__errors_g127dc37aea6ba5ef8d9dfe5cb9c629eb}{CFE\_\-MCF} : Memory allocation for Configuration Failed.  \end{itemize}
+\end{itemize}
+\end{Desc}
+\hypertarget{group__setting__saving_g6f133f88dc253a6a80d13eed4d123063}{
+\index{setting\_\-saving@{setting\_\-saving}!cfputtime@{cfputtime}}
+\index{cfputtime@{cfputtime}!setting_saving@{setting\_\-saving}}
+\paragraph[{cfputtime}]{\setlength{\rightskip}{0pt plus 5cm}int cfputtime ({\bf CFFLAGTYP} {\em td})}\hfill}
+\label{group__setting__saving_g6f133f88dc253a6a80d13eed4d123063}
+
+
+Set all Time and/or Date entries in CFLIB DB to {\em now\/} or {\em today\/}. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em td}]Target Selection Mask: \begin{itemize}
+\item \hyperlink{group__special__options__mask_g0fde537a92deb77f75b21c9e8d306509}{CF\_\-TIME} : Set Time \item \hyperlink{group__special__options__mask_g1c5b511a34d2c0db6631539ba81a4386}{CF\_\-DATE} : Set Date \item \hyperlink{group__special__options__mask_g8a50d7326b057d262f53ef84a166f9c5}{CF\_\-TD} : Set Time and Date\end{itemize}
+\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item {\tt $>$0} : Number of entries updated successfully \item {\tt $<$=0} : An error occurred:\begin{itemize}
+\item \hyperlink{group__errors_gf8cd36471ddcc549668f49238855609d}{CFE\_\-NCA} : No Configuration database Available. \item \hyperlink{group__errors_g127dc37aea6ba5ef8d9dfe5cb9c629eb}{CFE\_\-MCF} : Memory allocation for Configuration Failed. \item \hyperlink{group__errors_g7f7e54a5ccefa34556fe6da3b35b4f27}{CFE\_\-NEA} : No Entry with that name Available.  \end{itemize}
+\end{itemize}
+\end{Desc}
+\hypertarget{group__setting__saving_g0f6ed90e3ecfa0074af1635a0e4339ef}{
+\index{setting\_\-saving@{setting\_\-saving}!cfnosave@{cfnosave}}
+\index{cfnosave@{cfnosave}!setting_saving@{setting\_\-saving}}
+\paragraph[{cfnosave}]{\setlength{\rightskip}{0pt plus 5cm}int cfnosave (char $\ast$ {\em name}, \/  const char $\ast$ {\em onoff})}\hfill}
+\label{group__setting__saving_g0f6ed90e3ecfa0074af1635a0e4339ef}
+
+
+Alter or query the \hyperlink{group__special__options__mask_gd76153c65f68cc0ee5c1a04c8c3e80bf}{CF\_\-NOSAVE} Flag of Parameter {\em name\/}. 
+
+When the configuration database is saved to a configuration file, the function \hyperlink{group__setting__saving_g046d8a68eae35b987eacca04a9a06cca}{cfsave()} will exclude all items with the \hyperlink{group__special__options__mask_gd76153c65f68cc0ee5c1a04c8c3e80bf}{CF\_\-NOSAVE} flag set from the output.
+
+The \hyperlink{group__special__options__mask_gd76153c65f68cc0ee5c1a04c8c3e80bf}{CF\_\-NOSAVE} flag can be set in the Special Option Mask \hyperlink{struct_c_o_n_f_i_g_b04d08abdf758c0400caaded716f4089}{CONFIG::flag} for every entry in the \hyperlink{config_initializer}{Configuration Initializer} given to \hyperlink{group__cflib__core_ge593ff607f853bd5fc16a16bb6759314}{cfinit()} or \hyperlink{group__cflib__core_gdcf24d678203bd09a0a3e05b8a986c65}{cfstart()} or later be set with this function for parameters in the current configuration database \hyperlink{group__cflib__core_g7d0fec33ada97c2d7ef78e6c3d83da97}{\_\-conf}
+
+\hyperlink{config_levels_residuals}{Residual Items} will have the \hyperlink{group__special__options__mask_gd76153c65f68cc0ee5c1a04c8c3e80bf}{CF\_\-NOSAVE} flag set by default.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em name}]Entry's name\begin{itemize}
+\item {\tt \char`\"{}\char`\"{}} : All entries\item {\tt NULL} : All hardcoded entries\end{itemize}
+\item[{\em onoff}]\begin{itemize}
+\item \hyperlink{group__cflib__core_g355c714f2912ac336b8b03468c978d8c}{CF\_\-FLAG\_\-ON} : Set Flag \item \hyperlink{group__cflib__core_g7010abac2c80c121772da4d9c03332ee}{CF\_\-FLAG\_\-OFF} : Delete Flag \item {\tt \char`\"{}i\char`\"{}} : Inquire Flag\end{itemize}
+\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item {\tt 0} : Entry updated successfully / Flag is OFF (for {\tt \char`\"{}i\char`\"{}}) \item {\tt 1} : Flag is ON (for {\tt \char`\"{}i\char`\"{}}) \item {\tt !=0} or {\tt 1} : An Error occurred:\begin{itemize}
+\item \hyperlink{group__errors_gf8cd36471ddcc549668f49238855609d}{CFE\_\-NCA} : No Configuration database Available. \item \hyperlink{group__errors_g7f7e54a5ccefa34556fe6da3b35b4f27}{CFE\_\-NEA} : No Entry with that name Available.  \end{itemize}
+\end{itemize}
+\end{Desc}
+\hypertarget{group__setting__saving_g046d8a68eae35b987eacca04a9a06cca}{
+\index{setting\_\-saving@{setting\_\-saving}!cfsave@{cfsave}}
+\index{cfsave@{cfsave}!setting_saving@{setting\_\-saving}}
+\paragraph[{cfsave}]{\setlength{\rightskip}{0pt plus 5cm}int cfsave (char $\ast$ {\em file}, \/  const char $\ast$ {\em savemode})}\hfill}
+\label{group__setting__saving_g046d8a68eae35b987eacca04a9a06cca}
+
+
+Write configuration data to a Configuration File or {\tt stdout}. 
+
+Entries with the \hyperlink{group__special__options__mask_gd76153c65f68cc0ee5c1a04c8c3e80bf}{CF\_\-NOSAVE} flag will be excluded from the output. Use \hyperlink{group__setting__saving_g0f6ed90e3ecfa0074af1635a0e4339ef}{cfnosave()} to inquire or alter that flag for an entry.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em file}]\begin{itemize}
+\item $<${\em string$>$\/} : Name of regular file to be opened \item {\tt \char`\"{}\char`\"{}} : Write configuration to {\tt stdout} \item {\tt NULL} : Private configuration file will be overwritten or created, if an appropriate entry exists\end{itemize}
+\item[{\em savemode}]File open mode: \begin{itemize}
+\item {\tt \char`\"{}w\char`\"{}} : Overwrite \item {\tt \char`\"{}a\char`\"{}} : Append\end{itemize}
+\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item {\tt 0} : Configuration has been saved to file successfully \item {\tt !=0} : An error occurred:\begin{itemize}
+\item \hyperlink{group__errors_gf8cd36471ddcc549668f49238855609d}{CFE\_\-NCA} : No Configuration database Available. \item \hyperlink{group__errors_g939964b690f63b5484ec40fe8a4a7c56}{CFE\_\-IFP} : Invalid Filename entry for Private setfile. \item \hyperlink{group__errors_gd1375fe531ed1c13233e2fa7ae55534f}{CFE\_\-WAE} : Write Access Error.  \end{itemize}
+\end{itemize}
+\end{Desc}

@@ -1,0 +1,117 @@
+.TH "config_levels" 3 "28 Jan 2009" "Version Patchlevel 20" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+config_levels \- Configuration Parsing Levels and Source/Origin Options 
+CFLIB is designed to give you a maximum of possibilities for feeding parameters and parameter values into the configuration.
+.SH "Origin Window"
+.PP
+The library remembers the source/origin of all parameter values by setting one of the \fB'Source Flags'\fP in the \fB'Origin Window'\fP of the \fBSpecial Options Mask\fP ranging from Bit Offset 8 to 15 (see \fBParsing Levels\fP). On initialization the Origin Window Flags \fBCF_SET_*\fP of an entry in the \fBConfiguration Initializer\fP are used to control \fBParsing Level Priorities\fP.
+.SH "Parsing Levels"
+.PP
+\fB'Parsing Levels'\fP are equal to the Relative Bit Offset of the corresponding \fBCF_SET_*\fP Bit within the 'Origin Window':
+.PP
+Parsing Level : Description (Source Flag)
+.PP
+.IP "\(bu" 2
+0 = \fBCFP_PUT\fP : Function Call or Automatic Initialization.  (\fBCF_SET_PUT\fP)
+.IP "\(bu" 2
+1 = \fBCFP_ARG\fP : Commandline.  (\fBCF_SET_ARG\fP)
+.IP "\(bu" 2
+2 = \fBCFP_ENV\fP : Environment.  (\fBCF_SET_ENV\fP)
+.IP "\(bu" 2
+3 = \fBCFP_PRIV\fP : Private Configuration File.  (\fBCF_SET_PRIV\fP)
+.IP "\(bu" 2
+4 = \fBCFP_SYS\fP : System Configuration File.  (\fBCF_SET_SYS\fP)
+.IP "\(bu" 2
+5 : \fBCFP_DEF\fP : Built-in Default.  (\fBCF_SET_DEF\fP)
+.IP "\(bu" 2
+6 : \fBCFP_QRY\fP : Standard Input Channel.  (\fBCF_SET_QRY\fP)
+.IP "\(bu" 2
+7 : \fBCFP_RESERVED\fP : Reserved for CFLIB Subprojects
+.PP
+.SH "Parsing Levels in the Initialization Process"
+.PP
+On initialization the Parsing Levels 1 through 6 are processed by \fBcfinit()\fP in that order and priority. If a Parameter is found that has been defined in the Configuration Initializer, its content is included as String Content of that parameter in the configuration database.
+.PP
+Whether and how the \fBCommandline\fP Arguments are used to get a parameter value depends on the \fBCONFIG::option\fP setting for that parameter and the Special Option Flags:
+.PP
+.IP "\(bu" 2
+\fBCF_CONCAT\fP : Argument is concatenated to option. 
+.IP "\(bu" 2
+\fBCF_NO_OPT_ARG\fP : Commandline argument not followig an option. 
+.PP
+.PP
+See details under \fBCommandline Option for Parameter\fP.
+.PP
+The \fBEnvironment\fP can be excluded as a possible source of a parameter value by setting the Special Option Flag
+.PP
+.IP "\(bu" 2
+\fBCF_IGN_ENV\fP : Do not look for Environment Variable
+.PP
+.PP
+\fBConfiguration\fP Files are only used when corresponding entries are defined in the Configuration Initializer, see \fBParsing of Configuration Files\fP for details.
+.PP
+\fBInteractive\fP queries are not performed by default. If \fBcfinit()\fP shall ask the user for interactive input of items that are still unresolved after parsing all lower levels, you must set Special Option Flag:
+.PP
+.IP "\(bu" 2
+\fBCF_QUERY\fP : Ask the user for unresolved item after configuration parsing. 
+.PP
+.PP
+If an entry may not be empty (\fCNULL\fP or string '') after initialization, you can have \fBcfinit()\fP produce an appropriate error by setting the Special Option Flag:
+.PP
+.IP "\(bu" 2
+\fBCF_MUST\fP : Entry may not be empty (\fCNULL\fP or ''). 
+.PP
+.SS "Parsing Level Priorities"
+More precise control of parsing levels priorities and origin control for a parameter is available through setting one of the Flags in the 'Origin Window' of the parameter's \fBSpecial Options Mask\fP in the \fBConfiguration Initializer\fP :
+.PP
+.IP "\(bu" 2
+\fBCF_SET_PUT\fP : Must be set by a function call / automatic processing: Set this Flag on Time or Date \fBTypes of Parameters\fP for automatic initialization with \fInow\fP or \fItoday\fP 
+.PP
+.PP
+.IP "\(bu" 2
+\fBCF_SET_ARG\fP : Force initialization from commandline, ignore anything else
+.PP
+.PP
+.IP "\(bu" 2
+\fBCF_SET_ENV\fP : Let environment variable override earlier setting
+.PP
+.PP
+.IP "\(bu" 2
+\fBCF_SET_PRIV\fP : Let variable from private configuration file override earlier setting
+.PP
+.PP
+.IP "\(bu" 2
+\fBCF_SET_SYS\fP : Let variable from system configuration file override earlier setting
+.PP
+.PP
+.IP "\(bu" 2
+\fBCF_SET_DEF\fP : Let default from Configuration Initializer override earlier setting
+.PP
+.PP
+.IP "\(bu" 2
+\fBCF_SET_QRY\fP : Force setting from interactive Query (\fCstdin\fP)
+.PP
+.SH "Parsing of Configuration Files"
+.PP
+To indicate that an entry in the initializer list given to \fBcfinit()\fP represents the filename of one of the \fBConfiguration Files\fP, set one of the following Flags for that parameter:
+.PP
+.IP "\(bu" 2
+\fBCF_SETFILE\fP : Entry is Private Configuration File. 
+.IP "\(bu" 2
+\fBCF_SYS_SETFILE\fP : Entry is System Configuration File. 
+.PP
+.PP
+Within the system configuration file you can choose a section, from which information is read as from a single file. To specify an entry in the list referring to the name of that section give this entry the flag
+.PP
+.IP "\(bu" 2
+\fBCF_SECTION\fP : Section in Configuration File. 
+.PP
+.PP
+As the filenames for the two configuration files are themselves entries in the database, these levels are revisited, if neccessary, in reverse order after parsing the built-in default.
+.SH "Residual Items"
+.PP
+Any commandline argument that did not match conditions for a parameter will be included in the configuration database as parameter without name marked with Flag \fBCF_RESID\fP in the \fBSpecial Options Mask\fP. These additional entries from the command line can be accessed by successive calls to \fBcfgetres()\fP.
+.PP
+Residual items from one of the configuration files will also be accumulated in the database and can be accessed through inquiry by name with one of the \fBRetrieval Functions\fP. This is especially useful together with the report generation function \fBcfform()\fP. 

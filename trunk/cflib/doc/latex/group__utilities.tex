@@ -1,0 +1,156 @@
+\hypertarget{group__utilities}{
+\subsection{General Utilities}
+\label{group__utilities}\index{General Utilities@{General Utilities}}
+}
+\subsubsection*{Defines}
+\begin{CompactItemize}
+\item 
+\hypertarget{group__utilities_g4211f4b332e79ab5f3c691a4ab6ebaf9}{
+\#define \hyperlink{group__utilities_g4211f4b332e79ab5f3c691a4ab6ebaf9}{CF\_\-BACKBUFLEN}~102400}
+\label{group__utilities_g4211f4b332e79ab5f3c691a4ab6ebaf9}
+
+\begin{CompactList}\small\item\em File copy buffer for \hyperlink{group__utilities_g0fccda7427db33b2f73a3b6dca864207}{BackupFile()}. \item\end{CompactList}\item 
+\hypertarget{group__utilities_gbfbf02b37e47027916f3352798f7d44c}{
+\#define \hyperlink{group__utilities_gbfbf02b37e47027916f3352798f7d44c}{DelFlag}(a, b)~a\&=($\sim$b)}
+\label{group__utilities_gbfbf02b37e47027916f3352798f7d44c}
+
+\begin{CompactList}\small\item\em Delete bits of Mask {\tt b} from Mask {\tt a}. \item\end{CompactList}\item 
+\hypertarget{group__utilities_gfcc4d6e712f81df21ea69277d42af839}{
+\#define \hyperlink{group__utilities_gfcc4d6e712f81df21ea69277d42af839}{SetFlag}(a, b)~a$|$=b}
+\label{group__utilities_gfcc4d6e712f81df21ea69277d42af839}
+
+\begin{CompactList}\small\item\em Set bits of Mask {\tt b} in Mask {\tt a}. \item\end{CompactList}\end{CompactItemize}
+\subsubsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{group__utilities_g869ea1081375ada22168696db002bc58}{RemoveCR} (char $\ast$ptr)
+\begin{CompactList}\small\item\em String Utility Function. \item\end{CompactList}\item 
+void \hyperlink{group__utilities_gbb7b78ca5a077167e24637bba539eea1}{RemoveTrailSpace} (char $\ast$ptr)
+\begin{CompactList}\small\item\em String Utility Function. \item\end{CompactList}\item 
+char $\ast$ \hyperlink{group__utilities_gb6760d18c7c13f3c80d365abcb6a46b3}{EatWhiteSpace} (char $\ast$ptr)
+\begin{CompactList}\small\item\em String Utility Function. \item\end{CompactList}\item 
+int \hyperlink{group__utilities_g9a90e738d03b642f33901600671d225a}{IsATerminal} (FILE $\ast$fp)
+\begin{CompactList}\small\item\em Test whether stream is a terminal. \item\end{CompactList}\item 
+int \hyperlink{group__utilities_g0fccda7427db33b2f73a3b6dca864207}{BackupFile} (const char $\ast$file, char $\ast$modus)
+\begin{CompactList}\small\item\em Copy or Rename File {\tt \char`\"{}file\char`\"{}} to Backup File {\tt \char`\"{}file$\sim$\char`\"{}} or {\tt \char`\"{}file.bak\char`\"{}}. \item\end{CompactList}\item 
+char $\ast$ \hyperlink{group__utilities_g4e4e8f9a03b7f3598b5efd199b9a67c9}{FindFile} (const char $\ast$fname, const char $\ast$fpath, const char $\ast$const $\ast$fext)
+\begin{CompactList}\small\item\em Find a File in Path trying Extensions. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{group__utilities_g869ea1081375ada22168696db002bc58}{
+\index{utilities@{utilities}!RemoveCR@{RemoveCR}}
+\index{RemoveCR@{RemoveCR}!utilities@{utilities}}
+\paragraph[{RemoveCR}]{\setlength{\rightskip}{0pt plus 5cm}void RemoveCR (char $\ast$ {\em ptr})}\hfill}
+\label{group__utilities_g869ea1081375ada22168696db002bc58}
+
+
+String Utility Function. 
+
+Strip Carriage Return at end of string (after fgets) by introducing zero byte at CR position. Original source was \char`\"{}STELM\char`\"{} by Kees and Lemmens.
+
+\begin{Desc}
+\item[Author:]Kees and Lemmens\end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ptr}]pointer to beginning of string \end{description}
+\end{Desc}
+\hypertarget{group__utilities_gbb7b78ca5a077167e24637bba539eea1}{
+\index{utilities@{utilities}!RemoveTrailSpace@{RemoveTrailSpace}}
+\index{RemoveTrailSpace@{RemoveTrailSpace}!utilities@{utilities}}
+\paragraph[{RemoveTrailSpace}]{\setlength{\rightskip}{0pt plus 5cm}void RemoveTrailSpace (char $\ast$ {\em ptr})}\hfill}
+\label{group__utilities_gbb7b78ca5a077167e24637bba539eea1}
+
+
+String Utility Function. 
+
+Strip whitespaces at end of string by introducing zero byte after last non-whitespace character
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ptr}]Pointer to beginning of string \end{description}
+\end{Desc}
+\hypertarget{group__utilities_gb6760d18c7c13f3c80d365abcb6a46b3}{
+\index{utilities@{utilities}!EatWhiteSpace@{EatWhiteSpace}}
+\index{EatWhiteSpace@{EatWhiteSpace}!utilities@{utilities}}
+\paragraph[{EatWhiteSpace}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ EatWhiteSpace (char $\ast$ {\em ptr})}\hfill}
+\label{group__utilities_gb6760d18c7c13f3c80d365abcb6a46b3}
+
+
+String Utility Function. 
+
+Set pointer to next non-whitespace-character in string. Original source was \char`\"{}STELM\char`\"{} by Kees and Lemmens.
+
+\begin{Desc}
+\item[Author:]Kees and Lemmens\end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ptr}]Pointer to beginning of string \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Pointer to next non-whitespace-character in string \end{Desc}
+\hypertarget{group__utilities_g9a90e738d03b642f33901600671d225a}{
+\index{utilities@{utilities}!IsATerminal@{IsATerminal}}
+\index{IsATerminal@{IsATerminal}!utilities@{utilities}}
+\paragraph[{IsATerminal}]{\setlength{\rightskip}{0pt plus 5cm}int IsATerminal (FILE $\ast$ {\em fp})}\hfill}
+\label{group__utilities_g9a90e738d03b642f33901600671d225a}
+
+
+Test whether stream is a terminal. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em fp}]File/Stream Pointer \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]{\tt TRUE} or {\tt FALSE} \end{Desc}
+\begin{Desc}
+\item[\hyperlink{bug__bug000002}{Bug}]ANSI C doesn't have function isatty(), we always return TRUE\end{Desc}
+\hypertarget{group__utilities_g0fccda7427db33b2f73a3b6dca864207}{
+\index{utilities@{utilities}!BackupFile@{BackupFile}}
+\index{BackupFile@{BackupFile}!utilities@{utilities}}
+\paragraph[{BackupFile}]{\setlength{\rightskip}{0pt plus 5cm}int BackupFile (const char $\ast$ {\em file}, \/  char $\ast$ {\em modus})}\hfill}
+\label{group__utilities_g0fccda7427db33b2f73a3b6dca864207}
+
+
+Copy or Rename File {\tt \char`\"{}file\char`\"{}} to Backup File {\tt \char`\"{}file$\sim$\char`\"{}} or {\tt \char`\"{}file.bak\char`\"{}}. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em file}]Name of regular file to be opened \item[{\em modus}]Backup Mode: \begin{itemize}
+\item {\tt \char`\"{}r\char`\"{}} Rename \item {\tt \char`\"{}d\char`\"{}} Duplicate, Copy \item {\tt \char`\"{}@e ?\char`\"{}} Default {\tt \char`\"{}d\char`\"{}} \item {\tt \char`\"{}@e ?d\char`\"{}} docs-style ({\tt }.bak) \item {\tt \char`\"{}@e ?c\char`\"{}}, {\tt \char`\"{}??\char`\"{}} Un$\ast$x Style ({\tt $\sim$})\end{itemize}
+\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item {\tt 0} : Configuration has been saved to file successfully\end{itemize}
+\begin{itemize}
+\item {\tt !=0} : An error occurred:\begin{itemize}
+\item \hyperlink{group__errors_gda14f93a466c819b6286bcf7f85bbbe5}{CFE\_\-BOF} : Invalid filename / open error\item \hyperlink{group__errors_g722db0752b9a2f977065b8001da18101}{CFE\_\-BMF} : Backup: Memory allocation Failed. \item \hyperlink{group__errors_gee4caa017da2daf88aa192647f5ebaba}{CFE\_\-BRF} : Rename file failed\item \hyperlink{group__errors_g793b92e4f9ea3a7acde0cc0dcf80701f}{CFE\_\-BBF} : Source file open error\item \hyperlink{group__errors_g58992d0fae72c0a93a8fb1ec9cc1cd9c}{CFE\_\-BWF} : Target file write error \end{itemize}
+\end{itemize}
+\end{Desc}
+\hypertarget{group__utilities_g4e4e8f9a03b7f3598b5efd199b9a67c9}{
+\index{utilities@{utilities}!FindFile@{FindFile}}
+\index{FindFile@{FindFile}!utilities@{utilities}}
+\paragraph[{FindFile}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ FindFile (const char $\ast$ {\em fname}, \/  const char $\ast$ {\em fpath}, \/  const char $\ast$const $\ast$ {\em fext})}\hfill}
+\label{group__utilities_g4e4e8f9a03b7f3598b5efd199b9a67c9}
+
+
+Find a File in Path trying Extensions. 
+
+\begin{Desc}
+\item[Author:]Eric R. Smith \end{Desc}
+\begin{Desc}
+\item[License:]Public Domain\end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em fname}]File Name \item[{\em fpath}]Search Path: String of Directories separated by {\bf PATHSEP1} (':' or ';') or {\bf PATHSEP2} (nothing or ',') \item[{\em fext}]Array of possible Extensions (optional, default is OS dependent)\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The name by which the file was found or {\tt NULL} \end{Desc}
