@@ -44,7 +44,7 @@ endif
 ifdef WIN32
 ###################################### WIN32
 
-CFLIB_ROOT       := I:/eclipse/c_workspace/cflib_berlios
+CFLIB_ROOT       := I:/eclipse/c_workspace/cflib
 										# CFLIB (Eclipse) Workspace Path
 CFLIB_PROJECT    := libmgw
 										# Library Project (makeable Directory)
@@ -71,7 +71,7 @@ else
 ifdef LINUX
 ###################################### LINUX
 
-CFLIB_ROOT       := /projects/cflib_berlios
+CFLIB_ROOT       := /projects/cflib
 CFLIB_PROJECT    := liblin
 CFLIB_ADD_BUILDS := 
 CFLIB_PREF       := lib
