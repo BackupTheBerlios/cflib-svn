@@ -5,7 +5,7 @@
  *
  * Usage example for CFLIB - Flexible Configuration Library
  *
- * @version   SVN: \$Id: fill.c 103 2009-01-27 16:08:02Z stefan $
+ * @version   SVN: \$Id$
  * @author    Stefan Habermehl <stefan.habermehl@mcff.de>
  * @copyright (c) 1995-2009 Stefan Habermehl
  * @license   http://www.gnu.org/licenses GNU General Public License

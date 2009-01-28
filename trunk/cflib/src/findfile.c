@@ -26,7 +26,7 @@
  * The original code is placed in the public domain and has been adapted to
  * serve as a general utility function within CFLIB.
  *
- * @version   SVN: \$Id: findfile.c 103 2009-01-27 16:08:02Z stefan $
+ * @version   SVN: \$Id$
  * @author    Eric R. Smith
  * @author    Stefan Habermehl <stefan.habermehl@mcff.de>
  * @copyright (c) 1994,1995,1996,2002,2006,2007,2008,2009 Stefan Habermehl

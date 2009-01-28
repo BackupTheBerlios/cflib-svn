@@ -16,7 +16,7 @@
  *
  * The original CFLIB public header file cf.h should be included without change!
  *
- * @version   SVN: \$Id: cf_minimal.c 103 2009-01-27 16:08:02Z stefan $
+ * @version   SVN: \$Id$
  * @since     28.07.2008
  * @author    Stefan Habermehl <stefan.habermehl@mcff.de>
  * @copyright (c) 2008,2009 Stefan Habermehl
@@ -228,7 +228,7 @@ int cfdump(FILE *fout){
  * @return CFLIB Version based on current SVN Keyword Id
  */
 char *cfgetsubvers(){
-	return "CFLIB Minimalversion $Id: cf_minimal.c 103 2009-01-27 16:08:02Z stefan $";
+	return "CFLIB Minimalversion $Id$";
 }
 
 /**

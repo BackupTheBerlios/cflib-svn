@@ -12,7 +12,7 @@
  * deliver core functionality of CFLIB, but they can be substituted by
  * dumb versions if you want to reduce CFLIB code to a minimum ;-(
  *
- * @version   SVN: \$Id: cferr.c 128 2009-01-28 16:51:43Z stefan $
+ * @version   SVN: \$Id$
  * @author    Stefan Habermehl <stefan.habermehl@mcff.de>
  * @copyright (c) 1994,1995,1996,2002,2006,2007,2008,2009 Stefan Habermehl
  * @license   http://www.gnu.org/licenses GNU General Public License v3 or later

@@ -9,7 +9,7 @@
  * This file is included by cf*.c modules and holds the source code of the
  * Documentation Framework (Javadoc Style, tuned for Doxygen)
  *
- * @version   SVN: \$Id: cflib.h 133 2009-01-28 17:57:30Z stefan $
+ * @version   SVN: \$Id$
  * @author    Stefan Habermehl <stefan.habermehl@mcff.de>
  * @copyright (c) 1994,1995,1996,2002,2006,2007,2008,2009 Stefan Habermehl
  * @license   http://www.gnu.org/licenses GNU General Public License v3 or later
@@ -828,7 +828,7 @@
 /**
  * Library Identification
  */
-#define Subversion "CFLIB PL " Patchlevel " $LastChangedRevision: 133 $";
+#define Subversion "CFLIB PL " Patchlevel " $LastChangedRevision$";
 
 /* "Flag windows" using Macros from cf.h */
 

@@ -13,7 +13,7 @@
  * for these functions, if you want to reduce CFLIB code to a minimum
  * that is needed for configuration input and use in a program.
  *
- * @version   SVN: \$Id: cfwrite.c 128 2009-01-28 16:51:43Z stefan $
+ * @version   SVN: \$Id$
  * @author    Stefan Habermehl <stefan.habermehl@mcff.de>
  * @copyright (c) 1994,1995,1996,2002,2006,2007,2008,2009 Stefan Habermehl
  * @license   http://www.gnu.org/licenses GNU General Public License v3 or later
