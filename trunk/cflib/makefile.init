@@ -63,6 +63,7 @@ EXE              := .exe
 										# Executable Extension
 DIRSEP           := /
 										# Directory Separator [$(subst /,\,/)]
+CP               := cp
 RM               := rm -rf
 										# MSYS and basic unix shell commands
 SHELL             = /bin/sh
@@ -81,6 +82,7 @@ CFLIB_DEFINES    := -D_HAS_PWD -D_HAS_ISATTY
 CFLIB_UNDEFINES  :=
 EXE              :=
 DIRSEP           := /
+CP               := cp
 RM               := rm -rf
 SHELL             = /bin/sh
 
@@ -120,6 +122,9 @@ CFLIB_EXAMPLES            := cf_test fill fifi utilities/mktabinf
 CFLIB_EXAMPLES_LIBVERSION :=
 							# e.g. debug
 
+CFLIB_DOCU_DIR            := doc
+CFLIB_DOCU_TARGETS        := cflib.chm cflib.pdf cflib.man cflib_html.tgz
+
 #### 5. Derived Definitions
 
 CFLIB_PATH                := $(CFLIB_ROOT)$(DIRSEP)$(CFLIB_PROJECT)
@@ -140,6 +145,7 @@ CFLIB_EXAMPLES_TARGET     := cf_test$(EXE)
 CFLIB_EXAMPLES_TARGET     := $(CFLIB_EXAMPLES_EXECS)
 #endif
 CFLIB_EXAMPLES_LIB_FILE   := $(CFLIB_EXAMPLES_LIB_PATH)$(DIRSEP)$(CFLIB_PREF)$(CFLIB_EXAMPLES_LIB)$(CFLIB_EXT)
+CFLIB_DOCU_BUILDS         := $(foreach target, $(CFLIB_DOCU_TARGETS), $(CFLIB_ROOT)$(DIRSEP)$(CFLIB_DOCU_DIR)$(DIRSEP)$(target))
 
 #### 5. (Eclipse) Build Configurations
 

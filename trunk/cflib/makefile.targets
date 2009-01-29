@@ -39,6 +39,44 @@ $(CFLIB_PREF)%$(CFLIB_EXT):
 	@echo 'Finished building target: $@'
 	@echo ' '
 
+#### Documentation
+
+documentation: $(CFLIB_DOCU_BUILDS)
+
+CFLIB_DOCU_HTML := $(foreach ext, html css gif png, html$(DIRSEP)*.$(ext))
+
+%$(DIRSEP)cflib_html.tgz: %$(DIRSEP)html$(DIRSEP)index.html $(foreach target, $(CFLIB_DOCU_HTML), $(CFLIB_ROOT)$(DIRSEP)$(CFLIB_DOCU_DIR)$(DIRSEP)$(target))
+	@echo "Creating HTML documentation archive $(notdir $@)"
+	@cd "$(dir $@)" && tar czf $(notdir $@) $(CFLIB_DOCU_HTML)
+	@echo 'Finished building target: $@'
+	@echo ' '
+
+%$(DIRSEP)cflib.pdf: %$(DIRSEP)latex$(DIRSEP)refman.tex
+	@echo "Creating PDF documentation file $(notdir $@)"
+	@cd "$(dir $<)" && make -C . all && $(CP) refman.pdf $@
+	@echo 'Finished building target: $@'
+	@echo ' '
+
+%$(DIRSEP)cflib.man: %$(DIRSEP)man$(DIRSEP)man3$(DIRSEP)cf.h.3
+	@echo "Updating Unix manual page $(notdir $@)"
+	$(CP) $< $@
+	@echo ' '
+
+%$(DIRSEP)cflib.chm: %$(DIRSEP)html$(DIRSEP)index.hhc
+	@echo "Created Compiled HTML Help file $(notdir $@)"
+	@echo ' '
+
+%$(DIRSEP)html$(DIRSEP)index.hhc: $(CFLIB_ROOT_REL)$(DIRSEP)cflib.chm.doxyfile $(CFLIB_EXAMPLES_LIB_FILE)
+	@echo "Creating HTML Help source file $(notdir $@)"
+	@echo "Calling Doxygen with configuration from $(notdir $<)"
+	cat $< | doxygen -
+	@echo ' '
+
+%$(DIRSEP)cf.h.3 %$(DIRSEP)refman.tex %$(DIRSEP)html$(DIRSEP)index.html: $(CFLIB_ROOT_REL)$(DIRSEP)cflib.doxyfile $(CFLIB_EXAMPLES_LIB_FILE)
+	@echo "Calling Doxygen with configuration from $(notdir $<)"
+	cat $< | doxygen -
+	@echo ' '
+
 #### Misc. Targets
 
 rebuild: clean all
@@ -110,7 +148,7 @@ info_commands: _info.mk
 	@echo
 
 .PHONY: all rebuild clean distclean \
-		examples package dist archive \
+		examples package documentation dist archive \
 		help info info_system info_buildconf info_project info_commands
 
 ####################### end makefile.targets

@@ -2,9 +2,7 @@
  *            CFLIB - Flexible Configuration Library
  ***************************************************************************//**
  *
- * @internal
- *
- * @file cfio.c
+ * @internal @file cfio.c
  *
  * Functions for Input and Output of Configuration items
  *

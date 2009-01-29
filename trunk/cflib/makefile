@@ -19,7 +19,6 @@
 
 -include makefile.init
 
-#-include makefile.defs
 CFLIB_ROOT_REL := .
 
 all: info_system
@@ -49,15 +48,6 @@ $(CFLIB_EXAMPLES_EXEC_FILES): %$(EXE): $(CFLIB_EXAMPLES_DIR)/src/%.o
 
 $(foreach target, $(CFLIB_EXAMPLES), examples/src/examples/$(target).o): examples/%.o: %.c
 	make -C "$(CFLIB_EXAMPLES_PATH)" $<
-
-#$(filter-out $(CFLIB_EXAMPLES_DIR)$(DIRSEP)dbm%,$(CFLIB_EXAMPLES_EXEC_FILES)): %$(EXE): $(CFLIB_EXAMPLES_DIR)/src/%.o
-#$(filter $(CFLIB_EXAMPLES_DIR)$(DIRSEP)dbm%,$(CFLIB_EXAMPLES_EXEC_FILES)): $(CFLIB_EXAMPLES_DBMLIB_FILE)
-#$(filter $(CFLIB_EXAMPLES_DIR)$(DIRSEP)dbm%,$(CFLIB_EXAMPLES_EXEC_FILES)): %$(EXE): $(CFLIB_EXAMPLES_DIR)/src/%.o
-#	@echo 'Building dbm example target: $@'
-#	@echo 'Invoking: GCC C Linker'
-#	gcc -static -L"$(CFLIB_EXAMPLES_DBMLIB_PATH)" -o"$@" $< -l$(CFLIB_EXAMPLES_DBMLIB)
-#	@echo 'Finished building target: $@'
-#	@echo ' '
 
 -include makefile.targets
 
