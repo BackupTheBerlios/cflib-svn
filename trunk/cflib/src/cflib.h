@@ -80,6 +80,10 @@
  *    - @ref names
  *    - @ref properties
  *
+ * @par Project Homepage:
+ *
+ *    - http://cflib.berlios.de
+ *
  * @section basic_usage Basic Usage
  *
  * 1. Include cf.h
