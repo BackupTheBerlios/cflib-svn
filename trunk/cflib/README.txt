@@ -166,7 +166,7 @@ What you find here:
 
 4. Documentation
 
-4.1 Essentials
+4.1 Documentation Essentials
 
 doc/index.html
 doc/include/*.gif *.png *.jpg *.css *.js
@@ -174,7 +174,7 @@ doc/include/*.gif *.png *.jpg *.css *.js
 Doxygen configuration files:
 
 cflib.doxyfile (HTML, man, LATeX, PDF, ..)
-cflib.chm.doxyfile (CHM)
+cflib.chm.doxyfile (CHM) --> Edit variable HHC_LOCATION!!
 doc/include/doxygen_footer.html.inc
 
 4.2 Documentation generated from existing Essentials and Source Files
