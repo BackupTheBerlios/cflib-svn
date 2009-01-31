@@ -55,6 +55,29 @@ $(CFLIB_EXAMPLES_EXEC_FILES): %$(EXE): $(CFLIB_EXAMPLES_DIR)/src/%.o
 $(foreach target, $(CFLIB_EXAMPLES), examples/src/examples/$(target).o): examples/%.o: %.c
 	make -C "$(CFLIB_EXAMPLES_PATH)" $<
 
+	
+#### Archives
+
+dist: archive/cflib-20.0.1.tgz archive/cflib-20.0.1-src.tgz
+
+DISTFILES := makefile* *.txt *.doxyfile \
+	include src lib liblin libmgw libmgw_debug \
+	doc/*.html doc/cflib.* doc/include doc/man doc/html \
+	doc/latex/Makefile doc/latex/*.sty doc/latex/*.ttf doc/latex/*.tex \
+	doc/latex/*.dvi doc/latex/*.ps \
+	examples/src examples/linux/cf_test examples/mswindows
+
+DISTFILES_SRC := makefile* *.txt *.doxyfile \
+	include src lib liblin libmgw libmgw_debug \
+	doc/*.html doc/include doc/cflib.man doc/html \
+	examples/makefile examples/*.mk examples/src examples/utilities
+
+archive/cflib-20.0.2.tgz: $(DISTFILES)
+	tar czvf $@ --exclude=\*.d --exclude=\*.o --exclude=\*.svn\* $(DISTFILES)
+
+archive/cflib-20.0.2-src.tgz: $(DISTFILES_SRC)
+	tar czvf $@ --exclude=\*.hh\* --exclude=\*.a --exclude=\*.exe --exclude=\*.d --exclude=\*.o --exclude=\*.svn\* $(DISTFILES_SRC)
+
 #### Tasks common to Root Makefile and 
 #### Build/Project Submakes in subdirectories (e.g. "lib", "examples")
 
