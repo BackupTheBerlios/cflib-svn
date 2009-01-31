@@ -17,13 +17,19 @@
 #
 ############################################
 
+#### Setup
+
 -include makefile.init
 
 CFLIB_ROOT_REL := .
 
-all: info_system
+#### Project Root Makefile General Tasks
+
+all: info_system info_usage
 
 package: $(CFLIB_BUILDS)
+
+#### Cleanup
 
 clean: $(CFLIB_BUILDS:%=%_clean)
 	@echo "Finished Cleaning Configurations: $(CFLIB_BUILDS)"
@@ -32,7 +38,7 @@ clean: $(CFLIB_BUILDS:%=%_clean)
 $(CFLIB_BUILDS:%=%_clean): %:
 	@echo "Cleaning Configuration '$(@:%_clean=%)'"
 	cd $(@:%_clean=%) && make clean
-	-rm -rf $(@:%_clean=%)$(DIRSEP).update
+	-$(RM) $(@:%_clean=%)$(DIRSEP).update
 	@echo "Finished cleaning configuration '$(@:%_clean=%)'"
 	@echo ' '
 
@@ -48,6 +54,9 @@ $(CFLIB_EXAMPLES_EXEC_FILES): %$(EXE): $(CFLIB_EXAMPLES_DIR)/src/%.o
 
 $(foreach target, $(CFLIB_EXAMPLES), examples/src/examples/$(target).o): examples/%.o: %.c
 	make -C "$(CFLIB_EXAMPLES_PATH)" $<
+
+#### Tasks common to Root Makefile and 
+#### Build/Project Submakes in subdirectories (e.g. "lib", "examples")
 
 -include makefile.targets
 

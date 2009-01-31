@@ -37,6 +37,7 @@
  * 2008-08-03 [sh] header with meta info and license
  * 2009-01-22 [sh] adaption to doxygen docu tool
  * 2009-01-23 [sh] some small improvements
+ * 2009-01-30 [sh] switched time format to "%d.%m.%Y"
  *
  ******************************************************************************/
 
@@ -378,7 +379,7 @@ int cfputtime( CFFLAGTYP td ){
             if(_conf[i]->flag&CF_TIME)
 				strftime(buffer,CF_MAXTIMEBUF,"%H:%M:%S",stime2);
             else if(_conf[i]->flag&CF_DATE)
-            	strftime(buffer,CF_MAXTIMEBUF,"%d.%m.%y",stime2);
+            	strftime(buffer,CF_MAXTIMEBUF,"%d.%m.%Y",stime2);
             if((ret=cfputstr(_conf[i]->name,buffer))!=0) return ret;
             count++;
             free(buffer);

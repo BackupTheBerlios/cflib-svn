@@ -1,7 +1,7 @@
 ############################################
 #                                          #
 #  CFLIB - Flexible Configuration Library  #
-#  (c) 1995-2008 Stefan Habermehl          #
+#  (c) 1994-2009 Stefan Habermehl          #
 #                                          #
 #  makefile.init for Builds                #
 #                                          #
@@ -11,12 +11,22 @@
 #  GNU Make Build Environment              #
 #  based on Eclipse IDE Toolchains         #
 #                                          #
-#  @copyright (c) 2008 Stefan Habermehl    #
+#  @copyright (c) 2008-9 Stefan Habermehl  #
 #  @license GNU GPL v3+ (see LICENSE.txt)  #
 #                                          #
 ############################################
 #
 # @version SVN: $Id$
+#
+############################################
+#
+# You will usually NOT edit this file unless
+# you want to add a new system/platform to
+# the target system detection section!
+#
+# Edit makefile.project[.<system>] for
+# customization! If the file does not exist,
+# run root makefile once to create it!
 #
 ############################################
 
@@ -28,90 +38,95 @@
 .SUFFIXES: .c .o .d
 
 
-#### 1. Target Systems Detection
+#### 1. Target System Detection
 
-ifeq ($(OSTYPE),linux)
+ifeq ($(OSTYPE),linuxx)
 LINUX := ON
+CFLIB_MAKEPROJECT := makefile.project.linux
 endif
 
 ifeq ($(OS),Windows_NT)
-WIN32 := ON 
+WIN32 := ON
+CFLIB_MAKEPROJECT := makefile.project.win32
 endif
 
 
 #### 2. System Settings and Customization
 
-ifdef WIN32
-###################################### WIN32
+# Get Project Directory and Custom Project Settings
 
-CFLIB_ROOT       := I:/eclipse/c_workspace/cflib
-										# CFLIB (Eclipse) Workspace Path
-CFLIB_PROJECT    := libmgw
-										# Library Project (makeable Directory)
-CFLIB_ADD_BUILDS := debug shared
-										# Additional Library Builds
-CFLIB_PREF       := lib
-										# Library Prefix to omit for Linker
-CFLIB_EXT        := .a
-										# Library Extension
-CFLIB_SHARED_EXT := .dll
-										# Shared Library Extension
-CFLIB_DEFINES    := -D_PATHSEP_SEMICOLON
-CFLIB_UNDEFINES  := -U_HAS_PWD -U_HAS_ISATTY
-										# System specific defs and undefs
-EXE              := .exe
-										# Executable Extension
-DIRSEP           := /
-										# Directory Separator [$(subst /,\,/)]
-CP               := cp
-RM               := rm -rf
-										# MSYS and basic unix shell commands
-SHELL             = /bin/sh
+ifndef CFLIB_MAKEPROJECT
+CFLIB_MAKEPROJECT := makefile.project
+endif
 
-else
-ifdef LINUX
-###################################### LINUX
+-include $(CFLIB_MAKEPROJECT) ../$(CFLIB_MAKEPROJECT)
 
-CFLIB_ROOT       := /projects/cflib
-CFLIB_PROJECT    := liblin
-CFLIB_ADD_BUILDS := 
-CFLIB_PREF       := lib
-CFLIB_EXT        := .a
-CFLIB_SHARED_EXT := .so
-CFLIB_DEFINES    := -D_HAS_PWD -D_HAS_ISATTY
-CFLIB_UNDEFINES  :=
-EXE              :=
-DIRSEP           := /
-CP               := cp
-RM               := rm -rf
-SHELL             = /bin/sh
+# Initialize Defaults, if still undefined
 
-MAKE_NOMULTITARGET := ON
-
-else
-###################################### OTHER
-
-CFLIB_ROOT       := $(PWD)
+ifndef CFLIB_ROOT
+CFLIB_ROOT := $(PWD)
+									# CFLIB (Eclipse) Workspace Path
+endif
+ifndef CFLIB_PROJECT
 CFLIB_PROJECT    := lib
+									# Library Project (MAKEable Directory)
+endif
+ifndef CFLIB_ADD_BUILDS
+CFLIB_ADD_BUILDS := 
+									# Additional Library Builds
+endif
+ifndef CFLIB_PREF
 CFLIB_PREF       := lib
+									# Library Prefix to omit for Linker
+endif
+ifndef CFLIB_EXT
 CFLIB_EXT        := .a
+									# Library Extension
+endif
+ifndef CFLIB_SHARED_EXT
 CFLIB_SHARED_EXT := .so
-CFLIB_DEFINES    := 
+									# Shared Library Extension
+endif
+ifndef CFLIB_DEFINES
+CFLIB_DEFINES    :=
+									# System specific Defs and Undefs 
+endif
+ifndef CFLIB_UNDEFINES
 CFLIB_UNDEFINES  := -U_HAS_PWD -U_HAS_ISATTY
+endif
+ifndef EXE
 EXE              :=
+									# Executable Extension
+endif
+ifndef DIRSEP
 DIRSEP           := /
+									# Directory Separator
+endif
+ifndef CP
+CP               := cp
+									# Basic Shell Commands
+endif
+ifndef RM
 RM               := rm -rf
+endif
+ifndef GREP
+GREP             := grep
+endif
+ifndef SORT
+SORT             := sort
+endif
+ifndef CC
+CC                = gcc
+endif
+ifndef SHELL
 SHELL             = /bin/sh
-
 endif
-endif
-############### End of Customization Section
-
 
 #### 3. CFLIB Library
 
 CFLIB                     := cf
 CFLIB_DEBUG               := cf_debug
+
 
 #### 4. CFLIB Examples
 
@@ -125,6 +140,7 @@ CFLIB_EXAMPLES_LIBVERSION :=
 CFLIB_DOCU_DIR            := doc
 CFLIB_DOCU_TARGETS        := cflib.chm cflib.pdf cflib.man cflib_html.tgz
 
+
 #### 5. Derived Definitions
 
 CFLIB_PATH                := $(CFLIB_ROOT)$(DIRSEP)$(CFLIB_PROJECT)
@@ -132,22 +148,22 @@ CFLIB_PATH_DEBUG          := $(CFLIB_ROOT)$(DIRSEP)$(CFLIB_PROJECT)_debug
 CFLIB_EXAMPLES_PATH       := $(CFLIB_ROOT)$(DIRSEP)$(CFLIB_EXAMPLES_DIR)
 CFLIB_EXAMPLES_EXECS      := $(foreach example, $(CFLIB_EXAMPLES), $(example)$(EXE))
 CFLIB_EXAMPLES_EXEC_FILES := $(foreach exefile, $(CFLIB_EXAMPLES_EXECS), $(CFLIB_EXAMPLES_DIR)$(DIRSEP)$(exefile))
-#ifdef CFLIB_EXAMPLES_LIBVERSION
+ifdef CFLIB_EXAMPLES_LIBVERSION
 CFLIB_EXAMPLES_LIB_PATH   := $(CFLIB_PATH)_$(CFLIB_EXAMPLES_LIBVERSION)
 CFLIB_EXAMPLES_LIB        := $(CFLIB)_$(CFLIB_EXAMPLES_LIBVERSION)
-#else
+else
 CFLIB_EXAMPLES_LIB_PATH   := $(CFLIB_PATH)
 CFLIB_EXAMPLES_LIB        := $(CFLIB)
-#endif
-#ifdef MAKE_NOMULTITARGET
+endif
+ifdef MAKE_NOMULTITARGET
 CFLIB_EXAMPLES_TARGET     := cf_test$(EXE)
-#else
+else
 CFLIB_EXAMPLES_TARGET     := $(CFLIB_EXAMPLES_EXECS)
-#endif
+endif
 CFLIB_EXAMPLES_LIB_FILE   := $(CFLIB_EXAMPLES_LIB_PATH)$(DIRSEP)$(CFLIB_PREF)$(CFLIB_EXAMPLES_LIB)$(CFLIB_EXT)
 CFLIB_DOCU_BUILDS         := $(foreach target, $(CFLIB_DOCU_TARGETS), $(CFLIB_ROOT)$(DIRSEP)$(CFLIB_DOCU_DIR)$(DIRSEP)$(target))
 
-#### 5. (Eclipse) Build Configurations
+# (Eclipse) Build Configurations
 
 CFLIB_LIB_BUILDS := $(CFLIB_PROJECT) $(foreach build, $(CFLIB_ADD_BUILDS), $(CFLIB_PROJECT)_$(build))
 CFLIB_BUILDS     := $(CFLIB_LIB_BUILDS) $(CFLIB_EXAMPLES_DIR)

@@ -1,0 +1,22 @@
+######
+# CFLIB Custom Project File:
+# Change these settings according to your setup!
+# This file will be overwritten, if CFLIB_PROJECT_CUSTOM is not defined!
+#
+# Setup for MinGW, MSYS and basic unix shell commands available
+#
+######
+CFLIB_PROJECT_CUSTOM := makefile.project.win32
+CFLIB_ROOT       := I:/eclipse/c_workspace/cflib
+CFLIB_PROJECT    := libmgw
+CFLIB_ADD_BUILDS := debug shared
+CFLIB_PREF       := lib
+CFLIB_EXT        := .a
+CFLIB_SHARED_EXT := .dll
+CFLIB_DEFINES    := -D_PATHSEP_SEMICOLON
+CFLIB_UNDEFINES  := -U_HAS_PWD -U_HAS_ISATTY
+EXE    := .exe
+DIRSEP := /
+CP     := cp
+RM     := rm -rf
+SHELL   = /bin/sh

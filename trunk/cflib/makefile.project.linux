@@ -1,0 +1,22 @@
+######
+# CFLIB Custom Project File:
+# Change these settings according to your setup!
+# This file will be overwritten, if CFLIB_PROJECT_CUSTOM is not defined!
+######
+CFLIB_PROJECT_CUSTOM := makefile.project.linux
+CFLIB_ROOT := /projects/c_workspace/cflib
+CFLIB_PROJECT := liblin
+CFLIB_ADD_BUILDS :=
+CFLIB_PREF := lib
+CFLIB_EXT := .a
+CFLIB_SHARED_EXT := .so
+CFLIB_DEFINES := -D_HAS_PWD -D_HAS_ISATTY
+CFLIB_UNDEFINES :=
+EXE :=
+DIRSEP := /
+CP := cp
+RM := rm -rf
+GREP := grep
+SORT := sort | shrink
+SHELL = /bin/sh
+MAKE_NOMULTITARGET := ON
