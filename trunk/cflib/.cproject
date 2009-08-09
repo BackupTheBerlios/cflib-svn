@@ -1327,9 +1327,7 @@
 </tool>
 <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base.253875090" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base"/>
 <tool errorParsers="org.eclipse.cdt.core.GCCErrorParser" id="cdt.managedbuild.tool.gnu.c.compiler.mingw.base.1054776723" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.base">
-<option id="gnu.c.compiler.option.include.paths.677261711" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/cflib/include}&quot;"/>
-</option>
+<option id="gnu.c.compiler.option.include.paths.677261711" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath"/>
 <option id="gnu.c.compiler.option.preprocessor.def.symbols.179416478" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
 <listOptionValue builtIn="false" value="_HAS_LIMITS"/>
 </option>
@@ -1366,7 +1364,7 @@
 </toolChain>
 </folderInfo>
 <sourceEntries>
-<entry excluding="src/examples/utilities/cf_minimal.c|src/examples/utilities/mktabinf.c|src/examples/fill.c|src/examples/fifi.c|doc|archives|sample" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name=""/>
+<entry excluding="src/examples/cf_test.c|src/examples/utilities/cf_minimal.c|src/examples/utilities/mktabinf.c|src/examples/fill.c|src/examples/fifi.c|doc|archives|sample" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name=""/>
 </sourceEntries>
 </configuration>
 </storageModule>
