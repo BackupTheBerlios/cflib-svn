@@ -42,8 +42,7 @@
  * 2008-08-03 [sh] header with meta info and license
  * 2009-08-22 [sh] Documentation Update
  *
- *******************************************************************************
- */
+ ******************************************************************************/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -58,9 +57,9 @@
  *
  * @ingroup advanced_features
  *
- * Debugging Function
- *
  * Dump CFLIB DB content to @c fout
+ *
+ * Debugging Function
  *
  * Configuration options:
  *

@@ -1,10 +1,8 @@
 /*******************************************************************************
  *            CFLIB - Flexible Configuration Library
- *//**
+ ***************************************************************************//**
  *
- * @internal
- *
- * @file findfile.c
+ * @internal @file findfile.c
  *
  * Search a file, given Search Path and (optional) Extensions
  *

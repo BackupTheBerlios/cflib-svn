@@ -51,6 +51,7 @@
  * 2009-01-28 [sh] Final Documentation Update for PL 20
  *
  ***************************************************************************//**
+ * @ifnot CFLIB_Tagfile_Supplement
  *
  * @mainpage CFLIB Documentation
  *
@@ -213,6 +214,8 @@
  * - Comments, Bug Reports or (better) Bug Fixes are welcome!
  * - See @ref license
  * - ... Have Fun!
+ *
+ * @endif
  *
  ***************************************************************************//**
  *
@@ -908,7 +911,7 @@ CONFIG *_conf[MAXCONF + 1];
 #endif
 
 /**
- * @ingroup errors
+ * @ingroup errors CFLIB Error Handling
  *
  * Library Internal: Error List Item
  */
@@ -922,7 +925,7 @@ CONFERR;
 
 /**
  * @internal
- * @addtogroup advanced_features
+ * @addtogroup advanced_features CFLIB Advanced Features
  * @{
  */
 /* Prototypes for Library Internal Functions */

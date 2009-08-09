@@ -44,8 +44,7 @@
  * 2008-08-04 [sh] RemoveCR() strips now also CR character "\r"
  * 2009-08-22 [sh] Documentation Update
  *
- *******************************************************************************
- */
+ ******************************************************************************/
 
 #include <stdio.h>
 #include <string.h>
@@ -62,11 +61,9 @@
 
 #include "cflib.h"
 
-/**
- * @defgroup report_generation Report Generation
- * @{
- */
 /***************************************************************************//**
+ *
+ * @ingroup report_generation
  *
  * Process a Template from file or @c stdin and write generated Report to
  * File or @c stdout
@@ -414,7 +411,6 @@ int cfform( char *file, char *outfile, char *vd, int mode )
 
 	return CFE_OK;
 }
-/** @} */
 
 
 /***************************************************************************//**
@@ -495,11 +491,9 @@ int cfstart( CONFIG *setting, int ac, char **av, char *help, int mode )
 	return ( (cfret < 0) ? -1 : 0 );
 }
 
-/**
- * @addtogroup advanced_features
- * @{
- */
 /***************************************************************************//**
+ *
+ * @ingroup advanced_features CFLIB Advanced Features
  *
  * Expand @c ~ or @c ~user in parameter content
  *
@@ -634,17 +628,15 @@ char *cfhomexp( char *name )
 	return _conf[i]->inhalt;
 }
 
-/**
- * @}
- * @addtogroup utilities
- * @{
- */
 /***************************************************************************//**
+ *
+ * @ingroup utilities
  *
  * String Utility Function
  *
  * Strip Carriage Return at end of string (after fgets) by introducing
- * zero byte at CR position. Original source was "STELM" by Kees and Lemmens.
+ * zero byte at CR position.
+ * Original source was "STELM" by Kees and Lemmens.
  *
  * @author Kees and Lemmens
  *
@@ -660,7 +652,7 @@ void RemoveCR( char *ptr )
 
 /***************************************************************************//**
  *
- * String Utility Function
+ * @ingroup utilities String Utility Function
  *
  * Strip whitespaces at end of string by introducing zero byte after
  * last non-whitespace character
@@ -682,7 +674,7 @@ void RemoveTrailSpace( char *ptr )
 
 /***************************************************************************//**
  *
- * String Utility Function
+ * @ingroup utilities String Utility Function
  *
  * Set pointer to next non-whitespace-character in string.
  * Original source was "STELM" by Kees and Lemmens.
@@ -701,6 +693,8 @@ char *EatWhiteSpace( char *ptr )
 }
 
 /***************************************************************************//**
+ *
+ * @ingroup utilities
  *
  * Test whether stream is a terminal
  *
@@ -723,5 +717,4 @@ int IsATerminal( FILE *fp )
 	return TRUE;
 }
 
-/** @} */
 /******************************************************************************/

@@ -45,7 +45,7 @@ documentation: $(CFLIB_DOCU_BUILDS)
 
 CFLIB_DOCU_HTML := $(foreach ext, html css gif png, html$(DIRSEP)*.$(ext))
 
-%$(DIRSEP)cflib_html.tgz: %$(DIRSEP)html$(DIRSEP)index.html $(foreach target, $(CFLIB_DOCU_HTML), $(CFLIB_ROOT)$(DIRSEP)$(CFLIB_DOCU_DIR)$(DIRSEP)$(target))
+%$(DIRSEP)cflib_html.tgz: %$(DIRSEP)html$(DIRSEP)cflib.html %$(DIRSEP)html$(DIRSEP)index.html $(foreach target, $(CFLIB_DOCU_HTML), $(CFLIB_ROOT)$(DIRSEP)$(CFLIB_DOCU_DIR)$(DIRSEP)$(target))
 	@echo "Creating HTML documentation archive $(notdir $@)"
 	@cd "$(dir $@)" && tar czf $(notdir $@) $(CFLIB_DOCU_HTML)
 	@echo 'Finished building target: $@'
@@ -69,14 +69,19 @@ CFLIB_DOCU_HTML := $(foreach ext, html css gif png, html$(DIRSEP)*.$(ext))
 %$(DIRSEP)html$(DIRSEP)index.hhc: $(CFLIB_ROOT_REL)$(DIRSEP)cflib.chm.doxyfile $(CFLIB_EXAMPLES_LIB_FILE)
 	@echo "Creating HTML Help source file $(notdir $@)"
 	@echo "Calling Doxygen with configuration from $(notdir $<)"
-	cat $< | doxygen -
+	cd $(CFLIB_ROOT) && doxygen $(notdir $<)
 	@echo ' '
 
 %$(DIRSEP)cf.h.3 %$(DIRSEP)refman.tex %$(DIRSEP)html$(DIRSEP)index.html: $(CFLIB_ROOT_REL)$(DIRSEP)cflib.doxyfile $(CFLIB_EXAMPLES_LIB_FILE)
 	@echo "Calling Doxygen with configuration from $(notdir $<)"
-	cat $< | doxygen -
+	cd $(CFLIB_ROOT) && doxygen $(notdir $<)
 	@echo ' '
 
+%$(DIRSEP)html$(DIRSEP)cflib.html: $(CFLIB_ROOT_REL)$(DIRSEP)cflib.tagfile.doxyfile $(CFLIB_EXAMPLES_LIB_FILE)
+	@echo "Calling Doxygen with configuration from $(notdir $<)"
+	cd $(CFLIB_ROOT) && doxygen $(notdir $<)
+	$(CP) "$(dir $@)index.html" "$(dir $@)index_user.html"
+	@echo ' '
 
 #### Initialization of the system dependent custom project settings file
 #### makefile.project[.<setup>]

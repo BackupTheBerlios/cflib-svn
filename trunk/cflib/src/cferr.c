@@ -2,9 +2,7 @@
  *            CFLIB - Flexible Configuration Library
  ***************************************************************************//**
  *
- * @internal
- *
- * @file cferr.c
+ * @internal @file cferr.c
  *
  * Functions for Error Handling
  *
@@ -55,21 +53,35 @@
 #undef __CF_ERROR__
 
 /**
+ * @ifnot CFLIB_Tagfile_Supplement
  * @addtogroup errors
+ * @{
+ *
+ * Error Codes, Functions and Structures
  *
  * @bug There are still errors without entry in error stack
  *
  * - Library Internal Error Variables
- *
  * - Error Functions
- *
- * @{
+ * @}
+ * @endif
  */
 
-CONFERR *_cferr = NULL;     /**< Library Internal: Error List Pointer */
-int     _errcnt = 0;        /**< Library Internal: Error List Counter */
+/**
+ * @ingroup errors
+ * Library Internal: Error List Pointer
+ */
+CONFERR *_cferr = NULL;
+/**
+ * @ingroup errors
+ * Library Internal: Error List Counter
+ */
+int     _errcnt = 0;
+
 
 /***************************************************************************//**
+ *
+ * @ingroup errors
  *
  * Init, exit or append to Error List
  *
@@ -121,6 +133,8 @@ int  cfputerr(int ecode, char *string,...){
 
 /***************************************************************************//**
  *
+ * @ingroup errors
+ *
  * Error Code and Message Inquiry Function
  *
  * @param string    Pointer to a string, to which the error message should be
@@ -160,6 +174,8 @@ int cfgeterr( char *string, size_t len ){
 
 /***************************************************************************//**
  *
+ * @ingroup errors
+ *
  * Free all entries in error list
  *
  ******************************************************************************/
@@ -178,6 +194,8 @@ void cfclearerr( void ){
 
 
 /***************************************************************************//**
+ *
+ * @ingroup errors
  *
  * Revert order of entries in error list from last->first to first->last
  *
@@ -209,5 +227,4 @@ int cfreverr(void){
      return ( _errcnt == count ) ? _errcnt : -(_errcnt=count);
 }
 
-/** @} */
 /******************************************************************************/

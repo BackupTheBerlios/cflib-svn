@@ -16,12 +16,12 @@
  * @author    Stefan Habermehl <stefan.habermehl@mcff.de>
  * @copyright (c) 1994,1995,1996,1997,1998,2006,2007,2008,2009 Stefan Habermehl
  * @license   http://www.gnu.org/licenses GNU General Public License v3 or later
- * @package   CFLIB
- * @subpackage Library_Core
+ * @package   CFLIB Flexible Configuration Library
  *
  *//****************************************************************************
  *
  * This file is part of the CFLIB library.
+ *
  * CFLIB is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -36,20 +36,58 @@
  * along with CFLIB (see LICENSE.txt).
  * If not, see <http://www.gnu.org/licenses/>.
  *
- *******************************************************************************
+ *//****************************************************************************
  *
  * Version history
  *
  * 2008-08-03 [sh] header with meta info and license
  * 2009-08-22 [sh] Documentation Update
  * 2009-01-24 [sh] Final Revision PL 20
+ * 2009-02-05 [sh] Revised documentation markers for better user program
+ *                 integeration
  *
- ******************************************************************************/
-
-#ifndef __CF_H__
-
-/**
- * @defgroup cflib_core CFLIB Core Features
+ ***************************************************************************//**
+ *
+ * @weakgroup cflib Flexible Configuration Library
+ * @{
+ *
+ * CFLIB is a small, simple, flexible and portable ANSI C Library to be used as
+ * configuration interface for user programs.
+ *
+ * CFLIB builds and maintains a compact database structure consisting of a list
+ * of parameters with their name, content and some additional information about
+ * each parameter.
+ *
+ * CFLIB targets the basic needs of technical, scientific or other programmers
+ * who want to spend minimal time on coding input, output, variable parsing,
+ * report generation and the like but still have a simple to use, reliable,
+ * flexible and portable configuration interface for their programs.
+ *
+ * @par Main Features
+ *
+ * - Commandline, environment and terminal input parsing
+ * - Configuration files
+ * - File search
+ * - Template driven report generation
+ * - Automatic time and date update
+ *
+ * @author   Stefan Habermehl
+ * @license  http://www.gnu.org/licenses GNU General Public License v3 or later
+ *
+ * @par Project Homepage:
+ *
+ * Detailed information, source code and maybe updates are available from the
+ * library homepage:
+ *
+ * - http://cflib.berlios.de
+ *
+ * @par Local References:
+ *
+ * - Include file: @e cf.h
+ * - Library file: @e libcf.a
+ * - Documentation: @ref cflib
+ *
+ * @weakgroup cflib_core Core Features
  *
  * Basic CFLIB Setup
  *
@@ -59,40 +97,42 @@
  * - Configuration Database: Array of Configuration Entries
  * - Initialization of the Configuration Database
  * - Resetting the Configuration Database
+ *
  * @{
- */
+ ******************************************************************************/
 
-#define Patchlevel "20"          /**< CFLIB Identification */
+#ifndef __CF_H__
 
 /*
- * UTILITIES
+ * DEFINES
  */
 
-/* Dimensions of Arrays and Initializations of Variables */
+#define Patchlevel "20"      /**< CFLIB Identification */
 
-#define MAXCONF         4096     /**< Maximum number of entries in configuration database */
-#define CF_MAXERRSTR     512     /**< Maximum string length for error message */
-#define CF_MAXLINE     20480     /**< Maximum string length for setfile and form parsing */
-#define CF_MAXQLINE      512     /**< Maximum string length for query */
-#define CF_MAXUSAGE     1024     /**< Maximum string length for usage string */
-#define CF_USG_DEFCOLS    80     /**< Default terminal width for usage string */
-#define CF_MAXTIMEBUF    256     /**< Buffer size for time and day */
+/* Dimensions of Arrays and Initializations of Variables */
+#define MAXCONF         4096 /**< Maximum number of entries in configuration database */
+#define CF_MAXERRSTR     512 /**< Maximum string length for error message */
+#define CF_MAXLINE     20480 /**< Maximum string length for setfile and form parsing */
+#define CF_MAXQLINE      512 /**< Maximum string length for query */
+#define CF_MAXUSAGE     1024 /**< Maximum string length for usage string */
+#define CF_USG_DEFCOLS    80 /**< Default terminal width for usage string */
+#define CF_MAXTIMEBUF    256 /**< Buffer size for time and day */
 
 /* Boolean, pointer and flag macros */
 
 #ifndef TRUE
-#define TRUE  1                  /**< TRUE, if not defined */
-#define FALSE 0                  /**< FALSE, if not defined */
+#define TRUE  1             /**< TRUE, if not defined */
+#define FALSE 0             /**< FALSE, if not defined */
 #endif
 
 #ifndef NULL
-#define NULL (void *)(0L)        /**< NULL, if not defined */
+#define NULL (void *)(0L)   /**< NULL, if not defined */
 #endif
 
-#define CF_FLAG_ON      "\1"     /**< Flag is set */
-#define CF_FLAG_OFF     ""       /**< Flag is not set */
-#define CF_NO_OPTION    ' '      /**< Option is not set */
-#define TABLEN          8        /**< TAB length */
+#define CF_FLAG_ON     "\1" /**< Flag is set */
+#define CF_FLAG_OFF     ""  /**< Flag is not set */
+#define CF_NO_OPTION    ' ' /**< Option is not set */
+#define TABLEN          8   /**< TAB length */
 
 /* Parsing Levels */
 #define CFP_PUT         0	/**< Function Call or Automatic Initialization */
@@ -106,22 +146,22 @@
 
 /**
  * @}
- * @addtogroup report_generation
+ * @weakgroup report_generation Report Generation
  * @{
  */
-#define CF_DEF_VARDELIM "$()"    /**< Default variable delimiter for cfform() */
-#define CF_MAXINC          8	 /**< Maximum number of nested includes for cfform() */
+#define CF_DEF_VARDELIM "$()" /**< Default variable delimiter for cfform() */
+#define CF_MAXINC          8  /**< Maximum number of nested includes for cfform() */
 
 /**
  * @}
- * @addtogroup utilities
+ * @weakgroup utilities General Utilities
  * @{
  */
-#define CF_BACKBUFLEN 102400     /**< File copy buffer for BackupFile() */
+#define CF_BACKBUFLEN 102400 /**< File copy buffer for BackupFile() */
 
 /**
  * @}
- * @defgroup special_options_mask Special Options Mask
+ * @weakgroup special_options_mask Special Options Mask
  *
  * The @b "Special Options Mask" is a Bitmask of type @ref CFFLAGTYP in
  * Configuration Entry Structure Member CONFIG::flag containing Type,
@@ -137,7 +177,6 @@
  *   @li @ref CF_LAST must appear in the @ref config_initializer
  *   @li @ref CF_RESID marks one of the @ref residuals
  *   @li @ref CF_MALLOC and @ref CF_FORCED are for library internal use
- *
  * @{
  */
 
@@ -198,15 +237,13 @@ typedef unsigned long CFFLAGTYP;
 #define CF_FLGINQ   (CF_STR|CF_FLAG)    /**< Type for options mask inquiry */
 #define CF_TD       (CF_DATE|CF_TIME)   /**< Date or Time entry */
 
-
 /**
  * @}
- * @defgroup errors Error Handling
+ * @weakgroup errors Error Handling
  *
  * Error Codes, Functions and Structures
  *
  * - Error Codes and their mnemonic descriptions
- *
  * @{
  */
 #define CFE_INIT           0   /**< INITialize error input */
@@ -256,9 +293,10 @@ typedef unsigned long CFFLAGTYP;
 
 /**
  * @}
- * @addtogroup cflib_core
+ * @weakgroup cflib_core
  * @{
- *//*
+ */
+/**
  * Error Response Modes for cfstart()
  */
 #define CFS_NOT		  0        /**< Start Mode: No action on error */
@@ -270,108 +308,268 @@ typedef unsigned long CFFLAGTYP;
                                     raw dump of configuration */
 /**
  * @}
- * @defgroup advanced_features  Advanced Features
+ * @weakgroup advanced_features Advanced Features
  *
  * Debugging and Utility Functions
- *
  * @{
  *
- * - Modes for cfdump()
+ * Modes for cfdump()
  */
 #ifndef _CF_NODEBUGGING
-#define CFD_CFDUMP    0            /**< Dump Mask Minimal */
-#define CFD_LIBHEAD   1            /**< Dump option CFLIB header */
-#define CFD_COLHEAD   2            /**< Dump option Column headers */
-#define CFD_SRCFLAGS  4            /**< Dump option Source flag description */
-#define CFD_DEFAULT   CFD_COLHEAD|CFD_SRCFLAGS /**< Dump Mask Default */
+#define CFD_CFDUMP    0        /**< Dump Mask Minimal */
+#define CFD_LIBHEAD   1        /**< Dump option CFLIB header */
+#define CFD_COLHEAD   2        /**< Dump option Column headers */
+#define CFD_SRCFLAGS  4        /**< Dump option Source flag description */
+#define CFD_DEFAULT   CFD_COLHEAD|CFD_SRCFLAGS  /**< Dump Mask Default */
 #endif
 
 /**
  * @}
- * @ingroup cflib_core
- *
+ * @weakgroup cflib_core
+ * @{
+ */
+/**
  * CFLIB Configuration Database Entry
  */
 typedef struct _cf{
-    char *name;				/**< @ref parameter_name */
-    char *inhalt;           /**< Parameter Content, see @ref parameter_default */
-    char option;            /**< @ref parameter_option */
-    CFFLAGTYP flag;         /**< @ref special_options_mask */
+    char *name;         /**< @ref parameter_name */
+    char *inhalt;       /**< Parameter Content, see @ref parameter_default */
+    char option;        /**< @ref parameter_option */
+    CFFLAGTYP flag;     /**< @ref special_options_mask */
 } CONFIG;
+/** @} */
 
-/* Function Macros */
+/* FUNCTION MACROS */
 
 /**
- * @defgroup retrieval Information Retrieval
+ * @weakgroup retrieval Information Retrieval
+ * @{
  *
  * These functions and macros read entries from an initialized CFLIB database.
  * The exact name of the required parameter must be given as argument, where
  * indicated.
- *
- * @{
  */
+/** Get value (content) of named entry */
 #define cfget(a)       cfgetent(a,0)
+/** Inquire CFLIB DB for String in content of named entry */
 #define cfgetstr(a)    ((char *)cfgetent(a,CF_STR))
+/** Inquire CFLIB DB for Integer value in content of named entry */
 #define cfgetnum(a)    (*(int *)cfgetent(a,CF_INT))
+/** Inquire CFLIB DB for Float (Real) value in content of named entry */
 #define cfgetreal(a)   (*(float *)cfgetent(a,CF_REAL))
+/** Inquire CFLIB DB for Flag value in content of named entry */
 #define cfgetflag(a)   (*(int *)cfgetent(a,CF_FLAG))
+/** Inquire CFLIB DB for Bit set in entry's Special Options Fag CONFIG::flag */
 #define cfflaginq(a,b) (*(int *)cfgetent(a,CF_FLGINQ|(31&b)))
+/** Inquire CFLIB DB for Source of named entry's content */
 #define cfgetsrc(a)    (*(int *)cfgetent(a,CF_SRC))
+/** Get next Residual Command Line Argument from CFLIB DB */
 #define cfgetres()     ((char *)cfgetent("",CF_RESID))
+/** Get CFLIB Copyright Notice */
 #define cfgetcpr()     "CFLIB (c) 1994-2009 Stefan Habermehl"
-
 /**
  * @}
- * @defgroup setting_saving Setting and Saving the Configuration
+ * @weakgroup setting_saving Setting and Saving the Configuration
  *
  * Set/Update Parameter Values or Save a Configuration File
+ * @{
  */
-#define cfput(a,b)     cfputstr(a,(char *)b)
-
+#define cfput(a,b) cfputstr(a,(char *)b)    /**< Update or Add a Parameter */
 /**
- * @defgroup utilities General Utilities
+ * @}
+ * @weakgroup utilities General Utilities
+ *
+ * General Utility Macros and Functions
  * @{
  */
 #define DelFlag(a,b)   a&=(~b)  /**< Delete bits of Mask @c b from Mask @c a */
 #define SetFlag(a,b)   a|=b     /**< Set bits of Mask @c b in Mask @c a */
 /** @} */
 
-/* Function Prototypes */
-
+/*
+ * FUNTION PROTOTYPES
+ */
+/**
+ * @weakgroup cflib_core
+ *
+ * @{ *//**
+ *
+ * @ref cfinit() Initialize Configuration Database
+ */
 int    cfinit(CONFIG *set,int argc,char **argv);
+/**
+ * @ref cfexit()
+ * Free allocated memory and reset configuration database and error stack
+ */
 void   cfexit(void);
-int    cfform(char *infile, char *outfile, char *vardelim, int mode);
-void  *cfgetent(char *name, CFFLAGTYP typ);
-char  *cfhomexp(char *name);
-int    cfgetvers(void);
-char  *cfgetsubvers(void);
-int    cfnosave(char *name, const char *onoff);
-int    cfputstr(char *name, char *content);
-int    cfputtime(CFFLAGTYP td);
-char  *cfgetusg(void);
-int    cfgeterr(char *string, size_t len);
-int    cfputerr( int ecode, char *string, ... );
-void   cfclearerr(void);
-int    cfreverr(void);
+/**
+ * @ref cfstart()
+ * Start Configuration Database (with error reporting and usage message)
+ */
 int    cfstart(CONFIG *set, int ac, char **av, char *help, int mode);
 
+/**
+ * @}
+ * @weakgroup retrieval
+ * @{
+ */
+/**
+ * @ref cfgetent()
+ * Inquire configuration database for content of entry name
+ */
+void  *cfgetent(char *name, CFFLAGTYP typ);
+/**
+ * @ref cfgetvers()
+ * Get Library Version/Patchlevel
+ */
+int    cfgetvers(void);
+/**
+ * @ref cfgetsubvers()
+ * Get Library Subversion Details
+ */
+char  *cfgetsubvers(void);
+/**
+ * @ref cfgetusg()
+ * Get Usage Message for (Terminal) Output
+ */
+char  *cfgetusg(void);
+/**
+ * @}
+ * @weakgroup errors
+ * @{
+ */
+/**
+ * @ref cfgeterr()
+ * Error Code and Message Inquiry Function
+ */
+int    cfgeterr(char *string, size_t len);
+/**
+ * @ref cfputerr()
+ * Init, exit or append to Error List
+ */
+int    cfputerr(int ecode, char *string, ...);
+/**
+ * @ref cfclearerr()
+ * Free all entries in error list
+ */
+void   cfclearerr(void);
+/**
+ * @ref cfreverr()
+ * Revert order of entries in error list from last->first to first->last
+ */
+int    cfreverr(void);
+/**
+ * @}
+ * @weakgroup advanced_features
+ * @{
+ */
+/**
+ * @ref cfhomexp()
+ * Expand @c ~ or @c ~user in parameter content
+ */
+char  *cfhomexp(char *name);
 #ifndef _CF_NODEBUGGING
+/**
+ * @ref cfdinichk()
+ * Debugging Function (@b experimental)
+ */
 int    cfdinichk(CONFIG *set);
+/**
+ * @ref cfdump()
+ * Dump CFLIB DB content to @c fout
+ */
 int    cfdump(FILE *fout);
 #endif
+/**
+ * @}
+ * @weakgroup setting_saving
+ * @{
+ */
+/**
+ * @ref cfnosave()
+ * Alter or query the @ref CF_NOSAVE Flag of Parameter @e name
+ */
+int    cfnosave(char *name, const char *onoff);
+/**
+ * @ref cfputstr()
+ * Update or Add Parameter @e name with string @e content
+ */
+int    cfputstr(char *name, char *content);
+/**
+ * @ref cfputtime()
+ * Set all Time and/or Date entries in CFLIB DB to @e now or @e today
+ */
+int    cfputtime(CFFLAGTYP td);
+/** @} */
 #ifndef _CF_NOSAVING
+/**
+ * @weakgroup setting_saving
+ * @{
+ */
+/**
+ * @ref cfsave()
+ * Write configuration data to a Configuration File or @c stdout
+ */
 int    cfsave(char *fname, const char *savemode);
+/**
+ * @}
+ * @weakgroup utilities
+ * @{
+ */
+/**
+ * @ref BackupFile()
+ * Copy or Rename File @c "file" to Backup File @c "file~" or @c "file.bak"
+ */
 int    BackupFile(const char *file, char *modus);
+/** @} */
 #endif
-
+/**
+ * @weakgroup report_generation Report Generation
+ *
+ * Process templates doing variable substitution and file inclusion
+ *
+ * @{ *//**
+ *
+ * @ref cfform()
+ * Process a Template from file or @c stdin and write generated Report to
+ * File or @c stdout
+ */
+int    cfform(char *infile, char *outfile, char *vardelim, int mode);
+/**
+ * @}
+ * @weakgroup utilities
+ * @{
+ */
+/**
+ * Strip Carriage Return at end of string (after fgets) by introducing
+ * zero byte at CR position.
+ */
 void   RemoveCR(char *string);
+/**
+ * Strip whitespaces at end of string by introducing zero byte after last
+ * non-whitespace character
+ */
 void   RemoveTrailSpace(char *string);
+/**
+ * @ref EatWhiteSpace()
+ * Set pointer to next non-whitespace-character in string.
+ */
 char  *EatWhiteSpace(char *string);
+/**
+ * @ref IsATerminal()
+ * Test whether stream is a terminal
+ */
 int    IsATerminal( FILE *fp );
 #ifndef _CF_NOFINDFILE
+/**
+ * @ref FindFile()
+ * Find a File in Path trying Extensions
+ */
 char *FindFile( const char *fname, const char *fpath, const char *const *fext );
 #endif
+/** @} */
 
+/** @} */
 /** Marker: cf.h has been included */
 #define __CF_H__
 #endif
