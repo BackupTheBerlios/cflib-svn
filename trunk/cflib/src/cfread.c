@@ -216,38 +216,35 @@ CFFLAGTYP cfreadfile( CFFLAGTYP setfile, int *res_arg )
                             /* copy entry content */
                             strcpy(_conf[i]->inhalt,inhalt);
 
-
                             /* set sourceflag */
-#ifdef DEBUG
-fprintf(stderr,"name=%s, content=%s. flag=%lx, setfile=%lx, setfile&CF_SET_FIL=%lx\n",_conf[i]->name,_conf[i]->inhalt,_conf[i]->flag,setfile,(CF_SET_FIL&setfile));
-#endif
-                       if(_conf[i]->flag&(CF_SET_FIL&setfile)) SetFlag(_conf[i]->flag,CF_FORCED);
-/*                            is this neccessary? */
-
-                           _conf[i]->flag= (_conf[i]->flag & (~CF_SET)) | (CF_SET_FIL&setfile) ;
-
+                            if( _conf[i]->flag & (CF_SET_FIL&setfile) )
+                            	SetFlag(_conf[i]->flag, CF_FORCED);
+                            _conf[i]->flag =
+                            	(_conf[i]->flag&(~CF_SET))|(CF_SET_FIL&setfile);
                         }
                     }
 
-                    if(_conf[i]->flag&CF_LAST){
+                    if( _conf[i]->flag & CF_LAST ){
 
                         /* put residual item into cfbase */
                         if(!nmatch){
-                            if( (_conf[++(*res_arg)]=malloc(sizeof(struct _cf))) == NULL) return CFE_MCF;
+                            if( (_conf[++(*res_arg)]=malloc(sizeof(struct _cf)))
+                            	== NULL) return CFE_MCF;
                             if( (_conf[*res_arg]->inhalt=malloc(strlen(inhalt)+1))
-                            ==NULL){
+                            	== NULL ){
                                 fclose(fp);
                                 return CFE_MCF;
                             }
                             strcpy(_conf[*res_arg]->inhalt,inhalt);
                             if( (_conf[*res_arg]->name=malloc(strlen(name)+1))
-                            ==NULL){
+                            	== NULL ){
                                 fclose(fp);
                                 return CFE_MCF;
                             }
                             strcpy(_conf[*res_arg]->name,name);
                             _conf[*res_arg]->option='x';
-                            _conf[*res_arg]->flag=((CF_SET_FIL&setfile)|CF_RESID|CF_MALLOC);
+                            _conf[*res_arg]->flag=
+                            	((CF_SET_FIL&setfile)|CF_RESID|CF_MALLOC);
                         } /* end if(nmatch==FALSE) */
 
                         break;
