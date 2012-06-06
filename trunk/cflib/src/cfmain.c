@@ -425,10 +425,11 @@ int cfinit( CONFIG *set, int ac, char **av )
     }
 
     /**
-     * Return with indication of fatality and number of errors
+     * Return with indication of fatality and number of errors,
+     * putting errors in order of appearance
      */
 
-    ret = cfputerr( 0, NULL );
+    ret = cfreverr();
 
     return ( fat_err ? -ret : ret );
 }
