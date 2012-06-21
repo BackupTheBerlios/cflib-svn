@@ -38,20 +38,31 @@
 .SUFFIXES: .c .o .d
 
 
-#### 1. Target System Detection
+#### 1. Target Systems Detection
 
-ifeq ($(OSTYPE),linuxx)
+UNAME := $(shell uname|tr -d \\n)
+
+ifeq ($(OSTYPE),linux)
 LINUX := ON
-CFLIB_MAKEPROJECT := makefile.project.linux
+else 
+ifeq ($(UNAME),Linux)
+LINUX := ON
+endif
 endif
 
 ifeq ($(OS),Windows_NT)
-WIN32 := ON
-CFLIB_MAKEPROJECT := makefile.project.win32
+WIN32 := ON 
 endif
 
-
 #### 2. System Settings and Customization
+
+ifeq ($(LINUX),ON)
+CFLIB_MAKEPROJECT := makefile.project.linux
+endif
+
+ifeq ($(WIN32),ON)
+CFLIB_MAKEPROJECT := makefile.project.win32
+endif
 
 # Get Project Directory and Custom Project Settings
 
