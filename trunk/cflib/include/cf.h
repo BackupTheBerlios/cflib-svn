@@ -235,6 +235,7 @@ typedef unsigned long CFFLAGTYP;
 /* Special Flag Combinations */
 #define CF_SRC      (CF_INT|CF_FLAG)    /**< Type for source/origin inquiry */
 #define CF_FLGINQ   (CF_STR|CF_FLAG)    /**< Type for options mask inquiry */
+#define CF_DOUBLE   (CF_REAL|CF_FLAG)   /**< Type for double inquiry */
 #define CF_TD       (CF_DATE|CF_TIME)   /**< Date or Time entry */
 
 /**
@@ -357,6 +358,8 @@ typedef struct _cf{
 #define cfgetnum(a)    (*(int *)cfgetent(a,CF_INT))
 /** Inquire CFLIB DB for Float (Real) value in content of named entry */
 #define cfgetreal(a)   (*(float *)cfgetent(a,CF_REAL))
+/** Inquire CFLIB DB for Double value in content of named entry */
+#define cfgetdouble(a)   (*(double *)cfgetent(a,CF_DOUBLE))
 /** Inquire CFLIB DB for Flag value in content of named entry */
 #define cfgetflag(a)   (*(int *)cfgetent(a,CF_FLAG))
 /** Inquire CFLIB DB for Bit set in entry's Special Options Fag CONFIG::flag */
@@ -366,7 +369,7 @@ typedef struct _cf{
 /** Get next Residual Command Line Argument from CFLIB DB */
 #define cfgetres()     ((char *)cfgetent("",CF_RESID))
 /** Get CFLIB Copyright Notice */
-#define cfgetcpr()     "CFLIB (c) 1994-2009 Stefan Habermehl"
+#define cfgetcpr()     "CFLIB (c) 1994-2012 Stefan Habermehl"
 /**
  * @}
  * @weakgroup setting_saving Setting and Saving the Configuration

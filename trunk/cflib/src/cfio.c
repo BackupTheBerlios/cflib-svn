@@ -92,6 +92,7 @@ void *cfgetent( char *name, CFFLAGTYP typ )
 	register int i, j;
 	static int ret = 0;
 	static float retf = 0.0;
+	static double retd = 0.0; /* before: static float */
 
 	/* ready to work? */
 
@@ -100,32 +101,37 @@ void *cfgetent( char *name, CFFLAGTYP typ )
 		switch( typ & CF_ALLGET ){
 
 			case CF_INT:
-				ret=CFE_INF;
-				break;
+				ret = CFE_INF;
+				return &ret;
+			case CF_DOUBLE:
+				retd = CFE_RNF;
+				return &retd;
 			case CF_REAL:
-				retf=CFE_RNF;
-				break;
+				retf = CFE_RNF;
+				return &retf;
 			case CF_FLAG:
 			case CF_FLGINQ:
 			case CF_SRC:
 				ret=CFE_NCA;
-				break;
+				return &ret;
 			case CF_STR:
 			case CF_RESID:
 			default:
 				return NULL;
-				break;
 		}
-
-		if( typ & CF_REAL ) return &retf;
-		else return &ret;
 	}
 
 	/* get and interprete entry */
 
 	for(i=0;i<MAXCONF;i++){
 
-		if( (typ & CF_RESID & _conf[i]->flag) && _conf[i]->option == ' ' ){
+		if( (typ & CF_RESID & _conf[i]->flag) && _conf[i]->option == 'x'
+			&& ( typ & (CF_SET_PRIV|CF_SET_SYS) ) ){
+
+			_conf[i]->option = '-';
+			return _conf[i]->name;
+
+		} else if( (typ & CF_RESID & _conf[i]->flag) && _conf[i]->option == ' ' ){
 
 			_conf[i]->option = '-';
 			return _conf[i]->inhalt;
@@ -145,18 +151,19 @@ void *cfgetent( char *name, CFFLAGTYP typ )
 							 ||	*_conf[i]->inhalt == '-' )
 						ret = atoi( _conf[i]->inhalt );
 					else
-						ret=CFE_INF;
+						ret = CFE_INF;
 					break;
 
 				case CF_REAL:
+				case CF_DOUBLE:
 					if( _conf[i]->inhalt == NULL )
-						retf = CFE_RNF;
+						retd = CFE_RNF;
 					else if( isdigit( *_conf[i]->inhalt )
 							 || *_conf[i]->inhalt == '+'
 							 || *_conf[i]->inhalt == '-' )
-						retf = atof( _conf[i]->inhalt );
+						retd = atof( _conf[i]->inhalt );
 					else
-						retf = CFE_RNF;
+						retd = CFE_RNF;
 						break;
 
 				case CF_FLAG:
@@ -196,7 +203,8 @@ void *cfgetent( char *name, CFFLAGTYP typ )
 					ret = CFE_INF;
 					break;
 				case CF_REAL:
-					retf = CFE_RNF;
+				case CF_DOUBLE:
+					retd = CFE_RNF;
 					break;
 				case CF_FLAG:
 				case CF_FLGINQ:
@@ -218,7 +226,12 @@ void *cfgetent( char *name, CFFLAGTYP typ )
 
 		} else continue;
 
-		if( typ == CF_REAL ) return &retf;
+		if( typ == CF_REAL ){
+			retf = retd;
+			return &retf;
+		} else if( typ == CF_DOUBLE ){
+			return &retd;
+		}
 		return &ret;
 	}
 
