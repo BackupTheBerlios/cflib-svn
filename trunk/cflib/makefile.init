@@ -51,7 +51,7 @@ endif
 endif
 
 ifeq ($(OS),Windows_NT)
-WIN32 := ON 
+WIN32 := ON
 endif
 
 #### 2. System Settings and Customization
