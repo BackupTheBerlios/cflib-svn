@@ -168,10 +168,11 @@ info_system:
 	@uname -a
 	@echo
 	@echo OS = "$(OS)", OSTYPE = "$(OSTYPE)"
+	@echo LINUX = "$(LINUX)", WIN32 = "$(WIN32)"
 	@echo SHELL = "$(SHELL)"
 	@echo PWD = "$(PWD)"
 	@echo CURDIR = $(CURDIR)
-	@echo PATH = $(PATH)
+	@echo PATH = "$(PATH)"
 	@echo RM = $(RM)
 	@echo
 	@echo '## Make:'

@@ -7,7 +7,7 @@
 #
 ######
 CFLIB_PROJECT_CUSTOM := makefile.project.win32
-CFLIB_ROOT       := I:/eclipse/c_workspace/cflib
+CFLIB_ROOT       := C:/Projekte/eclipse/c_workspace/cflib
 CFLIB_PROJECT    := libmgw
 CFLIB_ADD_BUILDS := debug shared
 CFLIB_PREF       := lib
