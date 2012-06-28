@@ -4,7 +4,7 @@
 # This file will be overwritten, if CFLIB_PROJECT_CUSTOM is not defined!
 ######
 CFLIB_PROJECT_CUSTOM := makefile.project.linux
-CFLIB_ROOT := /home/steve/workspace/crystal_suite/cflib
+CFLIB_ROOT := ~/workspace/cflib
 CFLIB_PROJECT := liblin
 CFLIB_ADD_BUILDS :=
 CFLIB_PREF := lib
