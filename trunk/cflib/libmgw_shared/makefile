@@ -8,8 +8,8 @@ RM := del
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include subdir.mk
 -include src/subdir.mk
+-include subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -29,7 +29,7 @@ all: cflib.dll
 cflib.dll: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MinGW C Linker'
-	gcc -mdll -v -static -o"cflib.dll" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc -mdll -v -static -o "cflib.dll" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

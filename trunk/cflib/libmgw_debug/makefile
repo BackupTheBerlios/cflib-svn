@@ -8,8 +8,8 @@ RM := del
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include subdir.mk
 -include src/subdir.mk
+-include subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -29,7 +29,7 @@ all: libcf_debug.a
 libcf_debug.a: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC Archiver'
-	ar -r "libcf_debug.a" $(OBJS) $(USER_OBJS) $(LIBS)
+	ar -r  "libcf_debug.a" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

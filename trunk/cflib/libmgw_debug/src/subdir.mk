@@ -38,7 +38,7 @@ C_DEPS += \
 src/%.o: ../src/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: GCC C Compiler'
-	gcc -D_HAS_LIMITS -U_HAS_ISATTY -U_HAS_PWD -U_PREFER_BACKSLASH -U_CF_NOFINDFILE -U_CF_NODEBUGGING -UBIN_FORM -UBIN_FORM1 -U__MINT__ -Uatarist -Ulinux -UDEBUG -UDEBUG_BACKUP -UDEBUG_DINICHK -UDEBUG_ERROR -UDEBUG_FINDFILE -UDEBUG_FORM -UDEBUG_NOSAVE -UDEBUG_TIME -O2 -g3 -pedantic -Wall -c -fmessage-length=0 -v -ansi -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o"$@" "$<"
+	gcc -D_HAS_LIMITS -U_HAS_ISATTY -U_HAS_PWD -U_PREFER_BACKSLASH -U_CF_NOFINDFILE -U_CF_NODEBUGGING -UBIN_FORM -UBIN_FORM1 -U__MINT__ -Uatarist -Ulinux -UDEBUG -UDEBUG_BACKUP -UDEBUG_DINICHK -UDEBUG_ERROR -UDEBUG_FINDFILE -UDEBUG_FORM -UDEBUG_NOSAVE -UDEBUG_TIME -O2 -g3 -pedantic -Wall -c -fmessage-length=0 -v -ansi -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
