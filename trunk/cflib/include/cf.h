@@ -14,7 +14,7 @@
  *
  * @version   SVN: \$Id: cf.h 127 2009-01-28 16:50:14Z stefan $
  * @author    Stefan Habermehl <stefan.habermehl@mcff.de>
- * @copyright (c) 1994,1995,1996,1997,1998,2006,2007,2008,2009 Stefan Habermehl
+ * @copyright (c) 1994,1995,1996,1997,1998,2006,2007,2008,2009, 2012 Stefan Habermehl
  * @license   http://www.gnu.org/licenses GNU General Public License v3 or later
  * @package   CFLIB Flexible Configuration Library
  *
@@ -45,6 +45,7 @@
  * 2009-01-24 [sh] Final Revision PL 20
  * 2009-02-05 [sh] Revised documentation markers for better user program
  *                 integeration
+ * 2012-09-21 [sh] Added CFD_FLAGS dump option
  *
  ***************************************************************************//**
  *
@@ -207,7 +208,7 @@ typedef unsigned long CFFLAGTYP;
 /*      CF_SET_CGI      0x8000       Reserved (other development branch) */
 
 /* Parsing Options */
-#define CF_NO_OPT_ARG   0x10000 /**< Commandline argument not followig an option */
+#define CF_NO_OPT_ARG   0x10000 /**< Commandline argument not following an option */
 #define CF_CONCAT       0x20000 /**< Argument is concatenated to option */
 #define CF_IGN_ENV      0x40000 /**< Do not check environment for variable */
 #define CF_QUERY        0x80000 /**< Ask the user for unresolved item after
@@ -321,6 +322,7 @@ typedef unsigned long CFFLAGTYP;
 #define CFD_LIBHEAD   1        /**< Dump option CFLIB header */
 #define CFD_COLHEAD   2        /**< Dump option Column headers */
 #define CFD_SRCFLAGS  4        /**< Dump option Source flag description */
+#define CFD_FLAGS     8        /**< Dump option All Flags description */
 #define CFD_DEFAULT   CFD_COLHEAD|CFD_SRCFLAGS  /**< Dump Mask Default */
 #endif
 
@@ -362,7 +364,7 @@ typedef struct _cf{
 #define cfgetdouble(a)   (*(double *)cfgetent(a,CF_DOUBLE))
 /** Inquire CFLIB DB for Flag value in content of named entry */
 #define cfgetflag(a)   (*(int *)cfgetent(a,CF_FLAG))
-/** Inquire CFLIB DB for Bit set in entry's Special Options Fag CONFIG::flag */
+/** Inquire CFLIB DB for Bit set in entry's Special Options Flag CONFIG::flag */
 #define cfflaginq(a,b) (*(int *)cfgetent(a,CF_FLGINQ|(31&b)))
 /** Inquire CFLIB DB for Source of named entry's content */
 #define cfgetsrc(a)    (*(int *)cfgetent(a,CF_SRC))

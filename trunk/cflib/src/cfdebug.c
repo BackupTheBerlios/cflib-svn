@@ -13,7 +13,7 @@
  *
  * @version   SVN: \$Id$
  * @author    Stefan Habermehl <stefan.habermehl@mcff.de>
- * @copyright (c) 1994,1995,1996,2002,2006,2007,2008,2009 Stefan Habermehl
+ * @copyright (c) 1994,1995,1996,2002,2006,2007,2008,2009, 2012 Stefan Habermehl
  * @license   http://www.gnu.org/licenses GNU General Public License v3 or later
  * @package   CFLIB
  * @subpackage Library_Debugging
@@ -41,6 +41,8 @@
  *
  * 2008-08-03 [sh] header with meta info and license
  * 2009-08-22 [sh] Documentation Update
+ * 2012-09-21 [sh] Fixed source flags description not accessible
+ * 2012-09-21 [sh] Added CFD_FLAGS dump option and some fix in cfdump()
  *
  ******************************************************************************/
 
@@ -83,7 +85,8 @@
 int cfdump( FILE *fout )
 {
 	register int i;
-	int verb;
+	int verb, j;
+	char buffer[9];
 
 	if(!_conf[0]) return CFE_NCA;
 
@@ -97,18 +100,21 @@ int cfdump( FILE *fout )
 					   cfgetvers(), cfgetcpr() );
 
 	if( verb & CFD_COLHEAD )
-		fputs( "Source Flags    Option  Variable           \tContent\n", fout );
+		fputs( "Flags     Source Option Variable            \tContent\n", fout );
 
 	for(i=0;i<MAXCONF;i++){
 
-		fprintf( fout, "[%02lx]   [%08lx]  [%c]  %-20s\t%s\n",
+		sprintf(buffer,"%08lx",_conf[i]->flag);
+		for(j=0;j<8;j++) if( buffer[j]=='0' ) buffer[j]='.';
+		fprintf( fout, "[%s] [%02lx]  [%c]  %-20s\t%s\n",
+						buffer,
 						(_conf[i]->flag&CF_SET)>>8,
-						_conf[i]->flag,
 						_conf[i]->option,
 						_conf[i]->name,
-						_conf[i]->inhalt );
+						(_conf[i]->flag&CF_FLAG) ?
+							((_conf[i]->inhalt[0])?"ON":"OFF") : _conf[i]->inhalt );
 
-		if(_conf[i]->flag&CF_LAST) return (i+1);
+		if(_conf[i]->flag&CF_LAST) break;
 	}
 
 	if( verb & CFD_SRCFLAGS ){
@@ -118,7 +124,49 @@ int cfdump( FILE *fout )
 		fputs( "40=interactive terminal input\n", fout);
 	}
 
-	return CFE_NLE;
+	if( verb & CFD_FLAGS ){
+		fputs( "Flags:\n", fout);
+		/* CFLIB Function flags */
+		fputs( "[.......1] CF_LAST        Last entry in settings array\n", fout);
+		fputs( "[.......2] CF_PATH        Search Path (for FindFile feature)\n", fout);
+		fputs( "[.......4] CF_SETFILE     Entry is Private Configuration File\n", fout);
+		fputs( "[.......8] CF_SYS_SETFILE Entry is System Configuration File\n", fout);
+		fputs( "[......1.] CF_SECTION     Section in Configuration File\n", fout);
+		fputs( "[......2.] CF_PRGNAME     Running Program's Name from commandline\n", fout);
+		fputs( "[......4.] CF_TIME        Time string\n", fout);
+		fputs( "[......8.] CF_DATE        Date string\n", fout);
+		/* Source flags - 'Origin Window' */
+		fputs( "[.....1..] CF_SET_PUT     Source: Function Call\n", fout);
+		fputs( "[.....2..] CF_SET_ARG     Source: Commandline Argument\n", fout);
+		fputs( "[.....4..] CF_SET_ENV     Source: Environment Variable\n", fout);
+		fputs( "[.....8..] CF_SET_PRIV    Source: Private Configuration File\n", fout);
+		fputs( "[....1...] CF_SET_SYS     Source: System Configuration File\n", fout);
+		fputs( "[....2...] CF_SET_DEF     Source: Built-in Default\n", fout);
+		fputs( "[....4...] CF_SET_QRY     Source: Interactive Terminal Input\n", fout);
+		/* Parsing Options */
+		fputs( "[...1....] CF_NO_OPT_ARG  Commandline argument not following an option\n", fout);
+		fputs( "[...2....] CF_CONCAT      Argument is concatenated to option\n", fout);
+		fputs( "[...4....] CF_IGN_ENV     Do not check environment for variable\n", fout);
+		fputs( "[...8....] CF_QUERY       Ask the user for unresolved item after configuration parsing\n", fout);
+		/* Type/Interpretation Flags */
+		fputs( "[..1.....] CF_STR         Entry is String\n", fout);
+		fputs( "[..2.....] CF_INT         Entry is Integer\n", fout);
+		fputs( "[..4.....] CF_FLAG        Entry is Flag\n", fout);
+		fputs( "[..8.....] CF_REAL        Entry is Float\n", fout);
+		/* Special Processing Options */
+		fputs( "[.1......] CF_FINDFILE    Entry is filename to be searched for in the path\n", fout);
+		fputs( "[.2......] CF_MUST        Entry may not be empty (NULL or \"\")\n", fout);
+		fputs( "[.4......] CF_RESID       Residual/additional entry from commandline/setfile/cfput\n", fout);
+		fputs( "[.8......] CF_USAGE       Usage Message format string\n", fout);
+		fputs( "[1.......] CF_EXPHOME     Expand Home Directory\n", fout);
+		/* Information/Status Flags */
+		fputs( "[2.......] CF_MALLOC      Space for entry's content was mallocated\n", fout);
+		fputs( "[4.......] CF_FORCED      Setting has been forced (already)\n", fout);
+		fputs( "[8.......] CF_NOSAVE      Don't include in savefile / mark entry\n", fout);
+	}
+
+	if( i < MAXCONF ) return (i+1); /* number of entries */
+	return CFE_NLE; /* no last entry flag */
 }
 
 /***************************************************************************//**

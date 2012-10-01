@@ -1,14 +1,14 @@
 ############################################
 #                                          #
 #  CFLIB - Flexible Configuration Library  #
-#  (c) 1995-2008 Stefan Habermehl          #
+#  (c) 1995-2012 Stefan Habermehl          #
 #                                          #
 #  Root makefile                           #
 #                                          #
 #  GNU Make Build Environment              #
 #  based on Eclipse IDE Toolchains         #
 #                                          #
-#  @copyright (c) 2008 Stefan Habermehl    #
+#  @copyright (c) 2012 Stefan Habermehl    #
 #  @license GNU GPL v3+ (see LICENSE.txt)  #
 #                                          #
 ############################################

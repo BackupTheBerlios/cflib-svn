@@ -14,7 +14,7 @@
  *
  * @version   SVN: \$Id$
  * @author    Stefan Habermehl <stefan.habermehl@mcff.de>
- * @copyright (c) 1994,1995,1996,2002,2006,2007,2008,2009 Stefan Habermehl
+ * @copyright (c) 1994,1995,1996,2002,2006,2007,2008,2009, 2012 Stefan Habermehl
  * @license   http://www.gnu.org/licenses GNU General Public License v3 or later
  * @package   CFLIB
  * @subpackage Library_Utilities
@@ -43,6 +43,7 @@
  * 2008-08-03 [sh] header with meta info and license
  * 2008-08-04 [sh] RemoveCR() strips now also CR character "\r"
  * 2009-08-22 [sh] Documentation Update
+ * 2012-09-21 [sh] Flag output as ON/OFF in cfform()
  *
  ******************************************************************************/
 
@@ -342,10 +343,14 @@ int cfform( char *file, char *outfile, char *vd, int mode )
 								if( _conf[i]->inhalt != NULL ){
 									if( varincount < CF_MAXINC ){
 										strcpy( linesavinc[++varincount], var_end_poi );
-										strcpy( line, _conf[i]->inhalt );
+										if(_conf[i]->flag&CF_FLAG)
+											strcpy( line, (_conf[i]->inhalt[0])?"ON":"OFF");
+										else strcpy( line, _conf[i]->inhalt );
 										var_end_poi = line;
 									} else {
-										fputs(_conf[i]->inhalt,fout);
+										if(_conf[i]->flag&CF_FLAG)
+											fputs((_conf[i]->inhalt[0])?"ON":"OFF", fout);
+										else fputs(_conf[i]->inhalt,fout);
 									}
 									if( mode&2 ) cfnosave( _conf[i]->name, CF_FLAG_OFF );
 									fflush(fout);
