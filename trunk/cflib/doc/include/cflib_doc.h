@@ -13,8 +13,8 @@
  *
  * @version   SVN: \$Id$
  * @author    Stefan Habermehl <stefan.habermehl@mcff.de>
- * @copyright (c) 2009 Stefan Habermehl
- * @license   http://www.gnu.org/licenses GNU General Public License v3 or later
+ * @copyright (c) 2009-2013 Stefan Habermehl
+ * @license   http://www.gnu.org/licenses GNU Lesser General Public License version 3.0 (LGPLv3)
  * @package   CFLIB Flexible Configuration Library
  * @subpackage Library_Documentation : @ref cflib
  *
