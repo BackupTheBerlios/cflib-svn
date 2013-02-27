@@ -12,7 +12,7 @@
  *            executable, usually referring to @e libcf.a by calling
  *            @c "(g)cc -lcf ..."
  *
- * @version   SVN: \$Id: cf.h 127 2009-01-28 16:50:14Z stefan $
+ * @version   SVN: \$Id$
  * @author    Stefan Habermehl <stefan.habermehl@mcff.de>
  * @copyright (c) 1994,1995,1996,1997,1998,2006,2007,2008,2009,2013 Stefan Habermehl
  * @license   http://www.gnu.org/licenses GNU Lesser General Public License version 3.0 (LGPLv3)
