@@ -36,7 +36,7 @@ PROJECT_NAME = "CFLIB - Flexible Configuration Library"
 # This could be handy for archiving the generated documentation or 
 # if some version control system is used.
 
-PROJECT_NUMBER = "Patchlevel 20"
+PROJECT_NUMBER = "Patchlevel 21"
 
 # The OUTPUT_DIRECTORY tag is used to specify the (relative or absolute) 
 # base path where the generated documentation will be put. 

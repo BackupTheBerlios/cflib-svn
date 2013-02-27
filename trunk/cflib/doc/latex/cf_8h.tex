@@ -1,672 +1,443 @@
-\hypertarget{cf_8h}{
-\subsection{include/cf.h File Reference}
-\label{cf_8h}\index{include/cf.h@{include/cf.h}}
+\hypertarget{cf_8h}{\subsection{include/cf.h File Reference}
+\label{cf_8h}\index{include/cf.\-h@{include/cf.\-h}}
 }
-C Header File for CFLIB Flexible Configuration Library.  
+
+
+C Header File for C\-F\-L\-I\-B Flexible Configuration Library.  
 
 
 \subsubsection*{Data Structures}
-\begin{CompactItemize}
+\begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{struct_c_o_n_f_i_g}{CONFIG}
-\begin{CompactList}\small\item\em CFLIB Configuration Database Entry. \item\end{CompactList}\end{CompactItemize}
+struct \hyperlink{struct_c_o_n_f_i_g}{C\-O\-N\-F\-I\-G}
+\begin{DoxyCompactList}\small\item\em C\-F\-L\-I\-B Configuration Database Entry. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsubsection*{Defines}
-\begin{CompactItemize}
+\begin{DoxyCompactItemize}
 \item 
-\hypertarget{group__cflib__core_g0beb5d41f2b506f1c969c56731bb9490}{
-\#define \hyperlink{group__cflib__core_g0beb5d41f2b506f1c969c56731bb9490}{Patchlevel}~\char`\"{}20\char`\"{}}
-\label{group__cflib__core_g0beb5d41f2b506f1c969c56731bb9490}
-
-\begin{CompactList}\small\item\em CFLIB Identification. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g1662beae23df229341c28d286379e2ad}{
-\#define \hyperlink{group__cflib__core_g1662beae23df229341c28d286379e2ad}{MAXCONF}~4096}
-\label{group__cflib__core_g1662beae23df229341c28d286379e2ad}
-
-\begin{CompactList}\small\item\em Maximum number of entries in configuration database. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_gf78e4b950c9aa49b752e4460342ea3bf}{
-\#define \hyperlink{group__cflib__core_gf78e4b950c9aa49b752e4460342ea3bf}{CF\_\-MAXERRSTR}~512}
-\label{group__cflib__core_gf78e4b950c9aa49b752e4460342ea3bf}
-
-\begin{CompactList}\small\item\em Maximum string length for error message. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_gc7ffaf92294adc15284233965f54c03e}{
-\#define \hyperlink{group__cflib__core_gc7ffaf92294adc15284233965f54c03e}{CF\_\-MAXLINE}~20480}
-\label{group__cflib__core_gc7ffaf92294adc15284233965f54c03e}
-
-\begin{CompactList}\small\item\em Maximum string length for setfile and form parsing. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_gc91ed2022fe6617330f369b4e20b875b}{
-\#define \hyperlink{group__cflib__core_gc91ed2022fe6617330f369b4e20b875b}{CF\_\-MAXQLINE}~512}
-\label{group__cflib__core_gc91ed2022fe6617330f369b4e20b875b}
-
-\begin{CompactList}\small\item\em Maximum string length for query. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_gd36d92b5077988734cdfeb0f47c0488e}{
-\#define \hyperlink{group__cflib__core_gd36d92b5077988734cdfeb0f47c0488e}{CF\_\-MAXUSAGE}~1024}
-\label{group__cflib__core_gd36d92b5077988734cdfeb0f47c0488e}
-
-\begin{CompactList}\small\item\em Maximum string length for usage string. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_gc568df32f08baaff9c162521856c3ec7}{
-\#define \hyperlink{group__cflib__core_gc568df32f08baaff9c162521856c3ec7}{CF\_\-USG\_\-DEFCOLS}~80}
-\label{group__cflib__core_gc568df32f08baaff9c162521856c3ec7}
-
-\begin{CompactList}\small\item\em Default terminal width for usage string. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g582af337c870e7eb2cdb133fd5cc72d2}{
-\#define \hyperlink{group__cflib__core_g582af337c870e7eb2cdb133fd5cc72d2}{CF\_\-MAXTIMEBUF}~256}
-\label{group__cflib__core_g582af337c870e7eb2cdb133fd5cc72d2}
-
-\begin{CompactList}\small\item\em Buffer size for time and day. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_ga8cecfc5c5c054d2875c03e77b7be15d}{
-\#define \hyperlink{group__cflib__core_ga8cecfc5c5c054d2875c03e77b7be15d}{TRUE}~1}
-\label{group__cflib__core_ga8cecfc5c5c054d2875c03e77b7be15d}
-
-\begin{CompactList}\small\item\em TRUE, if not defined. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_ga93f0eb578d23995850d61f7d61c55c1}{
-\#define \hyperlink{group__cflib__core_ga93f0eb578d23995850d61f7d61c55c1}{FALSE}~0}
-\label{group__cflib__core_ga93f0eb578d23995850d61f7d61c55c1}
-
-\begin{CompactList}\small\item\em FALSE, if not defined. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g070d2ce7b6bb7e5c05602aa8c308d0c4}{
-\#define \hyperlink{group__cflib__core_g070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}~(void $\ast$)(0L)}
-\label{group__cflib__core_g070d2ce7b6bb7e5c05602aa8c308d0c4}
-
-\begin{CompactList}\small\item\em NULL, if not defined. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g355c714f2912ac336b8b03468c978d8c}{
-\#define \hyperlink{group__cflib__core_g355c714f2912ac336b8b03468c978d8c}{CF\_\-FLAG\_\-ON}~\char`\"{}$\backslash$1\char`\"{}}
-\label{group__cflib__core_g355c714f2912ac336b8b03468c978d8c}
-
-\begin{CompactList}\small\item\em Flag is set. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g7010abac2c80c121772da4d9c03332ee}{
-\#define \hyperlink{group__cflib__core_g7010abac2c80c121772da4d9c03332ee}{CF\_\-FLAG\_\-OFF}~\char`\"{}\char`\"{}}
-\label{group__cflib__core_g7010abac2c80c121772da4d9c03332ee}
-
-\begin{CompactList}\small\item\em Flag is not set. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_gbea45e34341ee5aaafb4a4a732bb5ece}{
-\#define \hyperlink{group__cflib__core_gbea45e34341ee5aaafb4a4a732bb5ece}{CF\_\-NO\_\-OPTION}~' '}
-\label{group__cflib__core_gbea45e34341ee5aaafb4a4a732bb5ece}
-
-\begin{CompactList}\small\item\em Option is not set. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g9c80120944556169d230d4cd051d88cb}{
-\#define \hyperlink{group__cflib__core_g9c80120944556169d230d4cd051d88cb}{TABLEN}~8}
-\label{group__cflib__core_g9c80120944556169d230d4cd051d88cb}
-
-\begin{CompactList}\small\item\em TAB length. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g764a8ea81ffc3940bf413797dcaf9a3d}{
-\#define \hyperlink{group__cflib__core_g764a8ea81ffc3940bf413797dcaf9a3d}{CFP\_\-PUT}~0}
-\label{group__cflib__core_g764a8ea81ffc3940bf413797dcaf9a3d}
-
-\begin{CompactList}\small\item\em Function Call or Automatic Initialization. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g0901da5871f3cffeec56e491f8c9fc7f}{
-\#define \hyperlink{group__cflib__core_g0901da5871f3cffeec56e491f8c9fc7f}{CFP\_\-ARG}~1}
-\label{group__cflib__core_g0901da5871f3cffeec56e491f8c9fc7f}
-
-\begin{CompactList}\small\item\em Commandline. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_gc77d72299f32e91104090cdeb93f3619}{
-\#define \hyperlink{group__cflib__core_gc77d72299f32e91104090cdeb93f3619}{CFP\_\-ENV}~2}
-\label{group__cflib__core_gc77d72299f32e91104090cdeb93f3619}
-
-\begin{CompactList}\small\item\em Environment. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g6cf8dcc9fa01deae5eb44698cb01f73e}{
-\#define \hyperlink{group__cflib__core_g6cf8dcc9fa01deae5eb44698cb01f73e}{CFP\_\-PRIV}~3}
-\label{group__cflib__core_g6cf8dcc9fa01deae5eb44698cb01f73e}
-
-\begin{CompactList}\small\item\em Private Configuration File. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g0365a86453eeaa815a79c506343bd927}{
-\#define \hyperlink{group__cflib__core_g0365a86453eeaa815a79c506343bd927}{CFP\_\-SYS}~4}
-\label{group__cflib__core_g0365a86453eeaa815a79c506343bd927}
-
-\begin{CompactList}\small\item\em System Configuration File. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_gfa9b2b859f08e9b319cc50555255a975}{
-\#define \hyperlink{group__cflib__core_gfa9b2b859f08e9b319cc50555255a975}{CFP\_\-DEF}~5}
-\label{group__cflib__core_gfa9b2b859f08e9b319cc50555255a975}
-
-\begin{CompactList}\small\item\em Built-in Default. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g91ce348a0630961b0c472e7dec732aae}{
-\#define \hyperlink{group__cflib__core_g91ce348a0630961b0c472e7dec732aae}{CFP\_\-QRY}~6}
-\label{group__cflib__core_g91ce348a0630961b0c472e7dec732aae}
-
-\begin{CompactList}\small\item\em Standard Input Channel. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g631bc61e35c14f1d3df36a71154a776a}{
-\#define \hyperlink{group__cflib__core_g631bc61e35c14f1d3df36a71154a776a}{CFP\_\-RESERVED}~7}
-\label{group__cflib__core_g631bc61e35c14f1d3df36a71154a776a}
-
-\begin{CompactList}\small\item\em Reserved for Subprojects. \item\end{CompactList}\item 
-\hypertarget{group__report__generation_g5547641c939fd4d071e9aeaa7c956cac}{
-\#define \hyperlink{group__report__generation_g5547641c939fd4d071e9aeaa7c956cac}{CF\_\-DEF\_\-VARDELIM}~\char`\"{}\$()\char`\"{}}
-\label{group__report__generation_g5547641c939fd4d071e9aeaa7c956cac}
-
-\begin{CompactList}\small\item\em Default variable delimiter for \hyperlink{group__report__generation_g2f8350e7d032c87b2a0e1cb6149a85ec}{cfform()}. \item\end{CompactList}\item 
-\hypertarget{group__report__generation_g7b96ba1ca10909659d50eabb8b5af611}{
-\#define \hyperlink{group__report__generation_g7b96ba1ca10909659d50eabb8b5af611}{CF\_\-MAXINC}~8}
-\label{group__report__generation_g7b96ba1ca10909659d50eabb8b5af611}
-
-\begin{CompactList}\small\item\em Maximum number of nested includes for \hyperlink{group__report__generation_g2f8350e7d032c87b2a0e1cb6149a85ec}{cfform()}. \item\end{CompactList}\item 
-\hypertarget{group__utilities_g4211f4b332e79ab5f3c691a4ab6ebaf9}{
-\#define \hyperlink{group__utilities_g4211f4b332e79ab5f3c691a4ab6ebaf9}{CF\_\-BACKBUFLEN}~102400}
-\label{group__utilities_g4211f4b332e79ab5f3c691a4ab6ebaf9}
-
-\begin{CompactList}\small\item\em File copy buffer for \hyperlink{group__utilities_g0fccda7427db33b2f73a3b6dca864207}{BackupFile()}. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_ga4d82cea91ede4aee78594417894e368}{
-\#define \hyperlink{group__special__options__mask_ga4d82cea91ede4aee78594417894e368}{CF\_\-LAST}~0x0001}
-\label{group__special__options__mask_ga4d82cea91ede4aee78594417894e368}
-
-\begin{CompactList}\small\item\em Last entry in settings array. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_gb383c1436888ea6b410141f7c0b1f306}{
-\#define \hyperlink{group__special__options__mask_gb383c1436888ea6b410141f7c0b1f306}{CF\_\-PATH}~0x0002}
-\label{group__special__options__mask_gb383c1436888ea6b410141f7c0b1f306}
-
-\begin{CompactList}\small\item\em Search Path (for FindFile feature). \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_gfeeb63d4d8c498bec4a237ad8b94f02f}{
-\#define \hyperlink{group__special__options__mask_gfeeb63d4d8c498bec4a237ad8b94f02f}{CF\_\-SETFILE}~0x0004}
-\label{group__special__options__mask_gfeeb63d4d8c498bec4a237ad8b94f02f}
-
-\begin{CompactList}\small\item\em Entry is Private Configuration File. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_gbb03ea68e07e388da2c1337a1582c72e}{
-\#define \hyperlink{group__special__options__mask_gbb03ea68e07e388da2c1337a1582c72e}{CF\_\-SYS\_\-SETFILE}~0x0008}
-\label{group__special__options__mask_gbb03ea68e07e388da2c1337a1582c72e}
-
-\begin{CompactList}\small\item\em Entry is System Configuration File. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_g603f0467f101b71f5f869381429ffef4}{
-\#define \hyperlink{group__special__options__mask_g603f0467f101b71f5f869381429ffef4}{CF\_\-SECTION}~0x0010}
-\label{group__special__options__mask_g603f0467f101b71f5f869381429ffef4}
-
-\begin{CompactList}\small\item\em Section in Configuration File. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_g071c29b5177f2df2400712ce8daae9b0}{
-\#define \hyperlink{group__special__options__mask_g071c29b5177f2df2400712ce8daae9b0}{CF\_\-PRGNAME}~0x0020}
-\label{group__special__options__mask_g071c29b5177f2df2400712ce8daae9b0}
-
-\begin{CompactList}\small\item\em Running Program's Name from commandline. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_g0fde537a92deb77f75b21c9e8d306509}{
-\#define \hyperlink{group__special__options__mask_g0fde537a92deb77f75b21c9e8d306509}{CF\_\-TIME}~0x0040}
-\label{group__special__options__mask_g0fde537a92deb77f75b21c9e8d306509}
-
-\begin{CompactList}\small\item\em Time string. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_g1c5b511a34d2c0db6631539ba81a4386}{
-\#define \hyperlink{group__special__options__mask_g1c5b511a34d2c0db6631539ba81a4386}{CF\_\-DATE}~0x0080}
-\label{group__special__options__mask_g1c5b511a34d2c0db6631539ba81a4386}
-
-\begin{CompactList}\small\item\em Date string. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_g8d6cd1608fef5638efe964da63edf2dd}{
-\#define \hyperlink{group__special__options__mask_g8d6cd1608fef5638efe964da63edf2dd}{CF\_\-SET\_\-PUT}~0x0100}
-\label{group__special__options__mask_g8d6cd1608fef5638efe964da63edf2dd}
-
-\begin{CompactList}\small\item\em Source: Function Call. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_g1b3eb474a5160e5a32385f6de53d90d6}{
-\#define \hyperlink{group__special__options__mask_g1b3eb474a5160e5a32385f6de53d90d6}{CF\_\-SET\_\-ARG}~0x0200}
-\label{group__special__options__mask_g1b3eb474a5160e5a32385f6de53d90d6}
-
-\begin{CompactList}\small\item\em Source: Commandline Argument. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_g29dbd098a75a23ddc42b3b53e430d694}{
-\#define \hyperlink{group__special__options__mask_g29dbd098a75a23ddc42b3b53e430d694}{CF\_\-SET\_\-ENV}~0x0400}
-\label{group__special__options__mask_g29dbd098a75a23ddc42b3b53e430d694}
-
-\begin{CompactList}\small\item\em Source: Environment Variable. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_gabf1d4d312964af93bd55f71eeec6988}{
-\#define \hyperlink{group__special__options__mask_gabf1d4d312964af93bd55f71eeec6988}{CF\_\-SET\_\-PRIV}~0x0800}
-\label{group__special__options__mask_gabf1d4d312964af93bd55f71eeec6988}
-
-\begin{CompactList}\small\item\em Source: Private Configuration File. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_g8fe09807491ee119290329cf08e6f340}{
-\#define \hyperlink{group__special__options__mask_g8fe09807491ee119290329cf08e6f340}{CF\_\-SET\_\-SYS}~0x1000}
-\label{group__special__options__mask_g8fe09807491ee119290329cf08e6f340}
-
-\begin{CompactList}\small\item\em Source: System Configuration File. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_g17b4ef5b35afe21a4a80faa671030b65}{
-\#define \hyperlink{group__special__options__mask_g17b4ef5b35afe21a4a80faa671030b65}{CF\_\-SET\_\-DEF}~0x2000}
-\label{group__special__options__mask_g17b4ef5b35afe21a4a80faa671030b65}
-
-\begin{CompactList}\small\item\em Source: Built-in Default. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_g09dcbb96c5ace43a7d5e7e4f52d387a8}{
-\#define \hyperlink{group__special__options__mask_g09dcbb96c5ace43a7d5e7e4f52d387a8}{CF\_\-SET\_\-QRY}~0x4000}
-\label{group__special__options__mask_g09dcbb96c5ace43a7d5e7e4f52d387a8}
-
-\begin{CompactList}\small\item\em Source: Interactive Terminal Input. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_g97d17b070dac10c14d3930c58bfba76f}{
-\#define \hyperlink{group__special__options__mask_g97d17b070dac10c14d3930c58bfba76f}{CF\_\-NO\_\-OPT\_\-ARG}~0x10000}
-\label{group__special__options__mask_g97d17b070dac10c14d3930c58bfba76f}
-
-\begin{CompactList}\small\item\em Commandline argument not followig an option. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_g9e526dae88bf6803772107ff283637b5}{
-\#define \hyperlink{group__special__options__mask_g9e526dae88bf6803772107ff283637b5}{CF\_\-CONCAT}~0x20000}
-\label{group__special__options__mask_g9e526dae88bf6803772107ff283637b5}
-
-\begin{CompactList}\small\item\em Argument is concatenated to option. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_g72b75851880f36aaa5a52fdfe7960cca}{
-\#define \hyperlink{group__special__options__mask_g72b75851880f36aaa5a52fdfe7960cca}{CF\_\-IGN\_\-ENV}~0x40000}
-\label{group__special__options__mask_g72b75851880f36aaa5a52fdfe7960cca}
-
-\begin{CompactList}\small\item\em Do not check environment for variable. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_ge39e0d9b4e9af8c6d4b3676783dd26e0}{
-\#define \hyperlink{group__special__options__mask_ge39e0d9b4e9af8c6d4b3676783dd26e0}{CF\_\-QUERY}~0x80000}
-\label{group__special__options__mask_ge39e0d9b4e9af8c6d4b3676783dd26e0}
-
-\begin{CompactList}\small\item\em Ask the user for unresolved item after configuration parsing. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_g64c30a2865061d0c1074bc6ec91e3dcf}{
-\#define \hyperlink{group__special__options__mask_g64c30a2865061d0c1074bc6ec91e3dcf}{CF\_\-STR}~0x100000}
-\label{group__special__options__mask_g64c30a2865061d0c1074bc6ec91e3dcf}
-
-\begin{CompactList}\small\item\em Entry is String. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_gb33869d596619ad14675c053925a42e0}{
-\#define \hyperlink{group__special__options__mask_gb33869d596619ad14675c053925a42e0}{CF\_\-INT}~0x200000}
-\label{group__special__options__mask_gb33869d596619ad14675c053925a42e0}
-
-\begin{CompactList}\small\item\em Entry is Integer. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_g1d1f1d1b6eac6b5d9970102318ab2667}{
-\#define \hyperlink{group__special__options__mask_g1d1f1d1b6eac6b5d9970102318ab2667}{CF\_\-FLAG}~0x400000}
-\label{group__special__options__mask_g1d1f1d1b6eac6b5d9970102318ab2667}
-
-\begin{CompactList}\small\item\em Entry is Flag. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_geefdbef320cbd7179f1fb0ebe0fcf5ce}{
-\#define \hyperlink{group__special__options__mask_geefdbef320cbd7179f1fb0ebe0fcf5ce}{CF\_\-REAL}~0x800000}
-\label{group__special__options__mask_geefdbef320cbd7179f1fb0ebe0fcf5ce}
-
-\begin{CompactList}\small\item\em Entry is Float. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_g675b6f8440beecc09fec54d17e9c3ee9}{
-\#define \hyperlink{group__special__options__mask_g675b6f8440beecc09fec54d17e9c3ee9}{CF\_\-FINDFILE}~0x1000000}
-\label{group__special__options__mask_g675b6f8440beecc09fec54d17e9c3ee9}
-
-\begin{CompactList}\small\item\em Entry is filename to be searched for in the path. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_g3229f5b038eaa0c6428361d2aa510dfc}{
-\#define \hyperlink{group__special__options__mask_g3229f5b038eaa0c6428361d2aa510dfc}{CF\_\-MUST}~0x2000000}
-\label{group__special__options__mask_g3229f5b038eaa0c6428361d2aa510dfc}
-
-\begin{CompactList}\small\item\em Entry may not be empty ({\tt NULL} or \char`\"{}\char`\"{}). \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_g5415b257c706aae33d91d3947a3429c0}{
-\#define \hyperlink{group__special__options__mask_g5415b257c706aae33d91d3947a3429c0}{CF\_\-RESID}~0x4000000}
-\label{group__special__options__mask_g5415b257c706aae33d91d3947a3429c0}
-
-\begin{CompactList}\small\item\em Residual/additional entry from commandline/setfile/cfput. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_gc30981201d7455071cef38a0133b9228}{
-\#define \hyperlink{group__special__options__mask_gc30981201d7455071cef38a0133b9228}{CF\_\-USAGE}~0x8000000}
-\label{group__special__options__mask_gc30981201d7455071cef38a0133b9228}
-
-\begin{CompactList}\small\item\em Usage Message format string. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_gff1b2e25aa9a89a55c1784018e24aa75}{
-\#define \hyperlink{group__special__options__mask_gff1b2e25aa9a89a55c1784018e24aa75}{CF\_\-EXPHOME}~0x10000000}
-\label{group__special__options__mask_gff1b2e25aa9a89a55c1784018e24aa75}
-
-\begin{CompactList}\small\item\em Expand Home Directory. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_g2b971231bd3cbad743ef2f4e0a613a47}{
-\#define \hyperlink{group__special__options__mask_g2b971231bd3cbad743ef2f4e0a613a47}{CF\_\-MALLOC}~0x20000000}
-\label{group__special__options__mask_g2b971231bd3cbad743ef2f4e0a613a47}
-
-\begin{CompactList}\small\item\em Space for entry's content was mallocated. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_g618e7187ee15bacfe668e72a858e71fc}{
-\#define \hyperlink{group__special__options__mask_g618e7187ee15bacfe668e72a858e71fc}{CF\_\-FORCED}~0x40000000}
-\label{group__special__options__mask_g618e7187ee15bacfe668e72a858e71fc}
-
-\begin{CompactList}\small\item\em Setting has been forced (already). \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_gd76153c65f68cc0ee5c1a04c8c3e80bf}{
-\#define \hyperlink{group__special__options__mask_gd76153c65f68cc0ee5c1a04c8c3e80bf}{CF\_\-NOSAVE}~0x80000000}
-\label{group__special__options__mask_gd76153c65f68cc0ee5c1a04c8c3e80bf}
-
-\begin{CompactList}\small\item\em Don't include in savefile / mark entry. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_gd9b1f659b11c529a0ed1035caf8b239b}{
-\#define \hyperlink{group__special__options__mask_gd9b1f659b11c529a0ed1035caf8b239b}{CF\_\-SRC}~(CF\_\-INT$|$CF\_\-FLAG)}
-\label{group__special__options__mask_gd9b1f659b11c529a0ed1035caf8b239b}
-
-\begin{CompactList}\small\item\em Type for source/origin inquiry. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_g36792935eec7c6636b6aea8df82f7480}{
-\#define \hyperlink{group__special__options__mask_g36792935eec7c6636b6aea8df82f7480}{CF\_\-FLGINQ}~(CF\_\-STR$|$CF\_\-FLAG)}
-\label{group__special__options__mask_g36792935eec7c6636b6aea8df82f7480}
-
-\begin{CompactList}\small\item\em Type for options mask inquiry. \item\end{CompactList}\item 
-\hypertarget{group__special__options__mask_g8a50d7326b057d262f53ef84a166f9c5}{
-\#define \hyperlink{group__special__options__mask_g8a50d7326b057d262f53ef84a166f9c5}{CF\_\-TD}~(CF\_\-DATE$|$CF\_\-TIME)}
-\label{group__special__options__mask_g8a50d7326b057d262f53ef84a166f9c5}
-
-\begin{CompactList}\small\item\em Date or Time entry. \item\end{CompactList}\item 
-\hypertarget{group__errors_gac0ac4dd97f14a0da37622a1497ea004}{
-\#define \hyperlink{group__errors_gac0ac4dd97f14a0da37622a1497ea004}{CFE\_\-INIT}~0}
-\label{group__errors_gac0ac4dd97f14a0da37622a1497ea004}
-
-\begin{CompactList}\small\item\em INITialize error input. \item\end{CompactList}\item 
-\hypertarget{group__errors_gbea2555a62593e79e32879620c4fc8de}{
-\#define \hyperlink{group__errors_gbea2555a62593e79e32879620c4fc8de}{CFE\_\-OK}~0}
-\label{group__errors_gbea2555a62593e79e32879620c4fc8de}
-
-\begin{CompactList}\small\item\em No error / everything OKay. \item\end{CompactList}\item 
-\hypertarget{group__errors_gbb576e88369c2eac1ffd41915292968c}{
-\#define \hyperlink{group__errors_gbb576e88369c2eac1ffd41915292968c}{CFE\_\-NEP}~1}
-\label{group__errors_gbb576e88369c2eac1ffd41915292968c}
-
-\begin{CompactList}\small\item\em New Entry successfully Put into DB. \item\end{CompactList}\item 
-\hypertarget{group__errors_gc799901241871d298d9bd9f79e1ce645}{
-\#define \hyperlink{group__errors_gc799901241871d298d9bd9f79e1ce645}{CFE\_\-EXIT}~1}
-\label{group__errors_gc799901241871d298d9bd9f79e1ce645}
-
-\begin{CompactList}\small\item\em Finish error input. \item\end{CompactList}\item 
-\hypertarget{group__errors_ge5e8ef219f287dc0ff0ca70433f78f0e}{
-\#define \hyperlink{group__errors_ge5e8ef219f287dc0ff0ca70433f78f0e}{CFE\_\-ORA}~20}
-\label{group__errors_ge5e8ef219f287dc0ff0ca70433f78f0e}
-
-\begin{CompactList}\small\item\em Option Requires an Argument. \item\end{CompactList}\item 
-\hypertarget{group__errors_g77e1698381143e412a7a4796b2b8f564}{
-\#define \hyperlink{group__errors_g77e1698381143e412a7a4796b2b8f564}{CFE\_\-UKO}~25}
-\label{group__errors_g77e1698381143e412a7a4796b2b8f564}
-
-\begin{CompactList}\small\item\em UnKnown Option. \item\end{CompactList}\item 
-\hypertarget{group__errors_ga3d4c51112fd70d482a4a77c95dc3daf}{
-\#define \hyperlink{group__errors_ga3d4c51112fd70d482a4a77c95dc3daf}{CFE\_\-FNF}~30}
-\label{group__errors_ga3d4c51112fd70d482a4a77c95dc3daf}
-
-\begin{CompactList}\small\item\em File Not Found, read access error. \item\end{CompactList}\item 
-\hypertarget{group__errors_ge1f1ad273da29546c89e9e6761b8b3e2}{
-\#define \hyperlink{group__errors_ge1f1ad273da29546c89e9e6761b8b3e2}{CFE\_\-NSE}~40}
-\label{group__errors_ge1f1ad273da29546c89e9e6761b8b3e2}
-
-\begin{CompactList}\small\item\em No Section specifier End found, missing \char`\"{}\mbox{]}\char`\"{}. \item\end{CompactList}\item 
-\hypertarget{group__errors_ge67acd8919ba3a30ca6a6f2857dc3628}{
-\#define \hyperlink{group__errors_ge67acd8919ba3a30ca6a6f2857dc3628}{CFE\_\-NSC}~50}
-\label{group__errors_ge67acd8919ba3a30ca6a6f2857dc3628}
-
-\begin{CompactList}\small\item\em No private Setfile Configured. \item\end{CompactList}\item 
-\hypertarget{group__errors_gd1375fe531ed1c13233e2fa7ae55534f}{
-\#define \hyperlink{group__errors_gd1375fe531ed1c13233e2fa7ae55534f}{CFE\_\-WAE}~60}
-\label{group__errors_gd1375fe531ed1c13233e2fa7ae55534f}
-
-\begin{CompactList}\small\item\em Write Access Error. \item\end{CompactList}\item 
-\hypertarget{group__errors_g939964b690f63b5484ec40fe8a4a7c56}{
-\#define \hyperlink{group__errors_g939964b690f63b5484ec40fe8a4a7c56}{CFE\_\-IFP}~61}
-\label{group__errors_g939964b690f63b5484ec40fe8a4a7c56}
-
-\begin{CompactList}\small\item\em Invalid Filename entry for Private setfile. \item\end{CompactList}\item 
-\hypertarget{group__errors_gc2b94fe4fcdaa5cc608add42857fd178}{
-\#define \hyperlink{group__errors_gc2b94fe4fcdaa5cc608add42857fd178}{CFE\_\-EWN}~70}
-\label{group__errors_gc2b94fe4fcdaa5cc608add42857fd178}
-
-\begin{CompactList}\small\item\em Entry Without Name. \item\end{CompactList}\item 
-\hypertarget{group__errors_g8d3bbe7352edc6ec8ecf54150c80349f}{
-\#define \hyperlink{group__errors_g8d3bbe7352edc6ec8ecf54150c80349f}{CFE\_\-ICF}~80}
-\label{group__errors_g8d3bbe7352edc6ec8ecf54150c80349f}
-
-\begin{CompactList}\small\item\em Invalid Combination of Flags. \item\end{CompactList}\item 
-\hypertarget{group__errors_g5457a3ff93e8c6d02be9c1813038f795}{
-\#define \hyperlink{group__errors_g5457a3ff93e8c6d02be9c1813038f795}{CFE\_\-EWC}~90}
-\label{group__errors_g5457a3ff93e8c6d02be9c1813038f795}
-
-\begin{CompactList}\small\item\em Entry Without Content. \item\end{CompactList}\item 
-\hypertarget{group__errors_ge30643e906d0e1fdd31f11f9c1523a52}{
-\#define \hyperlink{group__errors_ge30643e906d0e1fdd31f11f9c1523a52}{CFE\_\-UOS}~100}
-\label{group__errors_ge30643e906d0e1fdd31f11f9c1523a52}
-
-\begin{CompactList}\small\item\em Unlikely Option Specifier. \item\end{CompactList}\item 
-\hypertarget{group__errors_g78354f23ff4d92bd3fd6dcb6bfd59f52}{
-\#define \hyperlink{group__errors_g78354f23ff4d92bd3fd6dcb6bfd59f52}{CFE\_\-IFC}~110}
-\label{group__errors_g78354f23ff4d92bd3fd6dcb6bfd59f52}
-
-\begin{CompactList}\small\item\em Invalid Flag Combination. \item\end{CompactList}\item 
-\hypertarget{group__errors_g92aa7a17d2248b62f428d9e655f7d35e}{
-\#define \hyperlink{group__errors_g92aa7a17d2248b62f428d9e655f7d35e}{CFE\_\-NLE}~120}
-\label{group__errors_g92aa7a17d2248b62f428d9e655f7d35e}
-
-\begin{CompactList}\small\item\em No Last Entry flag found. \item\end{CompactList}\item 
-\hypertarget{group__errors_g3e780bea24126b1d0750f3ee7a96b8a8}{
-\#define \hyperlink{group__errors_g3e780bea24126b1d0750f3ee7a96b8a8}{CFE\_\-TIN}~130}
-\label{group__errors_g3e780bea24126b1d0750f3ee7a96b8a8}
-
-\begin{CompactList}\small\item\em Error reTurn from stdIN query. \item\end{CompactList}\item 
-\hypertarget{group__errors_g9e2ead53d32b9cf9f0e280a452c8e2e6}{
-\#define \hyperlink{group__errors_g9e2ead53d32b9cf9f0e280a452c8e2e6}{CFE\_\-EFE}~140}
-\label{group__errors_g9e2ead53d32b9cf9f0e280a452c8e2e6}
-
-\begin{CompactList}\small\item\em Empty string in content for Filename Entry. \item\end{CompactList}\item 
-\hypertarget{group__errors_gee86803a95d7d53a01c86f98c231aa7c}{
-\#define \hyperlink{group__errors_gee86803a95d7d53a01c86f98c231aa7c}{CFE\_\-USG}~200}
-\label{group__errors_gee86803a95d7d53a01c86f98c231aa7c}
-
-\begin{CompactList}\small\item\em Entries missing: USaGge advice. \item\end{CompactList}\item 
-\hypertarget{group__errors_gd9ced7e6eab277e4e24f511af9daf3bf}{
-\#define \hyperlink{group__errors_gd9ced7e6eab277e4e24f511af9daf3bf}{CFE\_\-URI}~210}
-\label{group__errors_gd9ced7e6eab277e4e24f511af9daf3bf}
-
-\begin{CompactList}\small\item\em UnResolved Item (CF\_\-MUST was set!). \item\end{CompactList}\item 
-\hypertarget{group__errors_g22ceafacdf80ae7247728f05c9129b1e}{
-\#define \hyperlink{group__errors_g22ceafacdf80ae7247728f05c9129b1e}{CFE\_\-FBF}~-500}
-\label{group__errors_g22ceafacdf80ae7247728f05c9129b1e}
-
-\begin{CompactList}\small\item\em File Backup Failed. \item\end{CompactList}\item 
-\hypertarget{group__errors_g722db0752b9a2f977065b8001da18101}{
-\#define \hyperlink{group__errors_g722db0752b9a2f977065b8001da18101}{CFE\_\-BMF}~-510}
-\label{group__errors_g722db0752b9a2f977065b8001da18101}
-
-\begin{CompactList}\small\item\em Backup: Memory allocation Failed. \item\end{CompactList}\item 
-\hypertarget{group__errors_gda14f93a466c819b6286bcf7f85bbbe5}{
-\#define \hyperlink{group__errors_gda14f93a466c819b6286bcf7f85bbbe5}{CFE\_\-BOF}~520}
-\label{group__errors_gda14f93a466c819b6286bcf7f85bbbe5}
-
-\begin{CompactList}\small\item\em Backup: Open source file Failed. \item\end{CompactList}\item 
-\hypertarget{group__errors_g793b92e4f9ea3a7acde0cc0dcf80701f}{
-\#define \hyperlink{group__errors_g793b92e4f9ea3a7acde0cc0dcf80701f}{CFE\_\-BBF}~530}
-\label{group__errors_g793b92e4f9ea3a7acde0cc0dcf80701f}
-
-\begin{CompactList}\small\item\em Backup: open target Backup file Failed. \item\end{CompactList}\item 
-\hypertarget{group__errors_gee4caa017da2daf88aa192647f5ebaba}{
-\#define \hyperlink{group__errors_gee4caa017da2daf88aa192647f5ebaba}{CFE\_\-BRF}~540}
-\label{group__errors_gee4caa017da2daf88aa192647f5ebaba}
-
-\begin{CompactList}\small\item\em Backup: Rename Failed. \item\end{CompactList}\item 
-\hypertarget{group__errors_g58992d0fae72c0a93a8fb1ec9cc1cd9c}{
-\#define \hyperlink{group__errors_g58992d0fae72c0a93a8fb1ec9cc1cd9c}{CFE\_\-BWF}~550}
-\label{group__errors_g58992d0fae72c0a93a8fb1ec9cc1cd9c}
-
-\begin{CompactList}\small\item\em Backup: Write Failed. \item\end{CompactList}\item 
-\hypertarget{group__errors_gf8cd36471ddcc549668f49238855609d}{
-\#define \hyperlink{group__errors_gf8cd36471ddcc549668f49238855609d}{CFE\_\-NCA}~-10}
-\label{group__errors_gf8cd36471ddcc549668f49238855609d}
-
-\begin{CompactList}\small\item\em No Configuration database Available. \item\end{CompactList}\item 
-\hypertarget{group__errors_g7f7e54a5ccefa34556fe6da3b35b4f27}{
-\#define \hyperlink{group__errors_g7f7e54a5ccefa34556fe6da3b35b4f27}{CFE\_\-NEA}~-20}
-\label{group__errors_g7f7e54a5ccefa34556fe6da3b35b4f27}
-
-\begin{CompactList}\small\item\em No Entry with that name Available. \item\end{CompactList}\item 
-\hypertarget{group__errors_g5db4a12696dff1db26958db1be075be9}{
-\#define \hyperlink{group__errors_g5db4a12696dff1db26958db1be075be9}{CFE\_\-NSS}~-30}
-\label{group__errors_g5db4a12696dff1db26958db1be075be9}
-
-\begin{CompactList}\small\item\em No Source/origin is Set. \item\end{CompactList}\item 
-\hypertarget{group__errors_gaa38e8556d85b1bb41037b3bd022bc28}{
-\#define \hyperlink{group__errors_gaa38e8556d85b1bb41037b3bd022bc28}{CFE\_\-ECP}~-40}
-\label{group__errors_gaa38e8556d85b1bb41037b3bd022bc28}
-
-\begin{CompactList}\small\item\em Entry's Content is a NULL Pointer. \item\end{CompactList}\item 
-\hypertarget{group__errors_g46fb52baac2d4b91c5169a2918caff5d}{
-\#define \hyperlink{group__errors_g46fb52baac2d4b91c5169a2918caff5d}{CFE\_\-MEF}~-100}
-\label{group__errors_g46fb52baac2d4b91c5169a2918caff5d}
-
-\begin{CompactList}\small\item\em Memory allocation in Error routine Failed. \item\end{CompactList}\item 
-\hypertarget{group__errors_g127dc37aea6ba5ef8d9dfe5cb9c629eb}{
-\#define \hyperlink{group__errors_g127dc37aea6ba5ef8d9dfe5cb9c629eb}{CFE\_\-MCF}~-200}
-\label{group__errors_g127dc37aea6ba5ef8d9dfe5cb9c629eb}
-
-\begin{CompactList}\small\item\em Memory allocation for Configuration Failed. \item\end{CompactList}\item 
-\hypertarget{group__errors_gc6a0861a0e376a94e540d7ba95ebe9cf}{
-\#define \hyperlink{group__errors_gc6a0861a0e376a94e540d7ba95ebe9cf}{CFE\_\-INF}~-9999}
-\label{group__errors_gc6a0861a0e376a94e540d7ba95ebe9cf}
-
-\begin{CompactList}\small\item\em Integer iNquiry Failed (?!). \item\end{CompactList}\item 
-\hypertarget{group__errors_g0415e4b197dc2908a58c026c4e621578}{
-\#define \hyperlink{group__errors_g0415e4b197dc2908a58c026c4e621578}{CFE\_\-RNF}~-999.999}
-\label{group__errors_g0415e4b197dc2908a58c026c4e621578}
-
-\begin{CompactList}\small\item\em Real/float iNquiry Failed (?!). \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_gf363125c0f5c520d748d8d0ecaf1af01}{
-\#define \hyperlink{group__cflib__core_gf363125c0f5c520d748d8d0ecaf1af01}{CFS\_\-NOT}~0}
-\label{group__cflib__core_gf363125c0f5c520d748d8d0ecaf1af01}
-
-\begin{CompactList}\small\item\em Start Mode: No action on error. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g50bc281400629cfb20e899144d59a3b7}{
-\#define \hyperlink{group__cflib__core_g50bc281400629cfb20e899144d59a3b7}{CFS\_\-ALL}~1}
-\label{group__cflib__core_g50bc281400629cfb20e899144d59a3b7}
-
-\begin{CompactList}\small\item\em Start Mode: All error messages. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g5663cfeeda02fa9e2fee53b418c5045b}{
-\#define \hyperlink{group__cflib__core_g5663cfeeda02fa9e2fee53b418c5045b}{CFS\_\-NEG}~2}
-\label{group__cflib__core_g5663cfeeda02fa9e2fee53b418c5045b}
-
-\begin{CompactList}\small\item\em Start Mode: Only severe errors. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g3f535ad957f1836dea64deae798324a5}{
-\#define \hyperlink{group__cflib__core_g3f535ad957f1836dea64deae798324a5}{CFS\_\-USG}~3}
-\label{group__cflib__core_g3f535ad957f1836dea64deae798324a5}
-
-\begin{CompactList}\small\item\em Start Mode: Usage message if error was negative, error output like \hyperlink{group__cflib__core_g5663cfeeda02fa9e2fee53b418c5045b}{CFS\_\-NEG}. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g870957fdc2246ddc767747f8dd645bdf}{
-\#define \hyperlink{group__cflib__core_g870957fdc2246ddc767747f8dd645bdf}{CFS\_\-DEBUG}~4}
-\label{group__cflib__core_g870957fdc2246ddc767747f8dd645bdf}
-
-\begin{CompactList}\small\item\em Start Mode: Output like \hyperlink{group__cflib__core_g3f535ad957f1836dea64deae798324a5}{CFS\_\-USG} plus raw dump of configuration. \item\end{CompactList}\item 
-\hypertarget{group__advanced__features_gb28b8410738c00c62003a5f5b2b19827}{
-\#define \hyperlink{group__advanced__features_gb28b8410738c00c62003a5f5b2b19827}{CFD\_\-CFDUMP}~0}
-\label{group__advanced__features_gb28b8410738c00c62003a5f5b2b19827}
-
-\begin{CompactList}\small\item\em Dump Mask Minimal. \item\end{CompactList}\item 
-\hypertarget{group__advanced__features_g6a97e565629fc3e7423e4feb804eb5d0}{
-\#define \hyperlink{group__advanced__features_g6a97e565629fc3e7423e4feb804eb5d0}{CFD\_\-LIBHEAD}~1}
-\label{group__advanced__features_g6a97e565629fc3e7423e4feb804eb5d0}
-
-\begin{CompactList}\small\item\em Dump option CFLIB header. \item\end{CompactList}\item 
-\hypertarget{group__advanced__features_g05403834c7c6377bcf762d640c0d0854}{
-\#define \hyperlink{group__advanced__features_g05403834c7c6377bcf762d640c0d0854}{CFD\_\-COLHEAD}~2}
-\label{group__advanced__features_g05403834c7c6377bcf762d640c0d0854}
-
-\begin{CompactList}\small\item\em Dump option Column headers. \item\end{CompactList}\item 
-\hypertarget{group__advanced__features_g9deeb100c2dc701f8f8193b8fb53fbff}{
-\#define \hyperlink{group__advanced__features_g9deeb100c2dc701f8f8193b8fb53fbff}{CFD\_\-SRCFLAGS}~4}
-\label{group__advanced__features_g9deeb100c2dc701f8f8193b8fb53fbff}
-
-\begin{CompactList}\small\item\em Dump option Source flag description. \item\end{CompactList}\item 
-\hypertarget{group__advanced__features_g61cced010b3d926e37aafdf615951875}{
-\#define \hyperlink{group__advanced__features_g61cced010b3d926e37aafdf615951875}{CFD\_\-DEFAULT}~CFD\_\-COLHEAD$|$CFD\_\-SRCFLAGS}
-\label{group__advanced__features_g61cced010b3d926e37aafdf615951875}
-
-\begin{CompactList}\small\item\em Dump Mask Default. \item\end{CompactList}\item 
-\#define \hyperlink{group__retrieval_g5e2da3f6cf3e36a910362660d167f790}{cfget}(a)~cfgetent(a,0)
-\begin{CompactList}\small\item\em Get value (content) of named entry. \item\end{CompactList}\item 
-\#define \hyperlink{group__retrieval_g8cf5f53c5b05ec5ca4f5145010f84eb4}{cfgetstr}(a)~((char $\ast$)cfgetent(a,CF\_\-STR))
-\begin{CompactList}\small\item\em Inquire CFLIB DB for String in content of named entry. \item\end{CompactList}\item 
-\#define \hyperlink{group__retrieval_g591b741a05205e1ddd599146b996d755}{cfgetnum}(a)~($\ast$(int $\ast$)cfgetent(a,CF\_\-INT))
-\begin{CompactList}\small\item\em Inquire CFLIB DB for Integer value in content of named entry. \item\end{CompactList}\item 
-\#define \hyperlink{group__retrieval_g5f5ec5179e69c2bdfb06ff38a5af16e4}{cfgetreal}(a)~($\ast$(float $\ast$)cfgetent(a,CF\_\-REAL))
-\begin{CompactList}\small\item\em Inquire CFLIB DB for Float (Real) value in content of named entry. \item\end{CompactList}\item 
-\#define \hyperlink{group__retrieval_gc0188464b59267e14b5c44efb1d4a0f2}{cfgetflag}(a)~($\ast$(int $\ast$)cfgetent(a,CF\_\-FLAG))
-\begin{CompactList}\small\item\em Inquire CFLIB DB for Flag value in content of named entry. \item\end{CompactList}\item 
-\#define \hyperlink{group__retrieval_g09929d4a48932749dd9d0d32d0f3f08c}{cfflaginq}(a, b)~($\ast$(int $\ast$)cfgetent(a,CF\_\-FLGINQ$|$(31\&b)))
-\begin{CompactList}\small\item\em Inquire CFLIB DB for Bit set in entry's Special Options Fag \hyperlink{struct_c_o_n_f_i_g_b04d08abdf758c0400caaded716f4089}{CONFIG::flag}. \item\end{CompactList}\item 
-\#define \hyperlink{group__retrieval_gdf84eed41bdaa0a6cd8cd474c79d50b1}{cfgetsrc}(a)~($\ast$(int $\ast$)cfgetent(a,CF\_\-SRC))
-\begin{CompactList}\small\item\em Inquire CFLIB DB for Source of named entry's content. \item\end{CompactList}\item 
-\#define \hyperlink{group__retrieval_g6ef6076e946383ab198ee26b9aa5603a}{cfgetres}()~((char $\ast$)cfgetent(\char`\"{}\char`\"{},CF\_\-RESID))
-\begin{CompactList}\small\item\em Get next Residual Command Line Argument from CFLIB DB. \item\end{CompactList}\item 
-\#define \hyperlink{group__retrieval_g9999522b2acf8760f420d2567e7f7c50}{cfgetcpr}()~\char`\"{}CFLIB (c) 1994-2009 Stefan Habermehl\char`\"{}
-\begin{CompactList}\small\item\em Get Copyright Notice. \item\end{CompactList}\item 
-\#define \hyperlink{cf_8h_b4370bac1e151641bfb78e65f8ec4b44}{cfput}(a, b)~cfputstr(a,(char $\ast$)b)
-\begin{CompactList}\small\item\em Update or Add Parameter (Utility Function Macro). \item\end{CompactList}\item 
-\hypertarget{group__utilities_gbfbf02b37e47027916f3352798f7d44c}{
-\#define \hyperlink{group__utilities_gbfbf02b37e47027916f3352798f7d44c}{DelFlag}(a, b)~a\&=($\sim$b)}
-\label{group__utilities_gbfbf02b37e47027916f3352798f7d44c}
-
-\begin{CompactList}\small\item\em Delete bits of Mask {\tt b} from Mask {\tt a}. \item\end{CompactList}\item 
-\hypertarget{group__utilities_gfcc4d6e712f81df21ea69277d42af839}{
-\#define \hyperlink{group__utilities_gfcc4d6e712f81df21ea69277d42af839}{SetFlag}(a, b)~a$|$=b}
-\label{group__utilities_gfcc4d6e712f81df21ea69277d42af839}
-
-\begin{CompactList}\small\item\em Set bits of Mask {\tt b} in Mask {\tt a}. \item\end{CompactList}\item 
-\hypertarget{cf_8h_db9171d82e327de7aafa526fb6aa39b6}{
-\#define \hyperlink{cf_8h_db9171d82e327de7aafa526fb6aa39b6}{\_\-\_\-CF\_\-H\_\-\_\-}}
-\label{cf_8h_db9171d82e327de7aafa526fb6aa39b6}
-
-\begin{CompactList}\small\item\em Marker: \hyperlink{cf_8h}{cf.h} has been included. \item\end{CompactList}\end{CompactItemize}
+\hypertarget{group__cflib__core_ga0beb5d41f2b506f1c969c56731bb9490}{\#define \hyperlink{group__cflib__core_ga0beb5d41f2b506f1c969c56731bb9490}{Patchlevel}~\char`\"{}21\char`\"{}}\label{group__cflib__core_ga0beb5d41f2b506f1c969c56731bb9490}
+
+\begin{DoxyCompactList}\small\item\em C\-F\-L\-I\-B Identification. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga1662beae23df229341c28d286379e2ad}{\#define \hyperlink{group__cflib__core_ga1662beae23df229341c28d286379e2ad}{M\-A\-X\-C\-O\-N\-F}~4096}\label{group__cflib__core_ga1662beae23df229341c28d286379e2ad}
+
+\begin{DoxyCompactList}\small\item\em Maximum number of entries in configuration database. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_gaf78e4b950c9aa49b752e4460342ea3bf}{\#define \hyperlink{group__cflib__core_gaf78e4b950c9aa49b752e4460342ea3bf}{C\-F\-\_\-\-M\-A\-X\-E\-R\-R\-S\-T\-R}~512}\label{group__cflib__core_gaf78e4b950c9aa49b752e4460342ea3bf}
+
+\begin{DoxyCompactList}\small\item\em Maximum string length for error message. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_gac7ffaf92294adc15284233965f54c03e}{\#define \hyperlink{group__cflib__core_gac7ffaf92294adc15284233965f54c03e}{C\-F\-\_\-\-M\-A\-X\-L\-I\-N\-E}~20480}\label{group__cflib__core_gac7ffaf92294adc15284233965f54c03e}
+
+\begin{DoxyCompactList}\small\item\em Maximum string length for setfile and form parsing. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_gac91ed2022fe6617330f369b4e20b875b}{\#define \hyperlink{group__cflib__core_gac91ed2022fe6617330f369b4e20b875b}{C\-F\-\_\-\-M\-A\-X\-Q\-L\-I\-N\-E}~512}\label{group__cflib__core_gac91ed2022fe6617330f369b4e20b875b}
+
+\begin{DoxyCompactList}\small\item\em Maximum string length for query. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_gad36d92b5077988734cdfeb0f47c0488e}{\#define \hyperlink{group__cflib__core_gad36d92b5077988734cdfeb0f47c0488e}{C\-F\-\_\-\-M\-A\-X\-U\-S\-A\-G\-E}~1024}\label{group__cflib__core_gad36d92b5077988734cdfeb0f47c0488e}
+
+\begin{DoxyCompactList}\small\item\em Maximum string length for usage string. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_gac568df32f08baaff9c162521856c3ec7}{\#define \hyperlink{group__cflib__core_gac568df32f08baaff9c162521856c3ec7}{C\-F\-\_\-\-U\-S\-G\-\_\-\-D\-E\-F\-C\-O\-L\-S}~80}\label{group__cflib__core_gac568df32f08baaff9c162521856c3ec7}
+
+\begin{DoxyCompactList}\small\item\em Default terminal width for usage string. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga582af337c870e7eb2cdb133fd5cc72d2}{\#define \hyperlink{group__cflib__core_ga582af337c870e7eb2cdb133fd5cc72d2}{C\-F\-\_\-\-M\-A\-X\-T\-I\-M\-E\-B\-U\-F}~256}\label{group__cflib__core_ga582af337c870e7eb2cdb133fd5cc72d2}
+
+\begin{DoxyCompactList}\small\item\em Buffer size for time and day. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cflib__core_gaa93f0eb578d23995850d61f7d61c55c1}{F\-A\-L\-S\-E}~0
+\begin{DoxyCompactList}\small\item\em $<$ T\-R\-U\-E, if not defined \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{\#define \hyperlink{group__cflib__core_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}~(void $\ast$)(0\-L)}\label{group__cflib__core_ga070d2ce7b6bb7e5c05602aa8c308d0c4}
+
+\begin{DoxyCompactList}\small\item\em N\-U\-L\-L, if not defined. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga355c714f2912ac336b8b03468c978d8c}{\#define \hyperlink{group__cflib__core_ga355c714f2912ac336b8b03468c978d8c}{C\-F\-\_\-\-F\-L\-A\-G\-\_\-\-O\-N}~\char`\"{}$\backslash$1\char`\"{}}\label{group__cflib__core_ga355c714f2912ac336b8b03468c978d8c}
+
+\begin{DoxyCompactList}\small\item\em Flag is set. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga7010abac2c80c121772da4d9c03332ee}{\#define \hyperlink{group__cflib__core_ga7010abac2c80c121772da4d9c03332ee}{C\-F\-\_\-\-F\-L\-A\-G\-\_\-\-O\-F\-F}~\char`\"{}\char`\"{}}\label{group__cflib__core_ga7010abac2c80c121772da4d9c03332ee}
+
+\begin{DoxyCompactList}\small\item\em Flag is not set. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_gabea45e34341ee5aaafb4a4a732bb5ece}{\#define \hyperlink{group__cflib__core_gabea45e34341ee5aaafb4a4a732bb5ece}{C\-F\-\_\-\-N\-O\-\_\-\-O\-P\-T\-I\-O\-N}~' '}\label{group__cflib__core_gabea45e34341ee5aaafb4a4a732bb5ece}
+
+\begin{DoxyCompactList}\small\item\em Option is not set. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga9c80120944556169d230d4cd051d88cb}{\#define \hyperlink{group__cflib__core_ga9c80120944556169d230d4cd051d88cb}{T\-A\-B\-L\-E\-N}~8}\label{group__cflib__core_ga9c80120944556169d230d4cd051d88cb}
+
+\begin{DoxyCompactList}\small\item\em T\-A\-B length. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga764a8ea81ffc3940bf413797dcaf9a3d}{\#define \hyperlink{group__cflib__core_ga764a8ea81ffc3940bf413797dcaf9a3d}{C\-F\-P\-\_\-\-P\-U\-T}~0}\label{group__cflib__core_ga764a8ea81ffc3940bf413797dcaf9a3d}
+
+\begin{DoxyCompactList}\small\item\em Function Call or Automatic Initialization. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga0901da5871f3cffeec56e491f8c9fc7f}{\#define \hyperlink{group__cflib__core_ga0901da5871f3cffeec56e491f8c9fc7f}{C\-F\-P\-\_\-\-A\-R\-G}~1}\label{group__cflib__core_ga0901da5871f3cffeec56e491f8c9fc7f}
+
+\begin{DoxyCompactList}\small\item\em Commandline. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_gac77d72299f32e91104090cdeb93f3619}{\#define \hyperlink{group__cflib__core_gac77d72299f32e91104090cdeb93f3619}{C\-F\-P\-\_\-\-E\-N\-V}~2}\label{group__cflib__core_gac77d72299f32e91104090cdeb93f3619}
+
+\begin{DoxyCompactList}\small\item\em Environment. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga6cf8dcc9fa01deae5eb44698cb01f73e}{\#define \hyperlink{group__cflib__core_ga6cf8dcc9fa01deae5eb44698cb01f73e}{C\-F\-P\-\_\-\-P\-R\-I\-V}~3}\label{group__cflib__core_ga6cf8dcc9fa01deae5eb44698cb01f73e}
+
+\begin{DoxyCompactList}\small\item\em Private Configuration File. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga0365a86453eeaa815a79c506343bd927}{\#define \hyperlink{group__cflib__core_ga0365a86453eeaa815a79c506343bd927}{C\-F\-P\-\_\-\-S\-Y\-S}~4}\label{group__cflib__core_ga0365a86453eeaa815a79c506343bd927}
+
+\begin{DoxyCompactList}\small\item\em System Configuration File. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_gafa9b2b859f08e9b319cc50555255a975}{\#define \hyperlink{group__cflib__core_gafa9b2b859f08e9b319cc50555255a975}{C\-F\-P\-\_\-\-D\-E\-F}~5}\label{group__cflib__core_gafa9b2b859f08e9b319cc50555255a975}
+
+\begin{DoxyCompactList}\small\item\em Built-\/in Default. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga91ce348a0630961b0c472e7dec732aae}{\#define \hyperlink{group__cflib__core_ga91ce348a0630961b0c472e7dec732aae}{C\-F\-P\-\_\-\-Q\-R\-Y}~6}\label{group__cflib__core_ga91ce348a0630961b0c472e7dec732aae}
+
+\begin{DoxyCompactList}\small\item\em Standard Input Channel. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga631bc61e35c14f1d3df36a71154a776a}{\#define \hyperlink{group__cflib__core_ga631bc61e35c14f1d3df36a71154a776a}{C\-F\-P\-\_\-\-R\-E\-S\-E\-R\-V\-E\-D}~7}\label{group__cflib__core_ga631bc61e35c14f1d3df36a71154a776a}
+
+\begin{DoxyCompactList}\small\item\em Reserved for Subprojects. \end{DoxyCompactList}\item 
+\hypertarget{group__report__generation_ga5547641c939fd4d071e9aeaa7c956cac}{\#define \hyperlink{group__report__generation_ga5547641c939fd4d071e9aeaa7c956cac}{C\-F\-\_\-\-D\-E\-F\-\_\-\-V\-A\-R\-D\-E\-L\-I\-M}~\char`\"{}\$()\char`\"{}}\label{group__report__generation_ga5547641c939fd4d071e9aeaa7c956cac}
+
+\begin{DoxyCompactList}\small\item\em Default variable delimiter for \hyperlink{group__report__generation_ga2695585ee0a7485da6075848fa27a33f}{cfform()} \end{DoxyCompactList}\item 
+\hypertarget{group__report__generation_ga7b96ba1ca10909659d50eabb8b5af611}{\#define \hyperlink{group__report__generation_ga7b96ba1ca10909659d50eabb8b5af611}{C\-F\-\_\-\-M\-A\-X\-I\-N\-C}~8}\label{group__report__generation_ga7b96ba1ca10909659d50eabb8b5af611}
+
+\begin{DoxyCompactList}\small\item\em Maximum number of nested includes for \hyperlink{group__report__generation_ga2695585ee0a7485da6075848fa27a33f}{cfform()} \end{DoxyCompactList}\item 
+\hypertarget{group__utilities_ga4211f4b332e79ab5f3c691a4ab6ebaf9}{\#define \hyperlink{group__utilities_ga4211f4b332e79ab5f3c691a4ab6ebaf9}{C\-F\-\_\-\-B\-A\-C\-K\-B\-U\-F\-L\-E\-N}~102400}\label{group__utilities_ga4211f4b332e79ab5f3c691a4ab6ebaf9}
+
+\begin{DoxyCompactList}\small\item\em File copy buffer for \hyperlink{group__utilities_ga0fccda7427db33b2f73a3b6dca864207}{Backup\-File()} \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_gaa4d82cea91ede4aee78594417894e368}{\#define \hyperlink{group__special__options__mask_gaa4d82cea91ede4aee78594417894e368}{C\-F\-\_\-\-L\-A\-S\-T}~0x0001}\label{group__special__options__mask_gaa4d82cea91ede4aee78594417894e368}
+
+\begin{DoxyCompactList}\small\item\em Last entry in settings array. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_gab383c1436888ea6b410141f7c0b1f306}{\#define \hyperlink{group__special__options__mask_gab383c1436888ea6b410141f7c0b1f306}{C\-F\-\_\-\-P\-A\-T\-H}~0x0002}\label{group__special__options__mask_gab383c1436888ea6b410141f7c0b1f306}
+
+\begin{DoxyCompactList}\small\item\em Search Path (for Find\-File feature) \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_gafeeb63d4d8c498bec4a237ad8b94f02f}{\#define \hyperlink{group__special__options__mask_gafeeb63d4d8c498bec4a237ad8b94f02f}{C\-F\-\_\-\-S\-E\-T\-F\-I\-L\-E}~0x0004}\label{group__special__options__mask_gafeeb63d4d8c498bec4a237ad8b94f02f}
+
+\begin{DoxyCompactList}\small\item\em Entry is Private Configuration File. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_gabb03ea68e07e388da2c1337a1582c72e}{\#define \hyperlink{group__special__options__mask_gabb03ea68e07e388da2c1337a1582c72e}{C\-F\-\_\-\-S\-Y\-S\-\_\-\-S\-E\-T\-F\-I\-L\-E}~0x0008}\label{group__special__options__mask_gabb03ea68e07e388da2c1337a1582c72e}
+
+\begin{DoxyCompactList}\small\item\em Entry is System Configuration File. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_ga603f0467f101b71f5f869381429ffef4}{\#define \hyperlink{group__special__options__mask_ga603f0467f101b71f5f869381429ffef4}{C\-F\-\_\-\-S\-E\-C\-T\-I\-O\-N}~0x0010}\label{group__special__options__mask_ga603f0467f101b71f5f869381429ffef4}
+
+\begin{DoxyCompactList}\small\item\em Section in Configuration File. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_ga071c29b5177f2df2400712ce8daae9b0}{\#define \hyperlink{group__special__options__mask_ga071c29b5177f2df2400712ce8daae9b0}{C\-F\-\_\-\-P\-R\-G\-N\-A\-M\-E}~0x0020}\label{group__special__options__mask_ga071c29b5177f2df2400712ce8daae9b0}
+
+\begin{DoxyCompactList}\small\item\em Running Program's Name from commandline. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_ga0fde537a92deb77f75b21c9e8d306509}{\#define \hyperlink{group__special__options__mask_ga0fde537a92deb77f75b21c9e8d306509}{C\-F\-\_\-\-T\-I\-M\-E}~0x0040}\label{group__special__options__mask_ga0fde537a92deb77f75b21c9e8d306509}
+
+\begin{DoxyCompactList}\small\item\em Time string. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_ga1c5b511a34d2c0db6631539ba81a4386}{\#define \hyperlink{group__special__options__mask_ga1c5b511a34d2c0db6631539ba81a4386}{C\-F\-\_\-\-D\-A\-T\-E}~0x0080}\label{group__special__options__mask_ga1c5b511a34d2c0db6631539ba81a4386}
+
+\begin{DoxyCompactList}\small\item\em Date string. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_ga8d6cd1608fef5638efe964da63edf2dd}{\#define \hyperlink{group__special__options__mask_ga8d6cd1608fef5638efe964da63edf2dd}{C\-F\-\_\-\-S\-E\-T\-\_\-\-P\-U\-T}~0x0100}\label{group__special__options__mask_ga8d6cd1608fef5638efe964da63edf2dd}
+
+\begin{DoxyCompactList}\small\item\em Source\-: Function Call. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_ga1b3eb474a5160e5a32385f6de53d90d6}{\#define \hyperlink{group__special__options__mask_ga1b3eb474a5160e5a32385f6de53d90d6}{C\-F\-\_\-\-S\-E\-T\-\_\-\-A\-R\-G}~0x0200}\label{group__special__options__mask_ga1b3eb474a5160e5a32385f6de53d90d6}
+
+\begin{DoxyCompactList}\small\item\em Source\-: Commandline Argument. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_ga29dbd098a75a23ddc42b3b53e430d694}{\#define \hyperlink{group__special__options__mask_ga29dbd098a75a23ddc42b3b53e430d694}{C\-F\-\_\-\-S\-E\-T\-\_\-\-E\-N\-V}~0x0400}\label{group__special__options__mask_ga29dbd098a75a23ddc42b3b53e430d694}
+
+\begin{DoxyCompactList}\small\item\em Source\-: Environment Variable. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_gaabf1d4d312964af93bd55f71eeec6988}{\#define \hyperlink{group__special__options__mask_gaabf1d4d312964af93bd55f71eeec6988}{C\-F\-\_\-\-S\-E\-T\-\_\-\-P\-R\-I\-V}~0x0800}\label{group__special__options__mask_gaabf1d4d312964af93bd55f71eeec6988}
+
+\begin{DoxyCompactList}\small\item\em Source\-: Private Configuration File. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_ga8fe09807491ee119290329cf08e6f340}{\#define \hyperlink{group__special__options__mask_ga8fe09807491ee119290329cf08e6f340}{C\-F\-\_\-\-S\-E\-T\-\_\-\-S\-Y\-S}~0x1000}\label{group__special__options__mask_ga8fe09807491ee119290329cf08e6f340}
+
+\begin{DoxyCompactList}\small\item\em Source\-: System Configuration File. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_ga17b4ef5b35afe21a4a80faa671030b65}{\#define \hyperlink{group__special__options__mask_ga17b4ef5b35afe21a4a80faa671030b65}{C\-F\-\_\-\-S\-E\-T\-\_\-\-D\-E\-F}~0x2000}\label{group__special__options__mask_ga17b4ef5b35afe21a4a80faa671030b65}
+
+\begin{DoxyCompactList}\small\item\em Source\-: Built-\/in Default. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_ga09dcbb96c5ace43a7d5e7e4f52d387a8}{\#define \hyperlink{group__special__options__mask_ga09dcbb96c5ace43a7d5e7e4f52d387a8}{C\-F\-\_\-\-S\-E\-T\-\_\-\-Q\-R\-Y}~0x4000}\label{group__special__options__mask_ga09dcbb96c5ace43a7d5e7e4f52d387a8}
+
+\begin{DoxyCompactList}\small\item\em Source\-: Interactive Terminal Input. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_ga97d17b070dac10c14d3930c58bfba76f}{\#define \hyperlink{group__special__options__mask_ga97d17b070dac10c14d3930c58bfba76f}{C\-F\-\_\-\-N\-O\-\_\-\-O\-P\-T\-\_\-\-A\-R\-G}~0x10000}\label{group__special__options__mask_ga97d17b070dac10c14d3930c58bfba76f}
+
+\begin{DoxyCompactList}\small\item\em Commandline argument not following an option. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_ga9e526dae88bf6803772107ff283637b5}{\#define \hyperlink{group__special__options__mask_ga9e526dae88bf6803772107ff283637b5}{C\-F\-\_\-\-C\-O\-N\-C\-A\-T}~0x20000}\label{group__special__options__mask_ga9e526dae88bf6803772107ff283637b5}
+
+\begin{DoxyCompactList}\small\item\em Argument is concatenated to option. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_ga72b75851880f36aaa5a52fdfe7960cca}{\#define \hyperlink{group__special__options__mask_ga72b75851880f36aaa5a52fdfe7960cca}{C\-F\-\_\-\-I\-G\-N\-\_\-\-E\-N\-V}~0x40000}\label{group__special__options__mask_ga72b75851880f36aaa5a52fdfe7960cca}
+
+\begin{DoxyCompactList}\small\item\em Do not check environment for variable. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_gae39e0d9b4e9af8c6d4b3676783dd26e0}{\#define \hyperlink{group__special__options__mask_gae39e0d9b4e9af8c6d4b3676783dd26e0}{C\-F\-\_\-\-Q\-U\-E\-R\-Y}~0x80000}\label{group__special__options__mask_gae39e0d9b4e9af8c6d4b3676783dd26e0}
+
+\begin{DoxyCompactList}\small\item\em Ask the user for unresolved item after configuration parsing. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_ga64c30a2865061d0c1074bc6ec91e3dcf}{\#define \hyperlink{group__special__options__mask_ga64c30a2865061d0c1074bc6ec91e3dcf}{C\-F\-\_\-\-S\-T\-R}~0x100000}\label{group__special__options__mask_ga64c30a2865061d0c1074bc6ec91e3dcf}
+
+\begin{DoxyCompactList}\small\item\em Entry is String. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_gab33869d596619ad14675c053925a42e0}{\#define \hyperlink{group__special__options__mask_gab33869d596619ad14675c053925a42e0}{C\-F\-\_\-\-I\-N\-T}~0x200000}\label{group__special__options__mask_gab33869d596619ad14675c053925a42e0}
+
+\begin{DoxyCompactList}\small\item\em Entry is Integer. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_ga1d1f1d1b6eac6b5d9970102318ab2667}{\#define \hyperlink{group__special__options__mask_ga1d1f1d1b6eac6b5d9970102318ab2667}{C\-F\-\_\-\-F\-L\-A\-G}~0x400000}\label{group__special__options__mask_ga1d1f1d1b6eac6b5d9970102318ab2667}
+
+\begin{DoxyCompactList}\small\item\em Entry is Flag. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_gaeefdbef320cbd7179f1fb0ebe0fcf5ce}{\#define \hyperlink{group__special__options__mask_gaeefdbef320cbd7179f1fb0ebe0fcf5ce}{C\-F\-\_\-\-R\-E\-A\-L}~0x800000}\label{group__special__options__mask_gaeefdbef320cbd7179f1fb0ebe0fcf5ce}
+
+\begin{DoxyCompactList}\small\item\em Entry is Float. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_ga675b6f8440beecc09fec54d17e9c3ee9}{\#define \hyperlink{group__special__options__mask_ga675b6f8440beecc09fec54d17e9c3ee9}{C\-F\-\_\-\-F\-I\-N\-D\-F\-I\-L\-E}~0x1000000}\label{group__special__options__mask_ga675b6f8440beecc09fec54d17e9c3ee9}
+
+\begin{DoxyCompactList}\small\item\em Entry is filename to be searched for in the path. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_ga3229f5b038eaa0c6428361d2aa510dfc}{\#define \hyperlink{group__special__options__mask_ga3229f5b038eaa0c6428361d2aa510dfc}{C\-F\-\_\-\-M\-U\-S\-T}~0x2000000}\label{group__special__options__mask_ga3229f5b038eaa0c6428361d2aa510dfc}
+
+\begin{DoxyCompactList}\small\item\em Entry may not be empty ({\ttfamily N\-U\-L\-L} or \char`\"{}\char`\"{}) \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_ga5415b257c706aae33d91d3947a3429c0}{\#define \hyperlink{group__special__options__mask_ga5415b257c706aae33d91d3947a3429c0}{C\-F\-\_\-\-R\-E\-S\-I\-D}~0x4000000}\label{group__special__options__mask_ga5415b257c706aae33d91d3947a3429c0}
+
+\begin{DoxyCompactList}\small\item\em Residual/additional entry from commandline/setfile/cfput. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_gac30981201d7455071cef38a0133b9228}{\#define \hyperlink{group__special__options__mask_gac30981201d7455071cef38a0133b9228}{C\-F\-\_\-\-U\-S\-A\-G\-E}~0x8000000}\label{group__special__options__mask_gac30981201d7455071cef38a0133b9228}
+
+\begin{DoxyCompactList}\small\item\em Usage Message format string. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_gaff1b2e25aa9a89a55c1784018e24aa75}{\#define \hyperlink{group__special__options__mask_gaff1b2e25aa9a89a55c1784018e24aa75}{C\-F\-\_\-\-E\-X\-P\-H\-O\-M\-E}~0x10000000}\label{group__special__options__mask_gaff1b2e25aa9a89a55c1784018e24aa75}
+
+\begin{DoxyCompactList}\small\item\em Expand Home Directory. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_ga2b971231bd3cbad743ef2f4e0a613a47}{\#define \hyperlink{group__special__options__mask_ga2b971231bd3cbad743ef2f4e0a613a47}{C\-F\-\_\-\-M\-A\-L\-L\-O\-C}~0x20000000}\label{group__special__options__mask_ga2b971231bd3cbad743ef2f4e0a613a47}
+
+\begin{DoxyCompactList}\small\item\em Space for entry's content was mallocated. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_ga618e7187ee15bacfe668e72a858e71fc}{\#define \hyperlink{group__special__options__mask_ga618e7187ee15bacfe668e72a858e71fc}{C\-F\-\_\-\-F\-O\-R\-C\-E\-D}~0x40000000}\label{group__special__options__mask_ga618e7187ee15bacfe668e72a858e71fc}
+
+\begin{DoxyCompactList}\small\item\em Setting has been forced (already) \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_gad76153c65f68cc0ee5c1a04c8c3e80bf}{\#define \hyperlink{group__special__options__mask_gad76153c65f68cc0ee5c1a04c8c3e80bf}{C\-F\-\_\-\-N\-O\-S\-A\-V\-E}~0x80000000}\label{group__special__options__mask_gad76153c65f68cc0ee5c1a04c8c3e80bf}
+
+\begin{DoxyCompactList}\small\item\em Don't include in savefile / mark entry. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_gad9b1f659b11c529a0ed1035caf8b239b}{\#define \hyperlink{group__special__options__mask_gad9b1f659b11c529a0ed1035caf8b239b}{C\-F\-\_\-\-S\-R\-C}~(\hyperlink{group__special__options__mask_gab33869d596619ad14675c053925a42e0}{C\-F\-\_\-\-I\-N\-T}$|$\hyperlink{group__special__options__mask_ga1d1f1d1b6eac6b5d9970102318ab2667}{C\-F\-\_\-\-F\-L\-A\-G})}\label{group__special__options__mask_gad9b1f659b11c529a0ed1035caf8b239b}
+
+\begin{DoxyCompactList}\small\item\em Type for source/origin inquiry. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_ga36792935eec7c6636b6aea8df82f7480}{\#define \hyperlink{group__special__options__mask_ga36792935eec7c6636b6aea8df82f7480}{C\-F\-\_\-\-F\-L\-G\-I\-N\-Q}~(\hyperlink{group__special__options__mask_ga64c30a2865061d0c1074bc6ec91e3dcf}{C\-F\-\_\-\-S\-T\-R}$|$\hyperlink{group__special__options__mask_ga1d1f1d1b6eac6b5d9970102318ab2667}{C\-F\-\_\-\-F\-L\-A\-G})}\label{group__special__options__mask_ga36792935eec7c6636b6aea8df82f7480}
+
+\begin{DoxyCompactList}\small\item\em Type for options mask inquiry. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_ga8d4f049e4c8022b03b7979ac3f0db04b}{\#define \hyperlink{group__special__options__mask_ga8d4f049e4c8022b03b7979ac3f0db04b}{C\-F\-\_\-\-D\-O\-U\-B\-L\-E}~(\hyperlink{group__special__options__mask_gaeefdbef320cbd7179f1fb0ebe0fcf5ce}{C\-F\-\_\-\-R\-E\-A\-L}$|$\hyperlink{group__special__options__mask_ga1d1f1d1b6eac6b5d9970102318ab2667}{C\-F\-\_\-\-F\-L\-A\-G})}\label{group__special__options__mask_ga8d4f049e4c8022b03b7979ac3f0db04b}
+
+\begin{DoxyCompactList}\small\item\em Type for double inquiry. \end{DoxyCompactList}\item 
+\hypertarget{group__special__options__mask_ga8a50d7326b057d262f53ef84a166f9c5}{\#define \hyperlink{group__special__options__mask_ga8a50d7326b057d262f53ef84a166f9c5}{C\-F\-\_\-\-T\-D}~(\hyperlink{group__special__options__mask_ga1c5b511a34d2c0db6631539ba81a4386}{C\-F\-\_\-\-D\-A\-T\-E}$|$\hyperlink{group__special__options__mask_ga0fde537a92deb77f75b21c9e8d306509}{C\-F\-\_\-\-T\-I\-M\-E})}\label{group__special__options__mask_ga8a50d7326b057d262f53ef84a166f9c5}
+
+\begin{DoxyCompactList}\small\item\em Date or Time entry. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_gaac0ac4dd97f14a0da37622a1497ea004}{\#define \hyperlink{group__errors_gaac0ac4dd97f14a0da37622a1497ea004}{C\-F\-E\-\_\-\-I\-N\-I\-T}~0}\label{group__errors_gaac0ac4dd97f14a0da37622a1497ea004}
+
+\begin{DoxyCompactList}\small\item\em I\-N\-I\-Tialize error input. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_gabea2555a62593e79e32879620c4fc8de}{\#define \hyperlink{group__errors_gabea2555a62593e79e32879620c4fc8de}{C\-F\-E\-\_\-\-O\-K}~0}\label{group__errors_gabea2555a62593e79e32879620c4fc8de}
+
+\begin{DoxyCompactList}\small\item\em No error / everything O\-Kay. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_gabb576e88369c2eac1ffd41915292968c}{\#define \hyperlink{group__errors_gabb576e88369c2eac1ffd41915292968c}{C\-F\-E\-\_\-\-N\-E\-P}~1}\label{group__errors_gabb576e88369c2eac1ffd41915292968c}
+
+\begin{DoxyCompactList}\small\item\em New Entry successfully Put into D\-B. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_gac799901241871d298d9bd9f79e1ce645}{\#define \hyperlink{group__errors_gac799901241871d298d9bd9f79e1ce645}{C\-F\-E\-\_\-\-E\-X\-I\-T}~1}\label{group__errors_gac799901241871d298d9bd9f79e1ce645}
+
+\begin{DoxyCompactList}\small\item\em Finish error input. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_gae5e8ef219f287dc0ff0ca70433f78f0e}{\#define \hyperlink{group__errors_gae5e8ef219f287dc0ff0ca70433f78f0e}{C\-F\-E\-\_\-\-O\-R\-A}~20}\label{group__errors_gae5e8ef219f287dc0ff0ca70433f78f0e}
+
+\begin{DoxyCompactList}\small\item\em Option Requires an Argument. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_ga77e1698381143e412a7a4796b2b8f564}{\#define \hyperlink{group__errors_ga77e1698381143e412a7a4796b2b8f564}{C\-F\-E\-\_\-\-U\-K\-O}~25}\label{group__errors_ga77e1698381143e412a7a4796b2b8f564}
+
+\begin{DoxyCompactList}\small\item\em Un\-Known Option. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_gaa3d4c51112fd70d482a4a77c95dc3daf}{\#define \hyperlink{group__errors_gaa3d4c51112fd70d482a4a77c95dc3daf}{C\-F\-E\-\_\-\-F\-N\-F}~30}\label{group__errors_gaa3d4c51112fd70d482a4a77c95dc3daf}
+
+\begin{DoxyCompactList}\small\item\em File Not Found, read access error. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_gae1f1ad273da29546c89e9e6761b8b3e2}{\#define \hyperlink{group__errors_gae1f1ad273da29546c89e9e6761b8b3e2}{C\-F\-E\-\_\-\-N\-S\-E}~40}\label{group__errors_gae1f1ad273da29546c89e9e6761b8b3e2}
+
+\begin{DoxyCompactList}\small\item\em No Section specifier End found, missing \char`\"{}\mbox{]}\char`\"{}. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_gae67acd8919ba3a30ca6a6f2857dc3628}{\#define \hyperlink{group__errors_gae67acd8919ba3a30ca6a6f2857dc3628}{C\-F\-E\-\_\-\-N\-S\-C}~50}\label{group__errors_gae67acd8919ba3a30ca6a6f2857dc3628}
+
+\begin{DoxyCompactList}\small\item\em No private Setfile Configured. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_gad1375fe531ed1c13233e2fa7ae55534f}{\#define \hyperlink{group__errors_gad1375fe531ed1c13233e2fa7ae55534f}{C\-F\-E\-\_\-\-W\-A\-E}~60}\label{group__errors_gad1375fe531ed1c13233e2fa7ae55534f}
+
+\begin{DoxyCompactList}\small\item\em Write Access Error. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_ga939964b690f63b5484ec40fe8a4a7c56}{\#define \hyperlink{group__errors_ga939964b690f63b5484ec40fe8a4a7c56}{C\-F\-E\-\_\-\-I\-F\-P}~61}\label{group__errors_ga939964b690f63b5484ec40fe8a4a7c56}
+
+\begin{DoxyCompactList}\small\item\em Invalid Filename entry for Private setfile. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_gac2b94fe4fcdaa5cc608add42857fd178}{\#define \hyperlink{group__errors_gac2b94fe4fcdaa5cc608add42857fd178}{C\-F\-E\-\_\-\-E\-W\-N}~70}\label{group__errors_gac2b94fe4fcdaa5cc608add42857fd178}
+
+\begin{DoxyCompactList}\small\item\em Entry Without Name. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_ga8d3bbe7352edc6ec8ecf54150c80349f}{\#define \hyperlink{group__errors_ga8d3bbe7352edc6ec8ecf54150c80349f}{C\-F\-E\-\_\-\-I\-C\-F}~80}\label{group__errors_ga8d3bbe7352edc6ec8ecf54150c80349f}
+
+\begin{DoxyCompactList}\small\item\em Invalid Combination of Flags. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_ga5457a3ff93e8c6d02be9c1813038f795}{\#define \hyperlink{group__errors_ga5457a3ff93e8c6d02be9c1813038f795}{C\-F\-E\-\_\-\-E\-W\-C}~90}\label{group__errors_ga5457a3ff93e8c6d02be9c1813038f795}
+
+\begin{DoxyCompactList}\small\item\em Entry Without Content. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_gae30643e906d0e1fdd31f11f9c1523a52}{\#define \hyperlink{group__errors_gae30643e906d0e1fdd31f11f9c1523a52}{C\-F\-E\-\_\-\-U\-O\-S}~100}\label{group__errors_gae30643e906d0e1fdd31f11f9c1523a52}
+
+\begin{DoxyCompactList}\small\item\em Unlikely Option Specifier. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_ga78354f23ff4d92bd3fd6dcb6bfd59f52}{\#define \hyperlink{group__errors_ga78354f23ff4d92bd3fd6dcb6bfd59f52}{C\-F\-E\-\_\-\-I\-F\-C}~110}\label{group__errors_ga78354f23ff4d92bd3fd6dcb6bfd59f52}
+
+\begin{DoxyCompactList}\small\item\em Invalid Flag Combination. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_ga92aa7a17d2248b62f428d9e655f7d35e}{\#define \hyperlink{group__errors_ga92aa7a17d2248b62f428d9e655f7d35e}{C\-F\-E\-\_\-\-N\-L\-E}~120}\label{group__errors_ga92aa7a17d2248b62f428d9e655f7d35e}
+
+\begin{DoxyCompactList}\small\item\em No Last Entry flag found. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_ga3e780bea24126b1d0750f3ee7a96b8a8}{\#define \hyperlink{group__errors_ga3e780bea24126b1d0750f3ee7a96b8a8}{C\-F\-E\-\_\-\-T\-I\-N}~130}\label{group__errors_ga3e780bea24126b1d0750f3ee7a96b8a8}
+
+\begin{DoxyCompactList}\small\item\em Error re\-Turn from std\-I\-N query. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_ga9e2ead53d32b9cf9f0e280a452c8e2e6}{\#define \hyperlink{group__errors_ga9e2ead53d32b9cf9f0e280a452c8e2e6}{C\-F\-E\-\_\-\-E\-F\-E}~140}\label{group__errors_ga9e2ead53d32b9cf9f0e280a452c8e2e6}
+
+\begin{DoxyCompactList}\small\item\em Empty string in content for Filename Entry. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_gaee86803a95d7d53a01c86f98c231aa7c}{\#define \hyperlink{group__errors_gaee86803a95d7d53a01c86f98c231aa7c}{C\-F\-E\-\_\-\-U\-S\-G}~200}\label{group__errors_gaee86803a95d7d53a01c86f98c231aa7c}
+
+\begin{DoxyCompactList}\small\item\em Entries missing\-: U\-Sa\-Gge advice. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_gad9ced7e6eab277e4e24f511af9daf3bf}{\#define \hyperlink{group__errors_gad9ced7e6eab277e4e24f511af9daf3bf}{C\-F\-E\-\_\-\-U\-R\-I}~210}\label{group__errors_gad9ced7e6eab277e4e24f511af9daf3bf}
+
+\begin{DoxyCompactList}\small\item\em Un\-Resolved Item (C\-F\-\_\-\-M\-U\-S\-T was set!) \end{DoxyCompactList}\item 
+\hypertarget{group__errors_ga22ceafacdf80ae7247728f05c9129b1e}{\#define \hyperlink{group__errors_ga22ceafacdf80ae7247728f05c9129b1e}{C\-F\-E\-\_\-\-F\-B\-F}~-\/500}\label{group__errors_ga22ceafacdf80ae7247728f05c9129b1e}
+
+\begin{DoxyCompactList}\small\item\em File Backup Failed. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_ga722db0752b9a2f977065b8001da18101}{\#define \hyperlink{group__errors_ga722db0752b9a2f977065b8001da18101}{C\-F\-E\-\_\-\-B\-M\-F}~-\/510}\label{group__errors_ga722db0752b9a2f977065b8001da18101}
+
+\begin{DoxyCompactList}\small\item\em Backup\-: Memory allocation Failed. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_gada14f93a466c819b6286bcf7f85bbbe5}{\#define \hyperlink{group__errors_gada14f93a466c819b6286bcf7f85bbbe5}{C\-F\-E\-\_\-\-B\-O\-F}~520}\label{group__errors_gada14f93a466c819b6286bcf7f85bbbe5}
+
+\begin{DoxyCompactList}\small\item\em Backup\-: Open source file Failed. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_ga793b92e4f9ea3a7acde0cc0dcf80701f}{\#define \hyperlink{group__errors_ga793b92e4f9ea3a7acde0cc0dcf80701f}{C\-F\-E\-\_\-\-B\-B\-F}~530}\label{group__errors_ga793b92e4f9ea3a7acde0cc0dcf80701f}
+
+\begin{DoxyCompactList}\small\item\em Backup\-: open target Backup file Failed. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_gaee4caa017da2daf88aa192647f5ebaba}{\#define \hyperlink{group__errors_gaee4caa017da2daf88aa192647f5ebaba}{C\-F\-E\-\_\-\-B\-R\-F}~540}\label{group__errors_gaee4caa017da2daf88aa192647f5ebaba}
+
+\begin{DoxyCompactList}\small\item\em Backup\-: Rename Failed. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_ga58992d0fae72c0a93a8fb1ec9cc1cd9c}{\#define \hyperlink{group__errors_ga58992d0fae72c0a93a8fb1ec9cc1cd9c}{C\-F\-E\-\_\-\-B\-W\-F}~550}\label{group__errors_ga58992d0fae72c0a93a8fb1ec9cc1cd9c}
+
+\begin{DoxyCompactList}\small\item\em Backup\-: Write Failed. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_gaf8cd36471ddcc549668f49238855609d}{\#define \hyperlink{group__errors_gaf8cd36471ddcc549668f49238855609d}{C\-F\-E\-\_\-\-N\-C\-A}~-\/10}\label{group__errors_gaf8cd36471ddcc549668f49238855609d}
+
+\begin{DoxyCompactList}\small\item\em No Configuration database Available. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_ga7f7e54a5ccefa34556fe6da3b35b4f27}{\#define \hyperlink{group__errors_ga7f7e54a5ccefa34556fe6da3b35b4f27}{C\-F\-E\-\_\-\-N\-E\-A}~-\/20}\label{group__errors_ga7f7e54a5ccefa34556fe6da3b35b4f27}
+
+\begin{DoxyCompactList}\small\item\em No Entry with that name Available. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_ga5db4a12696dff1db26958db1be075be9}{\#define \hyperlink{group__errors_ga5db4a12696dff1db26958db1be075be9}{C\-F\-E\-\_\-\-N\-S\-S}~-\/30}\label{group__errors_ga5db4a12696dff1db26958db1be075be9}
+
+\begin{DoxyCompactList}\small\item\em No Source/origin is Set. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_gaaa38e8556d85b1bb41037b3bd022bc28}{\#define \hyperlink{group__errors_gaaa38e8556d85b1bb41037b3bd022bc28}{C\-F\-E\-\_\-\-E\-C\-P}~-\/40}\label{group__errors_gaaa38e8556d85b1bb41037b3bd022bc28}
+
+\begin{DoxyCompactList}\small\item\em Entry's Content is a N\-U\-L\-L Pointer. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_ga46fb52baac2d4b91c5169a2918caff5d}{\#define \hyperlink{group__errors_ga46fb52baac2d4b91c5169a2918caff5d}{C\-F\-E\-\_\-\-M\-E\-F}~-\/100}\label{group__errors_ga46fb52baac2d4b91c5169a2918caff5d}
+
+\begin{DoxyCompactList}\small\item\em Memory allocation in Error routine Failed. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_ga127dc37aea6ba5ef8d9dfe5cb9c629eb}{\#define \hyperlink{group__errors_ga127dc37aea6ba5ef8d9dfe5cb9c629eb}{C\-F\-E\-\_\-\-M\-C\-F}~-\/200}\label{group__errors_ga127dc37aea6ba5ef8d9dfe5cb9c629eb}
+
+\begin{DoxyCompactList}\small\item\em Memory allocation for Configuration Failed. \end{DoxyCompactList}\item 
+\hypertarget{group__errors_gac6a0861a0e376a94e540d7ba95ebe9cf}{\#define \hyperlink{group__errors_gac6a0861a0e376a94e540d7ba95ebe9cf}{C\-F\-E\-\_\-\-I\-N\-F}~-\/9999}\label{group__errors_gac6a0861a0e376a94e540d7ba95ebe9cf}
+
+\begin{DoxyCompactList}\small\item\em Integer i\-Nquiry Failed (?!) \end{DoxyCompactList}\item 
+\hypertarget{group__errors_ga0415e4b197dc2908a58c026c4e621578}{\#define \hyperlink{group__errors_ga0415e4b197dc2908a58c026c4e621578}{C\-F\-E\-\_\-\-R\-N\-F}~-\/999.\-999}\label{group__errors_ga0415e4b197dc2908a58c026c4e621578}
+
+\begin{DoxyCompactList}\small\item\em Real/float i\-Nquiry Failed (?!) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cflib__core_gaf363125c0f5c520d748d8d0ecaf1af01}{C\-F\-S\-\_\-\-N\-O\-T}~0
+\begin{DoxyCompactList}\small\item\em Error Response Modes for \hyperlink{group__cflib__core_ga6e04a462f9ad273de914af386ff15623}{cfstart()} \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga50bc281400629cfb20e899144d59a3b7}{\#define \hyperlink{group__cflib__core_ga50bc281400629cfb20e899144d59a3b7}{C\-F\-S\-\_\-\-A\-L\-L}~1}\label{group__cflib__core_ga50bc281400629cfb20e899144d59a3b7}
+
+\begin{DoxyCompactList}\small\item\em Start Mode\-: All error messages. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga5663cfeeda02fa9e2fee53b418c5045b}{\#define \hyperlink{group__cflib__core_ga5663cfeeda02fa9e2fee53b418c5045b}{C\-F\-S\-\_\-\-N\-E\-G}~2}\label{group__cflib__core_ga5663cfeeda02fa9e2fee53b418c5045b}
+
+\begin{DoxyCompactList}\small\item\em Start Mode\-: Only severe errors. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga3f535ad957f1836dea64deae798324a5}{\#define \hyperlink{group__cflib__core_ga3f535ad957f1836dea64deae798324a5}{C\-F\-S\-\_\-\-U\-S\-G}~3}\label{group__cflib__core_ga3f535ad957f1836dea64deae798324a5}
+
+\begin{DoxyCompactList}\small\item\em Start Mode\-: Usage message if error was negative, error output like \hyperlink{group__cflib__core_ga5663cfeeda02fa9e2fee53b418c5045b}{C\-F\-S\-\_\-\-N\-E\-G}. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga870957fdc2246ddc767747f8dd645bdf}{\#define \hyperlink{group__cflib__core_ga870957fdc2246ddc767747f8dd645bdf}{C\-F\-S\-\_\-\-D\-E\-B\-U\-G}~4}\label{group__cflib__core_ga870957fdc2246ddc767747f8dd645bdf}
+
+\begin{DoxyCompactList}\small\item\em Start Mode\-: Output like \hyperlink{group__cflib__core_ga3f535ad957f1836dea64deae798324a5}{C\-F\-S\-\_\-\-U\-S\-G} plus raw dump of configuration. \end{DoxyCompactList}\item 
+\hypertarget{group__advanced__features_gab28b8410738c00c62003a5f5b2b19827}{\#define \hyperlink{group__advanced__features_gab28b8410738c00c62003a5f5b2b19827}{C\-F\-D\-\_\-\-C\-F\-D\-U\-M\-P}~0}\label{group__advanced__features_gab28b8410738c00c62003a5f5b2b19827}
+
+\begin{DoxyCompactList}\small\item\em Dump Mask Minimal. \end{DoxyCompactList}\item 
+\hypertarget{group__advanced__features_ga6a97e565629fc3e7423e4feb804eb5d0}{\#define \hyperlink{group__advanced__features_ga6a97e565629fc3e7423e4feb804eb5d0}{C\-F\-D\-\_\-\-L\-I\-B\-H\-E\-A\-D}~1}\label{group__advanced__features_ga6a97e565629fc3e7423e4feb804eb5d0}
+
+\begin{DoxyCompactList}\small\item\em Dump option C\-F\-L\-I\-B header. \end{DoxyCompactList}\item 
+\hypertarget{group__advanced__features_ga05403834c7c6377bcf762d640c0d0854}{\#define \hyperlink{group__advanced__features_ga05403834c7c6377bcf762d640c0d0854}{C\-F\-D\-\_\-\-C\-O\-L\-H\-E\-A\-D}~2}\label{group__advanced__features_ga05403834c7c6377bcf762d640c0d0854}
+
+\begin{DoxyCompactList}\small\item\em Dump option Column headers. \end{DoxyCompactList}\item 
+\hypertarget{group__advanced__features_ga9deeb100c2dc701f8f8193b8fb53fbff}{\#define \hyperlink{group__advanced__features_ga9deeb100c2dc701f8f8193b8fb53fbff}{C\-F\-D\-\_\-\-S\-R\-C\-F\-L\-A\-G\-S}~4}\label{group__advanced__features_ga9deeb100c2dc701f8f8193b8fb53fbff}
+
+\begin{DoxyCompactList}\small\item\em Dump option Source flag description. \end{DoxyCompactList}\item 
+\hypertarget{group__advanced__features_gaa336fcd58eb185bf3b5a71af12d2ba69}{\#define \hyperlink{group__advanced__features_gaa336fcd58eb185bf3b5a71af12d2ba69}{C\-F\-D\-\_\-\-F\-L\-A\-G\-S}~8}\label{group__advanced__features_gaa336fcd58eb185bf3b5a71af12d2ba69}
+
+\begin{DoxyCompactList}\small\item\em Dump option All Flags description. \end{DoxyCompactList}\item 
+\hypertarget{group__advanced__features_ga61cced010b3d926e37aafdf615951875}{\#define \hyperlink{group__advanced__features_ga61cced010b3d926e37aafdf615951875}{C\-F\-D\-\_\-\-D\-E\-F\-A\-U\-L\-T}~\hyperlink{group__advanced__features_ga05403834c7c6377bcf762d640c0d0854}{C\-F\-D\-\_\-\-C\-O\-L\-H\-E\-A\-D}$|$\hyperlink{group__advanced__features_ga9deeb100c2dc701f8f8193b8fb53fbff}{C\-F\-D\-\_\-\-S\-R\-C\-F\-L\-A\-G\-S}}\label{group__advanced__features_ga61cced010b3d926e37aafdf615951875}
+
+\begin{DoxyCompactList}\small\item\em Dump Mask Default. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__retrieval_ga5e2da3f6cf3e36a910362660d167f790}{cfget}(a)~\hyperlink{group__retrieval_gac13ba743ed26e6c05df14817ad9df3da}{cfgetent}(a,0)
+\begin{DoxyCompactList}\small\item\em Get value (content) of named entry. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__retrieval_ga8cf5f53c5b05ec5ca4f5145010f84eb4}{cfgetstr}(a)~((char $\ast$)\hyperlink{group__retrieval_gac13ba743ed26e6c05df14817ad9df3da}{cfgetent}(a,\hyperlink{group__special__options__mask_ga64c30a2865061d0c1074bc6ec91e3dcf}{C\-F\-\_\-\-S\-T\-R}))
+\begin{DoxyCompactList}\small\item\em Inquire C\-F\-L\-I\-B D\-B for String in content of named entry. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__retrieval_ga591b741a05205e1ddd599146b996d755}{cfgetnum}(a)~($\ast$(int $\ast$)\hyperlink{group__retrieval_gac13ba743ed26e6c05df14817ad9df3da}{cfgetent}(a,\hyperlink{group__special__options__mask_gab33869d596619ad14675c053925a42e0}{C\-F\-\_\-\-I\-N\-T}))
+\begin{DoxyCompactList}\small\item\em Inquire C\-F\-L\-I\-B D\-B for Integer value in content of named entry. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__retrieval_ga5f5ec5179e69c2bdfb06ff38a5af16e4}{cfgetreal}(a)~($\ast$(float $\ast$)\hyperlink{group__retrieval_gac13ba743ed26e6c05df14817ad9df3da}{cfgetent}(a,\hyperlink{group__special__options__mask_gaeefdbef320cbd7179f1fb0ebe0fcf5ce}{C\-F\-\_\-\-R\-E\-A\-L}))
+\begin{DoxyCompactList}\small\item\em Inquire C\-F\-L\-I\-B D\-B for Float (Real) value in content of named entry. \end{DoxyCompactList}\item 
+\hypertarget{group__retrieval_gafd754dc010651581fe1cc2c7fa6c2dd6}{\#define \hyperlink{group__retrieval_gafd754dc010651581fe1cc2c7fa6c2dd6}{cfgetdouble}(a)~($\ast$(double $\ast$)\hyperlink{group__retrieval_gac13ba743ed26e6c05df14817ad9df3da}{cfgetent}(a,\hyperlink{group__special__options__mask_ga8d4f049e4c8022b03b7979ac3f0db04b}{C\-F\-\_\-\-D\-O\-U\-B\-L\-E}))}\label{group__retrieval_gafd754dc010651581fe1cc2c7fa6c2dd6}
+
+\begin{DoxyCompactList}\small\item\em Inquire C\-F\-L\-I\-B D\-B for Double value in content of named entry. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__retrieval_gac0188464b59267e14b5c44efb1d4a0f2}{cfgetflag}(a)~($\ast$(int $\ast$)\hyperlink{group__retrieval_gac13ba743ed26e6c05df14817ad9df3da}{cfgetent}(a,\hyperlink{group__special__options__mask_ga1d1f1d1b6eac6b5d9970102318ab2667}{C\-F\-\_\-\-F\-L\-A\-G}))
+\begin{DoxyCompactList}\small\item\em Inquire C\-F\-L\-I\-B D\-B for Flag value in content of named entry. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__retrieval_ga09929d4a48932749dd9d0d32d0f3f08c}{cfflaginq}(a, b)~($\ast$(int $\ast$)\hyperlink{group__retrieval_gac13ba743ed26e6c05df14817ad9df3da}{cfgetent}(a,\hyperlink{group__special__options__mask_ga36792935eec7c6636b6aea8df82f7480}{C\-F\-\_\-\-F\-L\-G\-I\-N\-Q}$|$(31\&b)))
+\begin{DoxyCompactList}\small\item\em Inquire C\-F\-L\-I\-B D\-B for Bit set in entry's Special Options Flag \hyperlink{struct_c_o_n_f_i_g_ab04d08abdf758c0400caaded716f4089}{C\-O\-N\-F\-I\-G\-::flag}. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__retrieval_gadf84eed41bdaa0a6cd8cd474c79d50b1}{cfgetsrc}(a)~($\ast$(int $\ast$)\hyperlink{group__retrieval_gac13ba743ed26e6c05df14817ad9df3da}{cfgetent}(a,\hyperlink{group__special__options__mask_gad9b1f659b11c529a0ed1035caf8b239b}{C\-F\-\_\-\-S\-R\-C}))
+\begin{DoxyCompactList}\small\item\em Inquire C\-F\-L\-I\-B D\-B for Source of named entry's content. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__retrieval_ga6ef6076e946383ab198ee26b9aa5603a}{cfgetres}()~((char $\ast$)\hyperlink{group__retrieval_gac13ba743ed26e6c05df14817ad9df3da}{cfgetent}(\char`\"{}\char`\"{},\hyperlink{group__special__options__mask_ga5415b257c706aae33d91d3947a3429c0}{C\-F\-\_\-\-R\-E\-S\-I\-D}))
+\begin{DoxyCompactList}\small\item\em Get next Residual Command Line Argument from C\-F\-L\-I\-B D\-B. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__retrieval_ga9999522b2acf8760f420d2567e7f7c50}{cfgetcpr}()~\char`\"{}C\-F\-L\-I\-B (c) 1994-\/2012 Stefan Habermehl\char`\"{}
+\begin{DoxyCompactList}\small\item\em Get C\-F\-L\-I\-B Copyright Notice. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__setting__saving_gab4370bac1e151641bfb78e65f8ec4b44}{cfput}(a, b)~\hyperlink{group__setting__saving_ga9553f7a24b080660793a560c2bc8f210}{cfputstr}(a,(char $\ast$)b)
+\begin{DoxyCompactList}\small\item\em Update or Add a Parameter. \end{DoxyCompactList}\item 
+\hypertarget{group__utilities_gabfbf02b37e47027916f3352798f7d44c}{\#define \hyperlink{group__utilities_gabfbf02b37e47027916f3352798f7d44c}{Del\-Flag}(a, b)~a\&=($\sim$b)}\label{group__utilities_gabfbf02b37e47027916f3352798f7d44c}
+
+\begin{DoxyCompactList}\small\item\em Delete bits of Mask {\ttfamily b} from Mask {\ttfamily a}. \end{DoxyCompactList}\item 
+\hypertarget{group__utilities_gafcc4d6e712f81df21ea69277d42af839}{\#define \hyperlink{group__utilities_gafcc4d6e712f81df21ea69277d42af839}{Set\-Flag}(a, b)~a$|$=b}\label{group__utilities_gafcc4d6e712f81df21ea69277d42af839}
+
+\begin{DoxyCompactList}\small\item\em Set bits of Mask {\ttfamily b} in Mask {\ttfamily a}. \end{DoxyCompactList}\item 
+\hypertarget{cf_8h_adb9171d82e327de7aafa526fb6aa39b6}{\#define \hyperlink{cf_8h_adb9171d82e327de7aafa526fb6aa39b6}{\-\_\-\-\_\-\-C\-F\-\_\-\-H\-\_\-\-\_\-}}\label{cf_8h_adb9171d82e327de7aafa526fb6aa39b6}
+
+\begin{DoxyCompactList}\small\item\em Marker\-: \hyperlink{cf_8h}{cf.\-h} has been included. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsubsection*{Typedefs}
-\begin{CompactItemize}
+\begin{DoxyCompactItemize}
 \item 
-\hypertarget{group__special__options__mask_g4854f1596d5c6e0604a478fa9a2e23f0}{
-typedef unsigned long \hyperlink{group__special__options__mask_g4854f1596d5c6e0604a478fa9a2e23f0}{CFFLAGTYP}}
-\label{group__special__options__mask_g4854f1596d5c6e0604a478fa9a2e23f0}
+\hypertarget{group__special__options__mask_ga4854f1596d5c6e0604a478fa9a2e23f0}{typedef unsigned long \hyperlink{group__special__options__mask_ga4854f1596d5c6e0604a478fa9a2e23f0}{C\-F\-F\-L\-A\-G\-T\-Y\-P}}\label{group__special__options__mask_ga4854f1596d5c6e0604a478fa9a2e23f0}
 
-\begin{CompactList}\small\item\em Special Options Mask Type. \item\end{CompactList}\end{CompactItemize}
+\begin{DoxyCompactList}\small\item\em Special Options Mask Type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsubsection*{Functions}
-\begin{CompactItemize}
+\begin{DoxyCompactItemize}
 \item 
-int \hyperlink{group__cflib__core_ge593ff607f853bd5fc16a16bb6759314}{cfinit} (\hyperlink{struct_c_o_n_f_i_g}{CONFIG} $\ast$set, int argc, char $\ast$$\ast$argv)
-\begin{CompactList}\small\item\em Initialize CFLIB Configuration Database and parse possible sources for database entries according to the settings in {\em set\/}. \item\end{CompactList}\item 
-void \hyperlink{group__cflib__core_g47bfff42f432b3e8b5b9f12b695e60db}{cfexit} (void)
-\begin{CompactList}\small\item\em Free allocated memory and reset the configuration database and error stack. \item\end{CompactList}\item 
-int \hyperlink{group__report__generation_g2f8350e7d032c87b2a0e1cb6149a85ec}{cfform} (char $\ast$infile, char $\ast$outfile, char $\ast$vardelim, int mode)
-\begin{CompactList}\small\item\em Process a Template from file or {\tt stdin} and write generated Report to File or {\tt stdout}. \item\end{CompactList}\item 
-void $\ast$ \hyperlink{group__retrieval_g872f83b13a8f722176f5e299f2a42e0f}{cfgetent} (char $\ast$name, \hyperlink{group__special__options__mask_g4854f1596d5c6e0604a478fa9a2e23f0}{CFFLAGTYP} typ)
-\begin{CompactList}\small\item\em Library internal function, use appropriate Macro functions! \item\end{CompactList}\item 
-char $\ast$ \hyperlink{group__advanced__features_gb6f874ac347d273dc45ad011808fe703}{cfhomexp} (char $\ast$name)
-\begin{CompactList}\small\item\em Expand {\tt $\sim$} or {\tt $\sim$user} in parameter content. \item\end{CompactList}\item 
-int \hyperlink{group__retrieval_gc4e376e3630e9b25655ee0e0b1a54a5b}{cfgetvers} (void)
-\begin{CompactList}\small\item\em Get Library Version/Patchlevel. \item\end{CompactList}\item 
-char $\ast$ \hyperlink{group__retrieval_gbd4ca2adbcac9eef4d1363424e440662}{cfgetsubvers} (void)
-\begin{CompactList}\small\item\em Get Library Subversion Details. \item\end{CompactList}\item 
-int \hyperlink{group__setting__saving_g0f6ed90e3ecfa0074af1635a0e4339ef}{cfnosave} (char $\ast$name, const char $\ast$onoff)
-\begin{CompactList}\small\item\em Alter or query the \hyperlink{group__special__options__mask_gd76153c65f68cc0ee5c1a04c8c3e80bf}{CF\_\-NOSAVE} Flag of Parameter {\em name\/}. \item\end{CompactList}\item 
-int \hyperlink{group__setting__saving_g9553f7a24b080660793a560c2bc8f210}{cfputstr} (char $\ast$name, char $\ast$content)
-\begin{CompactList}\small\item\em Update or Add Parameter {\em name\/} with string {\em content\/}. \item\end{CompactList}\item 
-int \hyperlink{group__setting__saving_g6f133f88dc253a6a80d13eed4d123063}{cfputtime} (\hyperlink{group__special__options__mask_g4854f1596d5c6e0604a478fa9a2e23f0}{CFFLAGTYP} td)
-\begin{CompactList}\small\item\em Set all Time and/or Date entries in CFLIB DB to {\em now\/} or {\em today\/}. \item\end{CompactList}\item 
-char $\ast$ \hyperlink{group__retrieval_ge272c1881db940e56c8cc364df730271}{cfgetusg} (void)
-\begin{CompactList}\small\item\em Get Usage Message for (Terminal) Output. \item\end{CompactList}\item 
-int \hyperlink{group__errors_g2dc49b60b3ec7a82086e60f4b1c41e18}{cfgeterr} (char $\ast$string, size\_\-t len)
-\begin{CompactList}\small\item\em Error Code and Message Inquiry Function. \item\end{CompactList}\item 
-int \hyperlink{group__errors_gad2687826308f21b54657d2728e4cfcc}{cfputerr} (int ecode, char $\ast$string,...)
-\begin{CompactList}\small\item\em Init, exit or append to Error List. \item\end{CompactList}\item 
-void \hyperlink{group__errors_gad0c79adfdf363a11532dc4039136ec6}{cfclearerr} (void)
-\begin{CompactList}\small\item\em Free all entries in error list. \item\end{CompactList}\item 
-int \hyperlink{group__errors_gbc3a143038fbcabc944d224e20ca50f8}{cfreverr} (void)
-\begin{CompactList}\small\item\em Revert order of entries in error list from last-$>$first to first-$>$last. \item\end{CompactList}\item 
-int \hyperlink{group__cflib__core_gdcf24d678203bd09a0a3e05b8a986c65}{cfstart} (\hyperlink{struct_c_o_n_f_i_g}{CONFIG} $\ast$set, int ac, char $\ast$$\ast$av, char $\ast$help, int mode)
-\begin{CompactList}\small\item\em Setup Configuration Database. \item\end{CompactList}\item 
-int \hyperlink{group__advanced__features_g35e2c28f591ac71e3617c612233ecdd0}{cfdinichk} (\hyperlink{struct_c_o_n_f_i_g}{CONFIG} $\ast$set)
-\begin{CompactList}\small\item\em Debugging Function ({\bf experimental}). \item\end{CompactList}\item 
-int \hyperlink{group__advanced__features_gecfc8ee37366e1b36cb5aac0cc41ebdc}{cfdump} (FILE $\ast$fout)
-\begin{CompactList}\small\item\em Debugging Function. \item\end{CompactList}\item 
-int \hyperlink{group__setting__saving_g046d8a68eae35b987eacca04a9a06cca}{cfsave} (char $\ast$fname, const char $\ast$savemode)
-\begin{CompactList}\small\item\em Write configuration data to a Configuration File or {\tt stdout}. \item\end{CompactList}\item 
-int \hyperlink{group__utilities_g0fccda7427db33b2f73a3b6dca864207}{BackupFile} (const char $\ast$file, char $\ast$modus)
-\begin{CompactList}\small\item\em Copy or Rename File {\tt \char`\"{}file\char`\"{}} to Backup File {\tt \char`\"{}file$\sim$\char`\"{}} or {\tt \char`\"{}file.bak\char`\"{}}. \item\end{CompactList}\item 
-void \hyperlink{group__utilities_g869ea1081375ada22168696db002bc58}{RemoveCR} (char $\ast$string)
-\begin{CompactList}\small\item\em String Utility Function. \item\end{CompactList}\item 
-void \hyperlink{group__utilities_gbb7b78ca5a077167e24637bba539eea1}{RemoveTrailSpace} (char $\ast$string)
-\begin{CompactList}\small\item\em String Utility Function. \item\end{CompactList}\item 
-char $\ast$ \hyperlink{group__utilities_gb6760d18c7c13f3c80d365abcb6a46b3}{EatWhiteSpace} (char $\ast$string)
-\begin{CompactList}\small\item\em String Utility Function. \item\end{CompactList}\item 
-int \hyperlink{group__utilities_g9a90e738d03b642f33901600671d225a}{IsATerminal} (FILE $\ast$fp)
-\begin{CompactList}\small\item\em Test whether stream is a terminal. \item\end{CompactList}\item 
-char $\ast$ \hyperlink{group__utilities_g4e4e8f9a03b7f3598b5efd199b9a67c9}{FindFile} (const char $\ast$fname, const char $\ast$fpath, const char $\ast$const $\ast$fext)
-\begin{CompactList}\small\item\em Find a File in Path trying Extensions. \item\end{CompactList}\end{CompactItemize}
+int \hyperlink{group__cflib__core_ga64fb341565c2ddfccd6669e5e6265a8a}{cfinit} (\hyperlink{struct_c_o_n_f_i_g}{C\-O\-N\-F\-I\-G} $\ast$set, int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__cflib__core_ga64fb341565c2ddfccd6669e5e6265a8a}{cfinit()} Initialize Configuration Database \end{DoxyCompactList}\item 
+void \hyperlink{group__cflib__core_ga47bfff42f432b3e8b5b9f12b695e60db}{cfexit} (void)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__cflib__core_ga47bfff42f432b3e8b5b9f12b695e60db}{cfexit()} Free allocated memory and reset configuration database and error stack \end{DoxyCompactList}\item 
+int \hyperlink{group__cflib__core_ga6e04a462f9ad273de914af386ff15623}{cfstart} (\hyperlink{struct_c_o_n_f_i_g}{C\-O\-N\-F\-I\-G} $\ast$set, int ac, char $\ast$$\ast$av, char $\ast$help, int mode)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__cflib__core_ga6e04a462f9ad273de914af386ff15623}{cfstart()} Start Configuration Database (with error reporting and usage message) \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{group__retrieval_gac13ba743ed26e6c05df14817ad9df3da}{cfgetent} (char $\ast$name, \hyperlink{group__special__options__mask_ga4854f1596d5c6e0604a478fa9a2e23f0}{C\-F\-F\-L\-A\-G\-T\-Y\-P} typ)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__retrieval_gac13ba743ed26e6c05df14817ad9df3da}{cfgetent()} Inquire configuration database for content of entry name \end{DoxyCompactList}\item 
+int \hyperlink{group__retrieval_gac4e376e3630e9b25655ee0e0b1a54a5b}{cfgetvers} (void)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__retrieval_gac4e376e3630e9b25655ee0e0b1a54a5b}{cfgetvers()} Get Library Version/\-Patchlevel \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{group__retrieval_ga160032675def60398ebfd66589ddc1e5}{cfgetsubvers} (void)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__retrieval_ga160032675def60398ebfd66589ddc1e5}{cfgetsubvers()} Get Library Subversion Details \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{group__retrieval_gad3e4e24668cdc111471332a7e79fc897}{cfgetusg} (void)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__retrieval_gad3e4e24668cdc111471332a7e79fc897}{cfgetusg()} Get Usage Message for (Terminal) Output \end{DoxyCompactList}\item 
+int \hyperlink{group__errors_ga2dc49b60b3ec7a82086e60f4b1c41e18}{cfgeterr} (char $\ast$string, size\-\_\-t len)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__errors_ga2dc49b60b3ec7a82086e60f4b1c41e18}{cfgeterr()} Error Code and Message Inquiry Function \end{DoxyCompactList}\item 
+int \hyperlink{group__errors_gaad2687826308f21b54657d2728e4cfcc}{cfputerr} (int ecode, char $\ast$string,...)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__errors_gaad2687826308f21b54657d2728e4cfcc}{cfputerr()} Init, exit or append to Error List \end{DoxyCompactList}\item 
+void \hyperlink{group__errors_gaad0c79adfdf363a11532dc4039136ec6}{cfclearerr} (void)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__errors_gaad0c79adfdf363a11532dc4039136ec6}{cfclearerr()} Free all entries in error list \end{DoxyCompactList}\item 
+int \hyperlink{group__errors_gabc3a143038fbcabc944d224e20ca50f8}{cfreverr} (void)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__errors_gabc3a143038fbcabc944d224e20ca50f8}{cfreverr()} Revert order of entries in error list from last-\/$>$first to first-\/$>$last \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{group__advanced__features_ga469258ed449ac26d5c82e665db491ff2}{cfhomexp} (char $\ast$name)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__advanced__features_ga469258ed449ac26d5c82e665db491ff2}{cfhomexp()} Expand {\ttfamily $\sim$} or {\ttfamily $\sim$user} in parameter content \end{DoxyCompactList}\item 
+int \hyperlink{group__advanced__features_ga35e2c28f591ac71e3617c612233ecdd0}{cfdinichk} (\hyperlink{struct_c_o_n_f_i_g}{C\-O\-N\-F\-I\-G} $\ast$set)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__advanced__features_ga35e2c28f591ac71e3617c612233ecdd0}{cfdinichk()} Debugging Function ({\bfseries experimental}) \end{DoxyCompactList}\item 
+int \hyperlink{group__advanced__features_gaecfc8ee37366e1b36cb5aac0cc41ebdc}{cfdump} (F\-I\-L\-E $\ast$fout)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__advanced__features_gaecfc8ee37366e1b36cb5aac0cc41ebdc}{cfdump()} Dump C\-F\-L\-I\-B D\-B content to {\ttfamily fout} \end{DoxyCompactList}\item 
+int \hyperlink{group__setting__saving_ga0f6ed90e3ecfa0074af1635a0e4339ef}{cfnosave} (char $\ast$name, const char $\ast$onoff)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__setting__saving_ga0f6ed90e3ecfa0074af1635a0e4339ef}{cfnosave()} Alter or query the \hyperlink{group__special__options__mask_gad76153c65f68cc0ee5c1a04c8c3e80bf}{C\-F\-\_\-\-N\-O\-S\-A\-V\-E} Flag of Parameter {\itshape name\/} \end{DoxyCompactList}\item 
+int \hyperlink{group__setting__saving_ga9553f7a24b080660793a560c2bc8f210}{cfputstr} (char $\ast$name, char $\ast$content)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__setting__saving_ga9553f7a24b080660793a560c2bc8f210}{cfputstr()} Update or Add Parameter {\itshape name\/} with string {\itshape content\/} \end{DoxyCompactList}\item 
+int \hyperlink{group__setting__saving_ga6f133f88dc253a6a80d13eed4d123063}{cfputtime} (\hyperlink{group__special__options__mask_ga4854f1596d5c6e0604a478fa9a2e23f0}{C\-F\-F\-L\-A\-G\-T\-Y\-P} td)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__setting__saving_ga6f133f88dc253a6a80d13eed4d123063}{cfputtime()} Set all Time and/or Date entries in C\-F\-L\-I\-B D\-B to {\itshape now\/} or {\itshape today\/} \end{DoxyCompactList}\item 
+int \hyperlink{group__setting__saving_gaad7e1267cd904b4480a0eeaeb03b5f75}{cfsave} (char $\ast$fname, const char $\ast$savemode)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__setting__saving_gaad7e1267cd904b4480a0eeaeb03b5f75}{cfsave()} Write configuration data to a Configuration File or {\ttfamily stdout} \end{DoxyCompactList}\item 
+int \hyperlink{group__utilities_ga0fccda7427db33b2f73a3b6dca864207}{Backup\-File} (const char $\ast$file, char $\ast$modus)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__utilities_ga0fccda7427db33b2f73a3b6dca864207}{Backup\-File()} Copy or Rename File {\ttfamily \char`\"{}file\char`\"{}} to Backup File {\ttfamily \char`\"{}file$\sim$\char`\"{}} or {\ttfamily \char`\"{}file.\-bak\char`\"{}} \end{DoxyCompactList}\item 
+int \hyperlink{group__report__generation_ga2695585ee0a7485da6075848fa27a33f}{cfform} (char $\ast$infile, char $\ast$outfile, char $\ast$vardelim, int mode)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__report__generation_ga2695585ee0a7485da6075848fa27a33f}{cfform()} Process a Template from file or {\ttfamily stdin} and write generated Report to File or {\ttfamily stdout} \end{DoxyCompactList}\item 
+void \hyperlink{group__utilities_ga6ddbeec7bf1d9a94c65cd5ff1e0a9f19}{Remove\-C\-R} (char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Strip Carriage Return at end of string (after fgets) by introducing zero byte at C\-R position. \end{DoxyCompactList}\item 
+void \hyperlink{group__utilities_ga10200b38583a83087a15432c95567cd4}{Remove\-Trail\-Space} (char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Strip whitespaces at end of string by introducing zero byte after last non-\/whitespace character. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{group__utilities_ga3b3af548ae02da377ed0a3092e670fd4}{Eat\-White\-Space} (char $\ast$string)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__utilities_ga3b3af548ae02da377ed0a3092e670fd4}{Eat\-White\-Space()} Set pointer to next non-\/whitespace-\/character in string. \end{DoxyCompactList}\item 
+int \hyperlink{group__utilities_ga9a90e738d03b642f33901600671d225a}{Is\-A\-Terminal} (F\-I\-L\-E $\ast$fp)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__utilities_ga9a90e738d03b642f33901600671d225a}{Is\-A\-Terminal()} Test whether stream is a terminal \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{group__utilities_ga59fc2b29cf26051e0854b664f5aed15d}{Find\-File} (const char $\ast$fname, const char $\ast$fpath, const char $\ast$const $\ast$fext)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__utilities_ga59fc2b29cf26051e0854b664f5aed15d}{Find\-File()} Find a File in Path trying Extensions \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsubsection{Detailed Description}
-C Header File for CFLIB Flexible Configuration Library. 
+C Header File for C\-F\-L\-I\-B Flexible Configuration Library. Public Functions and Definitions
 
-Public Functions and Definitions
-
-\begin{Desc}
-\item[Note:]Include this file in the source code and link with the library executable, usually referring to {\em libcf.a\/} by calling {\tt \char`\"{}(g)cc -lcf ...\char`\"{}} \end{Desc}
-\begin{Desc}
-\item[Version:]SVN: \$Id: \hyperlink{cf_8h}{cf.h} 127 2009-01-28 16:50:14Z stefan \$ \end{Desc}
-\begin{Desc}
-\item[Author:]Stefan Habermehl $<$\href{mailto:stefan.habermehl@mcff.de}{\tt stefan.habermehl@mcff.de}$>$ \end{Desc}
-\begin{Desc}
-\item[Copyright:](c) 1994,1995,1996,1997,1998,2006,2007,2008,2009 Stefan Habermehl \end{Desc}
-\begin{Desc}
-\item[License:]\href{http://www.gnu.org/licenses}{\tt http://www.gnu.org/licenses} GNU General Public License v3 or later \end{Desc}
-
-
-\subsubsection{Define Documentation}
-\hypertarget{cf_8h_b4370bac1e151641bfb78e65f8ec4b44}{
-\index{cf.h@{cf.h}!cfput@{cfput}}
-\index{cfput@{cfput}!cf.h@{cf.h}}
-\paragraph[{cfput}]{\setlength{\rightskip}{0pt plus 5cm}\#define cfput(a, \/  b)~cfputstr(a,(char $\ast$)b)}\hfill}
-\label{cf_8h_b4370bac1e151641bfb78e65f8ec4b44}
-
-
-Update or Add Parameter (Utility Function Macro). 
-
-\begin{Desc}
-\item[Parameters:]
-\begin{description}
-\item[{\em a}]\hyperlink{config_initializer_parameter_name}{Parameter Name} \item[{\em b}]New Content (Type casted to expected Char Pointer)\end{description}
-\end{Desc}
-\begin{Desc}
-\item[Returns:]{\bf int} \hyperlink{group__setting__saving_g9553f7a24b080660793a560c2bc8f210}{cfputstr()} \end{Desc}
+\begin{DoxyNote}{Note}
+Include this file in the source code and link with the library executable, usually referring to {\itshape libcf.\-a\/} by calling {\ttfamily \char`\"{}(g)cc -\/lcf ...\char`\"{}} 
+\end{DoxyNote}
+\begin{DoxyVersion}{Version}
+S\-V\-N\-: \$Id\-: \hyperlink{cf_8h}{cf.\-h} 67 2013-\/02-\/27 11\-:24\-:49\-Z stefan\-\_\-x \$ 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Stefan Habermehl \href{mailto:stefan.habermehl@mcff.de}{\tt stefan.\-habermehl@mcff.\-de} 
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Copyright\-:}
+(c) 1994,1995,1996,1997,1998,2006,2007,2008,2009,2013 Stefan Habermehl 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{License\-:}
+\href{http://www.gnu.org/licenses}{\tt http\-://www.\-gnu.\-org/licenses} G\-N\-U Lesser General Public License version 3.\-0 (L\-G\-P\-Lv3) 
+\end{DoxyParagraph}

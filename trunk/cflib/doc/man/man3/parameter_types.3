@@ -1,19 +1,19 @@
-.TH "parameter_types" 3 "31 Jan 2009" "Version Patchlevel 20" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
+.TH "parameter_types" 3 "Wed Feb 27 2013" "Version Patchlevel 21" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 parameter_types \- Types of Parameters 
-The internal format of a parameter's content \fBCONFIG::inhalt\fP is always a String (char Pointer).
+The internal format of a parameter's content \fBCONFIG::inhalt\fP is always a String (char Pointer)\&.
 .PP
 The use and interpretation of parameters is controlled by a number of Flags in the \fBSpecial Options Mask\fP :
 .SH "Parameter Data Types"
 .PP
 .IP "\(bu" 2
-\fBCF_STR\fP : Entry is String.  (\fBDefault\fP).
+\fBCF_STR\fP : Entry is String\&.  (\fBDefault\fP)\&.
 .IP "\(bu" 2
-\fBCF_INT\fP : Entry is Integer. 
+\fBCF_INT\fP : Entry is Integer\&. 
 .IP "\(bu" 2
-\fBCF_REAL\fP : Entry is Float. 
+\fBCF_REAL\fP : Entry is Float\&. 
 .IP "\(bu" 2
 \fBCF_FLAG\fP : \fBFLAG Parameter Type\fP
 .PP
@@ -21,16 +21,18 @@ The use and interpretation of parameters is controlled by a number of Flags in t
 .PP
 Specific processing of a String Parameter's Value/Content in various CFLIB functions can be triggered by these Flags:
 .PP
-You can mark a parameter as Time \fBor\fP Date. These parameters will be initialized with \fInow\fP or \fItoday\fP by \fBcfinit()\fP when \fBParsing Level Priorities\fP are controlled by a \fBCF_SET_PUT\fP Flag in the \fBSpecial Options Mask\fP or on call of \fBcfputtime()\fP:
+You can mark a parameter as Time \fBor\fP Date\&. These parameters will be initialized with \fInow\fP or \fItoday\fP by \fBcfinit()\fP when \fBParsing Level Priorities\fP are controlled by a \fBCF_SET_PUT\fP Flag in the \fBSpecial Options Mask\fP or on call of \fBcfputtime()\fP:
 .PP
 .IP "\(bu" 2
-\fBCF_TIME\fP : Time string. 
-.IP "\(bu" 2
-\fBCF_DATE\fP : Date string. 
+\fBCF_TIME\fP : Time string\&. 
+.IP "  \(bu" 4
+\fBCF_DATE\fP : Date string\&. 
+.PP
+
 .PP
 .PP
 .IP "\(bu" 2
-\fBCF_FINDFILE\fP : Entry is filename to be searched for in the path.  \fBFindFile()\fP will be used on initialization to search the file in the \fBpath\fP found in Environment Variable \fBPATH\fP. You can specify an alternative search path for this functionality in another database parameter with Flag \fBCF_PATH\fP set in the corresponding \fBConfiguration Initializer\fP entry. Depending on the Operating System a list of possible of \fBextensions\fP of executables will be tried, if no extension is given with the filename:
+\fBCF_FINDFILE\fP : Entry is filename to be searched for in the path\&.  \fBFindFile()\fP will be used on initialization to search the file in the \fBpath\fP found in Environment Variable \fBPATH\fP\&. You can specify an alternative search path for this functionality in another database parameter with Flag \fBCF_PATH\fP set in the corresponding \fBConfiguration Initializer\fP entry\&. Depending on the Operating System a list of possible of \fBextensions\fP of executables will be tried, if no extension is given with the filename:
 .IP "  \(bu" 4
 Linux, Unix: 'sh', 'pl'
 .IP "  \(bu" 4
@@ -42,31 +44,33 @@ TOS, MinT: 'ttp', 'tos', 'prg', 'app', 'gtp'
 .PP
 .PP
 .IP "\(bu" 2
-\fBCF_EXPHOME\fP : Expand Home Directory.  See \fBcfhomexp()\fP. \fBConfiguration Files\fP will have home directory expanded by default
+\fBCF_EXPHOME\fP : Expand Home Directory\&.  See \fBcfhomexp()\fP\&. \fBConfiguration Files\fP will have home directory expanded by default
 .PP
 .SH "Special Handling Instructions"
 .PP
 A parameter can be marked as a \fB'volatile'\fP entry that is not saved by \fBcfsave()\fP:
 .PP
 .IP "\(bu" 2
-\fBCF_NOSAVE\fP : Don't include in savefile / mark entry. 
+\fBCF_NOSAVE\fP : Don't include in savefile / mark entry\&. 
 .PP
 .SH "CFLIB Parameters"
 .PP
 Some String Parameters in the configuration database are used by the library itself and are marked by one of the following Flags:
 .PP
 .IP "\(bu" 2
-\fBCF_PRGNAME\fP : Running Program's Name from commandline.  This parameter \fBalways\fP exists as the \fBfirst\fP entry in a configuration database successfully initialized by \fBcfinit()\fP. The default parameter name used if there was no corresponding entry in the Initializer is \fB'CF_PRGNAME'\fP.
-.IP "\(bu" 2
-\fBCF_SETFILE\fP : Entry is Private Configuration File.  See \fBConfiguration Files\fP
-.IP "\(bu" 2
-\fBCF_SYS_SETFILE\fP : Entry is System Configuration File.  See \fBConfiguration Files\fP
-.IP "\(bu" 2
-\fBCF_SECTION\fP : Section in Configuration File.  See \fBConfiguration Files\fP
-.IP "\(bu" 2
-\fBCF_PATH\fP : Search Path (for FindFile feature).  See \fBCF_FINDFILE\fP and \fBFindFile()\fP
-.IP "\(bu" 2
-\fBCF_USAGE\fP : Usage Message format string.  See \fBcfgetusg()\fP
+\fBCF_PRGNAME\fP : Running Program's Name from commandline\&.  This parameter \fBalways\fP exists as the \fBfirst\fP entry in a configuration database successfully initialized by \fBcfinit()\fP\&. The default parameter name used if there was no corresponding entry in the Initializer is \fB'CF_PRGNAME'\fP\&.
+.IP "  \(bu" 4
+\fBCF_SETFILE\fP : Entry is Private Configuration File\&.  See \fBConfiguration Files\fP
+.IP "  \(bu" 4
+\fBCF_SYS_SETFILE\fP : Entry is System Configuration File\&.  See \fBConfiguration Files\fP
+.IP "  \(bu" 4
+\fBCF_SECTION\fP : Section in Configuration File\&.  See \fBConfiguration Files\fP
+.IP "  \(bu" 4
+\fBCF_PATH\fP : Search Path (for FindFile feature)  See \fBCF_FINDFILE\fP and \fBFindFile()\fP
+.IP "  \(bu" 4
+\fBCF_USAGE\fP : Usage Message format string\&.  See \fBcfgetusg()\fP
+.PP
+
 .PP
 .PP
 Optional Parameters for fine tuning CFLIB behavior without Special Option Flag, characterized by Parameter Name:
@@ -92,7 +96,8 @@ beginning with a \fC'-'\fP
 .IP "\(bu" 2
 \fBCF_FLAG_ON\fP : any other case
 .PP
-\fBExample:\fP.RS 4
+\fBExample:\fP
+.RS 4
 
 .IP "\(bu" 2
 Initializer entry: { 'extended_message', CF_FLAG_OFF, 'x', CF_FLAG, }

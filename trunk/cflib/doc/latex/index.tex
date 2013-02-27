@@ -1,91 +1,183 @@
 \hypertarget{index_intro}{}\subsection{Introduction and General Issues}\label{index_intro}
-CFLIB is a small, simple, flexible and portable ANSI C Library to be used as configuration interface for user programs. CFLIB builds and maintains a compact database structure consisting of a list of parameters with their name, content and some additional information about each parameter.
+C\-F\-L\-I\-B is a small, simple, flexible and portable A\-N\-S\-I C Library to be used as configuration interface for user programs. C\-F\-L\-I\-B builds and maintains a compact database structure consisting of a list of parameters with their name, content and some additional information about each parameter.
 
-CFLIB targets the basic needs of technical, scientific or other programmers who want to spend minimal time on coding input, output, variable parsing, report generation and the like but still have a simple to use, reliable, flexible and portable configuration interface for their programs.
+C\-F\-L\-I\-B targets the basic needs of technical, scientific or other programmers who want to spend minimal time on coding input, output, variable parsing, report generation and the like but still have a simple to use, reliable, flexible and portable configuration interface for their programs.
 
-\begin{Desc}
-\item[Main Features:]\end{Desc}
-\begin{itemize}
-\item Commandline, environment and terminal input parsing\item Configuration files\item File search\item Template driven report generation\item Automatic time and date update\end{itemize}
+\begin{DoxyParagraph}{Main Features\-:}
+
+\end{DoxyParagraph}
+
+\begin{DoxyItemize}
+\item Commandline, environment and terminal input parsing
+\begin{DoxyItemize}
+\item Configuration files
+\item File search
+\item Template driven report generation
+\item Automatic time and date update
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+
+\begin{DoxyItemize}
+\item \hyperlink{purpose}{Purpose of C\-F\-L\-I\-B}
+\item \hyperlink{license}{C\-F\-L\-I\-B License}
+\item \hyperlink{properties_names}{The names \char`\"{}\-C\-F\-L\-I\-B\char`\"{}, \char`\"{}libcf\char`\"{}, \char`\"{}$\ast$cf$\ast$\char`\"{}}
+\item \hyperlink{properties}{General Notes}
+\end{DoxyItemize}
+\end{DoxySeeAlso}
+\begin{DoxyParagraph}{Project Homepage\-:}
+
+\end{DoxyParagraph}
+
+\begin{DoxyItemize}
+\item \href{http://cflib.berlios.de}{\tt http\-://cflib.\-berlios.\-de}
+\end{DoxyItemize}\hypertarget{index_basic_usage}{}\subsection{Basic Usage}\label{index_basic_usage}
+
+\begin{DoxyEnumerate}
+\item Include \hyperlink{cf_8h}{cf.\-h}
+\end{DoxyEnumerate}
 
 
-\begin{Desc}
-\item[See also:]\begin{itemize}
-\item \hyperlink{purpose}{Purpose of CFLIB}\item \hyperlink{license}{CFLIB License}\item \hyperlink{properties_names}{The names \char`\"{}CFLIB\char`\"{}, \char`\"{}libcf\char`\"{}, \char`\"{}$\ast$cf$\ast$\char`\"{}}\item \hyperlink{properties}{General Notes}\end{itemize}
-\end{Desc}
-\begin{Desc}
-\item[Project Homepage:]\end{Desc}
-\begin{itemize}
-\item \href{http://cflib.berlios.de}{\tt http://cflib.berlios.de}\end{itemize}
-\hypertarget{index_basic_usage}{}\subsection{Basic Usage}\label{index_basic_usage}
-1. Include \hyperlink{cf_8h}{cf.h}
-
-2. Define the \hyperlink{config_initializer}{Configuration Initializer}, an array of \hyperlink{struct_c_o_n_f_i_g}{CONFIG} structures
-
-3. Call \hyperlink{group__cflib__core_ge593ff607f853bd5fc16a16bb6759314}{cfinit()} with Configuration Initializer and Commandline. The most compact initialization is done by \hyperlink{group__cflib__core_gdcf24d678203bd09a0a3e05b8a986c65}{cfstart()}, a wrapper function for \hyperlink{group__cflib__core_ge593ff607f853bd5fc16a16bb6759314}{cfinit()} that includes error reporting, usage message and (optional) debugging output. On initialization the following data sources are inspected or parsed in the order presented:
-
-\begin{itemize}
-\item Commandline Arguments (or compatible structure given to \hyperlink{group__cflib__core_ge593ff607f853bd5fc16a16bb6759314}{cfinit()}) according to the description in \hyperlink{config_initializer_parameter_option}{Commandline Option for Parameter}\item Environment Variables\item \hyperlink{config_files}{Configuration Files}\item Built-in User-defined Default from Configuration Initializer: \hyperlink{config_initializer_parameter_default}{Parameter Default Value}\item Get parameter value from Standard Input {\tt stdin}, if required\end{itemize}
+\begin{DoxyEnumerate}
+\item Define the \hyperlink{config_initializer}{Configuration Initializer}, an array of \hyperlink{struct_c_o_n_f_i_g}{C\-O\-N\-F\-I\-G} structures
+\end{DoxyEnumerate}
 
 
-4. Use the \hyperlink{index_retrieval_functions}{Retrieval Functions} {\bf cfget$\ast$}() to access configuration parameters
+\begin{DoxyEnumerate}
+\item Call \hyperlink{group__cflib__core_ga64fb341565c2ddfccd6669e5e6265a8a}{cfinit()} with Configuration Initializer and Commandline. The most compact initialization is done by \hyperlink{group__cflib__core_ga6e04a462f9ad273de914af386ff15623}{cfstart()}, a wrapper function for \hyperlink{group__cflib__core_ga64fb341565c2ddfccd6669e5e6265a8a}{cfinit()} that includes error reporting, usage message and (optional) debugging output. On initialization the following data sources are inspected or parsed in the order presented\-:
+\end{DoxyEnumerate}
 
-5. Compile your program, linking the appropriate CFLIB library file for your platform and setup, usually the file name is {\em libcf.a\/} which means the library is referred to as {\bf \char`\"{}cf\char`\"{}}. You can change the names to fit into your setup: See \hyperlink{properties_names}{The names \char`\"{}CFLIB\char`\"{}, \char`\"{}libcf\char`\"{}, \char`\"{}$\ast$cf$\ast$\char`\"{}}
 
-6. Run your program, test CFLIB functionality and adjust the \hyperlink{config_initializer}{Configuration Initializer} according to your needs
+\begin{DoxyItemize}
+\item Commandline Arguments (or compatible structure given to \hyperlink{group__cflib__core_ga64fb341565c2ddfccd6669e5e6265a8a}{cfinit()}) according to the description in \hyperlink{config_initializer_parameter_option}{Commandline Option for Parameter}
+\begin{DoxyItemize}
+\item Environment Variables
+\item \hyperlink{config_files}{Configuration Files}
+\item Built-\/in User-\/defined Default from Configuration Initializer\-: \hyperlink{config_initializer_parameter_default}{Parameter Default Value}
+\item Get parameter value from Standard Input {\ttfamily stdin}, if required
+\end{DoxyItemize}
+\end{DoxyItemize}
 
-\begin{Desc}
-\item[See also:]\hyperlink{simple_example}{Simple Usage Example} 
 
-\hyperlink{config_levels}{Configuration Parsing Levels and Source/Origin Options} 
+\begin{DoxyEnumerate}
+\item Use the \hyperlink{index_retrieval_functions}{Retrieval Functions} {\bfseries cfget$\ast$}() to access configuration parameters
+\end{DoxyEnumerate}
 
-\hyperlink{group__cflib__core}{CFLIB Core Features}\end{Desc}
+
+\begin{DoxyEnumerate}
+\item Compile your program, linking the appropriate C\-F\-L\-I\-B library file for your platform and setup, usually the file name is {\itshape libcf.\-a\/} which means the library is referred to as {\bfseries \char`\"{}cf\char`\"{}}. You can change the names to fit into your setup\-: See \hyperlink{properties_names}{The names \char`\"{}\-C\-F\-L\-I\-B\char`\"{}, \char`\"{}libcf\char`\"{}, \char`\"{}$\ast$cf$\ast$\char`\"{}}
+\end{DoxyEnumerate}
+
+
+\begin{DoxyEnumerate}
+\item Run your program, test C\-F\-L\-I\-B functionality and adjust the \hyperlink{config_initializer}{Configuration Initializer} according to your needs
+\end{DoxyEnumerate}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{simple_example}{Simple Usage Example} 
+
+\hyperlink{config_levels}{Configuration Parsing Levels and Source/\-Origin Options} 
+
+\hyperlink{group__cflib__core}{Core Features}
+\end{DoxySeeAlso}
 \hypertarget{index_retrieval_functions}{}\subsection{Retrieval Functions}\label{index_retrieval_functions}
-1. Get CFLIB Version and Copyright Information: \hyperlink{group__retrieval_gc4e376e3630e9b25655ee0e0b1a54a5b}{cfgetvers()}, \hyperlink{group__retrieval_gbd4ca2adbcac9eef4d1363424e440662}{cfgetsubvers()}, \hyperlink{group__retrieval_g9999522b2acf8760f420d2567e7f7c50}{cfgetcpr()}
 
-2. Get Usage Message for Output: \hyperlink{group__retrieval_ge272c1881db940e56c8cc364df730271}{cfgetusg()}
-
-3. Get Configuration Parameter Value:
-
-\begin{itemize}
-\item Get parameter value: \hyperlink{group__retrieval_g5e2da3f6cf3e36a910362660d167f790}{cfget()}, interpretation of content and return type depend on the type setting in the parameter's \hyperlink{group__special__options__mask}{Special Options Mask}\item Get string value: \hyperlink{group__retrieval_g8cf5f53c5b05ec5ca4f5145010f84eb4}{cfgetstr()}\item Get integer value: \hyperlink{group__retrieval_g591b741a05205e1ddd599146b996d755}{cfgetnum()}\item Get real/float value: \hyperlink{group__retrieval_g5f5ec5179e69c2bdfb06ff38a5af16e4}{cfgetreal()}\item Inquire flag/switch status: \hyperlink{group__retrieval_gc0188464b59267e14b5c44efb1d4a0f2}{cfgetflag()}\item Get value of (next) residual command line argument: \hyperlink{group__retrieval_g6ef6076e946383ab198ee26b9aa5603a}{cfgetres()}\end{itemize}
+\begin{DoxyEnumerate}
+\item Get C\-F\-L\-I\-B Version and Copyright Information\-: \hyperlink{group__retrieval_gac4e376e3630e9b25655ee0e0b1a54a5b}{cfgetvers()}, \hyperlink{group__retrieval_ga160032675def60398ebfd66589ddc1e5}{cfgetsubvers()}, \hyperlink{group__retrieval_ga9999522b2acf8760f420d2567e7f7c50}{cfgetcpr()}
+\end{DoxyEnumerate}
 
 
-\begin{Desc}
-\item[Note:]All of these functions except \hyperlink{group__retrieval_g6ef6076e946383ab198ee26b9aa5603a}{cfgetres()} require the parameter name as argument\end{Desc}
+\begin{DoxyEnumerate}
+\item Get Usage Message for Output\-: \hyperlink{group__retrieval_gad3e4e24668cdc111471332a7e79fc897}{cfgetusg()}
+\end{DoxyEnumerate}
+
+
+\begin{DoxyEnumerate}
+\item Get Configuration Parameter Value\-:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyItemize}
+\item Get parameter value\-: \hyperlink{group__retrieval_ga5e2da3f6cf3e36a910362660d167f790}{cfget()}, interpretation of content and return type depend on the type setting in the parameter's \hyperlink{group__special__options__mask}{Special Options Mask}
+\begin{DoxyItemize}
+\item Get string value\-: \hyperlink{group__retrieval_ga8cf5f53c5b05ec5ca4f5145010f84eb4}{cfgetstr()}
+\item Get integer value\-: \hyperlink{group__retrieval_ga591b741a05205e1ddd599146b996d755}{cfgetnum()}
+\item Get real/float value\-: \hyperlink{group__retrieval_ga5f5ec5179e69c2bdfb06ff38a5af16e4}{cfgetreal()}
+\item Inquire flag/switch status\-: \hyperlink{group__retrieval_gac0188464b59267e14b5c44efb1d4a0f2}{cfgetflag()}
+\item Get value of (next) residual command line argument\-: \hyperlink{group__retrieval_ga6ef6076e946383ab198ee26b9aa5603a}{cfgetres()}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+All of these functions except \hyperlink{group__retrieval_ga6ef6076e946383ab198ee26b9aa5603a}{cfgetres()} require the parameter name as argument
+\end{DoxyNote}
 \hypertarget{index_set_save}{}\subsection{Setting Parameters and Saving the Configuration}\label{index_set_save}
-\begin{itemize}
-\item \hyperlink{cf_8h_b4370bac1e151641bfb78e65f8ec4b44}{cfput()} : Update or Add Parameter (Utility Function Macro). \item \hyperlink{group__setting__saving_g9553f7a24b080660793a560c2bc8f210}{cfputstr()} : Update or Add Parameter {\em name\/} with string {\em content\/}. \item \hyperlink{group__setting__saving_g6f133f88dc253a6a80d13eed4d123063}{cfputtime()} : Set all Time and/or Date entries in CFLIB DB to {\em now\/} or {\em today\/}. \item \hyperlink{group__setting__saving_g0f6ed90e3ecfa0074af1635a0e4339ef}{cfnosave()} : Alter or query the \hyperlink{group__special__options__mask_gd76153c65f68cc0ee5c1a04c8c3e80bf}{CF\_\-NOSAVE} Flag of Parameter {\em name\/}. \item \hyperlink{group__setting__saving_g046d8a68eae35b987eacca04a9a06cca}{cfsave()} : Write configuration data to a Configuration File or {\tt stdout}. \end{itemize}
+
+\begin{DoxyItemize}
+\item \hyperlink{group__setting__saving_gab4370bac1e151641bfb78e65f8ec4b44}{cfput()} \-: Update or Add a Parameter. 
+\item \hyperlink{group__setting__saving_ga9553f7a24b080660793a560c2bc8f210}{cfputstr()} \-: \hyperlink{group__setting__saving_ga9553f7a24b080660793a560c2bc8f210}{cfputstr()} Update or Add Parameter {\itshape name\/} with string {\itshape content\/} 
+\item \hyperlink{group__setting__saving_ga6f133f88dc253a6a80d13eed4d123063}{cfputtime()} \-: \hyperlink{group__setting__saving_ga6f133f88dc253a6a80d13eed4d123063}{cfputtime()} Set all Time and/or Date entries in C\-F\-L\-I\-B D\-B to {\itshape now\/} or {\itshape today\/} 
+\item \hyperlink{group__setting__saving_ga0f6ed90e3ecfa0074af1635a0e4339ef}{cfnosave()} \-: \hyperlink{group__setting__saving_ga0f6ed90e3ecfa0074af1635a0e4339ef}{cfnosave()} Alter or query the \hyperlink{group__special__options__mask_gad76153c65f68cc0ee5c1a04c8c3e80bf}{C\-F\-\_\-\-N\-O\-S\-A\-V\-E} Flag of Parameter {\itshape name\/} 
+\item \hyperlink{group__setting__saving_gaad7e1267cd904b4480a0eeaeb03b5f75}{cfsave()} \-: \hyperlink{group__setting__saving_gaad7e1267cd904b4480a0eeaeb03b5f75}{cfsave()} Write configuration data to a Configuration File or {\ttfamily stdout} 
+\end{DoxyItemize}
 
 
-\begin{itemize}
-\item See \hyperlink{config_files}{Configuration Files} for details\end{itemize}
-\hypertarget{index_general_utilities}{}\subsection{General Utilities}\label{index_general_utilities}
+\begin{DoxyItemize}
+\item See \hyperlink{config_files}{Configuration Files} for details
+\end{DoxyItemize}\hypertarget{index_general_utilities}{}\subsection{General Utilities}\label{index_general_utilities}
 These functions and Macros are used in the library but do not depend on the configuration database or any cf$\ast$() functions. They are (small) general tools that you can use in your program if you like.
 
-\begin{itemize}
-\item String Manipulation: \hyperlink{group__utilities_gb6760d18c7c13f3c80d365abcb6a46b3}{EatWhiteSpace()}, \hyperlink{group__utilities_g869ea1081375ada22168696db002bc58}{RemoveCR()}, \hyperlink{group__utilities_gbb7b78ca5a077167e24637bba539eea1}{RemoveTrailSpace()}\item File Utilities: \hyperlink{group__utilities_g4e4e8f9a03b7f3598b5efd199b9a67c9}{FindFile()}, \hyperlink{group__utilities_g0fccda7427db33b2f73a3b6dca864207}{BackupFile()}\item Other Tools: \hyperlink{group__utilities_g9a90e738d03b642f33901600671d225a}{IsATerminal()}, \hyperlink{group__utilities_gbfbf02b37e47027916f3352798f7d44c}{DelFlag()}, \hyperlink{group__utilities_gfcc4d6e712f81df21ea69277d42af839}{SetFlag()}\end{itemize}
-\hypertarget{index_advanced}{}\subsection{Advanced Usage}\label{index_advanced}
+
+\begin{DoxyItemize}
+\item String Manipulation\-: \hyperlink{group__utilities_ga3b3af548ae02da377ed0a3092e670fd4}{Eat\-White\-Space()}, \hyperlink{group__utilities_ga6ddbeec7bf1d9a94c65cd5ff1e0a9f19}{Remove\-C\-R()}, \hyperlink{group__utilities_ga10200b38583a83087a15432c95567cd4}{Remove\-Trail\-Space()}
+\begin{DoxyItemize}
+\item File Utilities\-: \hyperlink{group__utilities_ga59fc2b29cf26051e0854b664f5aed15d}{Find\-File()}, \hyperlink{group__utilities_ga0fccda7427db33b2f73a3b6dca864207}{Backup\-File()}
+\item Other Tools\-: \hyperlink{group__utilities_ga9a90e738d03b642f33901600671d225a}{Is\-A\-Terminal()}, \hyperlink{group__utilities_gabfbf02b37e47027916f3352798f7d44c}{Del\-Flag()}, \hyperlink{group__utilities_gafcc4d6e712f81df21ea69277d42af839}{Set\-Flag()}
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_advanced}{}\subsection{Advanced Usage}\label{index_advanced}
 \hypertarget{index_error_handling}{}\subsubsection{Error Handling}\label{index_error_handling}
-CFLIB maintains a simple global Error Stack that is used by library functions like \hyperlink{group__cflib__core_ge593ff607f853bd5fc16a16bb6759314}{cfinit()} when multiple errors can occur. Error Items consist of a numeric Error Code and (optionally) an Error Message string. Repeated calls to \hyperlink{group__errors_g2dc49b60b3ec7a82086e60f4b1c41e18}{cfgeterr()} will successively return error entries while deleting them from the stack until the list is empty. User programs may also use the CFLIB error stack by calling \hyperlink{group__errors_gad2687826308f21b54657d2728e4cfcc}{cfputerr()} without the need to initialize a configuration.
+C\-F\-L\-I\-B maintains a simple global Error Stack that is used by library functions like \hyperlink{group__cflib__core_ga64fb341565c2ddfccd6669e5e6265a8a}{cfinit()} when multiple errors can occur. Error Items consist of a numeric Error Code and (optionally) an Error Message string. Repeated calls to \hyperlink{group__errors_ga2dc49b60b3ec7a82086e60f4b1c41e18}{cfgeterr()} will successively return error entries while deleting them from the stack until the list is empty. User programs may also use the C\-F\-L\-I\-B error stack by calling \hyperlink{group__errors_gaad2687826308f21b54657d2728e4cfcc}{cfputerr()} without the need to initialize a configuration.
 
-For more details see: \hyperlink{group__errors}{Error Handling} - Error Codes, Functions and Structures. \hypertarget{index_reports}{}\subsubsection{Report Generation}\label{index_reports}
-\begin{itemize}
-\item Generate Output from Template and current parameter values: \hyperlink{group__report__generation_g2f8350e7d032c87b2a0e1cb6149a85ec}{cfform()}\end{itemize}
-\hypertarget{index_debugging}{}\subsubsection{Configuration Debugging}\label{index_debugging}
-These functions are thought to be used by the programmer working with CFLIB during development and testing of a program.
+For more details see\-: \hyperlink{group__errors}{Error Handling} -\/ Error Codes, Functions and Structures. \hypertarget{index_reports}{}\subsubsection{Report Generation}\label{index_reports}
 
-\begin{itemize}
-\item Dump Configuration DB in human readable form: \hyperlink{group__advanced__features_gecfc8ee37366e1b36cb5aac0cc41ebdc}{cfdump()}\item Test and Dump Configuration Initializer: \hyperlink{group__advanced__features_g35e2c28f591ac71e3617c612233ecdd0}{cfdinichk()}\end{itemize}
-\hypertarget{index_metainfos}{}\subsubsection{Get Information About a Configuration Parameter:}\label{index_metainfos}
-\begin{itemize}
-\item Get source/origin of the parameter's value: \hyperlink{group__retrieval_gdf84eed41bdaa0a6cd8cd474c79d50b1}{cfgetsrc()}\item Inquire Bit from parameter's Special Options Mask by Offset: \hyperlink{group__retrieval_g09929d4a48932749dd9d0d32d0f3f08c}{cfflaginq()}\end{itemize}
-\hypertarget{index_advanced_other}{}\subsubsection{Other Functions and Features}\label{index_advanced_other}
-\begin{itemize}
-\item Exit Configuration: \hyperlink{group__cflib__core_g47bfff42f432b3e8b5b9f12b695e60db}{cfexit()}\item Expand User Home Directory in a File Path Parameter: \hyperlink{group__advanced__features_gb6f874ac347d273dc45ad011808fe703}{cfhomexp()}\item General (internal) retrieval function: \hyperlink{group__retrieval_g872f83b13a8f722176f5e299f2a42e0f}{cfgetent()}\end{itemize}
-\hypertarget{index_compilation_issues}{}\subsection{Compilation and Development Issues}\label{index_compilation_issues}
-\begin{itemize}
-\item \hyperlink{development_platforms}{Platforms}\item \hyperlink{development_binaries}{Binaries and Executables}\item \hyperlink{development_library_building}{Building the Library}\item \hyperlink{development_compilation_options}{System and Compiler dependent Defines}\item \hyperlink{development_minimal_replacement}{Minimal CFLIB Replacement}\end{itemize}
-\hypertarget{index_help}{}\subsection{Help and Support}\label{index_help}
-\begin{itemize}
-\item {\bf Help} is this documentation\item {\bf Support} is the (open) source code\item The project is maintained from time to time as needed ;-)\item Comments, Bug Reports or (better) Bug Fixes are welcome!\item See \hyperlink{license}{CFLIB License}\item ... Have Fun! \end{itemize}
+\begin{DoxyItemize}
+\item Generate Output from Template and current parameter values\-: \hyperlink{group__report__generation_ga2695585ee0a7485da6075848fa27a33f}{cfform()}
+\end{DoxyItemize}\hypertarget{index_debugging}{}\subsubsection{Configuration Debugging}\label{index_debugging}
+These functions are thought to be used by the programmer working with C\-F\-L\-I\-B during development and testing of a program.
+
+
+\begin{DoxyItemize}
+\item Dump Configuration D\-B in human readable form\-: \hyperlink{group__advanced__features_gaecfc8ee37366e1b36cb5aac0cc41ebdc}{cfdump()}
+\begin{DoxyItemize}
+\item Test and Dump Configuration Initializer\-: \hyperlink{group__advanced__features_ga35e2c28f591ac71e3617c612233ecdd0}{cfdinichk()}
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_metainfos}{}\subsubsection{Get Information About a Configuration Parameter\-:}\label{index_metainfos}
+
+\begin{DoxyItemize}
+\item Get source/origin of the parameter's value\-: \hyperlink{group__retrieval_gadf84eed41bdaa0a6cd8cd474c79d50b1}{cfgetsrc()}
+\item Inquire Bit from parameter's Special Options Mask by Offset\-: \hyperlink{group__retrieval_ga09929d4a48932749dd9d0d32d0f3f08c}{cfflaginq()}
+\end{DoxyItemize}\hypertarget{index_advanced_other}{}\subsubsection{Other Functions and Features}\label{index_advanced_other}
+
+\begin{DoxyItemize}
+\item Exit Configuration\-: \hyperlink{group__cflib__core_ga47bfff42f432b3e8b5b9f12b695e60db}{cfexit()}
+\item Expand User Home Directory in a File Path Parameter\-: \hyperlink{group__advanced__features_ga469258ed449ac26d5c82e665db491ff2}{cfhomexp()}
+\item General (internal) retrieval function\-: \hyperlink{group__retrieval_gac13ba743ed26e6c05df14817ad9df3da}{cfgetent()}
+\end{DoxyItemize}\hypertarget{index_compilation_issues}{}\subsection{Compilation and Development Issues}\label{index_compilation_issues}
+
+\begin{DoxyItemize}
+\item \hyperlink{development_platforms}{Platforms}
+\item \hyperlink{development_binaries}{Binaries and Executables}
+\item \hyperlink{development_library_building}{Building the Library}
+\item \hyperlink{development_compilation_options}{System and Compiler dependent Defines}
+\item \hyperlink{development_minimal_replacement}{Minimal C\-F\-L\-I\-B Replacement}
+\end{DoxyItemize}\hypertarget{index_help}{}\subsection{Help and Support}\label{index_help}
+
+\begin{DoxyItemize}
+\item {\bfseries Help} is this documentation
+\item {\bfseries Support} is the (open) source code
+\item The project is maintained from time to time as needed ;-\/)
+\item Comments, Bug Reports or (better) Bug Fixes are welcome!
+\item See \hyperlink{license}{C\-F\-L\-I\-B License}
+\item ... Have Fun! 
+\end{DoxyItemize}

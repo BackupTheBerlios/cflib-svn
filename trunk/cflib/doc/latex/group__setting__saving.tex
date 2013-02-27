@@ -1,122 +1,196 @@
-\hypertarget{group__setting__saving}{
-\subsection{Setting and Saving the Configuration}
+\hypertarget{group__setting__saving}{\subsection{Setting and Saving the Configuration}
 \label{group__setting__saving}\index{Setting and Saving the Configuration@{Setting and Saving the Configuration}}
 }
-Set/Update Parameter Values or Save a Configuration File.  
 
 
-\subsubsection*{Functions}
-\begin{CompactItemize}
+Set/\-Update Parameter Values or Save a Configuration File.  
+
+
+\subsubsection*{Defines}
+\begin{DoxyCompactItemize}
 \item 
-int \hyperlink{group__setting__saving_g9553f7a24b080660793a560c2bc8f210}{cfputstr} (char $\ast$name, char $\ast$content)
-\begin{CompactList}\small\item\em Update or Add Parameter {\em name\/} with string {\em content\/}. \item\end{CompactList}\item 
-int \hyperlink{group__setting__saving_g6f133f88dc253a6a80d13eed4d123063}{cfputtime} (\hyperlink{group__special__options__mask_g4854f1596d5c6e0604a478fa9a2e23f0}{CFFLAGTYP} td)
-\begin{CompactList}\small\item\em Set all Time and/or Date entries in CFLIB DB to {\em now\/} or {\em today\/}. \item\end{CompactList}\item 
-int \hyperlink{group__setting__saving_g0f6ed90e3ecfa0074af1635a0e4339ef}{cfnosave} (char $\ast$name, const char $\ast$onoff)
-\begin{CompactList}\small\item\em Alter or query the \hyperlink{group__special__options__mask_gd76153c65f68cc0ee5c1a04c8c3e80bf}{CF\_\-NOSAVE} Flag of Parameter {\em name\/}. \item\end{CompactList}\item 
-int \hyperlink{group__setting__saving_g046d8a68eae35b987eacca04a9a06cca}{cfsave} (char $\ast$file, const char $\ast$savemode)
-\begin{CompactList}\small\item\em Write configuration data to a Configuration File or {\tt stdout}. \item\end{CompactList}\end{CompactItemize}
+\#define \hyperlink{group__setting__saving_gab4370bac1e151641bfb78e65f8ec4b44}{cfput}(a, b)~\hyperlink{group__setting__saving_ga9553f7a24b080660793a560c2bc8f210}{cfputstr}(a,(char $\ast$)b)
+\begin{DoxyCompactList}\small\item\em Update or Add a Parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__setting__saving_ga0f6ed90e3ecfa0074af1635a0e4339ef}{cfnosave} (char $\ast$name, const char $\ast$onoff)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__setting__saving_ga0f6ed90e3ecfa0074af1635a0e4339ef}{cfnosave()} Alter or query the \hyperlink{group__special__options__mask_gad76153c65f68cc0ee5c1a04c8c3e80bf}{C\-F\-\_\-\-N\-O\-S\-A\-V\-E} Flag of Parameter {\itshape name\/} \end{DoxyCompactList}\item 
+int \hyperlink{group__setting__saving_ga9553f7a24b080660793a560c2bc8f210}{cfputstr} (char $\ast$name, char $\ast$content)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__setting__saving_ga9553f7a24b080660793a560c2bc8f210}{cfputstr()} Update or Add Parameter {\itshape name\/} with string {\itshape content\/} \end{DoxyCompactList}\item 
+int \hyperlink{group__setting__saving_ga6f133f88dc253a6a80d13eed4d123063}{cfputtime} (\hyperlink{group__special__options__mask_ga4854f1596d5c6e0604a478fa9a2e23f0}{C\-F\-F\-L\-A\-G\-T\-Y\-P} td)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__setting__saving_ga6f133f88dc253a6a80d13eed4d123063}{cfputtime()} Set all Time and/or Date entries in C\-F\-L\-I\-B D\-B to {\itshape now\/} or {\itshape today\/} \end{DoxyCompactList}\item 
+int \hyperlink{group__setting__saving_gaad7e1267cd904b4480a0eeaeb03b5f75}{cfsave} (char $\ast$fname, const char $\ast$savemode)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__setting__saving_gaad7e1267cd904b4480a0eeaeb03b5f75}{cfsave()} Write configuration data to a Configuration File or {\ttfamily stdout} \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsubsection{Detailed Description}
-Set/Update Parameter Values or Save a Configuration File. 
+Set/\-Update Parameter Values or Save a Configuration File. 
+
+\subsubsection{Define Documentation}
+\hypertarget{group__setting__saving_gab4370bac1e151641bfb78e65f8ec4b44}{\index{Setting and Saving the Configuration@{Setting and Saving the Configuration}!cfput@{cfput}}
+\index{cfput@{cfput}!Setting and Saving the Configuration@{Setting and Saving the Configuration}}
+\paragraph[{cfput}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf cfput}(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~{\bf cfputstr}(a,(char $\ast$)b)}}\label{group__setting__saving_gab4370bac1e151641bfb78e65f8ec4b44}
+
+
+Update or Add a Parameter. 
+
+Update or Add Parameter (Utility Function Macro)
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \hyperlink{config_initializer_parameter_name}{Parameter Name} \\
+\hline
+{\em b} & New Content (Type casted to expected Char Pointer)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries int} \hyperlink{group__setting__saving_ga9553f7a24b080660793a560c2bc8f210}{cfputstr()} 
+\end{DoxyReturn}
+
 
 \subsubsection{Function Documentation}
-\hypertarget{group__setting__saving_g9553f7a24b080660793a560c2bc8f210}{
-\index{setting\_\-saving@{setting\_\-saving}!cfputstr@{cfputstr}}
-\index{cfputstr@{cfputstr}!setting_saving@{setting\_\-saving}}
-\paragraph[{cfputstr}]{\setlength{\rightskip}{0pt plus 5cm}int cfputstr (char $\ast$ {\em name}, \/  char $\ast$ {\em content})}\hfill}
-\label{group__setting__saving_g9553f7a24b080660793a560c2bc8f210}
+\hypertarget{group__setting__saving_ga0f6ed90e3ecfa0074af1635a0e4339ef}{\index{Setting and Saving the Configuration@{Setting and Saving the Configuration}!cfnosave@{cfnosave}}
+\index{cfnosave@{cfnosave}!Setting and Saving the Configuration@{Setting and Saving the Configuration}}
+\paragraph[{cfnosave}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cfnosave} (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name, }
+\item[{const char $\ast$}]{onoff}
+\end{DoxyParamCaption}
+)}}\label{group__setting__saving_ga0f6ed90e3ecfa0074af1635a0e4339ef}
 
 
-Update or Add Parameter {\em name\/} with string {\em content\/}. 
+\hyperlink{group__setting__saving_ga0f6ed90e3ecfa0074af1635a0e4339ef}{cfnosave()} Alter or query the \hyperlink{group__special__options__mask_gad76153c65f68cc0ee5c1a04c8c3e80bf}{C\-F\-\_\-\-N\-O\-S\-A\-V\-E} Flag of Parameter {\itshape name\/} 
 
-\begin{Desc}
-\item[Parameters:]
-\begin{description}
-\item[{\em name}]\hyperlink{config_initializer_parameter_name}{Parameter Name} \item[{\em content}]New (String) Content\end{description}
-\end{Desc}
-\begin{Desc}
-\item[Returns:]\begin{itemize}
-\item \hyperlink{group__errors_gbb576e88369c2eac1ffd41915292968c}{CFE\_\-NEP} : New Entry successfully Put into DB.  \item {\tt 0} : Entry updated successfully \item {\tt $<$0} : An error occurred:\begin{itemize}
-\item \hyperlink{group__errors_gf8cd36471ddcc549668f49238855609d}{CFE\_\-NCA} : No Configuration database Available. \item \hyperlink{group__errors_g127dc37aea6ba5ef8d9dfe5cb9c629eb}{CFE\_\-MCF} : Memory allocation for Configuration Failed.  \end{itemize}
-\end{itemize}
-\end{Desc}
-\hypertarget{group__setting__saving_g6f133f88dc253a6a80d13eed4d123063}{
-\index{setting\_\-saving@{setting\_\-saving}!cfputtime@{cfputtime}}
-\index{cfputtime@{cfputtime}!setting_saving@{setting\_\-saving}}
-\paragraph[{cfputtime}]{\setlength{\rightskip}{0pt plus 5cm}int cfputtime ({\bf CFFLAGTYP} {\em td})}\hfill}
-\label{group__setting__saving_g6f133f88dc253a6a80d13eed4d123063}
+Alter or query the \hyperlink{group__special__options__mask_gad76153c65f68cc0ee5c1a04c8c3e80bf}{C\-F\-\_\-\-N\-O\-S\-A\-V\-E} Flag of Parameter {\itshape name\/}.
+
+When the configuration database is saved to a configuration file, the function \hyperlink{group__setting__saving_gaad7e1267cd904b4480a0eeaeb03b5f75}{cfsave()} will exclude all items with the \hyperlink{group__special__options__mask_gad76153c65f68cc0ee5c1a04c8c3e80bf}{C\-F\-\_\-\-N\-O\-S\-A\-V\-E} flag set from the output.
+
+The \hyperlink{group__special__options__mask_gad76153c65f68cc0ee5c1a04c8c3e80bf}{C\-F\-\_\-\-N\-O\-S\-A\-V\-E} flag can be set in the Special Option Mask \hyperlink{struct_c_o_n_f_i_g_ab04d08abdf758c0400caaded716f4089}{C\-O\-N\-F\-I\-G\-::flag} for every entry in the \hyperlink{config_initializer}{Configuration Initializer} given to \hyperlink{group__cflib__core_ga64fb341565c2ddfccd6669e5e6265a8a}{cfinit()} or \hyperlink{group__cflib__core_ga6e04a462f9ad273de914af386ff15623}{cfstart()} or later be set with this function for parameters in the current configuration database \hyperlink{group__cflib__core_ga7d0fec33ada97c2d7ef78e6c3d83da97}{\-\_\-conf}
+
+\hyperlink{config_levels_residuals}{Residual Items} will have the \hyperlink{group__special__options__mask_gad76153c65f68cc0ee5c1a04c8c3e80bf}{C\-F\-\_\-\-N\-O\-S\-A\-V\-E} flag set by default.
 
 
-Set all Time and/or Date entries in CFLIB DB to {\em now\/} or {\em today\/}. 
+\begin{DoxyParams}{Parameters}
+{\em name} & Entry's name
+\begin{DoxyItemize}
+\item {\ttfamily \char`\"{}\char`\"{}} \-: All entries
+\item {\ttfamily N\-U\-L\-L} \-: All hardcoded entries
+\end{DoxyItemize}\\
+\hline
+{\em onoff} & \begin{DoxyItemize}
+\item \hyperlink{group__cflib__core_ga355c714f2912ac336b8b03468c978d8c}{C\-F\-\_\-\-F\-L\-A\-G\-\_\-\-O\-N} \-: Set Flag \item \hyperlink{group__cflib__core_ga7010abac2c80c121772da4d9c03332ee}{C\-F\-\_\-\-F\-L\-A\-G\-\_\-\-O\-F\-F} \-: Delete Flag \item {\ttfamily \char`\"{}i\char`\"{}} \-: Inquire Flag\end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\begin{DoxyItemize}
+\item {\ttfamily 0} \-: Entry updated successfully / Flag is O\-F\-F (for {\ttfamily \char`\"{}i\char`\"{}}) \item {\ttfamily 1} \-: Flag is O\-N (for {\ttfamily \char`\"{}i\char`\"{}}) \item {\ttfamily !=0} or {\ttfamily 1} \-: An Error occurred\-:
+\begin{DoxyItemize}
+\item \hyperlink{group__errors_gaf8cd36471ddcc549668f49238855609d}{C\-F\-E\-\_\-\-N\-C\-A} \-: No Configuration database Available. 
+\item \hyperlink{group__errors_ga7f7e54a5ccefa34556fe6da3b35b4f27}{C\-F\-E\-\_\-\-N\-E\-A} \-: No Entry with that name Available.  
+\end{DoxyItemize}\end{DoxyItemize}
 
-\begin{Desc}
-\item[Parameters:]
-\begin{description}
-\item[{\em td}]Target Selection Mask: \begin{itemize}
-\item \hyperlink{group__special__options__mask_g0fde537a92deb77f75b21c9e8d306509}{CF\_\-TIME} : Set Time \item \hyperlink{group__special__options__mask_g1c5b511a34d2c0db6631539ba81a4386}{CF\_\-DATE} : Set Date \item \hyperlink{group__special__options__mask_g8a50d7326b057d262f53ef84a166f9c5}{CF\_\-TD} : Set Time and Date\end{itemize}
-\end{description}
-\end{Desc}
-\begin{Desc}
-\item[Returns:]\begin{itemize}
-\item {\tt $>$0} : Number of entries updated successfully \item {\tt $<$=0} : An error occurred:\begin{itemize}
-\item \hyperlink{group__errors_gf8cd36471ddcc549668f49238855609d}{CFE\_\-NCA} : No Configuration database Available. \item \hyperlink{group__errors_g127dc37aea6ba5ef8d9dfe5cb9c629eb}{CFE\_\-MCF} : Memory allocation for Configuration Failed. \item \hyperlink{group__errors_g7f7e54a5ccefa34556fe6da3b35b4f27}{CFE\_\-NEA} : No Entry with that name Available.  \end{itemize}
-\end{itemize}
-\end{Desc}
-\hypertarget{group__setting__saving_g0f6ed90e3ecfa0074af1635a0e4339ef}{
-\index{setting\_\-saving@{setting\_\-saving}!cfnosave@{cfnosave}}
-\index{cfnosave@{cfnosave}!setting_saving@{setting\_\-saving}}
-\paragraph[{cfnosave}]{\setlength{\rightskip}{0pt plus 5cm}int cfnosave (char $\ast$ {\em name}, \/  const char $\ast$ {\em onoff})}\hfill}
-\label{group__setting__saving_g0f6ed90e3ecfa0074af1635a0e4339ef}
-
-
-Alter or query the \hyperlink{group__special__options__mask_gd76153c65f68cc0ee5c1a04c8c3e80bf}{CF\_\-NOSAVE} Flag of Parameter {\em name\/}. 
-
-When the configuration database is saved to a configuration file, the function \hyperlink{group__setting__saving_g046d8a68eae35b987eacca04a9a06cca}{cfsave()} will exclude all items with the \hyperlink{group__special__options__mask_gd76153c65f68cc0ee5c1a04c8c3e80bf}{CF\_\-NOSAVE} flag set from the output.
-
-The \hyperlink{group__special__options__mask_gd76153c65f68cc0ee5c1a04c8c3e80bf}{CF\_\-NOSAVE} flag can be set in the Special Option Mask \hyperlink{struct_c_o_n_f_i_g_b04d08abdf758c0400caaded716f4089}{CONFIG::flag} for every entry in the \hyperlink{config_initializer}{Configuration Initializer} given to \hyperlink{group__cflib__core_ge593ff607f853bd5fc16a16bb6759314}{cfinit()} or \hyperlink{group__cflib__core_gdcf24d678203bd09a0a3e05b8a986c65}{cfstart()} or later be set with this function for parameters in the current configuration database \hyperlink{group__cflib__core_g7d0fec33ada97c2d7ef78e6c3d83da97}{\_\-conf}
-
-\hyperlink{config_levels_residuals}{Residual Items} will have the \hyperlink{group__special__options__mask_gd76153c65f68cc0ee5c1a04c8c3e80bf}{CF\_\-NOSAVE} flag set by default.
-
-\begin{Desc}
-\item[Parameters:]
-\begin{description}
-\item[{\em name}]Entry's name\begin{itemize}
-\item {\tt \char`\"{}\char`\"{}} : All entries\item {\tt NULL} : All hardcoded entries\end{itemize}
-\item[{\em onoff}]\begin{itemize}
-\item \hyperlink{group__cflib__core_g355c714f2912ac336b8b03468c978d8c}{CF\_\-FLAG\_\-ON} : Set Flag \item \hyperlink{group__cflib__core_g7010abac2c80c121772da4d9c03332ee}{CF\_\-FLAG\_\-OFF} : Delete Flag \item {\tt \char`\"{}i\char`\"{}} : Inquire Flag\end{itemize}
-\end{description}
-\end{Desc}
-\begin{Desc}
-\item[Returns:]\begin{itemize}
-\item {\tt 0} : Entry updated successfully / Flag is OFF (for {\tt \char`\"{}i\char`\"{}}) \item {\tt 1} : Flag is ON (for {\tt \char`\"{}i\char`\"{}}) \item {\tt !=0} or {\tt 1} : An Error occurred:\begin{itemize}
-\item \hyperlink{group__errors_gf8cd36471ddcc549668f49238855609d}{CFE\_\-NCA} : No Configuration database Available. \item \hyperlink{group__errors_g7f7e54a5ccefa34556fe6da3b35b4f27}{CFE\_\-NEA} : No Entry with that name Available.  \end{itemize}
-\end{itemize}
-\end{Desc}
-\hypertarget{group__setting__saving_g046d8a68eae35b987eacca04a9a06cca}{
-\index{setting\_\-saving@{setting\_\-saving}!cfsave@{cfsave}}
-\index{cfsave@{cfsave}!setting_saving@{setting\_\-saving}}
-\paragraph[{cfsave}]{\setlength{\rightskip}{0pt plus 5cm}int cfsave (char $\ast$ {\em file}, \/  const char $\ast$ {\em savemode})}\hfill}
-\label{group__setting__saving_g046d8a68eae35b987eacca04a9a06cca}
+\end{DoxyReturn}
+\hypertarget{group__setting__saving_ga9553f7a24b080660793a560c2bc8f210}{\index{Setting and Saving the Configuration@{Setting and Saving the Configuration}!cfputstr@{cfputstr}}
+\index{cfputstr@{cfputstr}!Setting and Saving the Configuration@{Setting and Saving the Configuration}}
+\paragraph[{cfputstr}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cfputstr} (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name, }
+\item[{char $\ast$}]{content}
+\end{DoxyParamCaption}
+)}}\label{group__setting__saving_ga9553f7a24b080660793a560c2bc8f210}
 
 
-Write configuration data to a Configuration File or {\tt stdout}. 
+\hyperlink{group__setting__saving_ga9553f7a24b080660793a560c2bc8f210}{cfputstr()} Update or Add Parameter {\itshape name\/} with string {\itshape content\/} 
 
-Entries with the \hyperlink{group__special__options__mask_gd76153c65f68cc0ee5c1a04c8c3e80bf}{CF\_\-NOSAVE} flag will be excluded from the output. Use \hyperlink{group__setting__saving_g0f6ed90e3ecfa0074af1635a0e4339ef}{cfnosave()} to inquire or alter that flag for an entry.
+Update or Add Parameter {\itshape name\/} with string {\itshape content\/}.
 
-\begin{Desc}
-\item[Parameters:]
-\begin{description}
-\item[{\em file}]\begin{itemize}
-\item $<${\em string$>$\/} : Name of regular file to be opened \item {\tt \char`\"{}\char`\"{}} : Write configuration to {\tt stdout} \item {\tt NULL} : Private configuration file will be overwritten or created, if an appropriate entry exists\end{itemize}
-\item[{\em savemode}]File open mode: \begin{itemize}
-\item {\tt \char`\"{}w\char`\"{}} : Overwrite \item {\tt \char`\"{}a\char`\"{}} : Append\end{itemize}
-\end{description}
-\end{Desc}
-\begin{Desc}
-\item[Returns:]\begin{itemize}
-\item {\tt 0} : Configuration has been saved to file successfully \item {\tt !=0} : An error occurred:\begin{itemize}
-\item \hyperlink{group__errors_gf8cd36471ddcc549668f49238855609d}{CFE\_\-NCA} : No Configuration database Available. \item \hyperlink{group__errors_g939964b690f63b5484ec40fe8a4a7c56}{CFE\_\-IFP} : Invalid Filename entry for Private setfile. \item \hyperlink{group__errors_gd1375fe531ed1c13233e2fa7ae55534f}{CFE\_\-WAE} : Write Access Error.  \end{itemize}
-\end{itemize}
-\end{Desc}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \hyperlink{config_initializer_parameter_name}{Parameter Name} \\
+\hline
+{\em content} & New (String) Content\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\begin{DoxyItemize}
+\item \hyperlink{group__errors_gabb576e88369c2eac1ffd41915292968c}{C\-F\-E\-\_\-\-N\-E\-P} \-: New Entry successfully Put into D\-B.  \item {\ttfamily 0} \-: Entry updated successfully \item {\ttfamily $<$0} \-: An error occurred\-:
+\begin{DoxyItemize}
+\item \hyperlink{group__errors_gaf8cd36471ddcc549668f49238855609d}{C\-F\-E\-\_\-\-N\-C\-A} \-: No Configuration database Available. 
+\item \hyperlink{group__errors_ga127dc37aea6ba5ef8d9dfe5cb9c629eb}{C\-F\-E\-\_\-\-M\-C\-F} \-: Memory allocation for Configuration Failed.  
+\end{DoxyItemize}\end{DoxyItemize}
+
+\end{DoxyReturn}
+\hypertarget{group__setting__saving_ga6f133f88dc253a6a80d13eed4d123063}{\index{Setting and Saving the Configuration@{Setting and Saving the Configuration}!cfputtime@{cfputtime}}
+\index{cfputtime@{cfputtime}!Setting and Saving the Configuration@{Setting and Saving the Configuration}}
+\paragraph[{cfputtime}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cfputtime} (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-F\-F\-L\-A\-G\-T\-Y\-P}}]{td}
+\end{DoxyParamCaption}
+)}}\label{group__setting__saving_ga6f133f88dc253a6a80d13eed4d123063}
+
+
+\hyperlink{group__setting__saving_ga6f133f88dc253a6a80d13eed4d123063}{cfputtime()} Set all Time and/or Date entries in C\-F\-L\-I\-B D\-B to {\itshape now\/} or {\itshape today\/} 
+
+Set all Time and/or Date entries in C\-F\-L\-I\-B D\-B to {\itshape now\/} or {\itshape today\/}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em td} & Target Selection Mask\-: \begin{DoxyItemize}
+\item \hyperlink{group__special__options__mask_ga0fde537a92deb77f75b21c9e8d306509}{C\-F\-\_\-\-T\-I\-M\-E} \-: Set Time \item \hyperlink{group__special__options__mask_ga1c5b511a34d2c0db6631539ba81a4386}{C\-F\-\_\-\-D\-A\-T\-E} \-: Set Date \item \hyperlink{group__special__options__mask_ga8a50d7326b057d262f53ef84a166f9c5}{C\-F\-\_\-\-T\-D} \-: Set Time and Date\end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\begin{DoxyItemize}
+\item {\ttfamily $>$0} \-: Number of entries updated successfully \item {\ttfamily $<$=0} \-: An error occurred\-:
+\begin{DoxyItemize}
+\item \hyperlink{group__errors_gaf8cd36471ddcc549668f49238855609d}{C\-F\-E\-\_\-\-N\-C\-A} \-: No Configuration database Available. 
+\item \hyperlink{group__errors_ga127dc37aea6ba5ef8d9dfe5cb9c629eb}{C\-F\-E\-\_\-\-M\-C\-F} \-: Memory allocation for Configuration Failed. 
+\item \hyperlink{group__errors_ga7f7e54a5ccefa34556fe6da3b35b4f27}{C\-F\-E\-\_\-\-N\-E\-A} \-: No Entry with that name Available.  
+\end{DoxyItemize}\end{DoxyItemize}
+
+\end{DoxyReturn}
+\hypertarget{group__setting__saving_gaad7e1267cd904b4480a0eeaeb03b5f75}{\index{Setting and Saving the Configuration@{Setting and Saving the Configuration}!cfsave@{cfsave}}
+\index{cfsave@{cfsave}!Setting and Saving the Configuration@{Setting and Saving the Configuration}}
+\paragraph[{cfsave}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cfsave} (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{file, }
+\item[{const char $\ast$}]{savemode}
+\end{DoxyParamCaption}
+)}}\label{group__setting__saving_gaad7e1267cd904b4480a0eeaeb03b5f75}
+
+
+\hyperlink{group__setting__saving_gaad7e1267cd904b4480a0eeaeb03b5f75}{cfsave()} Write configuration data to a Configuration File or {\ttfamily stdout} 
+
+Write configuration data to a Configuration File or {\ttfamily stdout}.
+
+Entries with the \hyperlink{group__special__options__mask_gad76153c65f68cc0ee5c1a04c8c3e80bf}{C\-F\-\_\-\-N\-O\-S\-A\-V\-E} flag will be excluded from the output. Use \hyperlink{group__setting__saving_ga0f6ed90e3ecfa0074af1635a0e4339ef}{cfnosave()} to inquire or alter that flag for an entry.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \begin{DoxyItemize}
+\item $<${\itshape string$>$\/} \-: Name of regular file to be opened \item {\ttfamily \char`\"{}\char`\"{}} \-: Write configuration to {\ttfamily stdout} \item {\ttfamily N\-U\-L\-L} \-: Private configuration file will be overwritten or created, if an appropriate entry exists\end{DoxyItemize}
+\\
+\hline
+{\em savemode} & File open mode\-: \begin{DoxyItemize}
+\item {\ttfamily \char`\"{}w\char`\"{}} \-: Overwrite \item {\ttfamily \char`\"{}a\char`\"{}} \-: Append\end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\begin{DoxyItemize}
+\item {\ttfamily 0} \-: Configuration has been saved to file successfully \item {\ttfamily !=0} \-: An error occurred\-:
+\begin{DoxyItemize}
+\item \hyperlink{group__errors_gaf8cd36471ddcc549668f49238855609d}{C\-F\-E\-\_\-\-N\-C\-A} \-:No Configuration database Available.  
+\item \hyperlink{group__errors_ga939964b690f63b5484ec40fe8a4a7c56}{C\-F\-E\-\_\-\-I\-F\-P} \-:Invalid Filename entry for Private setfile.  
+\item \hyperlink{group__errors_gad1375fe531ed1c13233e2fa7ae55534f}{C\-F\-E\-\_\-\-W\-A\-E} \-:Write Access Error.   
+\end{DoxyItemize}\end{DoxyItemize}
+
+\end{DoxyReturn}

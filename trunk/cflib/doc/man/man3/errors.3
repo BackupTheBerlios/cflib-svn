@@ -1,17 +1,18 @@
-.TH "Error Handling" 3 "31 Jan 2009" "Version Patchlevel 20" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
+.TH "Error Handling" 3 "Wed Feb 27 2013" "Version Patchlevel 21" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-Error Handling \- Error Codes, Functions and Structures.  
-
+Error Handling \- 
 .PP
+Error Codes, Functions and Structures\&.  
+
 .SS "Data Structures"
 
 .in +1c
 .ti -1c
 .RI "struct \fBCONFERR\fP"
 .br
-.RI "\fILibrary Internal: Error List Item. \fP"
+.RI "\fILibrary Internal: Error List Item\&. \fP"
 .in -1c
 .SS "Defines"
 
@@ -19,179 +20,179 @@ Error Handling \- Error Codes, Functions and Structures.
 .ti -1c
 .RI "#define \fBCFE_INIT\fP   0"
 .br
-.RI "\fIINITialize error input. \fP"
+.RI "\fIINITialize error input\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_OK\fP   0"
 .br
-.RI "\fINo error / everything OKay. \fP"
+.RI "\fINo error / everything OKay\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_NEP\fP   1"
 .br
-.RI "\fINew Entry successfully Put into DB. \fP"
+.RI "\fINew Entry successfully Put into DB\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_EXIT\fP   1"
 .br
-.RI "\fIFinish error input. \fP"
+.RI "\fIFinish error input\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_ORA\fP   20"
 .br
-.RI "\fIOption Requires an Argument. \fP"
+.RI "\fIOption Requires an Argument\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_UKO\fP   25"
 .br
-.RI "\fIUnKnown Option. \fP"
+.RI "\fIUnKnown Option\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_FNF\fP   30"
 .br
-.RI "\fIFile Not Found, read access error. \fP"
+.RI "\fIFile Not Found, read access error\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_NSE\fP   40"
 .br
-.RI "\fINo Section specifier End found, missing ']'. \fP"
+.RI "\fINo Section specifier End found, missing ']'\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_NSC\fP   50"
 .br
-.RI "\fINo private Setfile Configured. \fP"
+.RI "\fINo private Setfile Configured\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_WAE\fP   60"
 .br
-.RI "\fIWrite Access Error. \fP"
+.RI "\fIWrite Access Error\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_IFP\fP   61"
 .br
-.RI "\fIInvalid Filename entry for Private setfile. \fP"
+.RI "\fIInvalid Filename entry for Private setfile\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_EWN\fP   70"
 .br
-.RI "\fIEntry Without Name. \fP"
+.RI "\fIEntry Without Name\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_ICF\fP   80"
 .br
-.RI "\fIInvalid Combination of Flags. \fP"
+.RI "\fIInvalid Combination of Flags\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_EWC\fP   90"
 .br
-.RI "\fIEntry Without Content. \fP"
+.RI "\fIEntry Without Content\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_UOS\fP   100"
 .br
-.RI "\fIUnlikely Option Specifier. \fP"
+.RI "\fIUnlikely Option Specifier\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_IFC\fP   110"
 .br
-.RI "\fIInvalid Flag Combination. \fP"
+.RI "\fIInvalid Flag Combination\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_NLE\fP   120"
 .br
-.RI "\fINo Last Entry flag found. \fP"
+.RI "\fINo Last Entry flag found\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_TIN\fP   130"
 .br
-.RI "\fIError reTurn from stdIN query. \fP"
+.RI "\fIError reTurn from stdIN query\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_EFE\fP   140"
 .br
-.RI "\fIEmpty string in content for Filename Entry. \fP"
+.RI "\fIEmpty string in content for Filename Entry\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_USG\fP   200"
 .br
-.RI "\fIEntries missing: USaGge advice. \fP"
+.RI "\fIEntries missing: USaGge advice\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_URI\fP   210"
 .br
-.RI "\fIUnResolved Item (CF_MUST was set!). \fP"
+.RI "\fIUnResolved Item (CF_MUST was set!) \fP"
 .ti -1c
 .RI "#define \fBCFE_FBF\fP   -500"
 .br
-.RI "\fIFile Backup Failed. \fP"
+.RI "\fIFile Backup Failed\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_BMF\fP   -510"
 .br
-.RI "\fIBackup: Memory allocation Failed. \fP"
+.RI "\fIBackup: Memory allocation Failed\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_BOF\fP   520"
 .br
-.RI "\fIBackup: Open source file Failed. \fP"
+.RI "\fIBackup: Open source file Failed\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_BBF\fP   530"
 .br
-.RI "\fIBackup: open target Backup file Failed. \fP"
+.RI "\fIBackup: open target Backup file Failed\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_BRF\fP   540"
 .br
-.RI "\fIBackup: Rename Failed. \fP"
+.RI "\fIBackup: Rename Failed\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_BWF\fP   550"
 .br
-.RI "\fIBackup: Write Failed. \fP"
+.RI "\fIBackup: Write Failed\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_NCA\fP   -10"
 .br
-.RI "\fINo Configuration database Available. \fP"
+.RI "\fINo Configuration database Available\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_NEA\fP   -20"
 .br
-.RI "\fINo Entry with that name Available. \fP"
+.RI "\fINo Entry with that name Available\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_NSS\fP   -30"
 .br
-.RI "\fINo Source/origin is Set. \fP"
+.RI "\fINo Source/origin is Set\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_ECP\fP   -40"
 .br
-.RI "\fIEntry's Content is a NULL Pointer. \fP"
+.RI "\fIEntry's Content is a NULL Pointer\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_MEF\fP   -100"
 .br
-.RI "\fIMemory allocation in Error routine Failed. \fP"
+.RI "\fIMemory allocation in Error routine Failed\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_MCF\fP   -200"
 .br
-.RI "\fIMemory allocation for Configuration Failed. \fP"
+.RI "\fIMemory allocation for Configuration Failed\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_INF\fP   -9999"
 .br
-.RI "\fIInteger iNquiry Failed (?!). \fP"
+.RI "\fIInteger iNquiry Failed (?!) \fP"
 .ti -1c
-.RI "#define \fBCFE_RNF\fP   -999.999"
+.RI "#define \fBCFE_RNF\fP   -999\&.999"
 .br
-.RI "\fIReal/float iNquiry Failed (?!). \fP"
+.RI "\fIReal/float iNquiry Failed (?!) \fP"
 .in -1c
 .SS "Functions"
 
 .in +1c
 .ti -1c
-.RI "int \fBcfputerr\fP (int ecode, char *string,...)"
-.br
-.RI "\fIInit, exit or append to Error List. \fP"
-.ti -1c
 .RI "int \fBcfgeterr\fP (char *string, size_t len)"
 .br
-.RI "\fIError Code and Message Inquiry Function. \fP"
+.RI "\fI\fBcfgeterr()\fP Error Code and Message Inquiry Function \fP"
+.ti -1c
+.RI "int \fBcfputerr\fP (int ecode, char *string,\&.\&.\&.)"
+.br
+.RI "\fI\fBcfputerr()\fP Init, exit or append to Error List \fP"
 .ti -1c
 .RI "void \fBcfclearerr\fP (void)"
 .br
-.RI "\fIFree all entries in error list. \fP"
+.RI "\fI\fBcfclearerr()\fP Free all entries in error list \fP"
 .ti -1c
 .RI "int \fBcfreverr\fP (void)"
 .br
-.RI "\fIRevert order of entries in error list from last->first to first->last. \fP"
+.RI "\fI\fBcfreverr()\fP Revert order of entries in error list from last->first to first->last \fP"
 .in -1c
 .SS "Variables"
 
 .in +1c
 .ti -1c
-.RI "\fBCONFERR\fP * \fB_cferr\fP = NULL"
+.RI "\fBCONFERR\fP * \fB_cferr\fP = \fBNULL\fP"
 .br
-.RI "\fILibrary Internal: Error List Pointer. \fP"
+.RI "\fILibrary Internal: Error List Pointer\&. \fP"
 .ti -1c
 .RI "int \fB_errcnt\fP = 0"
 .br
-.RI "\fILibrary Internal: Error List Counter. \fP"
+.RI "\fILibrary Internal: Error List Counter\&. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
-Error Codes, Functions and Structures. 
+Error Codes, Functions and Structures\&. 
 
 .IP "\(bu" 2
 Error Codes and their mnemonic descriptions
@@ -202,45 +203,25 @@ Error Codes and their mnemonic descriptions
 There are still errors without entry in error stack
 .RE
 .PP
-- Library Internal Error Variables
 .PP
 .IP "\(bu" 2
+Library Internal Error Variables
+.IP "  \(bu" 4
 Error Functions 
+.PP
+
 .PP
 
 .SH "Function Documentation"
 .PP 
-.SS "int cfputerr (int ecode, char * string,  ...)"
-.PP
-Init, exit or append to Error List. 
-.PP
-\fBParameters:\fP
-.RS 4
-\fIecode\fP Error Code of the error that occurred
-.br
-\fIstring\fP Error message format string. Giving it a \fCNULL\fP pointer results in an empty error message string
-.br
-\fI...\fP Arguments list according to format string
-.RE
-.PP
-\fBReturns:\fP
-.RS 4
-.PD 0
-.IP "\(bu" 2
-\fC<0\fP : A fatal error occurred (malloc failed) 
-.IP "\(bu" 2
-\fC>0\fP : Number of errors in error list 
-.PP
-.RE
-.PP
+.SS "int \fBcfgeterr\fP (char *string, size_tlen)"
 
-.SS "int cfgeterr (char * string, size_t len)"
 .PP
-Error Code and Message Inquiry Function. 
+\fBcfgeterr()\fP Error Code and Message Inquiry Function Error Code and Message Inquiry Function\&.
 .PP
 \fBParameters:\fP
 .RS 4
-\fIstring\fP Pointer to a string, to which the error message should be copied. Giving it a \fCNULL\fP pointer will omit message return
+\fIstring\fP Pointer to a string, to which the error message should be copied\&. Giving it a \fCNULL\fP pointer will omit message return
 .br
 \fIlen\fP Size of string, if \fC0\fP \fBCF_MAXERRSTR\fP will be used
 .RE
@@ -256,14 +237,39 @@ Error Code and Message Inquiry Function.
 .RE
 .PP
 
-.SS "void cfclearerr (void)"
+.SS "int \fBcfputerr\fP (intecode, char *string, \&.\&.\&.)"
+
 .PP
-Free all entries in error list. 
+\fBcfputerr()\fP Init, exit or append to Error List Init, exit or append to Error List\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIecode\fP Error Code of the error that occurred
+.br
+\fIstring\fP Error message format string\&. Giving it a \fCNULL\fP pointer results in an empty error message string
+.br
+\fI\&.\&.\&.\fP Arguments list according to format string
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.PD 0
+.IP "\(bu" 2
+\fC<0\fP : A fatal error occurred (malloc failed) 
+.IP "\(bu" 2
+\fC>0\fP : Number of errors in error list 
+.PP
+.RE
 .PP
 
-.SS "int cfreverr (void)"
+.SS "void \fBcfclearerr\fP (void)"
+
 .PP
-Revert order of entries in error list from last->first to first->last. 
+\fBcfclearerr()\fP Free all entries in error list Free all entries in error list\&.
+.SS "int \fBcfreverr\fP (void)"
+
+.PP
+\fBcfreverr()\fP Revert order of entries in error list from last->first to first->last Revert order of entries in error list from last->first to first->last\&.
 .PP
 \fBReturns:\fP
 .RS 4
@@ -278,4 +284,4 @@ Revert order of entries in error list from last->first to first->last.
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for CFLIB - Flexible Configuration Library from the source code.
+Generated automatically by Doxygen for CFLIB - Flexible Configuration Library from the source code\&.

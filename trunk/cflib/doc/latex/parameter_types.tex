@@ -1,49 +1,79 @@
-The internal format of a parameter's content \hyperlink{struct_c_o_n_f_i_g_b8cae13203b07fabaa40e407fa8dbdfb}{CONFIG::inhalt} is always a String (char Pointer).
+The internal format of a parameter's content \hyperlink{struct_c_o_n_f_i_g_ab8cae13203b07fabaa40e407fa8dbdfb}{C\-O\-N\-F\-I\-G\-::inhalt} is always a String (char Pointer).
 
-The use and interpretation of parameters is controlled by a number of Flags in the \hyperlink{group__special__options__mask}{Special Options Mask} :\hypertarget{parameter_types_parameter_datatypes}{}\subsection{Parameter Data Types}\label{parameter_types_parameter_datatypes}
-\begin{itemize}
-\item \hyperlink{group__special__options__mask_g64c30a2865061d0c1074bc6ec91e3dcf}{CF\_\-STR} : Entry is String.  ({\bf Default}).\item \hyperlink{group__special__options__mask_gb33869d596619ad14675c053925a42e0}{CF\_\-INT} : Entry is Integer. \item \hyperlink{group__special__options__mask_geefdbef320cbd7179f1fb0ebe0fcf5ce}{CF\_\-REAL} : Entry is Float. \item \hyperlink{group__special__options__mask_g1d1f1d1b6eac6b5d9970102318ab2667}{CF\_\-FLAG} : \hyperlink{parameter_types_parameter_type_flag}{FLAG Parameter Type}\end{itemize}
-\hypertarget{parameter_types_processing_instructions}{}\subsection{Special Processing Instructions}\label{parameter_types_processing_instructions}
-Specific processing of a String Parameter's Value/Content in various CFLIB functions can be triggered by these Flags:
+The use and interpretation of parameters is controlled by a number of Flags in the \hyperlink{group__special__options__mask}{Special Options Mask} \-:\hypertarget{parameter_types_parameter_datatypes}{}\subsection{Parameter Data Types}\label{parameter_types_parameter_datatypes}
 
-You can mark a parameter as Time {\bf or} Date. These parameters will be initialized with {\em now\/} or {\em today\/} by \hyperlink{group__cflib__core_ge593ff607f853bd5fc16a16bb6759314}{cfinit()} when \hyperlink{config_levels_parsing_level_priorities}{Parsing Level Priorities} are controlled by a \hyperlink{group__special__options__mask_g8d6cd1608fef5638efe964da63edf2dd}{CF\_\-SET\_\-PUT} Flag in the \hyperlink{group__special__options__mask}{Special Options Mask} or on call of \hyperlink{group__setting__saving_g6f133f88dc253a6a80d13eed4d123063}{cfputtime()}:
+\begin{DoxyItemize}
+\item \hyperlink{group__special__options__mask_ga64c30a2865061d0c1074bc6ec91e3dcf}{C\-F\-\_\-\-S\-T\-R} \-: Entry is String.  ({\bfseries Default}).
+\item \hyperlink{group__special__options__mask_gab33869d596619ad14675c053925a42e0}{C\-F\-\_\-\-I\-N\-T} \-: Entry is Integer. 
+\item \hyperlink{group__special__options__mask_gaeefdbef320cbd7179f1fb0ebe0fcf5ce}{C\-F\-\_\-\-R\-E\-A\-L} \-: Entry is Float. 
+\item \hyperlink{group__special__options__mask_ga1d1f1d1b6eac6b5d9970102318ab2667}{C\-F\-\_\-\-F\-L\-A\-G} \-: \hyperlink{parameter_types_parameter_type_flag}{F\-L\-A\-G Parameter Type}
+\end{DoxyItemize}\hypertarget{parameter_types_processing_instructions}{}\subsection{Special Processing Instructions}\label{parameter_types_processing_instructions}
+Specific processing of a String Parameter's Value/\-Content in various C\-F\-L\-I\-B functions can be triggered by these Flags\-:
 
-\begin{itemize}
-\item \hyperlink{group__special__options__mask_g0fde537a92deb77f75b21c9e8d306509}{CF\_\-TIME} : Time string. \item \hyperlink{group__special__options__mask_g1c5b511a34d2c0db6631539ba81a4386}{CF\_\-DATE} : Date string. \end{itemize}
-
-
-\begin{itemize}
-\item \hyperlink{group__special__options__mask_g675b6f8440beecc09fec54d17e9c3ee9}{CF\_\-FINDFILE} : Entry is filename to be searched for in the path.  \hyperlink{group__utilities_g4e4e8f9a03b7f3598b5efd199b9a67c9}{FindFile()} will be used on initialization to search the file in the {\bf path} found in Environment Variable {\bf PATH}. You can specify an alternative search path for this functionality in another database parameter with Flag \hyperlink{group__special__options__mask_gb383c1436888ea6b410141f7c0b1f306}{CF\_\-PATH} set in the corresponding \hyperlink{config_initializer}{Configuration Initializer} entry. Depending on the Operating System a list of possible of {\bf extensions} of executables will be tried, if no extension is given with the filename:\begin{itemize}
-\item Linux, Unix: \char`\"{}sh\char`\"{}, \char`\"{}pl\char`\"{}\item DOS,Windows, OS2: \char`\"{}exe\char`\"{}, \char`\"{}com\char`\"{}, \char`\"{}bat\char`\"{}, \char`\"{}cmd\char`\"{}\item TOS, MinT: \char`\"{}ttp\char`\"{}, \char`\"{}tos\char`\"{}, \char`\"{}prg\char`\"{}, \char`\"{}app\char`\"{}, \char`\"{}gtp\char`\"{}\end{itemize}
-\end{itemize}
+You can mark a parameter as Time {\bfseries or} Date. These parameters will be initialized with {\itshape now\/} or {\itshape today\/} by \hyperlink{group__cflib__core_ga64fb341565c2ddfccd6669e5e6265a8a}{cfinit()} when \hyperlink{config_levels_parsing_level_priorities}{Parsing Level Priorities} are controlled by a \hyperlink{group__special__options__mask_ga8d6cd1608fef5638efe964da63edf2dd}{C\-F\-\_\-\-S\-E\-T\-\_\-\-P\-U\-T} Flag in the \hyperlink{group__special__options__mask}{Special Options Mask} or on call of \hyperlink{group__setting__saving_ga6f133f88dc253a6a80d13eed4d123063}{cfputtime()}\-:
 
 
-\begin{itemize}
-\item \hyperlink{group__special__options__mask_gff1b2e25aa9a89a55c1784018e24aa75}{CF\_\-EXPHOME} : Expand Home Directory.  See \hyperlink{group__advanced__features_gb6f874ac347d273dc45ad011808fe703}{cfhomexp()}. \hyperlink{config_files}{Configuration Files} will have home directory expanded by default\end{itemize}
-\hypertarget{parameter_types_handling_instructions}{}\subsection{Special Handling Instructions}\label{parameter_types_handling_instructions}
-A parameter can be marked as a {\bf \char`\"{}volatile\char`\"{}} entry that is not saved by \hyperlink{group__setting__saving_g046d8a68eae35b987eacca04a9a06cca}{cfsave()}:
-
-\begin{itemize}
-\item \hyperlink{group__special__options__mask_gd76153c65f68cc0ee5c1a04c8c3e80bf}{CF\_\-NOSAVE} : Don't include in savefile / mark entry. \end{itemize}
-\hypertarget{parameter_types_cflib_parameters}{}\subsection{CFLIB Parameters}\label{parameter_types_cflib_parameters}
-Some String Parameters in the configuration database are used by the library itself and are marked by one of the following Flags:
-
-\begin{itemize}
-\item \hyperlink{group__special__options__mask_g071c29b5177f2df2400712ce8daae9b0}{CF\_\-PRGNAME} : Running Program's Name from commandline.  This parameter {\bf always} exists as the {\bf first} entry in a configuration database successfully initialized by \hyperlink{group__cflib__core_ge593ff607f853bd5fc16a16bb6759314}{cfinit()}. The default parameter name used if there was no corresponding entry in the Initializer is {\bf \char`\"{}CF\_\-PRGNAME\char`\"{}}.\item \hyperlink{group__special__options__mask_gfeeb63d4d8c498bec4a237ad8b94f02f}{CF\_\-SETFILE} : Entry is Private Configuration File.  See \hyperlink{config_files}{Configuration Files}\item \hyperlink{group__special__options__mask_gbb03ea68e07e388da2c1337a1582c72e}{CF\_\-SYS\_\-SETFILE} : Entry is System Configuration File.  See \hyperlink{config_files}{Configuration Files}\item \hyperlink{group__special__options__mask_g603f0467f101b71f5f869381429ffef4}{CF\_\-SECTION} : Section in Configuration File.  See \hyperlink{config_files}{Configuration Files}\item \hyperlink{group__special__options__mask_gb383c1436888ea6b410141f7c0b1f306}{CF\_\-PATH} : Search Path (for FindFile feature).  See \hyperlink{group__special__options__mask_g675b6f8440beecc09fec54d17e9c3ee9}{CF\_\-FINDFILE} and \hyperlink{group__utilities_g4e4e8f9a03b7f3598b5efd199b9a67c9}{FindFile()}\item \hyperlink{group__special__options__mask_gc30981201d7455071cef38a0133b9228}{CF\_\-USAGE} : Usage Message format string.  See \hyperlink{group__retrieval_ge272c1881db940e56c8cc364df730271}{cfgetusg()}\end{itemize}
+\begin{DoxyItemize}
+\item \hyperlink{group__special__options__mask_ga0fde537a92deb77f75b21c9e8d306509}{C\-F\-\_\-\-T\-I\-M\-E} \-: Time string. 
+\begin{DoxyItemize}
+\item \hyperlink{group__special__options__mask_ga1c5b511a34d2c0db6631539ba81a4386}{C\-F\-\_\-\-D\-A\-T\-E} \-: Date string. 
+\end{DoxyItemize}
+\end{DoxyItemize}
 
 
-Optional Parameters for fine tuning CFLIB behavior without Special Option Flag, characterized by Parameter Name:
+\begin{DoxyItemize}
+\item \hyperlink{group__special__options__mask_ga675b6f8440beecc09fec54d17e9c3ee9}{C\-F\-\_\-\-F\-I\-N\-D\-F\-I\-L\-E} \-: Entry is filename to be searched for in the path.  \hyperlink{group__utilities_ga59fc2b29cf26051e0854b664f5aed15d}{Find\-File()} will be used on initialization to search the file in the {\bfseries path} found in Environment Variable {\bfseries P\-A\-T\-H}. You can specify an alternative search path for this functionality in another database parameter with Flag \hyperlink{group__special__options__mask_gab383c1436888ea6b410141f7c0b1f306}{C\-F\-\_\-\-P\-A\-T\-H} set in the corresponding \hyperlink{config_initializer}{Configuration Initializer} entry. Depending on the Operating System a list of possible of {\bfseries extensions} of executables will be tried, if no extension is given with the filename\-:
+\begin{DoxyItemize}
+\item Linux, Unix\-: \char`\"{}sh\char`\"{}, \char`\"{}pl\char`\"{}
+\item D\-O\-S,Windows, O\-S2\-: \char`\"{}exe\char`\"{}, \char`\"{}com\char`\"{}, \char`\"{}bat\char`\"{}, \char`\"{}cmd\char`\"{}
+\item T\-O\-S, Min\-T\-: \char`\"{}ttp\char`\"{}, \char`\"{}tos\char`\"{}, \char`\"{}prg\char`\"{}, \char`\"{}app\char`\"{}, \char`\"{}gtp\char`\"{}
+\end{DoxyItemize}
+\end{DoxyItemize}
 
-\begin{itemize}
-\item {\bf \char`\"{}CF\_\-DUMPVERB\char`\"{}} - Non-Default Verbosity Mode for \hyperlink{group__advanced__features_gecfc8ee37366e1b36cb5aac0cc41ebdc}{cfdump()}\end{itemize}
-\hypertarget{parameter_types_parameter_type_flag}{}\subsection{FLAG Parameter Type}\label{parameter_types_parameter_type_flag}
-The entry is treated like a boolean variable and the string content set from any of the \hyperlink{config_levels}{Configuration Parsing Levels and Source/Origin Options} except the default setting is interpreted as follows:
 
-\begin{itemize}
-\item \hyperlink{group__cflib__core_g7010abac2c80c121772da4d9c03332ee}{CF\_\-FLAG\_\-OFF} : String Content is:\begin{itemize}
-\item beginning with a {\tt '-'} \item {\tt \char`\"{}OFF\char`\"{}} or {\tt \char`\"{}off\char`\"{}} \item {\tt \char`\"{}FALSE\char`\"{}} or {\tt \char`\"{}false\char`\"{}} \end{itemize}
-\item \hyperlink{group__cflib__core_g355c714f2912ac336b8b03468c978d8c}{CF\_\-FLAG\_\-ON} : any other case\end{itemize}
-\begin{Desc}
-\item[Example:]\begin{itemize}
-\item Initializer entry: \{ \char`\"{}extended\_\-message\char`\"{}, CF\_\-FLAG\_\-OFF, 'x', CF\_\-FLAG, \}\item Commandline: myprog -x-\item Configuration file: extended\_\-message = OFF \end{itemize}
-\end{Desc}
+\begin{DoxyItemize}
+\item \hyperlink{group__special__options__mask_gaff1b2e25aa9a89a55c1784018e24aa75}{C\-F\-\_\-\-E\-X\-P\-H\-O\-M\-E} \-: Expand Home Directory.  See \hyperlink{group__advanced__features_ga469258ed449ac26d5c82e665db491ff2}{cfhomexp()}. \hyperlink{config_files}{Configuration Files} will have home directory expanded by default
+\end{DoxyItemize}\hypertarget{parameter_types_handling_instructions}{}\subsection{Special Handling Instructions}\label{parameter_types_handling_instructions}
+A parameter can be marked as a {\bfseries \char`\"{}volatile\char`\"{}} entry that is not saved by \hyperlink{group__setting__saving_gaad7e1267cd904b4480a0eeaeb03b5f75}{cfsave()}\-:
+
+
+\begin{DoxyItemize}
+\item \hyperlink{group__special__options__mask_gad76153c65f68cc0ee5c1a04c8c3e80bf}{C\-F\-\_\-\-N\-O\-S\-A\-V\-E} \-: Don't include in savefile / mark entry. 
+\end{DoxyItemize}\hypertarget{parameter_types_cflib_parameters}{}\subsection{C\-F\-L\-I\-B Parameters}\label{parameter_types_cflib_parameters}
+Some String Parameters in the configuration database are used by the library itself and are marked by one of the following Flags\-:
+
+
+\begin{DoxyItemize}
+\item \hyperlink{group__special__options__mask_ga071c29b5177f2df2400712ce8daae9b0}{C\-F\-\_\-\-P\-R\-G\-N\-A\-M\-E} \-: Running Program's Name from commandline.  This parameter {\bfseries always} exists as the {\bfseries first} entry in a configuration database successfully initialized by \hyperlink{group__cflib__core_ga64fb341565c2ddfccd6669e5e6265a8a}{cfinit()}. The default parameter name used if there was no corresponding entry in the Initializer is {\bfseries \char`\"{}\-C\-F\-\_\-\-P\-R\-G\-N\-A\-M\-E\char`\"{}}.
+\begin{DoxyItemize}
+\item \hyperlink{group__special__options__mask_gafeeb63d4d8c498bec4a237ad8b94f02f}{C\-F\-\_\-\-S\-E\-T\-F\-I\-L\-E} \-: Entry is Private Configuration File.  See \hyperlink{config_files}{Configuration Files}
+\item \hyperlink{group__special__options__mask_gabb03ea68e07e388da2c1337a1582c72e}{C\-F\-\_\-\-S\-Y\-S\-\_\-\-S\-E\-T\-F\-I\-L\-E} \-: Entry is System Configuration File.  See \hyperlink{config_files}{Configuration Files}
+\item \hyperlink{group__special__options__mask_ga603f0467f101b71f5f869381429ffef4}{C\-F\-\_\-\-S\-E\-C\-T\-I\-O\-N} \-: Section in Configuration File.  See \hyperlink{config_files}{Configuration Files}
+\item \hyperlink{group__special__options__mask_gab383c1436888ea6b410141f7c0b1f306}{C\-F\-\_\-\-P\-A\-T\-H} \-: Search Path (for Find\-File feature)  See \hyperlink{group__special__options__mask_ga675b6f8440beecc09fec54d17e9c3ee9}{C\-F\-\_\-\-F\-I\-N\-D\-F\-I\-L\-E} and \hyperlink{group__utilities_ga59fc2b29cf26051e0854b664f5aed15d}{Find\-File()}
+\item \hyperlink{group__special__options__mask_gac30981201d7455071cef38a0133b9228}{C\-F\-\_\-\-U\-S\-A\-G\-E} \-: Usage Message format string.  See \hyperlink{group__retrieval_gad3e4e24668cdc111471332a7e79fc897}{cfgetusg()}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Optional Parameters for fine tuning C\-F\-L\-I\-B behavior without Special Option Flag, characterized by Parameter Name\-:
+
+
+\begin{DoxyItemize}
+\item {\bfseries \char`\"{}\-C\-F\-\_\-\-D\-U\-M\-P\-V\-E\-R\-B\char`\"{}} -\/ Non-\/\-Default Verbosity Mode for \hyperlink{group__advanced__features_gaecfc8ee37366e1b36cb5aac0cc41ebdc}{cfdump()}
+\end{DoxyItemize}\hypertarget{parameter_types_parameter_type_flag}{}\subsection{F\-L\-A\-G Parameter Type}\label{parameter_types_parameter_type_flag}
+The entry is treated like a boolean variable and the string content set from any of the \hyperlink{config_levels}{Configuration Parsing Levels and Source/\-Origin Options} except the default setting is interpreted as follows\-:
+
+\begin{DoxyItemize}
+\item \hyperlink{group__cflib__core_ga7010abac2c80c121772da4d9c03332ee}{C\-F\-\_\-\-F\-L\-A\-G\-\_\-\-O\-F\-F} \-: String Content is\-:
+\begin{DoxyItemize}
+\item beginning with a {\ttfamily '-\/'} 
+\item {\ttfamily \char`\"{}\-O\-F\-F\char`\"{}} or {\ttfamily \char`\"{}off\char`\"{}} 
+\item {\ttfamily \char`\"{}\-F\-A\-L\-S\-E\char`\"{}} or {\ttfamily \char`\"{}false\char`\"{}} 
+\end{DoxyItemize}\item \hyperlink{group__cflib__core_ga355c714f2912ac336b8b03468c978d8c}{C\-F\-\_\-\-F\-L\-A\-G\-\_\-\-O\-N} \-: any other case\end{DoxyItemize}
+\begin{DoxyParagraph}{Example\-:}
+
+\begin{DoxyItemize}
+\item Initializer entry\-: \{ \char`\"{}extended\-\_\-message\char`\"{}, C\-F\-\_\-\-F\-L\-A\-G\-\_\-\-O\-F\-F, 'x', C\-F\-\_\-\-F\-L\-A\-G, \}
+\item Commandline\-: myprog -\/x-\/
+\item Configuration file\-: extended\-\_\-message = O\-F\-F 
+\end{DoxyItemize}
+\end{DoxyParagraph}

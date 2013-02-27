@@ -1,57 +1,86 @@
-\hypertarget{group__report__generation}{
-\subsection{Report Generation}
+\hypertarget{group__report__generation}{\subsection{Report Generation}
 \label{group__report__generation}\index{Report Generation@{Report Generation}}
 }
+
+
+Process templates doing variable substitution and file inclusion.  
+
+
 \subsubsection*{Defines}
-\begin{CompactItemize}
+\begin{DoxyCompactItemize}
 \item 
-\hypertarget{group__report__generation_g5547641c939fd4d071e9aeaa7c956cac}{
-\#define \hyperlink{group__report__generation_g5547641c939fd4d071e9aeaa7c956cac}{CF\_\-DEF\_\-VARDELIM}~\char`\"{}\$()\char`\"{}}
-\label{group__report__generation_g5547641c939fd4d071e9aeaa7c956cac}
+\hypertarget{group__report__generation_ga5547641c939fd4d071e9aeaa7c956cac}{\#define \hyperlink{group__report__generation_ga5547641c939fd4d071e9aeaa7c956cac}{C\-F\-\_\-\-D\-E\-F\-\_\-\-V\-A\-R\-D\-E\-L\-I\-M}~\char`\"{}\$()\char`\"{}}\label{group__report__generation_ga5547641c939fd4d071e9aeaa7c956cac}
 
-\begin{CompactList}\small\item\em Default variable delimiter for \hyperlink{group__report__generation_g2f8350e7d032c87b2a0e1cb6149a85ec}{cfform()}. \item\end{CompactList}\item 
-\hypertarget{group__report__generation_g7b96ba1ca10909659d50eabb8b5af611}{
-\#define \hyperlink{group__report__generation_g7b96ba1ca10909659d50eabb8b5af611}{CF\_\-MAXINC}~8}
-\label{group__report__generation_g7b96ba1ca10909659d50eabb8b5af611}
+\begin{DoxyCompactList}\small\item\em Default variable delimiter for \hyperlink{group__report__generation_ga2695585ee0a7485da6075848fa27a33f}{cfform()} \end{DoxyCompactList}\item 
+\hypertarget{group__report__generation_ga7b96ba1ca10909659d50eabb8b5af611}{\#define \hyperlink{group__report__generation_ga7b96ba1ca10909659d50eabb8b5af611}{C\-F\-\_\-\-M\-A\-X\-I\-N\-C}~8}\label{group__report__generation_ga7b96ba1ca10909659d50eabb8b5af611}
 
-\begin{CompactList}\small\item\em Maximum number of nested includes for \hyperlink{group__report__generation_g2f8350e7d032c87b2a0e1cb6149a85ec}{cfform()}. \item\end{CompactList}\end{CompactItemize}
+\begin{DoxyCompactList}\small\item\em Maximum number of nested includes for \hyperlink{group__report__generation_ga2695585ee0a7485da6075848fa27a33f}{cfform()} \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsubsection*{Functions}
-\begin{CompactItemize}
+\begin{DoxyCompactItemize}
 \item 
-int \hyperlink{group__report__generation_g2f8350e7d032c87b2a0e1cb6149a85ec}{cfform} (char $\ast$file, char $\ast$outfile, char $\ast$vd, int mode)
-\begin{CompactList}\small\item\em Process a Template from file or {\tt stdin} and write generated Report to File or {\tt stdout}. \item\end{CompactList}\end{CompactItemize}
+int \hyperlink{group__report__generation_ga2695585ee0a7485da6075848fa27a33f}{cfform} (char $\ast$infile, char $\ast$outfile, char $\ast$vardelim, int mode)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__report__generation_ga2695585ee0a7485da6075848fa27a33f}{cfform()} Process a Template from file or {\ttfamily stdin} and write generated Report to File or {\ttfamily stdout} \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsubsection{Detailed Description}
+Process templates doing variable substitution and file inclusion. 
 
 \subsubsection{Function Documentation}
-\hypertarget{group__report__generation_g2f8350e7d032c87b2a0e1cb6149a85ec}{
-\index{report\_\-generation@{report\_\-generation}!cfform@{cfform}}
-\index{cfform@{cfform}!report_generation@{report\_\-generation}}
-\paragraph[{cfform}]{\setlength{\rightskip}{0pt plus 5cm}int cfform (char $\ast$ {\em file}, \/  char $\ast$ {\em outfile}, \/  char $\ast$ {\em vd}, \/  int {\em mode})}\hfill}
-\label{group__report__generation_g2f8350e7d032c87b2a0e1cb6149a85ec}
+\hypertarget{group__report__generation_ga2695585ee0a7485da6075848fa27a33f}{\index{Report Generation@{Report Generation}!cfform@{cfform}}
+\index{cfform@{cfform}!Report Generation@{Report Generation}}
+\paragraph[{cfform}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cfform} (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{file, }
+\item[{char $\ast$}]{outfile, }
+\item[{char $\ast$}]{vd, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}}\label{group__report__generation_ga2695585ee0a7485da6075848fa27a33f}
 
 
-Process a Template from file or {\tt stdin} and write generated Report to File or {\tt stdout}. 
+\hyperlink{group__report__generation_ga2695585ee0a7485da6075848fa27a33f}{cfform()} Process a Template from file or {\ttfamily stdin} and write generated Report to File or {\ttfamily stdout} 
 
-The Report Template contains {\bf Variables} like '\$({\em ident\/})' or whatever you set in {\em vd\/}. {\em ident\/} may refer to a:
+Process a Template from file or {\ttfamily stdin} and write generated Report to File or {\ttfamily stdout}.
 
-\begin{itemize}
-\item Parameter Name like '\$({\em name\/})' : Substitute variable by parameter's value (from DB)\item Include File Path like '\$(FILE:{\em /my/path/to/incfile\/})' : Substitute variable by content of include file\item File Path and Section Include like '\$(FILE:{\em incfile\#{\em sect\/})'\/} : Include section from include file between \mbox{[}{\em sect\/}\mbox{]} and next \mbox{[}{\em \/}...\mbox{]}\item Variable File Include like '\$(FILE::{\em varname\/})' : Include file from location given in parameter {\em varname\/} \end{itemize}
+The Report Template contains {\bfseries Variables} like '\$({\itshape ident\/})' or whatever you set in {\itshape vd\/}. {\itshape ident\/} may refer to a\-:
 
 
-\begin{Desc}
-\item[See also:]\hyperlink{advanced_example}{Advanced Usage Example}\end{Desc}
-\begin{Desc}
-\item[\hyperlink{todo__todo000003}{Todo}]Make \hyperlink{group__report__generation_g2f8350e7d032c87b2a0e1cb6149a85ec}{cfform()} work with buffers instead of files\end{Desc}
-\begin{Desc}
-\item[Parameters:]
-\begin{description}
-\item[{\em file}]Name of Template File, {\tt NULL} for {\tt stdin} \item[{\em outfile}]Name of Output File, {\tt NULL} for {\tt stdout} \item[{\em vd}]Variable Delimiters: string containing the three variable delimiters in the first three chars: to have variables like '\$({\em name\/})', let the string be '\$()'. This is also the default, if {\em vd\/} is {\tt NULL} or string length $<$ 3\item[{\em mode}]Mode Mask: \begin{itemize}
-\item {\tt 0} : Normal \item {\tt 1} : Query for unresolved variables, (try to) include them in database \item {\tt 2} : Unset \hyperlink{group__special__options__mask_gd76153c65f68cc0ee5c1a04c8c3e80bf}{CF\_\-NOSAVE} flag for parsed vars \item {\tt 4} : Outfile Write {\em append\/}, else {\em write\/} \end{itemize}
-\end{description}
-\end{Desc}
-\begin{Desc}
-\item[Returns:]\begin{itemize}
-\item {\tt 0} : Configuration has been saved to file successfully \item {\tt !=0} : An error occurred:\begin{itemize}
-\item \hyperlink{group__errors_gf8cd36471ddcc549668f49238855609d}{CFE\_\-NCA} : No Configuration database Available. \item \hyperlink{group__errors_ga3d4c51112fd70d482a4a77c95dc3daf}{CFE\_\-FNF} : File Not Found, read access error. \item \hyperlink{group__errors_gd1375fe531ed1c13233e2fa7ae55534f}{CFE\_\-WAE} : Write Access Error.  \end{itemize}
-\end{itemize}
-\end{Desc}
+\begin{DoxyItemize}
+\item Parameter Name like '\$({\itshape name\/})' \-: Substitute variable by parameter's value (from D\-B)
+\begin{DoxyItemize}
+\item Include File Path like '\$(F\-I\-L\-E\-:{\itshape /my/path/to/incfile\/})' \-: Substitute variable by content of include file
+\item File Path and Section Include like '\$(F\-I\-L\-E\-:{\itshape incfile\#{\itshape sect\/})'\/} \-: Include section from include file between \mbox{[}{\itshape sect\/}\mbox{]} and next \mbox{[}{\itshape \/}...\mbox{]}
+\item Variable File Include like '\$(F\-I\-L\-E\-:\-:{\itshape varname\/})' \-: Include file from location given in parameter {\itshape varname\/} 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{advanced_example}{Advanced Usage Example}
+\end{DoxySeeAlso}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000003}{Todo}]Make \hyperlink{group__report__generation_ga2695585ee0a7485da6075848fa27a33f}{cfform()} work with buffers instead of files\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & Name of Template File, {\ttfamily N\-U\-L\-L} for {\ttfamily stdin} \\
+\hline
+{\em outfile} & Name of Output File, {\ttfamily N\-U\-L\-L} for {\ttfamily stdout} \\
+\hline
+{\em vd} & Variable Delimiters\-: string containing the three variable delimiters in the first three chars\-: to have variables like '\$({\itshape name\/})', let the string be '\$()'. This is also the default, if {\itshape vd\/} is {\ttfamily N\-U\-L\-L} or string length $<$ 3\\
+\hline
+{\em mode} & Mode Mask\-: \begin{DoxyItemize}
+\item {\ttfamily 0} \-: Normal \item {\ttfamily 1} \-: Query for unresolved variables, (try to) include them in database \item {\ttfamily 2} \-: Unset \hyperlink{group__special__options__mask_gad76153c65f68cc0ee5c1a04c8c3e80bf}{C\-F\-\_\-\-N\-O\-S\-A\-V\-E} flag for parsed vars \item {\ttfamily 4} \-: Outfile Write {\itshape append\/}, else {\itshape write\/} \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\begin{DoxyItemize}
+\item {\ttfamily 0} \-: Configuration has been saved to file successfully \item {\ttfamily !=0} \-: An error occurred\-:
+\begin{DoxyItemize}
+\item \hyperlink{group__errors_gaf8cd36471ddcc549668f49238855609d}{C\-F\-E\-\_\-\-N\-C\-A} \-: No Configuration database Available. 
+\item \hyperlink{group__errors_gaa3d4c51112fd70d482a4a77c95dc3daf}{C\-F\-E\-\_\-\-F\-N\-F} \-: File Not Found, read access error. 
+\item \hyperlink{group__errors_gad1375fe531ed1c13233e2fa7ae55534f}{C\-F\-E\-\_\-\-W\-A\-E} \-: Write Access Error.  
+\end{DoxyItemize}\end{DoxyItemize}
+
+\end{DoxyReturn}

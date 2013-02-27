@@ -1,6 +1,6 @@
 
+\begin{DoxyCodeInclude}
 
-\begin{DocInclude}\begin{verbatim}
 /*
  *    Find a File in Path
  *
@@ -24,9 +24,12 @@ int main( int argc, char **argv )
     CONFIG setting[] =
     {
         /* Name, Default Content, Commandline Option, Special Option Flags */
-        { "PROGNAME", NULL,        '1', CF_FINDFILE|CF_SET_ARG|CF_NO_OPT_ARG, },
-        { "FF_PATH",  NULL,        ' ', CF_PATH,                              },
-        { "help",     CF_FLAG_OFF, 'h', CF_FLAG|CF_LAST,                      },
+        { "PROGNAME", NULL,        '1', CF_FINDFILE|CF_SET_ARG|CF_NO_OPT_ARG, }
+      ,
+        { "FF_PATH",  NULL,        ' ', CF_PATH,                              }
+      ,
+        { "help",     CF_FLAG_OFF, 'h', CF_FLAG|CF_LAST,                      }
+      ,
     };
 
     if ( !( ret = cfstart( setting, argc, argv, "help", CFS_USG ) ) ){
@@ -38,6 +41,5 @@ int main( int argc, char **argv )
 
     return ret;
 }
-\end{verbatim}
-\end{DocInclude}
+\end{DoxyCodeInclude}
  

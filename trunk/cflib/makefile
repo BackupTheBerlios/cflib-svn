@@ -63,7 +63,7 @@ dist: archive/cflib-21.0.1.tgz archive/cflib-21.0.1-src.tgz
 DISTFILES := makefile* *.txt *.doxyfile \
 	include src lib liblin libmgw libmgw_debug \
 	doc/*.html doc/cflib.* doc/include doc/man doc/html \
-	doc/latex/Makefile doc/latex/*.sty doc/latex/*.ttf doc/latex/*.tex \
+	doc/latex/Makefile doc/latex/*.sty doc/latex/*.tex \
 	doc/latex/*.dvi doc/latex/*.ps \
 	examples/src examples/linux/cf_test examples/mswindows
 

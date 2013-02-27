@@ -1,128 +1,64 @@
-.TH "General Utilities" 3 "31 Jan 2009" "Version Patchlevel 20" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
+.TH "General Utilities" 3 "Wed Feb 27 2013" "Version Patchlevel 21" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 General Utilities \- 
+.PP
+General Utility Macros and Functions\&.  
+
 .SS "Defines"
 
 .in +1c
 .ti -1c
 .RI "#define \fBCF_BACKBUFLEN\fP   102400"
 .br
-.RI "\fIFile copy buffer for \fBBackupFile()\fP. \fP"
+.RI "\fIFile copy buffer for \fBBackupFile()\fP \fP"
 .ti -1c
 .RI "#define \fBDelFlag\fP(a, b)   a&=(~b)"
 .br
-.RI "\fIDelete bits of Mask \fCb\fP from Mask \fCa\fP. \fP"
+.RI "\fIDelete bits of Mask \fCb\fP from Mask \fCa\fP\&. \fP"
 .ti -1c
 .RI "#define \fBSetFlag\fP(a, b)   a|=b"
 .br
-.RI "\fISet bits of Mask \fCb\fP in Mask \fCa\fP. \fP"
+.RI "\fISet bits of Mask \fCb\fP in Mask \fCa\fP\&. \fP"
 .in -1c
 .SS "Functions"
 
 .in +1c
 .ti -1c
-.RI "void \fBRemoveCR\fP (char *ptr)"
+.RI "int \fBBackupFile\fP (const char *file, char *modus)"
 .br
-.RI "\fIString Utility Function. \fP"
+.RI "\fI\fBBackupFile()\fP Copy or Rename File \fC'file'\fP to Backup File \fC'file~'\fP or \fC'file\&.bak'\fP \fP"
 .ti -1c
-.RI "void \fBRemoveTrailSpace\fP (char *ptr)"
+.RI "void \fBRemoveCR\fP (char *string)"
 .br
-.RI "\fIString Utility Function. \fP"
+.RI "\fIStrip Carriage Return at end of string (after fgets) by introducing zero byte at CR position\&. \fP"
 .ti -1c
-.RI "char * \fBEatWhiteSpace\fP (char *ptr)"
+.RI "void \fBRemoveTrailSpace\fP (char *string)"
 .br
-.RI "\fIString Utility Function. \fP"
+.RI "\fIStrip whitespaces at end of string by introducing zero byte after last non-whitespace character\&. \fP"
+.ti -1c
+.RI "char * \fBEatWhiteSpace\fP (char *string)"
+.br
+.RI "\fI\fBEatWhiteSpace()\fP Set pointer to next non-whitespace-character in string\&. \fP"
 .ti -1c
 .RI "int \fBIsATerminal\fP (FILE *fp)"
 .br
-.RI "\fITest whether stream is a terminal. \fP"
-.ti -1c
-.RI "int \fBBackupFile\fP (const char *file, char *modus)"
-.br
-.RI "\fICopy or Rename File \fC'file'\fP to Backup File \fC'file~'\fP or \fC'file.bak'\fP. \fP"
+.RI "\fI\fBIsATerminal()\fP Test whether stream is a terminal \fP"
 .ti -1c
 .RI "char * \fBFindFile\fP (const char *fname, const char *fpath, const char *const *fext)"
 .br
-.RI "\fIFind a File in Path trying Extensions. \fP"
+.RI "\fI\fBFindFile()\fP Find a File in Path trying Extensions \fP"
 .in -1c
+.SH "Detailed Description"
+.PP 
+General Utility Macros and Functions\&. 
 .SH "Function Documentation"
 .PP 
-.SS "void RemoveCR (char * ptr)"
-.PP
-String Utility Function. 
-.PP
-Strip Carriage Return at end of string (after fgets) by introducing zero byte at CR position. Original source was 'STELM' by Kees and Lemmens.
-.PP
-\fBAuthor:\fP
-.RS 4
-Kees and Lemmens
-.RE
-.PP
-\fBParameters:\fP
-.RS 4
-\fIptr\fP pointer to beginning of string 
-.RE
-.PP
+.SS "int \fBBackupFile\fP (const char *file, char *modus)"
 
-.SS "void RemoveTrailSpace (char * ptr)"
 .PP
-String Utility Function. 
-.PP
-Strip whitespaces at end of string by introducing zero byte after last non-whitespace character
-.PP
-\fBParameters:\fP
-.RS 4
-\fIptr\fP Pointer to beginning of string 
-.RE
-.PP
-
-.SS "char* EatWhiteSpace (char * ptr)"
-.PP
-String Utility Function. 
-.PP
-Set pointer to next non-whitespace-character in string. Original source was 'STELM' by Kees and Lemmens.
-.PP
-\fBAuthor:\fP
-.RS 4
-Kees and Lemmens
-.RE
-.PP
-\fBParameters:\fP
-.RS 4
-\fIptr\fP Pointer to beginning of string 
-.RE
-.PP
-\fBReturns:\fP
-.RS 4
-Pointer to next non-whitespace-character in string 
-.RE
-.PP
-
-.SS "int IsATerminal (FILE * fp)"
-.PP
-Test whether stream is a terminal. 
-.PP
-\fBParameters:\fP
-.RS 4
-\fIfp\fP File/Stream Pointer 
-.RE
-.PP
-\fBReturns:\fP
-.RS 4
-\fCTRUE\fP or \fCFALSE\fP 
-.RE
-.PP
-\fBBug\fP
-.RS 4
-ANSI C doesn't have function isatty(), we always return TRUE
-.RE
-.PP
-
-.SS "int BackupFile (const char * file, char * modus)"
-.PP
-Copy or Rename File \fC'file'\fP to Backup File \fC'file~'\fP or \fC'file.bak'\fP. 
+\fBBackupFile()\fP Copy or Rename File \fC'file'\fP to Backup File \fC'file~'\fP or \fC'file\&.bak'\fP Copy or Rename File \fC'file'\fP to Backup File \fC'file~'\fP or \fC'file\&.bak'\fP\&.
 .PP
 \fBParameters:\fP
 .RS 4
@@ -138,7 +74,7 @@ Copy or Rename File \fC'file'\fP to Backup File \fC'file~'\fP or \fC'file.bak'\f
 .IP "\(bu" 2
 \fC'@e ?'\fP Default \fC'd'\fP 
 .IP "\(bu" 2
-\fC'@e ?d'\fP docs-style (\fC\fP.bak) 
+\fC'@e ?d'\fP docs-style (\fC\fP\&.bak) 
 .IP "\(bu" 2
 \fC'@e ?c'\fP, \fC'??'\fP Un*x Style (\fC~\fP)
 .PP
@@ -156,7 +92,7 @@ Copy or Rename File \fC'file'\fP to Backup File \fC'file~'\fP or \fC'file.bak'\f
 .IP "  \(bu" 4
 \fBCFE_BOF\fP : Invalid filename / open error
 .IP "  \(bu" 4
-\fBCFE_BMF\fP : Backup: Memory allocation Failed. 
+\fBCFE_BMF\fP :Backup: Memory allocation Failed\&.  
 .IP "  \(bu" 4
 \fBCFE_BRF\fP : Rename file failed
 .IP "  \(bu" 4
@@ -169,16 +105,89 @@ Copy or Rename File \fC'file'\fP to Backup File \fC'file~'\fP or \fC'file.bak'\f
 .RE
 .PP
 
-.SS "char* FindFile (const char * fname, const char * fpath, const char *const * fext)"
+.SS "void \fBRemoveCR\fP (char *ptr)"
+
 .PP
-Find a File in Path trying Extensions. 
+Strip Carriage Return at end of string (after fgets) by introducing zero byte at CR position\&. String Utility Function\&.
+.PP
+Strip Carriage Return at end of string (after fgets) by introducing zero byte at CR position\&. Original source was 'STELM' by Kees and Lemmens\&.
 .PP
 \fBAuthor:\fP
 .RS 4
-Eric R. Smith 
+Kees and Lemmens
 .RE
 .PP
-\fBLicense:\fP.RS 4
+\fBParameters:\fP
+.RS 4
+\fIptr\fP pointer to beginning of string 
+.RE
+.PP
+
+.SS "void \fBRemoveTrailSpace\fP (char *ptr)"
+
+.PP
+Strip whitespaces at end of string by introducing zero byte after last non-whitespace character\&. \fBParameters:\fP
+.RS 4
+\fIptr\fP Pointer to beginning of string 
+.RE
+.PP
+
+.SS "char * \fBEatWhiteSpace\fP (char *ptr)"
+
+.PP
+\fBEatWhiteSpace()\fP Set pointer to next non-whitespace-character in string\&. Set pointer to next non-whitespace-character in string\&.
+.PP
+Original source was 'STELM' by Kees and Lemmens\&.
+.PP
+\fBAuthor:\fP
+.RS 4
+Kees and Lemmens
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIptr\fP Pointer to beginning of string 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Pointer to next non-whitespace-character in string 
+.RE
+.PP
+
+.SS "int \fBIsATerminal\fP (FILE *fp)"
+
+.PP
+\fBIsATerminal()\fP Test whether stream is a terminal Test whether stream is a terminal\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfp\fP File/Stream Pointer 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fCTRUE\fP or \fCFALSE\fP 
+.RE
+.PP
+\fBBug\fP
+.RS 4
+ANSI C doesn't have function isatty(), we always return TRUE
+.RE
+.PP
+
+.SS "char * \fBFindFile\fP (const char *fname, const char *fpath, const char *const *fext)"
+
+.PP
+\fBFindFile()\fP Find a File in Path trying Extensions Find a File in Path trying Extensions\&.
+.PP
+\fBAuthor:\fP
+.RS 4
+Eric R\&. Smith 
+.RE
+.PP
+\fBLicense:\fP
+.RS 4
 Public Domain
 .RE
 .PP
@@ -199,4 +208,4 @@ The name by which the file was found or \fCNULL\fP
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for CFLIB - Flexible Configuration Library from the source code.
+Generated automatically by Doxygen for CFLIB - Flexible Configuration Library from the source code\&.

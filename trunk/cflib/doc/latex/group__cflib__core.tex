@@ -1,237 +1,234 @@
-\hypertarget{group__cflib__core}{
-\subsection{CFLIB Core Features}
-\label{group__cflib__core}\index{CFLIB Core Features@{CFLIB Core Features}}
+\hypertarget{group__cflib__core}{\subsection{Core Features}
+\label{group__cflib__core}\index{Core Features@{Core Features}}
 }
-Basic CFLIB Setup.  
+
+
+Basic C\-F\-L\-I\-B Setup.  
 
 
 \subsubsection*{Data Structures}
-\begin{CompactItemize}
+\begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{struct_c_o_n_f_i_g}{CONFIG}
-\begin{CompactList}\small\item\em CFLIB Configuration Database Entry. \item\end{CompactList}\end{CompactItemize}
+struct \hyperlink{struct_c_o_n_f_i_g}{C\-O\-N\-F\-I\-G}
+\begin{DoxyCompactList}\small\item\em C\-F\-L\-I\-B Configuration Database Entry. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsubsection*{Defines}
-\begin{CompactItemize}
+\begin{DoxyCompactItemize}
 \item 
-\hypertarget{group__cflib__core_g0beb5d41f2b506f1c969c56731bb9490}{
-\#define \hyperlink{group__cflib__core_g0beb5d41f2b506f1c969c56731bb9490}{Patchlevel}~\char`\"{}20\char`\"{}}
-\label{group__cflib__core_g0beb5d41f2b506f1c969c56731bb9490}
+\hypertarget{group__cflib__core_ga0beb5d41f2b506f1c969c56731bb9490}{\#define \hyperlink{group__cflib__core_ga0beb5d41f2b506f1c969c56731bb9490}{Patchlevel}~\char`\"{}21\char`\"{}}\label{group__cflib__core_ga0beb5d41f2b506f1c969c56731bb9490}
 
-\begin{CompactList}\small\item\em CFLIB Identification. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g1662beae23df229341c28d286379e2ad}{
-\#define \hyperlink{group__cflib__core_g1662beae23df229341c28d286379e2ad}{MAXCONF}~4096}
-\label{group__cflib__core_g1662beae23df229341c28d286379e2ad}
+\begin{DoxyCompactList}\small\item\em C\-F\-L\-I\-B Identification. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga1662beae23df229341c28d286379e2ad}{\#define \hyperlink{group__cflib__core_ga1662beae23df229341c28d286379e2ad}{M\-A\-X\-C\-O\-N\-F}~4096}\label{group__cflib__core_ga1662beae23df229341c28d286379e2ad}
 
-\begin{CompactList}\small\item\em Maximum number of entries in configuration database. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_gf78e4b950c9aa49b752e4460342ea3bf}{
-\#define \hyperlink{group__cflib__core_gf78e4b950c9aa49b752e4460342ea3bf}{CF\_\-MAXERRSTR}~512}
-\label{group__cflib__core_gf78e4b950c9aa49b752e4460342ea3bf}
+\begin{DoxyCompactList}\small\item\em Maximum number of entries in configuration database. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_gaf78e4b950c9aa49b752e4460342ea3bf}{\#define \hyperlink{group__cflib__core_gaf78e4b950c9aa49b752e4460342ea3bf}{C\-F\-\_\-\-M\-A\-X\-E\-R\-R\-S\-T\-R}~512}\label{group__cflib__core_gaf78e4b950c9aa49b752e4460342ea3bf}
 
-\begin{CompactList}\small\item\em Maximum string length for error message. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_gc7ffaf92294adc15284233965f54c03e}{
-\#define \hyperlink{group__cflib__core_gc7ffaf92294adc15284233965f54c03e}{CF\_\-MAXLINE}~20480}
-\label{group__cflib__core_gc7ffaf92294adc15284233965f54c03e}
+\begin{DoxyCompactList}\small\item\em Maximum string length for error message. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_gac7ffaf92294adc15284233965f54c03e}{\#define \hyperlink{group__cflib__core_gac7ffaf92294adc15284233965f54c03e}{C\-F\-\_\-\-M\-A\-X\-L\-I\-N\-E}~20480}\label{group__cflib__core_gac7ffaf92294adc15284233965f54c03e}
 
-\begin{CompactList}\small\item\em Maximum string length for setfile and form parsing. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_gc91ed2022fe6617330f369b4e20b875b}{
-\#define \hyperlink{group__cflib__core_gc91ed2022fe6617330f369b4e20b875b}{CF\_\-MAXQLINE}~512}
-\label{group__cflib__core_gc91ed2022fe6617330f369b4e20b875b}
+\begin{DoxyCompactList}\small\item\em Maximum string length for setfile and form parsing. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_gac91ed2022fe6617330f369b4e20b875b}{\#define \hyperlink{group__cflib__core_gac91ed2022fe6617330f369b4e20b875b}{C\-F\-\_\-\-M\-A\-X\-Q\-L\-I\-N\-E}~512}\label{group__cflib__core_gac91ed2022fe6617330f369b4e20b875b}
 
-\begin{CompactList}\small\item\em Maximum string length for query. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_gd36d92b5077988734cdfeb0f47c0488e}{
-\#define \hyperlink{group__cflib__core_gd36d92b5077988734cdfeb0f47c0488e}{CF\_\-MAXUSAGE}~1024}
-\label{group__cflib__core_gd36d92b5077988734cdfeb0f47c0488e}
+\begin{DoxyCompactList}\small\item\em Maximum string length for query. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_gad36d92b5077988734cdfeb0f47c0488e}{\#define \hyperlink{group__cflib__core_gad36d92b5077988734cdfeb0f47c0488e}{C\-F\-\_\-\-M\-A\-X\-U\-S\-A\-G\-E}~1024}\label{group__cflib__core_gad36d92b5077988734cdfeb0f47c0488e}
 
-\begin{CompactList}\small\item\em Maximum string length for usage string. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_gc568df32f08baaff9c162521856c3ec7}{
-\#define \hyperlink{group__cflib__core_gc568df32f08baaff9c162521856c3ec7}{CF\_\-USG\_\-DEFCOLS}~80}
-\label{group__cflib__core_gc568df32f08baaff9c162521856c3ec7}
+\begin{DoxyCompactList}\small\item\em Maximum string length for usage string. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_gac568df32f08baaff9c162521856c3ec7}{\#define \hyperlink{group__cflib__core_gac568df32f08baaff9c162521856c3ec7}{C\-F\-\_\-\-U\-S\-G\-\_\-\-D\-E\-F\-C\-O\-L\-S}~80}\label{group__cflib__core_gac568df32f08baaff9c162521856c3ec7}
 
-\begin{CompactList}\small\item\em Default terminal width for usage string. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g582af337c870e7eb2cdb133fd5cc72d2}{
-\#define \hyperlink{group__cflib__core_g582af337c870e7eb2cdb133fd5cc72d2}{CF\_\-MAXTIMEBUF}~256}
-\label{group__cflib__core_g582af337c870e7eb2cdb133fd5cc72d2}
+\begin{DoxyCompactList}\small\item\em Default terminal width for usage string. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga582af337c870e7eb2cdb133fd5cc72d2}{\#define \hyperlink{group__cflib__core_ga582af337c870e7eb2cdb133fd5cc72d2}{C\-F\-\_\-\-M\-A\-X\-T\-I\-M\-E\-B\-U\-F}~256}\label{group__cflib__core_ga582af337c870e7eb2cdb133fd5cc72d2}
 
-\begin{CompactList}\small\item\em Buffer size for time and day. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_ga8cecfc5c5c054d2875c03e77b7be15d}{
-\#define \hyperlink{group__cflib__core_ga8cecfc5c5c054d2875c03e77b7be15d}{TRUE}~1}
-\label{group__cflib__core_ga8cecfc5c5c054d2875c03e77b7be15d}
+\begin{DoxyCompactList}\small\item\em Buffer size for time and day. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cflib__core_gaa93f0eb578d23995850d61f7d61c55c1}{F\-A\-L\-S\-E}~0
+\begin{DoxyCompactList}\small\item\em $<$ T\-R\-U\-E, if not defined \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{\#define \hyperlink{group__cflib__core_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{N\-U\-L\-L}~(void $\ast$)(0\-L)}\label{group__cflib__core_ga070d2ce7b6bb7e5c05602aa8c308d0c4}
 
-\begin{CompactList}\small\item\em TRUE, if not defined. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_ga93f0eb578d23995850d61f7d61c55c1}{
-\#define \hyperlink{group__cflib__core_ga93f0eb578d23995850d61f7d61c55c1}{FALSE}~0}
-\label{group__cflib__core_ga93f0eb578d23995850d61f7d61c55c1}
+\begin{DoxyCompactList}\small\item\em N\-U\-L\-L, if not defined. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga355c714f2912ac336b8b03468c978d8c}{\#define \hyperlink{group__cflib__core_ga355c714f2912ac336b8b03468c978d8c}{C\-F\-\_\-\-F\-L\-A\-G\-\_\-\-O\-N}~\char`\"{}$\backslash$1\char`\"{}}\label{group__cflib__core_ga355c714f2912ac336b8b03468c978d8c}
 
-\begin{CompactList}\small\item\em FALSE, if not defined. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g070d2ce7b6bb7e5c05602aa8c308d0c4}{
-\#define \hyperlink{group__cflib__core_g070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}~(void $\ast$)(0L)}
-\label{group__cflib__core_g070d2ce7b6bb7e5c05602aa8c308d0c4}
+\begin{DoxyCompactList}\small\item\em Flag is set. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga7010abac2c80c121772da4d9c03332ee}{\#define \hyperlink{group__cflib__core_ga7010abac2c80c121772da4d9c03332ee}{C\-F\-\_\-\-F\-L\-A\-G\-\_\-\-O\-F\-F}~\char`\"{}\char`\"{}}\label{group__cflib__core_ga7010abac2c80c121772da4d9c03332ee}
 
-\begin{CompactList}\small\item\em NULL, if not defined. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g355c714f2912ac336b8b03468c978d8c}{
-\#define \hyperlink{group__cflib__core_g355c714f2912ac336b8b03468c978d8c}{CF\_\-FLAG\_\-ON}~\char`\"{}$\backslash$1\char`\"{}}
-\label{group__cflib__core_g355c714f2912ac336b8b03468c978d8c}
+\begin{DoxyCompactList}\small\item\em Flag is not set. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_gabea45e34341ee5aaafb4a4a732bb5ece}{\#define \hyperlink{group__cflib__core_gabea45e34341ee5aaafb4a4a732bb5ece}{C\-F\-\_\-\-N\-O\-\_\-\-O\-P\-T\-I\-O\-N}~' '}\label{group__cflib__core_gabea45e34341ee5aaafb4a4a732bb5ece}
 
-\begin{CompactList}\small\item\em Flag is set. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g7010abac2c80c121772da4d9c03332ee}{
-\#define \hyperlink{group__cflib__core_g7010abac2c80c121772da4d9c03332ee}{CF\_\-FLAG\_\-OFF}~\char`\"{}\char`\"{}}
-\label{group__cflib__core_g7010abac2c80c121772da4d9c03332ee}
+\begin{DoxyCompactList}\small\item\em Option is not set. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga9c80120944556169d230d4cd051d88cb}{\#define \hyperlink{group__cflib__core_ga9c80120944556169d230d4cd051d88cb}{T\-A\-B\-L\-E\-N}~8}\label{group__cflib__core_ga9c80120944556169d230d4cd051d88cb}
 
-\begin{CompactList}\small\item\em Flag is not set. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_gbea45e34341ee5aaafb4a4a732bb5ece}{
-\#define \hyperlink{group__cflib__core_gbea45e34341ee5aaafb4a4a732bb5ece}{CF\_\-NO\_\-OPTION}~' '}
-\label{group__cflib__core_gbea45e34341ee5aaafb4a4a732bb5ece}
+\begin{DoxyCompactList}\small\item\em T\-A\-B length. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga764a8ea81ffc3940bf413797dcaf9a3d}{\#define \hyperlink{group__cflib__core_ga764a8ea81ffc3940bf413797dcaf9a3d}{C\-F\-P\-\_\-\-P\-U\-T}~0}\label{group__cflib__core_ga764a8ea81ffc3940bf413797dcaf9a3d}
 
-\begin{CompactList}\small\item\em Option is not set. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g9c80120944556169d230d4cd051d88cb}{
-\#define \hyperlink{group__cflib__core_g9c80120944556169d230d4cd051d88cb}{TABLEN}~8}
-\label{group__cflib__core_g9c80120944556169d230d4cd051d88cb}
+\begin{DoxyCompactList}\small\item\em Function Call or Automatic Initialization. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga0901da5871f3cffeec56e491f8c9fc7f}{\#define \hyperlink{group__cflib__core_ga0901da5871f3cffeec56e491f8c9fc7f}{C\-F\-P\-\_\-\-A\-R\-G}~1}\label{group__cflib__core_ga0901da5871f3cffeec56e491f8c9fc7f}
 
-\begin{CompactList}\small\item\em TAB length. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g764a8ea81ffc3940bf413797dcaf9a3d}{
-\#define \hyperlink{group__cflib__core_g764a8ea81ffc3940bf413797dcaf9a3d}{CFP\_\-PUT}~0}
-\label{group__cflib__core_g764a8ea81ffc3940bf413797dcaf9a3d}
+\begin{DoxyCompactList}\small\item\em Commandline. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_gac77d72299f32e91104090cdeb93f3619}{\#define \hyperlink{group__cflib__core_gac77d72299f32e91104090cdeb93f3619}{C\-F\-P\-\_\-\-E\-N\-V}~2}\label{group__cflib__core_gac77d72299f32e91104090cdeb93f3619}
 
-\begin{CompactList}\small\item\em Function Call or Automatic Initialization. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g0901da5871f3cffeec56e491f8c9fc7f}{
-\#define \hyperlink{group__cflib__core_g0901da5871f3cffeec56e491f8c9fc7f}{CFP\_\-ARG}~1}
-\label{group__cflib__core_g0901da5871f3cffeec56e491f8c9fc7f}
+\begin{DoxyCompactList}\small\item\em Environment. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga6cf8dcc9fa01deae5eb44698cb01f73e}{\#define \hyperlink{group__cflib__core_ga6cf8dcc9fa01deae5eb44698cb01f73e}{C\-F\-P\-\_\-\-P\-R\-I\-V}~3}\label{group__cflib__core_ga6cf8dcc9fa01deae5eb44698cb01f73e}
 
-\begin{CompactList}\small\item\em Commandline. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_gc77d72299f32e91104090cdeb93f3619}{
-\#define \hyperlink{group__cflib__core_gc77d72299f32e91104090cdeb93f3619}{CFP\_\-ENV}~2}
-\label{group__cflib__core_gc77d72299f32e91104090cdeb93f3619}
+\begin{DoxyCompactList}\small\item\em Private Configuration File. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga0365a86453eeaa815a79c506343bd927}{\#define \hyperlink{group__cflib__core_ga0365a86453eeaa815a79c506343bd927}{C\-F\-P\-\_\-\-S\-Y\-S}~4}\label{group__cflib__core_ga0365a86453eeaa815a79c506343bd927}
 
-\begin{CompactList}\small\item\em Environment. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g6cf8dcc9fa01deae5eb44698cb01f73e}{
-\#define \hyperlink{group__cflib__core_g6cf8dcc9fa01deae5eb44698cb01f73e}{CFP\_\-PRIV}~3}
-\label{group__cflib__core_g6cf8dcc9fa01deae5eb44698cb01f73e}
+\begin{DoxyCompactList}\small\item\em System Configuration File. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_gafa9b2b859f08e9b319cc50555255a975}{\#define \hyperlink{group__cflib__core_gafa9b2b859f08e9b319cc50555255a975}{C\-F\-P\-\_\-\-D\-E\-F}~5}\label{group__cflib__core_gafa9b2b859f08e9b319cc50555255a975}
 
-\begin{CompactList}\small\item\em Private Configuration File. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g0365a86453eeaa815a79c506343bd927}{
-\#define \hyperlink{group__cflib__core_g0365a86453eeaa815a79c506343bd927}{CFP\_\-SYS}~4}
-\label{group__cflib__core_g0365a86453eeaa815a79c506343bd927}
+\begin{DoxyCompactList}\small\item\em Built-\/in Default. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga91ce348a0630961b0c472e7dec732aae}{\#define \hyperlink{group__cflib__core_ga91ce348a0630961b0c472e7dec732aae}{C\-F\-P\-\_\-\-Q\-R\-Y}~6}\label{group__cflib__core_ga91ce348a0630961b0c472e7dec732aae}
 
-\begin{CompactList}\small\item\em System Configuration File. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_gfa9b2b859f08e9b319cc50555255a975}{
-\#define \hyperlink{group__cflib__core_gfa9b2b859f08e9b319cc50555255a975}{CFP\_\-DEF}~5}
-\label{group__cflib__core_gfa9b2b859f08e9b319cc50555255a975}
+\begin{DoxyCompactList}\small\item\em Standard Input Channel. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga631bc61e35c14f1d3df36a71154a776a}{\#define \hyperlink{group__cflib__core_ga631bc61e35c14f1d3df36a71154a776a}{C\-F\-P\-\_\-\-R\-E\-S\-E\-R\-V\-E\-D}~7}\label{group__cflib__core_ga631bc61e35c14f1d3df36a71154a776a}
 
-\begin{CompactList}\small\item\em Built-in Default. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g91ce348a0630961b0c472e7dec732aae}{
-\#define \hyperlink{group__cflib__core_g91ce348a0630961b0c472e7dec732aae}{CFP\_\-QRY}~6}
-\label{group__cflib__core_g91ce348a0630961b0c472e7dec732aae}
+\begin{DoxyCompactList}\small\item\em Reserved for Subprojects. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cflib__core_gaf363125c0f5c520d748d8d0ecaf1af01}{C\-F\-S\-\_\-\-N\-O\-T}~0
+\begin{DoxyCompactList}\small\item\em Error Response Modes for \hyperlink{group__cflib__core_ga6e04a462f9ad273de914af386ff15623}{cfstart()} \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga50bc281400629cfb20e899144d59a3b7}{\#define \hyperlink{group__cflib__core_ga50bc281400629cfb20e899144d59a3b7}{C\-F\-S\-\_\-\-A\-L\-L}~1}\label{group__cflib__core_ga50bc281400629cfb20e899144d59a3b7}
 
-\begin{CompactList}\small\item\em Standard Input Channel. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g631bc61e35c14f1d3df36a71154a776a}{
-\#define \hyperlink{group__cflib__core_g631bc61e35c14f1d3df36a71154a776a}{CFP\_\-RESERVED}~7}
-\label{group__cflib__core_g631bc61e35c14f1d3df36a71154a776a}
+\begin{DoxyCompactList}\small\item\em Start Mode\-: All error messages. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga5663cfeeda02fa9e2fee53b418c5045b}{\#define \hyperlink{group__cflib__core_ga5663cfeeda02fa9e2fee53b418c5045b}{C\-F\-S\-\_\-\-N\-E\-G}~2}\label{group__cflib__core_ga5663cfeeda02fa9e2fee53b418c5045b}
 
-\begin{CompactList}\small\item\em Reserved for Subprojects. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_gf363125c0f5c520d748d8d0ecaf1af01}{
-\#define \hyperlink{group__cflib__core_gf363125c0f5c520d748d8d0ecaf1af01}{CFS\_\-NOT}~0}
-\label{group__cflib__core_gf363125c0f5c520d748d8d0ecaf1af01}
+\begin{DoxyCompactList}\small\item\em Start Mode\-: Only severe errors. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga3f535ad957f1836dea64deae798324a5}{\#define \hyperlink{group__cflib__core_ga3f535ad957f1836dea64deae798324a5}{C\-F\-S\-\_\-\-U\-S\-G}~3}\label{group__cflib__core_ga3f535ad957f1836dea64deae798324a5}
 
-\begin{CompactList}\small\item\em Start Mode: No action on error. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g50bc281400629cfb20e899144d59a3b7}{
-\#define \hyperlink{group__cflib__core_g50bc281400629cfb20e899144d59a3b7}{CFS\_\-ALL}~1}
-\label{group__cflib__core_g50bc281400629cfb20e899144d59a3b7}
+\begin{DoxyCompactList}\small\item\em Start Mode\-: Usage message if error was negative, error output like \hyperlink{group__cflib__core_ga5663cfeeda02fa9e2fee53b418c5045b}{C\-F\-S\-\_\-\-N\-E\-G}. \end{DoxyCompactList}\item 
+\hypertarget{group__cflib__core_ga870957fdc2246ddc767747f8dd645bdf}{\#define \hyperlink{group__cflib__core_ga870957fdc2246ddc767747f8dd645bdf}{C\-F\-S\-\_\-\-D\-E\-B\-U\-G}~4}\label{group__cflib__core_ga870957fdc2246ddc767747f8dd645bdf}
 
-\begin{CompactList}\small\item\em Start Mode: All error messages. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g5663cfeeda02fa9e2fee53b418c5045b}{
-\#define \hyperlink{group__cflib__core_g5663cfeeda02fa9e2fee53b418c5045b}{CFS\_\-NEG}~2}
-\label{group__cflib__core_g5663cfeeda02fa9e2fee53b418c5045b}
-
-\begin{CompactList}\small\item\em Start Mode: Only severe errors. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g3f535ad957f1836dea64deae798324a5}{
-\#define \hyperlink{group__cflib__core_g3f535ad957f1836dea64deae798324a5}{CFS\_\-USG}~3}
-\label{group__cflib__core_g3f535ad957f1836dea64deae798324a5}
-
-\begin{CompactList}\small\item\em Start Mode: Usage message if error was negative, error output like \hyperlink{group__cflib__core_g5663cfeeda02fa9e2fee53b418c5045b}{CFS\_\-NEG}. \item\end{CompactList}\item 
-\hypertarget{group__cflib__core_g870957fdc2246ddc767747f8dd645bdf}{
-\#define \hyperlink{group__cflib__core_g870957fdc2246ddc767747f8dd645bdf}{CFS\_\-DEBUG}~4}
-\label{group__cflib__core_g870957fdc2246ddc767747f8dd645bdf}
-
-\begin{CompactList}\small\item\em Start Mode: Output like \hyperlink{group__cflib__core_g3f535ad957f1836dea64deae798324a5}{CFS\_\-USG} plus raw dump of configuration. \item\end{CompactList}\end{CompactItemize}
+\begin{DoxyCompactList}\small\item\em Start Mode\-: Output like \hyperlink{group__cflib__core_ga3f535ad957f1836dea64deae798324a5}{C\-F\-S\-\_\-\-U\-S\-G} plus raw dump of configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsubsection*{Functions}
-\begin{CompactItemize}
+\begin{DoxyCompactItemize}
 \item 
-int \hyperlink{group__cflib__core_ge593ff607f853bd5fc16a16bb6759314}{cfinit} (\hyperlink{struct_c_o_n_f_i_g}{CONFIG} $\ast$set, int ac, char $\ast$$\ast$av)
-\begin{CompactList}\small\item\em Initialize CFLIB Configuration Database and parse possible sources for database entries according to the settings in {\em set\/}. \item\end{CompactList}\item 
-void \hyperlink{group__cflib__core_g47bfff42f432b3e8b5b9f12b695e60db}{cfexit} (void)
-\begin{CompactList}\small\item\em Free allocated memory and reset the configuration database and error stack. \item\end{CompactList}\item 
-int \hyperlink{group__cflib__core_gdcf24d678203bd09a0a3e05b8a986c65}{cfstart} (\hyperlink{struct_c_o_n_f_i_g}{CONFIG} $\ast$setting, int ac, char $\ast$$\ast$av, char $\ast$help, int mode)
-\begin{CompactList}\small\item\em Setup Configuration Database. \item\end{CompactList}\end{CompactItemize}
+int \hyperlink{group__cflib__core_ga64fb341565c2ddfccd6669e5e6265a8a}{cfinit} (\hyperlink{struct_c_o_n_f_i_g}{C\-O\-N\-F\-I\-G} $\ast$set, int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__cflib__core_ga64fb341565c2ddfccd6669e5e6265a8a}{cfinit()} Initialize Configuration Database \end{DoxyCompactList}\item 
+void \hyperlink{group__cflib__core_ga47bfff42f432b3e8b5b9f12b695e60db}{cfexit} (void)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__cflib__core_ga47bfff42f432b3e8b5b9f12b695e60db}{cfexit()} Free allocated memory and reset configuration database and error stack \end{DoxyCompactList}\item 
+int \hyperlink{group__cflib__core_ga6e04a462f9ad273de914af386ff15623}{cfstart} (\hyperlink{struct_c_o_n_f_i_g}{C\-O\-N\-F\-I\-G} $\ast$set, int ac, char $\ast$$\ast$av, char $\ast$help, int mode)
+\begin{DoxyCompactList}\small\item\em \hyperlink{group__cflib__core_ga6e04a462f9ad273de914af386ff15623}{cfstart()} Start Configuration Database (with error reporting and usage message) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsubsection*{Variables}
-\begin{CompactItemize}
+\begin{DoxyCompactItemize}
 \item 
-\hypertarget{group__cflib__core_g7d0fec33ada97c2d7ef78e6c3d83da97}{
-\hyperlink{struct_c_o_n_f_i_g}{CONFIG} $\ast$ \hyperlink{group__cflib__core_g7d0fec33ada97c2d7ef78e6c3d83da97}{\_\-conf} \mbox{[}MAXCONF+1\mbox{]}}
-\label{group__cflib__core_g7d0fec33ada97c2d7ef78e6c3d83da97}
+\hypertarget{group__cflib__core_ga7d0fec33ada97c2d7ef78e6c3d83da97}{\hyperlink{struct_c_o_n_f_i_g}{C\-O\-N\-F\-I\-G} $\ast$ \hyperlink{group__cflib__core_ga7d0fec33ada97c2d7ef78e6c3d83da97}{\-\_\-conf} \mbox{[}\hyperlink{group__cflib__core_ga1662beae23df229341c28d286379e2ad}{M\-A\-X\-C\-O\-N\-F}+1\mbox{]}}\label{group__cflib__core_ga7d0fec33ada97c2d7ef78e6c3d83da97}
 
-\begin{CompactList}\small\item\em Library Internal: CFLIB Configuration Database with at most \hyperlink{group__cflib__core_g1662beae23df229341c28d286379e2ad}{MAXCONF} parameters. \item\end{CompactList}\end{CompactItemize}
+\begin{DoxyCompactList}\small\item\em Library Internal\-: C\-F\-L\-I\-B Configuration Database with at most \hyperlink{group__cflib__core_ga1662beae23df229341c28d286379e2ad}{M\-A\-X\-C\-O\-N\-F} parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsubsection{Detailed Description}
-Basic CFLIB Setup. 
+Basic C\-F\-L\-I\-B Setup. 
+\begin{DoxyItemize}
+\item General Defines
+\item Parsing Levels
+\item Configuration Entries (aka Parameters)
+\item Configuration Database\-: Array of Configuration Entries
+\item Initialization of the Configuration Database
+\item Resetting the Configuration Database 
+\end{DoxyItemize}
 
-\begin{itemize}
-\item General Defines\item Parsing Levels\item Configuration Entries (aka Parameters)\item Configuration Database: Array of Configuration Entries\item Initialization of the Configuration Database\item Resetting the Configuration Database \end{itemize}
+\subsubsection{Define Documentation}
+\hypertarget{group__cflib__core_gaa93f0eb578d23995850d61f7d61c55c1}{\index{Core Features@{Core Features}!F\-A\-L\-S\-E@{F\-A\-L\-S\-E}}
+\index{F\-A\-L\-S\-E@{F\-A\-L\-S\-E}!Core Features@{Core Features}}
+\paragraph[{F\-A\-L\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf F\-A\-L\-S\-E}~0}}\label{group__cflib__core_gaa93f0eb578d23995850d61f7d61c55c1}
 
+
+$<$ T\-R\-U\-E, if not defined 
+
+F\-A\-L\-S\-E, if not defined \hypertarget{group__cflib__core_gaf363125c0f5c520d748d8d0ecaf1af01}{\index{Core Features@{Core Features}!C\-F\-S\-\_\-\-N\-O\-T@{C\-F\-S\-\_\-\-N\-O\-T}}
+\index{C\-F\-S\-\_\-\-N\-O\-T@{C\-F\-S\-\_\-\-N\-O\-T}!Core Features@{Core Features}}
+\paragraph[{C\-F\-S\-\_\-\-N\-O\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf C\-F\-S\-\_\-\-N\-O\-T}~0}}\label{group__cflib__core_gaf363125c0f5c520d748d8d0ecaf1af01}
+
+
+Error Response Modes for \hyperlink{group__cflib__core_ga6e04a462f9ad273de914af386ff15623}{cfstart()} 
+
+Start Mode\-: No action on error 
 
 \subsubsection{Function Documentation}
-\hypertarget{group__cflib__core_ge593ff607f853bd5fc16a16bb6759314}{
-\index{cflib\_\-core@{cflib\_\-core}!cfinit@{cfinit}}
-\index{cfinit@{cfinit}!cflib_core@{cflib\_\-core}}
-\paragraph[{cfinit}]{\setlength{\rightskip}{0pt plus 5cm}int cfinit ({\bf CONFIG} $\ast$ {\em set}, \/  int {\em ac}, \/  char $\ast$$\ast$ {\em av})}\hfill}
-\label{group__cflib__core_ge593ff607f853bd5fc16a16bb6759314}
+\hypertarget{group__cflib__core_ga64fb341565c2ddfccd6669e5e6265a8a}{\index{Core Features@{Core Features}!cfinit@{cfinit}}
+\index{cfinit@{cfinit}!Core Features@{Core Features}}
+\paragraph[{cfinit}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cfinit} (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-O\-N\-F\-I\-G} $\ast$}]{set, }
+\item[{int}]{ac, }
+\item[{char $\ast$$\ast$}]{av}
+\end{DoxyParamCaption}
+)}}\label{group__cflib__core_ga64fb341565c2ddfccd6669e5e6265a8a}
 
 
-Initialize CFLIB Configuration Database and parse possible sources for database entries according to the settings in {\em set\/}. 
+\hyperlink{group__cflib__core_ga64fb341565c2ddfccd6669e5e6265a8a}{cfinit()} Initialize Configuration Database 
 
-\begin{Desc}
-\item[Parameters:]
-\begin{description}
-\item[{\em set}]\hyperlink{config_initializer}{Configuration Initializer} : Pointer to Array of \hyperlink{struct_c_o_n_f_i_g}{CONFIG} items containing parameter name, default value, \hyperlink{config_initializer_parameter_option}{Commandline Option for Parameter} and \hyperlink{group__special__options__mask}{Special Options Mask}\item[{\em ac}]Argument Count from commandline or compatible\item[{\em av}]Argument String array from commandline or compatible structure\end{description}
-\end{Desc}
-\begin{Desc}
-\item[Returns:]\begin{itemize}
-\item {\tt 0} : configuration database initialized successfully \item {\tt $>$0} : Count of non fatal errors \item {\tt $<$0} : Fatal error(s) occurred:\begin{itemize}
-\item \hyperlink{group__errors_g127dc37aea6ba5ef8d9dfe5cb9c629eb}{CFE\_\-MCF} : Memory allocation for Configuration Failed. \item \hyperlink{group__errors_g46fb52baac2d4b91c5169a2918caff5d}{CFE\_\-MEF} : Memory allocation in Error routine Failed. \item any other absolute value is total error count\end{itemize}
-\end{itemize}
-\end{Desc}
-\begin{Desc}
-\item[See also:]\hyperlink{config_levels}{Configuration Parsing Levels and Source/Origin Options} \end{Desc}
-\hypertarget{group__cflib__core_g47bfff42f432b3e8b5b9f12b695e60db}{
-\index{cflib\_\-core@{cflib\_\-core}!cfexit@{cfexit}}
-\index{cfexit@{cfexit}!cflib_core@{cflib\_\-core}}
-\paragraph[{cfexit}]{\setlength{\rightskip}{0pt plus 5cm}void cfexit (void)}\hfill}
-\label{group__cflib__core_g47bfff42f432b3e8b5b9f12b695e60db}
+Initialize C\-F\-L\-I\-B Configuration Database and parse possible sources for database entries according to the settings in {\itshape set\/}.
 
 
-Free allocated memory and reset the configuration database and error stack. 
+\begin{DoxyParams}{Parameters}
+{\em set} & \hyperlink{config_initializer}{Configuration Initializer} \-: Pointer to Array of \hyperlink{struct_c_o_n_f_i_g}{C\-O\-N\-F\-I\-G} items containing parameter name, default value, \hyperlink{config_initializer_parameter_option}{Commandline Option for Parameter} and \hyperlink{group__special__options__mask}{Special Options Mask}\\
+\hline
+{\em ac} & Argument Count from commandline or compatible\\
+\hline
+{\em av} & Argument String array from commandline or compatible structure\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\begin{DoxyItemize}
+\item {\ttfamily 0} \-: configuration database initialized successfully \item {\ttfamily $>$0} \-: Count of non fatal errors \item {\ttfamily $<$0} \-: Fatal error(s) occurred\-:
+\begin{DoxyItemize}
+\item \hyperlink{group__errors_ga127dc37aea6ba5ef8d9dfe5cb9c629eb}{C\-F\-E\-\_\-\-M\-C\-F} \-: Memory allocation for Configuration Failed. 
+\item \hyperlink{group__errors_ga46fb52baac2d4b91c5169a2918caff5d}{C\-F\-E\-\_\-\-M\-E\-F} \-: Memory allocation in Error routine Failed. 
+\item any other absolute value is total error count
+\end{DoxyItemize}\end{DoxyItemize}
 
-This function should be used before a repeated call to \hyperlink{group__cflib__core_ge593ff607f853bd5fc16a16bb6759314}{cfinit()} or \hyperlink{group__cflib__core_gdcf24d678203bd09a0a3e05b8a986c65}{cfstart()}. Furthermore, it may be desired to call \hyperlink{group__cflib__core_g47bfff42f432b3e8b5b9f12b695e60db}{cfexit()} when the configuration database occupies a lot of memory and is no longer needed. \hypertarget{group__cflib__core_gdcf24d678203bd09a0a3e05b8a986c65}{
-\index{cflib\_\-core@{cflib\_\-core}!cfstart@{cfstart}}
-\index{cfstart@{cfstart}!cflib_core@{cflib\_\-core}}
-\paragraph[{cfstart}]{\setlength{\rightskip}{0pt plus 5cm}int cfstart ({\bf CONFIG} $\ast$ {\em setting}, \/  int {\em ac}, \/  char $\ast$$\ast$ {\em av}, \/  char $\ast$ {\em help}, \/  int {\em mode})}\hfill}
-\label{group__cflib__core_gdcf24d678203bd09a0a3e05b8a986c65}
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{config_levels}{Configuration Parsing Levels and Source/\-Origin Options} 
+\end{DoxySeeAlso}
+\hypertarget{group__cflib__core_ga47bfff42f432b3e8b5b9f12b695e60db}{\index{Core Features@{Core Features}!cfexit@{cfexit}}
+\index{cfexit@{cfexit}!Core Features@{Core Features}}
+\paragraph[{cfexit}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cfexit} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__cflib__core_ga47bfff42f432b3e8b5b9f12b695e60db}
 
 
-Setup Configuration Database. 
+\hyperlink{group__cflib__core_ga47bfff42f432b3e8b5b9f12b695e60db}{cfexit()} Free allocated memory and reset configuration database and error stack 
+
+Free allocated memory and reset the configuration database and error stack.
+
+This function should be used before a repeated call to \hyperlink{group__cflib__core_ga64fb341565c2ddfccd6669e5e6265a8a}{cfinit()} or \hyperlink{group__cflib__core_ga6e04a462f9ad273de914af386ff15623}{cfstart()}. Furthermore, it may be desired to call \hyperlink{group__cflib__core_ga47bfff42f432b3e8b5b9f12b695e60db}{cfexit()} when the configuration database occupies a lot of memory and is no longer needed. \hypertarget{group__cflib__core_ga6e04a462f9ad273de914af386ff15623}{\index{Core Features@{Core Features}!cfstart@{cfstart}}
+\index{cfstart@{cfstart}!Core Features@{Core Features}}
+\paragraph[{cfstart}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cfstart} (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-O\-N\-F\-I\-G} $\ast$}]{setting, }
+\item[{int}]{ac, }
+\item[{char $\ast$$\ast$}]{av, }
+\item[{char $\ast$}]{help, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}}\label{group__cflib__core_ga6e04a462f9ad273de914af386ff15623}
+
+
+\hyperlink{group__cflib__core_ga6e04a462f9ad273de914af386ff15623}{cfstart()} Start Configuration Database (with error reporting and usage message) 
+
+Setup Configuration Database.
 
 Check errors and output usage message, if required
 
-\begin{Desc}
-\item[Parameters:]
-\begin{description}
-\item[{\em setting}]pointer to initializer\item[{\em ac}]argument count from commandline or compatible\item[{\em av}]argument string array from comandline or compatible\item[{\em help}]Help/Usage String\begin{itemize}
-\item Name of a \hyperlink{parameter_types_parameter_type_flag}{FLAG Parameter Type} entry to cause a usage message, if flag is set\item Omit, if {\tt NULL} \end{itemize}
-\item[{\em mode}]How to handle \hyperlink{group__cflib__core_ge593ff607f853bd5fc16a16bb6759314}{cfinit()} return: \begin{itemize}
-\item \hyperlink{group__cflib__core_gf363125c0f5c520d748d8d0ecaf1af01}{CFS\_\-NOT} - Start Mode: No action on error.  \item \hyperlink{group__cflib__core_g50bc281400629cfb20e899144d59a3b7}{CFS\_\-ALL} - Start Mode: All error messages.  \item \hyperlink{group__cflib__core_g5663cfeeda02fa9e2fee53b418c5045b}{CFS\_\-NEG} - Start Mode: Only severe errors.  \item \hyperlink{group__cflib__core_g3f535ad957f1836dea64deae798324a5}{CFS\_\-USG} - Start Mode: Usage message if error was negative, error output like \hyperlink{group__cflib__core_g5663cfeeda02fa9e2fee53b418c5045b}{CFS\_\-NEG}.  \item \hyperlink{group__cflib__core_g870957fdc2246ddc767747f8dd645bdf}{CFS\_\-DEBUG} - Start Mode: Output like \hyperlink{group__cflib__core_g3f535ad957f1836dea64deae798324a5}{CFS\_\-USG} plus raw dump of configuration. \end{itemize}
-\end{description}
-\end{Desc}
-\begin{Desc}
-\item[Returns:]\begin{itemize}
-\item {\tt 0} : configuration database has been initialized successfully, no help or usage message required, no fatal errors \item {\tt 1} : no fatal errors occurred, usage message displayed \item {\tt -1} : fatal error(s) occurred \end{itemize}
-\end{Desc}
+
+\begin{DoxyParams}{Parameters}
+{\em setting} & pointer to initializer\\
+\hline
+{\em ac} & argument count from commandline or compatible\\
+\hline
+{\em av} & argument string array from comandline or compatible\\
+\hline
+{\em help} & Help/\-Usage String
+\begin{DoxyItemize}
+\item Name of a \hyperlink{parameter_types_parameter_type_flag}{F\-L\-A\-G Parameter Type} entry to cause a usage message, if flag is set
+\item Omit, if {\ttfamily N\-U\-L\-L} 
+\end{DoxyItemize}\\
+\hline
+{\em mode} & How to handle \hyperlink{group__cflib__core_ga64fb341565c2ddfccd6669e5e6265a8a}{cfinit()} return\-: \begin{DoxyItemize}
+\item \hyperlink{group__cflib__core_gaf363125c0f5c520d748d8d0ecaf1af01}{C\-F\-S\-\_\-\-N\-O\-T} -\/ Error Response Modes for \hyperlink{group__cflib__core_ga6e04a462f9ad273de914af386ff15623}{cfstart()}  \item \hyperlink{group__cflib__core_ga50bc281400629cfb20e899144d59a3b7}{C\-F\-S\-\_\-\-A\-L\-L} -\/ Start Mode\-: All error messages.  \item \hyperlink{group__cflib__core_ga5663cfeeda02fa9e2fee53b418c5045b}{C\-F\-S\-\_\-\-N\-E\-G} -\/ Start Mode\-: Only severe errors.  \item \hyperlink{group__cflib__core_ga3f535ad957f1836dea64deae798324a5}{C\-F\-S\-\_\-\-U\-S\-G} -\/ Start Mode\-: Usage message if error was negative, error output like \hyperlink{group__cflib__core_ga5663cfeeda02fa9e2fee53b418c5045b}{C\-F\-S\-\_\-\-N\-E\-G}.  \item \hyperlink{group__cflib__core_ga870957fdc2246ddc767747f8dd645bdf}{C\-F\-S\-\_\-\-D\-E\-B\-U\-G} -\/ Start Mode\-: Output like \hyperlink{group__cflib__core_ga3f535ad957f1836dea64deae798324a5}{C\-F\-S\-\_\-\-U\-S\-G} plus raw dump of configuration. \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\begin{DoxyItemize}
+\item {\ttfamily 0} \-: configuration database has been initialized successfully, no help or usage message required, no fatal errors \item {\ttfamily 1} \-: no fatal errors occurred, usage message displayed \item {\ttfamily -\/1} \-: fatal error(s) occurred \end{DoxyItemize}
+
+\end{DoxyReturn}

@@ -1,105 +1,111 @@
-.TH "Advanced Features" 3 "31 Jan 2009" "Version Patchlevel 20" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
+.TH "Advanced Features" 3 "Wed Feb 27 2013" "Version Patchlevel 21" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-Advanced Features \- Debugging and Utility Functions.  
-
+Advanced Features \- 
 .PP
+Debugging and Utility Functions\&.  
+
 .SS "Defines"
 
 .in +1c
 .ti -1c
 .RI "#define \fBCFD_CFDUMP\fP   0"
 .br
-.RI "\fIDump Mask Minimal. \fP"
+.RI "\fIDump Mask Minimal\&. \fP"
 .ti -1c
 .RI "#define \fBCFD_LIBHEAD\fP   1"
 .br
-.RI "\fIDump option CFLIB header. \fP"
+.RI "\fIDump option CFLIB header\&. \fP"
 .ti -1c
 .RI "#define \fBCFD_COLHEAD\fP   2"
 .br
-.RI "\fIDump option Column headers. \fP"
+.RI "\fIDump option Column headers\&. \fP"
 .ti -1c
 .RI "#define \fBCFD_SRCFLAGS\fP   4"
 .br
-.RI "\fIDump option Source flag description. \fP"
+.RI "\fIDump option Source flag description\&. \fP"
 .ti -1c
-.RI "#define \fBCFD_DEFAULT\fP   CFD_COLHEAD|CFD_SRCFLAGS"
+.RI "#define \fBCFD_FLAGS\fP   8"
 .br
-.RI "\fIDump Mask Default. \fP"
+.RI "\fIDump option All Flags description\&. \fP"
+.ti -1c
+.RI "#define \fBCFD_DEFAULT\fP   \fBCFD_COLHEAD\fP|\fBCFD_SRCFLAGS\fP"
+.br
+.RI "\fIDump Mask Default\&. \fP"
 .in -1c
 .SS "Functions"
 
 .in +1c
 .ti -1c
-.RI "int \fBcfdump\fP (FILE *fout)"
+.RI "char * \fBcfhomexp\fP (char *name)"
 .br
-.RI "\fIDebugging Function. \fP"
+.RI "\fI\fBcfhomexp()\fP Expand \fC~\fP or \fC~user\fP in parameter content \fP"
 .ti -1c
 .RI "int \fBcfdinichk\fP (\fBCONFIG\fP *set)"
 .br
-.RI "\fIDebugging Function (\fBexperimental\fP). \fP"
+.RI "\fI\fBcfdinichk()\fP Debugging Function (\fBexperimental\fP) \fP"
 .ti -1c
-.RI "char * \fBcfhomexp\fP (char *name)"
+.RI "int \fBcfdump\fP (FILE *fout)"
 .br
-.RI "\fIExpand \fC~\fP or \fC~user\fP in parameter content. \fP"
+.RI "\fI\fBcfdump()\fP Dump CFLIB DB content to \fCfout\fP \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
-Debugging and Utility Functions. 
+Debugging and Utility Functions\&. 
 
-.IP "\(bu" 2
 Modes for \fBcfdump()\fP 
-.PP
-
 .SH "Function Documentation"
 .PP 
-.SS "int cfdump (FILE * fout)"
+.SS "char * \fBcfhomexp\fP (char *name)"
+
 .PP
-Debugging Function. 
+\fBcfhomexp()\fP Expand \fC~\fP or \fC~user\fP in parameter content Expand \fC~\fP or \fC~user\fP in parameter content\&.
 .PP
-Dump CFLIB DB content to \fCfout\fP 
+This function is used by default when reading \fBConfiguration Files\fP and on initialization of parameters with the Special Option Flag \fBCF_EXPHOME\fP set\&.
 .PP
-Configuration options:
+.IP "\(bu" 2
+The environment is checked for the variables \fCLOGNAME\fP or \fCUSER\fP, if no user name is given ('~/\&.\&.\&.\&.')
+.IP "  \(bu" 4
+The \fCpasswd\fP file is searched for the users home directory, if possible
+.IP "  \(bu" 4
+Otherwise the environment variable \fCHOME\fP is checked
+.IP "  \(bu" 4
+If all that fails, \fC~\fP will be omitted, \fC~user\fP will expand to '\&./user'
 .PP
-Set integer bitmask CFLIB variable \fB'CF_DUMPVERB'\fP to
+
 .PP
-.PD 0
-.IP "\(bu" 2
-= \fBCFD_CFDUMP\fP : Minimal 
-.IP "\(bu" 2
-& \fBCFD_LIBHEAD\fP : CFLIB header 
-.IP "\(bu" 2
-& \fBCFD_COLHEAD\fP : Column headers 
-.IP "\(bu" 2
-& \fBCFD_SRCFLAGS\fP : Source flag description 
-.IP "\(bu" 2
-= \fBCFD_DEFAULT\fP : Default dump verbosity
 .PP
 \fBParameters:\fP
 .RS 4
-\fIfout\fP Pointer to File opened for writing or \fCstdout/\fCstderr/\fP.\fP..
+\fIname\fP Entry's name
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
 .PD 0
 .IP "\(bu" 2
-\fC>0\fP : Number of entries in CFLIB DB 
-.IP "\(bu" 2
-\fC<0\fP : An error occurred:
+\fCNULL\fP : an error occurred:
 .IP "  \(bu" 4
-\fBCFE_NCA\fP : No configuration database available 
+No Configuration database Available\&. 
+.IP "  \(bu" 4
+Entry's Content is a NULL Pointer\&. 
+.IP "  \(bu" 4
+Memory allocation for Configuration Failed\&. 
 .PP
 
+.PP
+.PD 0
+.IP "\(bu" 2
+\fC!=NULL\fP : String pointer to original or expanded filename 
 .PP
 .RE
 .PP
 
-.SS "int cfdinichk (\fBCONFIG\fP * set)"
+.SS "int \fBcfdinichk\fP (\fBCONFIG\fP *set)"
+
 .PP
-Debugging Function (\fBexperimental\fP). 
+\fBcfdinichk()\fP Debugging Function (\fBexperimental\fP) Debugging Function (\fBexperimental\fP)
 .PP
 Initialize CFLIB DB using the default given by \fCset\fP, checking validity and plausibility of entries
 .PP
@@ -124,48 +130,47 @@ Make \fBcfdinichk()\fP work as reliable, complete tool with much more testing an
 .RE
 .PP
 
-.SS "char* cfhomexp (char * name)"
+.SS "int \fBcfdump\fP (FILE *fout)"
+
 .PP
-Expand \fC~\fP or \fC~user\fP in parameter content. 
+\fBcfdump()\fP Dump CFLIB DB content to \fCfout\fP Dump CFLIB DB content to \fCfout\fP\&.
 .PP
-This function is used by default when reading \fBConfiguration Files\fP and on initialization of parameters with the Special Option Flag \fBCF_EXPHOME\fP set.
+Debugging Function
 .PP
-.IP "\(bu" 2
-The environment is checked for the variables \fCLOGNAME\fP or \fCUSER\fP, if no user name is given ('~/....')
-.IP "\(bu" 2
-The \fCpasswd\fP file is searched for the users home directory, if possible
-.IP "\(bu" 2
-Otherwise the environment variable \fCHOME\fP is checked
-.IP "\(bu" 2
-If all that fails, \fC~\fP will be omitted, \fC~user\fP will expand to './user'
+Configuration options:
 .PP
+Set integer bitmask CFLIB variable \fB'CF_DUMPVERB'\fP to 
+.PP
+.nf
+         @arg = @ref CFD_CFDUMP  : Minimal
+         @arg & @ref CFD_LIBHEAD : CFLIB header
+         @arg & @ref CFD_COLHEAD : Column headers
+         @arg & @ref CFD_SRCFLAGS : Source flag description
+         @arg = @ref CFD_DEFAULT : Default dump verbosity
+.fi
+.PP
+ 
 .PP
 \fBParameters:\fP
 .RS 4
-\fIname\fP Entry's name
+\fIfout\fP Pointer to File opened for writing or \fCstdout/\fCstderr/\fP\&.\fP\&.\&.
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
 .PD 0
 .IP "\(bu" 2
-\fCNULL\fP : an error occurred:
+\fC>0\fP : Number of entries in CFLIB DB 
+.IP "\(bu" 2
+\fC<0\fP : An error occurred:
 .IP "  \(bu" 4
-No Configuration database Available. 
-.IP "  \(bu" 4
-Entry's Content is a NULL Pointer. 
-.IP "  \(bu" 4
-Memory allocation for Configuration Failed. 
+\fBCFE_NCA\fP : No configuration database available 
 .PP
 
-.PP
-.PD 0
-.IP "\(bu" 2
-\fC!=NULL\fP : String pointer to original or expanded filename 
 .PP
 .RE
 .PP
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for CFLIB - Flexible Configuration Library from the source code.
+Generated automatically by Doxygen for CFLIB - Flexible Configuration Library from the source code\&.

@@ -1,28 +1,32 @@
-The {\bf \char`\"{}Configuration Initializer\char`\"{}} is the major interface between the user program and CFLIB.
+The {\bfseries \char`\"{}\-Configuration Initializer\char`\"{}} is the major interface between the user program and C\-F\-L\-I\-B.
 
-It is an Array of \hyperlink{struct_c_o_n_f_i_g}{CONFIG} items, just as the CFLIB Configuration Database itself.
+It is an Array of \hyperlink{struct_c_o_n_f_i_g}{C\-O\-N\-F\-I\-G} items, just as the C\-F\-L\-I\-B Configuration Database itself.
 
-Every parameter is characterized by:
-
-\begin{itemize}
-\item \hyperlink{config_initializer_parameter_name}{Parameter Name} (\hyperlink{struct_c_o_n_f_i_g_196d63e311e3d1aa79fe4f16f20ce2a5}{CONFIG::name})\end{itemize}
+Every parameter is characterized by\-:
 
 
-\begin{itemize}
-\item \hyperlink{config_initializer_parameter_default}{Parameter Default Value} (\hyperlink{struct_c_o_n_f_i_g_b8cae13203b07fabaa40e407fa8dbdfb}{CONFIG::inhalt})\end{itemize}
+\begin{DoxyItemize}
+\item \hyperlink{config_initializer_parameter_name}{Parameter Name} (\hyperlink{struct_c_o_n_f_i_g_a196d63e311e3d1aa79fe4f16f20ce2a5}{C\-O\-N\-F\-I\-G\-::name})
+\end{DoxyItemize}
 
 
-\begin{itemize}
-\item \hyperlink{config_initializer_parameter_option}{Commandline Option for Parameter} (\hyperlink{struct_c_o_n_f_i_g_60563bd93e85c1ddb8291a2d27a9c472}{CONFIG::option})\end{itemize}
+\begin{DoxyItemize}
+\item \hyperlink{config_initializer_parameter_default}{Parameter Default Value} (\hyperlink{struct_c_o_n_f_i_g_ab8cae13203b07fabaa40e407fa8dbdfb}{C\-O\-N\-F\-I\-G\-::inhalt})
+\end{DoxyItemize}
 
 
-\begin{itemize}
-\item \hyperlink{config_initializer_parameter_flagmask}{Special Option Flags Mask for Parameter} (\hyperlink{struct_c_o_n_f_i_g_b04d08abdf758c0400caaded716f4089}{CONFIG::flag})\end{itemize}
+\begin{DoxyItemize}
+\item \hyperlink{config_initializer_parameter_option}{Commandline Option for Parameter} (\hyperlink{struct_c_o_n_f_i_g_a60563bd93e85c1ddb8291a2d27a9c472}{C\-O\-N\-F\-I\-G\-::option})
+\end{DoxyItemize}
 
 
-An example initializer may look like this: 
+\begin{DoxyItemize}
+\item \hyperlink{config_initializer_parameter_flagmask}{Special Option Flags Mask for Parameter} (\hyperlink{struct_c_o_n_f_i_g_ab04d08abdf758c0400caaded716f4089}{C\-O\-N\-F\-I\-G\-::flag})
+\end{DoxyItemize}
 
-\begin{Code}\begin{verbatim} const CONFIG initializer[] = {
+An example initializer may look like this\-: 
+\begin{DoxyCode}
+ const CONFIG initializer[] = {
        // name        default        option  flag
      { "SPI_PROFILE", "~/.spi.cnf",  'c',    CF_SETFILE|CF_SET_ENV,     },
      { "SPI_SYSCONF", "/etc/spi.cnf",' ',    CF_SYS_SETFILE|CF_NOSAVE,  },
@@ -39,34 +43,39 @@ An example initializer may look like this:
      { "CYCLES",      "2009",        '2',    CF_INT|CF_NO_OPT_ARG,      },
      { "CF_DUMPVERB", CFD_COLHEAD,   ' ',    CF_INT|CF_NOSAVE|CF_LAST,  },
  };
-\end{verbatim}
-\end{Code}
+\end{DoxyCode}
 
 
+The Configuration Initializer controls the behavior and actions of all {\bfseries cf$\ast$}() functions, starting with the control of \hyperlink{config_levels_initialization_process}{Parsing Levels in the Initialization Process}.\hypertarget{config_initializer_parameter_name}{}\subsection{Parameter Name}\label{config_initializer_parameter_name}
+Every entry in the initializer must have a name, that is a non-\/empty string, which is searched for in the environment and in the configuration files and which is used as an argument to the inquiry functions. Parameters that have a name beginning with {\bfseries \char`\"{}\-C\-F\-\_\-\char`\"{}} may have special meaning, see \hyperlink{parameter_types_cflib_parameters}{C\-F\-L\-I\-B Parameters}.\hypertarget{config_initializer_parameter_default}{}\subsection{Parameter Default Value}\label{config_initializer_parameter_default}
+As the default content of an entry you can specify a {\ttfamily N\-U\-L\-L} pointer or a string, which may be empty. If \hyperlink{group__special__options__mask_ga1d1f1d1b6eac6b5d9970102318ab2667}{C\-F\-\_\-\-F\-L\-A\-G} is set for that entry you should use the \hyperlink{group__cflib__core_ga355c714f2912ac336b8b03468c978d8c}{C\-F\-\_\-\-F\-L\-A\-G\-\_\-\-O\-N} or \hyperlink{group__cflib__core_ga7010abac2c80c121772da4d9c03332ee}{C\-F\-\_\-\-F\-L\-A\-G\-\_\-\-O\-F\-F} macros.\hypertarget{config_initializer_parameter_option}{}\subsection{Commandline Option for Parameter}\label{config_initializer_parameter_option}
+You can control whether and how an entry's content can be set from the Commandline by setting one of the following {\bfseries \char`\"{}\-Option Specifier\char`\"{}} Characters (and Special Option Flags where indicated)\-:
 
-The Configuration Initializer controls the behavior and actions of all {\bf cf$\ast$}() functions, starting with the control of \hyperlink{config_levels_initialization_process}{Parsing Levels in the Initialization Process}.\hypertarget{config_initializer_parameter_name}{}\subsection{Parameter Name}\label{config_initializer_parameter_name}
-Every entry in the initializer must have a name, that is a non-empty string, which is searched for in the environment and in the configuration files and which is used as an argument to the inquiry functions. Parameters that have a name beginning with {\bf \char`\"{}CF\_\-\char`\"{}} may have special meaning, see \hyperlink{parameter_types_cflib_parameters}{CFLIB Parameters}.\hypertarget{config_initializer_parameter_default}{}\subsection{Parameter Default Value}\label{config_initializer_parameter_default}
-As the default content of an entry you can specify a {\tt NULL} pointer or a string, which may be empty. If \hyperlink{group__special__options__mask_g1d1f1d1b6eac6b5d9970102318ab2667}{CF\_\-FLAG} is set for that entry you should use the \hyperlink{group__cflib__core_g355c714f2912ac336b8b03468c978d8c}{CF\_\-FLAG\_\-ON} or \hyperlink{group__cflib__core_g7010abac2c80c121772da4d9c03332ee}{CF\_\-FLAG\_\-OFF} macros.\hypertarget{config_initializer_parameter_option}{}\subsection{Commandline Option for Parameter}\label{config_initializer_parameter_option}
-You can control whether and how an entry's content can be set from the Commandline by setting one of the following {\bf \char`\"{}Option Specifier\char`\"{}} Characters (and Special Option Flags where indicated):
-
-\begin{itemize}
-\item '{\em  \/}' (blank)\begin{itemize}
-\item No Commandline Option for this Parameter\end{itemize}
-\end{itemize}
-\begin{itemize}
-\item '{\em c\/}' ({\em c\/} = any \char`\"{}normal\char`\"{} character)\begin{itemize}
-\item Looks for '-c $<${\em string$>$'\/} on the Commandline\item Looks for '-c$<${\em string$>$'\/} on the Commandline, if Flag \hyperlink{group__special__options__mask_g9e526dae88bf6803772107ff283637b5}{CF\_\-CONCAT} is set in the Special Options Mask\item Looks for '-c$<${\em char$>$'\/} on the Commandline, if Flag \hyperlink{group__special__options__mask_g1d1f1d1b6eac6b5d9970102318ab2667}{CF\_\-FLAG} is set in the Special Options Mask\end{itemize}
-\end{itemize}
-\begin{itemize}
-\item '{\em \#\/}' ({\em \#\/} = a positive number = 1, 2, 3, ...)\begin{itemize}
-\item Looks for the 1st, 2nd, 3rd, ... '$<${\em string$>$'\/} that is not part of an option, if Flag \hyperlink{group__special__options__mask_g97d17b070dac10c14d3930c58bfba76f}{CF\_\-NO\_\-OPT\_\-ARG} is set in the Special Options Mask\end{itemize}
-\end{itemize}
+\begin{DoxyItemize}
+\item '{\itshape  \/}' (blank)
+\begin{DoxyItemize}
+\item No Commandline Option for this Parameter
+\end{DoxyItemize}\end{DoxyItemize}
+\begin{DoxyItemize}
+\item '{\itshape c\/}' ({\itshape c\/} = any \char`\"{}normal\char`\"{} character)
+\begin{DoxyItemize}
+\item Looks for '-\/c $<${\itshape string$>$'\/} on the Commandline
+\item Looks for '-\/c$<${\itshape string$>$'\/} on the Commandline, if Flag \hyperlink{group__special__options__mask_ga9e526dae88bf6803772107ff283637b5}{C\-F\-\_\-\-C\-O\-N\-C\-A\-T} is set in the Special Options Mask
+\item Looks for '-\/c$<${\itshape char$>$'\/} on the Commandline, if Flag \hyperlink{group__special__options__mask_ga1d1f1d1b6eac6b5d9970102318ab2667}{C\-F\-\_\-\-F\-L\-A\-G} is set in the Special Options Mask
+\end{DoxyItemize}\end{DoxyItemize}
+\begin{DoxyItemize}
+\item '{\itshape \#\/}' ({\itshape \#\/} = a positive number = 1, 2, 3, ...)
+\begin{DoxyItemize}
+\item Looks for the 1st, 2nd, 3rd, ... '$<${\itshape string$>$'\/} that is not part of an option, if Flag \hyperlink{group__special__options__mask_ga97d17b070dac10c14d3930c58bfba76f}{C\-F\-\_\-\-N\-O\-\_\-\-O\-P\-T\-\_\-\-A\-R\-G} is set in the Special Options Mask
+\end{DoxyItemize}\end{DoxyItemize}
 \hypertarget{config_initializer_parameter_flagmask}{}\subsection{Special Option Flags Mask for Parameter}\label{config_initializer_parameter_flagmask}
-Most of the magic happens here! ;-) The {\bf \char`\"{}Special Options Mask\char`\"{}} is a Bitmask of type \hyperlink{group__special__options__mask_g4854f1596d5c6e0604a478fa9a2e23f0}{CFFLAGTYP} in Configuration Entry Structure Member \hyperlink{struct_c_o_n_f_i_g_b04d08abdf758c0400caaded716f4089}{CONFIG::flag} containing Type, Instruction and Information Flags for a Parameter.  See \hyperlink{group__special__options__mask}{Special Options Mask} for details.
+Most of the magic happens here! ;-\/) The {\bfseries \char`\"{}\-Special Options Mask\char`\"{}} is a Bitmask of type \hyperlink{group__special__options__mask_ga4854f1596d5c6e0604a478fa9a2e23f0}{C\-F\-F\-L\-A\-G\-T\-Y\-P} in Configuration Entry Structure Member \hyperlink{struct_c_o_n_f_i_g_ab04d08abdf758c0400caaded716f4089}{C\-O\-N\-F\-I\-G\-::flag} containing Type, Instruction and Information Flags for a Parameter.  See \hyperlink{group__special__options__mask}{Special Options Mask} for details.
 
-\begin{Desc}
-\item[See also:]\hyperlink{parameter_types}{Types of Parameters} 
+\begin{DoxySeeAlso}{See also}
+\hyperlink{parameter_types}{Types of Parameters} 
 
-\hyperlink{config_levels}{Configuration Parsing Levels and Source/Origin Options}\end{Desc}
-\begin{Desc}
-\item[Attention:]The last entry in the initializer list must have the \hyperlink{group__special__options__mask_ga4d82cea91ede4aee78594417894e368}{CF\_\-LAST} Flag set! \end{Desc}
+\hyperlink{config_levels}{Configuration Parsing Levels and Source/\-Origin Options}
+\end{DoxySeeAlso}
+\begin{DoxyAttention}{Attention}
+The last entry in the initializer list must have the \hyperlink{group__special__options__mask_gaa4d82cea91ede4aee78594417894e368}{C\-F\-\_\-\-L\-A\-S\-T} Flag set! 
+\end{DoxyAttention}

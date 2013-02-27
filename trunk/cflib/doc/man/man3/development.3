@@ -1,43 +1,45 @@
-.TH "development" 3 "31 Jan 2009" "Version Patchlevel 20" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
+.TH "development" 3 "Wed Feb 27 2013" "Version Patchlevel 21" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 development \- Compilation and Development 
 .SH "Library Versions"
 .PP
-There is no strict versioning of the library. A Library \fB'Patchlevel'\fP is defined as an Integer Number counting \fB'Major Versions'\fP. See \fBcfgetvers()\fP.
+There is no strict versioning of the library\&. A Library \fB'Patchlevel'\fP is defined as an Integer Number counting \fB'Major Versions'\fP\&. See \fBcfgetvers()\fP\&.
 .PP
-The individual source files contain more detailed version information and they all support a file version identifier \fC$\fIId$\fP for\fP automatic update by SVN and other Source Management Tools. See \fBcfgetsubvers()\fP.
+The individual source files contain more detailed version information and they all support a file version identifier \fC$\fIId$\fP for\fP automatic update by SVN and other Source Management Tools\&. See \fBcfgetsubvers()\fP\&.
 .SH "Platforms"
 .PP
-The library source code is fairly simple ANSI C code and should compile and link without problems on most platforms. Most of the development has been done with different versions of the \fB'GNU C Compiler'\fP \fCgcc\fP and related tools. All source modules compile free of errors and warnings with:
+The library source code is fairly simple ANSI C code and should compile and link without problems on most platforms\&. Most of the development has been done with different versions of the \fB'GNU C Compiler'\fP \fCgcc\fP and related tools\&. All source modules compile free of errors and warnings with:
 .PP
-\fC'gcc -pedantic -pedantic-errors -Wall -Werror -ansi ...'\fP 
+\fC'gcc -pedantic -pedantic-errors -Wall -Werror -ansi \&.\&.\&.'\fP 
 .PP
-So, if you have \fCgcc\fP, use it! Any other ANSI C compiler should also work, at least after minimal adaption to the library setup, see \fBSystem and Compiler dependent Defines\fP.
+So, if you have \fCgcc\fP, use it! Any other ANSI C compiler should also work, at least after minimal adaption to the library setup, see \fBSystem and Compiler dependent Defines\fP\&.
 .PP
 until now the library has been built and used under the following setups:
 .PP
 .IP "\(bu" 2
 gcc, Linux, Intel PC
-.IP "\(bu" 2
+.IP "  \(bu" 4
 gcc, MinGW, MS Windows NT/XP, Intel PC
-.IP "\(bu" 2
+.IP "  \(bu" 4
 gcc, MinT/TOS Atari ST
-.IP "\(bu" 2
+.IP "  \(bu" 4
 cc, Unix, IBM AIX
-.IP "\(bu" 2
+.IP "  \(bu" 4
 cc, Unix, SGI
-.IP "\(bu" 2
+.IP "  \(bu" 4
 MSC, MS DOS/Windows Intel PC
-.IP "\(bu" 2
+.IP "  \(bu" 4
 MSC, OS/2 Intel PC
+.PP
+
 .PP
 .SH "Building the Library"
 .PP
 Compiling the source modules and building the library should be a 'straight forward' task:
 .IP "\(bu" 2
-Make all objects from C sources, including \fI\fBcf.h\fP\fP and \fIcflib.h\fP 
+Make all objects from C sources, including \fI\fBcf\&.h\fP\fP and \fIcflib\&.h\fP 
 .IP "\(bu" 2
 Link the objects with \fCar\fP or another tools to get a library executable
 .PP
@@ -50,76 +52,86 @@ Link the objects with \fCar\fP or another tools to get a library executable
 .SH "Binaries and Executables"
 .PP
 .IP "\(bu" 2
-The library project should be seen as 'pure' source/text code on distribution. Compile a library executable with a C compiler of your choice with appropriate setup for your platform.
+The library project should be seen as 'pure' source/text code on distribution\&. Compile a library executable with a C compiler of your choice with appropriate setup for your platform\&.
 .PP
 .PP
 .IP "\(bu" 2
-Binary and executable versions of the library found in the project tree should be seen as examples that worked under one specific setup but have not been intensively tested and may even not be up to date. If it works for you, feel free to use them. If you build a library executable which is not too ;-) dependent on a specific setup, you can include it as example in the project tree.
+Binary and executable versions of the library found in the project tree should be seen as examples that worked under one specific setup but have not been intensively tested and may even not be up to date\&. If it works for you, feel free to use them\&. If you build a library executable which is not too ;-) dependent on a specific setup, you can include it as example in the project tree\&.
 .PP
 .SH "Minimal CFLIB Replacement"
 .PP
-In project directory \fIsrc/examples\fP you may find a source file \fIcf_minimal.c\fP. You can adapt this example to your need and include it in your C source list on compilation instead of linking the library executable. This makes user programs that use CFLIB functions independent of the library at the price of very reduced functionality, which may be desirable for specific executables or if you have problems with building the library on the target platform.
+In project directory \fIsrc/examples\fP you may find a source file \fIcf_minimal\&.c\fP\&. You can adapt this example to your need and include it in your C source list on compilation instead of linking the library executable\&. This makes user programs that use CFLIB functions independent of the library at the price of very reduced functionality, which may be desirable for specific executables or if you have problems with building the library on the target platform\&.
 .SH "System and Compiler dependent Defines"
 .PP
 The following Defines are used in the library source to decide whether to include certain header files and use certain functions or defines:
 .PP
 .IP "\(bu" 2
-\fB_HAS_PWD\fP : If defined, include \fB<pwd.h>\fP and make use of function \fBgetpwnam()\fP in \fBcfhomexp()\fP to find a user's home directory
-.IP "\(bu" 2
+\fB_HAS_PWD\fP : If defined, include \fB<pwd\&.h>\fP and make use of function \fBgetpwnam()\fP in \fBcfhomexp()\fP to find a user's home directory
+.IP "  \(bu" 4
 \fB_HAS_ISATTY\fP : If defined, use function \fBisatty()\fP to determine whether a stream is a terminal (for interactive query/input) in function \fBIsATerminal()\fP
-.IP "\(bu" 2
-\fB_HAS_LIMITS\fP : If defined, include \fB<limits.h>\fP and use \fBPATH_MAX\fP defined therein in function \fBFindFile()\fP
+.IP "  \(bu" 4
+\fB_HAS_LIMITS\fP : If defined, include \fB<limits\&.h>\fP and use \fBPATH_MAX\fP defined therein in function \fBFindFile()\fP
+.PP
+
 .PP
 .PP
 The following Defines can be used to control, which features or functions shall be excluded from the library build:
 .PP
 .IP "\(bu" 2
-\fB_CF_NOFINDFILE\fP : Function \fBFindFile()\fP, component findfile.c
-.IP "\(bu" 2
-\fB_CF_NOSAVING\fP : Functions \fBcfsave()\fP and \fBBackupFile()\fP, component cfwrite.c
-.IP "\(bu" 2
-\fB_CF_NODEBUGGING\fP : Functions \fBcfdinichk()\fP and \fBcfdump()\fP, component cfdebug.c
+\fB_CF_NOFINDFILE\fP : Function \fBFindFile()\fP, component findfile\&.c
+.IP "  \(bu" 4
+\fB_CF_NOSAVING\fP : Functions \fBcfsave()\fP and \fBBackupFile()\fP, component cfwrite\&.c
+.IP "  \(bu" 4
+\fB_CF_NODEBUGGING\fP : Functions \fBcfdinichk()\fP and \fBcfdump()\fP, component cfdebug\&.c
+.PP
+
 .PP
 .PP
 The following Defines can be used to switch on certain Debug Features:
 .PP
 .IP "\(bu" 2
 \fBDEBUG_DINICHK\fP : Debug \fBcfdinichk()\fP
-.IP "\(bu" 2
+.IP "  \(bu" 4
 \fBDEBUG_ERROR\fP : Debug \fBcfputerr()\fP
-.IP "\(bu" 2
+.IP "  \(bu" 4
 \fBDEBUG_TIME\fP : Debug \fBcfputtime()\fP
-.IP "\(bu" 2
+.IP "  \(bu" 4
 \fBDEBUG_NOSAVE\fP : Debug \fBcfsave()\fP
-.IP "\(bu" 2
+.IP "  \(bu" 4
 \fBDEBUG_BACKUP\fP : Debug \fBBackupFile()\fP
-.IP "\(bu" 2
+.IP "  \(bu" 4
 \fBDEBUG_FINDFILE\fP : Debug \fBFindFile()\fP usage in \fBcfinit()\fP
-.IP "\(bu" 2
+.IP "  \(bu" 4
 \fBDEBUG_FORM\fP : Debug \fBcfform()\fP
+.PP
+
 .PP
 .PP
 The following Defines can be used to switch on certain other Features:
 .PP
 .IP "\(bu" 2
 \fB_PREFER_BACKSLASH\fP : Prefer Backslash as Directory Separator in function \fBFindFile()\fP
-.IP "\(bu" 2
+.IP "  \(bu" 4
 \fB_PATHSEP_SEMICOLON\fP : Use Semicolon as Path Separator in function \fBFindFile()\fP, usually on systems where a ':' can appear in a directory path
-.IP "\(bu" 2
+.IP "  \(bu" 4
 \fB_PATHSEP_COMMA\fP : Test Comma as Alternative Path Separator in function \fBFindFile()\fP
-.IP "\(bu" 2
+.IP "  \(bu" 4
 \fB_CF_RESID_FREE\fP : Remove residual arguments after having read them all in \fBcfgetent()\fP?
+.PP
+
 .PP
 .PP
 The following Platform dependent Defines are used in the library code:
 .PP
 .IP "\(bu" 2
 \fBunx\fP 
-.IP "\(bu" 2
+.IP "  \(bu" 4
 \fBlinux\fP 
-.IP "\(bu" 2
+.IP "  \(bu" 4
 \fBatarist\fP 
-.IP "\(bu" 2
-\fB__MINT__\fP 
+.IP "  \(bu" 4
+\fB\fBMINT\fP\fP 
+.PP
+
 .PP
 

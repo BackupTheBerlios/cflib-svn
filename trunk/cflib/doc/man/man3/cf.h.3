@@ -1,10 +1,11 @@
-.TH "include/cf.h" 3 "31 Jan 2009" "Version Patchlevel 20" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
+.TH "include/cf.h" 3 "Wed Feb 27 2013" "Version Patchlevel 21" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-include/cf.h \- C Header File for CFLIB Flexible Configuration Library.  
-
+include/cf.h \- 
 .PP
+C Header File for CFLIB Flexible Configuration Library\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -14,483 +15,491 @@ include/cf.h \- C Header File for CFLIB Flexible Configuration Library.
 .ti -1c
 .RI "struct \fBCONFIG\fP"
 .br
-.RI "\fICFLIB Configuration Database Entry. \fP"
+.RI "\fICFLIB Configuration Database Entry\&. \fP"
 .in -1c
 .SS "Defines"
 
 .in +1c
 .ti -1c
-.RI "#define \fBPatchlevel\fP   '20'"
+.RI "#define \fBPatchlevel\fP   '21'"
 .br
-.RI "\fICFLIB Identification. \fP"
+.RI "\fICFLIB Identification\&. \fP"
 .ti -1c
 .RI "#define \fBMAXCONF\fP   4096"
 .br
-.RI "\fIMaximum number of entries in configuration database. \fP"
+.RI "\fIMaximum number of entries in configuration database\&. \fP"
 .ti -1c
 .RI "#define \fBCF_MAXERRSTR\fP   512"
 .br
-.RI "\fIMaximum string length for error message. \fP"
+.RI "\fIMaximum string length for error message\&. \fP"
 .ti -1c
 .RI "#define \fBCF_MAXLINE\fP   20480"
 .br
-.RI "\fIMaximum string length for setfile and form parsing. \fP"
+.RI "\fIMaximum string length for setfile and form parsing\&. \fP"
 .ti -1c
 .RI "#define \fBCF_MAXQLINE\fP   512"
 .br
-.RI "\fIMaximum string length for query. \fP"
+.RI "\fIMaximum string length for query\&. \fP"
 .ti -1c
 .RI "#define \fBCF_MAXUSAGE\fP   1024"
 .br
-.RI "\fIMaximum string length for usage string. \fP"
+.RI "\fIMaximum string length for usage string\&. \fP"
 .ti -1c
 .RI "#define \fBCF_USG_DEFCOLS\fP   80"
 .br
-.RI "\fIDefault terminal width for usage string. \fP"
+.RI "\fIDefault terminal width for usage string\&. \fP"
 .ti -1c
 .RI "#define \fBCF_MAXTIMEBUF\fP   256"
 .br
-.RI "\fIBuffer size for time and day. \fP"
-.ti -1c
-.RI "#define \fBTRUE\fP   1"
-.br
-.RI "\fITRUE, if not defined. \fP"
+.RI "\fIBuffer size for time and day\&. \fP"
 .ti -1c
 .RI "#define \fBFALSE\fP   0"
 .br
-.RI "\fIFALSE, if not defined. \fP"
+.RI "\fI< TRUE, if not defined \fP"
 .ti -1c
 .RI "#define \fBNULL\fP   (void *)(0L)"
 .br
-.RI "\fINULL, if not defined. \fP"
+.RI "\fINULL, if not defined\&. \fP"
 .ti -1c
 .RI "#define \fBCF_FLAG_ON\fP   '\\1'"
 .br
-.RI "\fIFlag is set. \fP"
+.RI "\fIFlag is set\&. \fP"
 .ti -1c
 .RI "#define \fBCF_FLAG_OFF\fP   ''"
 .br
-.RI "\fIFlag is not set. \fP"
+.RI "\fIFlag is not set\&. \fP"
 .ti -1c
 .RI "#define \fBCF_NO_OPTION\fP   ' '"
 .br
-.RI "\fIOption is not set. \fP"
+.RI "\fIOption is not set\&. \fP"
 .ti -1c
 .RI "#define \fBTABLEN\fP   8"
 .br
-.RI "\fITAB length. \fP"
+.RI "\fITAB length\&. \fP"
 .ti -1c
 .RI "#define \fBCFP_PUT\fP   0"
 .br
-.RI "\fIFunction Call or Automatic Initialization. \fP"
+.RI "\fIFunction Call or Automatic Initialization\&. \fP"
 .ti -1c
 .RI "#define \fBCFP_ARG\fP   1"
 .br
-.RI "\fICommandline. \fP"
+.RI "\fICommandline\&. \fP"
 .ti -1c
 .RI "#define \fBCFP_ENV\fP   2"
 .br
-.RI "\fIEnvironment. \fP"
+.RI "\fIEnvironment\&. \fP"
 .ti -1c
 .RI "#define \fBCFP_PRIV\fP   3"
 .br
-.RI "\fIPrivate Configuration File. \fP"
+.RI "\fIPrivate Configuration File\&. \fP"
 .ti -1c
 .RI "#define \fBCFP_SYS\fP   4"
 .br
-.RI "\fISystem Configuration File. \fP"
+.RI "\fISystem Configuration File\&. \fP"
 .ti -1c
 .RI "#define \fBCFP_DEF\fP   5"
 .br
-.RI "\fIBuilt-in Default. \fP"
+.RI "\fIBuilt-in Default\&. \fP"
 .ti -1c
 .RI "#define \fBCFP_QRY\fP   6"
 .br
-.RI "\fIStandard Input Channel. \fP"
+.RI "\fIStandard Input Channel\&. \fP"
 .ti -1c
 .RI "#define \fBCFP_RESERVED\fP   7"
 .br
-.RI "\fIReserved for Subprojects. \fP"
+.RI "\fIReserved for Subprojects\&. \fP"
 .ti -1c
 .RI "#define \fBCF_DEF_VARDELIM\fP   '$()'"
 .br
-.RI "\fIDefault variable delimiter for \fBcfform()\fP. \fP"
+.RI "\fIDefault variable delimiter for \fBcfform()\fP \fP"
 .ti -1c
 .RI "#define \fBCF_MAXINC\fP   8"
 .br
-.RI "\fIMaximum number of nested includes for \fBcfform()\fP. \fP"
+.RI "\fIMaximum number of nested includes for \fBcfform()\fP \fP"
 .ti -1c
 .RI "#define \fBCF_BACKBUFLEN\fP   102400"
 .br
-.RI "\fIFile copy buffer for \fBBackupFile()\fP. \fP"
+.RI "\fIFile copy buffer for \fBBackupFile()\fP \fP"
 .ti -1c
 .RI "#define \fBCF_LAST\fP   0x0001"
 .br
-.RI "\fILast entry in settings array. \fP"
+.RI "\fILast entry in settings array\&. \fP"
 .ti -1c
 .RI "#define \fBCF_PATH\fP   0x0002"
 .br
-.RI "\fISearch Path (for FindFile feature). \fP"
+.RI "\fISearch Path (for FindFile feature) \fP"
 .ti -1c
 .RI "#define \fBCF_SETFILE\fP   0x0004"
 .br
-.RI "\fIEntry is Private Configuration File. \fP"
+.RI "\fIEntry is Private Configuration File\&. \fP"
 .ti -1c
 .RI "#define \fBCF_SYS_SETFILE\fP   0x0008"
 .br
-.RI "\fIEntry is System Configuration File. \fP"
+.RI "\fIEntry is System Configuration File\&. \fP"
 .ti -1c
 .RI "#define \fBCF_SECTION\fP   0x0010"
 .br
-.RI "\fISection in Configuration File. \fP"
+.RI "\fISection in Configuration File\&. \fP"
 .ti -1c
 .RI "#define \fBCF_PRGNAME\fP   0x0020"
 .br
-.RI "\fIRunning Program's Name from commandline. \fP"
+.RI "\fIRunning Program's Name from commandline\&. \fP"
 .ti -1c
 .RI "#define \fBCF_TIME\fP   0x0040"
 .br
-.RI "\fITime string. \fP"
+.RI "\fITime string\&. \fP"
 .ti -1c
 .RI "#define \fBCF_DATE\fP   0x0080"
 .br
-.RI "\fIDate string. \fP"
+.RI "\fIDate string\&. \fP"
 .ti -1c
 .RI "#define \fBCF_SET_PUT\fP   0x0100"
 .br
-.RI "\fISource: Function Call. \fP"
+.RI "\fISource: Function Call\&. \fP"
 .ti -1c
 .RI "#define \fBCF_SET_ARG\fP   0x0200"
 .br
-.RI "\fISource: Commandline Argument. \fP"
+.RI "\fISource: Commandline Argument\&. \fP"
 .ti -1c
 .RI "#define \fBCF_SET_ENV\fP   0x0400"
 .br
-.RI "\fISource: Environment Variable. \fP"
+.RI "\fISource: Environment Variable\&. \fP"
 .ti -1c
 .RI "#define \fBCF_SET_PRIV\fP   0x0800"
 .br
-.RI "\fISource: Private Configuration File. \fP"
+.RI "\fISource: Private Configuration File\&. \fP"
 .ti -1c
 .RI "#define \fBCF_SET_SYS\fP   0x1000"
 .br
-.RI "\fISource: System Configuration File. \fP"
+.RI "\fISource: System Configuration File\&. \fP"
 .ti -1c
 .RI "#define \fBCF_SET_DEF\fP   0x2000"
 .br
-.RI "\fISource: Built-in Default. \fP"
+.RI "\fISource: Built-in Default\&. \fP"
 .ti -1c
 .RI "#define \fBCF_SET_QRY\fP   0x4000"
 .br
-.RI "\fISource: Interactive Terminal Input. \fP"
+.RI "\fISource: Interactive Terminal Input\&. \fP"
 .ti -1c
 .RI "#define \fBCF_NO_OPT_ARG\fP   0x10000"
 .br
-.RI "\fICommandline argument not followig an option. \fP"
+.RI "\fICommandline argument not following an option\&. \fP"
 .ti -1c
 .RI "#define \fBCF_CONCAT\fP   0x20000"
 .br
-.RI "\fIArgument is concatenated to option. \fP"
+.RI "\fIArgument is concatenated to option\&. \fP"
 .ti -1c
 .RI "#define \fBCF_IGN_ENV\fP   0x40000"
 .br
-.RI "\fIDo not check environment for variable. \fP"
+.RI "\fIDo not check environment for variable\&. \fP"
 .ti -1c
 .RI "#define \fBCF_QUERY\fP   0x80000"
 .br
-.RI "\fIAsk the user for unresolved item after configuration parsing. \fP"
+.RI "\fIAsk the user for unresolved item after configuration parsing\&. \fP"
 .ti -1c
 .RI "#define \fBCF_STR\fP   0x100000"
 .br
-.RI "\fIEntry is String. \fP"
+.RI "\fIEntry is String\&. \fP"
 .ti -1c
 .RI "#define \fBCF_INT\fP   0x200000"
 .br
-.RI "\fIEntry is Integer. \fP"
+.RI "\fIEntry is Integer\&. \fP"
 .ti -1c
 .RI "#define \fBCF_FLAG\fP   0x400000"
 .br
-.RI "\fIEntry is Flag. \fP"
+.RI "\fIEntry is Flag\&. \fP"
 .ti -1c
 .RI "#define \fBCF_REAL\fP   0x800000"
 .br
-.RI "\fIEntry is Float. \fP"
+.RI "\fIEntry is Float\&. \fP"
 .ti -1c
 .RI "#define \fBCF_FINDFILE\fP   0x1000000"
 .br
-.RI "\fIEntry is filename to be searched for in the path. \fP"
+.RI "\fIEntry is filename to be searched for in the path\&. \fP"
 .ti -1c
 .RI "#define \fBCF_MUST\fP   0x2000000"
 .br
-.RI "\fIEntry may not be empty (\fCNULL\fP or ''). \fP"
+.RI "\fIEntry may not be empty (\fCNULL\fP or '') \fP"
 .ti -1c
 .RI "#define \fBCF_RESID\fP   0x4000000"
 .br
-.RI "\fIResidual/additional entry from commandline/setfile/cfput. \fP"
+.RI "\fIResidual/additional entry from commandline/setfile/cfput\&. \fP"
 .ti -1c
 .RI "#define \fBCF_USAGE\fP   0x8000000"
 .br
-.RI "\fIUsage Message format string. \fP"
+.RI "\fIUsage Message format string\&. \fP"
 .ti -1c
 .RI "#define \fBCF_EXPHOME\fP   0x10000000"
 .br
-.RI "\fIExpand Home Directory. \fP"
+.RI "\fIExpand Home Directory\&. \fP"
 .ti -1c
 .RI "#define \fBCF_MALLOC\fP   0x20000000"
 .br
-.RI "\fISpace for entry's content was mallocated. \fP"
+.RI "\fISpace for entry's content was mallocated\&. \fP"
 .ti -1c
 .RI "#define \fBCF_FORCED\fP   0x40000000"
 .br
-.RI "\fISetting has been forced (already). \fP"
+.RI "\fISetting has been forced (already) \fP"
 .ti -1c
 .RI "#define \fBCF_NOSAVE\fP   0x80000000"
 .br
-.RI "\fIDon't include in savefile / mark entry. \fP"
+.RI "\fIDon't include in savefile / mark entry\&. \fP"
 .ti -1c
-.RI "#define \fBCF_SRC\fP   (CF_INT|CF_FLAG)"
+.RI "#define \fBCF_SRC\fP   (\fBCF_INT\fP|\fBCF_FLAG\fP)"
 .br
-.RI "\fIType for source/origin inquiry. \fP"
+.RI "\fIType for source/origin inquiry\&. \fP"
 .ti -1c
-.RI "#define \fBCF_FLGINQ\fP   (CF_STR|CF_FLAG)"
+.RI "#define \fBCF_FLGINQ\fP   (\fBCF_STR\fP|\fBCF_FLAG\fP)"
 .br
-.RI "\fIType for options mask inquiry. \fP"
+.RI "\fIType for options mask inquiry\&. \fP"
 .ti -1c
-.RI "#define \fBCF_TD\fP   (CF_DATE|CF_TIME)"
+.RI "#define \fBCF_DOUBLE\fP   (\fBCF_REAL\fP|\fBCF_FLAG\fP)"
 .br
-.RI "\fIDate or Time entry. \fP"
+.RI "\fIType for double inquiry\&. \fP"
+.ti -1c
+.RI "#define \fBCF_TD\fP   (\fBCF_DATE\fP|\fBCF_TIME\fP)"
+.br
+.RI "\fIDate or Time entry\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_INIT\fP   0"
 .br
-.RI "\fIINITialize error input. \fP"
+.RI "\fIINITialize error input\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_OK\fP   0"
 .br
-.RI "\fINo error / everything OKay. \fP"
+.RI "\fINo error / everything OKay\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_NEP\fP   1"
 .br
-.RI "\fINew Entry successfully Put into DB. \fP"
+.RI "\fINew Entry successfully Put into DB\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_EXIT\fP   1"
 .br
-.RI "\fIFinish error input. \fP"
+.RI "\fIFinish error input\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_ORA\fP   20"
 .br
-.RI "\fIOption Requires an Argument. \fP"
+.RI "\fIOption Requires an Argument\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_UKO\fP   25"
 .br
-.RI "\fIUnKnown Option. \fP"
+.RI "\fIUnKnown Option\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_FNF\fP   30"
 .br
-.RI "\fIFile Not Found, read access error. \fP"
+.RI "\fIFile Not Found, read access error\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_NSE\fP   40"
 .br
-.RI "\fINo Section specifier End found, missing ']'. \fP"
+.RI "\fINo Section specifier End found, missing ']'\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_NSC\fP   50"
 .br
-.RI "\fINo private Setfile Configured. \fP"
+.RI "\fINo private Setfile Configured\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_WAE\fP   60"
 .br
-.RI "\fIWrite Access Error. \fP"
+.RI "\fIWrite Access Error\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_IFP\fP   61"
 .br
-.RI "\fIInvalid Filename entry for Private setfile. \fP"
+.RI "\fIInvalid Filename entry for Private setfile\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_EWN\fP   70"
 .br
-.RI "\fIEntry Without Name. \fP"
+.RI "\fIEntry Without Name\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_ICF\fP   80"
 .br
-.RI "\fIInvalid Combination of Flags. \fP"
+.RI "\fIInvalid Combination of Flags\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_EWC\fP   90"
 .br
-.RI "\fIEntry Without Content. \fP"
+.RI "\fIEntry Without Content\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_UOS\fP   100"
 .br
-.RI "\fIUnlikely Option Specifier. \fP"
+.RI "\fIUnlikely Option Specifier\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_IFC\fP   110"
 .br
-.RI "\fIInvalid Flag Combination. \fP"
+.RI "\fIInvalid Flag Combination\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_NLE\fP   120"
 .br
-.RI "\fINo Last Entry flag found. \fP"
+.RI "\fINo Last Entry flag found\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_TIN\fP   130"
 .br
-.RI "\fIError reTurn from stdIN query. \fP"
+.RI "\fIError reTurn from stdIN query\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_EFE\fP   140"
 .br
-.RI "\fIEmpty string in content for Filename Entry. \fP"
+.RI "\fIEmpty string in content for Filename Entry\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_USG\fP   200"
 .br
-.RI "\fIEntries missing: USaGge advice. \fP"
+.RI "\fIEntries missing: USaGge advice\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_URI\fP   210"
 .br
-.RI "\fIUnResolved Item (CF_MUST was set!). \fP"
+.RI "\fIUnResolved Item (CF_MUST was set!) \fP"
 .ti -1c
 .RI "#define \fBCFE_FBF\fP   -500"
 .br
-.RI "\fIFile Backup Failed. \fP"
+.RI "\fIFile Backup Failed\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_BMF\fP   -510"
 .br
-.RI "\fIBackup: Memory allocation Failed. \fP"
+.RI "\fIBackup: Memory allocation Failed\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_BOF\fP   520"
 .br
-.RI "\fIBackup: Open source file Failed. \fP"
+.RI "\fIBackup: Open source file Failed\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_BBF\fP   530"
 .br
-.RI "\fIBackup: open target Backup file Failed. \fP"
+.RI "\fIBackup: open target Backup file Failed\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_BRF\fP   540"
 .br
-.RI "\fIBackup: Rename Failed. \fP"
+.RI "\fIBackup: Rename Failed\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_BWF\fP   550"
 .br
-.RI "\fIBackup: Write Failed. \fP"
+.RI "\fIBackup: Write Failed\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_NCA\fP   -10"
 .br
-.RI "\fINo Configuration database Available. \fP"
+.RI "\fINo Configuration database Available\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_NEA\fP   -20"
 .br
-.RI "\fINo Entry with that name Available. \fP"
+.RI "\fINo Entry with that name Available\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_NSS\fP   -30"
 .br
-.RI "\fINo Source/origin is Set. \fP"
+.RI "\fINo Source/origin is Set\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_ECP\fP   -40"
 .br
-.RI "\fIEntry's Content is a NULL Pointer. \fP"
+.RI "\fIEntry's Content is a NULL Pointer\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_MEF\fP   -100"
 .br
-.RI "\fIMemory allocation in Error routine Failed. \fP"
+.RI "\fIMemory allocation in Error routine Failed\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_MCF\fP   -200"
 .br
-.RI "\fIMemory allocation for Configuration Failed. \fP"
+.RI "\fIMemory allocation for Configuration Failed\&. \fP"
 .ti -1c
 .RI "#define \fBCFE_INF\fP   -9999"
 .br
-.RI "\fIInteger iNquiry Failed (?!). \fP"
+.RI "\fIInteger iNquiry Failed (?!) \fP"
 .ti -1c
-.RI "#define \fBCFE_RNF\fP   -999.999"
+.RI "#define \fBCFE_RNF\fP   -999\&.999"
 .br
-.RI "\fIReal/float iNquiry Failed (?!). \fP"
+.RI "\fIReal/float iNquiry Failed (?!) \fP"
 .ti -1c
 .RI "#define \fBCFS_NOT\fP   0"
 .br
-.RI "\fIStart Mode: No action on error. \fP"
+.RI "\fIError Response Modes for \fBcfstart()\fP \fP"
 .ti -1c
 .RI "#define \fBCFS_ALL\fP   1"
 .br
-.RI "\fIStart Mode: All error messages. \fP"
+.RI "\fIStart Mode: All error messages\&. \fP"
 .ti -1c
 .RI "#define \fBCFS_NEG\fP   2"
 .br
-.RI "\fIStart Mode: Only severe errors. \fP"
+.RI "\fIStart Mode: Only severe errors\&. \fP"
 .ti -1c
 .RI "#define \fBCFS_USG\fP   3"
 .br
-.RI "\fIStart Mode: Usage message if error was negative, error output like \fBCFS_NEG\fP. \fP"
+.RI "\fIStart Mode: Usage message if error was negative, error output like \fBCFS_NEG\fP\&. \fP"
 .ti -1c
 .RI "#define \fBCFS_DEBUG\fP   4"
 .br
-.RI "\fIStart Mode: Output like \fBCFS_USG\fP plus raw dump of configuration. \fP"
+.RI "\fIStart Mode: Output like \fBCFS_USG\fP plus raw dump of configuration\&. \fP"
 .ti -1c
 .RI "#define \fBCFD_CFDUMP\fP   0"
 .br
-.RI "\fIDump Mask Minimal. \fP"
+.RI "\fIDump Mask Minimal\&. \fP"
 .ti -1c
 .RI "#define \fBCFD_LIBHEAD\fP   1"
 .br
-.RI "\fIDump option CFLIB header. \fP"
+.RI "\fIDump option CFLIB header\&. \fP"
 .ti -1c
 .RI "#define \fBCFD_COLHEAD\fP   2"
 .br
-.RI "\fIDump option Column headers. \fP"
+.RI "\fIDump option Column headers\&. \fP"
 .ti -1c
 .RI "#define \fBCFD_SRCFLAGS\fP   4"
 .br
-.RI "\fIDump option Source flag description. \fP"
+.RI "\fIDump option Source flag description\&. \fP"
 .ti -1c
-.RI "#define \fBCFD_DEFAULT\fP   CFD_COLHEAD|CFD_SRCFLAGS"
+.RI "#define \fBCFD_FLAGS\fP   8"
 .br
-.RI "\fIDump Mask Default. \fP"
+.RI "\fIDump option All Flags description\&. \fP"
 .ti -1c
-.RI "#define \fBcfget\fP(a)   cfgetent(a,0)"
+.RI "#define \fBCFD_DEFAULT\fP   \fBCFD_COLHEAD\fP|\fBCFD_SRCFLAGS\fP"
 .br
-.RI "\fIGet value (content) of named entry. \fP"
+.RI "\fIDump Mask Default\&. \fP"
 .ti -1c
-.RI "#define \fBcfgetstr\fP(a)   ((char *)cfgetent(a,CF_STR))"
+.RI "#define \fBcfget\fP(a)   \fBcfgetent\fP(a,0)"
 .br
-.RI "\fIInquire CFLIB DB for String in content of named entry. \fP"
+.RI "\fIGet value (content) of named entry\&. \fP"
 .ti -1c
-.RI "#define \fBcfgetnum\fP(a)   (*(int *)cfgetent(a,CF_INT))"
+.RI "#define \fBcfgetstr\fP(a)   ((char *)\fBcfgetent\fP(a,\fBCF_STR\fP))"
 .br
-.RI "\fIInquire CFLIB DB for Integer value in content of named entry. \fP"
+.RI "\fIInquire CFLIB DB for String in content of named entry\&. \fP"
 .ti -1c
-.RI "#define \fBcfgetreal\fP(a)   (*(float *)cfgetent(a,CF_REAL))"
+.RI "#define \fBcfgetnum\fP(a)   (*(int *)\fBcfgetent\fP(a,\fBCF_INT\fP))"
 .br
-.RI "\fIInquire CFLIB DB for Float (Real) value in content of named entry. \fP"
+.RI "\fIInquire CFLIB DB for Integer value in content of named entry\&. \fP"
 .ti -1c
-.RI "#define \fBcfgetflag\fP(a)   (*(int *)cfgetent(a,CF_FLAG))"
+.RI "#define \fBcfgetreal\fP(a)   (*(float *)\fBcfgetent\fP(a,\fBCF_REAL\fP))"
 .br
-.RI "\fIInquire CFLIB DB for Flag value in content of named entry. \fP"
+.RI "\fIInquire CFLIB DB for Float (Real) value in content of named entry\&. \fP"
 .ti -1c
-.RI "#define \fBcfflaginq\fP(a, b)   (*(int *)cfgetent(a,CF_FLGINQ|(31&b)))"
+.RI "#define \fBcfgetdouble\fP(a)   (*(double *)\fBcfgetent\fP(a,\fBCF_DOUBLE\fP))"
 .br
-.RI "\fIInquire CFLIB DB for Bit set in entry's Special Options Fag \fBCONFIG::flag\fP. \fP"
+.RI "\fIInquire CFLIB DB for Double value in content of named entry\&. \fP"
 .ti -1c
-.RI "#define \fBcfgetsrc\fP(a)   (*(int *)cfgetent(a,CF_SRC))"
+.RI "#define \fBcfgetflag\fP(a)   (*(int *)\fBcfgetent\fP(a,\fBCF_FLAG\fP))"
 .br
-.RI "\fIInquire CFLIB DB for Source of named entry's content. \fP"
+.RI "\fIInquire CFLIB DB for Flag value in content of named entry\&. \fP"
 .ti -1c
-.RI "#define \fBcfgetres\fP()   ((char *)cfgetent('',CF_RESID))"
+.RI "#define \fBcfflaginq\fP(a, b)   (*(int *)\fBcfgetent\fP(a,\fBCF_FLGINQ\fP|(31&b)))"
 .br
-.RI "\fIGet next Residual Command Line Argument from CFLIB DB. \fP"
+.RI "\fIInquire CFLIB DB for Bit set in entry's Special Options Flag \fBCONFIG::flag\fP\&. \fP"
 .ti -1c
-.RI "#define \fBcfgetcpr\fP()   'CFLIB (c) 1994-2009 Stefan Habermehl'"
+.RI "#define \fBcfgetsrc\fP(a)   (*(int *)\fBcfgetent\fP(a,\fBCF_SRC\fP))"
 .br
-.RI "\fIGet Copyright Notice. \fP"
+.RI "\fIInquire CFLIB DB for Source of named entry's content\&. \fP"
 .ti -1c
-.RI "#define \fBcfput\fP(a, b)   cfputstr(a,(char *)b)"
+.RI "#define \fBcfgetres\fP()   ((char *)\fBcfgetent\fP('',\fBCF_RESID\fP))"
 .br
-.RI "\fIUpdate or Add Parameter (Utility Function Macro). \fP"
+.RI "\fIGet next Residual Command Line Argument from CFLIB DB\&. \fP"
+.ti -1c
+.RI "#define \fBcfgetcpr\fP()   'CFLIB (c) 1994-2012 Stefan Habermehl'"
+.br
+.RI "\fIGet CFLIB Copyright Notice\&. \fP"
+.ti -1c
+.RI "#define \fBcfput\fP(a, b)   \fBcfputstr\fP(a,(char *)b)"
+.br
+.RI "\fIUpdate or Add a Parameter\&. \fP"
 .ti -1c
 .RI "#define \fBDelFlag\fP(a, b)   a&=(~b)"
 .br
-.RI "\fIDelete bits of Mask \fCb\fP from Mask \fCa\fP. \fP"
+.RI "\fIDelete bits of Mask \fCb\fP from Mask \fCa\fP\&. \fP"
 .ti -1c
 .RI "#define \fBSetFlag\fP(a, b)   a|=b"
 .br
-.RI "\fISet bits of Mask \fCb\fP in Mask \fCa\fP. \fP"
+.RI "\fISet bits of Mask \fCb\fP in Mask \fCa\fP\&. \fP"
 .ti -1c
 .RI "#define \fB__CF_H__\fP"
 .br
-.RI "\fIMarker: \fBcf.h\fP has been included. \fP"
+.RI "\fIMarker: \fBcf\&.h\fP has been included\&. \fP"
 .in -1c
 .SS "Typedefs"
 
@@ -498,7 +507,7 @@ include/cf.h \- C Header File for CFLIB Flexible Configuration Library.
 .ti -1c
 .RI "typedef unsigned long \fBCFFLAGTYP\fP"
 .br
-.RI "\fISpecial Options Mask Type. \fP"
+.RI "\fISpecial Options Mask Type\&. \fP"
 .in -1c
 .SS "Functions"
 
@@ -506,153 +515,136 @@ include/cf.h \- C Header File for CFLIB Flexible Configuration Library.
 .ti -1c
 .RI "int \fBcfinit\fP (\fBCONFIG\fP *set, int argc, char **argv)"
 .br
-.RI "\fIInitialize CFLIB Configuration Database and parse possible sources for database entries according to the settings in \fIset\fP. \fP"
+.RI "\fI\fBcfinit()\fP Initialize Configuration Database \fP"
 .ti -1c
 .RI "void \fBcfexit\fP (void)"
 .br
-.RI "\fIFree allocated memory and reset the configuration database and error stack. \fP"
-.ti -1c
-.RI "int \fBcfform\fP (char *infile, char *outfile, char *vardelim, int mode)"
-.br
-.RI "\fIProcess a Template from file or \fCstdin\fP and write generated Report to File or \fCstdout\fP. \fP"
-.ti -1c
-.RI "void * \fBcfgetent\fP (char *name, \fBCFFLAGTYP\fP typ)"
-.br
-.RI "\fILibrary internal function, use appropriate Macro functions! \fP"
-.ti -1c
-.RI "char * \fBcfhomexp\fP (char *name)"
-.br
-.RI "\fIExpand \fC~\fP or \fC~user\fP in parameter content. \fP"
-.ti -1c
-.RI "int \fBcfgetvers\fP (void)"
-.br
-.RI "\fIGet Library Version/Patchlevel. \fP"
-.ti -1c
-.RI "char * \fBcfgetsubvers\fP (void)"
-.br
-.RI "\fIGet Library Subversion Details. \fP"
-.ti -1c
-.RI "int \fBcfnosave\fP (char *name, const char *onoff)"
-.br
-.RI "\fIAlter or query the \fBCF_NOSAVE\fP Flag of Parameter \fIname\fP. \fP"
-.ti -1c
-.RI "int \fBcfputstr\fP (char *name, char *content)"
-.br
-.RI "\fIUpdate or Add Parameter \fIname\fP with string \fIcontent\fP. \fP"
-.ti -1c
-.RI "int \fBcfputtime\fP (\fBCFFLAGTYP\fP td)"
-.br
-.RI "\fISet all Time and/or Date entries in CFLIB DB to \fInow\fP or \fItoday\fP. \fP"
-.ti -1c
-.RI "char * \fBcfgetusg\fP (void)"
-.br
-.RI "\fIGet Usage Message for (Terminal) Output. \fP"
-.ti -1c
-.RI "int \fBcfgeterr\fP (char *string, size_t len)"
-.br
-.RI "\fIError Code and Message Inquiry Function. \fP"
-.ti -1c
-.RI "int \fBcfputerr\fP (int ecode, char *string,...)"
-.br
-.RI "\fIInit, exit or append to Error List. \fP"
-.ti -1c
-.RI "void \fBcfclearerr\fP (void)"
-.br
-.RI "\fIFree all entries in error list. \fP"
-.ti -1c
-.RI "int \fBcfreverr\fP (void)"
-.br
-.RI "\fIRevert order of entries in error list from last->first to first->last. \fP"
+.RI "\fI\fBcfexit()\fP Free allocated memory and reset configuration database and error stack \fP"
 .ti -1c
 .RI "int \fBcfstart\fP (\fBCONFIG\fP *set, int ac, char **av, char *help, int mode)"
 .br
-.RI "\fISetup Configuration Database. \fP"
+.RI "\fI\fBcfstart()\fP Start Configuration Database (with error reporting and usage message) \fP"
+.ti -1c
+.RI "void * \fBcfgetent\fP (char *name, \fBCFFLAGTYP\fP typ)"
+.br
+.RI "\fI\fBcfgetent()\fP Inquire configuration database for content of entry name \fP"
+.ti -1c
+.RI "int \fBcfgetvers\fP (void)"
+.br
+.RI "\fI\fBcfgetvers()\fP Get Library Version/Patchlevel \fP"
+.ti -1c
+.RI "char * \fBcfgetsubvers\fP (void)"
+.br
+.RI "\fI\fBcfgetsubvers()\fP Get Library Subversion Details \fP"
+.ti -1c
+.RI "char * \fBcfgetusg\fP (void)"
+.br
+.RI "\fI\fBcfgetusg()\fP Get Usage Message for (Terminal) Output \fP"
+.ti -1c
+.RI "int \fBcfgeterr\fP (char *string, size_t len)"
+.br
+.RI "\fI\fBcfgeterr()\fP Error Code and Message Inquiry Function \fP"
+.ti -1c
+.RI "int \fBcfputerr\fP (int ecode, char *string,\&.\&.\&.)"
+.br
+.RI "\fI\fBcfputerr()\fP Init, exit or append to Error List \fP"
+.ti -1c
+.RI "void \fBcfclearerr\fP (void)"
+.br
+.RI "\fI\fBcfclearerr()\fP Free all entries in error list \fP"
+.ti -1c
+.RI "int \fBcfreverr\fP (void)"
+.br
+.RI "\fI\fBcfreverr()\fP Revert order of entries in error list from last->first to first->last \fP"
+.ti -1c
+.RI "char * \fBcfhomexp\fP (char *name)"
+.br
+.RI "\fI\fBcfhomexp()\fP Expand \fC~\fP or \fC~user\fP in parameter content \fP"
 .ti -1c
 .RI "int \fBcfdinichk\fP (\fBCONFIG\fP *set)"
 .br
-.RI "\fIDebugging Function (\fBexperimental\fP). \fP"
+.RI "\fI\fBcfdinichk()\fP Debugging Function (\fBexperimental\fP) \fP"
 .ti -1c
 .RI "int \fBcfdump\fP (FILE *fout)"
 .br
-.RI "\fIDebugging Function. \fP"
+.RI "\fI\fBcfdump()\fP Dump CFLIB DB content to \fCfout\fP \fP"
+.ti -1c
+.RI "int \fBcfnosave\fP (char *name, const char *onoff)"
+.br
+.RI "\fI\fBcfnosave()\fP Alter or query the \fBCF_NOSAVE\fP Flag of Parameter \fIname\fP \fP"
+.ti -1c
+.RI "int \fBcfputstr\fP (char *name, char *content)"
+.br
+.RI "\fI\fBcfputstr()\fP Update or Add Parameter \fIname\fP with string \fIcontent\fP \fP"
+.ti -1c
+.RI "int \fBcfputtime\fP (\fBCFFLAGTYP\fP td)"
+.br
+.RI "\fI\fBcfputtime()\fP Set all Time and/or Date entries in CFLIB DB to \fInow\fP or \fItoday\fP \fP"
 .ti -1c
 .RI "int \fBcfsave\fP (char *fname, const char *savemode)"
 .br
-.RI "\fIWrite configuration data to a Configuration File or \fCstdout\fP. \fP"
+.RI "\fI\fBcfsave()\fP Write configuration data to a Configuration File or \fCstdout\fP \fP"
 .ti -1c
 .RI "int \fBBackupFile\fP (const char *file, char *modus)"
 .br
-.RI "\fICopy or Rename File \fC'file'\fP to Backup File \fC'file~'\fP or \fC'file.bak'\fP. \fP"
+.RI "\fI\fBBackupFile()\fP Copy or Rename File \fC'file'\fP to Backup File \fC'file~'\fP or \fC'file\&.bak'\fP \fP"
+.ti -1c
+.RI "int \fBcfform\fP (char *infile, char *outfile, char *vardelim, int mode)"
+.br
+.RI "\fI\fBcfform()\fP Process a Template from file or \fCstdin\fP and write generated Report to File or \fCstdout\fP \fP"
 .ti -1c
 .RI "void \fBRemoveCR\fP (char *string)"
 .br
-.RI "\fIString Utility Function. \fP"
+.RI "\fIStrip Carriage Return at end of string (after fgets) by introducing zero byte at CR position\&. \fP"
 .ti -1c
 .RI "void \fBRemoveTrailSpace\fP (char *string)"
 .br
-.RI "\fIString Utility Function. \fP"
+.RI "\fIStrip whitespaces at end of string by introducing zero byte after last non-whitespace character\&. \fP"
 .ti -1c
 .RI "char * \fBEatWhiteSpace\fP (char *string)"
 .br
-.RI "\fIString Utility Function. \fP"
+.RI "\fI\fBEatWhiteSpace()\fP Set pointer to next non-whitespace-character in string\&. \fP"
 .ti -1c
 .RI "int \fBIsATerminal\fP (FILE *fp)"
 .br
-.RI "\fITest whether stream is a terminal. \fP"
+.RI "\fI\fBIsATerminal()\fP Test whether stream is a terminal \fP"
 .ti -1c
 .RI "char * \fBFindFile\fP (const char *fname, const char *fpath, const char *const *fext)"
 .br
-.RI "\fIFind a File in Path trying Extensions. \fP"
+.RI "\fI\fBFindFile()\fP Find a File in Path trying Extensions \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
-C Header File for CFLIB Flexible Configuration Library. 
+C Header File for CFLIB Flexible Configuration Library\&. 
 
 Public Functions and Definitions
 .PP
 \fBNote:\fP
 .RS 4
-Include this file in the source code and link with the library executable, usually referring to \fIlibcf.a\fP by calling \fC'(g)cc -lcf ...'\fP 
+Include this file in the source code and link with the library executable, usually referring to \fIlibcf\&.a\fP by calling \fC'(g)cc -lcf \&.\&.\&.'\fP 
 .RE
 .PP
 \fBVersion:\fP
 .RS 4
-SVN: $Id: \fBcf.h\fP 127 2009-01-28 16:50:14Z stefan $ 
+SVN: $Id: \fBcf\&.h\fP 67 2013-02-27 11:24:49Z stefan_x $ 
 .RE
 .PP
 \fBAuthor:\fP
 .RS 4
-Stefan Habermehl <stefan.habermehl@mcff.de> 
+Stefan Habermehl stefan.habermehl@mcff.de 
 .RE
 .PP
-\fBCopyright:\fP.RS 4
-(c) 1994,1995,1996,1997,1998,2006,2007,2008,2009 Stefan Habermehl 
-.RE
-.PP
-\fBLicense:\fP.RS 4
-http://www.gnu.org/licenses GNU General Public License v3 or later 
-.RE
-.PP
-
-.SH "Define Documentation"
-.PP 
-.SS "#define cfput(a, b)   cfputstr(a,(char *)b)"
-.PP
-Update or Add Parameter (Utility Function Macro). 
-.PP
-\fBParameters:\fP
+\fBCopyright:\fP
 .RS 4
-\fIa\fP \fBParameter Name\fP 
-.br
-\fIb\fP New Content (Type casted to expected Char Pointer)
+(c) 1994,1995,1996,1997,1998,2006,2007,2008,2009,2013 Stefan Habermehl 
 .RE
 .PP
-\fBReturns:\fP
+\fBLicense:\fP
 .RS 4
-\fBint\fP \fBcfputstr()\fP 
+http://www.gnu.org/licenses GNU Lesser General Public License version 3\&.0 (LGPLv3) 
 .RE
 .PP
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for CFLIB - Flexible Configuration Library from the source code.
+Generated automatically by Doxygen for CFLIB - Flexible Configuration Library from the source code\&.

@@ -1,44 +1,55 @@
-.TH "Report Generation" 3 "31 Jan 2009" "Version Patchlevel 20" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
+.TH "Report Generation" 3 "Wed Feb 27 2013" "Version Patchlevel 21" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 Report Generation \- 
+.PP
+Process templates doing variable substitution and file inclusion\&.  
+
 .SS "Defines"
 
 .in +1c
 .ti -1c
 .RI "#define \fBCF_DEF_VARDELIM\fP   '$()'"
 .br
-.RI "\fIDefault variable delimiter for \fBcfform()\fP. \fP"
+.RI "\fIDefault variable delimiter for \fBcfform()\fP \fP"
 .ti -1c
 .RI "#define \fBCF_MAXINC\fP   8"
 .br
-.RI "\fIMaximum number of nested includes for \fBcfform()\fP. \fP"
+.RI "\fIMaximum number of nested includes for \fBcfform()\fP \fP"
 .in -1c
 .SS "Functions"
 
 .in +1c
 .ti -1c
-.RI "int \fBcfform\fP (char *file, char *outfile, char *vd, int mode)"
+.RI "int \fBcfform\fP (char *infile, char *outfile, char *vardelim, int mode)"
 .br
-.RI "\fIProcess a Template from file or \fCstdin\fP and write generated Report to File or \fCstdout\fP. \fP"
+.RI "\fI\fBcfform()\fP Process a Template from file or \fCstdin\fP and write generated Report to File or \fCstdout\fP \fP"
 .in -1c
+.SH "Detailed Description"
+.PP 
+Process templates doing variable substitution and file inclusion\&. 
+
+
 .SH "Function Documentation"
 .PP 
-.SS "int cfform (char * file, char * outfile, char * vd, int mode)"
+.SS "int \fBcfform\fP (char *file, char *outfile, char *vd, intmode)"
+
 .PP
-Process a Template from file or \fCstdin\fP and write generated Report to File or \fCstdout\fP. 
+\fBcfform()\fP Process a Template from file or \fCstdin\fP and write generated Report to File or \fCstdout\fP Process a Template from file or \fCstdin\fP and write generated Report to File or \fCstdout\fP\&.
 .PP
-The Report Template contains \fBVariables\fP like '$(\fIident\fP)' or whatever you set in \fIvd\fP. \fIident\fP may refer to a:
+The Report Template contains \fBVariables\fP like '$(\fIident\fP)' or whatever you set in \fIvd\fP\&. \fIident\fP may refer to a:
 .PP
 .IP "\(bu" 2
 Parameter Name like '$(\fIname\fP)' : Substitute variable by parameter's value (from DB)
-.IP "\(bu" 2
+.IP "  \(bu" 4
 Include File Path like '$(FILE:\fI/my/path/to/incfile\fP)' : Substitute variable by content of include file
-.IP "\(bu" 2
-File Path and Section Include like '$(FILE:\fIincfile#\fIsect\fP)'\fP : Include section from include file between [\fIsect\fP] and next [\fI\fP...]
-.IP "\(bu" 2
+.IP "  \(bu" 4
+File Path and Section Include like '$(FILE:\fIincfile#\fIsect\fP)'\fP : Include section from include file between [\fIsect\fP] and next [\fI\fP\&.\&.\&.]
+.IP "  \(bu" 4
 Variable File Include like '$(FILE::\fIvarname\fP)' : Include file from location given in parameter \fIvarname\fP 
+.PP
+
 .PP
 .PP
 \fBSee also:\fP
@@ -51,13 +62,14 @@ Variable File Include like '$(FILE::\fIvarname\fP)' : Include file from location
 Make \fBcfform()\fP work with buffers instead of files
 .RE
 .PP
+.PP
 \fBParameters:\fP
 .RS 4
 \fIfile\fP Name of Template File, \fCNULL\fP for \fCstdin\fP 
 .br
 \fIoutfile\fP Name of Output File, \fCNULL\fP for \fCstdout\fP 
 .br
-\fIvd\fP Variable Delimiters: string containing the three variable delimiters in the first three chars: to have variables like '$(\fIname\fP)', let the string be '$()'. This is also the default, if \fIvd\fP is \fCNULL\fP or string length < 3
+\fIvd\fP Variable Delimiters: string containing the three variable delimiters in the first three chars: to have variables like '$(\fIname\fP)', let the string be '$()'\&. This is also the default, if \fIvd\fP is \fCNULL\fP or string length < 3
 .br
 \fImode\fP Mode Mask: 
 .PD 0
@@ -81,11 +93,11 @@ Make \fBcfform()\fP work with buffers instead of files
 .IP "\(bu" 2
 \fC!=0\fP : An error occurred:
 .IP "  \(bu" 4
-\fBCFE_NCA\fP : No Configuration database Available. 
+\fBCFE_NCA\fP : No Configuration database Available\&. 
 .IP "  \(bu" 4
-\fBCFE_FNF\fP : File Not Found, read access error. 
+\fBCFE_FNF\fP : File Not Found, read access error\&. 
 .IP "  \(bu" 4
-\fBCFE_WAE\fP : Write Access Error.  
+\fBCFE_WAE\fP : Write Access Error\&.  
 .PP
 
 .PP
@@ -94,4 +106,4 @@ Make \fBcfform()\fP work with buffers instead of files
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for CFLIB - Flexible Configuration Library from the source code.
+Generated automatically by Doxygen for CFLIB - Flexible Configuration Library from the source code\&.

@@ -1,58 +1,104 @@
 \hypertarget{development_versions}{}\subsection{Library Versions}\label{development_versions}
-There is no strict versioning of the library. A Library {\bf \char`\"{}Patchlevel\char`\"{}} is defined as an Integer Number counting {\bf \char`\"{}Major Versions\char`\"{}}. See \hyperlink{group__retrieval_gc4e376e3630e9b25655ee0e0b1a54a5b}{cfgetvers()}.
+There is no strict versioning of the library. A Library {\bfseries \char`\"{}\-Patchlevel\char`\"{}} is defined as an Integer Number counting {\bfseries \char`\"{}\-Major Versions\char`\"{}}. See \hyperlink{group__retrieval_gac4e376e3630e9b25655ee0e0b1a54a5b}{cfgetvers()}.
 
-The individual source files contain more detailed version information and they all support a file version identifier {\tt \${\em Id\$\/} for} automatic update by SVN and other Source Management Tools. See \hyperlink{group__retrieval_gbd4ca2adbcac9eef4d1363424e440662}{cfgetsubvers()}.\hypertarget{development_platforms}{}\subsection{Platforms}\label{development_platforms}
-The library source code is fairly simple ANSI C code and should compile and link without problems on most platforms. Most of the development has been done with different versions of the {\bf \char`\"{}GNU C Compiler\char`\"{}} {\tt gcc} and related tools. All source modules compile free of errors and warnings with:
+The individual source files contain more detailed version information and they all support a file version identifier {\ttfamily \${\itshape Id\$\/} for} automatic update by S\-V\-N and other Source Management Tools. See \hyperlink{group__retrieval_ga160032675def60398ebfd66589ddc1e5}{cfgetsubvers()}.\hypertarget{development_platforms}{}\subsection{Platforms}\label{development_platforms}
+The library source code is fairly simple A\-N\-S\-I C code and should compile and link without problems on most platforms. Most of the development has been done with different versions of the {\bfseries \char`\"{}\-G\-N\-U C Compiler\char`\"{}} {\ttfamily gcc} and related tools. All source modules compile free of errors and warnings with\-:
 
-{\tt \char`\"{}gcc -pedantic -pedantic-errors -Wall -Werror -ansi ...\char`\"{}} 
+{\ttfamily \char`\"{}gcc -\/pedantic -\/pedantic-\/errors -\/\-Wall -\/\-Werror -\/ansi ...\char`\"{}} 
 
-So, if you have {\tt gcc}, use it! Any other ANSI C compiler should also work, at least after minimal adaption to the library setup, see \hyperlink{development_compilation_options}{System and Compiler dependent Defines}.
+So, if you have {\ttfamily gcc}, use it! Any other A\-N\-S\-I C compiler should also work, at least after minimal adaption to the library setup, see \hyperlink{development_compilation_options}{System and Compiler dependent Defines}.
 
-until now the library has been built and used under the following setups:
-
-\begin{itemize}
-\item gcc, Linux, Intel PC\item gcc, MinGW, MS Windows NT/XP, Intel PC\item gcc, MinT/TOS Atari ST\item cc, Unix, IBM AIX\item cc, Unix, SGI\item MSC, MS DOS/Windows Intel PC\item MSC, OS/2 Intel PC\end{itemize}
-\hypertarget{development_library_building}{}\subsection{Building the Library}\label{development_library_building}
-Compiling the source modules and building the library should be a \char`\"{}straight forward\char`\"{} task:\begin{itemize}
-\item Make all objects from C sources, including {\em \hyperlink{cf_8h}{cf.h}\/} and {\em cflib.h\/} \item Link the objects with {\tt ar} or another tools to get a library executable\end{itemize}
+until now the library has been built and used under the following setups\-:
 
 
-\begin{Desc}
-\item[See also:]{\bf Makefiles} under CFLIB project tree and \hyperlink{development_compilation_options}{System and Compiler dependent Defines}\end{Desc}
+\begin{DoxyItemize}
+\item gcc, Linux, Intel P\-C
+\begin{DoxyItemize}
+\item gcc, Min\-G\-W, M\-S Windows N\-T/\-X\-P, Intel P\-C
+\item gcc, Min\-T/\-T\-O\-S Atari S\-T
+\item cc, Unix, I\-B\-M A\-I\-X
+\item cc, Unix, S\-G\-I
+\item M\-S\-C, M\-S D\-O\-S/\-Windows Intel P\-C
+\item M\-S\-C, O\-S/2 Intel P\-C
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{development_library_building}{}\subsection{Building the Library}\label{development_library_building}
+Compiling the source modules and building the library should be a \char`\"{}straight forward\char`\"{} task\-:
+\begin{DoxyItemize}
+\item Make all objects from C sources, including {\itshape \hyperlink{cf_8h}{cf.\-h}\/} and {\itshape cflib.\-h\/} 
+\item Link the objects with {\ttfamily ar} or another tools to get a library executable
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+{\bfseries Makefiles} under C\-F\-L\-I\-B project tree and \hyperlink{development_compilation_options}{System and Compiler dependent Defines}
+\end{DoxySeeAlso}
 \hypertarget{development_binaries}{}\subsection{Binaries and Executables}\label{development_binaries}
-\begin{itemize}
-\item The library project should be seen as \char`\"{}pure\char`\"{} source/text code on distribution. Compile a library executable with a C compiler of your choice with appropriate setup for your platform.\end{itemize}
+
+\begin{DoxyItemize}
+\item The library project should be seen as \char`\"{}pure\char`\"{} source/text code on distribution. Compile a library executable with a C compiler of your choice with appropriate setup for your platform.
+\end{DoxyItemize}
 
 
-\begin{itemize}
-\item Binary and executable versions of the library found in the project tree should be seen as examples that worked under one specific setup but have not been intensively tested and may even not be up to date. If it works for you, feel free to use them. If you build a library executable which is not too ;-) dependent on a specific setup, you can include it as example in the project tree.\end{itemize}
-\hypertarget{development_minimal_replacement}{}\subsection{Minimal CFLIB Replacement}\label{development_minimal_replacement}
-In project directory {\em src/examples\/} you may find a source file {\em cf\_\-minimal.c\/}. You can adapt this example to your need and include it in your C source list on compilation instead of linking the library executable. This makes user programs that use CFLIB functions independent of the library at the price of very reduced functionality, which may be desirable for specific executables or if you have problems with building the library on the target platform.\hypertarget{development_compilation_options}{}\subsection{System and Compiler dependent Defines}\label{development_compilation_options}
-The following Defines are used in the library source to decide whether to include certain header files and use certain functions or defines:
-
-\begin{itemize}
-\item {\bf \_\-HAS\_\-PWD} : If defined, include {\bf $<$pwd.h$>$} and make use of function {\bf getpwnam()} in \hyperlink{group__advanced__features_gb6f874ac347d273dc45ad011808fe703}{cfhomexp()} to find a user's home directory\item {\bf \_\-HAS\_\-ISATTY} : If defined, use function {\bf isatty()} to determine whether a stream is a terminal (for interactive query/input) in function \hyperlink{group__utilities_g9a90e738d03b642f33901600671d225a}{IsATerminal()}\item {\bf \_\-HAS\_\-LIMITS} : If defined, include {\bf $<$limits.h$>$} and use {\bf PATH\_\-MAX} defined therein in function \hyperlink{group__utilities_g4e4e8f9a03b7f3598b5efd199b9a67c9}{FindFile()}\end{itemize}
+\begin{DoxyItemize}
+\item Binary and executable versions of the library found in the project tree should be seen as examples that worked under one specific setup but have not been intensively tested and may even not be up to date. If it works for you, feel free to use them. If you build a library executable which is not too ;-\/) dependent on a specific setup, you can include it as example in the project tree.
+\end{DoxyItemize}\hypertarget{development_minimal_replacement}{}\subsection{Minimal C\-F\-L\-I\-B Replacement}\label{development_minimal_replacement}
+In project directory {\itshape src/examples\/} you may find a source file {\itshape cf\-\_\-minimal.\-c\/}. You can adapt this example to your need and include it in your C source list on compilation instead of linking the library executable. This makes user programs that use C\-F\-L\-I\-B functions independent of the library at the price of very reduced functionality, which may be desirable for specific executables or if you have problems with building the library on the target platform.\hypertarget{development_compilation_options}{}\subsection{System and Compiler dependent Defines}\label{development_compilation_options}
+The following Defines are used in the library source to decide whether to include certain header files and use certain functions or defines\-:
 
 
-The following Defines can be used to control, which features or functions shall be excluded from the library build:
+\begin{DoxyItemize}
+\item {\bfseries \-\_\-\-H\-A\-S\-\_\-\-P\-W\-D} \-: If defined, include {\bfseries $<$pwd.\-h$>$} and make use of function {\bfseries getpwnam()} in \hyperlink{group__advanced__features_ga469258ed449ac26d5c82e665db491ff2}{cfhomexp()} to find a user's home directory
+\begin{DoxyItemize}
+\item {\bfseries \-\_\-\-H\-A\-S\-\_\-\-I\-S\-A\-T\-T\-Y} \-: If defined, use function {\bfseries isatty()} to determine whether a stream is a terminal (for interactive query/input) in function \hyperlink{group__utilities_ga9a90e738d03b642f33901600671d225a}{Is\-A\-Terminal()}
+\item {\bfseries \-\_\-\-H\-A\-S\-\_\-\-L\-I\-M\-I\-T\-S} \-: If defined, include {\bfseries $<$limits.\-h$>$} and use {\bfseries P\-A\-T\-H\-\_\-\-M\-A\-X} defined therein in function \hyperlink{group__utilities_ga59fc2b29cf26051e0854b664f5aed15d}{Find\-File()}
+\end{DoxyItemize}
+\end{DoxyItemize}
 
-\begin{itemize}
-\item {\bf \_\-CF\_\-NOFINDFILE} : Function \hyperlink{group__utilities_g4e4e8f9a03b7f3598b5efd199b9a67c9}{FindFile()}, component findfile.c\item {\bf \_\-CF\_\-NOSAVING} : Functions \hyperlink{group__setting__saving_g046d8a68eae35b987eacca04a9a06cca}{cfsave()} and \hyperlink{group__utilities_g0fccda7427db33b2f73a3b6dca864207}{BackupFile()}, component cfwrite.c\item {\bf \_\-CF\_\-NODEBUGGING} : Functions \hyperlink{group__advanced__features_g35e2c28f591ac71e3617c612233ecdd0}{cfdinichk()} and \hyperlink{group__advanced__features_gecfc8ee37366e1b36cb5aac0cc41ebdc}{cfdump()}, component cfdebug.c\end{itemize}
-
-
-The following Defines can be used to switch on certain Debug Features:
-
-\begin{itemize}
-\item {\bf DEBUG\_\-DINICHK} : Debug \hyperlink{group__advanced__features_g35e2c28f591ac71e3617c612233ecdd0}{cfdinichk()}\item {\bf DEBUG\_\-ERROR} : Debug \hyperlink{group__errors_gad2687826308f21b54657d2728e4cfcc}{cfputerr()}\item {\bf DEBUG\_\-TIME} : Debug \hyperlink{group__setting__saving_g6f133f88dc253a6a80d13eed4d123063}{cfputtime()}\item {\bf DEBUG\_\-NOSAVE} : Debug \hyperlink{group__setting__saving_g046d8a68eae35b987eacca04a9a06cca}{cfsave()}\item {\bf DEBUG\_\-BACKUP} : Debug \hyperlink{group__utilities_g0fccda7427db33b2f73a3b6dca864207}{BackupFile()}\item {\bf DEBUG\_\-FINDFILE} : Debug \hyperlink{group__utilities_g4e4e8f9a03b7f3598b5efd199b9a67c9}{FindFile()} usage in \hyperlink{group__cflib__core_ge593ff607f853bd5fc16a16bb6759314}{cfinit()}\item {\bf DEBUG\_\-FORM} : Debug \hyperlink{group__report__generation_g2f8350e7d032c87b2a0e1cb6149a85ec}{cfform()}\end{itemize}
-
-
-The following Defines can be used to switch on certain other Features:
-
-\begin{itemize}
-\item {\bf \_\-PREFER\_\-BACKSLASH} : Prefer Backslash as Directory Separator in function \hyperlink{group__utilities_g4e4e8f9a03b7f3598b5efd199b9a67c9}{FindFile()}\item {\bf \_\-PATHSEP\_\-SEMICOLON} : Use Semicolon as Path Separator in function \hyperlink{group__utilities_g4e4e8f9a03b7f3598b5efd199b9a67c9}{FindFile()}, usually on systems where a \char`\"{}:\char`\"{} can appear in a directory path\item {\bf \_\-PATHSEP\_\-COMMA} : Test Comma as Alternative Path Separator in function \hyperlink{group__utilities_g4e4e8f9a03b7f3598b5efd199b9a67c9}{FindFile()}\item {\bf \_\-CF\_\-RESID\_\-FREE} : Remove residual arguments after having read them all in \hyperlink{group__retrieval_g872f83b13a8f722176f5e299f2a42e0f}{cfgetent()}?\end{itemize}
+The following Defines can be used to control, which features or functions shall be excluded from the library build\-:
 
 
-The following Platform dependent Defines are used in the library code:
+\begin{DoxyItemize}
+\item {\bfseries \-\_\-\-C\-F\-\_\-\-N\-O\-F\-I\-N\-D\-F\-I\-L\-E} \-: Function \hyperlink{group__utilities_ga59fc2b29cf26051e0854b664f5aed15d}{Find\-File()}, component findfile.\-c
+\begin{DoxyItemize}
+\item {\bfseries \-\_\-\-C\-F\-\_\-\-N\-O\-S\-A\-V\-I\-N\-G} \-: Functions \hyperlink{group__setting__saving_gaad7e1267cd904b4480a0eeaeb03b5f75}{cfsave()} and \hyperlink{group__utilities_ga0fccda7427db33b2f73a3b6dca864207}{Backup\-File()}, component cfwrite.\-c
+\item {\bfseries \-\_\-\-C\-F\-\_\-\-N\-O\-D\-E\-B\-U\-G\-G\-I\-N\-G} \-: Functions \hyperlink{group__advanced__features_ga35e2c28f591ac71e3617c612233ecdd0}{cfdinichk()} and \hyperlink{group__advanced__features_gaecfc8ee37366e1b36cb5aac0cc41ebdc}{cfdump()}, component cfdebug.\-c
+\end{DoxyItemize}
+\end{DoxyItemize}
 
-\begin{itemize}
-\item {\bf unx} \item {\bf linux} \item {\bf atarist} \item {\bf \_\-\_\-MINT\_\-\_\-} \end{itemize}
+The following Defines can be used to switch on certain Debug Features\-:
+
+
+\begin{DoxyItemize}
+\item {\bfseries D\-E\-B\-U\-G\-\_\-\-D\-I\-N\-I\-C\-H\-K} \-: Debug \hyperlink{group__advanced__features_ga35e2c28f591ac71e3617c612233ecdd0}{cfdinichk()}
+\begin{DoxyItemize}
+\item {\bfseries D\-E\-B\-U\-G\-\_\-\-E\-R\-R\-O\-R} \-: Debug \hyperlink{group__errors_gaad2687826308f21b54657d2728e4cfcc}{cfputerr()}
+\item {\bfseries D\-E\-B\-U\-G\-\_\-\-T\-I\-M\-E} \-: Debug \hyperlink{group__setting__saving_ga6f133f88dc253a6a80d13eed4d123063}{cfputtime()}
+\item {\bfseries D\-E\-B\-U\-G\-\_\-\-N\-O\-S\-A\-V\-E} \-: Debug \hyperlink{group__setting__saving_gaad7e1267cd904b4480a0eeaeb03b5f75}{cfsave()}
+\item {\bfseries D\-E\-B\-U\-G\-\_\-\-B\-A\-C\-K\-U\-P} \-: Debug \hyperlink{group__utilities_ga0fccda7427db33b2f73a3b6dca864207}{Backup\-File()}
+\item {\bfseries D\-E\-B\-U\-G\-\_\-\-F\-I\-N\-D\-F\-I\-L\-E} \-: Debug \hyperlink{group__utilities_ga59fc2b29cf26051e0854b664f5aed15d}{Find\-File()} usage in \hyperlink{group__cflib__core_ga64fb341565c2ddfccd6669e5e6265a8a}{cfinit()}
+\item {\bfseries D\-E\-B\-U\-G\-\_\-\-F\-O\-R\-M} \-: Debug \hyperlink{group__report__generation_ga2695585ee0a7485da6075848fa27a33f}{cfform()}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+The following Defines can be used to switch on certain other Features\-:
+
+
+\begin{DoxyItemize}
+\item {\bfseries \-\_\-\-P\-R\-E\-F\-E\-R\-\_\-\-B\-A\-C\-K\-S\-L\-A\-S\-H} \-: Prefer Backslash as Directory Separator in function \hyperlink{group__utilities_ga59fc2b29cf26051e0854b664f5aed15d}{Find\-File()}
+\begin{DoxyItemize}
+\item {\bfseries \-\_\-\-P\-A\-T\-H\-S\-E\-P\-\_\-\-S\-E\-M\-I\-C\-O\-L\-O\-N} \-: Use Semicolon as Path Separator in function \hyperlink{group__utilities_ga59fc2b29cf26051e0854b664f5aed15d}{Find\-File()}, usually on systems where a \char`\"{}\-:\char`\"{} can appear in a directory path
+\item {\bfseries \-\_\-\-P\-A\-T\-H\-S\-E\-P\-\_\-\-C\-O\-M\-M\-A} \-: Test Comma as Alternative Path Separator in function \hyperlink{group__utilities_ga59fc2b29cf26051e0854b664f5aed15d}{Find\-File()}
+\item {\bfseries \-\_\-\-C\-F\-\_\-\-R\-E\-S\-I\-D\-\_\-\-F\-R\-E\-E} \-: Remove residual arguments after having read them all in \hyperlink{group__retrieval_gac13ba743ed26e6c05df14817ad9df3da}{cfgetent()}?
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+The following Platform dependent Defines are used in the library code\-:
+
+
+\begin{DoxyItemize}
+\item {\bfseries unx} 
+\begin{DoxyItemize}
+\item {\bfseries linux} 
+\item {\bfseries atarist} 
+\item {\bfseries {\bfseries M\-I\-N\-T}} 
+\end{DoxyItemize}
+\end{DoxyItemize}

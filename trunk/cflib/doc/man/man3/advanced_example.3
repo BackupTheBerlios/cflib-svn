@@ -1,4 +1,4 @@
-.TH "advanced_example" 3 "31 Jan 2009" "Version Patchlevel 20" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
+.TH "advanced_example" 3 "Wed Feb 27 2013" "Version Patchlevel 21" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -12,20 +12,20 @@ Setup \fBConfiguration Initializer\fP, generate Report and save \fBConfiguration
  *    Generate Report from Template and Configuration
  *
  *    Input:  - Commandline, Environment, Section in System Configuration File,
- *              Private Configuration File, Standard Input for Variables.
- *            - Text Template (Form).
+ *              Private Configuration File, Standard Input for Variables\&.
+ *            - Text Template (Form)\&.
  *
  *    Output: - Generated Report (Filled Form) to File or stdout,
  *            - Configuration to Private Configuration File, Logfile or
  *              Standard Output
  */
 
-#include <stdio.h>
+#include <stdio\&.h>
 
-#include '../../include/cf.h'
+#include '\&.\&./\&.\&./include/cf\&.h'
 
-#define DEF_SETFILE '~/fill.cnf'
-#define DEF_SYS_SETFILE '/etc/cfcommon.cnf'
+#define DEF_SETFILE '~/fill\&.cnf'
+#define DEF_SYS_SETFILE '/etc/cfcommon\&.cnf'
 
 int main( int argc, char **argv )
 {

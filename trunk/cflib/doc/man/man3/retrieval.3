@@ -1,49 +1,54 @@
-.TH "Information Retrieval" 3 "31 Jan 2009" "Version Patchlevel 20" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
+.TH "Information Retrieval" 3 "Wed Feb 27 2013" "Version Patchlevel 21" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-Information Retrieval \- These functions and macros read entries from an initialized CFLIB database.  
-
+Information Retrieval \- 
 .PP
+These functions and macros read entries from an initialized CFLIB database\&.  
+
 .SS "Defines"
 
 .in +1c
 .ti -1c
-.RI "#define \fBcfget\fP(a)   cfgetent(a,0)"
+.RI "#define \fBcfget\fP(a)   \fBcfgetent\fP(a,0)"
 .br
-.RI "\fIGet value (content) of named entry. \fP"
+.RI "\fIGet value (content) of named entry\&. \fP"
 .ti -1c
-.RI "#define \fBcfgetstr\fP(a)   ((char *)cfgetent(a,CF_STR))"
+.RI "#define \fBcfgetstr\fP(a)   ((char *)\fBcfgetent\fP(a,\fBCF_STR\fP))"
 .br
-.RI "\fIInquire CFLIB DB for String in content of named entry. \fP"
+.RI "\fIInquire CFLIB DB for String in content of named entry\&. \fP"
 .ti -1c
-.RI "#define \fBcfgetnum\fP(a)   (*(int *)cfgetent(a,CF_INT))"
+.RI "#define \fBcfgetnum\fP(a)   (*(int *)\fBcfgetent\fP(a,\fBCF_INT\fP))"
 .br
-.RI "\fIInquire CFLIB DB for Integer value in content of named entry. \fP"
+.RI "\fIInquire CFLIB DB for Integer value in content of named entry\&. \fP"
 .ti -1c
-.RI "#define \fBcfgetreal\fP(a)   (*(float *)cfgetent(a,CF_REAL))"
+.RI "#define \fBcfgetreal\fP(a)   (*(float *)\fBcfgetent\fP(a,\fBCF_REAL\fP))"
 .br
-.RI "\fIInquire CFLIB DB for Float (Real) value in content of named entry. \fP"
+.RI "\fIInquire CFLIB DB for Float (Real) value in content of named entry\&. \fP"
 .ti -1c
-.RI "#define \fBcfgetflag\fP(a)   (*(int *)cfgetent(a,CF_FLAG))"
+.RI "#define \fBcfgetdouble\fP(a)   (*(double *)\fBcfgetent\fP(a,\fBCF_DOUBLE\fP))"
 .br
-.RI "\fIInquire CFLIB DB for Flag value in content of named entry. \fP"
+.RI "\fIInquire CFLIB DB for Double value in content of named entry\&. \fP"
 .ti -1c
-.RI "#define \fBcfflaginq\fP(a, b)   (*(int *)cfgetent(a,CF_FLGINQ|(31&b)))"
+.RI "#define \fBcfgetflag\fP(a)   (*(int *)\fBcfgetent\fP(a,\fBCF_FLAG\fP))"
 .br
-.RI "\fIInquire CFLIB DB for Bit set in entry's Special Options Fag \fBCONFIG::flag\fP. \fP"
+.RI "\fIInquire CFLIB DB for Flag value in content of named entry\&. \fP"
 .ti -1c
-.RI "#define \fBcfgetsrc\fP(a)   (*(int *)cfgetent(a,CF_SRC))"
+.RI "#define \fBcfflaginq\fP(a, b)   (*(int *)\fBcfgetent\fP(a,\fBCF_FLGINQ\fP|(31&b)))"
 .br
-.RI "\fIInquire CFLIB DB for Source of named entry's content. \fP"
+.RI "\fIInquire CFLIB DB for Bit set in entry's Special Options Flag \fBCONFIG::flag\fP\&. \fP"
 .ti -1c
-.RI "#define \fBcfgetres\fP()   ((char *)cfgetent('',CF_RESID))"
+.RI "#define \fBcfgetsrc\fP(a)   (*(int *)\fBcfgetent\fP(a,\fBCF_SRC\fP))"
 .br
-.RI "\fIGet next Residual Command Line Argument from CFLIB DB. \fP"
+.RI "\fIInquire CFLIB DB for Source of named entry's content\&. \fP"
 .ti -1c
-.RI "#define \fBcfgetcpr\fP()   'CFLIB (c) 1994-2009 Stefan Habermehl'"
+.RI "#define \fBcfgetres\fP()   ((char *)\fBcfgetent\fP('',\fBCF_RESID\fP))"
 .br
-.RI "\fIGet Copyright Notice. \fP"
+.RI "\fIGet next Residual Command Line Argument from CFLIB DB\&. \fP"
+.ti -1c
+.RI "#define \fBcfgetcpr\fP()   'CFLIB (c) 1994-2012 Stefan Habermehl'"
+.br
+.RI "\fIGet CFLIB Copyright Notice\&. \fP"
 .in -1c
 .SS "Functions"
 
@@ -51,32 +56,31 @@ Information Retrieval \- These functions and macros read entries from an initial
 .ti -1c
 .RI "void * \fBcfgetent\fP (char *name, \fBCFFLAGTYP\fP typ)"
 .br
-.RI "\fILibrary internal function, use appropriate Macro functions! \fP"
+.RI "\fI\fBcfgetent()\fP Inquire configuration database for content of entry name \fP"
 .ti -1c
 .RI "int \fBcfgetvers\fP (void)"
 .br
-.RI "\fIGet Library Version/Patchlevel. \fP"
+.RI "\fI\fBcfgetvers()\fP Get Library Version/Patchlevel \fP"
 .ti -1c
 .RI "char * \fBcfgetsubvers\fP (void)"
 .br
-.RI "\fIGet Library Subversion Details. \fP"
+.RI "\fI\fBcfgetsubvers()\fP Get Library Subversion Details \fP"
 .ti -1c
 .RI "char * \fBcfgetusg\fP (void)"
 .br
-.RI "\fIGet Usage Message for (Terminal) Output. \fP"
+.RI "\fI\fBcfgetusg()\fP Get Usage Message for (Terminal) Output \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
-These functions and macros read entries from an initialized CFLIB database. 
+These functions and macros read entries from an initialized CFLIB database\&. 
 
-The exact name of the required parameter must be given as argument, where indicated. 
+The exact name of the required parameter must be given as argument, where indicated\&. 
 .SH "Define Documentation"
 .PP 
-.SS "#define cfget(a)   cfgetent(a,0)"
+.SS "#define \fBcfget\fP(a)   \fBcfgetent\fP(a,0)"
+
 .PP
-Get value (content) of named entry. 
-.PP
-\fBParameters:\fP
+Get value (content) of named entry\&. \fBParameters:\fP
 .RS 4
 \fIa\fP Entry's name
 .RE
@@ -87,11 +91,10 @@ Depending on configured type, see \fBcfgetent()\fP and Macro Definitions!
 .RE
 .PP
 
-.SS "#define cfgetstr(a)   ((char *)cfgetent(a,CF_STR))"
+.SS "#define \fBcfgetstr\fP(a)   ((char *)\fBcfgetent\fP(a,\fBCF_STR\fP))"
+
 .PP
-Inquire CFLIB DB for String in content of named entry. 
-.PP
-\fBParameters:\fP
+Inquire CFLIB DB for String in content of named entry\&. \fBParameters:\fP
 .RS 4
 \fIa\fP Entry's name
 .RE
@@ -117,11 +120,10 @@ Any other : Pointer to string in content of entry name
 .RE
 .PP
 
-.SS "#define cfgetnum(a)   (*(int *)cfgetent(a,CF_INT))"
+.SS "#define \fBcfgetnum\fP(a)   (*(int *)\fBcfgetent\fP(a,\fBCF_INT\fP))"
+
 .PP
-Inquire CFLIB DB for Integer value in content of named entry. 
-.PP
-\fBParameters:\fP
+Inquire CFLIB DB for Integer value in content of named entry\&. \fBParameters:\fP
 .RS 4
 \fIa\fP Entry's name
 .RE
@@ -151,11 +153,10 @@ Any other : Integer value for named entry
 .RE
 .PP
 
-.SS "#define cfgetreal(a)   (*(float *)cfgetent(a,CF_REAL))"
+.SS "#define \fBcfgetreal\fP(a)   (*(float *)\fBcfgetent\fP(a,\fBCF_REAL\fP))"
+
 .PP
-Inquire CFLIB DB for Float (Real) value in content of named entry. 
-.PP
-\fBParameters:\fP
+Inquire CFLIB DB for Float (Real) value in content of named entry\&. \fBParameters:\fP
 .RS 4
 \fIa\fP Entry's name
 .RE
@@ -185,11 +186,10 @@ Any other : Float value for named entry
 .RE
 .PP
 
-.SS "#define cfgetflag(a)   (*(int *)cfgetent(a,CF_FLAG))"
+.SS "#define \fBcfgetflag\fP(a)   (*(int *)\fBcfgetent\fP(a,\fBCF_FLAG\fP))"
+
 .PP
-Inquire CFLIB DB for Flag value in content of named entry. 
-.PP
-\fBParameters:\fP
+Inquire CFLIB DB for Flag value in content of named entry\&. \fBParameters:\fP
 .RS 4
 \fIa\fP Entry's name
 .RE
@@ -216,9 +216,10 @@ Inquire CFLIB DB for Flag value in content of named entry.
 .RE
 .PP
 
-.SS "#define cfflaginq(a, b)   (*(int *)cfgetent(a,CF_FLGINQ|(31&b)))"
+.SS "#define \fBcfflaginq\fP(a, b)   (*(int *)\fBcfgetent\fP(a,\fBCF_FLGINQ\fP|(31&b)))"
+
 .PP
-Inquire CFLIB DB for Bit set in entry's Special Options Fag \fBCONFIG::flag\fP. 
+Inquire CFLIB DB for Bit set in entry's Special Options Flag \fBCONFIG::flag\fP\&. Inquire CFLIB DB for Bit set in entry's Special Options Fag \fBCONFIG::flag\fP\&.
 .PP
 Debugging Function
 .PP
@@ -240,20 +241,19 @@ Debugging Function
 .PD 0
 
 .IP "  \(bu" 4
-\fBCFE_NCA\fP : No Configuration database Available.  
+\fBCFE_NCA\fP : No Configuration database Available\&.  
 .IP "  \(bu" 4
-\fBCFE_NEA\fP : No Entry with that name Available.  
+\fBCFE_NEA\fP : No Entry with that name Available\&.  
 .PP
 
 .PP
 .RE
 .PP
 
-.SS "#define cfgetsrc(a)   (*(int *)cfgetent(a,CF_SRC))"
+.SS "#define \fBcfgetsrc\fP(a)   (*(int *)\fBcfgetent\fP(a,\fBCF_SRC\fP))"
+
 .PP
-Inquire CFLIB DB for Source of named entry's content. 
-.PP
-\fBParameters:\fP
+Inquire CFLIB DB for Source of named entry's content\&. \fBParameters:\fP
 .RS 4
 \fIa\fP Entry's name
 .RE
@@ -280,6 +280,9 @@ Inquire CFLIB DB for Source of named entry's content.
 \fC6\fP : Interactive input (query)
 .PP
 
+.PP
+.RE
+.PP
 .IP "\(bu" 2
 \fC<0\fP : An error occurred: 
 .PD 0
@@ -293,20 +296,17 @@ Inquire CFLIB DB for Source of named entry's content.
 .PP
 
 .PP
-.RE
-.PP
 
-.SS "#define cfgetres()   ((char *)cfgetent('',CF_RESID))"
+.SS "#define \fBcfgetres\fP()   ((char *)\fBcfgetent\fP('',\fBCF_RESID\fP))"
+
 .PP
-Get next Residual Command Line Argument from CFLIB DB. 
-.PP
-\fBReturns:\fP
+Get next Residual Command Line Argument from CFLIB DB\&. \fBReturns:\fP
 .RS 4
 .PD 0
 .IP "\(bu" 2
 \fCNULL\fP : An error occurred:
 .IP "  \(bu" 4
-No Configuration database Available. 
+No Configuration database Available\&. 
 .IP "  \(bu" 4
 No more residual arguments available
 .PP
@@ -324,9 +324,10 @@ Any other : Pointer to string content
 .RE
 .PP
 
-.SS "#define cfgetcpr()   'CFLIB (c) 1994-2009 Stefan Habermehl'"
+.SS "#define \fBcfgetcpr\fP()   'CFLIB (c) 1994-2012 Stefan Habermehl'"
+
 .PP
-Get Copyright Notice. 
+Get CFLIB Copyright Notice\&. Get Copyright Notice\&.
 .PP
 \fBReturns:\fP
 .RS 4
@@ -336,9 +337,10 @@ Pointer to Copyright Message String
 
 .SH "Function Documentation"
 .PP 
-.SS "void* cfgetent (char * name, \fBCFFLAGTYP\fP typ)"
+.SS "void * \fBcfgetent\fP (char *name, \fBCFFLAGTYP\fPtyp)"
+
 .PP
-Library internal function, use appropriate Macro functions! 
+\fBcfgetent()\fP Inquire configuration database for content of entry name Library internal function, use appropriate Macro functions!
 .PP
 Inquire configuration database for content of entry name
 .PP
@@ -362,7 +364,7 @@ Inquire configuration database for content of entry name
 .IP "\(bu" 2
 \fBCF_SRC\fP : Source 
 .IP "\(bu" 2
-\fBCF_FLGINQ\fP : Bit in entry flag (bit no. in lowest bytes) 
+\fBCF_FLGINQ\fP : Bit in entry flag (bit no\&. in lowest bytes) 
 .IP "\(bu" 2
 \fBCF_RESID\fP : Residual argument 
 .IP "\(bu" 2
@@ -401,9 +403,10 @@ for others: Pointer to return values of the corresponding macro function
 .RE
 .PP
 
-.SS "int cfgetvers (void)"
+.SS "int \fBcfgetvers\fP (void)"
+
 .PP
-Get Library Version/Patchlevel. 
+\fBcfgetvers()\fP Get Library Version/Patchlevel Get Library Version/Patchlevel\&.
 .PP
 \fBReturns:\fP
 .RS 4
@@ -416,33 +419,39 @@ Get Library Version/Patchlevel.
 .RE
 .PP
 
-.SS "char* cfgetsubvers (void)"
+.SS "char * \fBcfgetsubvers\fP (void)"
+
 .PP
-Get Library Subversion Details. 
+\fBcfgetsubvers()\fP Get Library Subversion Details Get Library Subversion Details\&.
 .PP
-The Patchlevel returned by this function should match \fBPatchlevel\fP in the public include file \fBcf.h\fP
+The Patchlevel returned by this function should match \fBPatchlevel\fP in the public include file \fBcf\&.h\fP
 .PP
 \fBReturns:\fP
 .RS 4
-Libary Patchlevel and Subversion (Source Revision marked by library internal header file \fIcflib.h\fP.
+Libary Patchlevel and Subversion (Source Revision marked by library internal header file \fIcflib\&.h\fP\&.
 .RE
 .PP
 The return value is 'burned' into the library executable and looks like: 
 .PP
 .nf
-CFLIB PL 20 $LastChangedRevision: 22 $ 
+CFLIB PL 20 $LastChangedRevision: 65 $ 
 .fi
 .PP
  
-.SS "char* cfgetusg (void)"
+.SS "char * \fBcfgetusg\fP (void)"
+
 .PP
-Get Usage Message for (Terminal) Output. 
+\fBcfgetusg()\fP Get Usage Message for (Terminal) Output Get Usage Message for (Terminal) Output\&.
 .PP
 There are two flavours:
 .PP
-1. Let CFLIB do the job: Usage message is generated based on settings for commandline parsing and \fBSpecial Options Mask\fP found in the database
+.IP "1." 4
+Let CFLIB do the job: Usage message is generated based on settings for commandline parsing and \fBSpecial Options Mask\fP found in the database
 .PP
-2. Deliver your own Usage Message: Just set the \fBCF_USAGE\fP Flag in the \fBSpecial Options Mask\fP of one parameter in the database to get a custom usage message (from hardcoded default, configuration file or environment). The delivered custom message string is taken as a format string for the printf() function: Use '%s' in the message string to have the program name inserted that CFLIB got from the default parameter \fB'CF_PRGNAME'\fP which by default is set to the name of the running program from the commandline at startup.
+.PP
+.IP "1." 4
+Deliver your own Usage Message: Just set the \fBCF_USAGE\fP Flag in the \fBSpecial Options Mask\fP of one parameter in the database to get a custom usage message (from hardcoded default, configuration file or environment)\&. The delivered custom message string is taken as a format string for the printf() function: Use '%s' in the message string to have the program name inserted that CFLIB got from the default parameter \fB'CF_PRGNAME'\fP which by default is set to the name of the running program from the commandline at startup\&.
+.PP
 .PP
 \fBReturns:\fP
 .RS 4
@@ -453,7 +462,7 @@ Pointer to usage string
 .PD 0
 
 .IP "  \(bu" 4
-No Configuration database Available.  
+No Configuration database Available\&.  
 .IP "  \(bu" 4
 malloc() for usage string failed
 .PP
@@ -463,12 +472,12 @@ malloc() for usage string failed
 .PP
 \fBSee also:\fP
 .RS 4
-\fBCF_MAXUSAGE\fP : Maximum string length for usage string.  
+\fBCF_MAXUSAGE\fP : Maximum string length for usage string\&.  
 .PP
-\fBCF_USG_DEFCOLS\fP : Default terminal width for usage string.  
+\fBCF_USG_DEFCOLS\fP : Default terminal width for usage string\&.  
 .RE
 .PP
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for CFLIB - Flexible Configuration Library from the source code.
+Generated automatically by Doxygen for CFLIB - Flexible Configuration Library from the source code\&.

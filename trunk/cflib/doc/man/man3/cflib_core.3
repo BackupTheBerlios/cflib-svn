@@ -1,161 +1,158 @@
-.TH "CFLIB Core Features" 3 "31 Jan 2009" "Version Patchlevel 20" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
+.TH "Core Features" 3 "Wed Feb 27 2013" "Version Patchlevel 21" "CFLIB - Flexible Configuration Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-CFLIB Core Features \- Basic CFLIB Setup.  
-
+Core Features \- 
 .PP
+Basic CFLIB Setup\&.  
+
 .SS "Data Structures"
 
 .in +1c
 .ti -1c
 .RI "struct \fBCONFIG\fP"
 .br
-.RI "\fICFLIB Configuration Database Entry. \fP"
+.RI "\fICFLIB Configuration Database Entry\&. \fP"
 .in -1c
 .SS "Defines"
 
 .in +1c
 .ti -1c
-.RI "#define \fBPatchlevel\fP   '20'"
+.RI "#define \fBPatchlevel\fP   '21'"
 .br
-.RI "\fICFLIB Identification. \fP"
+.RI "\fICFLIB Identification\&. \fP"
 .ti -1c
 .RI "#define \fBMAXCONF\fP   4096"
 .br
-.RI "\fIMaximum number of entries in configuration database. \fP"
+.RI "\fIMaximum number of entries in configuration database\&. \fP"
 .ti -1c
 .RI "#define \fBCF_MAXERRSTR\fP   512"
 .br
-.RI "\fIMaximum string length for error message. \fP"
+.RI "\fIMaximum string length for error message\&. \fP"
 .ti -1c
 .RI "#define \fBCF_MAXLINE\fP   20480"
 .br
-.RI "\fIMaximum string length for setfile and form parsing. \fP"
+.RI "\fIMaximum string length for setfile and form parsing\&. \fP"
 .ti -1c
 .RI "#define \fBCF_MAXQLINE\fP   512"
 .br
-.RI "\fIMaximum string length for query. \fP"
+.RI "\fIMaximum string length for query\&. \fP"
 .ti -1c
 .RI "#define \fBCF_MAXUSAGE\fP   1024"
 .br
-.RI "\fIMaximum string length for usage string. \fP"
+.RI "\fIMaximum string length for usage string\&. \fP"
 .ti -1c
 .RI "#define \fBCF_USG_DEFCOLS\fP   80"
 .br
-.RI "\fIDefault terminal width for usage string. \fP"
+.RI "\fIDefault terminal width for usage string\&. \fP"
 .ti -1c
 .RI "#define \fBCF_MAXTIMEBUF\fP   256"
 .br
-.RI "\fIBuffer size for time and day. \fP"
-.ti -1c
-.RI "#define \fBTRUE\fP   1"
-.br
-.RI "\fITRUE, if not defined. \fP"
+.RI "\fIBuffer size for time and day\&. \fP"
 .ti -1c
 .RI "#define \fBFALSE\fP   0"
 .br
-.RI "\fIFALSE, if not defined. \fP"
+.RI "\fI< TRUE, if not defined \fP"
 .ti -1c
 .RI "#define \fBNULL\fP   (void *)(0L)"
 .br
-.RI "\fINULL, if not defined. \fP"
+.RI "\fINULL, if not defined\&. \fP"
 .ti -1c
 .RI "#define \fBCF_FLAG_ON\fP   '\\1'"
 .br
-.RI "\fIFlag is set. \fP"
+.RI "\fIFlag is set\&. \fP"
 .ti -1c
 .RI "#define \fBCF_FLAG_OFF\fP   ''"
 .br
-.RI "\fIFlag is not set. \fP"
+.RI "\fIFlag is not set\&. \fP"
 .ti -1c
 .RI "#define \fBCF_NO_OPTION\fP   ' '"
 .br
-.RI "\fIOption is not set. \fP"
+.RI "\fIOption is not set\&. \fP"
 .ti -1c
 .RI "#define \fBTABLEN\fP   8"
 .br
-.RI "\fITAB length. \fP"
+.RI "\fITAB length\&. \fP"
 .ti -1c
 .RI "#define \fBCFP_PUT\fP   0"
 .br
-.RI "\fIFunction Call or Automatic Initialization. \fP"
+.RI "\fIFunction Call or Automatic Initialization\&. \fP"
 .ti -1c
 .RI "#define \fBCFP_ARG\fP   1"
 .br
-.RI "\fICommandline. \fP"
+.RI "\fICommandline\&. \fP"
 .ti -1c
 .RI "#define \fBCFP_ENV\fP   2"
 .br
-.RI "\fIEnvironment. \fP"
+.RI "\fIEnvironment\&. \fP"
 .ti -1c
 .RI "#define \fBCFP_PRIV\fP   3"
 .br
-.RI "\fIPrivate Configuration File. \fP"
+.RI "\fIPrivate Configuration File\&. \fP"
 .ti -1c
 .RI "#define \fBCFP_SYS\fP   4"
 .br
-.RI "\fISystem Configuration File. \fP"
+.RI "\fISystem Configuration File\&. \fP"
 .ti -1c
 .RI "#define \fBCFP_DEF\fP   5"
 .br
-.RI "\fIBuilt-in Default. \fP"
+.RI "\fIBuilt-in Default\&. \fP"
 .ti -1c
 .RI "#define \fBCFP_QRY\fP   6"
 .br
-.RI "\fIStandard Input Channel. \fP"
+.RI "\fIStandard Input Channel\&. \fP"
 .ti -1c
 .RI "#define \fBCFP_RESERVED\fP   7"
 .br
-.RI "\fIReserved for Subprojects. \fP"
+.RI "\fIReserved for Subprojects\&. \fP"
 .ti -1c
 .RI "#define \fBCFS_NOT\fP   0"
 .br
-.RI "\fIStart Mode: No action on error. \fP"
+.RI "\fIError Response Modes for \fBcfstart()\fP \fP"
 .ti -1c
 .RI "#define \fBCFS_ALL\fP   1"
 .br
-.RI "\fIStart Mode: All error messages. \fP"
+.RI "\fIStart Mode: All error messages\&. \fP"
 .ti -1c
 .RI "#define \fBCFS_NEG\fP   2"
 .br
-.RI "\fIStart Mode: Only severe errors. \fP"
+.RI "\fIStart Mode: Only severe errors\&. \fP"
 .ti -1c
 .RI "#define \fBCFS_USG\fP   3"
 .br
-.RI "\fIStart Mode: Usage message if error was negative, error output like \fBCFS_NEG\fP. \fP"
+.RI "\fIStart Mode: Usage message if error was negative, error output like \fBCFS_NEG\fP\&. \fP"
 .ti -1c
 .RI "#define \fBCFS_DEBUG\fP   4"
 .br
-.RI "\fIStart Mode: Output like \fBCFS_USG\fP plus raw dump of configuration. \fP"
+.RI "\fIStart Mode: Output like \fBCFS_USG\fP plus raw dump of configuration\&. \fP"
 .in -1c
 .SS "Functions"
 
 .in +1c
 .ti -1c
-.RI "int \fBcfinit\fP (\fBCONFIG\fP *set, int ac, char **av)"
+.RI "int \fBcfinit\fP (\fBCONFIG\fP *set, int argc, char **argv)"
 .br
-.RI "\fIInitialize CFLIB Configuration Database and parse possible sources for database entries according to the settings in \fIset\fP. \fP"
+.RI "\fI\fBcfinit()\fP Initialize Configuration Database \fP"
 .ti -1c
 .RI "void \fBcfexit\fP (void)"
 .br
-.RI "\fIFree allocated memory and reset the configuration database and error stack. \fP"
+.RI "\fI\fBcfexit()\fP Free allocated memory and reset configuration database and error stack \fP"
 .ti -1c
-.RI "int \fBcfstart\fP (\fBCONFIG\fP *setting, int ac, char **av, char *help, int mode)"
+.RI "int \fBcfstart\fP (\fBCONFIG\fP *set, int ac, char **av, char *help, int mode)"
 .br
-.RI "\fISetup Configuration Database. \fP"
+.RI "\fI\fBcfstart()\fP Start Configuration Database (with error reporting and usage message) \fP"
 .in -1c
 .SS "Variables"
 
 .in +1c
 .ti -1c
-.RI "\fBCONFIG\fP * \fB_conf\fP [MAXCONF+1]"
+.RI "\fBCONFIG\fP * \fB_conf\fP [\fBMAXCONF\fP+1]"
 .br
-.RI "\fILibrary Internal: CFLIB Configuration Database with at most \fBMAXCONF\fP parameters. \fP"
+.RI "\fILibrary Internal: CFLIB Configuration Database with at most \fBMAXCONF\fP parameters\&. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
-Basic CFLIB Setup. 
+Basic CFLIB Setup\&. 
 
 .IP "\(bu" 2
 General Defines
@@ -171,11 +168,22 @@ Initialization of the Configuration Database
 Resetting the Configuration Database 
 .PP
 
+.SH "Define Documentation"
+.PP 
+.SS "#define \fBFALSE\fP   0"
+
+.PP
+< TRUE, if not defined FALSE, if not defined 
+.SS "#define \fBCFS_NOT\fP   0"
+
+.PP
+Error Response Modes for \fBcfstart()\fP Start Mode: No action on error 
 .SH "Function Documentation"
 .PP 
-.SS "int cfinit (\fBCONFIG\fP * set, int ac, char ** av)"
+.SS "int \fBcfinit\fP (\fBCONFIG\fP *set, intac, char **av)"
+
 .PP
-Initialize CFLIB Configuration Database and parse possible sources for database entries according to the settings in \fIset\fP. 
+\fBcfinit()\fP Initialize Configuration Database Initialize CFLIB Configuration Database and parse possible sources for database entries according to the settings in \fIset\fP\&.
 .PP
 \fBParameters:\fP
 .RS 4
@@ -196,9 +204,9 @@ Initialize CFLIB Configuration Database and parse possible sources for database 
 .IP "\(bu" 2
 \fC<0\fP : Fatal error(s) occurred:
 .IP "  \(bu" 4
-\fBCFE_MCF\fP : Memory allocation for Configuration Failed. 
+\fBCFE_MCF\fP : Memory allocation for Configuration Failed\&. 
 .IP "  \(bu" 4
-\fBCFE_MEF\fP : Memory allocation in Error routine Failed. 
+\fBCFE_MEF\fP : Memory allocation in Error routine Failed\&. 
 .IP "  \(bu" 4
 any other absolute value is total error count
 .PP
@@ -212,14 +220,16 @@ any other absolute value is total error count
 .RE
 .PP
 
-.SS "void cfexit (void)"
+.SS "void \fBcfexit\fP (void)"
+
 .PP
-Free allocated memory and reset the configuration database and error stack. 
+\fBcfexit()\fP Free allocated memory and reset configuration database and error stack Free allocated memory and reset the configuration database and error stack\&.
 .PP
-This function should be used before a repeated call to \fBcfinit()\fP or \fBcfstart()\fP. Furthermore, it may be desired to call \fBcfexit()\fP when the configuration database occupies a lot of memory and is no longer needed. 
-.SS "int cfstart (\fBCONFIG\fP * setting, int ac, char ** av, char * help, int mode)"
+This function should be used before a repeated call to \fBcfinit()\fP or \fBcfstart()\fP\&. Furthermore, it may be desired to call \fBcfexit()\fP when the configuration database occupies a lot of memory and is no longer needed\&. 
+.SS "int \fBcfstart\fP (\fBCONFIG\fP *setting, intac, char **av, char *help, intmode)"
+
 .PP
-Setup Configuration Database. 
+\fBcfstart()\fP Start Configuration Database (with error reporting and usage message) Setup Configuration Database\&.
 .PP
 Check errors and output usage message, if required
 .PP
@@ -242,15 +252,15 @@ Omit, if \fCNULL\fP
 .PD 0
 
 .IP "\(bu" 2
-\fBCFS_NOT\fP - Start Mode: No action on error.  
+\fBCFS_NOT\fP - Error Response Modes for \fBcfstart()\fP  
 .IP "\(bu" 2
-\fBCFS_ALL\fP - Start Mode: All error messages.  
+\fBCFS_ALL\fP - Start Mode: All error messages\&.  
 .IP "\(bu" 2
-\fBCFS_NEG\fP - Start Mode: Only severe errors.  
+\fBCFS_NEG\fP - Start Mode: Only severe errors\&.  
 .IP "\(bu" 2
-\fBCFS_USG\fP - Start Mode: Usage message if error was negative, error output like \fBCFS_NEG\fP.  
+\fBCFS_USG\fP - Start Mode: Usage message if error was negative, error output like \fBCFS_NEG\fP\&.  
 .IP "\(bu" 2
-\fBCFS_DEBUG\fP - Start Mode: Output like \fBCFS_USG\fP plus raw dump of configuration. 
+\fBCFS_DEBUG\fP - Start Mode: Output like \fBCFS_USG\fP plus raw dump of configuration\&. 
 .PP
 .RE
 .PP
@@ -269,4 +279,4 @@ Omit, if \fCNULL\fP
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for CFLIB - Flexible Configuration Library from the source code.
+Generated automatically by Doxygen for CFLIB - Flexible Configuration Library from the source code\&.
