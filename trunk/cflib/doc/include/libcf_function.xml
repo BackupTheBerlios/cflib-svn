@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<tagfile>
+<compound kind="file">
+<name>libcf.a</name>
+<path>cflib/lib/</path>
+<filename>cflib</filename>
+<member kind="function">
+      <type>int</type>
+      <name>cfinit</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>ge593ff607f853bd5fc16a16bb6759314</anchor>
+      <arglist>(CONFIG *set, int ac, char **av)</arglist>
+    </member>
+<member kind="function">
+      <type>void</type>
+      <name>cfexit</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>g47bfff42f432b3e8b5b9f12b695e60db</anchor>
+      <arglist>(void)</arglist>
+    </member>
+<member kind="function">
+      <type>int</type>
+      <name>cfstart</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>gdcf24d678203bd09a0a3e05b8a986c65</anchor>
+      <arglist>(CONFIG *setting, int ac, char **av, char *help, int mode)</arglist>
+    </member>
+<member kind="function">
+      <type>int</type>
+      <name>cfform</name>
+      <anchorfile>group__report__generation.html</anchorfile>
+      <anchor>g2f8350e7d032c87b2a0e1cb6149a85ec</anchor>
+      <arglist>(char *file, char *outfile, char *vd, int mode)</arglist>
+    </member>
+<member kind="function">
+      <type>void</type>
+      <name>RemoveCR</name>
+      <anchorfile>group__utilities.html</anchorfile>
+      <anchor>g869ea1081375ada22168696db002bc58</anchor>
+      <arglist>(char *ptr)</arglist>
+    </member>
+<member kind="function">
+      <type>void</type>
+      <name>RemoveTrailSpace</name>
+      <anchorfile>group__utilities.html</anchorfile>
+      <anchor>gbb7b78ca5a077167e24637bba539eea1</anchor>
+      <arglist>(char *ptr)</arglist>
+    </member>
+<member kind="function">
+      <type>char *</type>
+      <name>EatWhiteSpace</name>
+      <anchorfile>group__utilities.html</anchorfile>
+      <anchor>g00023e1ae3b25744b3cce3b509e21fe8</anchor>
+      <arglist>(char *ptr)</arglist>
+    </member>
+<member kind="function">
+      <type>int</type>
+      <name>IsATerminal</name>
+      <anchorfile>group__utilities.html</anchorfile>
+      <anchor>g9a90e738d03b642f33901600671d225a</anchor>
+      <arglist>(FILE *fp)</arglist>
+    </member>
+<member kind="function">
+      <type>int</type>
+      <name>BackupFile</name>
+      <anchorfile>group__utilities.html</anchorfile>
+      <anchor>g0fccda7427db33b2f73a3b6dca864207</anchor>
+      <arglist>(const char *file, char *modus)</arglist>
+    </member>
+<member kind="function">
+      <type>char *</type>
+      <name>FindFile</name>
+      <anchorfile>group__utilities.html</anchorfile>
+      <anchor>g59fc2b29cf26051e0854b664f5aed15d</anchor>
+      <arglist>(const char *fname, const char *fpath, const char *const *fext)</arglist>
+    </member>
+<member kind="function">
+      <type>int</type>
+      <name>cfputerr</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>gad2687826308f21b54657d2728e4cfcc</anchor>
+      <arglist>(int ecode, char *string,...)</arglist>
+    </member>
+<member kind="function">
+      <type>int</type>
+      <name>cfgeterr</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>g2dc49b60b3ec7a82086e60f4b1c41e18</anchor>
+      <arglist>(char *string, size_t len)</arglist>
+    </member>
+<member kind="function">
+      <type>void</type>
+      <name>cfclearerr</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>gad0c79adfdf363a11532dc4039136ec6</anchor>
+      <arglist>(void)</arglist>
+    </member>
+<member kind="function">
+      <type>int</type>
+      <name>cfreverr</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>gbc3a143038fbcabc944d224e20ca50f8</anchor>
+      <arglist>(void)</arglist>
+    </member>
+<member kind="function">
+      <type>int</type>
+      <name>cfdump</name>
+      <anchorfile>group__advanced__features.html</anchorfile>
+      <anchor>gecfc8ee37366e1b36cb5aac0cc41ebdc</anchor>
+      <arglist>(FILE *fout)</arglist>
+    </member>
+<member kind="function">
+      <type>int</type>
+      <name>cfdinichk</name>
+      <anchorfile>group__advanced__features.html</anchorfile>
+      <anchor>g35e2c28f591ac71e3617c612233ecdd0</anchor>
+      <arglist>(CONFIG *set)</arglist>
+    </member>
+<member kind="function">
+      <type>char *</type>
+      <name>cfhomexp</name>
+      <anchorfile>group__advanced__features.html</anchorfile>
+      <anchor>g469258ed449ac26d5c82e665db491ff2</anchor>
+      <arglist>(char *name)</arglist>
+    </member>
+<member kind="function">
+      <type>void *</type>
+      <name>cfgetent</name>
+      <anchorfile>group__retrieval.html</anchorfile>
+      <anchor>gc13ba743ed26e6c05df14817ad9df3da</anchor>
+      <arglist>(char *name, CFFLAGTYP typ)</arglist>
+    </member>
+<member kind="function">
+      <type>int</type>
+      <name>cfgetvers</name>
+      <anchorfile>group__retrieval.html</anchorfile>
+      <anchor>gc4e376e3630e9b25655ee0e0b1a54a5b</anchor>
+      <arglist>(void)</arglist>
+    </member>
+<member kind="function">
+      <type>char *</type>
+      <name>cfgetsubvers</name>
+      <anchorfile>group__retrieval.html</anchorfile>
+      <anchor>g160032675def60398ebfd66589ddc1e5</anchor>
+      <arglist>(void)</arglist>
+    </member>
+<member kind="function">
+      <type>char *</type>
+      <name>cfgetusg</name>
+      <anchorfile>group__retrieval.html</anchorfile>
+      <anchor>gd3e4e24668cdc111471332a7e79fc897</anchor>
+      <arglist>(void)</arglist>
+    </member>
+<member kind="function">
+      <type>int</type>
+      <name>cfputstr</name>
+      <anchorfile>group__setting__saving.html</anchorfile>
+      <anchor>g9553f7a24b080660793a560c2bc8f210</anchor>
+      <arglist>(char *name, char *content)</arglist>
+    </member>
+<member kind="function">
+      <type>int</type>
+      <name>cfputtime</name>
+      <anchorfile>group__setting__saving.html</anchorfile>
+      <anchor>g6f133f88dc253a6a80d13eed4d123063</anchor>
+      <arglist>(CFFLAGTYP td)</arglist>
+    </member>
+<member kind="function">
+      <type>int</type>
+      <name>cfnosave</name>
+      <anchorfile>group__setting__saving.html</anchorfile>
+      <anchor>g0f6ed90e3ecfa0074af1635a0e4339ef</anchor>
+      <arglist>(char *name, const char *onoff)</arglist>
+    </member>
+<member kind="function">
+      <type>int</type>
+      <name>cfsave</name>
+      <anchorfile>group__setting__saving.html</anchorfile>
+      <anchor>g046d8a68eae35b987eacca04a9a06cca</anchor>
+      <arglist>(char *file, const char *savemode)</arglist>
+    </member>
+</compound>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</tagfile>

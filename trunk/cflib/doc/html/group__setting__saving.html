@@ -43,6 +43,7 @@
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
 </div>
@@ -61,17 +62,17 @@
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
 <tr class="memitem:gab4370bac1e151641bfb78e65f8ec4b44"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__setting__saving.html#gab4370bac1e151641bfb78e65f8ec4b44">cfput</a>(a, b)&#160;&#160;&#160;<a class="el" href="group__setting__saving.html#ga9553f7a24b080660793a560c2bc8f210">cfputstr</a>(a,(char *)b)</td></tr>
-<tr class="memdesc:gab4370bac1e151641bfb78e65f8ec4b44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update or Add Parameter (Utility Function Macro)  <a href="#gab4370bac1e151641bfb78e65f8ec4b44"></a><br/></td></tr>
+<tr class="memdesc:gab4370bac1e151641bfb78e65f8ec4b44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update or Add a Parameter.  <a href="#gab4370bac1e151641bfb78e65f8ec4b44"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga9553f7a24b080660793a560c2bc8f210"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__setting__saving.html#ga9553f7a24b080660793a560c2bc8f210">cfputstr</a> (char *name, char *content)</td></tr>
-<tr class="memdesc:ga9553f7a24b080660793a560c2bc8f210"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update or Add Parameter <em>name</em> with string <em>content</em>.  <a href="#ga9553f7a24b080660793a560c2bc8f210"></a><br/></td></tr>
-<tr class="memitem:ga6f133f88dc253a6a80d13eed4d123063"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__setting__saving.html#ga6f133f88dc253a6a80d13eed4d123063">cfputtime</a> (<a class="el" href="group__special__options__mask.html#ga4854f1596d5c6e0604a478fa9a2e23f0">CFFLAGTYP</a> td)</td></tr>
-<tr class="memdesc:ga6f133f88dc253a6a80d13eed4d123063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set all Time and/or Date entries in CFLIB DB to <em>now</em> or <em>today</em>.  <a href="#ga6f133f88dc253a6a80d13eed4d123063"></a><br/></td></tr>
 <tr class="memitem:ga0f6ed90e3ecfa0074af1635a0e4339ef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__setting__saving.html#ga0f6ed90e3ecfa0074af1635a0e4339ef">cfnosave</a> (char *name, const char *onoff)</td></tr>
-<tr class="memdesc:ga0f6ed90e3ecfa0074af1635a0e4339ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alter or query the <a class="el" href="group__special__options__mask.html#gad76153c65f68cc0ee5c1a04c8c3e80bf">CF_NOSAVE</a> Flag of Parameter <em>name</em>.  <a href="#ga0f6ed90e3ecfa0074af1635a0e4339ef"></a><br/></td></tr>
-<tr class="memitem:ga046d8a68eae35b987eacca04a9a06cca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__setting__saving.html#ga046d8a68eae35b987eacca04a9a06cca">cfsave</a> (char *file, const char *savemode)</td></tr>
-<tr class="memdesc:ga046d8a68eae35b987eacca04a9a06cca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write configuration data to a Configuration File or <code>stdout</code>.  <a href="#ga046d8a68eae35b987eacca04a9a06cca"></a><br/></td></tr>
+<tr class="memdesc:ga0f6ed90e3ecfa0074af1635a0e4339ef"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__setting__saving.html#ga0f6ed90e3ecfa0074af1635a0e4339ef">cfnosave()</a> Alter or query the <a class="el" href="group__special__options__mask.html#gad76153c65f68cc0ee5c1a04c8c3e80bf">CF_NOSAVE</a> Flag of Parameter <em>name</em>  <a href="#ga0f6ed90e3ecfa0074af1635a0e4339ef"></a><br/></td></tr>
+<tr class="memitem:ga9553f7a24b080660793a560c2bc8f210"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__setting__saving.html#ga9553f7a24b080660793a560c2bc8f210">cfputstr</a> (char *name, char *content)</td></tr>
+<tr class="memdesc:ga9553f7a24b080660793a560c2bc8f210"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__setting__saving.html#ga9553f7a24b080660793a560c2bc8f210">cfputstr()</a> Update or Add Parameter <em>name</em> with string <em>content</em>  <a href="#ga9553f7a24b080660793a560c2bc8f210"></a><br/></td></tr>
+<tr class="memitem:ga6f133f88dc253a6a80d13eed4d123063"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__setting__saving.html#ga6f133f88dc253a6a80d13eed4d123063">cfputtime</a> (<a class="el" href="group__special__options__mask.html#ga4854f1596d5c6e0604a478fa9a2e23f0">CFFLAGTYP</a> td)</td></tr>
+<tr class="memdesc:ga6f133f88dc253a6a80d13eed4d123063"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__setting__saving.html#ga6f133f88dc253a6a80d13eed4d123063">cfputtime()</a> Set all Time and/or Date entries in CFLIB DB to <em>now</em> or <em>today</em>  <a href="#ga6f133f88dc253a6a80d13eed4d123063"></a><br/></td></tr>
+<tr class="memitem:gaad7e1267cd904b4480a0eeaeb03b5f75"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__setting__saving.html#gaad7e1267cd904b4480a0eeaeb03b5f75">cfsave</a> (char *fname, const char *savemode)</td></tr>
+<tr class="memdesc:gaad7e1267cd904b4480a0eeaeb03b5f75"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__setting__saving.html#gaad7e1267cd904b4480a0eeaeb03b5f75">cfsave()</a> Write configuration data to a Configuration File or <code>stdout</code>  <a href="#gaad7e1267cd904b4480a0eeaeb03b5f75"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <p>Set/Update Parameter Values or Save a Configuration File. </p>
@@ -101,8 +102,8 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Update or Add Parameter (Utility Function Macro) </p>
-<p>Update or Add a Parameter.</p>
+<p>Update or Add a Parameter. </p>
+<p>Update or Add Parameter (Utility Function Macro)</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">a</td><td><a class="el" href="config_initializer.html#parameter_name">Parameter Name</a> </td></tr>
@@ -110,11 +111,70 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns:</dt><dd><b>int</b> <a class="el" href="group__setting__saving.html#ga9553f7a24b080660793a560c2bc8f210" title="Update or Add Parameter name with string content.">cfputstr()</a> </dd></dl>
+<dl class="section return"><dt>Returns:</dt><dd><b>int</b> <a class="el" href="group__setting__saving.html#ga9553f7a24b080660793a560c2bc8f210" title="cfputstr() Update or Add Parameter name with string content ">cfputstr()</a> </dd></dl>
 
 </div>
 </div>
 <hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ga0f6ed90e3ecfa0074af1635a0e4339ef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__setting__saving.html#ga0f6ed90e3ecfa0074af1635a0e4339ef">cfnosave</a> </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>onoff</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="group__setting__saving.html#ga0f6ed90e3ecfa0074af1635a0e4339ef">cfnosave()</a> Alter or query the <a class="el" href="group__special__options__mask.html#gad76153c65f68cc0ee5c1a04c8c3e80bf">CF_NOSAVE</a> Flag of Parameter <em>name</em> </p>
+<p>Alter or query the <a class="el" href="group__special__options__mask.html#gad76153c65f68cc0ee5c1a04c8c3e80bf">CF_NOSAVE</a> Flag of Parameter <em>name</em>.</p>
+<p>When the configuration database is saved to a configuration file, the function <a class="el" href="group__setting__saving.html#gaad7e1267cd904b4480a0eeaeb03b5f75" title="cfsave() Write configuration data to a Configuration File or stdout ">cfsave()</a> will exclude all items with the <a class="el" href="group__special__options__mask.html#gad76153c65f68cc0ee5c1a04c8c3e80bf">CF_NOSAVE</a> flag set from the output.</p>
+<p>The <a class="el" href="group__special__options__mask.html#gad76153c65f68cc0ee5c1a04c8c3e80bf">CF_NOSAVE</a> flag can be set in the Special Option Mask <a class="el" href="struct_c_o_n_f_i_g.html#ab04d08abdf758c0400caaded716f4089" title="Special Options Mask">CONFIG::flag</a> for every entry in the <a class="el" href="config_initializer.html">Configuration Initializer</a> given to <a class="el" href="group__cflib__core.html#ga64fb341565c2ddfccd6669e5e6265a8a" title="cfinit() Initialize Configuration Database">cfinit()</a> or <a class="el" href="group__cflib__core.html#ga6e04a462f9ad273de914af386ff15623" title="cfstart() Start Configuration Database (with error reporting and usage message)">cfstart()</a> or later be set with this function for parameters in the current configuration database <a class="el" href="group__cflib__core.html#ga7d0fec33ada97c2d7ef78e6c3d83da97">_conf</a></p>
+<p><a class="el" href="config_levels.html#residuals">Residual Items</a> will have the <a class="el" href="group__special__options__mask.html#gad76153c65f68cc0ee5c1a04c8c3e80bf">CF_NOSAVE</a> flag set by default.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Entry's name<ul>
+<li><code>""</code> : All entries</li>
+<li><code>NULL</code> : All hardcoded entries</li>
+</ul>
+</td></tr>
+    <tr><td class="paramname">onoff</td><td><ul>
+<li><a class="el" href="group__cflib__core.html#ga355c714f2912ac336b8b03468c978d8c">CF_FLAG_ON</a> : Set Flag </li>
+<li><a class="el" href="group__cflib__core.html#ga7010abac2c80c121772da4d9c03332ee">CF_FLAG_OFF</a> : Delete Flag </li>
+<li><code>"i"</code> : Inquire Flag</li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd><ul>
+<li><code>0</code> : Entry updated successfully / Flag is OFF (for <code>"i"</code>) </li>
+<li><code>1</code> : Flag is ON (for <code>"i"</code>) </li>
+<li><code>!=0</code> or <code>1</code> : An Error occurred:<ul>
+<li><a class="el" href="group__errors.html#gaf8cd36471ddcc549668f49238855609d">CFE_NCA</a> : No Configuration database Available. </li>
+<li><a class="el" href="group__errors.html#ga7f7e54a5ccefa34556fe6da3b35b4f27">CFE_NEA</a> : No Entry with that name Available.  </li>
+</ul>
+</li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga9553f7a24b080660793a560c2bc8f210"></a>
 <div class="memitem">
 <div class="memproto">
@@ -140,8 +200,8 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Update or Add Parameter <em>name</em> with string <em>content</em>. </p>
 <p><a class="el" href="group__setting__saving.html#ga9553f7a24b080660793a560c2bc8f210">cfputstr()</a> Update or Add Parameter <em>name</em> with string <em>content</em> </p>
+<p>Update or Add Parameter <em>name</em> with string <em>content</em>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td><a class="el" href="config_initializer.html#parameter_name">Parameter Name</a> </td></tr>
@@ -177,8 +237,8 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Set all Time and/or Date entries in CFLIB DB to <em>now</em> or <em>today</em>. </p>
 <p><a class="el" href="group__setting__saving.html#ga6f133f88dc253a6a80d13eed4d123063">cfputtime()</a> Set all Time and/or Date entries in CFLIB DB to <em>now</em> or <em>today</em> </p>
+<p>Set all Time and/or Date entries in CFLIB DB to <em>now</em> or <em>today</em>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">td</td><td>Target Selection Mask: <ul>
@@ -203,71 +263,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga0f6ed90e3ecfa0074af1635a0e4339ef"></a>
+<a class="anchor" id="gaad7e1267cd904b4480a0eeaeb03b5f75"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__setting__saving.html#ga0f6ed90e3ecfa0074af1635a0e4339ef">cfnosave</a> </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>onoff</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Alter or query the <a class="el" href="group__special__options__mask.html#gad76153c65f68cc0ee5c1a04c8c3e80bf">CF_NOSAVE</a> Flag of Parameter <em>name</em>. </p>
-<p><a class="el" href="group__setting__saving.html#ga0f6ed90e3ecfa0074af1635a0e4339ef">cfnosave()</a> Alter or query the <a class="el" href="group__special__options__mask.html#gad76153c65f68cc0ee5c1a04c8c3e80bf">CF_NOSAVE</a> Flag of Parameter <em>name</em> </p>
-<p>When the configuration database is saved to a configuration file, the function <a class="el" href="group__setting__saving.html#ga046d8a68eae35b987eacca04a9a06cca" title="Write configuration data to a Configuration File or stdout.">cfsave()</a> will exclude all items with the <a class="el" href="group__special__options__mask.html#gad76153c65f68cc0ee5c1a04c8c3e80bf">CF_NOSAVE</a> flag set from the output.</p>
-<p>The <a class="el" href="group__special__options__mask.html#gad76153c65f68cc0ee5c1a04c8c3e80bf">CF_NOSAVE</a> flag can be set in the Special Option Mask <a class="el" href="struct__cf.html#ac86f8ac608a7b0aa947e84adcd4d24df" title="Special Options Mask">CONFIG::flag</a> for every entry in the <a class="el" href="config_initializer.html">Configuration Initializer</a> given to <a class="el" href="group__cflib__core.html#gae593ff607f853bd5fc16a16bb6759314" title="Initialize CFLIB Configuration Database and parse possible sources for database entries according to ...">cfinit()</a> or <a class="el" href="group__cflib__core.html#gadcf24d678203bd09a0a3e05b8a986c65" title="Setup Configuration Database.">cfstart()</a> or later be set with this function for parameters in the current configuration database <a class="el" href="group__cflib__core.html#ga7d0fec33ada97c2d7ef78e6c3d83da97">_conf</a></p>
-<p><a class="el" href="config_levels.html#residuals">Residual Items</a> will have the <a class="el" href="group__special__options__mask.html#gad76153c65f68cc0ee5c1a04c8c3e80bf">CF_NOSAVE</a> flag set by default.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>Entry's name<ul>
-<li><code>""</code> : All entries</li>
-<li><code>NULL</code> : All hardcoded entries</li>
-</ul>
-</td></tr>
-    <tr><td class="paramname">onoff</td><td><ul>
-<li><a class="el" href="group__cflib__core.html#ga355c714f2912ac336b8b03468c978d8c">CF_FLAG_ON</a> : Set Flag </li>
-<li><a class="el" href="group__cflib__core.html#ga7010abac2c80c121772da4d9c03332ee">CF_FLAG_OFF</a> : Delete Flag </li>
-<li><code>"i"</code> : Inquire Flag</li>
-</ul>
-</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns:</dt><dd><ul>
-<li><code>0</code> : Entry updated successfully / Flag is OFF (for <code>"i"</code>) </li>
-<li><code>1</code> : Flag is ON (for <code>"i"</code>) </li>
-<li><code>!=0</code> or <code>1</code> : An Error occurred:<ul>
-<li><a class="el" href="group__errors.html#gaf8cd36471ddcc549668f49238855609d">CFE_NCA</a> : No Configuration database Available. </li>
-<li><a class="el" href="group__errors.html#ga7f7e54a5ccefa34556fe6da3b35b4f27">CFE_NEA</a> : No Entry with that name Available.  </li>
-</ul>
-</li>
-</ul>
-</dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga046d8a68eae35b987eacca04a9a06cca"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__setting__saving.html#ga046d8a68eae35b987eacca04a9a06cca">cfsave</a> </td>
+          <td class="memname">int <a class="el" href="group__setting__saving.html#gaad7e1267cd904b4480a0eeaeb03b5f75">cfsave</a> </td>
           <td>(</td>
           <td class="paramtype">char *&#160;</td>
           <td class="paramname"><em>file</em>, </td>
@@ -287,9 +288,9 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Write configuration data to a Configuration File or <code>stdout</code>. </p>
-<p><a class="el" href="group__setting__saving.html#ga046d8a68eae35b987eacca04a9a06cca">cfsave()</a> Write configuration data to a Configuration File or <code>stdout</code> </p>
-<p>Entries with the <a class="el" href="group__special__options__mask.html#gad76153c65f68cc0ee5c1a04c8c3e80bf">CF_NOSAVE</a> flag will be excluded from the output. Use <a class="el" href="group__setting__saving.html#ga0f6ed90e3ecfa0074af1635a0e4339ef" title="Alter or query the CF_NOSAVE Flag of Parameter name.">cfnosave()</a> to inquire or alter that flag for an entry.</p>
+<p><a class="el" href="group__setting__saving.html#gaad7e1267cd904b4480a0eeaeb03b5f75">cfsave()</a> Write configuration data to a Configuration File or <code>stdout</code> </p>
+<p>Write configuration data to a Configuration File or <code>stdout</code>.</p>
+<p>Entries with the <a class="el" href="group__special__options__mask.html#gad76153c65f68cc0ee5c1a04c8c3e80bf">CF_NOSAVE</a> flag will be excluded from the output. Use <a class="el" href="group__setting__saving.html#ga0f6ed90e3ecfa0074af1635a0e4339ef" title="cfnosave() Alter or query the CF_NOSAVE Flag of Parameter name ">cfnosave()</a> to inquire or alter that flag for an entry.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">file</td><td><ul>

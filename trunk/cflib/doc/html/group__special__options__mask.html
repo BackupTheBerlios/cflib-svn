@@ -43,6 +43,7 @@
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
 </div>
@@ -55,88 +56,124 @@
 <div class="ingroups"><a class="el" href="group__cflib.html">Flexible Configuration Library</a></div></div><!--header-->
 <div class="contents">
 
-<p>The <b>"Special Options Mask"</b> is a Bitmask of type <a class="el" href="group__special__options__mask.html#ga4854f1596d5c6e0604a478fa9a2e23f0">CFFLAGTYP</a> in Configuration Entry Structure Member <a class="el" href="struct__cf.html#ac86f8ac608a7b0aa947e84adcd4d24df" title="Special Options Mask">CONFIG::flag</a> containing Type, Instruction and Information Flags for a Parameter.  
+<p>The <b>"Special Options Mask"</b> is a Bitmask of type <a class="el" href="group__special__options__mask.html#ga4854f1596d5c6e0604a478fa9a2e23f0">CFFLAGTYP</a> in Configuration Entry Structure Member <a class="el" href="struct_c_o_n_f_i_g.html#ab04d08abdf758c0400caaded716f4089" title="Special Options Mask">CONFIG::flag</a> containing Type, Instruction and Information Flags for a Parameter.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
-<tr class="memitem:gaa4d82cea91ede4aee78594417894e368"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#gaa4d82cea91ede4aee78594417894e368">CF_LAST</a>&#160;&#160;&#160;0x0001</td></tr>
-<tr class="memdesc:gaa4d82cea91ede4aee78594417894e368"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last entry in settings array.  <a href="#gaa4d82cea91ede4aee78594417894e368"></a><br/></td></tr>
-<tr class="memitem:gab383c1436888ea6b410141f7c0b1f306"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#gab383c1436888ea6b410141f7c0b1f306">CF_PATH</a>&#160;&#160;&#160;0x0002</td></tr>
-<tr class="memdesc:gab383c1436888ea6b410141f7c0b1f306"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search Path (for FindFile feature)  <a href="#gab383c1436888ea6b410141f7c0b1f306"></a><br/></td></tr>
-<tr class="memitem:gafeeb63d4d8c498bec4a237ad8b94f02f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#gafeeb63d4d8c498bec4a237ad8b94f02f">CF_SETFILE</a>&#160;&#160;&#160;0x0004</td></tr>
-<tr class="memdesc:gafeeb63d4d8c498bec4a237ad8b94f02f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry is Private Configuration File.  <a href="#gafeeb63d4d8c498bec4a237ad8b94f02f"></a><br/></td></tr>
-<tr class="memitem:gabb03ea68e07e388da2c1337a1582c72e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#gabb03ea68e07e388da2c1337a1582c72e">CF_SYS_SETFILE</a>&#160;&#160;&#160;0x0008</td></tr>
-<tr class="memdesc:gabb03ea68e07e388da2c1337a1582c72e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry is System Configuration File.  <a href="#gabb03ea68e07e388da2c1337a1582c72e"></a><br/></td></tr>
-<tr class="memitem:ga603f0467f101b71f5f869381429ffef4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga603f0467f101b71f5f869381429ffef4">CF_SECTION</a>&#160;&#160;&#160;0x0010</td></tr>
-<tr class="memdesc:ga603f0467f101b71f5f869381429ffef4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Section in Configuration File.  <a href="#ga603f0467f101b71f5f869381429ffef4"></a><br/></td></tr>
-<tr class="memitem:ga071c29b5177f2df2400712ce8daae9b0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga071c29b5177f2df2400712ce8daae9b0">CF_PRGNAME</a>&#160;&#160;&#160;0x0020</td></tr>
-<tr class="memdesc:ga071c29b5177f2df2400712ce8daae9b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Running Program's Name from commandline.  <a href="#ga071c29b5177f2df2400712ce8daae9b0"></a><br/></td></tr>
-<tr class="memitem:ga0fde537a92deb77f75b21c9e8d306509"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga0fde537a92deb77f75b21c9e8d306509">CF_TIME</a>&#160;&#160;&#160;0x0040</td></tr>
-<tr class="memdesc:ga0fde537a92deb77f75b21c9e8d306509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time string.  <a href="#ga0fde537a92deb77f75b21c9e8d306509"></a><br/></td></tr>
-<tr class="memitem:ga1c5b511a34d2c0db6631539ba81a4386"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga1c5b511a34d2c0db6631539ba81a4386">CF_DATE</a>&#160;&#160;&#160;0x0080</td></tr>
-<tr class="memdesc:ga1c5b511a34d2c0db6631539ba81a4386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Date string.  <a href="#ga1c5b511a34d2c0db6631539ba81a4386"></a><br/></td></tr>
-<tr class="memitem:ga8d6cd1608fef5638efe964da63edf2dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga8d6cd1608fef5638efe964da63edf2dd">CF_SET_PUT</a>&#160;&#160;&#160;0x0100</td></tr>
-<tr class="memdesc:ga8d6cd1608fef5638efe964da63edf2dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source: Function Call.  <a href="#ga8d6cd1608fef5638efe964da63edf2dd"></a><br/></td></tr>
-<tr class="memitem:ga1b3eb474a5160e5a32385f6de53d90d6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga1b3eb474a5160e5a32385f6de53d90d6">CF_SET_ARG</a>&#160;&#160;&#160;0x0200</td></tr>
-<tr class="memdesc:ga1b3eb474a5160e5a32385f6de53d90d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source: Commandline Argument.  <a href="#ga1b3eb474a5160e5a32385f6de53d90d6"></a><br/></td></tr>
-<tr class="memitem:ga29dbd098a75a23ddc42b3b53e430d694"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga29dbd098a75a23ddc42b3b53e430d694">CF_SET_ENV</a>&#160;&#160;&#160;0x0400</td></tr>
-<tr class="memdesc:ga29dbd098a75a23ddc42b3b53e430d694"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source: Environment Variable.  <a href="#ga29dbd098a75a23ddc42b3b53e430d694"></a><br/></td></tr>
-<tr class="memitem:gaabf1d4d312964af93bd55f71eeec6988"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#gaabf1d4d312964af93bd55f71eeec6988">CF_SET_PRIV</a>&#160;&#160;&#160;0x0800</td></tr>
-<tr class="memdesc:gaabf1d4d312964af93bd55f71eeec6988"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source: Private Configuration File.  <a href="#gaabf1d4d312964af93bd55f71eeec6988"></a><br/></td></tr>
-<tr class="memitem:ga8fe09807491ee119290329cf08e6f340"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga8fe09807491ee119290329cf08e6f340">CF_SET_SYS</a>&#160;&#160;&#160;0x1000</td></tr>
-<tr class="memdesc:ga8fe09807491ee119290329cf08e6f340"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source: System Configuration File.  <a href="#ga8fe09807491ee119290329cf08e6f340"></a><br/></td></tr>
-<tr class="memitem:ga17b4ef5b35afe21a4a80faa671030b65"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga17b4ef5b35afe21a4a80faa671030b65">CF_SET_DEF</a>&#160;&#160;&#160;0x2000</td></tr>
-<tr class="memdesc:ga17b4ef5b35afe21a4a80faa671030b65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source: Built-in Default.  <a href="#ga17b4ef5b35afe21a4a80faa671030b65"></a><br/></td></tr>
-<tr class="memitem:ga09dcbb96c5ace43a7d5e7e4f52d387a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga09dcbb96c5ace43a7d5e7e4f52d387a8">CF_SET_QRY</a>&#160;&#160;&#160;0x4000</td></tr>
-<tr class="memdesc:ga09dcbb96c5ace43a7d5e7e4f52d387a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source: Interactive Terminal Input.  <a href="#ga09dcbb96c5ace43a7d5e7e4f52d387a8"></a><br/></td></tr>
-<tr class="memitem:ga97d17b070dac10c14d3930c58bfba76f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga97d17b070dac10c14d3930c58bfba76f">CF_NO_OPT_ARG</a>&#160;&#160;&#160;0x10000</td></tr>
-<tr class="memdesc:ga97d17b070dac10c14d3930c58bfba76f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Commandline argument not following an option.  <a href="#ga97d17b070dac10c14d3930c58bfba76f"></a><br/></td></tr>
-<tr class="memitem:ga9e526dae88bf6803772107ff283637b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga9e526dae88bf6803772107ff283637b5">CF_CONCAT</a>&#160;&#160;&#160;0x20000</td></tr>
-<tr class="memdesc:ga9e526dae88bf6803772107ff283637b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Argument is concatenated to option.  <a href="#ga9e526dae88bf6803772107ff283637b5"></a><br/></td></tr>
-<tr class="memitem:ga72b75851880f36aaa5a52fdfe7960cca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga72b75851880f36aaa5a52fdfe7960cca">CF_IGN_ENV</a>&#160;&#160;&#160;0x40000</td></tr>
-<tr class="memdesc:ga72b75851880f36aaa5a52fdfe7960cca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do not check environment for variable.  <a href="#ga72b75851880f36aaa5a52fdfe7960cca"></a><br/></td></tr>
-<tr class="memitem:gae39e0d9b4e9af8c6d4b3676783dd26e0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#gae39e0d9b4e9af8c6d4b3676783dd26e0">CF_QUERY</a>&#160;&#160;&#160;0x80000</td></tr>
-<tr class="memdesc:gae39e0d9b4e9af8c6d4b3676783dd26e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ask the user for unresolved item after configuration parsing.  <a href="#gae39e0d9b4e9af8c6d4b3676783dd26e0"></a><br/></td></tr>
-<tr class="memitem:ga64c30a2865061d0c1074bc6ec91e3dcf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga64c30a2865061d0c1074bc6ec91e3dcf">CF_STR</a>&#160;&#160;&#160;0x100000</td></tr>
-<tr class="memdesc:ga64c30a2865061d0c1074bc6ec91e3dcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry is String.  <a href="#ga64c30a2865061d0c1074bc6ec91e3dcf"></a><br/></td></tr>
-<tr class="memitem:gab33869d596619ad14675c053925a42e0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#gab33869d596619ad14675c053925a42e0">CF_INT</a>&#160;&#160;&#160;0x200000</td></tr>
-<tr class="memdesc:gab33869d596619ad14675c053925a42e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry is Integer.  <a href="#gab33869d596619ad14675c053925a42e0"></a><br/></td></tr>
-<tr class="memitem:ga1d1f1d1b6eac6b5d9970102318ab2667"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga1d1f1d1b6eac6b5d9970102318ab2667">CF_FLAG</a>&#160;&#160;&#160;0x400000</td></tr>
-<tr class="memdesc:ga1d1f1d1b6eac6b5d9970102318ab2667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry is Flag.  <a href="#ga1d1f1d1b6eac6b5d9970102318ab2667"></a><br/></td></tr>
-<tr class="memitem:gaeefdbef320cbd7179f1fb0ebe0fcf5ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#gaeefdbef320cbd7179f1fb0ebe0fcf5ce">CF_REAL</a>&#160;&#160;&#160;0x800000</td></tr>
-<tr class="memdesc:gaeefdbef320cbd7179f1fb0ebe0fcf5ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry is Float.  <a href="#gaeefdbef320cbd7179f1fb0ebe0fcf5ce"></a><br/></td></tr>
-<tr class="memitem:ga675b6f8440beecc09fec54d17e9c3ee9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga675b6f8440beecc09fec54d17e9c3ee9">CF_FINDFILE</a>&#160;&#160;&#160;0x1000000</td></tr>
-<tr class="memdesc:ga675b6f8440beecc09fec54d17e9c3ee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry is filename to be searched for in the path.  <a href="#ga675b6f8440beecc09fec54d17e9c3ee9"></a><br/></td></tr>
-<tr class="memitem:ga3229f5b038eaa0c6428361d2aa510dfc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga3229f5b038eaa0c6428361d2aa510dfc">CF_MUST</a>&#160;&#160;&#160;0x2000000</td></tr>
-<tr class="memdesc:ga3229f5b038eaa0c6428361d2aa510dfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry may not be empty (<code>NULL</code> or "")  <a href="#ga3229f5b038eaa0c6428361d2aa510dfc"></a><br/></td></tr>
-<tr class="memitem:ga5415b257c706aae33d91d3947a3429c0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga5415b257c706aae33d91d3947a3429c0">CF_RESID</a>&#160;&#160;&#160;0x4000000</td></tr>
-<tr class="memdesc:ga5415b257c706aae33d91d3947a3429c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Residual/additional entry from commandline/setfile/cfput.  <a href="#ga5415b257c706aae33d91d3947a3429c0"></a><br/></td></tr>
-<tr class="memitem:gac30981201d7455071cef38a0133b9228"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#gac30981201d7455071cef38a0133b9228">CF_USAGE</a>&#160;&#160;&#160;0x8000000</td></tr>
-<tr class="memdesc:gac30981201d7455071cef38a0133b9228"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage Message format string.  <a href="#gac30981201d7455071cef38a0133b9228"></a><br/></td></tr>
-<tr class="memitem:gaff1b2e25aa9a89a55c1784018e24aa75"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#gaff1b2e25aa9a89a55c1784018e24aa75">CF_EXPHOME</a>&#160;&#160;&#160;0x10000000</td></tr>
-<tr class="memdesc:gaff1b2e25aa9a89a55c1784018e24aa75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expand Home Directory.  <a href="#gaff1b2e25aa9a89a55c1784018e24aa75"></a><br/></td></tr>
-<tr class="memitem:ga2b971231bd3cbad743ef2f4e0a613a47"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga2b971231bd3cbad743ef2f4e0a613a47">CF_MALLOC</a>&#160;&#160;&#160;0x20000000</td></tr>
-<tr class="memdesc:ga2b971231bd3cbad743ef2f4e0a613a47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Space for entry's content was mallocated.  <a href="#ga2b971231bd3cbad743ef2f4e0a613a47"></a><br/></td></tr>
-<tr class="memitem:ga618e7187ee15bacfe668e72a858e71fc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga618e7187ee15bacfe668e72a858e71fc">CF_FORCED</a>&#160;&#160;&#160;0x40000000</td></tr>
-<tr class="memdesc:ga618e7187ee15bacfe668e72a858e71fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setting has been forced (already)  <a href="#ga618e7187ee15bacfe668e72a858e71fc"></a><br/></td></tr>
-<tr class="memitem:gad76153c65f68cc0ee5c1a04c8c3e80bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#gad76153c65f68cc0ee5c1a04c8c3e80bf">CF_NOSAVE</a>&#160;&#160;&#160;0x80000000</td></tr>
-<tr class="memdesc:gad76153c65f68cc0ee5c1a04c8c3e80bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Don't include in savefile / mark entry.  <a href="#gad76153c65f68cc0ee5c1a04c8c3e80bf"></a><br/></td></tr>
-<tr class="memitem:gad9b1f659b11c529a0ed1035caf8b239b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#gad9b1f659b11c529a0ed1035caf8b239b">CF_SRC</a>&#160;&#160;&#160;(<a class="el" href="group__special__options__mask.html#gab33869d596619ad14675c053925a42e0">CF_INT</a>|<a class="el" href="group__special__options__mask.html#ga1d1f1d1b6eac6b5d9970102318ab2667">CF_FLAG</a>)</td></tr>
-<tr class="memdesc:gad9b1f659b11c529a0ed1035caf8b239b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for source/origin inquiry.  <a href="#gad9b1f659b11c529a0ed1035caf8b239b"></a><br/></td></tr>
-<tr class="memitem:ga36792935eec7c6636b6aea8df82f7480"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga36792935eec7c6636b6aea8df82f7480">CF_FLGINQ</a>&#160;&#160;&#160;(<a class="el" href="group__special__options__mask.html#ga64c30a2865061d0c1074bc6ec91e3dcf">CF_STR</a>|<a class="el" href="group__special__options__mask.html#ga1d1f1d1b6eac6b5d9970102318ab2667">CF_FLAG</a>)</td></tr>
-<tr class="memdesc:ga36792935eec7c6636b6aea8df82f7480"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for options mask inquiry.  <a href="#ga36792935eec7c6636b6aea8df82f7480"></a><br/></td></tr>
-<tr class="memitem:ga8d4f049e4c8022b03b7979ac3f0db04b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga8d4f049e4c8022b03b7979ac3f0db04b">CF_DOUBLE</a>&#160;&#160;&#160;(<a class="el" href="group__special__options__mask.html#gaeefdbef320cbd7179f1fb0ebe0fcf5ce">CF_REAL</a>|<a class="el" href="group__special__options__mask.html#ga1d1f1d1b6eac6b5d9970102318ab2667">CF_FLAG</a>)</td></tr>
-<tr class="memdesc:ga8d4f049e4c8022b03b7979ac3f0db04b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for double inquiry.  <a href="#ga8d4f049e4c8022b03b7979ac3f0db04b"></a><br/></td></tr>
-<tr class="memitem:ga8a50d7326b057d262f53ef84a166f9c5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga8a50d7326b057d262f53ef84a166f9c5">CF_TD</a>&#160;&#160;&#160;(<a class="el" href="group__special__options__mask.html#ga1c5b511a34d2c0db6631539ba81a4386">CF_DATE</a>|<a class="el" href="group__special__options__mask.html#ga0fde537a92deb77f75b21c9e8d306509">CF_TIME</a>)</td></tr>
-<tr class="memdesc:ga8a50d7326b057d262f53ef84a166f9c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Date or Time entry.  <a href="#ga8a50d7326b057d262f53ef84a166f9c5"></a><br/></td></tr>
+<tr class="memitem:gaa4d82cea91ede4aee78594417894e368"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaa4d82cea91ede4aee78594417894e368"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#gaa4d82cea91ede4aee78594417894e368">CF_LAST</a>&#160;&#160;&#160;0x0001</td></tr>
+<tr class="memdesc:gaa4d82cea91ede4aee78594417894e368"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last entry in settings array. <br/></td></tr>
+<tr class="memitem:gab383c1436888ea6b410141f7c0b1f306"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gab383c1436888ea6b410141f7c0b1f306"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#gab383c1436888ea6b410141f7c0b1f306">CF_PATH</a>&#160;&#160;&#160;0x0002</td></tr>
+<tr class="memdesc:gab383c1436888ea6b410141f7c0b1f306"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search Path (for FindFile feature) <br/></td></tr>
+<tr class="memitem:gafeeb63d4d8c498bec4a237ad8b94f02f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gafeeb63d4d8c498bec4a237ad8b94f02f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#gafeeb63d4d8c498bec4a237ad8b94f02f">CF_SETFILE</a>&#160;&#160;&#160;0x0004</td></tr>
+<tr class="memdesc:gafeeb63d4d8c498bec4a237ad8b94f02f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry is Private Configuration File. <br/></td></tr>
+<tr class="memitem:gabb03ea68e07e388da2c1337a1582c72e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gabb03ea68e07e388da2c1337a1582c72e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#gabb03ea68e07e388da2c1337a1582c72e">CF_SYS_SETFILE</a>&#160;&#160;&#160;0x0008</td></tr>
+<tr class="memdesc:gabb03ea68e07e388da2c1337a1582c72e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry is System Configuration File. <br/></td></tr>
+<tr class="memitem:ga603f0467f101b71f5f869381429ffef4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga603f0467f101b71f5f869381429ffef4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga603f0467f101b71f5f869381429ffef4">CF_SECTION</a>&#160;&#160;&#160;0x0010</td></tr>
+<tr class="memdesc:ga603f0467f101b71f5f869381429ffef4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Section in Configuration File. <br/></td></tr>
+<tr class="memitem:ga071c29b5177f2df2400712ce8daae9b0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga071c29b5177f2df2400712ce8daae9b0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga071c29b5177f2df2400712ce8daae9b0">CF_PRGNAME</a>&#160;&#160;&#160;0x0020</td></tr>
+<tr class="memdesc:ga071c29b5177f2df2400712ce8daae9b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Running Program's Name from commandline. <br/></td></tr>
+<tr class="memitem:ga0fde537a92deb77f75b21c9e8d306509"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga0fde537a92deb77f75b21c9e8d306509"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga0fde537a92deb77f75b21c9e8d306509">CF_TIME</a>&#160;&#160;&#160;0x0040</td></tr>
+<tr class="memdesc:ga0fde537a92deb77f75b21c9e8d306509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time string. <br/></td></tr>
+<tr class="memitem:ga1c5b511a34d2c0db6631539ba81a4386"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga1c5b511a34d2c0db6631539ba81a4386"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga1c5b511a34d2c0db6631539ba81a4386">CF_DATE</a>&#160;&#160;&#160;0x0080</td></tr>
+<tr class="memdesc:ga1c5b511a34d2c0db6631539ba81a4386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Date string. <br/></td></tr>
+<tr class="memitem:ga8d6cd1608fef5638efe964da63edf2dd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga8d6cd1608fef5638efe964da63edf2dd"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga8d6cd1608fef5638efe964da63edf2dd">CF_SET_PUT</a>&#160;&#160;&#160;0x0100</td></tr>
+<tr class="memdesc:ga8d6cd1608fef5638efe964da63edf2dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source: Function Call. <br/></td></tr>
+<tr class="memitem:ga1b3eb474a5160e5a32385f6de53d90d6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga1b3eb474a5160e5a32385f6de53d90d6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga1b3eb474a5160e5a32385f6de53d90d6">CF_SET_ARG</a>&#160;&#160;&#160;0x0200</td></tr>
+<tr class="memdesc:ga1b3eb474a5160e5a32385f6de53d90d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source: Commandline Argument. <br/></td></tr>
+<tr class="memitem:ga29dbd098a75a23ddc42b3b53e430d694"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga29dbd098a75a23ddc42b3b53e430d694"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga29dbd098a75a23ddc42b3b53e430d694">CF_SET_ENV</a>&#160;&#160;&#160;0x0400</td></tr>
+<tr class="memdesc:ga29dbd098a75a23ddc42b3b53e430d694"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source: Environment Variable. <br/></td></tr>
+<tr class="memitem:gaabf1d4d312964af93bd55f71eeec6988"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaabf1d4d312964af93bd55f71eeec6988"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#gaabf1d4d312964af93bd55f71eeec6988">CF_SET_PRIV</a>&#160;&#160;&#160;0x0800</td></tr>
+<tr class="memdesc:gaabf1d4d312964af93bd55f71eeec6988"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source: Private Configuration File. <br/></td></tr>
+<tr class="memitem:ga8fe09807491ee119290329cf08e6f340"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga8fe09807491ee119290329cf08e6f340"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga8fe09807491ee119290329cf08e6f340">CF_SET_SYS</a>&#160;&#160;&#160;0x1000</td></tr>
+<tr class="memdesc:ga8fe09807491ee119290329cf08e6f340"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source: System Configuration File. <br/></td></tr>
+<tr class="memitem:ga17b4ef5b35afe21a4a80faa671030b65"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga17b4ef5b35afe21a4a80faa671030b65"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga17b4ef5b35afe21a4a80faa671030b65">CF_SET_DEF</a>&#160;&#160;&#160;0x2000</td></tr>
+<tr class="memdesc:ga17b4ef5b35afe21a4a80faa671030b65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source: Built-in Default. <br/></td></tr>
+<tr class="memitem:ga09dcbb96c5ace43a7d5e7e4f52d387a8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga09dcbb96c5ace43a7d5e7e4f52d387a8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga09dcbb96c5ace43a7d5e7e4f52d387a8">CF_SET_QRY</a>&#160;&#160;&#160;0x4000</td></tr>
+<tr class="memdesc:ga09dcbb96c5ace43a7d5e7e4f52d387a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source: Interactive Terminal Input. <br/></td></tr>
+<tr class="memitem:ga97d17b070dac10c14d3930c58bfba76f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga97d17b070dac10c14d3930c58bfba76f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga97d17b070dac10c14d3930c58bfba76f">CF_NO_OPT_ARG</a>&#160;&#160;&#160;0x10000</td></tr>
+<tr class="memdesc:ga97d17b070dac10c14d3930c58bfba76f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Commandline argument not following an option. <br/></td></tr>
+<tr class="memitem:ga9e526dae88bf6803772107ff283637b5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga9e526dae88bf6803772107ff283637b5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga9e526dae88bf6803772107ff283637b5">CF_CONCAT</a>&#160;&#160;&#160;0x20000</td></tr>
+<tr class="memdesc:ga9e526dae88bf6803772107ff283637b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Argument is concatenated to option. <br/></td></tr>
+<tr class="memitem:ga72b75851880f36aaa5a52fdfe7960cca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga72b75851880f36aaa5a52fdfe7960cca"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga72b75851880f36aaa5a52fdfe7960cca">CF_IGN_ENV</a>&#160;&#160;&#160;0x40000</td></tr>
+<tr class="memdesc:ga72b75851880f36aaa5a52fdfe7960cca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do not check environment for variable. <br/></td></tr>
+<tr class="memitem:gae39e0d9b4e9af8c6d4b3676783dd26e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gae39e0d9b4e9af8c6d4b3676783dd26e0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#gae39e0d9b4e9af8c6d4b3676783dd26e0">CF_QUERY</a>&#160;&#160;&#160;0x80000</td></tr>
+<tr class="memdesc:gae39e0d9b4e9af8c6d4b3676783dd26e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ask the user for unresolved item after configuration parsing. <br/></td></tr>
+<tr class="memitem:ga64c30a2865061d0c1074bc6ec91e3dcf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga64c30a2865061d0c1074bc6ec91e3dcf"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga64c30a2865061d0c1074bc6ec91e3dcf">CF_STR</a>&#160;&#160;&#160;0x100000</td></tr>
+<tr class="memdesc:ga64c30a2865061d0c1074bc6ec91e3dcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry is String. <br/></td></tr>
+<tr class="memitem:gab33869d596619ad14675c053925a42e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gab33869d596619ad14675c053925a42e0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#gab33869d596619ad14675c053925a42e0">CF_INT</a>&#160;&#160;&#160;0x200000</td></tr>
+<tr class="memdesc:gab33869d596619ad14675c053925a42e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry is Integer. <br/></td></tr>
+<tr class="memitem:ga1d1f1d1b6eac6b5d9970102318ab2667"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga1d1f1d1b6eac6b5d9970102318ab2667"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga1d1f1d1b6eac6b5d9970102318ab2667">CF_FLAG</a>&#160;&#160;&#160;0x400000</td></tr>
+<tr class="memdesc:ga1d1f1d1b6eac6b5d9970102318ab2667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry is Flag. <br/></td></tr>
+<tr class="memitem:gaeefdbef320cbd7179f1fb0ebe0fcf5ce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaeefdbef320cbd7179f1fb0ebe0fcf5ce"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#gaeefdbef320cbd7179f1fb0ebe0fcf5ce">CF_REAL</a>&#160;&#160;&#160;0x800000</td></tr>
+<tr class="memdesc:gaeefdbef320cbd7179f1fb0ebe0fcf5ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry is Float. <br/></td></tr>
+<tr class="memitem:ga675b6f8440beecc09fec54d17e9c3ee9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga675b6f8440beecc09fec54d17e9c3ee9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga675b6f8440beecc09fec54d17e9c3ee9">CF_FINDFILE</a>&#160;&#160;&#160;0x1000000</td></tr>
+<tr class="memdesc:ga675b6f8440beecc09fec54d17e9c3ee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry is filename to be searched for in the path. <br/></td></tr>
+<tr class="memitem:ga3229f5b038eaa0c6428361d2aa510dfc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga3229f5b038eaa0c6428361d2aa510dfc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga3229f5b038eaa0c6428361d2aa510dfc">CF_MUST</a>&#160;&#160;&#160;0x2000000</td></tr>
+<tr class="memdesc:ga3229f5b038eaa0c6428361d2aa510dfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry may not be empty (<code>NULL</code> or "") <br/></td></tr>
+<tr class="memitem:ga5415b257c706aae33d91d3947a3429c0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga5415b257c706aae33d91d3947a3429c0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga5415b257c706aae33d91d3947a3429c0">CF_RESID</a>&#160;&#160;&#160;0x4000000</td></tr>
+<tr class="memdesc:ga5415b257c706aae33d91d3947a3429c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Residual/additional entry from commandline/setfile/cfput. <br/></td></tr>
+<tr class="memitem:gac30981201d7455071cef38a0133b9228"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gac30981201d7455071cef38a0133b9228"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#gac30981201d7455071cef38a0133b9228">CF_USAGE</a>&#160;&#160;&#160;0x8000000</td></tr>
+<tr class="memdesc:gac30981201d7455071cef38a0133b9228"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage Message format string. <br/></td></tr>
+<tr class="memitem:gaff1b2e25aa9a89a55c1784018e24aa75"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaff1b2e25aa9a89a55c1784018e24aa75"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#gaff1b2e25aa9a89a55c1784018e24aa75">CF_EXPHOME</a>&#160;&#160;&#160;0x10000000</td></tr>
+<tr class="memdesc:gaff1b2e25aa9a89a55c1784018e24aa75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expand Home Directory. <br/></td></tr>
+<tr class="memitem:ga2b971231bd3cbad743ef2f4e0a613a47"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga2b971231bd3cbad743ef2f4e0a613a47"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga2b971231bd3cbad743ef2f4e0a613a47">CF_MALLOC</a>&#160;&#160;&#160;0x20000000</td></tr>
+<tr class="memdesc:ga2b971231bd3cbad743ef2f4e0a613a47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Space for entry's content was mallocated. <br/></td></tr>
+<tr class="memitem:ga618e7187ee15bacfe668e72a858e71fc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga618e7187ee15bacfe668e72a858e71fc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga618e7187ee15bacfe668e72a858e71fc">CF_FORCED</a>&#160;&#160;&#160;0x40000000</td></tr>
+<tr class="memdesc:ga618e7187ee15bacfe668e72a858e71fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setting has been forced (already) <br/></td></tr>
+<tr class="memitem:gad76153c65f68cc0ee5c1a04c8c3e80bf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gad76153c65f68cc0ee5c1a04c8c3e80bf"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#gad76153c65f68cc0ee5c1a04c8c3e80bf">CF_NOSAVE</a>&#160;&#160;&#160;0x80000000</td></tr>
+<tr class="memdesc:gad76153c65f68cc0ee5c1a04c8c3e80bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Don't include in savefile / mark entry. <br/></td></tr>
+<tr class="memitem:gad9b1f659b11c529a0ed1035caf8b239b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gad9b1f659b11c529a0ed1035caf8b239b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#gad9b1f659b11c529a0ed1035caf8b239b">CF_SRC</a>&#160;&#160;&#160;(<a class="el" href="group__special__options__mask.html#gab33869d596619ad14675c053925a42e0">CF_INT</a>|<a class="el" href="group__special__options__mask.html#ga1d1f1d1b6eac6b5d9970102318ab2667">CF_FLAG</a>)</td></tr>
+<tr class="memdesc:gad9b1f659b11c529a0ed1035caf8b239b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for source/origin inquiry. <br/></td></tr>
+<tr class="memitem:ga36792935eec7c6636b6aea8df82f7480"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga36792935eec7c6636b6aea8df82f7480"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga36792935eec7c6636b6aea8df82f7480">CF_FLGINQ</a>&#160;&#160;&#160;(<a class="el" href="group__special__options__mask.html#ga64c30a2865061d0c1074bc6ec91e3dcf">CF_STR</a>|<a class="el" href="group__special__options__mask.html#ga1d1f1d1b6eac6b5d9970102318ab2667">CF_FLAG</a>)</td></tr>
+<tr class="memdesc:ga36792935eec7c6636b6aea8df82f7480"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for options mask inquiry. <br/></td></tr>
+<tr class="memitem:ga8d4f049e4c8022b03b7979ac3f0db04b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga8d4f049e4c8022b03b7979ac3f0db04b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga8d4f049e4c8022b03b7979ac3f0db04b">CF_DOUBLE</a>&#160;&#160;&#160;(<a class="el" href="group__special__options__mask.html#gaeefdbef320cbd7179f1fb0ebe0fcf5ce">CF_REAL</a>|<a class="el" href="group__special__options__mask.html#ga1d1f1d1b6eac6b5d9970102318ab2667">CF_FLAG</a>)</td></tr>
+<tr class="memdesc:ga8d4f049e4c8022b03b7979ac3f0db04b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for double inquiry. <br/></td></tr>
+<tr class="memitem:ga8a50d7326b057d262f53ef84a166f9c5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga8a50d7326b057d262f53ef84a166f9c5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga8a50d7326b057d262f53ef84a166f9c5">CF_TD</a>&#160;&#160;&#160;(<a class="el" href="group__special__options__mask.html#ga1c5b511a34d2c0db6631539ba81a4386">CF_DATE</a>|<a class="el" href="group__special__options__mask.html#ga0fde537a92deb77f75b21c9e8d306509">CF_TIME</a>)</td></tr>
+<tr class="memdesc:ga8a50d7326b057d262f53ef84a166f9c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Date or Time entry. <br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ga4854f1596d5c6e0604a478fa9a2e23f0"><td class="memItemLeft" align="right" valign="top">typedef unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga4854f1596d5c6e0604a478fa9a2e23f0">CFFLAGTYP</a></td></tr>
-<tr class="memdesc:ga4854f1596d5c6e0604a478fa9a2e23f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Special Options Mask Type.  <a href="#ga4854f1596d5c6e0604a478fa9a2e23f0"></a><br/></td></tr>
+<tr class="memitem:ga4854f1596d5c6e0604a478fa9a2e23f0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga4854f1596d5c6e0604a478fa9a2e23f0"></a>
+typedef unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__special__options__mask.html#ga4854f1596d5c6e0604a478fa9a2e23f0">CFFLAGTYP</a></td></tr>
+<tr class="memdesc:ga4854f1596d5c6e0604a478fa9a2e23f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Special Options Mask Type. <br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<p>The <b>"Special Options Mask"</b> is a Bitmask of type <a class="el" href="group__special__options__mask.html#ga4854f1596d5c6e0604a478fa9a2e23f0">CFFLAGTYP</a> in Configuration Entry Structure Member <a class="el" href="struct__cf.html#ac86f8ac608a7b0aa947e84adcd4d24df" title="Special Options Mask">CONFIG::flag</a> containing Type, Instruction and Information Flags for a Parameter. </p>
+<p>The <b>"Special Options Mask"</b> is a Bitmask of type <a class="el" href="group__special__options__mask.html#ga4854f1596d5c6e0604a478fa9a2e23f0">CFFLAGTYP</a> in Configuration Entry Structure Member <a class="el" href="struct_c_o_n_f_i_g.html#ab04d08abdf758c0400caaded716f4089" title="Special Options Mask">CONFIG::flag</a> containing Type, Instruction and Information Flags for a Parameter. </p>
 <ul>
 <li>Special CFLIB properties: <a class="el" href="parameter_types.html#cflib_parameters">CFLIB Parameters</a></li>
 <li>Source/Origin: <a class="el" href="config_levels.html#parsing_levels">Parsing Levels</a></li>
@@ -151,548 +188,6 @@ Typedefs</h2></td></tr>
 </ul>
 </li>
 </ul>
-<hr/><h2>Define Documentation</h2>
-<a class="anchor" id="gaa4d82cea91ede4aee78594417894e368"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#gaa4d82cea91ede4aee78594417894e368">CF_LAST</a>&#160;&#160;&#160;0x0001</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Last entry in settings array. </p>
-
-</div>
-</div>
-<a class="anchor" id="gab383c1436888ea6b410141f7c0b1f306"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#gab383c1436888ea6b410141f7c0b1f306">CF_PATH</a>&#160;&#160;&#160;0x0002</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Search Path (for FindFile feature) </p>
-
-</div>
-</div>
-<a class="anchor" id="gafeeb63d4d8c498bec4a237ad8b94f02f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#gafeeb63d4d8c498bec4a237ad8b94f02f">CF_SETFILE</a>&#160;&#160;&#160;0x0004</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Entry is Private Configuration File. </p>
-
-</div>
-</div>
-<a class="anchor" id="gabb03ea68e07e388da2c1337a1582c72e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#gabb03ea68e07e388da2c1337a1582c72e">CF_SYS_SETFILE</a>&#160;&#160;&#160;0x0008</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Entry is System Configuration File. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga603f0467f101b71f5f869381429ffef4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#ga603f0467f101b71f5f869381429ffef4">CF_SECTION</a>&#160;&#160;&#160;0x0010</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Section in Configuration File. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga071c29b5177f2df2400712ce8daae9b0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#ga071c29b5177f2df2400712ce8daae9b0">CF_PRGNAME</a>&#160;&#160;&#160;0x0020</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Running Program's Name from commandline. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga0fde537a92deb77f75b21c9e8d306509"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#ga0fde537a92deb77f75b21c9e8d306509">CF_TIME</a>&#160;&#160;&#160;0x0040</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Time string. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga1c5b511a34d2c0db6631539ba81a4386"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#ga1c5b511a34d2c0db6631539ba81a4386">CF_DATE</a>&#160;&#160;&#160;0x0080</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Date string. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga8d6cd1608fef5638efe964da63edf2dd"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#ga8d6cd1608fef5638efe964da63edf2dd">CF_SET_PUT</a>&#160;&#160;&#160;0x0100</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Source: Function Call. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga1b3eb474a5160e5a32385f6de53d90d6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#ga1b3eb474a5160e5a32385f6de53d90d6">CF_SET_ARG</a>&#160;&#160;&#160;0x0200</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Source: Commandline Argument. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga29dbd098a75a23ddc42b3b53e430d694"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#ga29dbd098a75a23ddc42b3b53e430d694">CF_SET_ENV</a>&#160;&#160;&#160;0x0400</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Source: Environment Variable. </p>
-
-</div>
-</div>
-<a class="anchor" id="gaabf1d4d312964af93bd55f71eeec6988"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#gaabf1d4d312964af93bd55f71eeec6988">CF_SET_PRIV</a>&#160;&#160;&#160;0x0800</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Source: Private Configuration File. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga8fe09807491ee119290329cf08e6f340"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#ga8fe09807491ee119290329cf08e6f340">CF_SET_SYS</a>&#160;&#160;&#160;0x1000</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Source: System Configuration File. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga17b4ef5b35afe21a4a80faa671030b65"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#ga17b4ef5b35afe21a4a80faa671030b65">CF_SET_DEF</a>&#160;&#160;&#160;0x2000</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Source: Built-in Default. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga09dcbb96c5ace43a7d5e7e4f52d387a8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#ga09dcbb96c5ace43a7d5e7e4f52d387a8">CF_SET_QRY</a>&#160;&#160;&#160;0x4000</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Source: Interactive Terminal Input. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga97d17b070dac10c14d3930c58bfba76f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#ga97d17b070dac10c14d3930c58bfba76f">CF_NO_OPT_ARG</a>&#160;&#160;&#160;0x10000</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Commandline argument not following an option. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga9e526dae88bf6803772107ff283637b5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#ga9e526dae88bf6803772107ff283637b5">CF_CONCAT</a>&#160;&#160;&#160;0x20000</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Argument is concatenated to option. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga72b75851880f36aaa5a52fdfe7960cca"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#ga72b75851880f36aaa5a52fdfe7960cca">CF_IGN_ENV</a>&#160;&#160;&#160;0x40000</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Do not check environment for variable. </p>
-
-</div>
-</div>
-<a class="anchor" id="gae39e0d9b4e9af8c6d4b3676783dd26e0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#gae39e0d9b4e9af8c6d4b3676783dd26e0">CF_QUERY</a>&#160;&#160;&#160;0x80000</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Ask the user for unresolved item after configuration parsing. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga64c30a2865061d0c1074bc6ec91e3dcf"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#ga64c30a2865061d0c1074bc6ec91e3dcf">CF_STR</a>&#160;&#160;&#160;0x100000</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Entry is String. </p>
-
-</div>
-</div>
-<a class="anchor" id="gab33869d596619ad14675c053925a42e0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#gab33869d596619ad14675c053925a42e0">CF_INT</a>&#160;&#160;&#160;0x200000</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Entry is Integer. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga1d1f1d1b6eac6b5d9970102318ab2667"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#ga1d1f1d1b6eac6b5d9970102318ab2667">CF_FLAG</a>&#160;&#160;&#160;0x400000</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Entry is Flag. </p>
-
-</div>
-</div>
-<a class="anchor" id="gaeefdbef320cbd7179f1fb0ebe0fcf5ce"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#gaeefdbef320cbd7179f1fb0ebe0fcf5ce">CF_REAL</a>&#160;&#160;&#160;0x800000</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Entry is Float. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga675b6f8440beecc09fec54d17e9c3ee9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#ga675b6f8440beecc09fec54d17e9c3ee9">CF_FINDFILE</a>&#160;&#160;&#160;0x1000000</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Entry is filename to be searched for in the path. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga3229f5b038eaa0c6428361d2aa510dfc"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#ga3229f5b038eaa0c6428361d2aa510dfc">CF_MUST</a>&#160;&#160;&#160;0x2000000</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Entry may not be empty (<code>NULL</code> or "") </p>
-
-</div>
-</div>
-<a class="anchor" id="ga5415b257c706aae33d91d3947a3429c0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#ga5415b257c706aae33d91d3947a3429c0">CF_RESID</a>&#160;&#160;&#160;0x4000000</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Residual/additional entry from commandline/setfile/cfput. </p>
-
-</div>
-</div>
-<a class="anchor" id="gac30981201d7455071cef38a0133b9228"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#gac30981201d7455071cef38a0133b9228">CF_USAGE</a>&#160;&#160;&#160;0x8000000</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Usage Message format string. </p>
-
-</div>
-</div>
-<a class="anchor" id="gaff1b2e25aa9a89a55c1784018e24aa75"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#gaff1b2e25aa9a89a55c1784018e24aa75">CF_EXPHOME</a>&#160;&#160;&#160;0x10000000</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Expand Home Directory. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga2b971231bd3cbad743ef2f4e0a613a47"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#ga2b971231bd3cbad743ef2f4e0a613a47">CF_MALLOC</a>&#160;&#160;&#160;0x20000000</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Space for entry's content was mallocated. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga618e7187ee15bacfe668e72a858e71fc"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#ga618e7187ee15bacfe668e72a858e71fc">CF_FORCED</a>&#160;&#160;&#160;0x40000000</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Setting has been forced (already) </p>
-
-</div>
-</div>
-<a class="anchor" id="gad76153c65f68cc0ee5c1a04c8c3e80bf"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#gad76153c65f68cc0ee5c1a04c8c3e80bf">CF_NOSAVE</a>&#160;&#160;&#160;0x80000000</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Don't include in savefile / mark entry. </p>
-
-</div>
-</div>
-<a class="anchor" id="gad9b1f659b11c529a0ed1035caf8b239b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#gad9b1f659b11c529a0ed1035caf8b239b">CF_SRC</a>&#160;&#160;&#160;(<a class="el" href="group__special__options__mask.html#gab33869d596619ad14675c053925a42e0">CF_INT</a>|<a class="el" href="group__special__options__mask.html#ga1d1f1d1b6eac6b5d9970102318ab2667">CF_FLAG</a>)</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Type for source/origin inquiry. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga36792935eec7c6636b6aea8df82f7480"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#ga36792935eec7c6636b6aea8df82f7480">CF_FLGINQ</a>&#160;&#160;&#160;(<a class="el" href="group__special__options__mask.html#ga64c30a2865061d0c1074bc6ec91e3dcf">CF_STR</a>|<a class="el" href="group__special__options__mask.html#ga1d1f1d1b6eac6b5d9970102318ab2667">CF_FLAG</a>)</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Type for options mask inquiry. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga8d4f049e4c8022b03b7979ac3f0db04b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#ga8d4f049e4c8022b03b7979ac3f0db04b">CF_DOUBLE</a>&#160;&#160;&#160;(<a class="el" href="group__special__options__mask.html#gaeefdbef320cbd7179f1fb0ebe0fcf5ce">CF_REAL</a>|<a class="el" href="group__special__options__mask.html#ga1d1f1d1b6eac6b5d9970102318ab2667">CF_FLAG</a>)</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Type for double inquiry. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga8a50d7326b057d262f53ef84a166f9c5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__special__options__mask.html#ga8a50d7326b057d262f53ef84a166f9c5">CF_TD</a>&#160;&#160;&#160;(<a class="el" href="group__special__options__mask.html#ga1c5b511a34d2c0db6631539ba81a4386">CF_DATE</a>|<a class="el" href="group__special__options__mask.html#ga0fde537a92deb77f75b21c9e8d306509">CF_TIME</a>)</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Date or Time entry. </p>
-
-</div>
-</div>
-<hr/><h2>Typedef Documentation</h2>
-<a class="anchor" id="ga4854f1596d5c6e0604a478fa9a2e23f0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef unsigned long <a class="el" href="group__special__options__mask.html#ga4854f1596d5c6e0604a478fa9a2e23f0">CFFLAGTYP</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Special Options Mask Type. </p>
-
-</div>
-</div>
 </div><!-- contents -->
 <hr size="1"><div align="right"><small>documentation generated by
 <a href="http://www.doxygen.org/index.html"><strong>doxygen</strong></a> 1.5.8

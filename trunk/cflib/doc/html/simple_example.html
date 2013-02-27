@@ -43,6 +43,7 @@
       <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
 </div>
@@ -72,7 +73,7 @@
 {
     <span class="keywordtype">int</span> ret; <span class="keywordtype">char</span> *tmp;
 
-    <a class="code" href="struct__cf.html" title="CFLIB Configuration Database Entry.">CONFIG</a> setting[] =
+    <a class="code" href="struct_c_o_n_f_i_g.html" title="CFLIB Configuration Database Entry.">CONFIG</a> setting[] =
     {
         <span class="comment">/* Name, Default Content, Commandline Option, Special Option Flags */</span>
         { <span class="stringliteral">&quot;PROGNAME&quot;</span>, <a class="code" href="group__cflib__core.html#ga070d2ce7b6bb7e5c05602aa8c308d0c4" title="NULL, if not defined.">NULL</a>,        <span class="charliteral">&#39;1&#39;</span>, <a class="code" href="group__special__options__mask.html#ga675b6f8440beecc09fec54d17e9c3ee9" title="Entry is filename to be searched for in the path.">CF_FINDFILE</a>|<a class="code" href="group__special__options__mask.html#ga1b3eb474a5160e5a32385f6de53d90d6" title="Source: Commandline Argument.">CF_SET_ARG</a>|<a class="code" href="group__special__options__mask.html#ga97d17b070dac10c14d3930c58bfba76f" title="Commandline argument not following an option.">CF_NO_OPT_ARG</a>, },
@@ -80,7 +81,7 @@
         { <span class="stringliteral">&quot;help&quot;</span>,     <a class="code" href="group__cflib__core.html#ga7010abac2c80c121772da4d9c03332ee" title="Flag is not set.">CF_FLAG_OFF</a>, <span class="charliteral">&#39;h&#39;</span>, <a class="code" href="group__special__options__mask.html#ga1d1f1d1b6eac6b5d9970102318ab2667" title="Entry is Flag.">CF_FLAG</a>|<a class="code" href="group__special__options__mask.html#gaa4d82cea91ede4aee78594417894e368" title="Last entry in settings array.">CF_LAST</a>,                      },
     };
 
-    <span class="keywordflow">if</span> ( !( ret = <a class="code" href="group__cflib__core.html#gadcf24d678203bd09a0a3e05b8a986c65" title="Setup Configuration Database.">cfstart</a>( setting, argc, argv, <span class="stringliteral">&quot;help&quot;</span>, <a class="code" href="group__cflib__core.html#ga3f535ad957f1836dea64deae798324a5" title="Start Mode: Usage message if error was negative, error output like CFS_NEG.">CFS_USG</a> ) ) ){
+    <span class="keywordflow">if</span> ( !( ret = <a class="code" href="group__cflib__core.html#ga6e04a462f9ad273de914af386ff15623" title="cfstart() Start Configuration Database (with error reporting and usage message)">cfstart</a>( setting, argc, argv, <span class="stringliteral">&quot;help&quot;</span>, <a class="code" href="group__cflib__core.html#ga3f535ad957f1836dea64deae798324a5" title="Start Mode: Usage message if error was negative, error output like CFS_NEG.">CFS_USG</a> ) ) ){
 
         <span class="keywordflow">if</span>( ( tmp = <a class="code" href="group__retrieval.html#ga8cf5f53c5b05ec5ca4f5145010f84eb4" title="Inquire CFLIB DB for String in content of named entry.">cfgetstr</a>(<span class="stringliteral">&quot;PROGNAME&quot;</span>) ) != <a class="code" href="group__cflib__core.html#ga070d2ce7b6bb7e5c05602aa8c308d0c4" title="NULL, if not defined.">NULL</a> )
 

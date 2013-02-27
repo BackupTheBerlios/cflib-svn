@@ -43,6 +43,7 @@
       <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
 </div>
@@ -80,7 +81,7 @@
     FILE *error_log = stderr;
 
     <span class="comment">/* Hardcoded Configuration Setup and Defaults */</span>
-    <a class="code" href="struct__cf.html" title="CFLIB Configuration Database Entry.">CONFIG</a> setting[] =
+    <a class="code" href="struct_c_o_n_f_i_g.html" title="CFLIB Configuration Database Entry.">CONFIG</a> setting[] =
     {   { <span class="stringliteral">&quot;FILL_INFILE&quot;</span>,   <a class="code" href="group__cflib__core.html#ga070d2ce7b6bb7e5c05602aa8c308d0c4" title="NULL, if not defined.">NULL</a>,             <span class="charliteral">&#39;i&#39;</span>, 0x0,                        },
         { <span class="stringliteral">&quot;FILL_OUTFILE&quot;</span>,  <a class="code" href="group__cflib__core.html#ga070d2ce7b6bb7e5c05602aa8c308d0c4" title="NULL, if not defined.">NULL</a>,             <span class="charliteral">&#39;o&#39;</span>, 0x0,                        },
         { <span class="stringliteral">&quot;FILL_VARDELIM&quot;</span>, <span class="stringliteral">&quot;$()&quot;</span>,            <span class="charliteral">&#39;l&#39;</span>, <a class="code" href="group__special__options__mask.html#ga9e526dae88bf6803772107ff283637b5" title="Argument is concatenated to option.">CF_CONCAT</a>,                  },
@@ -97,21 +98,21 @@
     };
 
     <span class="comment">/* Initialize with Error Reporting */</span>
-    <span class="keywordflow">if</span>( <a class="code" href="group__cflib__core.html#gae593ff607f853bd5fc16a16bb6759314" title="Initialize CFLIB Configuration Database and parse possible sources for database entries according to ...">cfinit</a>(setting,argc,argv) &lt; 0 ){
-        <span class="keywordflow">while</span>( (ecode=<a class="code" href="group__errors.html#ga2dc49b60b3ec7a82086e60f4b1c41e18" title="Error Code and Message Inquiry Function.">cfgeterr</a>(line,0)) == TRUE )
+    <span class="keywordflow">if</span>( <a class="code" href="group__cflib__core.html#ga64fb341565c2ddfccd6669e5e6265a8a" title="cfinit() Initialize Configuration Database">cfinit</a>(setting,argc,argv) &lt; 0 ){
+        <span class="keywordflow">while</span>( (ecode=<a class="code" href="group__errors.html#ga2dc49b60b3ec7a82086e60f4b1c41e18" title="cfgeterr() Error Code and Message Inquiry Function">cfgeterr</a>(line,0)) == TRUE )
             fprintf( error_log, <span class="stringliteral">&quot;error %d: %s&quot;</span>, ecode, line );
         fflush(error_log);
-        fputs( <a class="code" href="group__retrieval.html#gad3e4e24668cdc111471332a7e79fc897" title="Get Usage Message for (Terminal) Output.">cfgetusg</a>(), stderr );
+        fputs( <a class="code" href="group__retrieval.html#gad3e4e24668cdc111471332a7e79fc897" title="cfgetusg() Get Usage Message for (Terminal) Output">cfgetusg</a>(), stderr );
         <span class="keywordflow">return</span> (-1);
     }
 
     <span class="comment">/* User Help and Configuration Overview */</span>
     <span class="keywordflow">if</span>( <a class="code" href="group__retrieval.html#gac0188464b59267e14b5c44efb1d4a0f2" title="Inquire CFLIB DB for Flag value in content of named entry.">cfgetflag</a>(<span class="stringliteral">&quot;help&quot;</span>) ){
-        fputs( <a class="code" href="group__retrieval.html#gad3e4e24668cdc111471332a7e79fc897" title="Get Usage Message for (Terminal) Output.">cfgetusg</a>(), stderr );
+        fputs( <a class="code" href="group__retrieval.html#gad3e4e24668cdc111471332a7e79fc897" title="cfgetusg() Get Usage Message for (Terminal) Output">cfgetusg</a>(), stderr );
         <span class="keywordflow">if</span>( <a class="code" href="group__retrieval.html#gac0188464b59267e14b5c44efb1d4a0f2" title="Inquire CFLIB DB for Flag value in content of named entry.">cfgetflag</a>(<span class="stringliteral">&quot;verbose&quot;</span>) ){
             fprintf( stderr, <span class="stringliteral">&quot;\nConfiguration Library PL %d - %s\n\nCurrent Configuration:\n\n&quot;</span>,
-                             <a class="code" href="group__retrieval.html#gac4e376e3630e9b25655ee0e0b1a54a5b" title="Get Library Version/Patchlevel.">cfgetvers</a>(), <a class="code" href="group__retrieval.html#ga9999522b2acf8760f420d2567e7f7c50" title="Get Copyright Notice.">cfgetcpr</a>() );
-            <a class="code" href="group__advanced__features.html#gaecfc8ee37366e1b36cb5aac0cc41ebdc" title="Dump CFLIB DB content to fout.">cfdump</a>(stderr);
+                             <a class="code" href="group__retrieval.html#gac4e376e3630e9b25655ee0e0b1a54a5b" title="cfgetvers() Get Library Version/Patchlevel">cfgetvers</a>(), <a class="code" href="group__retrieval.html#ga9999522b2acf8760f420d2567e7f7c50" title="Get CFLIB Copyright Notice.">cfgetcpr</a>() );
+            <a class="code" href="group__advanced__features.html#gaecfc8ee37366e1b36cb5aac0cc41ebdc" title="cfdump() Dump CFLIB DB content to fout ">cfdump</a>(stderr);
             fputs( <span class="stringliteral">&quot;\nSources: 1=update function call, 2=commandline argument, 4=environment variable,\n&quot;</span>, stderr );
             fputs(   <span class="stringliteral">&quot;         8=private setfile, 10=system setfile, 20=built-in default, 40=interactive terminal input\n&quot;</span>, stderr );
         }
@@ -119,7 +120,7 @@
     }
 
     <span class="keywordflow">switch</span>(
-        <a class="code" href="group__report__generation.html#ga2f8350e7d032c87b2a0e1cb6149a85ec" title="Process a Template from file or stdin and write generated Report to File or stdout.">cfform</a>( infile = <a class="code" href="group__retrieval.html#ga8cf5f53c5b05ec5ca4f5145010f84eb4" title="Inquire CFLIB DB for String in content of named entry.">cfgetstr</a>(<span class="stringliteral">&quot;FILL_INFILE&quot;</span>),
+        <a class="code" href="group__report__generation.html#ga2695585ee0a7485da6075848fa27a33f" title="cfform() Process a Template from file or stdin and write generated Report to File or stdout ...">cfform</a>( infile = <a class="code" href="group__retrieval.html#ga8cf5f53c5b05ec5ca4f5145010f84eb4" title="Inquire CFLIB DB for String in content of named entry.">cfgetstr</a>(<span class="stringliteral">&quot;FILL_INFILE&quot;</span>),
                 outfile = <a class="code" href="group__retrieval.html#ga8cf5f53c5b05ec5ca4f5145010f84eb4" title="Inquire CFLIB DB for String in content of named entry.">cfgetstr</a>(<span class="stringliteral">&quot;FILL_OUTFILE&quot;</span>),
                 <a class="code" href="group__retrieval.html#ga8cf5f53c5b05ec5ca4f5145010f84eb4" title="Inquire CFLIB DB for String in content of named entry.">cfgetstr</a>(<span class="stringliteral">&quot;FILL_VARDELIM&quot;</span>),
                 <a class="code" href="group__retrieval.html#gac0188464b59267e14b5c44efb1d4a0f2" title="Inquire CFLIB DB for Flag value in content of named entry.">cfgetflag</a>(<span class="stringliteral">&quot;query&quot;</span>) )
@@ -136,18 +137,18 @@
     }
 
     <span class="keywordflow">if</span>( <a class="code" href="group__retrieval.html#gac0188464b59267e14b5c44efb1d4a0f2" title="Inquire CFLIB DB for Flag value in content of named entry.">cfgetflag</a>(<span class="stringliteral">&quot;SAVE_DATA&quot;</span>) ){
-        <a class="code" href="group__setting__saving.html#ga0f6ed90e3ecfa0074af1635a0e4339ef" title="Alter or query the CF_NOSAVE Flag of Parameter name.">cfnosave</a>(<a class="code" href="group__cflib__core.html#ga070d2ce7b6bb7e5c05602aa8c308d0c4" title="NULL, if not defined.">NULL</a>, <a class="code" href="group__cflib__core.html#ga355c714f2912ac336b8b03468c978d8c" title="Flag is set.">CF_FLAG_ON</a>);
-        <a class="code" href="group__setting__saving.html#ga0f6ed90e3ecfa0074af1635a0e4339ef" title="Alter or query the CF_NOSAVE Flag of Parameter name.">cfnosave</a>(<span class="stringliteral">&quot;TIME&quot;</span>, <a class="code" href="group__cflib__core.html#ga7010abac2c80c121772da4d9c03332ee" title="Flag is not set.">CF_FLAG_OFF</a>);
-        <a class="code" href="group__setting__saving.html#ga0f6ed90e3ecfa0074af1635a0e4339ef" title="Alter or query the CF_NOSAVE Flag of Parameter name.">cfnosave</a>(<span class="stringliteral">&quot;DATE&quot;</span>, <a class="code" href="group__cflib__core.html#ga7010abac2c80c121772da4d9c03332ee" title="Flag is not set.">CF_FLAG_OFF</a>);
+        <a class="code" href="group__setting__saving.html#ga0f6ed90e3ecfa0074af1635a0e4339ef" title="cfnosave() Alter or query the CF_NOSAVE Flag of Parameter name ">cfnosave</a>(<a class="code" href="group__cflib__core.html#ga070d2ce7b6bb7e5c05602aa8c308d0c4" title="NULL, if not defined.">NULL</a>, <a class="code" href="group__cflib__core.html#ga355c714f2912ac336b8b03468c978d8c" title="Flag is set.">CF_FLAG_ON</a>);
+        <a class="code" href="group__setting__saving.html#ga0f6ed90e3ecfa0074af1635a0e4339ef" title="cfnosave() Alter or query the CF_NOSAVE Flag of Parameter name ">cfnosave</a>(<span class="stringliteral">&quot;TIME&quot;</span>, <a class="code" href="group__cflib__core.html#ga7010abac2c80c121772da4d9c03332ee" title="Flag is not set.">CF_FLAG_OFF</a>);
+        <a class="code" href="group__setting__saving.html#ga0f6ed90e3ecfa0074af1635a0e4339ef" title="cfnosave() Alter or query the CF_NOSAVE Flag of Parameter name ">cfnosave</a>(<span class="stringliteral">&quot;DATE&quot;</span>, <a class="code" href="group__cflib__core.html#ga7010abac2c80c121772da4d9c03332ee" title="Flag is not set.">CF_FLAG_OFF</a>);
     }
     <span class="keywordflow">if</span>( (save = <a class="code" href="group__retrieval.html#ga8cf5f53c5b05ec5ca4f5145010f84eb4" title="Inquire CFLIB DB for String in content of named entry.">cfgetstr</a>(<span class="stringliteral">&quot;FILL_SAVE&quot;</span>)) != <a class="code" href="group__cflib__core.html#ga070d2ce7b6bb7e5c05602aa8c308d0c4" title="NULL, if not defined.">NULL</a> ){
         <span class="keywordflow">if</span>( <a class="code" href="group__retrieval.html#gac0188464b59267e14b5c44efb1d4a0f2" title="Inquire CFLIB DB for Flag value in content of named entry.">cfgetflag</a>(<span class="stringliteral">&quot;SAVE_DATA&quot;</span>) ) savemode = <span class="stringliteral">&quot;a&quot;</span>;
         <span class="keywordflow">if</span>( *save == <span class="charliteral">&#39;\0&#39;</span> )
-            <a class="code" href="group__setting__saving.html#ga046d8a68eae35b987eacca04a9a06cca" title="Write configuration data to a Configuration File or stdout.">cfsave</a>( <a class="code" href="group__cflib__core.html#ga070d2ce7b6bb7e5c05602aa8c308d0c4" title="NULL, if not defined.">NULL</a>, savemode );
+            <a class="code" href="group__setting__saving.html#gaad7e1267cd904b4480a0eeaeb03b5f75" title="cfsave() Write configuration data to a Configuration File or stdout ">cfsave</a>( <a class="code" href="group__cflib__core.html#ga070d2ce7b6bb7e5c05602aa8c308d0c4" title="NULL, if not defined.">NULL</a>, savemode );
         <span class="keywordflow">else</span> <span class="keywordflow">if</span>( *save == <span class="charliteral">&#39;+&#39;</span> )
-            <a class="code" href="group__setting__saving.html#ga046d8a68eae35b987eacca04a9a06cca" title="Write configuration data to a Configuration File or stdout.">cfsave</a>( <span class="stringliteral">&quot;&quot;</span>, savemode );
+            <a class="code" href="group__setting__saving.html#gaad7e1267cd904b4480a0eeaeb03b5f75" title="cfsave() Write configuration data to a Configuration File or stdout ">cfsave</a>( <span class="stringliteral">&quot;&quot;</span>, savemode );
         <span class="keywordflow">else</span>
-            <a class="code" href="group__setting__saving.html#ga046d8a68eae35b987eacca04a9a06cca" title="Write configuration data to a Configuration File or stdout.">cfsave</a>( save, savemode );
+            <a class="code" href="group__setting__saving.html#gaad7e1267cd904b4480a0eeaeb03b5f75" title="cfsave() Write configuration data to a Configuration File or stdout ">cfsave</a>( save, savemode );
     }
 
     <span class="keywordflow">return</span> (0);

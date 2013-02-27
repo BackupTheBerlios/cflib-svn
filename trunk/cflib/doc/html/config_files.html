@@ -43,12 +43,7 @@
       <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
-    </ul>
-  </div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="index.html">CFLIB Flexible Configuration Library</a>      </li>
-      <li class="navelem"><a class="el" href="cflib.html">Flexible Configuration Library - User Documentation</a>      </li>
+      <li><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
 </div>
@@ -60,10 +55,10 @@
 <div class="textblock"><p>A major task of the library is handling import and export of configuration parameters from/to files.</p>
 <p>CFLIB knows two types of configuration files:</p>
 <ul>
-<li><b>"Private Configuration File"</b> - User and/or program specific file in simple format to be read on initialization and optionally be updated by <a class="el" href="group__setting__saving.html#ga046d8a68eae35b987eacca04a9a06cca" title="Write configuration data to a Configuration File or stdout.">cfsave()</a></li>
+<li><b>"Private Configuration File"</b> - User and/or program specific file in simple format to be read on initialization and optionally be updated by <a class="el" href="group__setting__saving.html#gaad7e1267cd904b4480a0eeaeb03b5f75" title="cfsave() Write configuration data to a Configuration File or stdout ">cfsave()</a></li>
 </ul>
 <ul>
-<li><b>"System Configuration File"</b> - System and/or project specific file in extended format (supporting sections, see below) will only be used as a data source by <a class="el" href="group__cflib__core.html#gae593ff607f853bd5fc16a16bb6759314" title="Initialize CFLIB Configuration Database and parse possible sources for database entries according to ...">cfinit()</a> and will not be touched by <a class="el" href="group__setting__saving.html#ga046d8a68eae35b987eacca04a9a06cca" title="Write configuration data to a Configuration File or stdout.">cfsave()</a> unless you explicitly specify the filename.</li>
+<li><b>"System Configuration File"</b> - System and/or project specific file in extended format (supporting sections, see below) will only be used as a data source by <a class="el" href="group__cflib__core.html#ga64fb341565c2ddfccd6669e5e6265a8a" title="cfinit() Initialize Configuration Database">cfinit()</a> and will not be touched by <a class="el" href="group__setting__saving.html#gaad7e1267cd904b4480a0eeaeb03b5f75" title="cfsave() Write configuration data to a Configuration File or stdout ">cfsave()</a> unless you explicitly specify the filename.</li>
 </ul>
 <h2><a class="anchor" id="config_format"></a>
 Configuration File Format</h2>
@@ -96,11 +91,11 @@ Configuration File Format</h2>
  ...
 </pre></div><h2><a class="anchor" id="config_in"></a>
 Reading Configuration Files</h2>
-<p>A search for configuration files and import of data from these sources is only performed by the function <a class="el" href="group__cflib__core.html#gae593ff607f853bd5fc16a16bb6759314" title="Initialize CFLIB Configuration Database and parse possible sources for database entries according to ...">cfinit()</a> on initialization and only when appropriate Special Option Flags are set as described under <a class="el" href="config_levels.html#config_file_parsing">Parsing of Configuration Files</a>.</p>
-<p>Configuration files are read once when the configuration database is initialized by a call to <a class="el" href="group__cflib__core.html#gae593ff607f853bd5fc16a16bb6759314" title="Initialize CFLIB Configuration Database and parse possible sources for database entries according to ...">cfinit()</a> or <a class="el" href="group__cflib__core.html#gadcf24d678203bd09a0a3e05b8a986c65" title="Setup Configuration Database.">cfstart()</a> using the internal function cfreadfile().</p>
+<p>A search for configuration files and import of data from these sources is only performed by the function <a class="el" href="group__cflib__core.html#ga64fb341565c2ddfccd6669e5e6265a8a" title="cfinit() Initialize Configuration Database">cfinit()</a> on initialization and only when appropriate Special Option Flags are set as described under <a class="el" href="config_levels.html#config_file_parsing">Parsing of Configuration Files</a>.</p>
+<p>Configuration files are read once when the configuration database is initialized by a call to <a class="el" href="group__cflib__core.html#ga64fb341565c2ddfccd6669e5e6265a8a" title="cfinit() Initialize Configuration Database">cfinit()</a> or <a class="el" href="group__cflib__core.html#ga6e04a462f9ad273de914af386ff15623" title="cfstart() Start Configuration Database (with error reporting and usage message)">cfstart()</a> using the internal function cfreadfile().</p>
 <h2><a class="anchor" id="config_out"></a>
 Writing a (private) Configuration File</h2>
-<p>Parameter export does not depend on any specific setting and can be performed whenever and as often as you like. For writing a configuration file call <a class="el" href="group__setting__saving.html#ga046d8a68eae35b987eacca04a9a06cca" title="Write configuration data to a Configuration File or stdout.">cfsave()</a> with either the name of the file or <code>NULL</code>, in which case the current value of the "Private Configuration File" parameter will be used, if it exists. If an entry has the <a class="el" href="group__special__options__mask.html#gad76153c65f68cc0ee5c1a04c8c3e80bf">CF_NOSAVE</a> flag set, it is excluded from saving. The "System Configuration File" may not be referred to directly.</p>
+<p>Parameter export does not depend on any specific setting and can be performed whenever and as often as you like. For writing a configuration file call <a class="el" href="group__setting__saving.html#gaad7e1267cd904b4480a0eeaeb03b5f75" title="cfsave() Write configuration data to a Configuration File or stdout ">cfsave()</a> with either the name of the file or <code>NULL</code>, in which case the current value of the "Private Configuration File" parameter will be used, if it exists. If an entry has the <a class="el" href="group__special__options__mask.html#gad76153c65f68cc0ee5c1a04c8c3e80bf">CF_NOSAVE</a> flag set, it is excluded from saving. The "System Configuration File" may not be referred to directly.</p>
 <dl class="section attention"><dt>Attention:</dt><dd>Writing <b>section</b> marks is <b>not</b> supported! </dd></dl>
 </div></div><!-- contents -->
 <hr size="1"><div align="right"><small>documentation generated by

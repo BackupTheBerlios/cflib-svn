@@ -43,6 +43,7 @@
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
 </div>
@@ -50,7 +51,6 @@
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Defines</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -63,650 +63,189 @@
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__cfe.html">_cfe</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Library Internal: Error List Item.  <a href="struct__cfe.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_o_n_f_e_r_r.html">CONFERR</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Library Internal: Error List Item.  <a href="struct_c_o_n_f_e_r_r.html#details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
-<tr class="memitem:gaac0ac4dd97f14a0da37622a1497ea004"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gaac0ac4dd97f14a0da37622a1497ea004">CFE_INIT</a>&#160;&#160;&#160;0</td></tr>
-<tr class="memdesc:gaac0ac4dd97f14a0da37622a1497ea004"><td class="mdescLeft">&#160;</td><td class="mdescRight">INITialize error input.  <a href="#gaac0ac4dd97f14a0da37622a1497ea004"></a><br/></td></tr>
-<tr class="memitem:gabea2555a62593e79e32879620c4fc8de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gabea2555a62593e79e32879620c4fc8de">CFE_OK</a>&#160;&#160;&#160;0</td></tr>
-<tr class="memdesc:gabea2555a62593e79e32879620c4fc8de"><td class="mdescLeft">&#160;</td><td class="mdescRight">No error / everything OKay.  <a href="#gabea2555a62593e79e32879620c4fc8de"></a><br/></td></tr>
-<tr class="memitem:gabb576e88369c2eac1ffd41915292968c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gabb576e88369c2eac1ffd41915292968c">CFE_NEP</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:gabb576e88369c2eac1ffd41915292968c"><td class="mdescLeft">&#160;</td><td class="mdescRight">New Entry successfully Put into DB.  <a href="#gabb576e88369c2eac1ffd41915292968c"></a><br/></td></tr>
-<tr class="memitem:gac799901241871d298d9bd9f79e1ce645"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gac799901241871d298d9bd9f79e1ce645">CFE_EXIT</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:gac799901241871d298d9bd9f79e1ce645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish error input.  <a href="#gac799901241871d298d9bd9f79e1ce645"></a><br/></td></tr>
-<tr class="memitem:gae5e8ef219f287dc0ff0ca70433f78f0e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gae5e8ef219f287dc0ff0ca70433f78f0e">CFE_ORA</a>&#160;&#160;&#160;20</td></tr>
-<tr class="memdesc:gae5e8ef219f287dc0ff0ca70433f78f0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Option Requires an Argument.  <a href="#gae5e8ef219f287dc0ff0ca70433f78f0e"></a><br/></td></tr>
-<tr class="memitem:ga77e1698381143e412a7a4796b2b8f564"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga77e1698381143e412a7a4796b2b8f564">CFE_UKO</a>&#160;&#160;&#160;25</td></tr>
-<tr class="memdesc:ga77e1698381143e412a7a4796b2b8f564"><td class="mdescLeft">&#160;</td><td class="mdescRight">UnKnown Option.  <a href="#ga77e1698381143e412a7a4796b2b8f564"></a><br/></td></tr>
-<tr class="memitem:gaa3d4c51112fd70d482a4a77c95dc3daf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gaa3d4c51112fd70d482a4a77c95dc3daf">CFE_FNF</a>&#160;&#160;&#160;30</td></tr>
-<tr class="memdesc:gaa3d4c51112fd70d482a4a77c95dc3daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">File Not Found, read access error.  <a href="#gaa3d4c51112fd70d482a4a77c95dc3daf"></a><br/></td></tr>
-<tr class="memitem:gae1f1ad273da29546c89e9e6761b8b3e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gae1f1ad273da29546c89e9e6761b8b3e2">CFE_NSE</a>&#160;&#160;&#160;40</td></tr>
-<tr class="memdesc:gae1f1ad273da29546c89e9e6761b8b3e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">No Section specifier End found, missing "]".  <a href="#gae1f1ad273da29546c89e9e6761b8b3e2"></a><br/></td></tr>
-<tr class="memitem:gae67acd8919ba3a30ca6a6f2857dc3628"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gae67acd8919ba3a30ca6a6f2857dc3628">CFE_NSC</a>&#160;&#160;&#160;50</td></tr>
-<tr class="memdesc:gae67acd8919ba3a30ca6a6f2857dc3628"><td class="mdescLeft">&#160;</td><td class="mdescRight">No private Setfile Configured.  <a href="#gae67acd8919ba3a30ca6a6f2857dc3628"></a><br/></td></tr>
-<tr class="memitem:gad1375fe531ed1c13233e2fa7ae55534f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gad1375fe531ed1c13233e2fa7ae55534f">CFE_WAE</a>&#160;&#160;&#160;60</td></tr>
-<tr class="memdesc:gad1375fe531ed1c13233e2fa7ae55534f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write Access Error.  <a href="#gad1375fe531ed1c13233e2fa7ae55534f"></a><br/></td></tr>
-<tr class="memitem:ga939964b690f63b5484ec40fe8a4a7c56"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga939964b690f63b5484ec40fe8a4a7c56">CFE_IFP</a>&#160;&#160;&#160;61</td></tr>
-<tr class="memdesc:ga939964b690f63b5484ec40fe8a4a7c56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid Filename entry for Private setfile.  <a href="#ga939964b690f63b5484ec40fe8a4a7c56"></a><br/></td></tr>
-<tr class="memitem:gac2b94fe4fcdaa5cc608add42857fd178"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gac2b94fe4fcdaa5cc608add42857fd178">CFE_EWN</a>&#160;&#160;&#160;70</td></tr>
-<tr class="memdesc:gac2b94fe4fcdaa5cc608add42857fd178"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry Without Name.  <a href="#gac2b94fe4fcdaa5cc608add42857fd178"></a><br/></td></tr>
-<tr class="memitem:ga8d3bbe7352edc6ec8ecf54150c80349f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga8d3bbe7352edc6ec8ecf54150c80349f">CFE_ICF</a>&#160;&#160;&#160;80</td></tr>
-<tr class="memdesc:ga8d3bbe7352edc6ec8ecf54150c80349f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid Combination of Flags.  <a href="#ga8d3bbe7352edc6ec8ecf54150c80349f"></a><br/></td></tr>
-<tr class="memitem:ga5457a3ff93e8c6d02be9c1813038f795"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga5457a3ff93e8c6d02be9c1813038f795">CFE_EWC</a>&#160;&#160;&#160;90</td></tr>
-<tr class="memdesc:ga5457a3ff93e8c6d02be9c1813038f795"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry Without Content.  <a href="#ga5457a3ff93e8c6d02be9c1813038f795"></a><br/></td></tr>
-<tr class="memitem:gae30643e906d0e1fdd31f11f9c1523a52"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gae30643e906d0e1fdd31f11f9c1523a52">CFE_UOS</a>&#160;&#160;&#160;100</td></tr>
-<tr class="memdesc:gae30643e906d0e1fdd31f11f9c1523a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlikely Option Specifier.  <a href="#gae30643e906d0e1fdd31f11f9c1523a52"></a><br/></td></tr>
-<tr class="memitem:ga78354f23ff4d92bd3fd6dcb6bfd59f52"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga78354f23ff4d92bd3fd6dcb6bfd59f52">CFE_IFC</a>&#160;&#160;&#160;110</td></tr>
-<tr class="memdesc:ga78354f23ff4d92bd3fd6dcb6bfd59f52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid Flag Combination.  <a href="#ga78354f23ff4d92bd3fd6dcb6bfd59f52"></a><br/></td></tr>
-<tr class="memitem:ga92aa7a17d2248b62f428d9e655f7d35e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga92aa7a17d2248b62f428d9e655f7d35e">CFE_NLE</a>&#160;&#160;&#160;120</td></tr>
-<tr class="memdesc:ga92aa7a17d2248b62f428d9e655f7d35e"><td class="mdescLeft">&#160;</td><td class="mdescRight">No Last Entry flag found.  <a href="#ga92aa7a17d2248b62f428d9e655f7d35e"></a><br/></td></tr>
-<tr class="memitem:ga3e780bea24126b1d0750f3ee7a96b8a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga3e780bea24126b1d0750f3ee7a96b8a8">CFE_TIN</a>&#160;&#160;&#160;130</td></tr>
-<tr class="memdesc:ga3e780bea24126b1d0750f3ee7a96b8a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error reTurn from stdIN query.  <a href="#ga3e780bea24126b1d0750f3ee7a96b8a8"></a><br/></td></tr>
-<tr class="memitem:ga9e2ead53d32b9cf9f0e280a452c8e2e6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga9e2ead53d32b9cf9f0e280a452c8e2e6">CFE_EFE</a>&#160;&#160;&#160;140</td></tr>
-<tr class="memdesc:ga9e2ead53d32b9cf9f0e280a452c8e2e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty string in content for Filename Entry.  <a href="#ga9e2ead53d32b9cf9f0e280a452c8e2e6"></a><br/></td></tr>
-<tr class="memitem:gaee86803a95d7d53a01c86f98c231aa7c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gaee86803a95d7d53a01c86f98c231aa7c">CFE_USG</a>&#160;&#160;&#160;200</td></tr>
-<tr class="memdesc:gaee86803a95d7d53a01c86f98c231aa7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entries missing: USaGge advice.  <a href="#gaee86803a95d7d53a01c86f98c231aa7c"></a><br/></td></tr>
-<tr class="memitem:gad9ced7e6eab277e4e24f511af9daf3bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gad9ced7e6eab277e4e24f511af9daf3bf">CFE_URI</a>&#160;&#160;&#160;210</td></tr>
-<tr class="memdesc:gad9ced7e6eab277e4e24f511af9daf3bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">UnResolved Item (CF_MUST was set!)  <a href="#gad9ced7e6eab277e4e24f511af9daf3bf"></a><br/></td></tr>
-<tr class="memitem:ga22ceafacdf80ae7247728f05c9129b1e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga22ceafacdf80ae7247728f05c9129b1e">CFE_FBF</a>&#160;&#160;&#160;-500</td></tr>
-<tr class="memdesc:ga22ceafacdf80ae7247728f05c9129b1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">File Backup Failed.  <a href="#ga22ceafacdf80ae7247728f05c9129b1e"></a><br/></td></tr>
-<tr class="memitem:ga722db0752b9a2f977065b8001da18101"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga722db0752b9a2f977065b8001da18101">CFE_BMF</a>&#160;&#160;&#160;-510</td></tr>
-<tr class="memdesc:ga722db0752b9a2f977065b8001da18101"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backup: Memory allocation Failed.  <a href="#ga722db0752b9a2f977065b8001da18101"></a><br/></td></tr>
-<tr class="memitem:gada14f93a466c819b6286bcf7f85bbbe5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gada14f93a466c819b6286bcf7f85bbbe5">CFE_BOF</a>&#160;&#160;&#160;520</td></tr>
-<tr class="memdesc:gada14f93a466c819b6286bcf7f85bbbe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backup: Open source file Failed.  <a href="#gada14f93a466c819b6286bcf7f85bbbe5"></a><br/></td></tr>
-<tr class="memitem:ga793b92e4f9ea3a7acde0cc0dcf80701f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga793b92e4f9ea3a7acde0cc0dcf80701f">CFE_BBF</a>&#160;&#160;&#160;530</td></tr>
-<tr class="memdesc:ga793b92e4f9ea3a7acde0cc0dcf80701f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backup: open target Backup file Failed.  <a href="#ga793b92e4f9ea3a7acde0cc0dcf80701f"></a><br/></td></tr>
-<tr class="memitem:gaee4caa017da2daf88aa192647f5ebaba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gaee4caa017da2daf88aa192647f5ebaba">CFE_BRF</a>&#160;&#160;&#160;540</td></tr>
-<tr class="memdesc:gaee4caa017da2daf88aa192647f5ebaba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backup: Rename Failed.  <a href="#gaee4caa017da2daf88aa192647f5ebaba"></a><br/></td></tr>
-<tr class="memitem:ga58992d0fae72c0a93a8fb1ec9cc1cd9c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga58992d0fae72c0a93a8fb1ec9cc1cd9c">CFE_BWF</a>&#160;&#160;&#160;550</td></tr>
-<tr class="memdesc:ga58992d0fae72c0a93a8fb1ec9cc1cd9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backup: Write Failed.  <a href="#ga58992d0fae72c0a93a8fb1ec9cc1cd9c"></a><br/></td></tr>
-<tr class="memitem:gaf8cd36471ddcc549668f49238855609d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gaf8cd36471ddcc549668f49238855609d">CFE_NCA</a>&#160;&#160;&#160;-10</td></tr>
-<tr class="memdesc:gaf8cd36471ddcc549668f49238855609d"><td class="mdescLeft">&#160;</td><td class="mdescRight">No Configuration database Available.  <a href="#gaf8cd36471ddcc549668f49238855609d"></a><br/></td></tr>
-<tr class="memitem:ga7f7e54a5ccefa34556fe6da3b35b4f27"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga7f7e54a5ccefa34556fe6da3b35b4f27">CFE_NEA</a>&#160;&#160;&#160;-20</td></tr>
-<tr class="memdesc:ga7f7e54a5ccefa34556fe6da3b35b4f27"><td class="mdescLeft">&#160;</td><td class="mdescRight">No Entry with that name Available.  <a href="#ga7f7e54a5ccefa34556fe6da3b35b4f27"></a><br/></td></tr>
-<tr class="memitem:ga5db4a12696dff1db26958db1be075be9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga5db4a12696dff1db26958db1be075be9">CFE_NSS</a>&#160;&#160;&#160;-30</td></tr>
-<tr class="memdesc:ga5db4a12696dff1db26958db1be075be9"><td class="mdescLeft">&#160;</td><td class="mdescRight">No Source/origin is Set.  <a href="#ga5db4a12696dff1db26958db1be075be9"></a><br/></td></tr>
-<tr class="memitem:gaaa38e8556d85b1bb41037b3bd022bc28"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gaaa38e8556d85b1bb41037b3bd022bc28">CFE_ECP</a>&#160;&#160;&#160;-40</td></tr>
-<tr class="memdesc:gaaa38e8556d85b1bb41037b3bd022bc28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry's Content is a NULL Pointer.  <a href="#gaaa38e8556d85b1bb41037b3bd022bc28"></a><br/></td></tr>
-<tr class="memitem:ga46fb52baac2d4b91c5169a2918caff5d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga46fb52baac2d4b91c5169a2918caff5d">CFE_MEF</a>&#160;&#160;&#160;-100</td></tr>
-<tr class="memdesc:ga46fb52baac2d4b91c5169a2918caff5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory allocation in Error routine Failed.  <a href="#ga46fb52baac2d4b91c5169a2918caff5d"></a><br/></td></tr>
-<tr class="memitem:ga127dc37aea6ba5ef8d9dfe5cb9c629eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga127dc37aea6ba5ef8d9dfe5cb9c629eb">CFE_MCF</a>&#160;&#160;&#160;-200</td></tr>
-<tr class="memdesc:ga127dc37aea6ba5ef8d9dfe5cb9c629eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory allocation for Configuration Failed.  <a href="#ga127dc37aea6ba5ef8d9dfe5cb9c629eb"></a><br/></td></tr>
-<tr class="memitem:gac6a0861a0e376a94e540d7ba95ebe9cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gac6a0861a0e376a94e540d7ba95ebe9cf">CFE_INF</a>&#160;&#160;&#160;-9999</td></tr>
-<tr class="memdesc:gac6a0861a0e376a94e540d7ba95ebe9cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integer iNquiry Failed (?!)  <a href="#gac6a0861a0e376a94e540d7ba95ebe9cf"></a><br/></td></tr>
-<tr class="memitem:ga0415e4b197dc2908a58c026c4e621578"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga0415e4b197dc2908a58c026c4e621578">CFE_RNF</a>&#160;&#160;&#160;-999.999</td></tr>
-<tr class="memdesc:ga0415e4b197dc2908a58c026c4e621578"><td class="mdescLeft">&#160;</td><td class="mdescRight">Real/float iNquiry Failed (?!)  <a href="#ga0415e4b197dc2908a58c026c4e621578"></a><br/></td></tr>
-<tr><td colspan="2"><h2><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:ga4ecdd138467bd086bae71fa01460b539"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__cfe.html">_cfe</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga4ecdd138467bd086bae71fa01460b539">CONFERR</a></td></tr>
-<tr class="memdesc:ga4ecdd138467bd086bae71fa01460b539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Library Internal: Error List Item.  <a href="#ga4ecdd138467bd086bae71fa01460b539"></a><br/></td></tr>
+<tr class="memitem:gaac0ac4dd97f14a0da37622a1497ea004"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaac0ac4dd97f14a0da37622a1497ea004"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gaac0ac4dd97f14a0da37622a1497ea004">CFE_INIT</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:gaac0ac4dd97f14a0da37622a1497ea004"><td class="mdescLeft">&#160;</td><td class="mdescRight">INITialize error input. <br/></td></tr>
+<tr class="memitem:gabea2555a62593e79e32879620c4fc8de"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gabea2555a62593e79e32879620c4fc8de"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gabea2555a62593e79e32879620c4fc8de">CFE_OK</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:gabea2555a62593e79e32879620c4fc8de"><td class="mdescLeft">&#160;</td><td class="mdescRight">No error / everything OKay. <br/></td></tr>
+<tr class="memitem:gabb576e88369c2eac1ffd41915292968c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gabb576e88369c2eac1ffd41915292968c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gabb576e88369c2eac1ffd41915292968c">CFE_NEP</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:gabb576e88369c2eac1ffd41915292968c"><td class="mdescLeft">&#160;</td><td class="mdescRight">New Entry successfully Put into DB. <br/></td></tr>
+<tr class="memitem:gac799901241871d298d9bd9f79e1ce645"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gac799901241871d298d9bd9f79e1ce645"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gac799901241871d298d9bd9f79e1ce645">CFE_EXIT</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:gac799901241871d298d9bd9f79e1ce645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish error input. <br/></td></tr>
+<tr class="memitem:gae5e8ef219f287dc0ff0ca70433f78f0e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gae5e8ef219f287dc0ff0ca70433f78f0e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gae5e8ef219f287dc0ff0ca70433f78f0e">CFE_ORA</a>&#160;&#160;&#160;20</td></tr>
+<tr class="memdesc:gae5e8ef219f287dc0ff0ca70433f78f0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Option Requires an Argument. <br/></td></tr>
+<tr class="memitem:ga77e1698381143e412a7a4796b2b8f564"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga77e1698381143e412a7a4796b2b8f564"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga77e1698381143e412a7a4796b2b8f564">CFE_UKO</a>&#160;&#160;&#160;25</td></tr>
+<tr class="memdesc:ga77e1698381143e412a7a4796b2b8f564"><td class="mdescLeft">&#160;</td><td class="mdescRight">UnKnown Option. <br/></td></tr>
+<tr class="memitem:gaa3d4c51112fd70d482a4a77c95dc3daf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaa3d4c51112fd70d482a4a77c95dc3daf"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gaa3d4c51112fd70d482a4a77c95dc3daf">CFE_FNF</a>&#160;&#160;&#160;30</td></tr>
+<tr class="memdesc:gaa3d4c51112fd70d482a4a77c95dc3daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">File Not Found, read access error. <br/></td></tr>
+<tr class="memitem:gae1f1ad273da29546c89e9e6761b8b3e2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gae1f1ad273da29546c89e9e6761b8b3e2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gae1f1ad273da29546c89e9e6761b8b3e2">CFE_NSE</a>&#160;&#160;&#160;40</td></tr>
+<tr class="memdesc:gae1f1ad273da29546c89e9e6761b8b3e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">No Section specifier End found, missing "]". <br/></td></tr>
+<tr class="memitem:gae67acd8919ba3a30ca6a6f2857dc3628"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gae67acd8919ba3a30ca6a6f2857dc3628"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gae67acd8919ba3a30ca6a6f2857dc3628">CFE_NSC</a>&#160;&#160;&#160;50</td></tr>
+<tr class="memdesc:gae67acd8919ba3a30ca6a6f2857dc3628"><td class="mdescLeft">&#160;</td><td class="mdescRight">No private Setfile Configured. <br/></td></tr>
+<tr class="memitem:gad1375fe531ed1c13233e2fa7ae55534f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gad1375fe531ed1c13233e2fa7ae55534f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gad1375fe531ed1c13233e2fa7ae55534f">CFE_WAE</a>&#160;&#160;&#160;60</td></tr>
+<tr class="memdesc:gad1375fe531ed1c13233e2fa7ae55534f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write Access Error. <br/></td></tr>
+<tr class="memitem:ga939964b690f63b5484ec40fe8a4a7c56"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga939964b690f63b5484ec40fe8a4a7c56"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga939964b690f63b5484ec40fe8a4a7c56">CFE_IFP</a>&#160;&#160;&#160;61</td></tr>
+<tr class="memdesc:ga939964b690f63b5484ec40fe8a4a7c56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid Filename entry for Private setfile. <br/></td></tr>
+<tr class="memitem:gac2b94fe4fcdaa5cc608add42857fd178"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gac2b94fe4fcdaa5cc608add42857fd178"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gac2b94fe4fcdaa5cc608add42857fd178">CFE_EWN</a>&#160;&#160;&#160;70</td></tr>
+<tr class="memdesc:gac2b94fe4fcdaa5cc608add42857fd178"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry Without Name. <br/></td></tr>
+<tr class="memitem:ga8d3bbe7352edc6ec8ecf54150c80349f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga8d3bbe7352edc6ec8ecf54150c80349f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga8d3bbe7352edc6ec8ecf54150c80349f">CFE_ICF</a>&#160;&#160;&#160;80</td></tr>
+<tr class="memdesc:ga8d3bbe7352edc6ec8ecf54150c80349f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid Combination of Flags. <br/></td></tr>
+<tr class="memitem:ga5457a3ff93e8c6d02be9c1813038f795"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga5457a3ff93e8c6d02be9c1813038f795"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga5457a3ff93e8c6d02be9c1813038f795">CFE_EWC</a>&#160;&#160;&#160;90</td></tr>
+<tr class="memdesc:ga5457a3ff93e8c6d02be9c1813038f795"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry Without Content. <br/></td></tr>
+<tr class="memitem:gae30643e906d0e1fdd31f11f9c1523a52"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gae30643e906d0e1fdd31f11f9c1523a52"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gae30643e906d0e1fdd31f11f9c1523a52">CFE_UOS</a>&#160;&#160;&#160;100</td></tr>
+<tr class="memdesc:gae30643e906d0e1fdd31f11f9c1523a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlikely Option Specifier. <br/></td></tr>
+<tr class="memitem:ga78354f23ff4d92bd3fd6dcb6bfd59f52"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga78354f23ff4d92bd3fd6dcb6bfd59f52"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga78354f23ff4d92bd3fd6dcb6bfd59f52">CFE_IFC</a>&#160;&#160;&#160;110</td></tr>
+<tr class="memdesc:ga78354f23ff4d92bd3fd6dcb6bfd59f52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid Flag Combination. <br/></td></tr>
+<tr class="memitem:ga92aa7a17d2248b62f428d9e655f7d35e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga92aa7a17d2248b62f428d9e655f7d35e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga92aa7a17d2248b62f428d9e655f7d35e">CFE_NLE</a>&#160;&#160;&#160;120</td></tr>
+<tr class="memdesc:ga92aa7a17d2248b62f428d9e655f7d35e"><td class="mdescLeft">&#160;</td><td class="mdescRight">No Last Entry flag found. <br/></td></tr>
+<tr class="memitem:ga3e780bea24126b1d0750f3ee7a96b8a8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga3e780bea24126b1d0750f3ee7a96b8a8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga3e780bea24126b1d0750f3ee7a96b8a8">CFE_TIN</a>&#160;&#160;&#160;130</td></tr>
+<tr class="memdesc:ga3e780bea24126b1d0750f3ee7a96b8a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error reTurn from stdIN query. <br/></td></tr>
+<tr class="memitem:ga9e2ead53d32b9cf9f0e280a452c8e2e6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga9e2ead53d32b9cf9f0e280a452c8e2e6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga9e2ead53d32b9cf9f0e280a452c8e2e6">CFE_EFE</a>&#160;&#160;&#160;140</td></tr>
+<tr class="memdesc:ga9e2ead53d32b9cf9f0e280a452c8e2e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty string in content for Filename Entry. <br/></td></tr>
+<tr class="memitem:gaee86803a95d7d53a01c86f98c231aa7c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaee86803a95d7d53a01c86f98c231aa7c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gaee86803a95d7d53a01c86f98c231aa7c">CFE_USG</a>&#160;&#160;&#160;200</td></tr>
+<tr class="memdesc:gaee86803a95d7d53a01c86f98c231aa7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entries missing: USaGge advice. <br/></td></tr>
+<tr class="memitem:gad9ced7e6eab277e4e24f511af9daf3bf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gad9ced7e6eab277e4e24f511af9daf3bf"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gad9ced7e6eab277e4e24f511af9daf3bf">CFE_URI</a>&#160;&#160;&#160;210</td></tr>
+<tr class="memdesc:gad9ced7e6eab277e4e24f511af9daf3bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">UnResolved Item (CF_MUST was set!) <br/></td></tr>
+<tr class="memitem:ga22ceafacdf80ae7247728f05c9129b1e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga22ceafacdf80ae7247728f05c9129b1e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga22ceafacdf80ae7247728f05c9129b1e">CFE_FBF</a>&#160;&#160;&#160;-500</td></tr>
+<tr class="memdesc:ga22ceafacdf80ae7247728f05c9129b1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">File Backup Failed. <br/></td></tr>
+<tr class="memitem:ga722db0752b9a2f977065b8001da18101"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga722db0752b9a2f977065b8001da18101"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga722db0752b9a2f977065b8001da18101">CFE_BMF</a>&#160;&#160;&#160;-510</td></tr>
+<tr class="memdesc:ga722db0752b9a2f977065b8001da18101"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backup: Memory allocation Failed. <br/></td></tr>
+<tr class="memitem:gada14f93a466c819b6286bcf7f85bbbe5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gada14f93a466c819b6286bcf7f85bbbe5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gada14f93a466c819b6286bcf7f85bbbe5">CFE_BOF</a>&#160;&#160;&#160;520</td></tr>
+<tr class="memdesc:gada14f93a466c819b6286bcf7f85bbbe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backup: Open source file Failed. <br/></td></tr>
+<tr class="memitem:ga793b92e4f9ea3a7acde0cc0dcf80701f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga793b92e4f9ea3a7acde0cc0dcf80701f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga793b92e4f9ea3a7acde0cc0dcf80701f">CFE_BBF</a>&#160;&#160;&#160;530</td></tr>
+<tr class="memdesc:ga793b92e4f9ea3a7acde0cc0dcf80701f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backup: open target Backup file Failed. <br/></td></tr>
+<tr class="memitem:gaee4caa017da2daf88aa192647f5ebaba"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaee4caa017da2daf88aa192647f5ebaba"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gaee4caa017da2daf88aa192647f5ebaba">CFE_BRF</a>&#160;&#160;&#160;540</td></tr>
+<tr class="memdesc:gaee4caa017da2daf88aa192647f5ebaba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backup: Rename Failed. <br/></td></tr>
+<tr class="memitem:ga58992d0fae72c0a93a8fb1ec9cc1cd9c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga58992d0fae72c0a93a8fb1ec9cc1cd9c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga58992d0fae72c0a93a8fb1ec9cc1cd9c">CFE_BWF</a>&#160;&#160;&#160;550</td></tr>
+<tr class="memdesc:ga58992d0fae72c0a93a8fb1ec9cc1cd9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backup: Write Failed. <br/></td></tr>
+<tr class="memitem:gaf8cd36471ddcc549668f49238855609d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaf8cd36471ddcc549668f49238855609d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gaf8cd36471ddcc549668f49238855609d">CFE_NCA</a>&#160;&#160;&#160;-10</td></tr>
+<tr class="memdesc:gaf8cd36471ddcc549668f49238855609d"><td class="mdescLeft">&#160;</td><td class="mdescRight">No Configuration database Available. <br/></td></tr>
+<tr class="memitem:ga7f7e54a5ccefa34556fe6da3b35b4f27"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga7f7e54a5ccefa34556fe6da3b35b4f27"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga7f7e54a5ccefa34556fe6da3b35b4f27">CFE_NEA</a>&#160;&#160;&#160;-20</td></tr>
+<tr class="memdesc:ga7f7e54a5ccefa34556fe6da3b35b4f27"><td class="mdescLeft">&#160;</td><td class="mdescRight">No Entry with that name Available. <br/></td></tr>
+<tr class="memitem:ga5db4a12696dff1db26958db1be075be9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga5db4a12696dff1db26958db1be075be9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga5db4a12696dff1db26958db1be075be9">CFE_NSS</a>&#160;&#160;&#160;-30</td></tr>
+<tr class="memdesc:ga5db4a12696dff1db26958db1be075be9"><td class="mdescLeft">&#160;</td><td class="mdescRight">No Source/origin is Set. <br/></td></tr>
+<tr class="memitem:gaaa38e8556d85b1bb41037b3bd022bc28"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaaa38e8556d85b1bb41037b3bd022bc28"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gaaa38e8556d85b1bb41037b3bd022bc28">CFE_ECP</a>&#160;&#160;&#160;-40</td></tr>
+<tr class="memdesc:gaaa38e8556d85b1bb41037b3bd022bc28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry's Content is a NULL Pointer. <br/></td></tr>
+<tr class="memitem:ga46fb52baac2d4b91c5169a2918caff5d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga46fb52baac2d4b91c5169a2918caff5d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga46fb52baac2d4b91c5169a2918caff5d">CFE_MEF</a>&#160;&#160;&#160;-100</td></tr>
+<tr class="memdesc:ga46fb52baac2d4b91c5169a2918caff5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory allocation in Error routine Failed. <br/></td></tr>
+<tr class="memitem:ga127dc37aea6ba5ef8d9dfe5cb9c629eb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga127dc37aea6ba5ef8d9dfe5cb9c629eb"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga127dc37aea6ba5ef8d9dfe5cb9c629eb">CFE_MCF</a>&#160;&#160;&#160;-200</td></tr>
+<tr class="memdesc:ga127dc37aea6ba5ef8d9dfe5cb9c629eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory allocation for Configuration Failed. <br/></td></tr>
+<tr class="memitem:gac6a0861a0e376a94e540d7ba95ebe9cf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gac6a0861a0e376a94e540d7ba95ebe9cf"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gac6a0861a0e376a94e540d7ba95ebe9cf">CFE_INF</a>&#160;&#160;&#160;-9999</td></tr>
+<tr class="memdesc:gac6a0861a0e376a94e540d7ba95ebe9cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integer iNquiry Failed (?!) <br/></td></tr>
+<tr class="memitem:ga0415e4b197dc2908a58c026c4e621578"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga0415e4b197dc2908a58c026c4e621578"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga0415e4b197dc2908a58c026c4e621578">CFE_RNF</a>&#160;&#160;&#160;-999.999</td></tr>
+<tr class="memdesc:ga0415e4b197dc2908a58c026c4e621578"><td class="mdescLeft">&#160;</td><td class="mdescRight">Real/float iNquiry Failed (?!) <br/></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gaad2687826308f21b54657d2728e4cfcc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gaad2687826308f21b54657d2728e4cfcc">cfputerr</a> (int ecode, char *string,...)</td></tr>
-<tr class="memdesc:gaad2687826308f21b54657d2728e4cfcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Init, exit or append to Error List.  <a href="#gaad2687826308f21b54657d2728e4cfcc"></a><br/></td></tr>
 <tr class="memitem:ga2dc49b60b3ec7a82086e60f4b1c41e18"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#ga2dc49b60b3ec7a82086e60f4b1c41e18">cfgeterr</a> (char *string, size_t len)</td></tr>
-<tr class="memdesc:ga2dc49b60b3ec7a82086e60f4b1c41e18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error Code and Message Inquiry Function.  <a href="#ga2dc49b60b3ec7a82086e60f4b1c41e18"></a><br/></td></tr>
+<tr class="memdesc:ga2dc49b60b3ec7a82086e60f4b1c41e18"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__errors.html#ga2dc49b60b3ec7a82086e60f4b1c41e18">cfgeterr()</a> Error Code and Message Inquiry Function  <a href="#ga2dc49b60b3ec7a82086e60f4b1c41e18"></a><br/></td></tr>
+<tr class="memitem:gaad2687826308f21b54657d2728e4cfcc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gaad2687826308f21b54657d2728e4cfcc">cfputerr</a> (int ecode, char *string,...)</td></tr>
+<tr class="memdesc:gaad2687826308f21b54657d2728e4cfcc"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__errors.html#gaad2687826308f21b54657d2728e4cfcc">cfputerr()</a> Init, exit or append to Error List  <a href="#gaad2687826308f21b54657d2728e4cfcc"></a><br/></td></tr>
 <tr class="memitem:gaad0c79adfdf363a11532dc4039136ec6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gaad0c79adfdf363a11532dc4039136ec6">cfclearerr</a> (void)</td></tr>
-<tr class="memdesc:gaad0c79adfdf363a11532dc4039136ec6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free all entries in error list.  <a href="#gaad0c79adfdf363a11532dc4039136ec6"></a><br/></td></tr>
+<tr class="memdesc:gaad0c79adfdf363a11532dc4039136ec6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__errors.html#gaad0c79adfdf363a11532dc4039136ec6">cfclearerr()</a> Free all entries in error list  <a href="#gaad0c79adfdf363a11532dc4039136ec6"></a><br/></td></tr>
 <tr class="memitem:gabc3a143038fbcabc944d224e20ca50f8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gabc3a143038fbcabc944d224e20ca50f8">cfreverr</a> (void)</td></tr>
-<tr class="memdesc:gabc3a143038fbcabc944d224e20ca50f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Revert order of entries in error list from last-&gt;first to first-&gt;last.  <a href="#gabc3a143038fbcabc944d224e20ca50f8"></a><br/></td></tr>
+<tr class="memdesc:gabc3a143038fbcabc944d224e20ca50f8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__errors.html#gabc3a143038fbcabc944d224e20ca50f8">cfreverr()</a> Revert order of entries in error list from last-&gt;first to first-&gt;last  <a href="#gabc3a143038fbcabc944d224e20ca50f8"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:gaf90ef6c88b6c820ee65553b7621ac1d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__errors.html#ga4ecdd138467bd086bae71fa01460b539">CONFERR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gaf90ef6c88b6c820ee65553b7621ac1d3">_cferr</a> = <a class="el" href="group__cflib__core.html#ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
-<tr class="memdesc:gaf90ef6c88b6c820ee65553b7621ac1d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Library Internal: Error List Pointer.  <a href="#gaf90ef6c88b6c820ee65553b7621ac1d3"></a><br/></td></tr>
-<tr class="memitem:gabb3fc965f2aa8ec8a52f79975d9f918e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gabb3fc965f2aa8ec8a52f79975d9f918e">_errcnt</a> = 0</td></tr>
-<tr class="memdesc:gabb3fc965f2aa8ec8a52f79975d9f918e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Library Internal: Error List Counter.  <a href="#gabb3fc965f2aa8ec8a52f79975d9f918e"></a><br/></td></tr>
+<tr class="memitem:gaf90ef6c88b6c820ee65553b7621ac1d3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaf90ef6c88b6c820ee65553b7621ac1d3"></a>
+<a class="el" href="struct_c_o_n_f_e_r_r.html">CONFERR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gaf90ef6c88b6c820ee65553b7621ac1d3">_cferr</a> = <a class="el" href="group__cflib__core.html#ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="memdesc:gaf90ef6c88b6c820ee65553b7621ac1d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Library Internal: Error List Pointer. <br/></td></tr>
+<tr class="memitem:gabb3fc965f2aa8ec8a52f79975d9f918e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gabb3fc965f2aa8ec8a52f79975d9f918e"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__errors.html#gabb3fc965f2aa8ec8a52f79975d9f918e">_errcnt</a> = 0</td></tr>
+<tr class="memdesc:gabb3fc965f2aa8ec8a52f79975d9f918e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Library Internal: Error List Counter. <br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <p>Error Codes, Functions and Structures. </p>
 <ul>
-<li>Error Codes and their mnemonic descriptions </li>
+<li>Error Codes and their mnemonic descriptions</li>
 </ul>
-<hr/><h2>Define Documentation</h2>
-<a class="anchor" id="gaac0ac4dd97f14a0da37622a1497ea004"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#gaac0ac4dd97f14a0da37622a1497ea004">CFE_INIT</a>&#160;&#160;&#160;0</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>INITialize error input. </p>
-
-</div>
-</div>
-<a class="anchor" id="gabea2555a62593e79e32879620c4fc8de"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#gabea2555a62593e79e32879620c4fc8de">CFE_OK</a>&#160;&#160;&#160;0</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>No error / everything OKay. </p>
-
-</div>
-</div>
-<a class="anchor" id="gabb576e88369c2eac1ffd41915292968c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#gabb576e88369c2eac1ffd41915292968c">CFE_NEP</a>&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>New Entry successfully Put into DB. </p>
-
-</div>
-</div>
-<a class="anchor" id="gac799901241871d298d9bd9f79e1ce645"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#gac799901241871d298d9bd9f79e1ce645">CFE_EXIT</a>&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Finish error input. </p>
-
-</div>
-</div>
-<a class="anchor" id="gae5e8ef219f287dc0ff0ca70433f78f0e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#gae5e8ef219f287dc0ff0ca70433f78f0e">CFE_ORA</a>&#160;&#160;&#160;20</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Option Requires an Argument. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga77e1698381143e412a7a4796b2b8f564"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#ga77e1698381143e412a7a4796b2b8f564">CFE_UKO</a>&#160;&#160;&#160;25</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>UnKnown Option. </p>
-
-</div>
-</div>
-<a class="anchor" id="gaa3d4c51112fd70d482a4a77c95dc3daf"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#gaa3d4c51112fd70d482a4a77c95dc3daf">CFE_FNF</a>&#160;&#160;&#160;30</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>File Not Found, read access error. </p>
-
-</div>
-</div>
-<a class="anchor" id="gae1f1ad273da29546c89e9e6761b8b3e2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#gae1f1ad273da29546c89e9e6761b8b3e2">CFE_NSE</a>&#160;&#160;&#160;40</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>No Section specifier End found, missing "]". </p>
-
-</div>
-</div>
-<a class="anchor" id="gae67acd8919ba3a30ca6a6f2857dc3628"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#gae67acd8919ba3a30ca6a6f2857dc3628">CFE_NSC</a>&#160;&#160;&#160;50</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>No private Setfile Configured. </p>
-
-</div>
-</div>
-<a class="anchor" id="gad1375fe531ed1c13233e2fa7ae55534f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#gad1375fe531ed1c13233e2fa7ae55534f">CFE_WAE</a>&#160;&#160;&#160;60</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Write Access Error. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga939964b690f63b5484ec40fe8a4a7c56"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#ga939964b690f63b5484ec40fe8a4a7c56">CFE_IFP</a>&#160;&#160;&#160;61</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Invalid Filename entry for Private setfile. </p>
-
-</div>
-</div>
-<a class="anchor" id="gac2b94fe4fcdaa5cc608add42857fd178"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#gac2b94fe4fcdaa5cc608add42857fd178">CFE_EWN</a>&#160;&#160;&#160;70</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Entry Without Name. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga8d3bbe7352edc6ec8ecf54150c80349f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#ga8d3bbe7352edc6ec8ecf54150c80349f">CFE_ICF</a>&#160;&#160;&#160;80</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Invalid Combination of Flags. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga5457a3ff93e8c6d02be9c1813038f795"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#ga5457a3ff93e8c6d02be9c1813038f795">CFE_EWC</a>&#160;&#160;&#160;90</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Entry Without Content. </p>
-
-</div>
-</div>
-<a class="anchor" id="gae30643e906d0e1fdd31f11f9c1523a52"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#gae30643e906d0e1fdd31f11f9c1523a52">CFE_UOS</a>&#160;&#160;&#160;100</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Unlikely Option Specifier. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga78354f23ff4d92bd3fd6dcb6bfd59f52"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#ga78354f23ff4d92bd3fd6dcb6bfd59f52">CFE_IFC</a>&#160;&#160;&#160;110</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Invalid Flag Combination. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga92aa7a17d2248b62f428d9e655f7d35e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#ga92aa7a17d2248b62f428d9e655f7d35e">CFE_NLE</a>&#160;&#160;&#160;120</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>No Last Entry flag found. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga3e780bea24126b1d0750f3ee7a96b8a8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#ga3e780bea24126b1d0750f3ee7a96b8a8">CFE_TIN</a>&#160;&#160;&#160;130</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Error reTurn from stdIN query. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga9e2ead53d32b9cf9f0e280a452c8e2e6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#ga9e2ead53d32b9cf9f0e280a452c8e2e6">CFE_EFE</a>&#160;&#160;&#160;140</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Empty string in content for Filename Entry. </p>
-
-</div>
-</div>
-<a class="anchor" id="gaee86803a95d7d53a01c86f98c231aa7c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#gaee86803a95d7d53a01c86f98c231aa7c">CFE_USG</a>&#160;&#160;&#160;200</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Entries missing: USaGge advice. </p>
-
-</div>
-</div>
-<a class="anchor" id="gad9ced7e6eab277e4e24f511af9daf3bf"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#gad9ced7e6eab277e4e24f511af9daf3bf">CFE_URI</a>&#160;&#160;&#160;210</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>UnResolved Item (CF_MUST was set!) </p>
-
-</div>
-</div>
-<a class="anchor" id="ga22ceafacdf80ae7247728f05c9129b1e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#ga22ceafacdf80ae7247728f05c9129b1e">CFE_FBF</a>&#160;&#160;&#160;-500</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>File Backup Failed. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga722db0752b9a2f977065b8001da18101"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#ga722db0752b9a2f977065b8001da18101">CFE_BMF</a>&#160;&#160;&#160;-510</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Backup: Memory allocation Failed. </p>
-
-</div>
-</div>
-<a class="anchor" id="gada14f93a466c819b6286bcf7f85bbbe5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#gada14f93a466c819b6286bcf7f85bbbe5">CFE_BOF</a>&#160;&#160;&#160;520</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Backup: Open source file Failed. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga793b92e4f9ea3a7acde0cc0dcf80701f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#ga793b92e4f9ea3a7acde0cc0dcf80701f">CFE_BBF</a>&#160;&#160;&#160;530</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Backup: open target Backup file Failed. </p>
-
-</div>
-</div>
-<a class="anchor" id="gaee4caa017da2daf88aa192647f5ebaba"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#gaee4caa017da2daf88aa192647f5ebaba">CFE_BRF</a>&#160;&#160;&#160;540</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Backup: Rename Failed. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga58992d0fae72c0a93a8fb1ec9cc1cd9c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#ga58992d0fae72c0a93a8fb1ec9cc1cd9c">CFE_BWF</a>&#160;&#160;&#160;550</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Backup: Write Failed. </p>
-
-</div>
-</div>
-<a class="anchor" id="gaf8cd36471ddcc549668f49238855609d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#gaf8cd36471ddcc549668f49238855609d">CFE_NCA</a>&#160;&#160;&#160;-10</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>No Configuration database Available. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga7f7e54a5ccefa34556fe6da3b35b4f27"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#ga7f7e54a5ccefa34556fe6da3b35b4f27">CFE_NEA</a>&#160;&#160;&#160;-20</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>No Entry with that name Available. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga5db4a12696dff1db26958db1be075be9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#ga5db4a12696dff1db26958db1be075be9">CFE_NSS</a>&#160;&#160;&#160;-30</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>No Source/origin is Set. </p>
-
-</div>
-</div>
-<a class="anchor" id="gaaa38e8556d85b1bb41037b3bd022bc28"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#gaaa38e8556d85b1bb41037b3bd022bc28">CFE_ECP</a>&#160;&#160;&#160;-40</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Entry's Content is a NULL Pointer. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga46fb52baac2d4b91c5169a2918caff5d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#ga46fb52baac2d4b91c5169a2918caff5d">CFE_MEF</a>&#160;&#160;&#160;-100</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Memory allocation in Error routine Failed. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga127dc37aea6ba5ef8d9dfe5cb9c629eb"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#ga127dc37aea6ba5ef8d9dfe5cb9c629eb">CFE_MCF</a>&#160;&#160;&#160;-200</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Memory allocation for Configuration Failed. </p>
-
-</div>
-</div>
-<a class="anchor" id="gac6a0861a0e376a94e540d7ba95ebe9cf"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#gac6a0861a0e376a94e540d7ba95ebe9cf">CFE_INF</a>&#160;&#160;&#160;-9999</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Integer iNquiry Failed (?!) </p>
-
-</div>
-</div>
-<a class="anchor" id="ga0415e4b197dc2908a58c026c4e621578"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__errors.html#ga0415e4b197dc2908a58c026c4e621578">CFE_RNF</a>&#160;&#160;&#160;-999.999</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Real/float iNquiry Failed (?!) </p>
-
-</div>
-</div>
-<hr/><h2>Typedef Documentation</h2>
-<a class="anchor" id="ga4ecdd138467bd086bae71fa01460b539"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="struct__cfe.html">_cfe</a>
- <a class="el" href="group__errors.html#ga4ecdd138467bd086bae71fa01460b539">CONFERR</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Library Internal: Error List Item. </p>
-
-</div>
-</div>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000001">Bug:</a></b></dt><dd>There are still errors without entry in error stack</dd></dl>
+<ul>
+<li>Library Internal Error Variables<ul>
+<li>Error Functions </li>
+</ul>
+</li>
+</ul>
 <hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ga2dc49b60b3ec7a82086e60f4b1c41e18"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__errors.html#ga2dc49b60b3ec7a82086e60f4b1c41e18">cfgeterr</a> </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="group__errors.html#ga2dc49b60b3ec7a82086e60f4b1c41e18">cfgeterr()</a> Error Code and Message Inquiry Function </p>
+<p>Error Code and Message Inquiry Function.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>Pointer to a string, to which the error message should be copied. Giving it a <code>NULL</code> pointer will omit message return</td></tr>
+    <tr><td class="paramname">len</td><td>Size of string, if <code>0</code> <a class="el" href="group__cflib__core.html#gaf78e4b950c9aa49b752e4460342ea3bf">CF_MAXERRSTR</a> will be used</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd><ul>
+<li><code>0</code> : if no error is available, everything is alright </li>
+<li><code>!=0</code> : error code of the next error in list </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gaad2687826308f21b54657d2728e4cfcc"></a>
 <div class="memitem">
 <div class="memproto">
@@ -738,8 +277,8 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Init, exit or append to Error List. </p>
-<p><a class="el" href="group__errors.html#gaad2687826308f21b54657d2728e4cfcc">cfputerr()</a> Init, exit or append to Error List</p>
+<p><a class="el" href="group__errors.html#gaad2687826308f21b54657d2728e4cfcc">cfputerr()</a> Init, exit or append to Error List </p>
+<p>Init, exit or append to Error List.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">ecode</td><td>Error Code of the error that occurred</td></tr>
@@ -751,48 +290,6 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns:</dt><dd><ul>
 <li><code>&lt;0</code> : A fatal error occurred (malloc failed) </li>
 <li><code>&gt;0</code> : Number of errors in error list </li>
-</ul>
-</dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga2dc49b60b3ec7a82086e60f4b1c41e18"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__errors.html#ga2dc49b60b3ec7a82086e60f4b1c41e18">cfgeterr</a> </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>string</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>len</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Error Code and Message Inquiry Function. </p>
-<p><a class="el" href="group__errors.html#ga2dc49b60b3ec7a82086e60f4b1c41e18">cfgeterr()</a> Error Code and Message Inquiry Function</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">string</td><td>Pointer to a string, to which the error message should be copied. Giving it a <code>NULL</code> pointer will omit message return</td></tr>
-    <tr><td class="paramname">len</td><td>Size of string, if <code>0</code> <a class="el" href="group__cflib__core.html#gaf78e4b950c9aa49b752e4460342ea3bf">CF_MAXERRSTR</a> will be used</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns:</dt><dd><ul>
-<li><code>0</code> : if no error is available, everything is alright </li>
-<li><code>!=0</code> : error code of the next error in list </li>
 </ul>
 </dd></dl>
 
@@ -813,8 +310,8 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Free all entries in error list. </p>
-<p><a class="el" href="group__errors.html#gaad0c79adfdf363a11532dc4039136ec6">cfclearerr()</a> Free all entries in error list</p>
+<p><a class="el" href="group__errors.html#gaad0c79adfdf363a11532dc4039136ec6">cfclearerr()</a> Free all entries in error list </p>
+<p>Free all entries in error list.</p>
 
 </div>
 </div>
@@ -833,44 +330,13 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Revert order of entries in error list from last-&gt;first to first-&gt;last. </p>
-<p><a class="el" href="group__errors.html#gabc3a143038fbcabc944d224e20ca50f8">cfreverr()</a> Revert order of entries in error list from last-&gt;first to first-&gt;last</p>
+<p><a class="el" href="group__errors.html#gabc3a143038fbcabc944d224e20ca50f8">cfreverr()</a> Revert order of entries in error list from last-&gt;first to first-&gt;last </p>
+<p>Revert order of entries in error list from last-&gt;first to first-&gt;last.</p>
 <dl class="section return"><dt>Returns:</dt><dd><ul>
 <li><code>&gt;=0</code> : Number of errors in error list </li>
 <li><code>&lt;0</code> : Inconsistency with old error count, absolute value is new error counter </li>
 </ul>
 </dd></dl>
-
-</div>
-</div>
-<hr/><h2>Variable Documentation</h2>
-<a class="anchor" id="gaf90ef6c88b6c820ee65553b7621ac1d3"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__errors.html#ga4ecdd138467bd086bae71fa01460b539">CONFERR</a>* <a class="el" href="group__errors.html#gaf90ef6c88b6c820ee65553b7621ac1d3">_cferr</a> = <a class="el" href="group__cflib__core.html#ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Library Internal: Error List Pointer. </p>
-
-</div>
-</div>
-<a class="anchor" id="gabb3fc965f2aa8ec8a52f79975d9f918e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__errors.html#gabb3fc965f2aa8ec8a52f79975d9f918e">_errcnt</a> = 0</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Library Internal: Error List Counter. </p>
 
 </div>
 </div>

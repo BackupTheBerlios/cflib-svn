@@ -43,6 +43,7 @@
       <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
 </div>
@@ -59,13 +60,17 @@ Input and Output</h2>
 <p>CFLIB is designed to be usable as a <b>Filter</b> program that reads from <code>stdin</code> and writes to <code>stdout</code> wherever it was desirable.</p>
 <p>None of the library functions will produce any terminal output (to <code>stdout</code> or <code>stderr</code>) unless:</p>
 <ul>
-<li>The <a class="el" href="group__special__options__mask.html#gae39e0d9b4e9af8c6d4b3676783dd26e0">CF_QUERY</a> flag is set in the <a class="el" href="group__special__options__mask.html">Special Options Mask</a> of an entry and the parameter value is still unassigned after parsing all other possible sources in <a class="el" href="group__cflib__core.html#gae593ff607f853bd5fc16a16bb6759314" title="Initialize CFLIB Configuration Database and parse possible sources for database entries according to ...">cfinit()</a>.</li>
+<li>The <a class="el" href="group__special__options__mask.html#gae39e0d9b4e9af8c6d4b3676783dd26e0">CF_QUERY</a> flag is set in the <a class="el" href="group__special__options__mask.html">Special Options Mask</a> of an entry and the parameter value is still unassigned after parsing all other possible sources in <a class="el" href="group__cflib__core.html#ga64fb341565c2ddfccd6669e5e6265a8a" title="cfinit() Initialize Configuration Database">cfinit()</a>.</li>
 </ul>
 <ul>
 <li>You call a function that reads from or writes to files with arguments that trigger the use of <code>stdin</code>, <code>stdout</code>, <code>stderr</code> etc. according to the function's documentation.</li>
 </ul>
 <h2><a class="anchor" id="general_tasks"></a>
 General (future) tasks</h2>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd><p class="startdd">Make proper Man Pages with function references etc. </p>
+<p>Make Doxygen Developer Documentation </p>
+<p class="enddd">More Modularization! Still very similar code in various functions </p>
+</dd></dl>
 <dl class="section see"><dt>See also:</dt><dd><a class="el" href="bug.html">Bug List</a></dd></dl>
 <h2><a class="anchor" id="misc_general_issues"></a>
 Other general issues</h2>

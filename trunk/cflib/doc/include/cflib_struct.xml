@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<tagfile>
+<compound kind="struct">
+    <name>_cf</name>
+    <filename>struct__cf.html</filename>
+    <member kind="variable">
+      <type>char *</type>
+      <name>name</name>
+      <anchorfile>struct__cf.html</anchorfile>
+      <anchor>443631ec6014f69db9fe7374791bc26d</anchor>
+      <arglist/>
+    </member>
+    <member kind="variable">
+      <type>char *</type>
+      <name>inhalt</name>
+      <anchorfile>struct__cf.html</anchorfile>
+      <anchor>fb33df0507763e42244fd62c654a8177</anchor>
+      <arglist/>
+    </member>
+    <member kind="variable">
+      <type>char</type>
+      <name>option</name>
+      <anchorfile>struct__cf.html</anchorfile>
+      <anchor>d1c10047a93ac7b5b60b23edec51a9ae</anchor>
+      <arglist/>
+    </member>
+    <member kind="variable">
+      <type>CFFLAGTYP</type>
+      <name>flag</name>
+      <anchorfile>struct__cf.html</anchorfile>
+      <anchor>c86f8ac608a7b0aa947e84adcd4d24df</anchor>
+      <arglist/>
+    </member>
+  </compound>
+<compound kind="struct">
+    <name>_cfe</name>
+    <filename>struct__cfe.html</filename>
+    <member kind="variable">
+      <type>struct _cfe *</type>
+      <name>next</name>
+      <anchorfile>struct__cfe.html</anchorfile>
+      <anchor>fad9bfbbb98a744410cbd2476afc4a38</anchor>
+      <arglist/>
+    </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>errcode</name>
+      <anchorfile>struct__cfe.html</anchorfile>
+      <anchor>c010fa210673677106c7edd8fef1d7eb</anchor>
+      <arglist/>
+    </member>
+    <member kind="variable">
+      <type>char</type>
+      <name>errstr</name>
+      <anchorfile>struct__cfe.html</anchorfile>
+      <anchor>3edd56c49330f52171b266971361e36c</anchor>
+      <arglist>[CF_MAXERRSTR]</arglist>
+    </member>
+  </compound>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</tagfile>

@@ -1,0 +1,1117 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<tagfile>
+<compound kind="group">
+    <name>cflib</name>
+    <title>Flexible Configuration Library</title>
+    <filename>group__cflib.html</filename>
+    <subgroup>cflib_core</subgroup>
+    <subgroup>report_generation</subgroup>
+    <subgroup>utilities</subgroup>
+    <subgroup>special_options_mask</subgroup>
+    <subgroup>errors</subgroup>
+    <subgroup>advanced_features</subgroup>
+    <subgroup>retrieval</subgroup>
+    <subgroup>setting_saving</subgroup>
+  </compound>
+<compound kind="group">
+    <name>cflib_core</name>
+    <title>Core Features</title>
+    <filename>group__cflib__core.html</filename>
+    <class kind="struct">_cf</class>
+    <member kind="define">
+      <type>#define</type>
+      <name>Patchlevel</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>g0beb5d41f2b506f1c969c56731bb9490</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>MAXCONF</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>g1662beae23df229341c28d286379e2ad</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_MAXERRSTR</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>gf78e4b950c9aa49b752e4460342ea3bf</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_MAXLINE</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>gc7ffaf92294adc15284233965f54c03e</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_MAXQLINE</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>gc91ed2022fe6617330f369b4e20b875b</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_MAXUSAGE</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>gd36d92b5077988734cdfeb0f47c0488e</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_USG_DEFCOLS</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>gc568df32f08baaff9c162521856c3ec7</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_MAXTIMEBUF</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>g582af337c870e7eb2cdb133fd5cc72d2</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>TRUE</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>ga8cecfc5c5c054d2875c03e77b7be15d</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>FALSE</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>ga93f0eb578d23995850d61f7d61c55c1</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>NULL</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>g070d2ce7b6bb7e5c05602aa8c308d0c4</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_FLAG_ON</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>g355c714f2912ac336b8b03468c978d8c</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_FLAG_OFF</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>g7010abac2c80c121772da4d9c03332ee</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_NO_OPTION</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>gbea45e34341ee5aaafb4a4a732bb5ece</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>TABLEN</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>g9c80120944556169d230d4cd051d88cb</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFP_PUT</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>g764a8ea81ffc3940bf413797dcaf9a3d</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFP_ARG</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>g0901da5871f3cffeec56e491f8c9fc7f</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFP_ENV</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>gc77d72299f32e91104090cdeb93f3619</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFP_PRIV</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>g6cf8dcc9fa01deae5eb44698cb01f73e</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFP_SYS</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>g0365a86453eeaa815a79c506343bd927</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFP_DEF</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>gfa9b2b859f08e9b319cc50555255a975</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFP_QRY</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>g91ce348a0630961b0c472e7dec732aae</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFP_RESERVED</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>g631bc61e35c14f1d3df36a71154a776a</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFS_NOT</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>gf363125c0f5c520d748d8d0ecaf1af01</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFS_ALL</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>g50bc281400629cfb20e899144d59a3b7</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFS_NEG</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>g5663cfeeda02fa9e2fee53b418c5045b</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFS_USG</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>g3f535ad957f1836dea64deae798324a5</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFS_DEBUG</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>g870957fdc2246ddc767747f8dd645bdf</anchor>
+      <arglist/>
+    </member>
+    <member kind="typedef">
+      <type>struct _cf</type>
+      <name>CONFIG</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>gd8328886f52eb7e67fd6a9ab6039143f</anchor>
+      <arglist/>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>cfinit</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>ge593ff607f853bd5fc16a16bb6759314</anchor>
+      <arglist>(CONFIG *set, int ac, char **av)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>cfexit</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>g47bfff42f432b3e8b5b9f12b695e60db</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>cfstart</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>gdcf24d678203bd09a0a3e05b8a986c65</anchor>
+      <arglist>(CONFIG *setting, int ac, char **av, char *help, int mode)</arglist>
+    </member>
+    <member kind="variable">
+      <type>CONFIG *</type>
+      <name>_conf</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>g7d0fec33ada97c2d7ef78e6c3d83da97</anchor>
+      <arglist>[MAXCONF+1]</arglist>
+    </member>
+  </compound>
+<compound kind="group">
+    <name>report_generation</name>
+    <title>Report Generation</title>
+    <filename>group__report__generation.html</filename>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_DEF_VARDELIM</name>
+      <anchorfile>group__report__generation.html</anchorfile>
+      <anchor>g5547641c939fd4d071e9aeaa7c956cac</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_MAXINC</name>
+      <anchorfile>group__report__generation.html</anchorfile>
+      <anchor>g7b96ba1ca10909659d50eabb8b5af611</anchor>
+      <arglist/>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>cfform</name>
+      <anchorfile>group__report__generation.html</anchorfile>
+      <anchor>g2f8350e7d032c87b2a0e1cb6149a85ec</anchor>
+      <arglist>(char *file, char *outfile, char *vd, int mode)</arglist>
+    </member>
+  </compound>
+<compound kind="group">
+    <name>utilities</name>
+    <title>General Utilities</title>
+    <filename>group__utilities.html</filename>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_BACKBUFLEN</name>
+      <anchorfile>group__utilities.html</anchorfile>
+      <anchor>g4211f4b332e79ab5f3c691a4ab6ebaf9</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>DelFlag</name>
+      <anchorfile>group__utilities.html</anchorfile>
+      <anchor>gbfbf02b37e47027916f3352798f7d44c</anchor>
+      <arglist>(a, b)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SetFlag</name>
+      <anchorfile>group__utilities.html</anchorfile>
+      <anchor>gfcc4d6e712f81df21ea69277d42af839</anchor>
+      <arglist>(a, b)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>RemoveCR</name>
+      <anchorfile>group__utilities.html</anchorfile>
+      <anchor>g869ea1081375ada22168696db002bc58</anchor>
+      <arglist>(char *ptr)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>RemoveTrailSpace</name>
+      <anchorfile>group__utilities.html</anchorfile>
+      <anchor>gbb7b78ca5a077167e24637bba539eea1</anchor>
+      <arglist>(char *ptr)</arglist>
+    </member>
+    <member kind="function">
+      <type>char *</type>
+      <name>EatWhiteSpace</name>
+      <anchorfile>group__utilities.html</anchorfile>
+      <anchor>g00023e1ae3b25744b3cce3b509e21fe8</anchor>
+      <arglist>(char *ptr)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>IsATerminal</name>
+      <anchorfile>group__utilities.html</anchorfile>
+      <anchor>g9a90e738d03b642f33901600671d225a</anchor>
+      <arglist>(FILE *fp)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>BackupFile</name>
+      <anchorfile>group__utilities.html</anchorfile>
+      <anchor>g0fccda7427db33b2f73a3b6dca864207</anchor>
+      <arglist>(const char *file, char *modus)</arglist>
+    </member>
+    <member kind="function">
+      <type>char *</type>
+      <name>FindFile</name>
+      <anchorfile>group__utilities.html</anchorfile>
+      <anchor>g59fc2b29cf26051e0854b664f5aed15d</anchor>
+      <arglist>(const char *fname, const char *fpath, const char *const *fext)</arglist>
+    </member>
+  </compound>
+<compound kind="group">
+    <name>special_options_mask</name>
+    <title>Special Options Mask</title>
+    <filename>group__special__options__mask.html</filename>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_LAST</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>ga4d82cea91ede4aee78594417894e368</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_PATH</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>gb383c1436888ea6b410141f7c0b1f306</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_SETFILE</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>gfeeb63d4d8c498bec4a237ad8b94f02f</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_SYS_SETFILE</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>gbb03ea68e07e388da2c1337a1582c72e</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_SECTION</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>g603f0467f101b71f5f869381429ffef4</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_PRGNAME</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>g071c29b5177f2df2400712ce8daae9b0</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_TIME</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>g0fde537a92deb77f75b21c9e8d306509</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_DATE</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>g1c5b511a34d2c0db6631539ba81a4386</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_SET_PUT</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>g8d6cd1608fef5638efe964da63edf2dd</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_SET_ARG</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>g1b3eb474a5160e5a32385f6de53d90d6</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_SET_ENV</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>g29dbd098a75a23ddc42b3b53e430d694</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_SET_PRIV</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>gabf1d4d312964af93bd55f71eeec6988</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_SET_SYS</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>g8fe09807491ee119290329cf08e6f340</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_SET_DEF</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>g17b4ef5b35afe21a4a80faa671030b65</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_SET_QRY</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>g09dcbb96c5ace43a7d5e7e4f52d387a8</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_NO_OPT_ARG</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>g97d17b070dac10c14d3930c58bfba76f</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_CONCAT</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>g9e526dae88bf6803772107ff283637b5</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_IGN_ENV</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>g72b75851880f36aaa5a52fdfe7960cca</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_QUERY</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>ge39e0d9b4e9af8c6d4b3676783dd26e0</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_STR</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>g64c30a2865061d0c1074bc6ec91e3dcf</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_INT</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>gb33869d596619ad14675c053925a42e0</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_FLAG</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>g1d1f1d1b6eac6b5d9970102318ab2667</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_REAL</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>geefdbef320cbd7179f1fb0ebe0fcf5ce</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_FINDFILE</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>g675b6f8440beecc09fec54d17e9c3ee9</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_MUST</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>g3229f5b038eaa0c6428361d2aa510dfc</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_RESID</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>g5415b257c706aae33d91d3947a3429c0</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_USAGE</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>gc30981201d7455071cef38a0133b9228</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_EXPHOME</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>gff1b2e25aa9a89a55c1784018e24aa75</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_MALLOC</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>g2b971231bd3cbad743ef2f4e0a613a47</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_FORCED</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>g618e7187ee15bacfe668e72a858e71fc</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_NOSAVE</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>gd76153c65f68cc0ee5c1a04c8c3e80bf</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_SRC</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>gd9b1f659b11c529a0ed1035caf8b239b</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_FLGINQ</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>g36792935eec7c6636b6aea8df82f7480</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CF_TD</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>g8a50d7326b057d262f53ef84a166f9c5</anchor>
+      <arglist/>
+    </member>
+    <member kind="typedef">
+      <type>unsigned long</type>
+      <name>CFFLAGTYP</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>g4854f1596d5c6e0604a478fa9a2e23f0</anchor>
+      <arglist/>
+    </member>
+  </compound>
+<compound kind="group">
+    <name>errors</name>
+    <title>Error Handling</title>
+    <filename>group__errors.html</filename>
+    <class kind="struct">_cfe</class>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_INIT</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>gac0ac4dd97f14a0da37622a1497ea004</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_OK</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>gbea2555a62593e79e32879620c4fc8de</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_NEP</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>gbb576e88369c2eac1ffd41915292968c</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_EXIT</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>gc799901241871d298d9bd9f79e1ce645</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_ORA</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>ge5e8ef219f287dc0ff0ca70433f78f0e</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_UKO</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>g77e1698381143e412a7a4796b2b8f564</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_FNF</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>ga3d4c51112fd70d482a4a77c95dc3daf</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_NSE</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>ge1f1ad273da29546c89e9e6761b8b3e2</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_NSC</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>ge67acd8919ba3a30ca6a6f2857dc3628</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_WAE</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>gd1375fe531ed1c13233e2fa7ae55534f</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_IFP</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>g939964b690f63b5484ec40fe8a4a7c56</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_EWN</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>gc2b94fe4fcdaa5cc608add42857fd178</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_ICF</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>g8d3bbe7352edc6ec8ecf54150c80349f</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_EWC</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>g5457a3ff93e8c6d02be9c1813038f795</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_UOS</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>ge30643e906d0e1fdd31f11f9c1523a52</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_IFC</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>g78354f23ff4d92bd3fd6dcb6bfd59f52</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_NLE</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>g92aa7a17d2248b62f428d9e655f7d35e</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_TIN</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>g3e780bea24126b1d0750f3ee7a96b8a8</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_EFE</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>g9e2ead53d32b9cf9f0e280a452c8e2e6</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_USG</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>gee86803a95d7d53a01c86f98c231aa7c</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_URI</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>gd9ced7e6eab277e4e24f511af9daf3bf</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_FBF</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>g22ceafacdf80ae7247728f05c9129b1e</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_BMF</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>g722db0752b9a2f977065b8001da18101</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_BOF</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>gda14f93a466c819b6286bcf7f85bbbe5</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_BBF</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>g793b92e4f9ea3a7acde0cc0dcf80701f</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_BRF</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>gee4caa017da2daf88aa192647f5ebaba</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_BWF</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>g58992d0fae72c0a93a8fb1ec9cc1cd9c</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_NCA</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>gf8cd36471ddcc549668f49238855609d</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_NEA</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>g7f7e54a5ccefa34556fe6da3b35b4f27</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_NSS</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>g5db4a12696dff1db26958db1be075be9</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_ECP</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>gaa38e8556d85b1bb41037b3bd022bc28</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_MEF</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>g46fb52baac2d4b91c5169a2918caff5d</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_MCF</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>g127dc37aea6ba5ef8d9dfe5cb9c629eb</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_INF</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>gc6a0861a0e376a94e540d7ba95ebe9cf</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFE_RNF</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>g0415e4b197dc2908a58c026c4e621578</anchor>
+      <arglist/>
+    </member>
+    <member kind="typedef">
+      <type>struct _cfe</type>
+      <name>CONFERR</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>g4ecdd138467bd086bae71fa01460b539</anchor>
+      <arglist/>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>cfputerr</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>gad2687826308f21b54657d2728e4cfcc</anchor>
+      <arglist>(int ecode, char *string,...)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>cfgeterr</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>g2dc49b60b3ec7a82086e60f4b1c41e18</anchor>
+      <arglist>(char *string, size_t len)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>cfclearerr</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>gad0c79adfdf363a11532dc4039136ec6</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>cfreverr</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>gbc3a143038fbcabc944d224e20ca50f8</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="variable">
+      <type>CONFERR *</type>
+      <name>_cferr</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>gf90ef6c88b6c820ee65553b7621ac1d3</anchor>
+      <arglist/>
+    </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>_errcnt</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>gbb3fc965f2aa8ec8a52f79975d9f918e</anchor>
+      <arglist/>
+    </member>
+  </compound>
+<compound kind="group">
+    <name>advanced_features</name>
+    <title>Advanced Features</title>
+    <filename>group__advanced__features.html</filename>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFD_CFDUMP</name>
+      <anchorfile>group__advanced__features.html</anchorfile>
+      <anchor>gb28b8410738c00c62003a5f5b2b19827</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFD_LIBHEAD</name>
+      <anchorfile>group__advanced__features.html</anchorfile>
+      <anchor>g6a97e565629fc3e7423e4feb804eb5d0</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFD_COLHEAD</name>
+      <anchorfile>group__advanced__features.html</anchorfile>
+      <anchor>g05403834c7c6377bcf762d640c0d0854</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFD_SRCFLAGS</name>
+      <anchorfile>group__advanced__features.html</anchorfile>
+      <anchor>g9deeb100c2dc701f8f8193b8fb53fbff</anchor>
+      <arglist/>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>CFD_DEFAULT</name>
+      <anchorfile>group__advanced__features.html</anchorfile>
+      <anchor>g61cced010b3d926e37aafdf615951875</anchor>
+      <arglist/>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>cfdump</name>
+      <anchorfile>group__advanced__features.html</anchorfile>
+      <anchor>gecfc8ee37366e1b36cb5aac0cc41ebdc</anchor>
+      <arglist>(FILE *fout)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>cfdinichk</name>
+      <anchorfile>group__advanced__features.html</anchorfile>
+      <anchor>g35e2c28f591ac71e3617c612233ecdd0</anchor>
+      <arglist>(CONFIG *set)</arglist>
+    </member>
+    <member kind="function">
+      <type>char *</type>
+      <name>cfhomexp</name>
+      <anchorfile>group__advanced__features.html</anchorfile>
+      <anchor>g469258ed449ac26d5c82e665db491ff2</anchor>
+      <arglist>(char *name)</arglist>
+    </member>
+  </compound>
+<compound kind="group">
+    <name>retrieval</name>
+    <title>Information Retrieval</title>
+    <filename>group__retrieval.html</filename>
+    <member kind="define">
+      <type>#define</type>
+      <name>cfget</name>
+      <anchorfile>group__retrieval.html</anchorfile>
+      <anchor>g5e2da3f6cf3e36a910362660d167f790</anchor>
+      <arglist>(a)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>cfgetstr</name>
+      <anchorfile>group__retrieval.html</anchorfile>
+      <anchor>g8cf5f53c5b05ec5ca4f5145010f84eb4</anchor>
+      <arglist>(a)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>cfgetnum</name>
+      <anchorfile>group__retrieval.html</anchorfile>
+      <anchor>g591b741a05205e1ddd599146b996d755</anchor>
+      <arglist>(a)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>cfgetreal</name>
+      <anchorfile>group__retrieval.html</anchorfile>
+      <anchor>g5f5ec5179e69c2bdfb06ff38a5af16e4</anchor>
+      <arglist>(a)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>cfgetflag</name>
+      <anchorfile>group__retrieval.html</anchorfile>
+      <anchor>gc0188464b59267e14b5c44efb1d4a0f2</anchor>
+      <arglist>(a)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>cfflaginq</name>
+      <anchorfile>group__retrieval.html</anchorfile>
+      <anchor>g09929d4a48932749dd9d0d32d0f3f08c</anchor>
+      <arglist>(a, b)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>cfgetsrc</name>
+      <anchorfile>group__retrieval.html</anchorfile>
+      <anchor>gdf84eed41bdaa0a6cd8cd474c79d50b1</anchor>
+      <arglist>(a)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>cfgetres</name>
+      <anchorfile>group__retrieval.html</anchorfile>
+      <anchor>g6ef6076e946383ab198ee26b9aa5603a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>cfgetcpr</name>
+      <anchorfile>group__retrieval.html</anchorfile>
+      <anchor>g9999522b2acf8760f420d2567e7f7c50</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void *</type>
+      <name>cfgetent</name>
+      <anchorfile>group__retrieval.html</anchorfile>
+      <anchor>gc13ba743ed26e6c05df14817ad9df3da</anchor>
+      <arglist>(char *name, CFFLAGTYP typ)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>cfgetvers</name>
+      <anchorfile>group__retrieval.html</anchorfile>
+      <anchor>gc4e376e3630e9b25655ee0e0b1a54a5b</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>char *</type>
+      <name>cfgetsubvers</name>
+      <anchorfile>group__retrieval.html</anchorfile>
+      <anchor>g160032675def60398ebfd66589ddc1e5</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>char *</type>
+      <name>cfgetusg</name>
+      <anchorfile>group__retrieval.html</anchorfile>
+      <anchor>gd3e4e24668cdc111471332a7e79fc897</anchor>
+      <arglist>(void)</arglist>
+    </member>
+  </compound>
+<compound kind="group">
+    <name>setting_saving</name>
+    <title>Setting and Saving the Configuration</title>
+    <filename>group__setting__saving.html</filename>
+    <member kind="define">
+      <type>#define</type>
+      <name>cfput</name>
+      <anchorfile>group__setting__saving.html</anchorfile>
+      <anchor>gb4370bac1e151641bfb78e65f8ec4b44</anchor>
+      <arglist>(a, b)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>cfputstr</name>
+      <anchorfile>group__setting__saving.html</anchorfile>
+      <anchor>g9553f7a24b080660793a560c2bc8f210</anchor>
+      <arglist>(char *name, char *content)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>cfputtime</name>
+      <anchorfile>group__setting__saving.html</anchorfile>
+      <anchor>g6f133f88dc253a6a80d13eed4d123063</anchor>
+      <arglist>(CFFLAGTYP td)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>cfnosave</name>
+      <anchorfile>group__setting__saving.html</anchorfile>
+      <anchor>g0f6ed90e3ecfa0074af1635a0e4339ef</anchor>
+      <arglist>(char *name, const char *onoff)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>cfsave</name>
+      <anchorfile>group__setting__saving.html</anchorfile>
+      <anchor>g046d8a68eae35b987eacca04a9a06cca</anchor>
+      <arglist>(char *file, const char *savemode)</arglist>
+    </member>
+  </compound>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</tagfile>

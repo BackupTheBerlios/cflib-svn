@@ -43,6 +43,7 @@
       <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
 </div>
@@ -53,8 +54,8 @@
 <div class="contents">
 <div class="textblock"><h2><a class="anchor" id="versions"></a>
 Library Versions</h2>
-<p>There is no strict versioning of the library. A Library <b>"Patchlevel"</b> is defined as an Integer Number counting <b>"Major Versions"</b>. See <a class="el" href="group__retrieval.html#gac4e376e3630e9b25655ee0e0b1a54a5b" title="Get Library Version/Patchlevel.">cfgetvers()</a>.</p>
-<p>The individual source files contain more detailed version information and they all support a file version identifier <code>$<em>Id$</em> for</code> automatic update by SVN and other Source Management Tools. See <a class="el" href="group__retrieval.html#ga160032675def60398ebfd66589ddc1e5" title="Get Library Subversion Details.">cfgetsubvers()</a>.</p>
+<p>There is no strict versioning of the library. A Library <b>"Patchlevel"</b> is defined as an Integer Number counting <b>"Major Versions"</b>. See <a class="el" href="group__retrieval.html#gac4e376e3630e9b25655ee0e0b1a54a5b" title="cfgetvers() Get Library Version/Patchlevel">cfgetvers()</a>.</p>
+<p>The individual source files contain more detailed version information and they all support a file version identifier <code>$<em>Id$</em> for</code> automatic update by SVN and other Source Management Tools. See <a class="el" href="group__retrieval.html#ga160032675def60398ebfd66589ddc1e5" title="cfgetsubvers() Get Library Subversion Details">cfgetsubvers()</a>.</p>
 <h2><a class="anchor" id="platforms"></a>
 Platforms</h2>
 <p>The library source code is fairly simple ANSI C code and should compile and link without problems on most platforms. Most of the development has been done with different versions of the <b>"GNU C Compiler"</b> <code>gcc</code> and related tools. All source modules compile free of errors and warnings with:</p>
@@ -76,7 +77,7 @@ Platforms</h2>
 Building the Library</h2>
 <p>Compiling the source modules and building the library should be a "straight forward" task:</p>
 <ul>
-<li>Make all objects from C sources, including <em>cf.h</em> and <em>cflib.h</em> </li>
+<li>Make all objects from C sources, including <em><a class="el" href="cf_8h.html" title="C Header File for CFLIB Flexible Configuration Library.">cf.h</a></em> and <em>cflib.h</em> </li>
 <li>Link the objects with <code>ar</code> or another tools to get a library executable</li>
 </ul>
 <dl class="section see"><dt>See also:</dt><dd><b>Makefiles</b> under CFLIB project tree and <a class="el" href="development.html#compilation_options">System and Compiler dependent Defines</a></dd></dl>
@@ -95,38 +96,38 @@ Minimal CFLIB Replacement</h2>
 System and Compiler dependent Defines</h2>
 <p>The following Defines are used in the library source to decide whether to include certain header files and use certain functions or defines:</p>
 <ul>
-<li><b>_HAS_PWD</b> : If defined, include <b>&lt;pwd.h&gt;</b> and make use of function <b>getpwnam()</b> in <a class="el" href="group__advanced__features.html#ga469258ed449ac26d5c82e665db491ff2" title="Expand ~ or ~user in parameter content.">cfhomexp()</a> to find a user's home directory<ul>
-<li><b>_HAS_ISATTY</b> : If defined, use function <b>isatty()</b> to determine whether a stream is a terminal (for interactive query/input) in function <a class="el" href="group__utilities.html#ga9a90e738d03b642f33901600671d225a" title="Test whether stream is a terminal.">IsATerminal()</a></li>
-<li><b>_HAS_LIMITS</b> : If defined, include <b>&lt;limits.h&gt;</b> and use <b>PATH_MAX</b> defined therein in function <a class="el" href="group__utilities.html#ga59fc2b29cf26051e0854b664f5aed15d" title="Find a File in Path trying Extensions.">FindFile()</a></li>
+<li><b>_HAS_PWD</b> : If defined, include <b>&lt;pwd.h&gt;</b> and make use of function <b>getpwnam()</b> in <a class="el" href="group__advanced__features.html#ga469258ed449ac26d5c82e665db491ff2" title="cfhomexp() Expand ~ or ~user in parameter content">cfhomexp()</a> to find a user's home directory<ul>
+<li><b>_HAS_ISATTY</b> : If defined, use function <b>isatty()</b> to determine whether a stream is a terminal (for interactive query/input) in function <a class="el" href="group__utilities.html#ga9a90e738d03b642f33901600671d225a" title="IsATerminal() Test whether stream is a terminal">IsATerminal()</a></li>
+<li><b>_HAS_LIMITS</b> : If defined, include <b>&lt;limits.h&gt;</b> and use <b>PATH_MAX</b> defined therein in function <a class="el" href="group__utilities.html#ga59fc2b29cf26051e0854b664f5aed15d" title="FindFile() Find a File in Path trying Extensions">FindFile()</a></li>
 </ul>
 </li>
 </ul>
 <p>The following Defines can be used to control, which features or functions shall be excluded from the library build:</p>
 <ul>
-<li><b>_CF_NOFINDFILE</b> : Function <a class="el" href="group__utilities.html#ga59fc2b29cf26051e0854b664f5aed15d" title="Find a File in Path trying Extensions.">FindFile()</a>, component findfile.c<ul>
-<li><b>_CF_NOSAVING</b> : Functions <a class="el" href="group__setting__saving.html#ga046d8a68eae35b987eacca04a9a06cca" title="Write configuration data to a Configuration File or stdout.">cfsave()</a> and <a class="el" href="group__utilities.html#ga0fccda7427db33b2f73a3b6dca864207" title="Copy or Rename File &quot;file&quot; to Backup File &quot;file~&quot; or &quot;file.bak&quot;.">BackupFile()</a>, component cfwrite.c</li>
-<li><b>_CF_NODEBUGGING</b> : Functions <a class="el" href="group__advanced__features.html#ga35e2c28f591ac71e3617c612233ecdd0" title="Debugging Function (experimental)">cfdinichk()</a> and <a class="el" href="group__advanced__features.html#gaecfc8ee37366e1b36cb5aac0cc41ebdc" title="Dump CFLIB DB content to fout.">cfdump()</a>, component cfdebug.c</li>
+<li><b>_CF_NOFINDFILE</b> : Function <a class="el" href="group__utilities.html#ga59fc2b29cf26051e0854b664f5aed15d" title="FindFile() Find a File in Path trying Extensions">FindFile()</a>, component findfile.c<ul>
+<li><b>_CF_NOSAVING</b> : Functions <a class="el" href="group__setting__saving.html#gaad7e1267cd904b4480a0eeaeb03b5f75" title="cfsave() Write configuration data to a Configuration File or stdout ">cfsave()</a> and <a class="el" href="group__utilities.html#ga0fccda7427db33b2f73a3b6dca864207" title="BackupFile() Copy or Rename File &quot;file&quot; to Backup File &quot;file~&quot; or &quot;file.bak&quot; ">BackupFile()</a>, component cfwrite.c</li>
+<li><b>_CF_NODEBUGGING</b> : Functions <a class="el" href="group__advanced__features.html#ga35e2c28f591ac71e3617c612233ecdd0" title="cfdinichk() Debugging Function (experimental)">cfdinichk()</a> and <a class="el" href="group__advanced__features.html#gaecfc8ee37366e1b36cb5aac0cc41ebdc" title="cfdump() Dump CFLIB DB content to fout ">cfdump()</a>, component cfdebug.c</li>
 </ul>
 </li>
 </ul>
 <p>The following Defines can be used to switch on certain Debug Features:</p>
 <ul>
-<li><b>DEBUG_DINICHK</b> : Debug <a class="el" href="group__advanced__features.html#ga35e2c28f591ac71e3617c612233ecdd0" title="Debugging Function (experimental)">cfdinichk()</a><ul>
-<li><b>DEBUG_ERROR</b> : Debug <a class="el" href="group__errors.html#gaad2687826308f21b54657d2728e4cfcc" title="Init, exit or append to Error List.">cfputerr()</a></li>
-<li><b>DEBUG_TIME</b> : Debug <a class="el" href="group__setting__saving.html#ga6f133f88dc253a6a80d13eed4d123063" title="Set all Time and/or Date entries in CFLIB DB to now or today.">cfputtime()</a></li>
-<li><b>DEBUG_NOSAVE</b> : Debug <a class="el" href="group__setting__saving.html#ga046d8a68eae35b987eacca04a9a06cca" title="Write configuration data to a Configuration File or stdout.">cfsave()</a></li>
-<li><b>DEBUG_BACKUP</b> : Debug <a class="el" href="group__utilities.html#ga0fccda7427db33b2f73a3b6dca864207" title="Copy or Rename File &quot;file&quot; to Backup File &quot;file~&quot; or &quot;file.bak&quot;.">BackupFile()</a></li>
-<li><b>DEBUG_FINDFILE</b> : Debug <a class="el" href="group__utilities.html#ga59fc2b29cf26051e0854b664f5aed15d" title="Find a File in Path trying Extensions.">FindFile()</a> usage in <a class="el" href="group__cflib__core.html#gae593ff607f853bd5fc16a16bb6759314" title="Initialize CFLIB Configuration Database and parse possible sources for database entries according to ...">cfinit()</a></li>
-<li><b>DEBUG_FORM</b> : Debug <a class="el" href="group__report__generation.html#ga2f8350e7d032c87b2a0e1cb6149a85ec" title="Process a Template from file or stdin and write generated Report to File or stdout.">cfform()</a></li>
+<li><b>DEBUG_DINICHK</b> : Debug <a class="el" href="group__advanced__features.html#ga35e2c28f591ac71e3617c612233ecdd0" title="cfdinichk() Debugging Function (experimental)">cfdinichk()</a><ul>
+<li><b>DEBUG_ERROR</b> : Debug <a class="el" href="group__errors.html#gaad2687826308f21b54657d2728e4cfcc" title="cfputerr() Init, exit or append to Error List">cfputerr()</a></li>
+<li><b>DEBUG_TIME</b> : Debug <a class="el" href="group__setting__saving.html#ga6f133f88dc253a6a80d13eed4d123063" title="cfputtime() Set all Time and/or Date entries in CFLIB DB to now or today ">cfputtime()</a></li>
+<li><b>DEBUG_NOSAVE</b> : Debug <a class="el" href="group__setting__saving.html#gaad7e1267cd904b4480a0eeaeb03b5f75" title="cfsave() Write configuration data to a Configuration File or stdout ">cfsave()</a></li>
+<li><b>DEBUG_BACKUP</b> : Debug <a class="el" href="group__utilities.html#ga0fccda7427db33b2f73a3b6dca864207" title="BackupFile() Copy or Rename File &quot;file&quot; to Backup File &quot;file~&quot; or &quot;file.bak&quot; ">BackupFile()</a></li>
+<li><b>DEBUG_FINDFILE</b> : Debug <a class="el" href="group__utilities.html#ga59fc2b29cf26051e0854b664f5aed15d" title="FindFile() Find a File in Path trying Extensions">FindFile()</a> usage in <a class="el" href="group__cflib__core.html#ga64fb341565c2ddfccd6669e5e6265a8a" title="cfinit() Initialize Configuration Database">cfinit()</a></li>
+<li><b>DEBUG_FORM</b> : Debug <a class="el" href="group__report__generation.html#ga2695585ee0a7485da6075848fa27a33f" title="cfform() Process a Template from file or stdin and write generated Report to File or stdout ...">cfform()</a></li>
 </ul>
 </li>
 </ul>
 <p>The following Defines can be used to switch on certain other Features:</p>
 <ul>
-<li><b>_PREFER_BACKSLASH</b> : Prefer Backslash as Directory Separator in function <a class="el" href="group__utilities.html#ga59fc2b29cf26051e0854b664f5aed15d" title="Find a File in Path trying Extensions.">FindFile()</a><ul>
-<li><b>_PATHSEP_SEMICOLON</b> : Use Semicolon as Path Separator in function <a class="el" href="group__utilities.html#ga59fc2b29cf26051e0854b664f5aed15d" title="Find a File in Path trying Extensions.">FindFile()</a>, usually on systems where a ":" can appear in a directory path</li>
-<li><b>_PATHSEP_COMMA</b> : Test Comma as Alternative Path Separator in function <a class="el" href="group__utilities.html#ga59fc2b29cf26051e0854b664f5aed15d" title="Find a File in Path trying Extensions.">FindFile()</a></li>
-<li><b>_CF_RESID_FREE</b> : Remove residual arguments after having read them all in <a class="el" href="group__retrieval.html#gac13ba743ed26e6c05df14817ad9df3da" title="Library internal function, use appropriate Macro functions!">cfgetent()</a>?</li>
+<li><b>_PREFER_BACKSLASH</b> : Prefer Backslash as Directory Separator in function <a class="el" href="group__utilities.html#ga59fc2b29cf26051e0854b664f5aed15d" title="FindFile() Find a File in Path trying Extensions">FindFile()</a><ul>
+<li><b>_PATHSEP_SEMICOLON</b> : Use Semicolon as Path Separator in function <a class="el" href="group__utilities.html#ga59fc2b29cf26051e0854b664f5aed15d" title="FindFile() Find a File in Path trying Extensions">FindFile()</a>, usually on systems where a ":" can appear in a directory path</li>
+<li><b>_PATHSEP_COMMA</b> : Test Comma as Alternative Path Separator in function <a class="el" href="group__utilities.html#ga59fc2b29cf26051e0854b664f5aed15d" title="FindFile() Find a File in Path trying Extensions">FindFile()</a></li>
+<li><b>_CF_RESID_FREE</b> : Remove residual arguments after having read them all in <a class="el" href="group__retrieval.html#gac13ba743ed26e6c05df14817ad9df3da" title="cfgetent() Inquire configuration database for content of entry name">cfgetent()</a>?</li>
 </ul>
 </li>
 </ul>

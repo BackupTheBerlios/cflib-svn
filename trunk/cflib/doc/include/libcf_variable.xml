@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<tagfile>
+<compound kind="file">
+<name>libcf.a</name>
+<path>cflib/lib/</path>
+<filename>cflib</filename>
+<member kind="variable">
+      <type>CONFIG *</type>
+      <name>_conf</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>g7d0fec33ada97c2d7ef78e6c3d83da97</anchor>
+      <arglist>[MAXCONF+1]</arglist>
+    </member>
+<member kind="variable">
+      <type>CONFERR *</type>
+      <name>_cferr</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>gf90ef6c88b6c820ee65553b7621ac1d3</anchor>
+      <arglist/>
+    </member>
+<member kind="variable">
+      <type>int</type>
+      <name>_errcnt</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>gbb3fc965f2aa8ec8a52f79975d9f918e</anchor>
+      <arglist/>
+    </member>
+</compound>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</tagfile>

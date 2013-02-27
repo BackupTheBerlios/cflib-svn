@@ -43,6 +43,7 @@
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
 </div>
@@ -50,7 +51,6 @@
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Defines</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -63,80 +63,102 @@
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__cf.html">_cf</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">CFLIB Configuration Database Entry.  <a href="struct__cf.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_o_n_f_i_g.html">CONFIG</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">CFLIB Configuration Database Entry.  <a href="struct_c_o_n_f_i_g.html#details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
-<tr class="memitem:ga0beb5d41f2b506f1c969c56731bb9490"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga0beb5d41f2b506f1c969c56731bb9490">Patchlevel</a>&#160;&#160;&#160;&quot;21&quot;</td></tr>
-<tr class="memdesc:ga0beb5d41f2b506f1c969c56731bb9490"><td class="mdescLeft">&#160;</td><td class="mdescRight">CFLIB Identification.  <a href="#ga0beb5d41f2b506f1c969c56731bb9490"></a><br/></td></tr>
-<tr class="memitem:ga1662beae23df229341c28d286379e2ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga1662beae23df229341c28d286379e2ad">MAXCONF</a>&#160;&#160;&#160;4096</td></tr>
-<tr class="memdesc:ga1662beae23df229341c28d286379e2ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of entries in configuration database.  <a href="#ga1662beae23df229341c28d286379e2ad"></a><br/></td></tr>
-<tr class="memitem:gaf78e4b950c9aa49b752e4460342ea3bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#gaf78e4b950c9aa49b752e4460342ea3bf">CF_MAXERRSTR</a>&#160;&#160;&#160;512</td></tr>
-<tr class="memdesc:gaf78e4b950c9aa49b752e4460342ea3bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum string length for error message.  <a href="#gaf78e4b950c9aa49b752e4460342ea3bf"></a><br/></td></tr>
-<tr class="memitem:gac7ffaf92294adc15284233965f54c03e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#gac7ffaf92294adc15284233965f54c03e">CF_MAXLINE</a>&#160;&#160;&#160;20480</td></tr>
-<tr class="memdesc:gac7ffaf92294adc15284233965f54c03e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum string length for setfile and form parsing.  <a href="#gac7ffaf92294adc15284233965f54c03e"></a><br/></td></tr>
-<tr class="memitem:gac91ed2022fe6617330f369b4e20b875b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#gac91ed2022fe6617330f369b4e20b875b">CF_MAXQLINE</a>&#160;&#160;&#160;512</td></tr>
-<tr class="memdesc:gac91ed2022fe6617330f369b4e20b875b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum string length for query.  <a href="#gac91ed2022fe6617330f369b4e20b875b"></a><br/></td></tr>
-<tr class="memitem:gad36d92b5077988734cdfeb0f47c0488e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#gad36d92b5077988734cdfeb0f47c0488e">CF_MAXUSAGE</a>&#160;&#160;&#160;1024</td></tr>
-<tr class="memdesc:gad36d92b5077988734cdfeb0f47c0488e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum string length for usage string.  <a href="#gad36d92b5077988734cdfeb0f47c0488e"></a><br/></td></tr>
-<tr class="memitem:gac568df32f08baaff9c162521856c3ec7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#gac568df32f08baaff9c162521856c3ec7">CF_USG_DEFCOLS</a>&#160;&#160;&#160;80</td></tr>
-<tr class="memdesc:gac568df32f08baaff9c162521856c3ec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default terminal width for usage string.  <a href="#gac568df32f08baaff9c162521856c3ec7"></a><br/></td></tr>
-<tr class="memitem:ga582af337c870e7eb2cdb133fd5cc72d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga582af337c870e7eb2cdb133fd5cc72d2">CF_MAXTIMEBUF</a>&#160;&#160;&#160;256</td></tr>
-<tr class="memdesc:ga582af337c870e7eb2cdb133fd5cc72d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer size for time and day.  <a href="#ga582af337c870e7eb2cdb133fd5cc72d2"></a><br/></td></tr>
+<tr class="memitem:ga0beb5d41f2b506f1c969c56731bb9490"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga0beb5d41f2b506f1c969c56731bb9490"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga0beb5d41f2b506f1c969c56731bb9490">Patchlevel</a>&#160;&#160;&#160;&quot;21&quot;</td></tr>
+<tr class="memdesc:ga0beb5d41f2b506f1c969c56731bb9490"><td class="mdescLeft">&#160;</td><td class="mdescRight">CFLIB Identification. <br/></td></tr>
+<tr class="memitem:ga1662beae23df229341c28d286379e2ad"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga1662beae23df229341c28d286379e2ad"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga1662beae23df229341c28d286379e2ad">MAXCONF</a>&#160;&#160;&#160;4096</td></tr>
+<tr class="memdesc:ga1662beae23df229341c28d286379e2ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of entries in configuration database. <br/></td></tr>
+<tr class="memitem:gaf78e4b950c9aa49b752e4460342ea3bf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaf78e4b950c9aa49b752e4460342ea3bf"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#gaf78e4b950c9aa49b752e4460342ea3bf">CF_MAXERRSTR</a>&#160;&#160;&#160;512</td></tr>
+<tr class="memdesc:gaf78e4b950c9aa49b752e4460342ea3bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum string length for error message. <br/></td></tr>
+<tr class="memitem:gac7ffaf92294adc15284233965f54c03e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gac7ffaf92294adc15284233965f54c03e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#gac7ffaf92294adc15284233965f54c03e">CF_MAXLINE</a>&#160;&#160;&#160;20480</td></tr>
+<tr class="memdesc:gac7ffaf92294adc15284233965f54c03e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum string length for setfile and form parsing. <br/></td></tr>
+<tr class="memitem:gac91ed2022fe6617330f369b4e20b875b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gac91ed2022fe6617330f369b4e20b875b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#gac91ed2022fe6617330f369b4e20b875b">CF_MAXQLINE</a>&#160;&#160;&#160;512</td></tr>
+<tr class="memdesc:gac91ed2022fe6617330f369b4e20b875b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum string length for query. <br/></td></tr>
+<tr class="memitem:gad36d92b5077988734cdfeb0f47c0488e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gad36d92b5077988734cdfeb0f47c0488e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#gad36d92b5077988734cdfeb0f47c0488e">CF_MAXUSAGE</a>&#160;&#160;&#160;1024</td></tr>
+<tr class="memdesc:gad36d92b5077988734cdfeb0f47c0488e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum string length for usage string. <br/></td></tr>
+<tr class="memitem:gac568df32f08baaff9c162521856c3ec7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gac568df32f08baaff9c162521856c3ec7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#gac568df32f08baaff9c162521856c3ec7">CF_USG_DEFCOLS</a>&#160;&#160;&#160;80</td></tr>
+<tr class="memdesc:gac568df32f08baaff9c162521856c3ec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default terminal width for usage string. <br/></td></tr>
+<tr class="memitem:ga582af337c870e7eb2cdb133fd5cc72d2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga582af337c870e7eb2cdb133fd5cc72d2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga582af337c870e7eb2cdb133fd5cc72d2">CF_MAXTIMEBUF</a>&#160;&#160;&#160;256</td></tr>
+<tr class="memdesc:ga582af337c870e7eb2cdb133fd5cc72d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer size for time and day. <br/></td></tr>
 <tr class="memitem:gaa93f0eb578d23995850d61f7d61c55c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#gaa93f0eb578d23995850d61f7d61c55c1">FALSE</a>&#160;&#160;&#160;0</td></tr>
 <tr class="memdesc:gaa93f0eb578d23995850d61f7d61c55c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; TRUE, if not defined  <a href="#gaa93f0eb578d23995850d61f7d61c55c1"></a><br/></td></tr>
-<tr class="memitem:ga070d2ce7b6bb7e5c05602aa8c308d0c4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>&#160;&#160;&#160;(void *)(0L)</td></tr>
-<tr class="memdesc:ga070d2ce7b6bb7e5c05602aa8c308d0c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">NULL, if not defined.  <a href="#ga070d2ce7b6bb7e5c05602aa8c308d0c4"></a><br/></td></tr>
-<tr class="memitem:ga355c714f2912ac336b8b03468c978d8c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga355c714f2912ac336b8b03468c978d8c">CF_FLAG_ON</a>&#160;&#160;&#160;&quot;\1&quot;</td></tr>
-<tr class="memdesc:ga355c714f2912ac336b8b03468c978d8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag is set.  <a href="#ga355c714f2912ac336b8b03468c978d8c"></a><br/></td></tr>
-<tr class="memitem:ga7010abac2c80c121772da4d9c03332ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga7010abac2c80c121772da4d9c03332ee">CF_FLAG_OFF</a>&#160;&#160;&#160;&quot;&quot;</td></tr>
-<tr class="memdesc:ga7010abac2c80c121772da4d9c03332ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag is not set.  <a href="#ga7010abac2c80c121772da4d9c03332ee"></a><br/></td></tr>
-<tr class="memitem:gabea45e34341ee5aaafb4a4a732bb5ece"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#gabea45e34341ee5aaafb4a4a732bb5ece">CF_NO_OPTION</a>&#160;&#160;&#160;' '</td></tr>
-<tr class="memdesc:gabea45e34341ee5aaafb4a4a732bb5ece"><td class="mdescLeft">&#160;</td><td class="mdescRight">Option is not set.  <a href="#gabea45e34341ee5aaafb4a4a732bb5ece"></a><br/></td></tr>
-<tr class="memitem:ga9c80120944556169d230d4cd051d88cb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga9c80120944556169d230d4cd051d88cb">TABLEN</a>&#160;&#160;&#160;8</td></tr>
-<tr class="memdesc:ga9c80120944556169d230d4cd051d88cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">TAB length.  <a href="#ga9c80120944556169d230d4cd051d88cb"></a><br/></td></tr>
-<tr class="memitem:ga764a8ea81ffc3940bf413797dcaf9a3d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga764a8ea81ffc3940bf413797dcaf9a3d">CFP_PUT</a>&#160;&#160;&#160;0</td></tr>
-<tr class="memdesc:ga764a8ea81ffc3940bf413797dcaf9a3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function Call or Automatic Initialization.  <a href="#ga764a8ea81ffc3940bf413797dcaf9a3d"></a><br/></td></tr>
-<tr class="memitem:ga0901da5871f3cffeec56e491f8c9fc7f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga0901da5871f3cffeec56e491f8c9fc7f">CFP_ARG</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:ga0901da5871f3cffeec56e491f8c9fc7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Commandline.  <a href="#ga0901da5871f3cffeec56e491f8c9fc7f"></a><br/></td></tr>
-<tr class="memitem:gac77d72299f32e91104090cdeb93f3619"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#gac77d72299f32e91104090cdeb93f3619">CFP_ENV</a>&#160;&#160;&#160;2</td></tr>
-<tr class="memdesc:gac77d72299f32e91104090cdeb93f3619"><td class="mdescLeft">&#160;</td><td class="mdescRight">Environment.  <a href="#gac77d72299f32e91104090cdeb93f3619"></a><br/></td></tr>
-<tr class="memitem:ga6cf8dcc9fa01deae5eb44698cb01f73e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga6cf8dcc9fa01deae5eb44698cb01f73e">CFP_PRIV</a>&#160;&#160;&#160;3</td></tr>
-<tr class="memdesc:ga6cf8dcc9fa01deae5eb44698cb01f73e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Private Configuration File.  <a href="#ga6cf8dcc9fa01deae5eb44698cb01f73e"></a><br/></td></tr>
-<tr class="memitem:ga0365a86453eeaa815a79c506343bd927"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga0365a86453eeaa815a79c506343bd927">CFP_SYS</a>&#160;&#160;&#160;4</td></tr>
-<tr class="memdesc:ga0365a86453eeaa815a79c506343bd927"><td class="mdescLeft">&#160;</td><td class="mdescRight">System Configuration File.  <a href="#ga0365a86453eeaa815a79c506343bd927"></a><br/></td></tr>
-<tr class="memitem:gafa9b2b859f08e9b319cc50555255a975"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#gafa9b2b859f08e9b319cc50555255a975">CFP_DEF</a>&#160;&#160;&#160;5</td></tr>
-<tr class="memdesc:gafa9b2b859f08e9b319cc50555255a975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Built-in Default.  <a href="#gafa9b2b859f08e9b319cc50555255a975"></a><br/></td></tr>
-<tr class="memitem:ga91ce348a0630961b0c472e7dec732aae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga91ce348a0630961b0c472e7dec732aae">CFP_QRY</a>&#160;&#160;&#160;6</td></tr>
-<tr class="memdesc:ga91ce348a0630961b0c472e7dec732aae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard Input Channel.  <a href="#ga91ce348a0630961b0c472e7dec732aae"></a><br/></td></tr>
-<tr class="memitem:ga631bc61e35c14f1d3df36a71154a776a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga631bc61e35c14f1d3df36a71154a776a">CFP_RESERVED</a>&#160;&#160;&#160;7</td></tr>
-<tr class="memdesc:ga631bc61e35c14f1d3df36a71154a776a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved for Subprojects.  <a href="#ga631bc61e35c14f1d3df36a71154a776a"></a><br/></td></tr>
+<tr class="memitem:ga070d2ce7b6bb7e5c05602aa8c308d0c4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga070d2ce7b6bb7e5c05602aa8c308d0c4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>&#160;&#160;&#160;(void *)(0L)</td></tr>
+<tr class="memdesc:ga070d2ce7b6bb7e5c05602aa8c308d0c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">NULL, if not defined. <br/></td></tr>
+<tr class="memitem:ga355c714f2912ac336b8b03468c978d8c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga355c714f2912ac336b8b03468c978d8c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga355c714f2912ac336b8b03468c978d8c">CF_FLAG_ON</a>&#160;&#160;&#160;&quot;\1&quot;</td></tr>
+<tr class="memdesc:ga355c714f2912ac336b8b03468c978d8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag is set. <br/></td></tr>
+<tr class="memitem:ga7010abac2c80c121772da4d9c03332ee"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga7010abac2c80c121772da4d9c03332ee"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga7010abac2c80c121772da4d9c03332ee">CF_FLAG_OFF</a>&#160;&#160;&#160;&quot;&quot;</td></tr>
+<tr class="memdesc:ga7010abac2c80c121772da4d9c03332ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag is not set. <br/></td></tr>
+<tr class="memitem:gabea45e34341ee5aaafb4a4a732bb5ece"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gabea45e34341ee5aaafb4a4a732bb5ece"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#gabea45e34341ee5aaafb4a4a732bb5ece">CF_NO_OPTION</a>&#160;&#160;&#160;' '</td></tr>
+<tr class="memdesc:gabea45e34341ee5aaafb4a4a732bb5ece"><td class="mdescLeft">&#160;</td><td class="mdescRight">Option is not set. <br/></td></tr>
+<tr class="memitem:ga9c80120944556169d230d4cd051d88cb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga9c80120944556169d230d4cd051d88cb"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga9c80120944556169d230d4cd051d88cb">TABLEN</a>&#160;&#160;&#160;8</td></tr>
+<tr class="memdesc:ga9c80120944556169d230d4cd051d88cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">TAB length. <br/></td></tr>
+<tr class="memitem:ga764a8ea81ffc3940bf413797dcaf9a3d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga764a8ea81ffc3940bf413797dcaf9a3d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga764a8ea81ffc3940bf413797dcaf9a3d">CFP_PUT</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:ga764a8ea81ffc3940bf413797dcaf9a3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function Call or Automatic Initialization. <br/></td></tr>
+<tr class="memitem:ga0901da5871f3cffeec56e491f8c9fc7f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga0901da5871f3cffeec56e491f8c9fc7f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga0901da5871f3cffeec56e491f8c9fc7f">CFP_ARG</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:ga0901da5871f3cffeec56e491f8c9fc7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Commandline. <br/></td></tr>
+<tr class="memitem:gac77d72299f32e91104090cdeb93f3619"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gac77d72299f32e91104090cdeb93f3619"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#gac77d72299f32e91104090cdeb93f3619">CFP_ENV</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:gac77d72299f32e91104090cdeb93f3619"><td class="mdescLeft">&#160;</td><td class="mdescRight">Environment. <br/></td></tr>
+<tr class="memitem:ga6cf8dcc9fa01deae5eb44698cb01f73e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga6cf8dcc9fa01deae5eb44698cb01f73e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga6cf8dcc9fa01deae5eb44698cb01f73e">CFP_PRIV</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memdesc:ga6cf8dcc9fa01deae5eb44698cb01f73e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Private Configuration File. <br/></td></tr>
+<tr class="memitem:ga0365a86453eeaa815a79c506343bd927"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga0365a86453eeaa815a79c506343bd927"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga0365a86453eeaa815a79c506343bd927">CFP_SYS</a>&#160;&#160;&#160;4</td></tr>
+<tr class="memdesc:ga0365a86453eeaa815a79c506343bd927"><td class="mdescLeft">&#160;</td><td class="mdescRight">System Configuration File. <br/></td></tr>
+<tr class="memitem:gafa9b2b859f08e9b319cc50555255a975"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gafa9b2b859f08e9b319cc50555255a975"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#gafa9b2b859f08e9b319cc50555255a975">CFP_DEF</a>&#160;&#160;&#160;5</td></tr>
+<tr class="memdesc:gafa9b2b859f08e9b319cc50555255a975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Built-in Default. <br/></td></tr>
+<tr class="memitem:ga91ce348a0630961b0c472e7dec732aae"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga91ce348a0630961b0c472e7dec732aae"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga91ce348a0630961b0c472e7dec732aae">CFP_QRY</a>&#160;&#160;&#160;6</td></tr>
+<tr class="memdesc:ga91ce348a0630961b0c472e7dec732aae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard Input Channel. <br/></td></tr>
+<tr class="memitem:ga631bc61e35c14f1d3df36a71154a776a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga631bc61e35c14f1d3df36a71154a776a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga631bc61e35c14f1d3df36a71154a776a">CFP_RESERVED</a>&#160;&#160;&#160;7</td></tr>
+<tr class="memdesc:ga631bc61e35c14f1d3df36a71154a776a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved for Subprojects. <br/></td></tr>
 <tr class="memitem:gaf363125c0f5c520d748d8d0ecaf1af01"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#gaf363125c0f5c520d748d8d0ecaf1af01">CFS_NOT</a>&#160;&#160;&#160;0</td></tr>
-<tr class="memdesc:gaf363125c0f5c520d748d8d0ecaf1af01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error Response Modes for <a class="el" href="group__cflib__core.html#gadcf24d678203bd09a0a3e05b8a986c65" title="Setup Configuration Database.">cfstart()</a>  <a href="#gaf363125c0f5c520d748d8d0ecaf1af01"></a><br/></td></tr>
-<tr class="memitem:ga50bc281400629cfb20e899144d59a3b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga50bc281400629cfb20e899144d59a3b7">CFS_ALL</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:ga50bc281400629cfb20e899144d59a3b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start Mode: All error messages.  <a href="#ga50bc281400629cfb20e899144d59a3b7"></a><br/></td></tr>
-<tr class="memitem:ga5663cfeeda02fa9e2fee53b418c5045b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga5663cfeeda02fa9e2fee53b418c5045b">CFS_NEG</a>&#160;&#160;&#160;2</td></tr>
-<tr class="memdesc:ga5663cfeeda02fa9e2fee53b418c5045b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start Mode: Only severe errors.  <a href="#ga5663cfeeda02fa9e2fee53b418c5045b"></a><br/></td></tr>
-<tr class="memitem:ga3f535ad957f1836dea64deae798324a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga3f535ad957f1836dea64deae798324a5">CFS_USG</a>&#160;&#160;&#160;3</td></tr>
-<tr class="memdesc:ga3f535ad957f1836dea64deae798324a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start Mode: Usage message if error was negative, error output like <a class="el" href="group__cflib__core.html#ga5663cfeeda02fa9e2fee53b418c5045b">CFS_NEG</a>.  <a href="#ga3f535ad957f1836dea64deae798324a5"></a><br/></td></tr>
-<tr class="memitem:ga870957fdc2246ddc767747f8dd645bdf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga870957fdc2246ddc767747f8dd645bdf">CFS_DEBUG</a>&#160;&#160;&#160;4</td></tr>
-<tr class="memdesc:ga870957fdc2246ddc767747f8dd645bdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start Mode: Output like <a class="el" href="group__cflib__core.html#ga3f535ad957f1836dea64deae798324a5">CFS_USG</a> plus raw dump of configuration.  <a href="#ga870957fdc2246ddc767747f8dd645bdf"></a><br/></td></tr>
-<tr><td colspan="2"><h2><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:gad8328886f52eb7e67fd6a9ab6039143f"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__cf.html">_cf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#gad8328886f52eb7e67fd6a9ab6039143f">CONFIG</a></td></tr>
-<tr class="memdesc:gad8328886f52eb7e67fd6a9ab6039143f"><td class="mdescLeft">&#160;</td><td class="mdescRight">CFLIB Configuration Database Entry.  <a href="#gad8328886f52eb7e67fd6a9ab6039143f"></a><br/></td></tr>
+<tr class="memdesc:gaf363125c0f5c520d748d8d0ecaf1af01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error Response Modes for <a class="el" href="group__cflib__core.html#ga6e04a462f9ad273de914af386ff15623" title="cfstart() Start Configuration Database (with error reporting and usage message)">cfstart()</a>  <a href="#gaf363125c0f5c520d748d8d0ecaf1af01"></a><br/></td></tr>
+<tr class="memitem:ga50bc281400629cfb20e899144d59a3b7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga50bc281400629cfb20e899144d59a3b7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga50bc281400629cfb20e899144d59a3b7">CFS_ALL</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:ga50bc281400629cfb20e899144d59a3b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start Mode: All error messages. <br/></td></tr>
+<tr class="memitem:ga5663cfeeda02fa9e2fee53b418c5045b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga5663cfeeda02fa9e2fee53b418c5045b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga5663cfeeda02fa9e2fee53b418c5045b">CFS_NEG</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:ga5663cfeeda02fa9e2fee53b418c5045b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start Mode: Only severe errors. <br/></td></tr>
+<tr class="memitem:ga3f535ad957f1836dea64deae798324a5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga3f535ad957f1836dea64deae798324a5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga3f535ad957f1836dea64deae798324a5">CFS_USG</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memdesc:ga3f535ad957f1836dea64deae798324a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start Mode: Usage message if error was negative, error output like <a class="el" href="group__cflib__core.html#ga5663cfeeda02fa9e2fee53b418c5045b">CFS_NEG</a>. <br/></td></tr>
+<tr class="memitem:ga870957fdc2246ddc767747f8dd645bdf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga870957fdc2246ddc767747f8dd645bdf"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga870957fdc2246ddc767747f8dd645bdf">CFS_DEBUG</a>&#160;&#160;&#160;4</td></tr>
+<tr class="memdesc:ga870957fdc2246ddc767747f8dd645bdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start Mode: Output like <a class="el" href="group__cflib__core.html#ga3f535ad957f1836dea64deae798324a5">CFS_USG</a> plus raw dump of configuration. <br/></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gae593ff607f853bd5fc16a16bb6759314"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#gae593ff607f853bd5fc16a16bb6759314">cfinit</a> (<a class="el" href="group__cflib__core.html#gad8328886f52eb7e67fd6a9ab6039143f">CONFIG</a> *set, int ac, char **av)</td></tr>
-<tr class="memdesc:gae593ff607f853bd5fc16a16bb6759314"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize CFLIB Configuration Database and parse possible sources for database entries according to the settings in <em>set</em>.  <a href="#gae593ff607f853bd5fc16a16bb6759314"></a><br/></td></tr>
+<tr class="memitem:ga64fb341565c2ddfccd6669e5e6265a8a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga64fb341565c2ddfccd6669e5e6265a8a">cfinit</a> (<a class="el" href="struct_c_o_n_f_i_g.html">CONFIG</a> *set, int argc, char **argv)</td></tr>
+<tr class="memdesc:ga64fb341565c2ddfccd6669e5e6265a8a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__cflib__core.html#ga64fb341565c2ddfccd6669e5e6265a8a">cfinit()</a> Initialize Configuration Database  <a href="#ga64fb341565c2ddfccd6669e5e6265a8a"></a><br/></td></tr>
 <tr class="memitem:ga47bfff42f432b3e8b5b9f12b695e60db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga47bfff42f432b3e8b5b9f12b695e60db">cfexit</a> (void)</td></tr>
-<tr class="memdesc:ga47bfff42f432b3e8b5b9f12b695e60db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free allocated memory and reset the configuration database and error stack.  <a href="#ga47bfff42f432b3e8b5b9f12b695e60db"></a><br/></td></tr>
-<tr class="memitem:gadcf24d678203bd09a0a3e05b8a986c65"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#gadcf24d678203bd09a0a3e05b8a986c65">cfstart</a> (<a class="el" href="group__cflib__core.html#gad8328886f52eb7e67fd6a9ab6039143f">CONFIG</a> *setting, int ac, char **av, char *help, int mode)</td></tr>
-<tr class="memdesc:gadcf24d678203bd09a0a3e05b8a986c65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup Configuration Database.  <a href="#gadcf24d678203bd09a0a3e05b8a986c65"></a><br/></td></tr>
+<tr class="memdesc:ga47bfff42f432b3e8b5b9f12b695e60db"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__cflib__core.html#ga47bfff42f432b3e8b5b9f12b695e60db">cfexit()</a> Free allocated memory and reset configuration database and error stack  <a href="#ga47bfff42f432b3e8b5b9f12b695e60db"></a><br/></td></tr>
+<tr class="memitem:ga6e04a462f9ad273de914af386ff15623"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga6e04a462f9ad273de914af386ff15623">cfstart</a> (<a class="el" href="struct_c_o_n_f_i_g.html">CONFIG</a> *set, int ac, char **av, char *help, int mode)</td></tr>
+<tr class="memdesc:ga6e04a462f9ad273de914af386ff15623"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__cflib__core.html#ga6e04a462f9ad273de914af386ff15623">cfstart()</a> Start Configuration Database (with error reporting and usage message)  <a href="#ga6e04a462f9ad273de914af386ff15623"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga7d0fec33ada97c2d7ef78e6c3d83da97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cflib__core.html#gad8328886f52eb7e67fd6a9ab6039143f">CONFIG</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga7d0fec33ada97c2d7ef78e6c3d83da97">_conf</a> [<a class="el" href="group__cflib__core.html#ga1662beae23df229341c28d286379e2ad">MAXCONF</a>+1]</td></tr>
-<tr class="memdesc:ga7d0fec33ada97c2d7ef78e6c3d83da97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Library Internal: CFLIB Configuration Database with at most <a class="el" href="group__cflib__core.html#ga1662beae23df229341c28d286379e2ad">MAXCONF</a> parameters.  <a href="#ga7d0fec33ada97c2d7ef78e6c3d83da97"></a><br/></td></tr>
+<tr class="memitem:ga7d0fec33ada97c2d7ef78e6c3d83da97"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga7d0fec33ada97c2d7ef78e6c3d83da97"></a>
+<a class="el" href="struct_c_o_n_f_i_g.html">CONFIG</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cflib__core.html#ga7d0fec33ada97c2d7ef78e6c3d83da97">_conf</a> [<a class="el" href="group__cflib__core.html#ga1662beae23df229341c28d286379e2ad">MAXCONF</a>+1]</td></tr>
+<tr class="memdesc:ga7d0fec33ada97c2d7ef78e6c3d83da97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Library Internal: CFLIB Configuration Database with at most <a class="el" href="group__cflib__core.html#ga1662beae23df229341c28d286379e2ad">MAXCONF</a> parameters. <br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <p>Basic CFLIB Setup. </p>
@@ -149,126 +171,6 @@ Variables</h2></td></tr>
 <li>Resetting the Configuration Database </li>
 </ul>
 <hr/><h2>Define Documentation</h2>
-<a class="anchor" id="ga0beb5d41f2b506f1c969c56731bb9490"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#ga0beb5d41f2b506f1c969c56731bb9490">Patchlevel</a>&#160;&#160;&#160;&quot;21&quot;</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>CFLIB Identification. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga1662beae23df229341c28d286379e2ad"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#ga1662beae23df229341c28d286379e2ad">MAXCONF</a>&#160;&#160;&#160;4096</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Maximum number of entries in configuration database. </p>
-
-</div>
-</div>
-<a class="anchor" id="gaf78e4b950c9aa49b752e4460342ea3bf"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#gaf78e4b950c9aa49b752e4460342ea3bf">CF_MAXERRSTR</a>&#160;&#160;&#160;512</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Maximum string length for error message. </p>
-
-</div>
-</div>
-<a class="anchor" id="gac7ffaf92294adc15284233965f54c03e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#gac7ffaf92294adc15284233965f54c03e">CF_MAXLINE</a>&#160;&#160;&#160;20480</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Maximum string length for setfile and form parsing. </p>
-
-</div>
-</div>
-<a class="anchor" id="gac91ed2022fe6617330f369b4e20b875b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#gac91ed2022fe6617330f369b4e20b875b">CF_MAXQLINE</a>&#160;&#160;&#160;512</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Maximum string length for query. </p>
-
-</div>
-</div>
-<a class="anchor" id="gad36d92b5077988734cdfeb0f47c0488e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#gad36d92b5077988734cdfeb0f47c0488e">CF_MAXUSAGE</a>&#160;&#160;&#160;1024</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Maximum string length for usage string. </p>
-
-</div>
-</div>
-<a class="anchor" id="gac568df32f08baaff9c162521856c3ec7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#gac568df32f08baaff9c162521856c3ec7">CF_USG_DEFCOLS</a>&#160;&#160;&#160;80</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Default terminal width for usage string. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga582af337c870e7eb2cdb133fd5cc72d2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#ga582af337c870e7eb2cdb133fd5cc72d2">CF_MAXTIMEBUF</a>&#160;&#160;&#160;256</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Buffer size for time and day. </p>
-
-</div>
-</div>
 <a class="anchor" id="gaa93f0eb578d23995850d61f7d61c55c1"></a>
 <div class="memitem">
 <div class="memproto">
@@ -285,201 +187,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga070d2ce7b6bb7e5c05602aa8c308d0c4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>&#160;&#160;&#160;(void *)(0L)</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>NULL, if not defined. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga355c714f2912ac336b8b03468c978d8c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#ga355c714f2912ac336b8b03468c978d8c">CF_FLAG_ON</a>&#160;&#160;&#160;&quot;\1&quot;</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Flag is set. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga7010abac2c80c121772da4d9c03332ee"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#ga7010abac2c80c121772da4d9c03332ee">CF_FLAG_OFF</a>&#160;&#160;&#160;&quot;&quot;</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Flag is not set. </p>
-
-</div>
-</div>
-<a class="anchor" id="gabea45e34341ee5aaafb4a4a732bb5ece"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#gabea45e34341ee5aaafb4a4a732bb5ece">CF_NO_OPTION</a>&#160;&#160;&#160;' '</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Option is not set. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga9c80120944556169d230d4cd051d88cb"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#ga9c80120944556169d230d4cd051d88cb">TABLEN</a>&#160;&#160;&#160;8</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>TAB length. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga764a8ea81ffc3940bf413797dcaf9a3d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#ga764a8ea81ffc3940bf413797dcaf9a3d">CFP_PUT</a>&#160;&#160;&#160;0</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Function Call or Automatic Initialization. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga0901da5871f3cffeec56e491f8c9fc7f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#ga0901da5871f3cffeec56e491f8c9fc7f">CFP_ARG</a>&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Commandline. </p>
-
-</div>
-</div>
-<a class="anchor" id="gac77d72299f32e91104090cdeb93f3619"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#gac77d72299f32e91104090cdeb93f3619">CFP_ENV</a>&#160;&#160;&#160;2</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Environment. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga6cf8dcc9fa01deae5eb44698cb01f73e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#ga6cf8dcc9fa01deae5eb44698cb01f73e">CFP_PRIV</a>&#160;&#160;&#160;3</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Private Configuration File. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga0365a86453eeaa815a79c506343bd927"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#ga0365a86453eeaa815a79c506343bd927">CFP_SYS</a>&#160;&#160;&#160;4</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>System Configuration File. </p>
-
-</div>
-</div>
-<a class="anchor" id="gafa9b2b859f08e9b319cc50555255a975"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#gafa9b2b859f08e9b319cc50555255a975">CFP_DEF</a>&#160;&#160;&#160;5</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Built-in Default. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga91ce348a0630961b0c472e7dec732aae"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#ga91ce348a0630961b0c472e7dec732aae">CFP_QRY</a>&#160;&#160;&#160;6</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Standard Input Channel. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga631bc61e35c14f1d3df36a71154a776a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#ga631bc61e35c14f1d3df36a71154a776a">CFP_RESERVED</a>&#160;&#160;&#160;7</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Reserved for Subprojects. </p>
-
-</div>
-</div>
 <a class="anchor" id="gaf363125c0f5c520d748d8d0ecaf1af01"></a>
 <div class="memitem">
 <div class="memproto">
@@ -491,96 +198,20 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Error Response Modes for <a class="el" href="group__cflib__core.html#gadcf24d678203bd09a0a3e05b8a986c65" title="Setup Configuration Database.">cfstart()</a> </p>
+<p>Error Response Modes for <a class="el" href="group__cflib__core.html#ga6e04a462f9ad273de914af386ff15623" title="cfstart() Start Configuration Database (with error reporting and usage message)">cfstart()</a> </p>
 <p>Start Mode: No action on error </p>
 
 </div>
 </div>
-<a class="anchor" id="ga50bc281400629cfb20e899144d59a3b7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#ga50bc281400629cfb20e899144d59a3b7">CFS_ALL</a>&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Start Mode: All error messages. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga5663cfeeda02fa9e2fee53b418c5045b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#ga5663cfeeda02fa9e2fee53b418c5045b">CFS_NEG</a>&#160;&#160;&#160;2</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Start Mode: Only severe errors. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga3f535ad957f1836dea64deae798324a5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#ga3f535ad957f1836dea64deae798324a5">CFS_USG</a>&#160;&#160;&#160;3</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Start Mode: Usage message if error was negative, error output like <a class="el" href="group__cflib__core.html#ga5663cfeeda02fa9e2fee53b418c5045b">CFS_NEG</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga870957fdc2246ddc767747f8dd645bdf"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__cflib__core.html#ga870957fdc2246ddc767747f8dd645bdf">CFS_DEBUG</a>&#160;&#160;&#160;4</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Start Mode: Output like <a class="el" href="group__cflib__core.html#ga3f535ad957f1836dea64deae798324a5">CFS_USG</a> plus raw dump of configuration. </p>
-
-</div>
-</div>
-<hr/><h2>Typedef Documentation</h2>
-<a class="anchor" id="gad8328886f52eb7e67fd6a9ab6039143f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="struct__cf.html">_cf</a>  <a class="el" href="group__cflib__core.html#gad8328886f52eb7e67fd6a9ab6039143f">CONFIG</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>CFLIB Configuration Database Entry. </p>
-
-</div>
-</div>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="gae593ff607f853bd5fc16a16bb6759314"></a>
+<a class="anchor" id="ga64fb341565c2ddfccd6669e5e6265a8a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__cflib__core.html#gae593ff607f853bd5fc16a16bb6759314">cfinit</a> </td>
+          <td class="memname">int <a class="el" href="group__cflib__core.html#ga64fb341565c2ddfccd6669e5e6265a8a">cfinit</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__cflib__core.html#gad8328886f52eb7e67fd6a9ab6039143f">CONFIG</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="struct_c_o_n_f_i_g.html">CONFIG</a> *&#160;</td>
           <td class="paramname"><em>set</em>, </td>
         </tr>
         <tr>
@@ -604,11 +235,11 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Initialize CFLIB Configuration Database and parse possible sources for database entries according to the settings in <em>set</em>. </p>
-<p><a class="el" href="group__cflib__core.html#gae593ff607f853bd5fc16a16bb6759314">cfinit()</a> Initialize Configuration Database</p>
+<p><a class="el" href="group__cflib__core.html#ga64fb341565c2ddfccd6669e5e6265a8a">cfinit()</a> Initialize Configuration Database </p>
+<p>Initialize CFLIB Configuration Database and parse possible sources for database entries according to the settings in <em>set</em>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">set</td><td><a class="el" href="config_initializer.html">Configuration Initializer</a> : Pointer to Array of <a class="el" href="group__cflib__core.html#gad8328886f52eb7e67fd6a9ab6039143f">CONFIG</a> items containing parameter name, default value, <a class="el" href="config_initializer.html#parameter_option">Commandline Option for Parameter</a> and <a class="el" href="group__special__options__mask.html">Special Options Mask</a></td></tr>
+    <tr><td class="paramname">set</td><td><a class="el" href="config_initializer.html">Configuration Initializer</a> : Pointer to Array of <a class="el" href="struct_c_o_n_f_i_g.html">CONFIG</a> items containing parameter name, default value, <a class="el" href="config_initializer.html#parameter_option">Commandline Option for Parameter</a> and <a class="el" href="group__special__options__mask.html">Special Options Mask</a></td></tr>
     <tr><td class="paramname">ac</td><td>Argument Count from commandline or compatible</td></tr>
     <tr><td class="paramname">av</td><td>Argument String array from commandline or compatible structure</td></tr>
   </table>
@@ -644,20 +275,20 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Free allocated memory and reset the configuration database and error stack. </p>
-<p><a class="el" href="group__cflib__core.html#ga47bfff42f432b3e8b5b9f12b695e60db">cfexit()</a> Free allocated memory and reset configuration database and error stack</p>
-<p>This function should be used before a repeated call to <a class="el" href="group__cflib__core.html#gae593ff607f853bd5fc16a16bb6759314" title="Initialize CFLIB Configuration Database and parse possible sources for database entries according to ...">cfinit()</a> or <a class="el" href="group__cflib__core.html#gadcf24d678203bd09a0a3e05b8a986c65" title="Setup Configuration Database.">cfstart()</a>. Furthermore, it may be desired to call <a class="el" href="group__cflib__core.html#ga47bfff42f432b3e8b5b9f12b695e60db" title="Free allocated memory and reset the configuration database and error stack.">cfexit()</a> when the configuration database occupies a lot of memory and is no longer needed. </p>
+<p><a class="el" href="group__cflib__core.html#ga47bfff42f432b3e8b5b9f12b695e60db">cfexit()</a> Free allocated memory and reset configuration database and error stack </p>
+<p>Free allocated memory and reset the configuration database and error stack.</p>
+<p>This function should be used before a repeated call to <a class="el" href="group__cflib__core.html#ga64fb341565c2ddfccd6669e5e6265a8a" title="cfinit() Initialize Configuration Database">cfinit()</a> or <a class="el" href="group__cflib__core.html#ga6e04a462f9ad273de914af386ff15623" title="cfstart() Start Configuration Database (with error reporting and usage message)">cfstart()</a>. Furthermore, it may be desired to call <a class="el" href="group__cflib__core.html#ga47bfff42f432b3e8b5b9f12b695e60db" title="cfexit() Free allocated memory and reset configuration database and error stack">cfexit()</a> when the configuration database occupies a lot of memory and is no longer needed. </p>
 
 </div>
 </div>
-<a class="anchor" id="gadcf24d678203bd09a0a3e05b8a986c65"></a>
+<a class="anchor" id="ga6e04a462f9ad273de914af386ff15623"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__cflib__core.html#gadcf24d678203bd09a0a3e05b8a986c65">cfstart</a> </td>
+          <td class="memname">int <a class="el" href="group__cflib__core.html#ga6e04a462f9ad273de914af386ff15623">cfstart</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__cflib__core.html#gad8328886f52eb7e67fd6a9ab6039143f">CONFIG</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="struct_c_o_n_f_i_g.html">CONFIG</a> *&#160;</td>
           <td class="paramname"><em>setting</em>, </td>
         </tr>
         <tr>
@@ -693,8 +324,8 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Setup Configuration Database. </p>
-<p><a class="el" href="group__cflib__core.html#gadcf24d678203bd09a0a3e05b8a986c65">cfstart()</a> Start Configuration Database (with error reporting and usage message)</p>
+<p><a class="el" href="group__cflib__core.html#ga6e04a462f9ad273de914af386ff15623">cfstart()</a> Start Configuration Database (with error reporting and usage message) </p>
+<p>Setup Configuration Database.</p>
 <p>Check errors and output usage message, if required</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -706,8 +337,8 @@ Variables</h2></td></tr>
 <li>Omit, if <code>NULL</code> </li>
 </ul>
 </td></tr>
-    <tr><td class="paramname">mode</td><td>How to handle <a class="el" href="group__cflib__core.html#gae593ff607f853bd5fc16a16bb6759314" title="Initialize CFLIB Configuration Database and parse possible sources for database entries according to ...">cfinit()</a> return: <ul>
-<li><a class="el" href="group__cflib__core.html#gaf363125c0f5c520d748d8d0ecaf1af01">CFS_NOT</a> - Error Response Modes for <a class="el" href="group__cflib__core.html#gadcf24d678203bd09a0a3e05b8a986c65" title="Setup Configuration Database.">cfstart()</a>  </li>
+    <tr><td class="paramname">mode</td><td>How to handle <a class="el" href="group__cflib__core.html#ga64fb341565c2ddfccd6669e5e6265a8a" title="cfinit() Initialize Configuration Database">cfinit()</a> return: <ul>
+<li><a class="el" href="group__cflib__core.html#gaf363125c0f5c520d748d8d0ecaf1af01">CFS_NOT</a> - Error Response Modes for <a class="el" href="group__cflib__core.html#ga6e04a462f9ad273de914af386ff15623" title="cfstart() Start Configuration Database (with error reporting and usage message)">cfstart()</a>  </li>
 <li><a class="el" href="group__cflib__core.html#ga50bc281400629cfb20e899144d59a3b7">CFS_ALL</a> - Start Mode: All error messages.  </li>
 <li><a class="el" href="group__cflib__core.html#ga5663cfeeda02fa9e2fee53b418c5045b">CFS_NEG</a> - Start Mode: Only severe errors.  </li>
 <li><a class="el" href="group__cflib__core.html#ga3f535ad957f1836dea64deae798324a5">CFS_USG</a> - Start Mode: Usage message if error was negative, error output like <a class="el" href="group__cflib__core.html#ga5663cfeeda02fa9e2fee53b418c5045b">CFS_NEG</a>.  </li>
@@ -723,22 +354,6 @@ Variables</h2></td></tr>
 <li><code>-1</code> : fatal error(s) occurred </li>
 </ul>
 </dd></dl>
-
-</div>
-</div>
-<hr/><h2>Variable Documentation</h2>
-<a class="anchor" id="ga7d0fec33ada97c2d7ef78e6c3d83da97"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__cflib__core.html#gad8328886f52eb7e67fd6a9ab6039143f">CONFIG</a>* <a class="el" href="group__cflib__core.html#ga7d0fec33ada97c2d7ef78e6c3d83da97">_conf</a>[<a class="el" href="group__cflib__core.html#ga1662beae23df229341c28d286379e2ad">MAXCONF</a>+1]</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Library Internal: CFLIB Configuration Database with at most <a class="el" href="group__cflib__core.html#ga1662beae23df229341c28d286379e2ad">MAXCONF</a> parameters. </p>
 
 </div>
 </div>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<tagfile>
+<compound kind="page">
+    <name>index</name>
+    <title>CFLIB Flexible Configuration Library</title>
+    <filename>index</filename>
+  </compound>
+<compound kind="page">
+    <name>license</name>
+    <title>CFLIB License</title>
+    <filename>license</filename>
+  </compound>
+<compound kind="page">
+    <name>purpose</name>
+    <title>Purpose of CFLIB</title>
+    <filename>purpose</filename>
+  </compound>
+<compound kind="page">
+    <name>properties</name>
+    <title>General Notes</title>
+    <filename>properties</filename>
+    <docanchor file="properties">names</docanchor>
+    <docanchor file="properties">general_tasks</docanchor>
+    <docanchor file="properties">io</docanchor>
+    <docanchor file="properties">misc_general_issues</docanchor>
+  </compound>
+<compound kind="page">
+    <name>simple_example</name>
+    <title>Simple Usage Example</title>
+    <filename>simple_example</filename>
+  </compound>
+<compound kind="page">
+    <name>config_initializer</name>
+    <title>Configuration Initializer</title>
+    <filename>config_initializer</filename>
+    <docanchor file="config_initializer">parameter_option</docanchor>
+    <docanchor file="config_initializer">parameter_flagmask</docanchor>
+    <docanchor file="config_initializer">parameter_default</docanchor>
+    <docanchor file="config_initializer">parameter_name</docanchor>
+  </compound>
+<compound kind="page">
+    <name>config_levels</name>
+    <title>Configuration Parsing Levels and Source/Origin Options</title>
+    <filename>config_levels</filename>
+    <docanchor file="config_levels">parsing_levels</docanchor>
+    <docanchor file="config_levels">origin_window</docanchor>
+    <docanchor file="config_levels">initialization_process</docanchor>
+    <docanchor file="config_levels">parsing_level_priorities</docanchor>
+    <docanchor file="config_levels">config_file_parsing</docanchor>
+    <docanchor file="config_levels">residuals</docanchor>
+  </compound>
+<compound kind="page">
+    <name>config_files</name>
+    <title>Configuration Files</title>
+    <filename>config_files</filename>
+    <docanchor file="config_files">config_out</docanchor>
+    <docanchor file="config_files">config_format</docanchor>
+    <docanchor file="config_files">config_in</docanchor>
+  </compound>
+<compound kind="page">
+    <name>parameter_types</name>
+    <title>Types of Parameters</title>
+    <filename>parameter_types</filename>
+    <docanchor file="parameter_types">processing_instructions</docanchor>
+    <docanchor file="parameter_types">parameter_type_flag</docanchor>
+    <docanchor file="parameter_types">handling_instructions</docanchor>
+    <docanchor file="parameter_types">parameter_datatypes</docanchor>
+    <docanchor file="parameter_types">cflib_parameters</docanchor>
+  </compound>
+<compound kind="page">
+    <name>advanced_example</name>
+    <title>Advanced Usage Example</title>
+    <filename>advanced_example</filename>
+  </compound>
+<compound kind="page">
+    <name>development</name>
+    <title>Compilation and Development</title>
+    <filename>development</filename>
+    <docanchor file="development">compilation_options</docanchor>
+    <docanchor file="development">binaries</docanchor>
+    <docanchor file="development">platforms</docanchor>
+    <docanchor file="development">minimal_replacement</docanchor>
+    <docanchor file="development">library_building</docanchor>
+    <docanchor file="development">versions</docanchor>
+  </compound>
+<compound kind="page">
+    <name>cflib</name>
+    <title>Flexible Configuration Library - User Documentation</title>
+    <filename>cflib</filename>
+    <docanchor file="cflib">help</docanchor>
+    <docanchor file="cflib">error_handling</docanchor>
+    <docanchor file="cflib">project_homepage</docanchor>
+    <docanchor file="cflib">compilation_issues</docanchor>
+    <docanchor file="cflib">general_utilities</docanchor>
+    <docanchor file="cflib">intro</docanchor>
+    <docanchor file="cflib">metainfos</docanchor>
+    <docanchor file="cflib">advanced</docanchor>
+    <docanchor file="cflib">basic_usage</docanchor>
+    <docanchor file="cflib">advanced_other</docanchor>
+    <docanchor file="cflib">reports</docanchor>
+    <docanchor file="cflib">set_save</docanchor>
+    <docanchor file="cflib">debugging</docanchor>
+    <docanchor file="cflib">simple_example</docanchor>
+    <docanchor file="cflib">retrieval_functions</docanchor>
+  </compound>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</tagfile>

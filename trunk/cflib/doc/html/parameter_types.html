@@ -43,13 +43,7 @@
       <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
-    </ul>
-  </div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="index.html">CFLIB Flexible Configuration Library</a>      </li>
-      <li class="navelem"><a class="el" href="cflib.html">Flexible Configuration Library - User Documentation</a>      </li>
-      <li class="navelem"><a class="el" href="config_initializer.html">Configuration Initializer</a>      </li>
+      <li><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
 </div>
@@ -58,7 +52,7 @@
 <div class="title">Types of Parameters </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The internal format of a parameter's content <a class="el" href="struct__cf.html#afb33df0507763e42244fd62c654a8177">CONFIG::inhalt</a> is always a String (char Pointer).</p>
+<div class="textblock"><p>The internal format of a parameter's content <a class="el" href="struct_c_o_n_f_i_g.html#ab8cae13203b07fabaa40e407fa8dbdfb">CONFIG::inhalt</a> is always a String (char Pointer).</p>
 <p>The use and interpretation of parameters is controlled by a number of Flags in the <a class="el" href="group__special__options__mask.html">Special Options Mask</a> :</p>
 <h2><a class="anchor" id="parameter_datatypes"></a>
 Parameter Data Types</h2>
@@ -71,7 +65,7 @@ Parameter Data Types</h2>
 <h2><a class="anchor" id="processing_instructions"></a>
 Special Processing Instructions</h2>
 <p>Specific processing of a String Parameter's Value/Content in various CFLIB functions can be triggered by these Flags:</p>
-<p>You can mark a parameter as Time <b>or</b> Date. These parameters will be initialized with <em>now</em> or <em>today</em> by <a class="el" href="group__cflib__core.html#gae593ff607f853bd5fc16a16bb6759314" title="Initialize CFLIB Configuration Database and parse possible sources for database entries according to ...">cfinit()</a> when <a class="el" href="config_levels.html#parsing_level_priorities">Parsing Level Priorities</a> are controlled by a <a class="el" href="group__special__options__mask.html#ga8d6cd1608fef5638efe964da63edf2dd">CF_SET_PUT</a> Flag in the <a class="el" href="group__special__options__mask.html">Special Options Mask</a> or on call of <a class="el" href="group__setting__saving.html#ga6f133f88dc253a6a80d13eed4d123063" title="Set all Time and/or Date entries in CFLIB DB to now or today.">cfputtime()</a>:</p>
+<p>You can mark a parameter as Time <b>or</b> Date. These parameters will be initialized with <em>now</em> or <em>today</em> by <a class="el" href="group__cflib__core.html#ga64fb341565c2ddfccd6669e5e6265a8a" title="cfinit() Initialize Configuration Database">cfinit()</a> when <a class="el" href="config_levels.html#parsing_level_priorities">Parsing Level Priorities</a> are controlled by a <a class="el" href="group__special__options__mask.html#ga8d6cd1608fef5638efe964da63edf2dd">CF_SET_PUT</a> Flag in the <a class="el" href="group__special__options__mask.html">Special Options Mask</a> or on call of <a class="el" href="group__setting__saving.html#ga6f133f88dc253a6a80d13eed4d123063" title="cfputtime() Set all Time and/or Date entries in CFLIB DB to now or today ">cfputtime()</a>:</p>
 <ul>
 <li><a class="el" href="group__special__options__mask.html#ga0fde537a92deb77f75b21c9e8d306509">CF_TIME</a> : Time string. <ul>
 <li><a class="el" href="group__special__options__mask.html#ga1c5b511a34d2c0db6631539ba81a4386">CF_DATE</a> : Date string. </li>
@@ -79,7 +73,7 @@ Special Processing Instructions</h2>
 </li>
 </ul>
 <ul>
-<li><a class="el" href="group__special__options__mask.html#ga675b6f8440beecc09fec54d17e9c3ee9">CF_FINDFILE</a> : Entry is filename to be searched for in the path.  <a class="el" href="group__utilities.html#ga59fc2b29cf26051e0854b664f5aed15d" title="Find a File in Path trying Extensions.">FindFile()</a> will be used on initialization to search the file in the <b>path</b> found in Environment Variable <b>PATH</b>. You can specify an alternative search path for this functionality in another database parameter with Flag <a class="el" href="group__special__options__mask.html#gab383c1436888ea6b410141f7c0b1f306">CF_PATH</a> set in the corresponding <a class="el" href="config_initializer.html">Configuration Initializer</a> entry. Depending on the Operating System a list of possible of <b>extensions</b> of executables will be tried, if no extension is given with the filename:<ul>
+<li><a class="el" href="group__special__options__mask.html#ga675b6f8440beecc09fec54d17e9c3ee9">CF_FINDFILE</a> : Entry is filename to be searched for in the path.  <a class="el" href="group__utilities.html#ga59fc2b29cf26051e0854b664f5aed15d" title="FindFile() Find a File in Path trying Extensions">FindFile()</a> will be used on initialization to search the file in the <b>path</b> found in Environment Variable <b>PATH</b>. You can specify an alternative search path for this functionality in another database parameter with Flag <a class="el" href="group__special__options__mask.html#gab383c1436888ea6b410141f7c0b1f306">CF_PATH</a> set in the corresponding <a class="el" href="config_initializer.html">Configuration Initializer</a> entry. Depending on the Operating System a list of possible of <b>extensions</b> of executables will be tried, if no extension is given with the filename:<ul>
 <li>Linux, Unix: "sh", "pl"</li>
 <li>DOS,Windows, OS2: "exe", "com", "bat", "cmd"</li>
 <li>TOS, MinT: "ttp", "tos", "prg", "app", "gtp"</li>
@@ -87,11 +81,11 @@ Special Processing Instructions</h2>
 </li>
 </ul>
 <ul>
-<li><a class="el" href="group__special__options__mask.html#gaff1b2e25aa9a89a55c1784018e24aa75">CF_EXPHOME</a> : Expand Home Directory.  See <a class="el" href="group__advanced__features.html#ga469258ed449ac26d5c82e665db491ff2" title="Expand ~ or ~user in parameter content.">cfhomexp()</a>. <a class="el" href="config_files.html">Configuration Files</a> will have home directory expanded by default</li>
+<li><a class="el" href="group__special__options__mask.html#gaff1b2e25aa9a89a55c1784018e24aa75">CF_EXPHOME</a> : Expand Home Directory.  See <a class="el" href="group__advanced__features.html#ga469258ed449ac26d5c82e665db491ff2" title="cfhomexp() Expand ~ or ~user in parameter content">cfhomexp()</a>. <a class="el" href="config_files.html">Configuration Files</a> will have home directory expanded by default</li>
 </ul>
 <h2><a class="anchor" id="handling_instructions"></a>
 Special Handling Instructions</h2>
-<p>A parameter can be marked as a <b>"volatile"</b> entry that is not saved by <a class="el" href="group__setting__saving.html#ga046d8a68eae35b987eacca04a9a06cca" title="Write configuration data to a Configuration File or stdout.">cfsave()</a>:</p>
+<p>A parameter can be marked as a <b>"volatile"</b> entry that is not saved by <a class="el" href="group__setting__saving.html#gaad7e1267cd904b4480a0eeaeb03b5f75" title="cfsave() Write configuration data to a Configuration File or stdout ">cfsave()</a>:</p>
 <ul>
 <li><a class="el" href="group__special__options__mask.html#gad76153c65f68cc0ee5c1a04c8c3e80bf">CF_NOSAVE</a> : Don't include in savefile / mark entry. </li>
 </ul>
@@ -99,18 +93,18 @@ Special Handling Instructions</h2>
 CFLIB Parameters</h2>
 <p>Some String Parameters in the configuration database are used by the library itself and are marked by one of the following Flags:</p>
 <ul>
-<li><a class="el" href="group__special__options__mask.html#ga071c29b5177f2df2400712ce8daae9b0">CF_PRGNAME</a> : Running Program's Name from commandline.  This parameter <b>always</b> exists as the <b>first</b> entry in a configuration database successfully initialized by <a class="el" href="group__cflib__core.html#gae593ff607f853bd5fc16a16bb6759314" title="Initialize CFLIB Configuration Database and parse possible sources for database entries according to ...">cfinit()</a>. The default parameter name used if there was no corresponding entry in the Initializer is <b>"CF_PRGNAME"</b>.<ul>
+<li><a class="el" href="group__special__options__mask.html#ga071c29b5177f2df2400712ce8daae9b0">CF_PRGNAME</a> : Running Program's Name from commandline.  This parameter <b>always</b> exists as the <b>first</b> entry in a configuration database successfully initialized by <a class="el" href="group__cflib__core.html#ga64fb341565c2ddfccd6669e5e6265a8a" title="cfinit() Initialize Configuration Database">cfinit()</a>. The default parameter name used if there was no corresponding entry in the Initializer is <b>"CF_PRGNAME"</b>.<ul>
 <li><a class="el" href="group__special__options__mask.html#gafeeb63d4d8c498bec4a237ad8b94f02f">CF_SETFILE</a> : Entry is Private Configuration File.  See <a class="el" href="config_files.html">Configuration Files</a></li>
 <li><a class="el" href="group__special__options__mask.html#gabb03ea68e07e388da2c1337a1582c72e">CF_SYS_SETFILE</a> : Entry is System Configuration File.  See <a class="el" href="config_files.html">Configuration Files</a></li>
 <li><a class="el" href="group__special__options__mask.html#ga603f0467f101b71f5f869381429ffef4">CF_SECTION</a> : Section in Configuration File.  See <a class="el" href="config_files.html">Configuration Files</a></li>
-<li><a class="el" href="group__special__options__mask.html#gab383c1436888ea6b410141f7c0b1f306">CF_PATH</a> : Search Path (for FindFile feature)  See <a class="el" href="group__special__options__mask.html#ga675b6f8440beecc09fec54d17e9c3ee9">CF_FINDFILE</a> and <a class="el" href="group__utilities.html#ga59fc2b29cf26051e0854b664f5aed15d" title="Find a File in Path trying Extensions.">FindFile()</a></li>
-<li><a class="el" href="group__special__options__mask.html#gac30981201d7455071cef38a0133b9228">CF_USAGE</a> : Usage Message format string.  See <a class="el" href="group__retrieval.html#gad3e4e24668cdc111471332a7e79fc897" title="Get Usage Message for (Terminal) Output.">cfgetusg()</a></li>
+<li><a class="el" href="group__special__options__mask.html#gab383c1436888ea6b410141f7c0b1f306">CF_PATH</a> : Search Path (for FindFile feature)  See <a class="el" href="group__special__options__mask.html#ga675b6f8440beecc09fec54d17e9c3ee9">CF_FINDFILE</a> and <a class="el" href="group__utilities.html#ga59fc2b29cf26051e0854b664f5aed15d" title="FindFile() Find a File in Path trying Extensions">FindFile()</a></li>
+<li><a class="el" href="group__special__options__mask.html#gac30981201d7455071cef38a0133b9228">CF_USAGE</a> : Usage Message format string.  See <a class="el" href="group__retrieval.html#gad3e4e24668cdc111471332a7e79fc897" title="cfgetusg() Get Usage Message for (Terminal) Output">cfgetusg()</a></li>
 </ul>
 </li>
 </ul>
 <p>Optional Parameters for fine tuning CFLIB behavior without Special Option Flag, characterized by Parameter Name:</p>
 <ul>
-<li><b>"CF_DUMPVERB"</b> - Non-Default Verbosity Mode for <a class="el" href="group__advanced__features.html#gaecfc8ee37366e1b36cb5aac0cc41ebdc" title="Dump CFLIB DB content to fout.">cfdump()</a></li>
+<li><b>"CF_DUMPVERB"</b> - Non-Default Verbosity Mode for <a class="el" href="group__advanced__features.html#gaecfc8ee37366e1b36cb5aac0cc41ebdc" title="cfdump() Dump CFLIB DB content to fout ">cfdump()</a></li>
 </ul>
 <h2><a class="anchor" id="parameter_type_flag"></a>
 FLAG Parameter Type</h2>

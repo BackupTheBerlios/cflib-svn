@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<tagfile>
+<compound kind="file">
+<name>libcf.a</name>
+<path>cflib/lib/</path>
+<filename>cflib</filename>
+<member kind="typedef">
+      <type>struct _cf</type>
+      <name>CONFIG</name>
+      <anchorfile>group__cflib__core.html</anchorfile>
+      <anchor>gd8328886f52eb7e67fd6a9ab6039143f</anchor>
+      <arglist/>
+    </member>
+<member kind="typedef">
+      <type>unsigned long</type>
+      <name>CFFLAGTYP</name>
+      <anchorfile>group__special__options__mask.html</anchorfile>
+      <anchor>g4854f1596d5c6e0604a478fa9a2e23f0</anchor>
+      <arglist/>
+    </member>
+<member kind="typedef">
+      <type>struct _cfe</type>
+      <name>CONFERR</name>
+      <anchorfile>group__errors.html</anchorfile>
+      <anchor>g4ecdd138467bd086bae71fa01460b539</anchor>
+      <arglist/>
+    </member>
+</compound>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</tagfile>

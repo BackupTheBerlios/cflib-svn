@@ -43,12 +43,7 @@
       <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
-    </ul>
-  </div>
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="index.html">CFLIB Flexible Configuration Library</a>      </li>
-      <li class="navelem"><a class="el" href="cflib.html">Flexible Configuration Library - User Documentation</a>      </li>
+      <li><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
 </div>
@@ -79,8 +74,8 @@ Parsing Levels</h2>
 </ul>
 <h2><a class="anchor" id="initialization_process"></a>
 Parsing Levels in the Initialization Process</h2>
-<p>On initialization the Parsing Levels 1 through 6 are processed by <a class="el" href="group__cflib__core.html#gae593ff607f853bd5fc16a16bb6759314" title="Initialize CFLIB Configuration Database and parse possible sources for database entries according to ...">cfinit()</a> in that order and priority. If a Parameter is found that has been defined in the Configuration Initializer, its content is included as String Content of that parameter in the configuration database.</p>
-<p>Whether and how the <b>Commandline</b> Arguments are used to get a parameter value depends on the <a class="el" href="struct__cf.html#ad1c10047a93ac7b5b60b23edec51a9ae" title="Commandline Option for Parameter">CONFIG::option</a> setting for that parameter and the Special Option Flags:</p>
+<p>On initialization the Parsing Levels 1 through 6 are processed by <a class="el" href="group__cflib__core.html#ga64fb341565c2ddfccd6669e5e6265a8a" title="cfinit() Initialize Configuration Database">cfinit()</a> in that order and priority. If a Parameter is found that has been defined in the Configuration Initializer, its content is included as String Content of that parameter in the configuration database.</p>
+<p>Whether and how the <b>Commandline</b> Arguments are used to get a parameter value depends on the <a class="el" href="struct_c_o_n_f_i_g.html#a60563bd93e85c1ddb8291a2d27a9c472" title="Commandline Option for Parameter">CONFIG::option</a> setting for that parameter and the Special Option Flags:</p>
 <ul>
 <li><a class="el" href="group__special__options__mask.html#ga9e526dae88bf6803772107ff283637b5">CF_CONCAT</a> : Argument is concatenated to option. <ul>
 <li><a class="el" href="group__special__options__mask.html#ga97d17b070dac10c14d3930c58bfba76f">CF_NO_OPT_ARG</a> : Commandline argument not following an option. </li>
@@ -93,11 +88,11 @@ Parsing Levels in the Initialization Process</h2>
 <li><a class="el" href="group__special__options__mask.html#ga72b75851880f36aaa5a52fdfe7960cca">CF_IGN_ENV</a> : Do not look for Environment Variable</li>
 </ul>
 <p><b>Configuration</b> Files are only used when corresponding entries are defined in the Configuration Initializer, see <a class="el" href="config_levels.html#config_file_parsing">Parsing of Configuration Files</a> for details.</p>
-<p><b>Interactive</b> queries are not performed by default. If <a class="el" href="group__cflib__core.html#gae593ff607f853bd5fc16a16bb6759314" title="Initialize CFLIB Configuration Database and parse possible sources for database entries according to ...">cfinit()</a> shall ask the user for interactive input of items that are still unresolved after parsing all lower levels, you must set Special Option Flag:</p>
+<p><b>Interactive</b> queries are not performed by default. If <a class="el" href="group__cflib__core.html#ga64fb341565c2ddfccd6669e5e6265a8a" title="cfinit() Initialize Configuration Database">cfinit()</a> shall ask the user for interactive input of items that are still unresolved after parsing all lower levels, you must set Special Option Flag:</p>
 <ul>
 <li><a class="el" href="group__special__options__mask.html#gae39e0d9b4e9af8c6d4b3676783dd26e0">CF_QUERY</a> : Ask the user for unresolved item after configuration parsing. </li>
 </ul>
-<p>If an entry may not be empty (<code>NULL</code> or string "") after initialization, you can have <a class="el" href="group__cflib__core.html#gae593ff607f853bd5fc16a16bb6759314" title="Initialize CFLIB Configuration Database and parse possible sources for database entries according to ...">cfinit()</a> produce an appropriate error by setting the Special Option Flag:</p>
+<p>If an entry may not be empty (<code>NULL</code> or string "") after initialization, you can have <a class="el" href="group__cflib__core.html#ga64fb341565c2ddfccd6669e5e6265a8a" title="cfinit() Initialize Configuration Database">cfinit()</a> produce an appropriate error by setting the Special Option Flag:</p>
 <ul>
 <li><a class="el" href="group__special__options__mask.html#ga3229f5b038eaa0c6428361d2aa510dfc">CF_MUST</a> : Entry may not be empty (<code>NULL</code> or "") </li>
 </ul>
@@ -127,7 +122,7 @@ Parsing Level Priorities</h3>
 </ul>
 <h2><a class="anchor" id="config_file_parsing"></a>
 Parsing of Configuration Files</h2>
-<p>To indicate that an entry in the initializer list given to <a class="el" href="group__cflib__core.html#gae593ff607f853bd5fc16a16bb6759314" title="Initialize CFLIB Configuration Database and parse possible sources for database entries according to ...">cfinit()</a> represents the filename of one of the <a class="el" href="config_files.html">Configuration Files</a>, set one of the following Flags for that parameter:</p>
+<p>To indicate that an entry in the initializer list given to <a class="el" href="group__cflib__core.html#ga64fb341565c2ddfccd6669e5e6265a8a" title="cfinit() Initialize Configuration Database">cfinit()</a> represents the filename of one of the <a class="el" href="config_files.html">Configuration Files</a>, set one of the following Flags for that parameter:</p>
 <ul>
 <li><a class="el" href="group__special__options__mask.html#gafeeb63d4d8c498bec4a237ad8b94f02f">CF_SETFILE</a> : Entry is Private Configuration File. <ul>
 <li><a class="el" href="group__special__options__mask.html#gabb03ea68e07e388da2c1337a1582c72e">CF_SYS_SETFILE</a> : Entry is System Configuration File. </li>
@@ -142,7 +137,7 @@ Parsing of Configuration Files</h2>
 <h2><a class="anchor" id="residuals"></a>
 Residual Items</h2>
 <p>Any commandline argument that did not match conditions for a parameter will be included in the configuration database as parameter without name marked with Flag <a class="el" href="group__special__options__mask.html#ga5415b257c706aae33d91d3947a3429c0">CF_RESID</a> in the <a class="el" href="group__special__options__mask.html">Special Options Mask</a>. These additional entries from the command line can be accessed by successive calls to <a class="el" href="group__retrieval.html#ga6ef6076e946383ab198ee26b9aa5603a" title="Get next Residual Command Line Argument from CFLIB DB.">cfgetres()</a>.</p>
-<p>Residual items from one of the configuration files will also be accumulated in the database and can be accessed through inquiry by name with one of the <a class="el" href="cflib.html#retrieval_functions">Retrieval Functions</a>. This is especially useful together with the report generation function <a class="el" href="group__report__generation.html#ga2f8350e7d032c87b2a0e1cb6149a85ec" title="Process a Template from file or stdin and write generated Report to File or stdout.">cfform()</a>. </p>
+<p>Residual items from one of the configuration files will also be accumulated in the database and can be accessed through inquiry by name with one of the <a class="el" href="index.html#retrieval_functions">Retrieval Functions</a>. This is especially useful together with the report generation function <a class="el" href="group__report__generation.html#ga2695585ee0a7485da6075848fa27a33f" title="cfform() Process a Template from file or stdin and write generated Report to File or stdout ...">cfform()</a>. </p>
 </div></div><!-- contents -->
 <hr size="1"><div align="right"><small>documentation generated by
 <a href="http://www.doxygen.org/index.html"><strong>doxygen</strong></a> 1.5.8
