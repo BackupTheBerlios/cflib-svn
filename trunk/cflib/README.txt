@@ -2,12 +2,13 @@
 #
 # CFLIB - Flexible Configuration Library
 #
-# Patchlevel: 20
+# Patchlevel: 21
 # Branch:     Trunk/Default
 # Author:     Stefan Habermehl <stefan.habermehl@mcff.de>
 #
-# Copyright:  (c) 1994,1995,1996,1997,1998,2006,2007,2008,2009 Stefan Habermehl
-# License:    GNU General Public License version 3.0 (see LICENSE.txt)
+# Copyright:  (c) 1994,1995,1996,1997,1998,2006,2007,2008,2009,2013 Stefan Habermehl
+# License:    GNU Lesser General Public License version 3.0 (LGPLv3, see LICENSE.txt)
+
 #
 # SVN Tree: svn://svn.berlios.de/cflib/trunk/cflib
 # Project Homepage: http://cflib.berlios.de

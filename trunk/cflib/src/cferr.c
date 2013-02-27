@@ -13,7 +13,7 @@
  * @version   SVN: \$Id$
  * @author    Stefan Habermehl <stefan.habermehl@mcff.de>
  * @copyright (c) 1994,1995,1996,2002,2006,2007,2008,2009 Stefan Habermehl
- * @license   http://www.gnu.org/licenses GNU General Public License v3 or later
+ * @license   http://www.gnu.org/licenses GNU Lesser General Public License version 3.0 (LGPLv3)
  * @package   CFLIB
  * @subpackage Library_Core
  *
