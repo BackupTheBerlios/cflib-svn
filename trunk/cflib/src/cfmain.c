@@ -278,7 +278,7 @@ int cfinit( CONFIG *set, int ac, char **av )
     }
 
     /**
-     * Try again system configuration file, if indicated
+     * Try again private configuration file, if indicated
      */
     if( cfglob & CFG_PAGAIN ){
 

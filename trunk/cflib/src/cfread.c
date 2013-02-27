@@ -10,7 +10,7 @@
  *
  * @version   SVN: \$Id$
  * @author    Stefan Habermehl <stefan.habermehl@mcff.de>
- * @copyright (c) 1994,1995,1996,2002,2006,2007,2008,2009 Stefan Habermehl
+ * @copyright (c) 1994,1995,1996,2002,2006,2007,2008,2009, 2013 Stefan Habermehl
  * @license   http://www.gnu.org/licenses GNU General Public License v3 or later
  * @package   CFLIB
  * @subpackage Library_Core
@@ -38,6 +38,7 @@
  *
  * 2008-08-03 [sh] header with meta info and license
  * 2009-08-22 [sh] Documentation Update
+ * 2013-02-25 [sh] Added option of sysfile entries overriding privfile config
  *
  *******************************************************************************
  */
@@ -86,6 +87,7 @@ CFFLAGTYP cfreadfile( CFFLAGTYP setfile, int *res_arg )
     char *name, *fname=NULL, *section=NULL;
     register int i;
     int secread=1, nmatch=-1;
+    CFFLAGTYP overrides = CF_OVRD_SETFILE;
 
     /* search entry with appropriate flag and check content */
 
@@ -118,6 +120,8 @@ CFFLAGTYP cfreadfile( CFFLAGTYP setfile, int *res_arg )
             if((section=_conf[i]->inhalt)==NULL) return CFG_SAGAIN;
             /* turn off secread for section search */
             secread=0;
+            /* include private file in overrides unless special sysfile priority flag is set */
+            if( !(_conf[i]->flag&CF_SET_SYS) ) overrides |= CF_SET_PRIV;
             if(fname!=NULL) break; /* sysfile and section known */
         }
 
@@ -190,17 +194,11 @@ CFFLAGTYP cfreadfile( CFFLAGTYP setfile, int *res_arg )
 
                         if(                                     /* and */
 
-                        !(_conf[i]->flag&CF_FORCED)    /* nothing forced before */
+                        !(_conf[i]->flag&CF_FORCED)       /* nothing forced before */
 
-                        &&
-                        ( !( _conf[i]->flag &
-                            (
-                             CF_OVRD_SETFILE |
-                             ( CF_SET_PRIV & (~(CF_SET_PRIV&setfile)) ) /* =CF_SET_PRIV or 0 for
-                                                                           setfile=sys or priv */
-                            )
-                           )                     /* no setting with higher priority */
-                         ||                                      /* or */
+                        &&                                      /* and */
+                        ( !( _conf[i]->flag & overrides ) /* no setting with higher priority */
+                         ||                                     /* or */
                          _conf[i]->flag&(CF_SET_FIL&setfile) /* force is set */
                         )
                         ){
@@ -250,7 +248,7 @@ CFFLAGTYP cfreadfile( CFFLAGTYP setfile, int *res_arg )
                         break;
                     } /* end if(_conf[i]->flag&CF_LAST) */
 
-                } /* end for(i=0,i<MAXCONF;I++) */
+                } /* end for(i=0,i<MAXCONF;i++) */
 
             } /* if '=' in line */
 
