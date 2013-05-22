@@ -301,7 +301,7 @@ int cfform( char *file, char *outfile, char *vd, int mode )
 
 						if((fp=fopen(var_poi,"r"))==NULL){
 
-							fprintf(stderr,"file <%s> open error!\n",var_poi);
+							fprintf(stderr,"CFLIB: file <%s> open error!\n",var_poi);
 
 							fp=fpsav[inccount];
 							inccount--;

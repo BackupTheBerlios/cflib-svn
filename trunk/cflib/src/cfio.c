@@ -8,7 +8,7 @@
  *
  * @version   SVN: \$Id$
  * @author    Stefan Habermehl <stefan.habermehl@mcff.de>
- * @copyright (c) 1994,1995,1996,2002,2006,2007,2008,2009 Stefan Habermehl
+ * @copyright (c) 1994,1995,1996,2002,2006,2007,2008,2009, 2013 Stefan Habermehl
  * @license   http://www.gnu.org/licenses GNU Lesser General Public License version 3.0 (LGPLv3)
  * @package   CFLIB
  * @subpackage Library_Core
@@ -38,6 +38,7 @@
  * 2009-01-22 [sh] adaption to doxygen docu tool
  * 2009-01-23 [sh] some small improvements
  * 2009-01-30 [sh] switched time format to "%d.%m.%Y"
+ * 2013-05-21 [sh] fixed error in cfputstr() when content is NULL
  *
  ******************************************************************************/
 
@@ -335,11 +336,14 @@ int cfputstr( char *name, char *content ){
     if( (_conf[++i] = malloc(sizeof(struct _cf))) == NULL ) return CFE_MCF;
     if( (_conf[i]->name = malloc(strlen(name)+1)) == NULL ) return CFE_MCF;
     strcpy(_conf[i]->name, name);
-    if( (_conf[i]->inhalt = malloc(strlen(content)+1)) == NULL) return CFE_MCF;
-    strcpy(_conf[i]->inhalt, content);
+    if(content){
+        if( (_conf[i]->inhalt = malloc(strlen(content)+1)) == NULL) return CFE_MCF;
+        strcpy(_conf[i]->inhalt, content);
+        _conf[i]->flag = CF_MALLOC;
+    } else _conf[i]->flag = 0x0;
 
     _conf[i]->option = 'x';
-    _conf[i]->flag = CF_SET_PUT | CF_RESID | CF_MALLOC | CF_LAST;
+    _conf[i]->flag |= CF_SET_PUT | CF_RESID | CF_LAST;
     DelFlag(_conf[i-1]->flag, CF_LAST);
 
     return CFE_NEP;
